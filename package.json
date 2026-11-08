@@ -1,0 +1,15 @@
+{
+  "name": "ebook-co-ly-thuyet",
+  "version": "1.0.0",
+  "description": "Ebook Cơ Lý Thuyết - GS. TSKH Đỗ Sanh (Tĩnh học, Động học, Động lực học)",
+  "scripts": {
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview",
+    "build": "vitepress build"
+  },
+  "devDependencies": {
+    "markdown-it-mathjax3": "^4.3.2",
+    "vitepress": "^1.6.4"
+  }
+}
