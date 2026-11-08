@@ -47,8 +47,15 @@ Di chuyển khả dĩ của một chất điểm (kí hiệu $\delta\vec{r}$) l�
 - Đối với liên kết dừng, di chuyển thực là một trong số các di chuyển khả dĩ.
 
 <div class="figure-container">
-  <img src="/figures/dong-luc-hoc/hinh_4_1.svg" alt="Hình 4-1: Di chuyển khả dĩ và công ảo" style="max-height: 270px;" />
-  <div class="figure-caption">Hình 4-1: Di chuyển khả dĩ $\delta\vec{r}$ thỏa mãn điều kiện tiếp xúc liên kết</div>
+
+<img src="/figures/dong-luc-hoc/hinh_4_1.svg" alt="Hình 4-1: Di chuyển khả dĩ và công ảo" style="max-height: 270px;" />
+
+<div class="figure-caption">
+
+Hình 4-1: Di chuyển khả dĩ $\delta\vec{r}$ thỏa mãn điều kiện tiếp xúc liên kết
+
+</div>
+
 </div>
 
 ---

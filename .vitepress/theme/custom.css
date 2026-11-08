@@ -88,15 +88,27 @@
   box-shadow: 0 4px 16px rgba(0,0,0,0.3);
 }
 
-.figure-caption {
-  margin-top: 12px;
+.figure-caption,
+.figure-caption p {
+  margin: 8px 0 0 0;
   font-size: 0.95rem;
   font-weight: 600;
   color: #1e293b;
   text-align: center;
 }
 
-.dark .figure-caption {
+.figure-caption mjx-container {
+  vertical-align: middle;
+  padding: 0;
+  display: inline-block;
+}
+
+.dark .figure-container .mjx-container svg {
+  filter: none !important;
+}
+
+.dark .figure-caption,
+.dark .figure-caption p {
   color: #1e293b;
 }
 

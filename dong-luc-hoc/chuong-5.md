@@ -27,8 +27,15 @@ $$\vec{F} + \vec{F}_{\text{qt}} = \vec{0} \tag{5-2}$$
 :::
 
 <div class="figure-container">
-  <img src="/figures/dong-luc-hoc/hinh_5_1.svg" alt="Hình 5-1: Lực quán tính Đalămbe tác dụng lên chất điểm" style="max-height: 260px;" />
-  <div class="figure-caption">Hình 5-1: Cân bằng hình thức giữa lực tác dụng $\vec{F}$ và lực quán tính $\vec{F}_{\text{qt}}$</div>
+
+<img src="/figures/dong-luc-hoc/hinh_5_1.svg" alt="Hình 5-1: Lực quán tính Đalămbe tác dụng lên chất điểm" style="max-height: 260px;" />
+
+<div class="figure-caption">
+
+Hình 5-1: Cân bằng hình thức giữa lực tác dụng $\vec{F}$ và lực quán tính $\vec{F}_{\text{qt}}$
+
+</div>
+
 </div>
 
 ### 5.1.3. Lực Quán Tính Trong Hệ Tọa Độ Tự Nhiên
@@ -99,8 +106,15 @@ Phương pháp Tĩnh hình học – Động lực áp dụng các quy tắc thu
    Hệ lực quán tính tương đương một lực $\vec{R}_{\text{qt}} = -M\vec{a}_C$ đặt tại khối tâm $C$ và một ngẫu lực mômen $M_{C\text{qt}} = -J_C \varepsilon$.
 
 <div class="figure-container">
-  <img src="/figures/dong-luc-hoc/hinh_5_2.svg" alt="Hình 5-2: Thu gọn hệ lực quán tính của vật rắn chuyển động song phẳng" style="max-height: 280px;" />
-  <div class="figure-caption">Hình 5-2: Lực quán tính $\vec{R}_{\text{qt}}$ và mômen quán tính $M_{C\text{qt}}$</div>
+
+<img src="/figures/dong-luc-hoc/hinh_5_2.svg" alt="Hình 5-2: Thu gọn hệ lực quán tính của vật rắn chuyển động song phẳng" style="max-height: 280px;" />
+
+<div class="figure-caption">
+
+Hình 5-2: Lực quán tính $\vec{R}_{\text{qt}}$ và mômen quán tính $M_{C\text{qt}}$
+
+</div>
+
 </div>
 
 ---

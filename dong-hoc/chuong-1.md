@@ -15,8 +15,15 @@ Phương trình $(1-1)$ được gọi là **phương trình chuyển động d�
 Đường cong do mút của bán kính véctơ $\vec{r}(t)$ vạch nên trong không gian được gọi là **quỹ đạo** của điểm chuyển động.
 
 <div class="figure-container">
-  <img src="/figures/dong-hoc/hinh_1_1.svg" alt="Hình 1-1: Khảo sát chuyển động của điểm bằng phương pháp vectơ" style="max-height: 260px;" />
-  <div class="figure-caption">Hình 1-1: Quỹ đạo, vận tốc $\vec{v}$ và gia tốc $\vec{a}$ của điểm</div>
+
+<img src="/figures/dong-hoc/hinh_1_1.svg" alt="Hình 1-1: Khảo sát chuyển động của điểm bằng phương pháp vectơ" style="max-height: 260px;" />
+
+<div class="figure-caption">
+
+Hình 1-1: Quỹ đạo, vận tốc $\vec{v}$ và gia tốc $\vec{a}$ của điểm
+
+</div>
+
 </div>
 
 ### 1.1.1. Vận Tốc Của Điểm
@@ -117,8 +124,15 @@ Tại mỗi điểm $M$ trên quỹ đạo, ta gắn hệ tam diện trực chu�
 - $\vec{b} = \vec{\tau} \times \vec{n}$: Véctơ đơn vị **trùng pháp tuyến**, vuông góc với mặt phẳng mật tiếp.
 
 <div class="figure-container">
-  <img src="/figures/dong-hoc/hinh_1_2.svg" alt="Hình 1-2: Tam diện tự nhiên Frenet" style="max-height: 270px;" />
-  <div class="figure-caption">Hình 1-2: Hệ trục tọa độ tự nhiên $(\vec{\tau}, \vec{n}, \vec{b})$</div>
+
+<img src="/figures/dong-hoc/hinh_1_2.svg" alt="Hình 1-2: Tam diện tự nhiên Frenet" style="max-height: 270px;" />
+
+<div class="figure-caption">
+
+Hình 1-2: Hệ trục tọa độ tự nhiên $(\vec{\tau}, \vec{n}, \vec{b})$
+
+</div>
+
 </div>
 
 ---

@@ -9,8 +9,15 @@ Chuyển động song phẳng của vật rắn là chuyển động trong đó 
 Ví dụ: Bánh xe lăn trên đường ray thẳng, cơ cấu tay quay - thanh truyền, cơ cấu con lắc bốn khâu bản lề.
 
 <div class="figure-container">
-  <img src="/figures/dong-hoc/hinh_4_1.svg" alt="Hình 4-1: Mô hình chuyển động song phẳng của vật rắn" style="max-height: 280px;" />
-  <div class="figure-caption">Hình 4-1: Tiết diện phẳng $S$ chuyển động trong mặt phẳng chuẩn $Oxy$</div>
+
+<img src="/figures/dong-hoc/hinh_4_1.svg" alt="Hình 4-1: Mô hình chuyển động song phẳng của vật rắn" style="max-height: 280px;" />
+
+<div class="figure-caption">
+
+Hình 4-1: Tiết diện phẳng $S$ chuyển động trong mặt phẳng chuẩn $Oxy$
+
+</div>
+
 </div>
 
 ### Mô Hình Tiết Diện Phẳng (Hình Phẳng)
@@ -73,8 +80,15 @@ trong đó $\alpha, \beta$ lần lượt là góc tạo bởi $\vec{v}_A$ và $\
 :::
 
 <div class="figure-container">
-  <img src="/figures/dong-hoc/hinh_4_2.svg" alt="Hình 4-2: Định lý hình chiếu vận tốc" style="max-height: 240px;" />
-  <div class="figure-caption">Hình 4-2: Hình chiếu vận tốc $\vec{v}_A$ và $\vec{v}_B$ lên đường nối $AB$</div>
+
+<img src="/figures/dong-hoc/hinh_4_2.svg" alt="Hình 4-2: Định lý hình chiếu vận tốc" style="max-height: 240px;" />
+
+<div class="figure-caption">
+
+Hình 4-2: Hình chiếu vận tốc $\vec{v}_A$ và $\vec{v}_B$ lên đường nối $AB$
+
+</div>
+
 </div>
 
 ---
@@ -103,8 +117,15 @@ $$\frac{v_A}{PA} = \frac{v_B}{PB} = \frac{v_M}{PM} = \omega \tag{4-8}$$
 > **Quy tắc:** Vận tốc của các điểm thuộc hình phẳng tỉ lệ thuận với khoảng cách từ các điểm đó đến tâm vận tốc tức thời $P$.
 
 <div class="figure-container">
-  <img src="/figures/dong-hoc/hinh_4_3.svg" alt="Hình 4-3: Các phương pháp xác định tâm vận tốc tức thời P" style="max-height: 280px;" />
-  <div class="figure-caption">Hình 4-3: Phương pháp xác định tâm vận tốc tức thời P</div>
+
+<img src="/figures/dong-hoc/hinh_4_3.svg" alt="Hình 4-3: Các phương pháp xác định tâm vận tốc tức thời P" style="max-height: 280px;" />
+
+<div class="figure-caption">
+
+Hình 4-3: Phương pháp xác định tâm vận tốc tức thời P
+
+</div>
+
 </div>
 
 #### Các Trường Hợp Xác Định Tâm Vận Tốc Tức Thời Thường Gặp:

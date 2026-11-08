@@ -19,8 +19,15 @@ $$\begin{cases} m \ddot{x} = m \dfrac{d^2 x}{dt^2} = \displaystyle\sum_{k=1}^n F
 Đây là hệ ba phương trình vi phân cấp hai xác định chuyển động của chất điểm trong không gian.
 
 <div class="figure-container">
-  <img src="/figures/dong-luc-hoc/hinh_2_1.svg" alt="Hình 2-1: Phương trình vi phân chuyển động của chất điểm trong hệ tọa độ Descartes" style="max-height: 270px;" />
-  <div class="figure-caption">Hình 2-1: Chiếu lực và gia tốc lên các trục tọa độ Descartes</div>
+
+<img src="/figures/dong-luc-hoc/hinh_2_1.svg" alt="Hình 2-1: Phương trình vi phân chuyển động của chất điểm trong hệ tọa độ Descartes" style="max-height: 270px;" />
+
+<div class="figure-caption">
+
+Hình 2-1: Chiếu lực và gia tốc lên các trục tọa độ Descartes
+
+</div>
+
 </div>
 
 ---
@@ -37,8 +44,15 @@ trong đó:
 - Phương trình thứ ba chỉ ra rằng hợp lực tác dụng lên chất điểm luôn luôn nằm trong **mặt phẳng mật tiếp** $(\vec{\tau}, \vec{n})$.
 
 <div class="figure-container">
-  <img src="/figures/dong-luc-hoc/hinh_2_2.svg" alt="Hình 2-2: Phương trình vi phân chuyển động trong hệ tọa độ tự nhiên" style="max-height: 260px;" />
-  <div class="figure-caption">Hình 2-2: Phân tích lực theo tiếp tuyến và pháp tuyến chính</div>
+
+<img src="/figures/dong-luc-hoc/hinh_2_2.svg" alt="Hình 2-2: Phương trình vi phân chuyển động trong hệ tọa độ tự nhiên" style="max-height: 260px;" />
+
+<div class="figure-caption">
+
+Hình 2-2: Phân tích lực theo tiếp tuyến và pháp tuyến chính
+
+</div>
+
 </div>
 
 ---

@@ -33,8 +33,15 @@ trong đó $h_k$ là khoảng cách vuông góc từ chất điểm $m_k$ đến
   $$i_{\Delta} = \sqrt{\frac{J_{\Delta}}{M}} \implies J_{\Delta} = M \cdot i_{\Delta}^2 \tag{3-4}$$
 
 <div class="figure-container">
-  <img src="/figures/dong-luc-hoc/hinh_3_1.svg" alt="Hình 3-1: Mômen quán tính của vật rắn đối với trục" style="max-height: 270px;" />
-  <div class="figure-caption">Hình 3-1: Khoảng cách $h$ từ phần tử khối lượng đến trục quay</div>
+
+<img src="/figures/dong-luc-hoc/hinh_3_1.svg" alt="Hình 3-1: Mômen quán tính của vật rắn đối với trục" style="max-height: 270px;" />
+
+<div class="figure-caption">
+
+Hình 3-1: Khoảng cách $h$ từ phần tử khối lượng đến trục quay
+
+</div>
+
 </div>
 
 ---
@@ -190,8 +197,15 @@ $$T = \frac{1}{2} \sum_{k=1}^n m_k v_k^2 \tag{3-20}$$
   hoặc tính qua tâm vận tốc tức thời $P$: $T = \frac{1}{2} J_P \omega^2$.
 
 <div class="figure-container">
-  <img src="/figures/dong-luc-hoc/hinh_3_3.svg" alt="Hình 3-3: Động năng của vật rắn chuyển động song phẳng" style="max-height: 260px;" />
-  <div class="figure-caption">Hình 3-3: Phân tích động năng chuyển động song phẳng theo định lý Koenig</div>
+
+<img src="/figures/dong-luc-hoc/hinh_3_3.svg" alt="Hình 3-3: Động năng của vật rắn chuyển động song phẳng" style="max-height: 260px;" />
+
+<div class="figure-caption">
+
+Hình 3-3: Phân tích động năng chuyển động song phẳng theo định lý Koenig
+
+</div>
+
 </div>
 
 ---

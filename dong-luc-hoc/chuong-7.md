@@ -19,8 +19,15 @@ $$\vec{S} = \int_{0}^{\tau} \vec{F}_{\text{xk}} \, dt \tag{7-1}$$
 Mặc dù $\tau \to 0$, nhưng vì $\vec{F}_{\text{xk}} \to \infty$ nên xung lượng $\vec{S}$ là một đại lượng hữu hạn xác định.
 
 <div class="figure-container">
-  <img src="/figures/dong-luc-hoc/hinh_7_1.svg" alt="Hình 7-1: Đồ thị biến thiên của lực va chạm theo thời gian" style="max-height: 250px;" />
-  <div class="figure-caption">Hình 7-1: Biến thiên của lực va chạm xung kích trong thời gian cực ngắn $\tau$</div>
+
+<img src="/figures/dong-luc-hoc/hinh_7_1.svg" alt="Hình 7-1: Đồ thị biến thiên của lực va chạm theo thời gian" style="max-height: 250px;" />
+
+<div class="figure-caption">
+
+Hình 7-1: Biến thiên của lực va chạm xung kích trong thời gian cực ngắn $\tau$
+
+</div>
+
 </div>
 
 ---
@@ -77,8 +84,15 @@ Xét hai vật có khối lượng $m_1$ và $m_2$ chuyển động tịnh tiế
 - Vận tốc sau va chạm: $v_1, v_2$.
 
 <div class="figure-container">
-  <img src="/figures/dong-luc-hoc/hinh_7_2.svg" alt="Hình 7-2: Va chạm thẳng xuyên tâm của hai quả cầu" style="max-height: 250px;" />
-  <div class="figure-caption">Hình 7-2: Vận tốc trước và sau va chạm thẳng xuyên tâm</div>
+
+<img src="/figures/dong-luc-hoc/hinh_7_2.svg" alt="Hình 7-2: Va chạm thẳng xuyên tâm của hai quả cầu" style="max-height: 250px;" />
+
+<div class="figure-caption">
+
+Hình 7-2: Vận tốc trước và sau va chạm thẳng xuyên tâm
+
+</div>
+
 </div>
 
 ### 7.3.1. Xác Định Vận Tốc Sau Va Chạm
