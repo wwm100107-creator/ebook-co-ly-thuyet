@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 260" width="100%" height="100%">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#1e293b" />
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2563eb" />
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#dc2626" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#16a34a" />
+    </marker>
+    <pattern id="hatch" width="8" height="8" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#94a3b8" stroke-width="1.2" />
+    </pattern>
+  </defs>
+  <style>
+    text { font-family: 'Times New Roman', serif; }
+    .lbl { font-size: 18px; font-style: italic; fill: #0f172a; }
+    .lbl-sub { font-size: 13px; font-style: italic; fill: #0f172a; }
+    .lbl-bold { font-size: 20px; font-style: italic; font-weight: bold; fill: #0f172a; }
+    .vec { stroke: #2563eb; stroke-width: 2.2; }
+    .axis { stroke: #64748b; stroke-width: 1.2; stroke-dasharray: 5,3; }
+    .solid { stroke: #1e293b; stroke-width: 1.8; fill: #f8fafc; }
+  </style>
+
+  <!-- Sàn phẳng -->
+  <line x1="40" y1="200" x2="420" y2="200" stroke="#1e293b" stroke-width="2" />
+  <rect x="40" y="200" width="380" height="15" fill="url(#hatch)" stroke="#64748b" />
+  
+  <!-- Hình trụ lăn bán kính R -->
+  <circle cx="210" cy="110" r="90" class="solid" />
+  <circle cx="210" cy="110" r="4" fill="#0f172a" />
+  <text x="215" y="105" class="lbl-bold">C</text>
+  
+  <!-- Trọng lực P từ tâm C -->
+  <line x1="210" y1="110" x2="210" y2="185" class="vec" marker-end="url(#arrow-blue)" />
+  <text x="190" y="180" class="lbl-bold" fill="#2563eb">P&#8407;</text>
+  
+  <!-- Lực kéo ngang Q tại C -->
+  <line x1="210" y1="110" x2="310" y2="110" class="vec" marker-end="url(#arrow-blue)" />
+  <text x="315" y="115" class="lbl-bold" fill="#2563eb">Q&#8407;</text>
+  
+  <!-- Điểm tiếp xúc lùi về phía trước một khoảng k -->
+  <line x1="210" y1="110" x2="210" y2="200" class="axis" />
+  <circle cx="235" cy="200" r="4" fill="#dc2626" />
+  <text x="240" y="215" class="lbl-bold" fill="#dc2626">A</text>
+  
+  <line x1="210" y1="195" x2="235" y2="195" stroke="#16a34a" stroke-width="1.8" />
+  <text x="218" y="190" class="lbl-bold" fill="#16a34a">k</text>
+  
+  <!-- Phản lực pháp tuyến N dời về A -->
+  <line x1="235" y1="200" x2="235" y2="110" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrow-red)" />
+  <text x="240" y="120" class="lbl-bold" fill="#dc2626">N&#8407;</text>
+  
+  <!-- Mômen cản lăn M_cl -->
+  <path d="M 235 60 A 40 40 0 0 0 185 80" fill="none" stroke="#dc2626" stroke-width="2" marker-end="url(#arrow-red)" />
+  <text x="145" y="65" class="lbl-bold" fill="#dc2626">M<tspan font-size="12" dy="4">cl</tspan> = kN</text>
+</svg>

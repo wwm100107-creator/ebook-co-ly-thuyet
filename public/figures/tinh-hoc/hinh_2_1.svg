@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 280" width="100%" height="100%">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#1e293b" />
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2563eb" />
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#dc2626" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#16a34a" />
+    </marker>
+    <pattern id="hatch" width="8" height="8" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#94a3b8" stroke-width="1.2" />
+    </pattern>
+  </defs>
+  <style>
+    text { font-family: 'Times New Roman', serif; }
+    .lbl { font-size: 18px; font-style: italic; fill: #0f172a; }
+    .lbl-sub { font-size: 13px; font-style: italic; fill: #0f172a; }
+    .lbl-bold { font-size: 20px; font-style: italic; font-weight: bold; fill: #0f172a; }
+    .vec { stroke: #2563eb; stroke-width: 2.2; }
+    .axis { stroke: #64748b; stroke-width: 1.2; stroke-dasharray: 5,3; }
+    .solid { stroke: #1e293b; stroke-width: 1.8; fill: #f8fafc; }
+  </style>
+
+  <!-- Vật thể elip -->
+  <ellipse cx="200" cy="140" rx="100" ry="65" class="solid" />
+  
+  <circle cx="160" cy="150" r="4.5" fill="#0f172a" />
+  <text x="140" y="155" class="lbl-bold">O</text>
+  
+  <!-- Lực thu gọn R'_O -->
+  <line x1="160" y1="150" x2="90" y2="80" class="vec" marker-end="url(#arrow-blue)" />
+  <text x="60" y="75" class="lbl-bold" fill="#2563eb">R'&#8407;<tspan font-size="12" dy="4">O</tspan></text>
+  
+  <!-- Mô men chính M_O vuông góc -->
+  <line x1="160" y1="150" x2="220" y2="40" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrow-red)" />
+  <path d="M 205 75 A 15 15 0 0 1 228 85" fill="none" stroke="#dc2626" stroke-width="1.8" marker-end="url(#arrow-red)" />
+  <text x="235" y="45" class="lbl-bold" fill="#dc2626">M&#8407;<tspan font-size="12" dy="-5">O</tspan></text>
+  
+  <!-- Mũi tên tương đương -->
+  <text x="320" y="145" font-size="30" fill="#64748b">&#8801;</text>
+  
+  <!-- Hợp lực duy nhất R cách O một khoảng d -->
+  <ellipse cx="430" cy="140" rx="90" ry="60" class="solid" />
+  <circle cx="400" cy="150" r="4.5" fill="#0f172a" />
+  <text x="385" y="165" class="lbl-bold">O</text>
+  
+  <line x1="400" y1="150" x2="435" y2="115" stroke="#16a34a" stroke-width="1.5" />
+  <polyline points="430,113 435,115 437,120" fill="none" stroke="#16a34a" />
+  <text x="420" y="145" class="lbl-bold" fill="#16a34a">d</text>
+  
+  <line x1="435" y1="115" x2="385" y2="55" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrow-red)" />
+  <text x="360" y="55" class="lbl-bold" fill="#dc2626">R&#8407;</text>
+</svg>

@@ -27,7 +27,7 @@ $$\vec{F}_{\text{ms}} = -\vec{F}$$
 Khi tăng dần lực kéo $F$, lực ma sát tĩnh $F_{\text{ms}}$ cũng tăng theo đến một giá trị cực đại $F_{\text{max}}$, tại đó vật bắt đầu rơi vào **trạng thái cân bằng giới hạn** (chuẩn bị trượt). Nếu lực kéo $F > F_{\text{max}}$, vật sẽ bắt đầu chuyển động trượt.
 
 <div class="figure-container">
-  <img src="/figures/tinh-hoc/hinh_3_1.png" alt="Hình 3-1: Lực ma sát trượt và trạng thái cân bằng giới hạn" style="max-height: 260px;" />
+  <img src="/figures/tinh-hoc/hinh_3_1.svg" alt="Hình 3-1: Lực ma sát trượt và trạng thái cân bằng giới hạn" style="max-height: 260px;" />
   <div class="figure-caption">Hình 3-1: Sơ đồ lực ma sát trượt tác dụng lên vật</div>
 </div>
 
@@ -60,7 +60,7 @@ Tại điểm tiếp xúc giữa hai vật, phản lực toàn phần $\vec{R}$ 
 $$\vec{R} = \vec{N} + \vec{F}_{\text{ms}} \tag{3-4}$$
 
 <div class="figure-container">
-  <img src="/figures/tinh-hoc/hinh_3_2.png" alt="Hình 3-2: Góc ma sát và nón ma sát" style="max-height: 280px;" />
+  <img src="/figures/tinh-hoc/hinh_3_2.svg" alt="Hình 3-2: Góc ma sát và nón ma sát" style="max-height: 280px;" />
   <div class="figure-caption">Hình 3-2: Phản lực toàn phần $\vec{R}$, góc ma sát $\phi_0$ và nón ma sát</div>
 </div>
 
@@ -89,7 +89,7 @@ Xét một con lăn hình trụ bán kính $r$, trọng lượng $P$ đặt trê
 Do sự phân bố không đối xứng của áp lực tiếp xúc, hợp lực của các phản lực pháp tuyến $\vec{N}$ bị dời về phía trước chuyển động một đoạn $\delta$.
 
 <div class="figure-container">
-  <img src="/figures/tinh-hoc/hinh_3_3.png" alt="Hình 3-3: Ma sát lăn và cánh tay đòn cản lăn k" style="max-height: 270px;" />
+  <img src="/figures/tinh-hoc/hinh_3_3.svg" alt="Hình 3-3: Ma sát lăn và cánh tay đòn cản lăn k" style="max-height: 270px;" />
   <div class="figure-caption">Hình 3-3: Sơ đồ phân tích lực và mômen ma sát lăn</div>
 </div>
 

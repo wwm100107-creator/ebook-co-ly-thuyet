@@ -9,7 +9,7 @@ Hợp chuyển động điểm khảo sát chuyển động của một điểm 
 Xét hệ quy chiếu cố định $Oxyz$ và hệ quy chiếu động $O'x'y'z'$ chuyển động đối với hệ $Oxyz$. Một điểm $M$ chuyển động trong không gian.
 
 <div class="figure-container">
-  <img src="/figures/dong-hoc/hinh_3_1.png" alt="Hình 3-1: Các hệ quy chiếu trong hợp chuyển động điểm" style="max-height: 280px;" />
+  <img src="/figures/dong-hoc/hinh_3_1.svg" alt="Hình 3-1: Các hệ quy chiếu trong hợp chuyển động điểm" style="max-height: 280px;" />
   <div class="figure-caption">Hình 3-1: Hệ quy chiếu cố định $Oxyz$ và hệ quy chiếu động $O'x'y'z'$</div>
 </div>
 
@@ -69,7 +69,7 @@ Trong đó:
 - $\vec{a}_c$: **Gia tốc Coriolis** (hay gia tốc phụ, gia tốc quán tính phối hợp).
 
 <div class="figure-container">
-  <img src="/figures/dong-hoc/hinh_3_2.png" alt="Hình 3-2: Xác định véctơ gia tốc Coriolis" style="max-height: 270px;" />
+  <img src="/figures/dong-hoc/hinh_3_2.svg" alt="Hình 3-2: Xác định véctơ gia tốc Coriolis" style="max-height: 270px;" />
   <div class="figure-caption">Hình 3-2: Quy tắc xác định phương chiều của gia tốc Coriolis $\vec{a}_c$</div>
 </div>
 

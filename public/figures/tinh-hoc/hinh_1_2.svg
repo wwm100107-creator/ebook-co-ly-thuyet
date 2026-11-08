@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 300" width="100%" height="100%">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#1e293b" />
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2563eb" />
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#dc2626" />
+    </marker>
+    <pattern id="hatch" width="8" height="8" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#94a3b8" stroke-width="1.2" />
+    </pattern>
+  </defs>
+  <style>
+    text { font-family: 'Times New Roman', serif; }
+    .lbl { font-size: 18px; font-style: italic; fill: #0f172a; }
+    .lbl-sub { font-size: 14px; font-style: italic; fill: #0f172a; }
+    .lbl-bold { font-size: 20px; font-style: italic; font-weight: bold; fill: #0f172a; }
+    .vec { stroke: #2563eb; stroke-width: 2.2; }
+    .axis { stroke: #64748b; stroke-width: 1.2; stroke-dasharray: 5,3; }
+    .solid { stroke: #1e293b; stroke-width: 1.8; fill: #f8fafc; }
+  </style>
+
+  <!-- Vật thể -->
+  <ellipse cx="270" cy="170" rx="95" ry="60" transform="rotate(30 270 170)" class="solid" fill="#f1f5f9" />
+  
+  <!-- Điểm O -->
+  <circle cx="100" cy="220" r="4.5" fill="#1e293b" />
+  <text x="80" y="235" class="lbl-bold">O</text>
+  
+  <!-- Đường tác dụng của lực (kéo dài qua A) -->
+  <line x1="145" y1="270" x2="365" y2="100" class="axis" />
+  
+  <!-- Vectơ lực F từ A đến B -->
+  <line x1="230" y1="205" x2="330" y2="128" class="vec" marker-end="url(#arrow-blue)" />
+  <circle cx="230" cy="205" r="4" fill="#1e293b" />
+  <text x="235" y="225" class="lbl-bold">A</text>
+  <circle cx="330" cy="128" r="4" fill="#1e293b" />
+  <text x="320" y="115" class="lbl-bold">B</text>
+  <text x="330" y="150" class="lbl-bold" fill="#2563eb">F&#8407;</text>
+  
+  <!-- Tam giác gạch chéo OAB -->
+  <polygon points="100,220 230,205 330,128" fill="#e2e8f0" stroke="#64748b" stroke-width="1" stroke-dasharray="3,3" />
+  
+  <!-- Cánh tay đòn d -->
+  <line x1="100" y1="220" x2="148" y2="267" stroke="#dc2626" stroke-width="1.6" />
+  <polyline points="142,260 148,267 155,261" fill="none" stroke="#dc2626" stroke-width="1.2" />
+  <text x="110" y="260" class="lbl-bold" fill="#dc2626">d</text>
+  
+  <!-- Vectơ mô men m_O(F) thẳng góc -->
+  <line x1="100" y1="220" x2="60" y2="70" class="vec" stroke="#16a34a" marker-end="url(#arrow)" />
+  <path d="M 68 140 A 15 15 0 0 1 82 130" fill="none" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arrow)" />
+  <text x="70" y="65" class="lbl-bold" fill="#16a34a">m&#8407;<tspan font-size="14" dy="5">O</tspan><tspan dy="-5">(F&#8407;)</tspan></text>
+</svg>

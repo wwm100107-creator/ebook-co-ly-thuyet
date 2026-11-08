@@ -40,7 +40,7 @@ Do đó có thể dùng vecto biểu diễn các đặc trưng lực, gọi là 
 Điểm đặt của vecto là điểm đặt của lực, phương chiều của vecto biểu diễn phương chiều của lực, môđun của vecto biểu diễn cường độ của lực. Giá mang vecto lực được gọi là đường tác dụng của lực (H. 1–1).
 
 <div class="figure-container">
-  <img src="/figures/tinh-hoc/hinh_1_1.png" alt="Hình 1-1: Biểu diễn vectơ lực" style="max-height: 240px;" />
+  <img src="/figures/tinh-hoc/hinh_1_1.svg" alt="Hình 1-1: Biểu diễn vectơ lực" style="max-height: 240px;" />
   <div class="figure-caption">Hình 1-1: Vectơ lực và đường tác dụng của lực</div>
 </div>
 
@@ -59,7 +59,7 @@ $$\vec{m}_O(\vec{F}) = \vec{r} \times \vec{F} \tag{1-1}$$
 trong đó $\vec{r} = \vec{OA}$ là bán kính vecto kẻ từ điểm $O$ (gọi là tâm mô men) đến điểm đặt $A$ của lực $\vec{F}$.
 
 <div class="figure-container">
-  <img src="/figures/tinh-hoc/hinh_1_2.png" alt="Hình 1-2: Mô men của lực đối với một điểm" style="max-height: 250px;" />
+  <img src="/figures/tinh-hoc/hinh_1_2.svg" alt="Hình 1-2: Mô men của lực đối với một điểm" style="max-height: 250px;" />
   <div class="figure-caption">Hình 1-2: Mô men của lực đối với điểm O</div>
 </div>
 
@@ -82,7 +82,7 @@ Mô men của lực $\vec{F}$ đối với trục $\Delta$, kí hiệu $\bar{m}_
 $$\bar{m}_{\Delta}(\vec{F}) = \bar{m}_O(\vec{F}') \tag{1-3}$$
 
 <div class="figure-container">
-  <img src="/figures/tinh-hoc/hinh_1_3.png" alt="Hình 1-3: Mô men của lực đối với một trục" style="max-height: 260px;" />
+  <img src="/figures/tinh-hoc/hinh_1_3.svg" alt="Hình 1-3: Mô men của lực đối với một trục" style="max-height: 260px;" />
   <div class="figure-caption">Hình 1-3: Mô men của lực đối với trục $\Delta$</div>
 </div>
 
@@ -169,7 +169,7 @@ Ngẫu lực được đặc trưng bởi mặt phẳng tác dụng của nó (m
 Để biểu diễn các đặc trưng của ngẫu lực người ta dùng **vecto mô men ngẫu lực**, kí hiệu $\vec{m}$, có gốc tại mặt phẳng ngẫu lực, hướng vuông góc với mặt phẳng ngẫu lực sao cho khi nhìn từ đầu mút của vecto ấy xuống mặt phẳng ngẫu lực thấy chiều quay của ngẫu lực ngược chiều quay kim đồng hồ và có môđun bằng mômen ngẫu lực, tức bằng $F \cdot d$ (H. 1–4).
 
 <div class="figure-container">
-  <img src="/figures/tinh-hoc/hinh_1_4.png" alt="Hình 1-4: Biểu diễn ngẫu lực và vectơ mômen ngẫu lực" style="max-height: 240px;" />
+  <img src="/figures/tinh-hoc/hinh_1_4.svg" alt="Hình 1-4: Biểu diễn ngẫu lực và vectơ mômen ngẫu lực" style="max-height: 240px;" />
   <div class="figure-caption">Hình 1-4: Vectơ mô men ngẫu lực $\vec{m}$</div>
 </div>
 
@@ -182,7 +182,7 @@ $$\vec{m}_O(\vec{F}) + \vec{m}_O(\vec{F}') = \vec{M} \tag{1-6}$$
 :::
 
 <div class="figure-container">
-  <img src="/figures/tinh-hoc/hinh_1_5.png" alt="Hình 1-5: Chứng minh định lý mô men ngẫu lực" style="max-height: 240px;" />
+  <img src="/figures/tinh-hoc/hinh_1_5.svg" alt="Hình 1-5: Chứng minh định lý mô men ngẫu lực" style="max-height: 240px;" />
   <div class="figure-caption">Hình 1-5: Sơ đồ vectơ chứng minh định lý mô men ngẫu lực</div>
 </div>
 
@@ -224,7 +224,7 @@ Hai lực thỏa mãn tiên đề 1 được gọi là hai lực cân bằng (H.
 Hai tiên đề tiếp theo cho chúng ta hai phép biến đổi tương đương.
 
 <div class="figure-container">
-  <img src="/figures/tinh-hoc/hinh_1_6.png" alt="Hình 1-6: Hai lực cân bằng" style="max-height: 200px;" />
+  <img src="/figures/tinh-hoc/hinh_1_6.svg" alt="Hình 1-6: Hai lực cân bằng" style="max-height: 200px;" />
   <div class="figure-caption">Hình 1-6: Hệ hai lực cân bằng tác dụng lên vật rắn</div>
 </div>
 
@@ -255,7 +255,7 @@ $$\vec{F}_A \sim (\vec{F}_A, \vec{F}'_B, \vec{F}_B) \sim \vec{F}_B$$
 ở đây một lần nữa ta áp dụng tiên đề 2 để bỏ đi hai lực cân bằng $\vec{F}_A$ và $\vec{F}'_B$.
 
 <div class="figure-container">
-  <img src="/figures/tinh-hoc/hinh_1_7.png" alt="Hình 1-7: Định lý trượt lực" style="max-height: 200px;" />
+  <img src="/figures/tinh-hoc/hinh_1_7.svg" alt="Hình 1-7: Định lý trượt lực" style="max-height: 200px;" />
   <div class="figure-caption">Hình 1-7: Minh họa định lý trượt lực</div>
 </div>
 
@@ -272,7 +272,7 @@ Nhờ hệ quả vừa nêu trên, điều kiện hai lực cùng đặt một �
 Tiên đề 3 cho phép biến đổi tương đương về hợp hai lực đồng quy và phân tích một lực thành hai lực theo quy tắc hình bình hành lực. Nhờ tiên đề này đưa phép cộng vecto vào phép tính lực. Tuy nhiên cần nhấn mạnh rằng hai phép tính đó không đồng nhất với nhau, vì phép cộng vecto đúng cho trường hợp hai vecto tự do, còn phép tính hợp lực theo quy tắc hình bình hành lực chỉ đúng cho trường hợp hai vecto lực có đường tác dụng gặp nhau.
 
 <div class="figure-container">
-  <img src="/figures/tinh-hoc/hinh_1_8.png" alt="Hình 1-8: Hình bình hành lực" style="max-height: 200px;" />
+  <img src="/figures/tinh-hoc/hinh_1_8.svg" alt="Hình 1-8: Hình bình hành lực" style="max-height: 200px;" />
   <div class="figure-caption">Hình 1-8: Tiên đề hình bình hành lực</div>
 </div>
 
@@ -283,7 +283,7 @@ Lực tác dụng và lực phản tác dụng giữa hai vật có cùng đư�
 :::
 
 <div class="figure-container">
-  <img src="/figures/tinh-hoc/hinh_1_9.png" alt="Hình 1-9: Lực tác dụng và phản tác dụng" style="max-height: 200px;" />
+  <img src="/figures/tinh-hoc/hinh_1_9.svg" alt="Hình 1-9: Lực tác dụng và phản tác dụng" style="max-height: 200px;" />
   <div class="figure-caption">Hình 1-9: Tiên đề tác dụng và phản tác dụng giữa hai vật A và B</div>
 </div>
 
@@ -302,7 +302,7 @@ Tuy nhiên nếu tác dụng lên lò xo cân bằng ở trạng thái nén hai 
 Nhờ tiên đề 5 có thể sử dụng các kết quả đã nghiên cứu cho vật rắn cân bằng cho trường hợp vật biến dạng cân bằng. Tuy nhiên, các kết quả đó chưa đủ để giải quyết bài toán cân bằng của vật biến dạng mà cần phải thêm các giả thiết về biến dạng (ví dụ định luật Húc trong sức bền vật liệu).
 
 <div class="figure-container">
-  <img src="/figures/tinh-hoc/hinh_1_10.png" alt="Hình 1-10: Tiên đề hóa rắn trên lò xo" style="max-height: 200px;" />
+  <img src="/figures/tinh-hoc/hinh_1_10.svg" alt="Hình 1-10: Tiên đề hóa rắn trên lò xo" style="max-height: 200px;" />
   <div class="figure-caption">Hình 1-10: Minh họa tiên đề hóa rắn đối với lò xo chịu nén/kéo</div>
 </div>
 
@@ -328,7 +328,7 @@ Dưới đây sẽ trình bày một số quy tắc để tìm các đặc trưn
 Hai vật liên kết tựa khi chúng trực tiếp tựa lên nhau. Giả sử chỗ tiếp xúc giữa hai vật tựa lên nhau được thực hiện theo các bề mặt, hoặc theo các đường, hoặc theo mặt và đường, hoặc theo điểm và bề mặt hay điểm và đường, là hoàn toàn nhẵn thì phản lực tựa có phương vuông góc với mặt tựa (hoặc đường tựa) (H. 1–11).
 
 <div class="figure-container">
-  <img src="/figures/tinh-hoc/hinh_1_11.png" alt="Hình 1-11: Các trường hợp liên kết tựa nhẵn" style="max-height: 280px;" />
+  <img src="/figures/tinh-hoc/hinh_1_11.svg" alt="Hình 1-11: Các trường hợp liên kết tựa nhẵn" style="max-height: 280px;" />
   <div class="figure-caption">Hình 1-11: Phản lực liên kết tựa nhẵn $\vec{N}$</div>
 </div>
 
@@ -336,7 +336,7 @@ Hai vật liên kết tựa khi chúng trực tiếp tựa lên nhau. Giả sử
 Phản lực của dây tác dụng lên vật khảo sát bao giờ cũng đặt vào chỗ buộc dây và hướng vào dây. Phản lực của dây còn được gọi là sức căng của dây, kí hiệu là $\vec{T}$ (H. 1–12a). Trong trường hợp dây vòng qua vật thì phản lực dây hướng dọc dây và hướng ra đối với mặt cắt của dây (H. 1–12b).
 
 <div class="figure-container">
-  <img src="/figures/tinh-hoc/hinh_1_12.png" alt="Hình 1-12: Liên kết dây mềm" style="max-height: 250px;" />
+  <img src="/figures/tinh-hoc/hinh_1_12.svg" alt="Hình 1-12: Liên kết dây mềm" style="max-height: 250px;" />
   <div class="figure-caption">Hình 1-12: Sức căng của dây $\vec{T}$</div>
 </div>
 
@@ -346,7 +346,7 @@ Hai vật có liên kết bản lề khi chúng có trục (chốt) chung. Trong
 Phản lực liên kết $\vec{R}$ trong trường hợp này đi qua tâm của trục và có phương chiều chưa xác định (H. 1–13). Vì vậy chúng thường được phân thành hai thành phần vuông góc với nhau $\vec{R}_x$ và $\vec{R}_y$, nằm trong mặt phẳng thẳng góc với đường trục tâm của bản lề.
 
 <div class="figure-container">
-  <img src="/figures/tinh-hoc/hinh_1_13.png" alt="Hình 1-13: Liên kết bản lề" style="max-height: 260px;" />
+  <img src="/figures/tinh-hoc/hinh_1_13.svg" alt="Hình 1-13: Liên kết bản lề" style="max-height: 260px;" />
   <div class="figure-caption">Hình 1-13: Phản lực liên kết bản lề trụ $\vec{R}$</div>
 </div>
 
@@ -356,7 +356,7 @@ Phản lực liên kết $\vec{R}$ trong trường hợp này đi qua tâm của
 - **Gối con lăn** (H. 1–14b): Phản lực liên kết của gối có con lăn được tìm theo quy tắc của phản lực liên kết tựa ($\vec{N}$ vuông góc với mặt tựa).
 
 <div class="figure-container">
-  <img src="/figures/tinh-hoc/hinh_1_14.png" alt="Hình 1-14: Gối cố định và gối di động con lăn" style="max-height: 220px;" />
+  <img src="/figures/tinh-hoc/hinh_1_14.svg" alt="Hình 1-14: Gối cố định và gối di động con lăn" style="max-height: 220px;" />
   <div class="figure-caption">Hình 1-14: (a) Gối cố định; (b) Gối con lăn</div>
 </div>
 
@@ -364,7 +364,7 @@ Phản lực liên kết $\vec{R}$ trong trường hợp này đi qua tâm của
 Liên kết gối cầu có thể thực hiện nhờ quả cầu gắn vào vật chịu liên kết và được đặt trong một vỏ cầu gắn liền với vật gây liên kết. Phản lực gối cầu đi qua tâm $O$ của vỏ cầu, có phương chiều chưa biết (H. 1–15b). Thông thường phản lực gối cầu được phân thành ba thành phần vuông góc nhau. Trường hợp tương tự liên kết gối cầu là liên kết cối (H. 1–15a).
 
 <div class="figure-container">
-  <img src="/figures/tinh-hoc/hinh_1_15.png" alt="Hình 1-15: Liên kết gối cầu và liên kết cối" style="max-height: 250px;" />
+  <img src="/figures/tinh-hoc/hinh_1_15.svg" alt="Hình 1-15: Liên kết gối cầu và liên kết cối" style="max-height: 250px;" />
   <div class="figure-caption">Hình 1-15: (a) Liên kết cối; (b) Liên kết gối cầu</div>
 </div>
 
@@ -374,7 +374,7 @@ Hai vật có liên kết ngàm khi vật chịu liên kết và vật gây liê
 - **Ngàm không gian** (H. 1–16b): Phản lực liên kết gồm ba thành phần lực thẳng góc nhau ($\vec{X}_A, \vec{Y}_A, \vec{Z}_A$) và ba thành phần ngẫu lực ($m_x, m_y, m_z$) trong ba mặt phẳng tọa độ.
 
 <div class="figure-container">
-  <img src="/figures/tinh-hoc/hinh_1_16.png" alt="Hình 1-16: Liên kết ngàm phẳng và ngàm không gian" style="max-height: 280px;" />
+  <img src="/figures/tinh-hoc/hinh_1_16.svg" alt="Hình 1-16: Liên kết ngàm phẳng và ngàm không gian" style="max-height: 280px;" />
   <div class="figure-caption">Hình 1-16: (a) Ngàm phẳng; (b) Ngàm không gian</div>
 </div>
 
@@ -382,7 +382,7 @@ Hai vật có liên kết ngàm khi vật chịu liên kết và vật gây liê
 Liên kết thanh được thực hiện nhờ các thanh thỏa mãn các điều kiện sau: Chỉ có lực tác dụng ở hai đầu, còn dọc thanh không có lực tác dụng và trọng lượng thanh không đáng kể. Những liên kết tại hai đầu thanh được thực hiện nhờ bản lề trụ, cầu,... Dựa theo tiên đề 1, phản lực liên kết thanh nằm dọc theo đường nối hai điểm đặt lực liên kết tại hai đầu thanh (H. 1–17).
 
 <div class="figure-container">
-  <img src="/figures/tinh-hoc/hinh_1_17.png" alt="Hình 1-17: Liên kết thanh" style="max-height: 260px;" />
+  <img src="/figures/tinh-hoc/hinh_1_17.svg" alt="Hình 1-17: Liên kết thanh" style="max-height: 260px;" />
   <div class="figure-caption">Hình 1-17: Phản lực liên kết thanh $\vec{S}_A, \vec{S}_B$</div>
 </div>
 
@@ -406,7 +406,7 @@ $$\vec{R} = \vec{F}_1 + \vec{F}_2 + ... + \vec{F}_n = \sum_{k=1}^n \vec{F}_k \ta
 Như đã thấy trên hình 1–18a vecto hợp lực $\vec{R}$ là vecto khép kín của đa giác $OABCD$, các cạnh của nó là những vecto song song, cùng chiều và có cùng trị số với các vecto biểu diễn các lực thành phần. Đa giác $OABCD$ được gọi là **đa giác lực**.
 
 <div class="figure-container">
-  <img src="/figures/tinh-hoc/hinh_1_18.png" alt="Hình 1-18: Đa giác lực xác định hợp lực của hệ lực đồng quy" style="max-height: 260px;" />
+  <img src="/figures/tinh-hoc/hinh_1_18.svg" alt="Hình 1-18: Đa giác lực xác định hợp lực của hệ lực đồng quy" style="max-height: 260px;" />
   <div class="figure-caption">Hình 1-18: Đa giác lực xác định hợp lực $\vec{R}$</div>
 </div>
 
@@ -451,7 +451,7 @@ Theo giả thiết: $F_1 d_1 = F_2 d_2$.
 Giả sử đường tác dụng của các ngẫu lực giao nhau tại $O$ và $O'$ (H. 1–19).
 
 <div class="figure-container">
-  <img src="/figures/tinh-hoc/hinh_1_19.png" alt="Hình 1-19: Biến đổi ngẫu lực trong cùng một mặt phẳng" style="max-height: 280px;" />
+  <img src="/figures/tinh-hoc/hinh_1_19.svg" alt="Hình 1-19: Biến đổi ngẫu lực trong cùng một mặt phẳng" style="max-height: 280px;" />
   <div class="figure-caption">Hình 1-19: Hai ngẫu lực cùng nằm trong một mặt phẳng tương đương nhau</div>
 </div>
 
@@ -475,7 +475,7 @@ Trong trường hợp đường tác dụng hai ngẫu lực không gặp nhau (
 Tác dụng của ngẫu lực không thay đổi khi dời ngẫu lực đến những mặt phẳng song song.
 
 <div class="figure-container">
-  <img src="/figures/tinh-hoc/hinh_1_20.png" alt="Hình 1-20: Dời ngẫu lực đến mặt phẳng song song" style="max-height: 280px;" />
+  <img src="/figures/tinh-hoc/hinh_1_20.svg" alt="Hình 1-20: Dời ngẫu lực đến mặt phẳng song song" style="max-height: 280px;" />
   <div class="figure-caption">Hình 1-20: Tác dụng của ngẫu lực không đổi khi dời sang mặt phẳng song song</div>
 </div>
 
@@ -507,7 +507,7 @@ Hợp hai ngẫu lực được một ngẫu lực có vecto mô men bằng tổ
 *Chứng minh:* Giả sử có hai ngẫu lực $(\vec{F}_1, \vec{F}'_1)$ và $(\vec{F}_2, \vec{F}'_2)$ nằm trong hai mặt phẳng giao nhau theo giao tuyến $OO'$ và có các vecto mô men tương ứng là $\vec{M}_1$ và $\vec{M}_2$ đặt tại $O$ (H. 1–21).
 
 <div class="figure-container">
-  <img src="/figures/tinh-hoc/hinh_1_21.png" alt="Hình 1-21: Hợp hai ngẫu lực trong không gian" style="max-height: 280px;" />
+  <img src="/figures/tinh-hoc/hinh_1_21.svg" alt="Hình 1-21: Hợp hai ngẫu lực trong không gian" style="max-height: 280px;" />
   <div class="figure-caption">Hình 1-21: Hợp hai ngẫu lực trong không gian: $\vec{M} = \vec{M}_1 + \vec{M}_2$</div>
 </div>
 

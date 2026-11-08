@@ -67,37 +67,37 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 24px auto;
-  padding: 12px;
+  margin: 28px auto;
+  padding: 16px;
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 8px;
+  border-radius: 10px;
   max-width: 90%;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.figure-container img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 .dark .figure-container {
-  background: #1e293b;
-  border-color: #334155;
-}
-
-.dark .figure-container img {
-  filter: contrast(1.1) brightness(0.95);
   background: #ffffff;
-  padding: 8px;
-  border-radius: 4px;
+  border: 1px solid #475569;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
 }
 
 .figure-caption {
-  margin-top: 10px;
-  font-size: 0.92rem;
+  margin-top: 12px;
+  font-size: 0.95rem;
   font-weight: 600;
-  color: #475569;
+  color: #1e293b;
   text-align: center;
 }
 
 .dark .figure-caption {
-  color: #cbd5e1;
+  color: #1e293b;
 }
 
 /* Original Page Preview Modal / Details */

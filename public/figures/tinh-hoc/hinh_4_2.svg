@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 280" width="100%" height="100%">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#1e293b" />
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2563eb" />
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#dc2626" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#16a34a" />
+    </marker>
+    <pattern id="hatch" width="8" height="8" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#94a3b8" stroke-width="1.2" />
+    </pattern>
+  </defs>
+  <style>
+    text { font-family: 'Times New Roman', serif; }
+    .lbl { font-size: 18px; font-style: italic; fill: #0f172a; }
+    .lbl-sub { font-size: 13px; font-style: italic; fill: #0f172a; }
+    .lbl-bold { font-size: 20px; font-style: italic; font-weight: bold; fill: #0f172a; }
+    .vec { stroke: #2563eb; stroke-width: 2.2; }
+    .axis { stroke: #64748b; stroke-width: 1.2; stroke-dasharray: 5,3; }
+    .solid { stroke: #1e293b; stroke-width: 1.8; fill: #f8fafc; }
+  </style>
+
+  <!-- Hệ trục tọa độ Oxyz -->
+  <line x1="80" y1="210" x2="80" y2="30" stroke="#1e293b" stroke-width="1.8" marker-end="url(#arrow)" />
+  <text x="65" y="35" class="lbl-bold">z</text>
+  
+  <line x1="80" y1="210" x2="400" y2="210" stroke="#1e293b" stroke-width="1.8" marker-end="url(#arrow)" />
+  <text x="395" y="230" class="lbl-bold">y</text>
+  
+  <line x1="80" y1="210" x2="25" y2="260" stroke="#1e293b" stroke-width="1.8" marker-end="url(#arrow)" />
+  <text x="15" y="270" class="lbl-bold">x</text>
+  <text x="65" y="225" class="lbl-bold">O</text>
+  
+  <!-- Vật thể không gian V -->
+  <ellipse cx="250" cy="110" rx="90" ry="55" class="solid" fill="#f1f5f9" />
+  
+  <!-- Trọng tâm C(xC, yC, zC) -->
+  <circle cx="235" cy="110" r="4.5" fill="#dc2626" />
+  <text x="245" y="105" class="lbl-bold" fill="#dc2626">C(x<tspan font-size="12">C</tspan>,y<tspan font-size="12">C</tspan>,z<tspan font-size="12">C</tspan>)</text>
+  
+  <!-- Vectơ vị trí r_C -->
+  <line x1="80" y1="210" x2="235" y2="110" stroke="#dc2626" stroke-width="2" marker-end="url(#arrow-red)" />
+  <text x="145" y="150" class="lbl-bold" fill="#dc2626">r&#8407;<tspan font-size="12" dy="4">C</tspan></text>
+  
+  <!-- Phân tố vi phân dV -->
+  <rect x="285" y="80" width="16" height="14" fill="#94a3b8" stroke="#1e293b" />
+  <text x="305" y="90" class="lbl">dV</text>
+</svg>

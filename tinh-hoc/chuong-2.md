@@ -76,7 +76,7 @@ Mọi hệ lực không gian $(\vec{F}_1, \vec{F}_2, ..., \vec{F}_n)$ tác dụn
 $$(\vec{F}_1, \vec{F}_2, ..., \vec{F}_n) \sim (\vec{R}', \vec{M}_O)$$
 
 <div class="figure-container">
-  <img src="/figures/tinh-hoc/hinh_2_1.png" alt="Hình 2-1: Thu gọn hệ lực không gian theo định lý Poinsot" style="max-height: 280px;" />
+  <img src="/figures/tinh-hoc/hinh_2_1.svg" alt="Hình 2-1: Thu gọn hệ lực không gian theo định lý Poinsot" style="max-height: 280px;" />
   <div class="figure-caption">Hình 2-1: Thu gọn hệ lực không gian về tâm O</div>
 </div>
 

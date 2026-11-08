@@ -62,7 +62,7 @@ $$\vec{a} = \sum_{k=1}^n \vec{a}_k = \sum_{k=1}^n \frac{\vec{F}_k}{m} = \frac{1}
 :::
 
 <div class="figure-container">
-  <img src="/figures/dong-luc-hoc/hinh_1_1.png" alt="Hình 1-1: Định luật cơ bản của động lực học Newton" style="max-height: 260px;" />
+  <img src="/figures/dong-luc-hoc/hinh_1_1.svg" alt="Hình 1-1: Định luật cơ bản của động lực học Newton" style="max-height: 260px;" />
   <div class="figure-caption">Hình 1-1: Phương trình cơ bản của động lực học chất điểm $m\vec{a} = \sum\vec{F}_k$</div>
 </div>
 

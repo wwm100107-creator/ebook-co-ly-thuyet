@@ -35,7 +35,7 @@ Khi các lực của hệ song song quay quanh điểm đặt của chúng theo 
 :::
 
 <div class="figure-container">
-  <img src="/figures/tinh-hoc/hinh_4_1.png" alt="Hình 4-1: Tâm của hệ lực song song" style="max-height: 260px;" />
+  <img src="/figures/tinh-hoc/hinh_4_1.svg" alt="Hình 4-1: Tâm của hệ lực song song" style="max-height: 260px;" />
   <div class="figure-caption">Hình 4-1: Xác định tâm của hệ lực song song C</div>
 </div>
 
@@ -62,7 +62,7 @@ $$\vec{r}_C = \frac{\displaystyle\int \vec{r} \, dP}{P} \tag{4-5}$$
 Đối với vật đồng nhất có khối lượng riêng $\gamma = \text{const}$, ta có $dP = \gamma \, dV$.
 
 <div class="figure-container">
-  <img src="/figures/tinh-hoc/hinh_4_2.png" alt="Hình 4-2: Trọng tâm của vật thể đồng nhất" style="max-height: 260px;" />
+  <img src="/figures/tinh-hoc/hinh_4_2.svg" alt="Hình 4-2: Trọng tâm của vật thể đồng nhất" style="max-height: 260px;" />
   <div class="figure-caption">Hình 4-2: Xác định trọng tâm của vật rắn</div>
 </div>
 

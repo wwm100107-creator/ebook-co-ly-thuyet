@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 320" width="100%" height="100%">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#1e293b" />
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2563eb" />
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#dc2626" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#16a34a" />
+    </marker>
+    <pattern id="hatch" width="8" height="8" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#94a3b8" stroke-width="1.2" />
+    </pattern>
+  </defs>
+  <style>
+    text { font-family: 'Times New Roman', serif; }
+    .lbl { font-size: 18px; font-style: italic; fill: #0f172a; }
+    .lbl-sub { font-size: 13px; font-style: italic; fill: #0f172a; }
+    .lbl-bold { font-size: 20px; font-style: italic; font-weight: bold; fill: #0f172a; }
+    .vec { stroke: #2563eb; stroke-width: 2.2; }
+    .axis { stroke: #64748b; stroke-width: 1.2; stroke-dasharray: 5,3; }
+    .solid { stroke: #1e293b; stroke-width: 1.8; fill: #f8fafc; }
+  </style>
+
+  <!-- Hệ quy chiếu cố định Oxyz -->
+  <g transform="translate(40, 20)">
+    <line x1="50" y1="240" x2="50" y2="90" stroke="#1e293b" stroke-width="2" marker-end="url(#arrow)" />
+    <text x="40" y="85" class="lbl-bold">z</text>
+    <line x1="50" y1="240" x2="200" y2="240" stroke="#1e293b" stroke-width="2" marker-end="url(#arrow)" />
+    <text x="205" y="245" class="lbl-bold">y</text>
+    <line x1="50" y1="240" x2="10" y2="280" stroke="#1e293b" stroke-width="2" marker-end="url(#arrow)" />
+    <text x="5" y="295" class="lbl-bold">x</text>
+    <circle cx="50" cy="240" r="4" fill="#0f172a" />
+    <text x="35" y="255" class="lbl-bold">O</text>
+  </g>
+  
+  <!-- Hệ quy chiếu chuyển động O'x'y'z' -->
+  <g transform="translate(180, 50)">
+    <line x1="60" y1="160" x2="60" y2="30" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow-blue)" />
+    <text x="50" y="25" class="lbl-bold" fill="#2563eb">z'</text>
+    <line x1="60" y1="160" x2="180" y2="140" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow-blue)" />
+    <text x="185" y="145" class="lbl-bold" fill="#2563eb">y'</text>
+    <line x1="60" y1="160" x2="20" y2="200" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow-blue)" />
+    <text x="15" y="215" class="lbl-bold" fill="#2563eb">x'</text>
+    <circle cx="60" cy="160" r="4" fill="#2563eb" />
+    <text x="45" y="175" class="lbl-bold" fill="#2563eb">O'</text>
+  </g>
+  
+  <!-- Điểm M chuyển động -->
+  <circle cx="380" cy="90" r="5" fill="#dc2626" />
+  <text x="390" y="85" class="lbl-bold" fill="#dc2626">M</text>
+  
+  <!-- Vectơ r_O', r_r, r_a -->
+  <line x1="90" y1="260" x2="240" y2="210" class="vec" marker-end="url(#arrow-blue)" />
+  <text x="150" y="250" class="lbl-bold" fill="#2563eb">r&#8407;<tspan font-size="12">O'</tspan></text>
+  
+  <line x1="240" y1="210" x2="380" y2="90" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-green)" />
+  <text x="320" y="160" class="lbl-bold" fill="#16a34a">r'&#8407;</text>
+  
+  <line x1="90" y1="260" x2="380" y2="90" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrow-red)" />
+  <text x="210" y="150" class="lbl-bold" fill="#dc2626">r&#8407;</text>
+</svg>

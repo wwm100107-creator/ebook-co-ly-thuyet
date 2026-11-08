@@ -56,7 +56,7 @@ Trong đó:
 - $Q_j$: Lực suy rộng ứng với tọa độ $q_j$.
 
 <div class="figure-container">
-  <img src="/figures/dong-luc-hoc/hinh_6_1.png" alt="Hình 6-1: Áp dụng phương trình Lagrange loại II cho cơ hệ hai bậc tự do" style="max-height: 270px;" />
+  <img src="/figures/dong-luc-hoc/hinh_6_1.svg" alt="Hình 6-1: Áp dụng phương trình Lagrange loại II cho cơ hệ hai bậc tự do" style="max-height: 270px;" />
   <div class="figure-caption">Hình 6-1: Khảo sát chuyển động của cơ hệ bằng phương trình Lagrange loại II</div>
 </div>
 

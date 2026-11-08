@@ -11,7 +11,7 @@ Chuyển động tịnh tiến của vật rắn là chuyển động trong đó
 :::
 
 <div class="figure-container">
-  <img src="/figures/dong-hoc/hinh_2_1.png" alt="Hình 2-1: Chuyển động tịnh tiến của vật rắn" style="max-height: 260px;" />
+  <img src="/figures/dong-hoc/hinh_2_1.svg" alt="Hình 2-1: Chuyển động tịnh tiến của vật rắn" style="max-height: 260px;" />
   <div class="figure-caption">Hình 2-1: Đoạn thẳng AB luôn song song với chính nó trong chuyển động tịnh tiến</div>
 </div>
 
@@ -52,7 +52,7 @@ Mọi điểm thuộc vật không nằm trên trục quay đều chuyển độ
 :::
 
 <div class="figure-container">
-  <img src="/figures/dong-hoc/hinh_2_2.png" alt="Hình 2-2: Vật rắn quay quanh trục cố định Oz" style="max-height: 280px;" />
+  <img src="/figures/dong-hoc/hinh_2_2.svg" alt="Hình 2-2: Vật rắn quay quanh trục cố định Oz" style="max-height: 280px;" />
   <div class="figure-caption">Hình 2-2: Góc quay $\phi$, vận tốc góc $\vec{\omega}$ và gia tốc góc $\vec{\varepsilon}$</div>
 </div>
 
@@ -150,7 +150,7 @@ $$v_1 = v_2 \implies r_1 \omega_1 = r_2 \omega_2 \implies i_{12} = \frac{\omega_
 trong đó $r_1, r_2$ là bán kính các vòng lăn, và $z_1, z_2$ là số răng của các bánh răng.
 
 <div class="figure-container">
-  <img src="/figures/dong-hoc/hinh_2_3.png" alt="Hình 2-3: Cơ cấu truyền động bánh răng ăn khớp" style="max-height: 250px;" />
+  <img src="/figures/dong-hoc/hinh_2_3.svg" alt="Hình 2-3: Cơ cấu truyền động bánh răng ăn khớp" style="max-height: 250px;" />
   <div class="figure-caption">Hình 2-3: Vận tốc tiếp tuyến tại điểm ăn khớp giữa hai bánh răng</div>
 </div>
 

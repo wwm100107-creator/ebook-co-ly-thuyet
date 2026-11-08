@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 220" width="100%" height="100%">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#1e293b" />
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2563eb" />
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#dc2626" />
+    </marker>
+    <pattern id="hatch" width="8" height="8" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#94a3b8" stroke-width="1.2" />
+    </pattern>
+  </defs>
+  <style>
+    text { font-family: 'Times New Roman', serif; }
+    .lbl { font-size: 18px; font-style: italic; fill: #0f172a; }
+    .lbl-sub { font-size: 14px; font-style: italic; fill: #0f172a; }
+    .lbl-bold { font-size: 20px; font-style: italic; font-weight: bold; fill: #0f172a; }
+    .vec { stroke: #2563eb; stroke-width: 2.2; }
+    .axis { stroke: #64748b; stroke-width: 1.2; stroke-dasharray: 5,3; }
+    .solid { stroke: #1e293b; stroke-width: 1.8; fill: #f8fafc; }
+  </style>
+
+  <!-- a) Gối cố định -->
+  <g transform="translate(30, 20)">
+    <!-- Bệ đất -->
+    <rect x="40" y="140" width="100" height="15" fill="url(#hatch)" stroke="#64748b" />
+    <line x1="40" y1="140" x2="140" y2="140" stroke="#1e293b" stroke-width="2" />
+    <!-- Tam giác gối -->
+    <polygon points="90,90 60,140 120,140" fill="#f1f5f9" stroke="#1e293b" stroke-width="2" />
+    <!-- Khớp bản lề O và dầm ngang -->
+    <circle cx="90" cy="90" r="8" fill="#ffffff" stroke="#1e293b" stroke-width="2" />
+    <circle cx="90" cy="90" r="2.5" fill="#0f172a" />
+    <rect x="90" y="85" width="80" height="10" fill="#f8fafc" stroke="#1e293b" stroke-width="1.8" />
+    <text x="65" y="85" class="lbl-bold">O</text>
+    
+    <!-- Hai phản lực X_o, Y_o -->
+    <line x1="90" y1="90" x2="150" y2="90" stroke="#dc2626" stroke-width="2.2" marker-end="url(#arrow-red)" />
+    <text x="145" y="115" class="lbl-bold" fill="#dc2626">X&#8407;<tspan font-size="12" dy="4">O</tspan></text>
+    
+    <line x1="90" y1="90" x2="90" y2="20" stroke="#dc2626" stroke-width="2.2" marker-end="url(#arrow-red)" />
+    <text x="95" y="30" class="lbl-bold" fill="#dc2626">Y&#8407;<tspan font-size="12" dy="4">O</tspan></text>
+    <text x="85" y="180" class="lbl-bold">a)</text>
+  </g>
+  
+  <!-- b) Gối con lăn -->
+  <g transform="translate(280, 20)">
+    <!-- Bệ đất -->
+    <rect x="40" y="140" width="100" height="15" fill="url(#hatch)" stroke="#64748b" />
+    <line x1="40" y1="140" x2="140" y2="140" stroke="#1e293b" stroke-width="2" />
+    <!-- Con lăn tròn -->
+    <circle cx="75" cy="130" r="9" fill="#f1f5f9" stroke="#1e293b" stroke-width="1.8" />
+    <circle cx="105" cy="130" r="9" fill="#f1f5f9" stroke="#1e293b" stroke-width="1.8" />
+    <!-- Tấm đệm trên con lăn & tam giác gối -->
+    <line x1="60" y1="121" x2="120" y2="121" stroke="#1e293b" stroke-width="2" />
+    <polygon points="90,80 65,121 115,121" fill="#f1f5f9" stroke="#1e293b" stroke-width="2" />
+    <!-- Bản lề & dầm -->
+    <circle cx="90" cy="80" r="8" fill="#ffffff" stroke="#1e293b" stroke-width="2" />
+    <rect x="90" y="75" width="80" height="10" fill="#f8fafc" stroke="#1e293b" stroke-width="1.8" />
+    
+    <!-- Phản lực N thẳng đứng -->
+    <line x1="90" y1="80" x2="90" y2="15" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrow-red)" />
+    <text x="95" y="25" class="lbl-bold" fill="#dc2626">N&#8407;</text>
+    <text x="85" y="180" class="lbl-bold">b)</text>
+  </g>
+</svg>

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 260" width="100%" height="100%">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#1e293b" />
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2563eb" />
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#dc2626" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#16a34a" />
+    </marker>
+    <pattern id="hatch" width="8" height="8" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#94a3b8" stroke-width="1.2" />
+    </pattern>
+  </defs>
+  <style>
+    text { font-family: 'Times New Roman', serif; }
+    .lbl { font-size: 18px; font-style: italic; fill: #0f172a; }
+    .lbl-sub { font-size: 13px; font-style: italic; fill: #0f172a; }
+    .lbl-bold { font-size: 20px; font-style: italic; font-weight: bold; fill: #0f172a; }
+    .vec { stroke: #2563eb; stroke-width: 2.2; }
+    .axis { stroke: #64748b; stroke-width: 1.2; stroke-dasharray: 5,3; }
+    .solid { stroke: #1e293b; stroke-width: 1.8; fill: #f8fafc; }
+  </style>
+
+  <!-- Mặt sàn nằm ngang nhám -->
+  <rect x="40" y="180" width="380" height="20" fill="url(#hatch)" stroke="#64748b" />
+  <line x1="40" y1="180" x2="420" y2="180" stroke="#1e293b" stroke-width="2" />
+  
+  <!-- Khối vật trượt chữ nhật -->
+  <rect x="150" y="90" width="140" height="90" fill="#f8fafc" stroke="#1e293b" stroke-width="2" />
+  <circle cx="220" cy="135" r="4" fill="#0f172a" />
+  <text x="225" y="130" class="lbl">C</text>
+  
+  <!-- Trọng lực P -->
+  <line x1="220" y1="135" x2="220" y2="210" class="vec" marker-end="url(#arrow-blue)" />
+  <text x="230" y="210" class="lbl-bold" fill="#2563eb">P&#8407;</text>
+  
+  <!-- Lực kéo ngang Q -->
+  <line x1="220" y1="135" x2="340" y2="135" class="vec" marker-end="url(#arrow-blue)" />
+  <text x="345" y="140" class="lbl-bold" fill="#2563eb">Q&#8407;</text>
+  
+  <!-- Phản lực pháp tuyến N -->
+  <line x1="200" y1="180" x2="200" y2="105" stroke="#dc2626" stroke-width="2.2" marker-end="url(#arrow-red)" />
+  <text x="180" y="115" class="lbl-bold" fill="#dc2626">N&#8407;</text>
+  
+  <!-- Lực ma sát F_ms ngược chiều kéo -->
+  <line x1="200" y1="180" x2="110" y2="180" stroke="#dc2626" stroke-width="2.2" marker-end="url(#arrow-red)" />
+  <text x="110" y="170" class="lbl-bold" fill="#dc2626">F&#8407;<tspan font-size="12" dy="4">ms</tspan></text>
+</svg>

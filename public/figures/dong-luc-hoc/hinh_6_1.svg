@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 280" width="100%" height="100%">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#1e293b" />
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2563eb" />
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#dc2626" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#16a34a" />
+    </marker>
+    <pattern id="hatch" width="8" height="8" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#94a3b8" stroke-width="1.2" />
+    </pattern>
+  </defs>
+  <style>
+    text { font-family: 'Times New Roman', serif; }
+    .lbl { font-size: 18px; font-style: italic; fill: #0f172a; }
+    .lbl-sub { font-size: 13px; font-style: italic; fill: #0f172a; }
+    .lbl-bold { font-size: 20px; font-style: italic; font-weight: bold; fill: #0f172a; }
+    .vec { stroke: #2563eb; stroke-width: 2.2; }
+    .axis { stroke: #64748b; stroke-width: 1.2; stroke-dasharray: 5,3; }
+    .solid { stroke: #1e293b; stroke-width: 1.8; fill: #f8fafc; }
+  </style>
+
+  <!-- Giá treo ngàm trần -->
+  <rect x="180" y="20" width="80" height="15" fill="url(#hatch)" stroke="#64748b" />
+  <line x1="180" y1="35" x2="260" y2="35" stroke="#1e293b" stroke-width="2" />
+  
+  <!-- Bản lề O -->
+  <circle cx="220" cy="35" r="4.5" fill="#0f172a" />
+  <text x="200" y="35" class="lbl-bold">O</text>
+  <line x1="220" y1="35" x2="220" y2="250" class="axis" />
+  
+  <!-- Thanh 1 chiều dài l1, góc lệch phi1 -->
+  <line x1="220" y1="35" x2="170" y2="130" stroke="#1e293b" stroke-width="4" stroke-linecap="round" />
+  <path d="M 220 70 A 35 35 0 0 1 200 80" fill="none" stroke="#2563eb" stroke-width="1.8" />
+  <text x="205" y="95" class="lbl-bold" fill="#2563eb">&#966;<tspan font-size="12">1</tspan></text>
+  
+  <!-- Khớp bản lề 1 & quả nặng m1 -->
+  <circle cx="170" cy="130" r="10" fill="#3b82f6" stroke="#1e293b" stroke-width="2" />
+  <text x="140" y="135" class="lbl-bold">m<tspan font-size="12">1</tspan></text>
+  <line x1="170" y1="130" x2="170" y2="250" class="axis" />
+  
+  <!-- Thanh 2 chiều dài l2, góc lệch phi2 -->
+  <line x1="170" y1="130" x2="210" y2="220" stroke="#1e293b" stroke-width="4" stroke-linecap="round" />
+  <path d="M 170 170 A 40 40 0 0 0 188 170" fill="none" stroke="#2563eb" stroke-width="1.8" />
+  <text x="175" y="185" class="lbl-bold" fill="#2563eb">&#966;<tspan font-size="12">2</tspan></text>
+  
+  <!-- Quả nặng m2 -->
+  <circle cx="210" cy="220" r="12" fill="#ef4444" stroke="#1e293b" stroke-width="2" />
+  <text x="225" y="230" class="lbl-bold">m<tspan font-size="12">2</tspan></text>
+</svg>

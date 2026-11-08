@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 320" width="100%" height="100%">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#1e293b" />
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2563eb" />
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#dc2626" />
+    </marker>
+    <pattern id="hatch" width="8" height="8" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#94a3b8" stroke-width="1.2" />
+    </pattern>
+  </defs>
+  <style>
+    text { font-family: 'Times New Roman', serif; }
+    .lbl { font-size: 18px; font-style: italic; fill: #0f172a; }
+    .lbl-sub { font-size: 14px; font-style: italic; fill: #0f172a; }
+    .lbl-bold { font-size: 20px; font-style: italic; font-weight: bold; fill: #0f172a; }
+    .vec { stroke: #2563eb; stroke-width: 2.2; }
+    .axis { stroke: #64748b; stroke-width: 1.2; stroke-dasharray: 5,3; }
+    .solid { stroke: #1e293b; stroke-width: 1.8; fill: #f8fafc; }
+  </style>
+
+  <!-- a) Ngàm phẳng -->
+  <g transform="translate(20, 30)">
+    <!-- Tường gạch chéo chôn ngàm -->
+    <rect x="20" y="30" width="50" height="160" fill="url(#hatch)" stroke="#64748b" />
+    <line x1="70" y1="30" x2="70" y2="190" stroke="#1e293b" stroke-width="2.5" />
+    <!-- Dầm ngàm nằm ngang -->
+    <rect x="70" y="95" width="130" height="18" fill="#f8fafc" stroke="#1e293b" stroke-width="2" />
+    <circle cx="70" cy="104" r="4" fill="#0f172a" />
+    <text x="50" y="125" class="lbl-bold">A</text>
+    
+    <!-- Phản lực X_A, Y_A và mô men ngàm m_A -->
+    <line x1="70" y1="104" x2="135" y2="104" stroke="#dc2626" stroke-width="2.2" marker-end="url(#arrow-red)" />
+    <text x="135" y="90" class="lbl-bold" fill="#dc2626">X&#8407;<tspan font-size="12" dy="4">A</tspan></text>
+    
+    <line x1="70" y1="104" x2="70" y2="40" stroke="#dc2626" stroke-width="2.2" marker-end="url(#arrow-red)" />
+    <text x="75" y="45" class="lbl-bold" fill="#dc2626">Y&#8407;<tspan font-size="12" dy="4">A</tspan></text>
+    
+    <path d="M 90 80 A 25 25 0 0 1 90 130" fill="none" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow)" />
+    <text x="100" y="145" class="lbl-bold" fill="#16a34a">m<tspan font-size="12" dy="4">A</tspan></text>
+    <text x="90" y="240" class="lbl-bold">a)</text>
+  </g>
+  
+  <!-- b) Ngàm không gian -->
+  <g transform="translate(280, 20)">
+    <!-- Trục tọa độ x, y, z ngàm tường -->
+    <polygon points="60,30 60,200 40,240 40,70" fill="url(#hatch)" stroke="#64748b" />
+    <line x1="60" y1="30" x2="60" y2="200" stroke="#1e293b" stroke-width="2" />
+    
+    <!-- Bản dầm chữ nhật ngàm ra không gian -->
+    <polygon points="60,110 200,110 240,140 100,140" fill="#f8fafc" stroke="#1e293b" stroke-width="2" />
+    <polygon points="200,110 240,140 240,150 200,120" fill="#e2e8f0" stroke="#1e293b" stroke-width="1.5" />
+    <polygon points="60,120 200,120 240,150 100,150" fill="#f8fafc" stroke="#1e293b" stroke-width="1.5" />
+    
+    <!-- 3 lực X_A, Y_A, Z_A -->
+    <line x1="60" y1="110" x2="60" y2="40" stroke="#dc2626" stroke-width="2" marker-end="url(#arrow-red)" />
+    <text x="40" y="45" class="lbl-bold" fill="#dc2626">Z&#8407;<tspan font-size="12" dy="4">A</tspan></text>
+    
+    <line x1="60" y1="110" x2="160" y2="110" stroke="#dc2626" stroke-width="2" marker-end="url(#arrow-red)" />
+    <text x="165" y="105" class="lbl-bold" fill="#dc2626">Y&#8407;<tspan font-size="12" dy="4">A</tspan></text>
+    
+    <line x1="60" y1="110" x2="25" y2="180" stroke="#dc2626" stroke-width="2" marker-end="url(#arrow-red)" />
+    <text x="15" y="195" class="lbl-bold" fill="#dc2626">X&#8407;<tspan font-size="12" dy="4">A</tspan></text>
+    
+    <!-- Các mômen xoay m_x, m_y, m_z -->
+    <text x="85" y="75" class="lbl-bold" fill="#16a34a">m<tspan font-size="12" dy="4">x</tspan></text>
+    <text x="120" y="140" class="lbl-bold" fill="#16a34a">m<tspan font-size="12" dy="4">z</tspan></text>
+    <text x="10" y="100" class="lbl-bold" fill="#16a34a">m<tspan font-size="12" dy="4">y</tspan></text>
+    <text x="120" y="250" class="lbl-bold">b)</text>
+  </g>
+</svg>
