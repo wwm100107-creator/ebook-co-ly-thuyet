@@ -17,27 +17,26 @@
     </pattern>
   </defs>
   <style>
-    text { font-family: 'Times New Roman', serif; }
+    text { font-family: 'Times New Roman', 'Cambria Math', serif; }
     .lbl { font-size: 18px; font-style: italic; fill: #0f172a; }
-    .lbl-sub { font-size: 13px; font-style: italic; fill: #0f172a; }
     .lbl-bold { font-size: 20px; font-style: italic; font-weight: bold; fill: #0f172a; }
     .vec { stroke: #2563eb; stroke-width: 2.2; }
     .axis { stroke: #64748b; stroke-width: 1.2; stroke-dasharray: 5,3; }
     .solid { stroke: #1e293b; stroke-width: 1.8; fill: #f8fafc; }
   </style>
 
-  <!-- Chất điểm khối lượng m -->
   <circle cx="160" cy="110" r="22" fill="#3b82f6" stroke="#1e293b" stroke-width="2" />
   <text x="153" y="117" class="lbl-bold" fill="#ffffff">m</text>
   
-  <!-- Quỹ đạo chuyển động nét đứt -->
   <path d="M 60 170 Q 160 110, 360 80" fill="none" stroke="#94a3b8" stroke-dasharray="4,3" />
   
-  <!-- Lực tác dụng F -->
   <line x1="180" y1="105" x2="290" y2="85" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow-red)" />
-  <text x="295" y="80" class="lbl-bold" fill="#dc2626">F&#8407;</text>
+  <g><text x="295" y="80" class="lbl-bold" fill="#dc2626">F</text><path d="M 295 62 h 13 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#dc2626" stroke-width="1.3" stroke-linecap="round" /></g>
   
-  <!-- Gia tốc sinh ra a = F/m cùng hướng -->
   <line x1="180" y1="120" x2="260" y2="105" stroke="#16a34a" stroke-width="2.5" marker-end="url(#arrow-green)" />
-  <text x="240" y="135" class="lbl-bold" fill="#16a34a">a&#8407; = F&#8407;/m</text>
+  <g>
+    <text x="240" y="135" class="lbl-bold" fill="#16a34a">a = F/m</text>
+    <path d="M 240 117 h 11 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#16a34a" stroke-width="1.3" stroke-linecap="round" />
+    <path d="M 264 117 h 12 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#16a34a" stroke-width="1.3" stroke-linecap="round" />
+  </g>
 </svg>

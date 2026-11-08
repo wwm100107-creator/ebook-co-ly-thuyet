@@ -17,31 +17,33 @@
     </pattern>
   </defs>
   <style>
-    text { font-family: 'Times New Roman', serif; }
+    text { font-family: 'Times New Roman', 'Cambria Math', serif; }
     .lbl { font-size: 18px; font-style: italic; fill: #0f172a; }
-    .lbl-sub { font-size: 13px; font-style: italic; fill: #0f172a; }
     .lbl-bold { font-size: 20px; font-style: italic; font-weight: bold; fill: #0f172a; }
     .vec { stroke: #2563eb; stroke-width: 2.2; }
     .axis { stroke: #64748b; stroke-width: 1.2; stroke-dasharray: 5,3; }
     .solid { stroke: #1e293b; stroke-width: 1.8; fill: #f8fafc; }
   </style>
 
-  <!-- Mặt liên kết trơn phi -->
   <path d="M 60 190 Q 200 130, 380 200" fill="none" stroke="#1e293b" stroke-width="2" />
   <path d="M 60 190 Q 200 130, 380 200 L 380 220 L 60 220 Z" fill="url(#hatch)" stroke="#64748b" />
   
-  <!-- Chất điểm M -->
   <circle cx="210" cy="148" r="6" fill="#3b82f6" />
   <text x="205" y="135" class="lbl-bold">M</text>
   
-  <!-- Di chuyển khả dĩ delta r nằm trên tiếp tuyến -->
   <line x1="210" y1="148" x2="300" y2="135" stroke="#16a34a" stroke-width="2.5" marker-end="url(#arrow-green)" />
-  <text x="305" y="135" class="lbl-bold" fill="#16a34a">&#948;r&#8407;</text>
+  <g>
+    <text x="305" y="135" class="lbl-bold" fill="#16a34a">&#948;r</text>
+    <path d="M 314 117 h 10 l -2.5 -2.5 m 2.5 2.5 l -2.5 2.5" fill="none" stroke="#16a34a" stroke-width="1.3" stroke-linecap="round" />
+  </g>
   
-  <!-- Phản lực liên kết lý tưởng N vuông góc với delta r -->
   <line x1="210" y1="148" x2="195" y2="55" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrow-red)" />
   <polyline points="208,135 220,133 222,146" fill="none" stroke="#64748b" />
-  <text x="180" y="55" class="lbl-bold" fill="#dc2626">N&#8407;</text>
+  <g><text x="180" y="55" class="lbl-bold" fill="#dc2626">N</text><path d="M 180 37 h 15 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#dc2626" stroke-width="1.3" stroke-linecap="round" /></g>
   
-  <text x="140" y="245" class="lbl-bold" fill="#dc2626">&#948;A<tspan font-size="12">N</tspan> = N&#8407; &#183; &#948;r&#8407; = 0</text>
+  <g>
+    <text x="140" y="245" class="lbl-bold" fill="#dc2626">&#948;A<tspan font-size="12">N</tspan> = N &#183; &#948;r = 0</text>
+    <path d="M 197 227 h 14 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#dc2626" stroke-width="1.3" stroke-linecap="round" />
+    <path d="M 235 227 h 10 l -2.5 -2.5 m 2.5 2.5 l -2.5 2.5" fill="none" stroke="#dc2626" stroke-width="1.3" stroke-linecap="round" />
+  </g>
 </svg>

@@ -14,47 +14,39 @@
     </pattern>
   </defs>
   <style>
-    text { font-family: 'Times New Roman', serif; }
+    text { font-family: 'Times New Roman', 'Cambria Math', serif; }
     .lbl { font-size: 18px; font-style: italic; fill: #0f172a; }
-    .lbl-sub { font-size: 14px; font-style: italic; fill: #0f172a; }
     .lbl-bold { font-size: 20px; font-style: italic; font-weight: bold; fill: #0f172a; }
     .vec { stroke: #2563eb; stroke-width: 2.2; }
     .axis { stroke: #64748b; stroke-width: 1.2; stroke-dasharray: 5,3; }
     .solid { stroke: #1e293b; stroke-width: 1.8; fill: #f8fafc; }
   </style>
 
-  <!-- Trường hợp 1: hút/đẩy dọc đường nối tâm -->
   <g transform="translate(0, 10)">
     <circle cx="120" cy="50" r="40" class="solid" />
     <text x="110" y="55" class="lbl-bold">A</text>
-    
     <circle cx="280" cy="50" r="40" class="solid" />
     <text x="270" y="55" class="lbl-bold">B</text>
-    
     <line x1="60" y1="50" x2="340" y2="50" class="axis" />
     
-    <!-- Lực tác dụng lẫn nhau hướng vào nhau -->
     <line x1="160" y1="50" x2="210" y2="50" class="vec" marker-end="url(#arrow-blue)" />
-    <text x="180" y="40" class="lbl-bold" fill="#2563eb">F&#8407;</text>
+    <g><text x="180" y="40" class="lbl-bold" fill="#2563eb">F</text><path d="M 180 22 h 13 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#2563eb" stroke-width="1.3" stroke-linecap="round" /></g>
     
     <line x1="240" y1="50" x2="190" y2="50" class="vec" marker-end="url(#arrow-blue)" />
-    <text x="200" y="40" class="lbl-bold" fill="#2563eb">F'&#8407;</text>
+    <g><text x="200" y="40" class="lbl-bold" fill="#2563eb">F'</text><path d="M 200 22 h 15 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#2563eb" stroke-width="1.3" stroke-linecap="round" /></g>
   </g>
   
-  <!-- Trường hợp 2: hướng ra xa -->
   <g transform="translate(0, 120)">
     <circle cx="120" cy="50" r="40" class="solid" />
     <text x="110" y="55" class="lbl-bold">A</text>
-    
     <circle cx="280" cy="50" r="40" class="solid" />
     <text x="270" y="55" class="lbl-bold">B</text>
-    
     <line x1="60" y1="50" x2="340" y2="50" class="axis" />
     
     <line x1="80" y1="50" x2="40" y2="50" class="vec" marker-end="url(#arrow-blue)" />
-    <text x="45" y="40" class="lbl-bold" fill="#2563eb">F'&#8407;</text>
+    <g><text x="45" y="40" class="lbl-bold" fill="#2563eb">F'</text><path d="M 45 22 h 15 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#2563eb" stroke-width="1.3" stroke-linecap="round" /></g>
     
     <line x1="320" y1="50" x2="360" y2="50" class="vec" marker-end="url(#arrow-blue)" />
-    <text x="340" y="40" class="lbl-bold" fill="#2563eb">F&#8407;</text>
+    <g><text x="340" y="40" class="lbl-bold" fill="#2563eb">F</text><path d="M 340 22 h 13 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#2563eb" stroke-width="1.3" stroke-linecap="round" /></g>
   </g>
 </svg>

@@ -17,35 +17,29 @@
     </pattern>
   </defs>
   <style>
-    text { font-family: 'Times New Roman', serif; }
+    text { font-family: 'Times New Roman', 'Cambria Math', serif; }
     .lbl { font-size: 18px; font-style: italic; fill: #0f172a; }
-    .lbl-sub { font-size: 13px; font-style: italic; fill: #0f172a; }
     .lbl-bold { font-size: 20px; font-style: italic; font-weight: bold; fill: #0f172a; }
     .vec { stroke: #2563eb; stroke-width: 2.2; }
     .axis { stroke: #64748b; stroke-width: 1.2; stroke-dasharray: 5,3; }
     .solid { stroke: #1e293b; stroke-width: 1.8; fill: #f8fafc; }
   </style>
 
-  <!-- Đường tâm va chạm -->
   <line x1="40" y1="130" x2="440" y2="130" class="axis" />
   
-  <!-- Quả cầu 1 khối lượng m1 -->
   <circle cx="150" cy="130" r="45" fill="#bfdbfe" stroke="#1e293b" stroke-width="2" />
   <circle cx="150" cy="130" r="4" fill="#0f172a" />
   <text x="140" y="135" class="lbl-bold">m<tspan font-size="12">1</tspan></text>
   
-  <!-- Vận tốc trước va chạm u1 -->
   <line x1="150" y1="130" x2="240" y2="130" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow-blue)" />
-  <text x="210" y="115" class="lbl-bold" fill="#2563eb">u&#8407;<tspan font-size="12">1</tspan></text>
+  <g><text x="210" y="115" class="lbl-bold" fill="#2563eb">u<tspan font-size="12" dy="4">1</tspan></text><path d="M 210 97 h 12 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#2563eb" stroke-width="1.3" stroke-linecap="round" /></g>
   
-  <!-- Quả cầu 2 khối lượng m2 -->
   <circle cx="340" cy="130" r="35" fill="#fecaca" stroke="#1e293b" stroke-width="2" />
   <circle cx="340" cy="130" r="4" fill="#0f172a" />
   <text x="330" y="135" class="lbl-bold">m<tspan font-size="12">2</tspan></text>
   
-  <!-- Vận tốc trước va chạm u2 -->
   <line x1="340" y1="130" x2="270" y2="130" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrow-red)" />
-  <text x="275" y="115" class="lbl-bold" fill="#dc2626">u&#8407;<tspan font-size="12">2</tspan></text>
+  <g><text x="275" y="115" class="lbl-bold" fill="#dc2626">u<tspan font-size="12" dy="4">2</tspan></text><path d="M 275 97 h 12 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#dc2626" stroke-width="1.3" stroke-linecap="round" /></g>
   
   <text x="160" y="220" class="lbl-bold">Hệ số hồi phục: k = |v<tspan font-size="12">2</tspan> - v<tspan font-size="12">1</tspan>| / |u<tspan font-size="12">1</tspan> - u<tspan font-size="12">2</tspan>|</text>
 </svg>

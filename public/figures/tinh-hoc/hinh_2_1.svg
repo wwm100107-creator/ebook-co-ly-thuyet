@@ -17,34 +17,30 @@
     </pattern>
   </defs>
   <style>
-    text { font-family: 'Times New Roman', serif; }
+    text { font-family: 'Times New Roman', 'Cambria Math', serif; }
     .lbl { font-size: 18px; font-style: italic; fill: #0f172a; }
-    .lbl-sub { font-size: 13px; font-style: italic; fill: #0f172a; }
     .lbl-bold { font-size: 20px; font-style: italic; font-weight: bold; fill: #0f172a; }
     .vec { stroke: #2563eb; stroke-width: 2.2; }
     .axis { stroke: #64748b; stroke-width: 1.2; stroke-dasharray: 5,3; }
     .solid { stroke: #1e293b; stroke-width: 1.8; fill: #f8fafc; }
   </style>
 
-  <!-- Vật thể elip -->
   <ellipse cx="200" cy="140" rx="100" ry="65" class="solid" />
-  
   <circle cx="160" cy="150" r="4.5" fill="#0f172a" />
   <text x="140" y="155" class="lbl-bold">O</text>
   
-  <!-- Lực thu gọn R'_O -->
   <line x1="160" y1="150" x2="90" y2="80" class="vec" marker-end="url(#arrow-blue)" />
-  <text x="60" y="75" class="lbl-bold" fill="#2563eb">R'&#8407;<tspan font-size="12" dy="4">O</tspan></text>
+  <g><text x="60" y="75" class="lbl-bold" fill="#2563eb">R'<tspan font-size="12" dy="4">O</tspan></text><path d="M 60 57 h 15 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#2563eb" stroke-width="1.3" stroke-linecap="round" /></g>
   
-  <!-- Mô men chính M_O vuông góc -->
   <line x1="160" y1="150" x2="220" y2="40" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrow-red)" />
   <path d="M 205 75 A 15 15 0 0 1 228 85" fill="none" stroke="#dc2626" stroke-width="1.8" marker-end="url(#arrow-red)" />
-  <text x="235" y="45" class="lbl-bold" fill="#dc2626">M&#8407;<tspan font-size="12" dy="-5">O</tspan></text>
+  <g>
+    <text x="235" y="45" class="lbl-bold" fill="#dc2626">M<tspan font-size="12" dy="-5">O</tspan></text>
+    <path d="M 235 27 h 16 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#dc2626" stroke-width="1.3" stroke-linecap="round" />
+  </g>
   
-  <!-- Mũi tên tương đương -->
   <text x="320" y="145" font-size="30" fill="#64748b">&#8801;</text>
   
-  <!-- Hợp lực duy nhất R cách O một khoảng d -->
   <ellipse cx="430" cy="140" rx="90" ry="60" class="solid" />
   <circle cx="400" cy="150" r="4.5" fill="#0f172a" />
   <text x="385" y="165" class="lbl-bold">O</text>
@@ -54,5 +50,5 @@
   <text x="420" y="145" class="lbl-bold" fill="#16a34a">d</text>
   
   <line x1="435" y1="115" x2="385" y2="55" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrow-red)" />
-  <text x="360" y="55" class="lbl-bold" fill="#dc2626">R&#8407;</text>
+  <g><text x="360" y="55" class="lbl-bold" fill="#dc2626">R</text><path d="M 360 37 h 14 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#dc2626" stroke-width="1.3" stroke-linecap="round" /></g>
 </svg>

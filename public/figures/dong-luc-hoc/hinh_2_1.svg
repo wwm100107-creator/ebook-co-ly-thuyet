@@ -17,16 +17,14 @@
     </pattern>
   </defs>
   <style>
-    text { font-family: 'Times New Roman', serif; }
+    text { font-family: 'Times New Roman', 'Cambria Math', serif; }
     .lbl { font-size: 18px; font-style: italic; fill: #0f172a; }
-    .lbl-sub { font-size: 13px; font-style: italic; fill: #0f172a; }
     .lbl-bold { font-size: 20px; font-style: italic; font-weight: bold; fill: #0f172a; }
     .vec { stroke: #2563eb; stroke-width: 2.2; }
     .axis { stroke: #64748b; stroke-width: 1.2; stroke-dasharray: 5,3; }
     .solid { stroke: #1e293b; stroke-width: 1.8; fill: #f8fafc; }
   </style>
 
-  <!-- Hệ trục tọa độ Oxyz -->
   <line x1="80" y1="210" x2="80" y2="40" stroke="#1e293b" stroke-width="2" marker-end="url(#arrow)" />
   <text x="65" y="40" class="lbl-bold">z</text>
   <line x1="80" y1="210" x2="400" y2="210" stroke="#1e293b" stroke-width="2" marker-end="url(#arrow)" />
@@ -35,13 +33,11 @@
   <text x="15" y="270" class="lbl-bold">x</text>
   <text x="65" y="225" class="lbl-bold">O</text>
   
-  <!-- Chất điểm M(x, y, z) -->
   <circle cx="260" cy="110" r="6" fill="#3b82f6" />
   <text x="270" y="105" class="lbl-bold">M(x,y,z)</text>
   
-  <!-- Vectơ lực F và 3 thành phần Fx, Fy, Fz -->
   <line x1="260" y1="110" x2="350" y2="65" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrow-red)" />
-  <text x="355" y="65" class="lbl-bold" fill="#dc2626">F&#8407;</text>
+  <g><text x="355" y="65" class="lbl-bold" fill="#dc2626">F</text><path d="M 355 47 h 13 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#dc2626" stroke-width="1.3" stroke-linecap="round" /></g>
   
   <line x1="260" y1="110" x2="330" y2="110" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow-blue)" />
   <text x="335" y="115" class="lbl">F<tspan font-size="12">y</tspan></text>

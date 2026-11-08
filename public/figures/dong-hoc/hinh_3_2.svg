@@ -17,29 +17,30 @@
     </pattern>
   </defs>
   <style>
-    text { font-family: 'Times New Roman', serif; }
+    text { font-family: 'Times New Roman', 'Cambria Math', serif; }
     .lbl { font-size: 18px; font-style: italic; fill: #0f172a; }
-    .lbl-sub { font-size: 13px; font-style: italic; fill: #0f172a; }
     .lbl-bold { font-size: 20px; font-style: italic; font-weight: bold; fill: #0f172a; }
     .vec { stroke: #2563eb; stroke-width: 2.2; }
     .axis { stroke: #64748b; stroke-width: 1.2; stroke-dasharray: 5,3; }
     .solid { stroke: #1e293b; stroke-width: 1.8; fill: #f8fafc; }
   </style>
 
-  <!-- Trục quay omega_e -->
   <line x1="160" y1="230" x2="160" y2="50" stroke="#1e293b" stroke-width="2" marker-end="url(#arrow)" />
-  <text x="135" y="50" class="lbl-bold">&#969;&#8407;<tspan font-size="12">e</tspan></text>
+  <g><text x="135" y="50" class="lbl-bold" fill="#1e293b">&#969;<tspan font-size="12" dy="4">e</tspan></text><path d="M 135 32 h 14 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#1e293b" stroke-width="1.3" stroke-linecap="round" /></g>
   
-  <!-- Điểm M -->
   <circle cx="160" cy="150" r="4.5" fill="#0f172a" />
   <text x="140" y="165" class="lbl-bold">M</text>
   
-  <!-- Vận tốc tương đối v_r -->
   <line x1="160" y1="150" x2="270" y2="150" class="vec" marker-end="url(#arrow-blue)" />
-  <text x="275" y="155" class="lbl-bold" fill="#2563eb">v&#8407;<tspan font-size="12">r</tspan></text>
+  <g><text x="275" y="155" class="lbl-bold" fill="#2563eb">v<tspan font-size="12" dy="4">r</tspan></text><path d="M 275 137 h 12 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#2563eb" stroke-width="1.3" stroke-linecap="round" /></g>
   
-  <!-- Gia tốc Coriolis a_C = 2(omega_e x v_r) hướng vuông góc -->
   <line x1="160" y1="150" x2="160" y2="70" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrow-red)" />
   <polyline points="160,135 175,135 175,150" fill="none" stroke="#64748b" />
-  <text x="170" y="75" class="lbl-bold" fill="#dc2626">a&#8407;<tspan font-size="12">C</tspan> = 2(&#969;&#8407;<tspan font-size="12">e</tspan> &#215; v&#8407;<tspan font-size="12">r</tspan>)</text>
+  
+  <g>
+    <text x="170" y="75" class="lbl-bold" fill="#dc2626">a<tspan font-size="12" dy="4">C</tspan><tspan dy="-4"> = 2(&#969;</tspan><tspan font-size="12" dy="4">e</tspan><tspan dy="-4"> &#215; v</tspan><tspan font-size="12" dy="4">r</tspan><tspan dy="-4">)</tspan></text>
+    <path d="M 170 57 h 12 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#dc2626" stroke-width="1.3" stroke-linecap="round" />
+    <path d="M 224 57 h 13 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#dc2626" stroke-width="1.3" stroke-linecap="round" />
+    <path d="M 264 57 h 12 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#dc2626" stroke-width="1.3" stroke-linecap="round" />
+  </g>
 </svg>

@@ -17,30 +17,24 @@
     </pattern>
   </defs>
   <style>
-    text { font-family: 'Times New Roman', serif; }
+    text { font-family: 'Times New Roman', 'Cambria Math', serif; }
     .lbl { font-size: 18px; font-style: italic; fill: #0f172a; }
-    .lbl-sub { font-size: 13px; font-style: italic; fill: #0f172a; }
     .lbl-bold { font-size: 20px; font-style: italic; font-weight: bold; fill: #0f172a; }
     .vec { stroke: #2563eb; stroke-width: 2.2; }
     .axis { stroke: #64748b; stroke-width: 1.2; stroke-dasharray: 5,3; }
     .solid { stroke: #1e293b; stroke-width: 1.8; fill: #f8fafc; }
   </style>
 
-  <!-- Hai trục song song: trục quán tính chính qua khối tâm C (z0) và trục quay z bất kỳ -->
   <line x1="150" y1="250" x2="150" y2="40" stroke="#1e293b" stroke-width="2" marker-end="url(#arrow)" />
   <text x="135" y="40" class="lbl-bold">z<tspan font-size="12">0</tspan></text>
   
   <line x1="270" y1="250" x2="270" y2="40" stroke="#1e293b" stroke-width="2" marker-end="url(#arrow)" />
   <text x="275" y="40" class="lbl-bold">z</text>
   
-  <!-- Vật thể rắn -->
   <ellipse cx="210" cy="140" rx="130" ry="60" class="solid" />
-  
-  <!-- Khối tâm C nằm trên z0 -->
   <circle cx="150" cy="140" r="5" fill="#dc2626" />
   <text x="130" y="145" class="lbl-bold" fill="#dc2626">C</text>
   
-  <!-- Khoảng cách d giữa 2 trục -->
   <line x1="150" y1="190" x2="270" y2="190" stroke="#16a34a" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)" />
   <text x="205" y="180" class="lbl-bold" fill="#16a34a">d</text>
   

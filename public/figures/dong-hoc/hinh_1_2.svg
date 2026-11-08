@@ -17,35 +17,27 @@
     </pattern>
   </defs>
   <style>
-    text { font-family: 'Times New Roman', serif; }
+    text { font-family: 'Times New Roman', 'Cambria Math', serif; }
     .lbl { font-size: 18px; font-style: italic; fill: #0f172a; }
-    .lbl-sub { font-size: 13px; font-style: italic; fill: #0f172a; }
     .lbl-bold { font-size: 20px; font-style: italic; font-weight: bold; fill: #0f172a; }
     .vec { stroke: #2563eb; stroke-width: 2.2; }
     .axis { stroke: #64748b; stroke-width: 1.2; stroke-dasharray: 5,3; }
     .solid { stroke: #1e293b; stroke-width: 1.8; fill: #f8fafc; }
   </style>
 
-  <!-- Quỹ đạo cong -->
   <path d="M 60 200 Q 180 60, 380 140" fill="none" stroke="#1e293b" stroke-width="2" />
-  
-  <!-- Điểm M trên quỹ đạo -->
   <circle cx="205" cy="115" r="5" fill="#0f172a" />
   <text x="195" y="105" class="lbl-bold">M</text>
   
-  <!-- Tiếp tuyến tau -->
   <line x1="205" y1="115" x2="310" y2="90" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow-blue)" />
-  <text x="315" y="90" class="lbl-bold" fill="#2563eb">&#964;&#8407;</text>
+  <g><text x="315" y="90" class="lbl-bold" fill="#2563eb">&#964;</text><path d="M 315 72 h 12 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#2563eb" stroke-width="1.3" stroke-linecap="round" /></g>
   
-  <!-- Pháp tuyến chính n hướng vào tâm cong -->
   <line x1="205" y1="115" x2="235" y2="205" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrow-red)" />
-  <text x="240" y="215" class="lbl-bold" fill="#dc2626">n&#8407;</text>
+  <g><text x="240" y="215" class="lbl-bold" fill="#dc2626">n</text><path d="M 240 197 h 12 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#dc2626" stroke-width="1.3" stroke-linecap="round" /></g>
   
-  <!-- Phó pháp tuyến b vuông góc -->
   <line x1="205" y1="115" x2="140" y2="40" stroke="#16a34a" stroke-width="2.5" marker-end="url(#arrow-green)" />
-  <text x="125" y="40" class="lbl-bold" fill="#16a34a">b&#8407;</text>
+  <g><text x="125" y="40" class="lbl-bold" fill="#16a34a">b</text><path d="M 125 22 h 12 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#16a34a" stroke-width="1.3" stroke-linecap="round" /></g>
   
-  <!-- Bán kính cong rho và tâm cong C -->
   <circle cx="250" cy="245" r="4" fill="#64748b" />
   <text x="260" y="250" class="lbl">C</text>
   <line x1="205" y1="115" x2="250" y2="245" stroke="#64748b" stroke-dasharray="4,3" />

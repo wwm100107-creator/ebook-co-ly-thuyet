@@ -14,9 +14,8 @@
     </pattern>
   </defs>
   <style>
-    text { font-family: 'Times New Roman', serif; }
+    text { font-family: 'Times New Roman', 'Cambria Math', serif; }
     .lbl { font-size: 18px; font-style: italic; fill: #0f172a; }
-    .lbl-sub { font-size: 14px; font-style: italic; fill: #0f172a; }
     .lbl-bold { font-size: 20px; font-style: italic; font-weight: bold; fill: #0f172a; }
     .vec { stroke: #2563eb; stroke-width: 2.2; }
     .axis { stroke: #64748b; stroke-width: 1.2; stroke-dasharray: 5,3; }
@@ -27,17 +26,15 @@
   <text x="40" y="195" class="lbl-bold">O</text>
   
   <line x1="60" y1="180" x2="160" y2="130" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)" />
-  <text x="100" y="145" class="lbl">r&#8407;<tspan font-size="12" dy="4">1</tspan></text>
+  <g><text x="100" y="145" class="lbl" fill="#64748b">r<tspan font-size="12" dy="4">1</tspan></text><path d="M 100 127 h 10 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#64748b" stroke-width="1.3" stroke-linecap="round" /></g>
   
   <line x1="60" y1="180" x2="220" y2="180" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)" />
-  <text x="140" y="205" class="lbl">r&#8407;<tspan font-size="12" dy="4">2</tspan></text>
+  <g><text x="140" y="205" class="lbl" fill="#64748b">r<tspan font-size="12" dy="4">2</tspan></text><path d="M 140 187 h 10 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#64748b" stroke-width="1.3" stroke-linecap="round" /></g>
   
-  <!-- Cặp lực F1, F2 -->
   <line x1="160" y1="130" x2="220" y2="180" stroke="#94a3b8" stroke-dasharray="4,3" />
-  
   <line x1="160" y1="130" x2="110" y2="70" class="vec" marker-end="url(#arrow-blue)" />
-  <text x="110" y="60" class="lbl-bold" fill="#2563eb">F&#8407;<tspan font-size="14" dy="4">1</tspan></text>
+  <g><text x="110" y="60" class="lbl-bold" fill="#2563eb">F<tspan font-size="12" dy="4">1</tspan></text><path d="M 110 42 h 13 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#2563eb" stroke-width="1.3" stroke-linecap="round" /></g>
   
   <line x1="220" y1="180" x2="270" y2="240" class="vec" marker-end="url(#arrow-blue)" />
-  <text x="275" y="235" class="lbl-bold" fill="#2563eb">F&#8407;<tspan font-size="14" dy="4">2</tspan></text>
+  <g><text x="275" y="235" class="lbl-bold" fill="#2563eb">F<tspan font-size="12" dy="4">2</tspan></text><path d="M 275 217 h 13 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#2563eb" stroke-width="1.3" stroke-linecap="round" /></g>
 </svg>

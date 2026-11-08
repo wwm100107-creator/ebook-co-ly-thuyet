@@ -17,9 +17,8 @@
     </pattern>
   </defs>
   <style>
-    text { font-family: 'Times New Roman', serif; }
+    text { font-family: 'Times New Roman', 'Cambria Math', serif; }
     .lbl { font-size: 18px; font-style: italic; fill: #0f172a; }
-    .lbl-sub { font-size: 13px; font-style: italic; fill: #0f172a; }
     .lbl-bold { font-size: 20px; font-style: italic; font-weight: bold; fill: #0f172a; }
     .vec { stroke: #2563eb; stroke-width: 2.2; }
     .axis { stroke: #64748b; stroke-width: 1.2; stroke-dasharray: 5,3; }
@@ -29,26 +28,26 @@
   <circle cx="80" cy="210" r="4.5" fill="#0f172a" />
   <text x="65" y="225" class="lbl-bold">O</text>
   
-  <!-- Quỹ đạo cong (C) -->
   <path d="M 140 180 Q 230 40, 380 90" fill="none" stroke="#1e293b" stroke-width="2" />
   <text x="385" y="95" class="lbl-bold">(C)</text>
   
-  <!-- Điểm M tại thời điểm t -->
   <circle cx="215" cy="98" r="4.5" fill="#2563eb" />
   <text x="210" y="85" class="lbl-bold" fill="#2563eb">M</text>
   
-  <!-- Vectơ vị trí r(t) -->
   <line x1="80" y1="210" x2="215" y2="98" class="vec" marker-end="url(#arrow-blue)" />
-  <text x="135" y="145" class="lbl-bold" fill="#2563eb">r&#8407;(t)</text>
+  <g>
+    <text x="135" y="145" class="lbl-bold" fill="#2563eb">r(t)</text>
+    <path d="M 135 127 h 11 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#2563eb" stroke-width="1.3" stroke-linecap="round" />
+  </g>
   
-  <!-- Điểm M' tại t + dt -->
   <circle cx="295" cy="85" r="4" fill="#64748b" />
   <text x="300" y="80" class="lbl">M'</text>
-  
-  <!-- Vectơ r(t+dt) -->
   <line x1="80" y1="210" x2="295" y2="85" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)" />
   
-  <!-- Vectơ vận tốc tiếp tuyến v -->
   <line x1="215" y1="98" x2="310" y2="70" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrow-red)" />
-  <text x="315" y="65" class="lbl-bold" fill="#dc2626">v&#8407; = dr&#8407;/dt</text>
+  <g>
+    <text x="315" y="65" class="lbl-bold" fill="#dc2626">v = dr/dt</text>
+    <path d="M 315 47 h 12 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#dc2626" stroke-width="1.3" stroke-linecap="round" />
+    <path d="M 353 47 h 10 l -2.5 -2.5 m 2.5 2.5 l -2.5 2.5" fill="none" stroke="#dc2626" stroke-width="1.3" stroke-linecap="round" />
+  </g>
 </svg>

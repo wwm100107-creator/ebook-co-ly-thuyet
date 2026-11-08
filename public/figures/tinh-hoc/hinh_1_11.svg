@@ -14,61 +14,46 @@
     </pattern>
   </defs>
   <style>
-    text { font-family: 'Times New Roman', serif; }
+    text { font-family: 'Times New Roman', 'Cambria Math', serif; }
     .lbl { font-size: 18px; font-style: italic; fill: #0f172a; }
-    .lbl-sub { font-size: 14px; font-style: italic; fill: #0f172a; }
     .lbl-bold { font-size: 20px; font-style: italic; font-weight: bold; fill: #0f172a; }
     .vec { stroke: #2563eb; stroke-width: 2.2; }
     .axis { stroke: #64748b; stroke-width: 1.2; stroke-dasharray: 5,3; }
     .solid { stroke: #1e293b; stroke-width: 1.8; fill: #f8fafc; }
   </style>
 
-  <!-- (1) Mặt cầu tựa mặt lõm -->
   <g transform="translate(20, 20)">
     <path d="M 10 120 C 50 160, 130 160, 170 120 L 170 140 C 130 180, 50 180, 10 140 Z" fill="url(#hatch)" stroke="#64748b" />
     <path d="M 10 120 C 50 160, 130 160, 170 120" fill="none" stroke="#1e293b" stroke-width="2" />
     <circle cx="90" cy="80" r="50" class="solid" />
-    <!-- Pháp tuyến chung & Phản lực N -->
     <line x1="90" y1="130" x2="90" y2="20" class="axis" />
     <line x1="90" y1="130" x2="90" y2="40" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrow-red)" />
-    <text x="70" y="35" class="lbl-bold" fill="#dc2626">N&#8407;</text>
+    <g><text x="70" y="35" class="lbl-bold" fill="#dc2626">N</text><path d="M 70 17 h 15 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#dc2626" stroke-width="1.3" stroke-linecap="round" /></g>
   </g>
   
-  <!-- (2) Thanh tựa vào gờ nhọn -->
   <g transform="translate(350, 20)">
-    <!-- Tường và gờ nhọn -->
     <rect x="130" y="70" width="30" height="80" fill="url(#hatch)" stroke="#64748b" />
     <polygon points="110,110 130,100 130,120" fill="#94a3b8" stroke="#1e293b" />
-    <!-- Thanh xiên -->
     <line x1="50" y1="180" x2="160" y2="40" stroke="#1e293b" stroke-width="7" stroke-linecap="round" />
-    <!-- Phản lực N vuông góc trục thanh -->
     <line x1="110" y1="104" x2="60" y2="65" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrow-red)" />
-    <text x="45" y="60" class="lbl-bold" fill="#dc2626">N&#8407;</text>
+    <g><text x="45" y="60" class="lbl-bold" fill="#dc2626">N</text><path d="M 45 42 h 15 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#dc2626" stroke-width="1.3" stroke-linecap="round" /></g>
   </g>
   
-  <!-- (3) Cầu tựa mặt phẳng lồi -->
   <g transform="translate(40, 210)">
-    <!-- Mặt cong lồi có gạch đất -->
     <path d="M 10 150 C 60 125, 140 125, 190 150 L 190 170 L 10 170 Z" fill="url(#hatch)" stroke="#64748b" />
     <path d="M 10 150 C 60 125, 140 125, 190 150" fill="none" stroke="#1e293b" stroke-width="2" />
     <circle cx="100" cy="80" r="50" class="solid" />
-    <!-- Tiếp tuyến t -->
     <line x1="40" y1="130" x2="160" y2="130" stroke="#64748b" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrow)" />
-    <text x="165" y="135" class="lbl">t</text>
-    <!-- Phản lực N -->
+    <text x="165" y="135" class="lbl">&#964;</text>
     <line x1="100" y1="130" x2="100" y2="30" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrow-red)" />
-    <text x="80" y="25" class="lbl-bold" fill="#dc2626">N&#8407;</text>
+    <g><text x="80" y="25" class="lbl-bold" fill="#dc2626">N</text><path d="M 80 7 h 15 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#dc2626" stroke-width="1.3" stroke-linecap="round" /></g>
   </g>
   
-  <!-- (4) Đầu nhọn thanh tựa sàn phẳng -->
   <g transform="translate(360, 210)">
-    <!-- Sàn đất ngang -->
     <rect x="20" y="130" width="160" height="20" fill="url(#hatch)" stroke="#64748b" />
     <line x1="20" y1="130" x2="180" y2="130" stroke="#1e293b" stroke-width="2" />
-    <!-- Thanh xiên có đầu nhọn tiếp xúc sàn -->
     <polygon points="120,130 115,120 40,60 45,55 125,120" fill="#f1f5f9" stroke="#1e293b" stroke-width="1.5" />
-    <!-- Phản lực N thẳng đứng -->
     <line x1="120" y1="130" x2="120" y2="30" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrow-red)" />
-    <text x="125" y="25" class="lbl-bold" fill="#dc2626">N&#8407;</text>
+    <g><text x="125" y="25" class="lbl-bold" fill="#dc2626">N</text><path d="M 125 7 h 15 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#dc2626" stroke-width="1.3" stroke-linecap="round" /></g>
   </g>
 </svg>

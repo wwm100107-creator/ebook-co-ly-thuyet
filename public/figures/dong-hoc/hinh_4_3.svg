@@ -17,37 +17,30 @@
     </pattern>
   </defs>
   <style>
-    text { font-family: 'Times New Roman', serif; }
+    text { font-family: 'Times New Roman', 'Cambria Math', serif; }
     .lbl { font-size: 18px; font-style: italic; fill: #0f172a; }
-    .lbl-sub { font-size: 13px; font-style: italic; fill: #0f172a; }
     .lbl-bold { font-size: 20px; font-style: italic; font-weight: bold; fill: #0f172a; }
     .vec { stroke: #2563eb; stroke-width: 2.2; }
     .axis { stroke: #64748b; stroke-width: 1.2; stroke-dasharray: 5,3; }
     .solid { stroke: #1e293b; stroke-width: 1.8; fill: #f8fafc; }
   </style>
 
-  <!-- Vật rắn phẳng -->
   <ellipse cx="240" cy="160" rx="150" ry="70" class="solid" />
-  
-  <!-- Hai điểm A và B -->
   <circle cx="150" cy="150" r="4.5" fill="#0f172a" />
   <text x="135" y="165" class="lbl-bold">A</text>
   
   <circle cx="310" cy="140" r="4.5" fill="#0f172a" />
   <text x="320" y="155" class="lbl-bold">B</text>
   
-  <!-- Vận tốc vA và vB không song song -->
   <line x1="150" y1="150" x2="90" y2="100" class="vec" marker-end="url(#arrow-blue)" />
-  <text x="75" y="95" class="lbl-bold" fill="#2563eb">v&#8407;<tspan font-size="12">A</tspan></text>
+  <g><text x="75" y="95" class="lbl-bold" fill="#2563eb">v<tspan font-size="12" dy="4">A</tspan></text><path d="M 75 77 h 12 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#2563eb" stroke-width="1.3" stroke-linecap="round" /></g>
   
   <line x1="310" y1="140" x2="380" y2="100" class="vec" marker-end="url(#arrow-blue)" />
-  <text x="385" y="95" class="lbl-bold" fill="#2563eb">v&#8407;<tspan font-size="12">B</tspan></text>
+  <g><text x="385" y="95" class="lbl-bold" fill="#2563eb">v<tspan font-size="12" dy="4">B</tspan></text><path d="M 385 77 h 12 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#2563eb" stroke-width="1.3" stroke-linecap="round" /></g>
   
-  <!-- Hai đường thẳng vuông góc với vA và vB giao nhau tại P -->
   <line x1="150" y1="150" x2="230" y2="30" stroke="#64748b" stroke-dasharray="4,3" />
   <line x1="310" y1="140" x2="230" y2="30" stroke="#64748b" stroke-dasharray="4,3" />
   
-  <!-- Tâm vận tốc tức thời P -->
   <circle cx="230" cy="30" r="5" fill="#dc2626" />
   <text x="240" y="30" class="lbl-bold" fill="#dc2626">P (v<tspan font-size="12">P</tspan> = 0)</text>
 </svg>

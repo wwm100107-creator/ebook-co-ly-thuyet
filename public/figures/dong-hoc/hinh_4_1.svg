@@ -17,36 +17,31 @@
     </pattern>
   </defs>
   <style>
-    text { font-family: 'Times New Roman', serif; }
+    text { font-family: 'Times New Roman', 'Cambria Math', serif; }
     .lbl { font-size: 18px; font-style: italic; fill: #0f172a; }
-    .lbl-sub { font-size: 13px; font-style: italic; fill: #0f172a; }
     .lbl-bold { font-size: 20px; font-style: italic; font-weight: bold; fill: #0f172a; }
     .vec { stroke: #2563eb; stroke-width: 2.2; }
     .axis { stroke: #64748b; stroke-width: 1.2; stroke-dasharray: 5,3; }
     .solid { stroke: #1e293b; stroke-width: 1.8; fill: #f8fafc; }
   </style>
 
-  <!-- Tấm phẳng S chuyển động -->
   <ellipse cx="230" cy="130" rx="140" ry="80" class="solid" />
-  
-  <!-- Cực A -->
   <circle cx="160" cy="130" r="4.5" fill="#0f172a" />
   <text x="145" y="145" class="lbl-bold">A</text>
   
-  <!-- Vận tốc cực v_A -->
   <line x1="160" y1="130" x2="160" y2="50" class="vec" marker-end="url(#arrow-blue)" />
-  <text x="165" y="55" class="lbl-bold" fill="#2563eb">v&#8407;<tspan font-size="12">A</tspan></text>
+  <g><text x="165" y="55" class="lbl-bold" fill="#2563eb">v<tspan font-size="12" dy="4">A</tspan></text><path d="M 165 37 h 12 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#2563eb" stroke-width="1.3" stroke-linecap="round" /></g>
   
-  <!-- Điểm B bất kỳ -->
   <circle cx="280" cy="120" r="4.5" fill="#0f172a" />
   <text x="285" y="135" class="lbl-bold">B</text>
   <line x1="160" y1="130" x2="280" y2="120" stroke="#64748b" stroke-dasharray="4,3" />
   
-  <!-- Vận tốc quay quanh cực v_BA vuông góc AB -->
   <line x1="280" y1="120" x2="290" y2="50" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-green)" />
-  <text x="295" y="55" class="lbl-bold" fill="#16a34a">v&#8407;<tspan font-size="12">BA</tspan> = &#969;&#215;AB</text>
+  <g>
+    <text x="295" y="55" class="lbl-bold" fill="#16a34a">v<tspan font-size="12" dy="4">BA</tspan><tspan dy="-4"> = &#969;&#215;AB</tspan></text>
+    <path d="M 295 37 h 12 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#16a34a" stroke-width="1.3" stroke-linecap="round" />
+  </g>
   
-  <!-- Vận tốc tổng hợp v_B = v_A + v_BA -->
   <line x1="280" y1="120" x2="250" y2="40" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrow-red)" />
-  <text x="225" y="35" class="lbl-bold" fill="#dc2626">v&#8407;<tspan font-size="12">B</tspan></text>
+  <g><text x="225" y="35" class="lbl-bold" fill="#dc2626">v<tspan font-size="12" dy="4">B</tspan></text><path d="M 225 17 h 12 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#dc2626" stroke-width="1.3" stroke-linecap="round" /></g>
 </svg>

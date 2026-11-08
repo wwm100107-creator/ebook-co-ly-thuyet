@@ -14,43 +14,39 @@
     </pattern>
   </defs>
   <style>
-    text { font-family: 'Times New Roman', serif; }
+    text { font-family: 'Times New Roman', 'Cambria Math', serif; }
     .lbl { font-size: 18px; font-style: italic; fill: #0f172a; }
-    .lbl-sub { font-size: 14px; font-style: italic; fill: #0f172a; }
     .lbl-bold { font-size: 20px; font-style: italic; font-weight: bold; fill: #0f172a; }
     .vec { stroke: #2563eb; stroke-width: 2.2; }
     .axis { stroke: #64748b; stroke-width: 1.2; stroke-dasharray: 5,3; }
     .solid { stroke: #1e293b; stroke-width: 1.8; fill: #f8fafc; }
   </style>
 
-  <!-- Vật thể -->
   <ellipse cx="270" cy="170" rx="95" ry="60" transform="rotate(30 270 170)" class="solid" fill="#f1f5f9" />
-  
-  <!-- Điểm O -->
   <circle cx="100" cy="220" r="4.5" fill="#1e293b" />
   <text x="80" y="235" class="lbl-bold">O</text>
   
-  <!-- Đường tác dụng của lực (kéo dài qua A) -->
   <line x1="145" y1="270" x2="365" y2="100" class="axis" />
+  <polygon points="100,220 230,205 330,128" fill="#e2e8f0" stroke="#64748b" stroke-width="1" stroke-dasharray="3,3" />
   
-  <!-- Vectơ lực F từ A đến B -->
   <line x1="230" y1="205" x2="330" y2="128" class="vec" marker-end="url(#arrow-blue)" />
   <circle cx="230" cy="205" r="4" fill="#1e293b" />
   <text x="235" y="225" class="lbl-bold">A</text>
   <circle cx="330" cy="128" r="4" fill="#1e293b" />
   <text x="320" y="115" class="lbl-bold">B</text>
-  <text x="330" y="150" class="lbl-bold" fill="#2563eb">F&#8407;</text>
+  <g><text x="330" y="150" class="lbl-bold" fill="#2563eb">F</text><path d="M 330 132 h 13 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#2563eb" stroke-width="1.3" stroke-linecap="round" /></g>
   
-  <!-- Tam giác gạch chéo OAB -->
-  <polygon points="100,220 230,205 330,128" fill="#e2e8f0" stroke="#64748b" stroke-width="1" stroke-dasharray="3,3" />
-  
-  <!-- Cánh tay đòn d -->
   <line x1="100" y1="220" x2="148" y2="267" stroke="#dc2626" stroke-width="1.6" />
   <polyline points="142,260 148,267 155,261" fill="none" stroke="#dc2626" stroke-width="1.2" />
   <text x="110" y="260" class="lbl-bold" fill="#dc2626">d</text>
   
-  <!-- Vectơ mô men m_O(F) thẳng góc -->
   <line x1="100" y1="220" x2="60" y2="70" class="vec" stroke="#16a34a" marker-end="url(#arrow)" />
   <path d="M 68 140 A 15 15 0 0 1 82 130" fill="none" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arrow)" />
-  <text x="70" y="65" class="lbl-bold" fill="#16a34a">m&#8407;<tspan font-size="14" dy="5">O</tspan><tspan dy="-5">(F&#8407;)</tspan></text>
+  
+  <!-- m_O(F) với mũi tên trên m và trên F -->
+  <g>
+    <text x="70" y="65" class="lbl-bold" fill="#16a34a">m<tspan font-size="13" dy="5">O</tspan><tspan dy="-5">(F)</tspan></text>
+    <path d="M 70 47 h 14 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#16a34a" stroke-width="1.3" stroke-linecap="round" />
+    <path d="M 104 47 h 12 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#16a34a" stroke-width="1.3" stroke-linecap="round" />
+  </g>
 </svg>
