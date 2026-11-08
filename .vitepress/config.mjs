@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: 'Cơ Học Lý Thuyết',
   description: 'Ebook Giáo trình Cơ học trực tuyến - GS. TSKH. Đỗ Sanh (NXB Bách Khoa Hà Nội)',
-  base: '/',
+  base: process.env.GITHUB_PAGES ? '/ebook-co-ly-thuyet/' : '/',
   lang: 'vi-VN',
   ignoreDeadLinks: true,
   markdown: {
