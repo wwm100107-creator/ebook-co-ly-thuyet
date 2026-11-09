@@ -236,7 +236,6 @@ function undoCanvas() {
   saveCanvasData()
 }
 
-// Expose undo & clear to parent manager
 defineExpose({
   undoCanvas,
   clearCanvas,
@@ -291,7 +290,7 @@ watch(() => props.note.mode, (newMode) => {
     :style="{
       left: note.x + 'px',
       top: note.y + 'px',
-      width: note.isCollapsed ? '260px' : (note.width || 340) + 'px',
+      width: note.isCollapsed ? '250px' : (note.width || 340) + 'px',
       height: note.isCollapsed ? 'auto' : (note.height || 340) + 'px',
       zIndex: note.zIndex || 999,
       '--note-bg': colorThemes[note.colorTheme || 'yellow'].bg,
@@ -301,11 +300,25 @@ watch(() => props.note.mode, (newMode) => {
     }"
     @pointerdown="onCardPointerDown"
   >
-    <!-- Note Top Header (Drag handle & curtain bar) -->
+    <!-- Note Top Header (Minimalist vector icons) -->
     <div class="note-header" @pointerdown="onHeaderPointerDown">
       <div class="header-left">
-        <span class="grip-icon" title="Giữ chuột để di chuyển">⋮⋮</span>
-        <span class="pin-tag">📌</span>
+        <!-- Minimalist Grip Dots -->
+        <svg class="header-icon grip-icon" viewBox="0 0 10 16" width="9" height="15" fill="currentColor" title="Giữ chuột để di chuyển">
+          <circle cx="2.5" cy="3" r="1.3"/>
+          <circle cx="7.5" cy="3" r="1.3"/>
+          <circle cx="2.5" cy="8" r="1.3"/>
+          <circle cx="7.5" cy="8" r="1.3"/>
+          <circle cx="2.5" cy="13" r="1.3"/>
+          <circle cx="7.5" cy="13" r="1.3"/>
+        </svg>
+
+        <!-- Minimalist Pin Icon -->
+        <svg class="header-icon pin-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="12" y1="17" x2="12" y2="22"/>
+          <path d="M5 17h14v-2l-2-2V5h1V3H6v2h1v8l-2 2v2Z"/>
+        </svg>
+
         <span class="note-title-preview" v-if="note.isCollapsed">
           {{ note.text ? note.text.slice(0, 18) + '...' : 'Ghi chú (đã cuộn rèm)' }}
         </span>
@@ -313,23 +326,33 @@ watch(() => props.note.mode, (newMode) => {
       </div>
 
       <div class="header-actions">
-        <!-- Collapse/Expand (Kéo rèm) -->
+        <!-- Minimalist Collapse/Expand Chevron ("Kéo rèm") -->
         <button
           class="btn-icon btn-collapse"
           :title="note.isCollapsed ? 'Kéo rèm xuống (Mở lại để viết/vẽ)' : 'Kéo rèm lên (Thu gọn lại thành 1 thanh để nhìn thấy bài bên dưới)'"
           @click="toggleCollapse"
         >
-          <span v-if="note.isCollapsed">▾ Mở rèm</span>
-          <span v-else>▲ Kéo rèm</span>
+          <!-- Chevron down when collapsed -->
+          <svg v-if="note.isCollapsed" class="btn-svg" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+          <!-- Chevron up when expanded -->
+          <svg v-else class="btn-svg" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"/>
+          </svg>
+          <span>{{ note.isCollapsed ? 'Mở rèm' : 'Kéo rèm' }}</span>
         </button>
 
-        <!-- Delete button -->
+        <!-- Minimalist Close (X) Icon -->
         <button
           class="btn-icon btn-delete"
           title="Xóa tờ note này"
           @click="emit('delete', note.id)"
         >
-          ✕
+          <svg class="btn-svg" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
         </button>
       </div>
     </div>
@@ -348,7 +371,7 @@ watch(() => props.note.mode, (newMode) => {
           v-model="note.text"
           class="note-textarea"
           :style="{ fontSize: (note.fontSize || 18) + 'px' }"
-          placeholder="✍️ Nhấp vào đây để gõ nội dung (Font Times New Roman)..."
+          placeholder="Nhấp vào đây để gõ nội dung (Font Times New Roman)..."
           @input="emit('update', note)"
           :disabled="note.mode === 'draw'"
         />
@@ -364,10 +387,14 @@ watch(() => props.note.mode, (newMode) => {
           @pointerleave="onCanvasPointerUp"
         />
 
-        <!-- Floating Hint when user is in Drawing Mode -->
+        <!-- Floating Minimalist Hint when user switches to Drawing Mode -->
         <div class="draw-hint-overlay" v-if="note.mode === 'draw' && (!note.drawData && !strokeHistory.length)">
           <div class="hint-pill">
-            🖌️ Rê chuột trực tiếp lên mặt note để vẽ hình hoặc ghi chú
+            <svg class="hint-svg" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 22s5-1 7-3l11-11a2.828 2.828 0 0 0-4-4L5 15c-2 2-3 7-3 7z"/>
+              <path d="m15 5 4 4"/>
+            </svg>
+            <span>Rê chuột lên mặt note để vẽ hình hoặc ghi chú</span>
           </div>
         </div>
       </div>
@@ -378,7 +405,7 @@ watch(() => props.note.mode, (newMode) => {
         title="Kéo góc này để mở rộng hoặc thu nhỏ kích thước tờ note"
         @pointerdown="onResizePointerDown"
       >
-        <svg viewBox="0 0 10 10" width="12" height="12">
+        <svg viewBox="0 0 10 10" width="10" height="10">
           <path d="M9 1 L1 9 M9 5 L5 9 M9 9 L9 9" stroke="#64748b" stroke-width="1.8" stroke-linecap="round" />
         </svg>
       </div>
@@ -391,7 +418,7 @@ watch(() => props.note.mode, (newMode) => {
   position: absolute;
   background-color: var(--note-bg, #fef9c3);
   border: 1.5px solid var(--note-border, #eab308);
-  border-radius: 9px;
+  border-radius: 8px;
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22), 0 3px 8px rgba(0, 0, 0, 0.12);
   display: flex;
   flex-direction: column;
@@ -400,7 +427,7 @@ watch(() => props.note.mode, (newMode) => {
   transition: box-shadow 0.2s ease, border-color 0.2s ease;
   overflow: hidden;
   box-sizing: border-box;
-  min-width: 260px;
+  min-width: 250px;
 }
 
 .sticky-note-card:not(.is-collapsed) {
@@ -419,12 +446,12 @@ watch(() => props.note.mode, (newMode) => {
 
 .sticky-note-card.is-collapsed {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  border-radius: 7px;
+  border-radius: 6px;
 }
 
 /* Header */
 .note-header {
-  height: 38px;
+  height: 36px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -442,30 +469,37 @@ watch(() => props.note.mode, (newMode) => {
 .header-left {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 7px;
   font-weight: 700;
-  font-size: 13px;
+  font-size: 12px;
   color: var(--note-text, #713f12);
 }
 
+.header-icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+
 .grip-icon {
-  font-size: 14px;
-  opacity: 0.6;
-  letter-spacing: -2px;
+  opacity: 0.55;
+}
+
+.pin-icon {
+  opacity: 0.8;
 }
 
 .note-title {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.6px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .note-title-preview {
   font-size: 12px;
   font-family: "Times New Roman", Times, serif;
   font-style: italic;
-  max-width: 140px;
+  max-width: 130px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -474,27 +508,32 @@ watch(() => props.note.mode, (newMode) => {
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
 }
 
 .btn-icon {
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: rgba(255, 255, 255, 0.55);
   color: var(--note-text, #713f12);
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
-  padding: 3px 8px;
+  padding: 3px 7px;
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 600;
   display: flex;
   align-items: center;
-  gap: 3px;
+  gap: 4px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   transition: all 0.15s ease;
+}
+
+.btn-svg {
+  display: inline-block;
 }
 
 .btn-icon:hover {
   background: #ffffff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .btn-delete:hover {
@@ -509,7 +548,7 @@ watch(() => props.note.mode, (newMode) => {
   flex-direction: column;
   flex: 1 1 auto;
   min-height: 0;
-  height: calc(100% - 38px);
+  height: calc(100% - 36px);
   position: relative;
   overflow: hidden;
   transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease;
@@ -587,7 +626,7 @@ watch(() => props.note.mode, (newMode) => {
 
 .draw-hint-overlay {
   position: absolute;
-  top: 12px;
+  top: 10px;
   left: 0;
   right: 0;
   display: flex;
@@ -597,14 +636,21 @@ watch(() => props.note.mode, (newMode) => {
 }
 
 .hint-pill {
-  background: rgba(15, 23, 42, 0.72);
+  background: rgba(15, 23, 42, 0.78);
   color: #ffffff;
   font-size: 11px;
   padding: 4px 10px;
   border-radius: 9999px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   pointer-events: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.hint-svg {
+  display: inline-block;
 }
 
 /* Bottom resize corner handle */

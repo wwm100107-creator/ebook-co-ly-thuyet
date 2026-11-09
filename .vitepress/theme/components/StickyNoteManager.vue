@@ -247,30 +247,41 @@ onMounted(() => {
         v-if="notes.length > 0 && activeNote && isVisible"
         class="dock-toolbar"
       >
-        <!-- Mode Tabs: Viết chữ vs Vẽ tay -->
+        <!-- Mode Tabs: Viết chữ vs Vẽ tay (Minimalist Vector Icons) -->
         <div class="dock-mode-group">
+          <!-- Text Mode Button -->
           <button
             class="dock-mode-btn"
             :class="{ active: (activeNote.mode || 'text') === 'text' }"
             @click="setMode('text')"
             title="Đánh máy văn bản (Font Times New Roman)"
           >
-            ✍️ Viết chữ
+            <svg class="dock-svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/>
+              <path d="m15 5 4 4"/>
+            </svg>
+            <span>Viết chữ</span>
           </button>
+
+          <!-- Draw Mode Button -->
           <button
             class="dock-mode-btn"
             :class="{ active: activeNote.mode === 'draw' }"
             @click="setMode('draw')"
             title="Vẽ tay bằng chuột hoặc bút cảm ứng"
           >
-            🖌️ Vẽ tay
+            <svg class="dock-svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 22s5-1 7-3l11-11a2.828 2.828 0 0 0-4-4L5 15c-2 2-3 7-3 7z"/>
+              <path d="m15 5 4 4"/>
+            </svg>
+            <span>Vẽ tay</span>
           </button>
         </div>
 
         <!-- Text Mode Controls: Font Size & Paper Color -->
         <div class="dock-subgroup" v-if="(activeNote.mode || 'text') === 'text'">
           <div class="dock-field">
-            <span class="dock-label">Cỡ:</span>
+            <span class="dock-label">Cỡ chữ:</span>
             <select
               :value="activeNote.fontSize || 18"
               class="dock-select"
@@ -330,17 +341,33 @@ onMounted(() => {
 
           <div class="dock-divider" />
 
-          <!-- Undo & Clear -->
+          <!-- Undo & Clear with Minimalist SVGs -->
           <div class="dock-actions">
-            <button class="dock-action-btn" @click="triggerUndo" title="Hoàn tác nét vẽ (Undo)">↶ Lùi</button>
-            <button class="dock-action-btn btn-danger" @click="triggerClear" title="Xóa toàn bộ nét vẽ">🧹 Xóa</button>
+            <!-- Undo Icon -->
+            <button class="dock-action-btn" @click="triggerUndo" title="Hoàn tác nét vẽ (Undo)">
+              <svg class="action-svg" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 7v6h6"/>
+                <path d="M21 17a9 9 0 0 0-9-9 9 9 0 0 0-6 2.3L3 13"/>
+              </svg>
+              <span>Lùi</span>
+            </button>
+
+            <!-- Eraser / Clear Icon -->
+            <button class="dock-action-btn btn-danger" @click="triggerClear" title="Xóa toàn bộ nét vẽ">
+              <svg class="action-svg" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m7 21-4.3-4.3c-1-1-1-2.5 0-3.4l9.6-9.6c1-1 2.5-1 3.4 0l5.6 5.6c1 1 1 2.5 0 3.4L13 21"/>
+                <path d="M22 21H7"/>
+                <path d="m5 11 9 9"/>
+              </svg>
+              <span>Xóa</span>
+            </button>
           </div>
         </div>
       </div>
 
       <!-- Action Buttons: Hide/Show Toggle & Dán Note -->
       <div class="dock-fabs">
-        <!-- Toggle Hide/Show Button -->
+        <!-- Toggle Hide/Show Button with Minimalist Eye / EyeOff Icon -->
         <button
           v-if="notes.length > 0"
           class="fab-btn fab-toggle"
@@ -348,17 +375,33 @@ onMounted(() => {
           @click="toggleVisibility"
           :title="isVisible ? 'Ẩn tạm thời các tờ note' : 'Hiện lại các tờ note'"
         >
-          <span class="fab-icon">{{ isVisible ? '👁️' : '🙈' }}</span>
+          <!-- Eye icon when visible -->
+          <svg v-if="isVisible" class="fab-svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+          <!-- Eye-off icon when hidden -->
+          <svg v-else class="fab-svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/>
+            <path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/>
+            <path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/>
+            <line x1="2" y1="2" x2="22" y2="22"/>
+          </svg>
           <span class="fab-badge" v-if="notes.length > 0">{{ notes.length }}</span>
         </button>
 
-        <!-- Main "Dán Note" Button -->
+        <!-- Main "Dán Note" Button with Minimalist StickyNotePlus Icon -->
         <button
           class="fab-btn fab-add"
           @click="addNote"
           title="Dán một tờ ghi chú mới vào vị trí này"
         >
-          <span class="fab-icon">📝</span>
+          <svg class="fab-svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15.5 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5L15.5 3Z"/>
+            <path d="M15 3v6h6"/>
+            <line x1="12" y1="11" x2="12" y2="17"/>
+            <line x1="9" y1="14" x2="15" y2="14"/>
+          </svg>
           <span class="fab-text">Dán Note</span>
         </button>
       </div>
@@ -442,13 +485,14 @@ onMounted(() => {
   border-radius: 9999px;
   padding: 5px 12px;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.15s ease;
   user-select: none;
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .dark .dock-mode-btn {
@@ -461,6 +505,11 @@ onMounted(() => {
   box-shadow: 0 2px 6px rgba(2, 132, 199, 0.35);
 }
 
+.dock-svg {
+  display: inline-block;
+  vertical-align: middle;
+}
+
 /* Subgroups */
 .dock-subgroup {
   display: flex;
@@ -471,13 +520,14 @@ onMounted(() => {
 .dock-field {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
 }
 
 .dock-label {
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 600;
   color: #64748b;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .dark .dock-label {
@@ -490,7 +540,7 @@ onMounted(() => {
   color: #0f172a;
   border-radius: 6px;
   padding: 3px 6px;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
   cursor: pointer;
 }
@@ -519,8 +569,8 @@ onMounted(() => {
 }
 
 .theme-dot {
-  width: 16px;
-  height: 16px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   border: 1.5px solid rgba(0, 0, 0, 0.25);
   cursor: pointer;
@@ -538,8 +588,8 @@ onMounted(() => {
 }
 
 .brush-dot {
-  width: 16px;
-  height: 16px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   border: 1.5px solid rgba(0, 0, 0, 0.25);
   cursor: pointer;
@@ -566,12 +616,13 @@ onMounted(() => {
   border: 1px solid rgba(0, 0, 0, 0.12);
   background: rgba(255, 255, 255, 0.8);
   color: #334155;
-  border-radius: 6px;
+  border-radius: 5px;
   padding: 2px 7px;
   font-size: 11px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.15s ease;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .dark .size-pill {
@@ -593,15 +644,23 @@ onMounted(() => {
 }
 
 .dock-action-btn {
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   background: rgba(255, 255, 255, 0.85);
   color: #334155;
   border-radius: 6px;
   padding: 3px 8px;
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.action-svg {
+  display: inline-block;
 }
 
 .dark .dock-action-btn {
@@ -632,16 +691,21 @@ onMounted(() => {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 18px;
+  padding: 9px 18px;
   border-radius: 9999px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 600;
   cursor: pointer;
   border: none;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   user-select: none;
+}
+
+.fab-svg {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .fab-add {
@@ -650,7 +714,7 @@ onMounted(() => {
 }
 
 .fab-add:hover {
-  transform: translateY(-2px) scale(1.03);
+  transform: translateY(-2px) scale(1.02);
   box-shadow: 0 8px 24px rgba(2, 132, 199, 0.4);
   background: linear-gradient(135deg, #0369a1 0%, #075985 100%);
 }
@@ -688,13 +752,8 @@ onMounted(() => {
   color: #94a3b8;
 }
 
-.fab-icon {
-  font-size: 16px;
-  line-height: 1;
-}
-
 .fab-text {
-  letter-spacing: 0.3px;
+  letter-spacing: 0.2px;
 }
 
 .fab-badge {
@@ -705,13 +764,13 @@ onMounted(() => {
   color: #ffffff;
   font-size: 10px;
   font-weight: 700;
-  min-width: 18px;
-  height: 18px;
+  min-width: 17px;
+  height: 17px;
   border-radius: 9px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 4px;
+  padding: 0 3px;
   box-shadow: 0 2px 6px rgba(239, 68, 68, 0.4);
 }
 
