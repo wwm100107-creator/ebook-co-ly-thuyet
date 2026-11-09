@@ -52,9 +52,16 @@ trong đó:
 
 **Đề bài:** Cho cơ cấu 4 khâu bản lề phẳng $O_1 A B O_2$. Khâu dẫn $O_1 A = 0.4\text{ m}$ quay quanh trục cố định $O_1$ với vận tốc góc không đổi $\omega_1 = 10\text{ rad/s}$. Tại thời điểm khảo sát, khâu $O_1 A$ nằm nghiêng và khâu truyền $AB = 0.5\text{ m}$, khâu bị dẫn $O_2 B = 0.5\text{ m}$ có các góc nghiêng như hình vẽ. Xác định vận tốc góc của thanh truyền $AB$ và vận tốc điểm $B$.
 
-<div style="text-align: center; margin: 20px 0;">
-  <img src="/figures/bai-tap/dong-hoc/hinh_8_14.svg" alt="Hình 8-14: Cơ cấu 4 khâu bản lề phẳng" style="max-width: 480px; width: 100%; margin: 0 auto; display: block;" />
-  <p style="font-size: 14px; color: #64748b; margin-top: 8px;"><em>Hình 8-14: Xác định tâm vận tốc tức thời P của thanh truyền AB</em></p>
+<div class="figure-container">
+
+<img src="/figures/bai-tap/dong-hoc/hinh_8_14.svg" alt="Hình 8-14: Cơ cấu 4 khâu bản lề phẳng" style="max-width: 480px; width: 100%; margin: 0 auto; display: block;" />
+
+<div class="figure-caption">
+
+Hình 8-14: Xác định tâm vận tốc tức thời P của thanh truyền AB
+
+</div>
+
 </div>
 
 **Bài giải:**

@@ -52,9 +52,16 @@ Phát triển từ bài toán phẳng một vật, trong chương này chúng ta
 
 **Đề bài:** Trong một hộp có đáy nằm ngang và hai thành thẳng đứng, người ta đặt hai quả cầu đồng chất cùng bán kính $R$, cùng trọng lượng $P$ nằm chồng lên nhau. Đường nối hai tâm $O_1 O_2$ nghiêng một góc $45^\circ$ so với đường nằm ngang. Tìm phản lực của đáy, các thành hộp và lực ép tương hỗ giữa hai quả cầu.
 
-<div style="text-align: center; margin: 20px 0;">
-  <img src="/figures/bai-tap/tinh-hoc/hinh_2_1.svg" alt="Hình 2-1: Hai quả cầu đặt chồng trong hộp" style="max-width: 460px; width: 100%; margin: 0 auto; display: block;" />
-  <p style="font-size: 14px; color: #64748b; margin-top: 8px;"><em>Hình 2-1: Sơ đồ giải phóng liên kết hai quả cầu trong hộp</em></p>
+<div class="figure-container">
+
+<img src="/figures/bai-tap/tinh-hoc/hinh_2_1.svg" alt="Hình 2-1: Hai quả cầu đặt chồng trong hộp" style="max-width: 460px; width: 100%; margin: 0 auto; display: block;" />
+
+<div class="figure-caption">
+
+Hình 2-1: Sơ đồ giải phóng liên kết hai quả cầu trong hộp
+
+</div>
+
 </div>
 
 **Bài giải:**
@@ -97,9 +104,16 @@ Xem hai quả cầu như một khối thống nhất:
 
 **Đề bài:** Thanh đồng chất $OA = 6a$, trọng lượng $P$ gắn vào tường nhờ bản lề $O$ và được đỡ nằm ngang nhờ thanh đồng chất $BC = 4a$, trọng lượng $p$ ngàm ở $C$ trên tường và nghiêng góc $30^\circ$ với tường. Điểm tựa $B$ trên thanh $OA$ cách $O$ một đoạn $OB = 2a$. Đầu $A$ chịu tải trọng thẳng đứng $Q$. Tìm các phản lực tại $O$, $B$ và ngàm $C$.
 
-<div style="text-align: center; margin: 20px 0;">
-  <img src="/figures/bai-tap/tinh-hoc/hinh_2_2.svg" alt="Hình 2-2: Hệ dầm OA và thanh chống BC ngàm" style="max-width: 480px; width: 100%; margin: 0 auto; display: block;" />
-  <p style="font-size: 14px; color: #64748b; margin-top: 8px;"><em>Hình 2-2: Sơ đồ tương tác giữa dầm OA và thanh chống BC</em></p>
+<div class="figure-container">
+
+<img src="/figures/bai-tap/tinh-hoc/hinh_2_2.svg" alt="Hình 2-2: Hệ dầm OA và thanh chống BC ngàm" style="max-width: 480px; width: 100%; margin: 0 auto; display: block;" />
+
+<div class="figure-caption">
+
+Hình 2-2: Sơ đồ tương tác giữa dầm OA và thanh chống BC
+
+</div>
+
 </div>
 
 **Bài giải:**

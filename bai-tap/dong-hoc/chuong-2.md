@@ -44,9 +44,16 @@ Vật rắn quay quanh trục cố định $Oz$ có vị trí xác định bởi
 
 ### 2.1.3. Hệ truyền động cơ khí (Bánh răng, đai, xích)
 
-<div style="text-align: center; margin: 20px 0;">
-  <img src="/figures/bai-tap/dong-hoc/hinh_7_3.svg" alt="Hình 7-3: Các hệ truyền động cơ khí" style="max-width: 520px; width: 100%; margin: 0 auto; display: block;" />
-  <p style="font-size: 14px; color: #64748b; margin-top: 8px;"><em>Hình 7-3: Sơ đồ truyền động bánh răng và đai truyền</em></p>
+<div class="figure-container">
+
+<img src="/figures/bai-tap/dong-hoc/hinh_7_3.svg" alt="Hình 7-3: Các hệ truyền động cơ khí" style="max-width: 520px; width: 100%; margin: 0 auto; display: block;" />
+
+<div class="figure-caption">
+
+Hình 7-3: Sơ đồ truyền động bánh răng và đai truyền
+
+</div>
+
 </div>
 
 Khi hai bánh truyền động tiếp xúc không trượt tại điểm ăn khớp (vận tốc dài tiếp tuyến bằng nhau: $v_1 = v_2$):

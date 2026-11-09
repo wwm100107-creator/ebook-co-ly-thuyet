@@ -91,9 +91,16 @@ $$m_O(\vec{F}) = x F_y - y F_x$$
 
 **Đề bài:** Quả cầu đồng chất tâm $O$, trọng lượng $P$, tựa vào tường nhẵn thẳng đứng tại $C$ và được treo bởi sợi dây $AB$ dài bằng bán kính $R$ ($AB = R$). Điểm $A$ chốt cố định trên tường. Tìm sức căng của dây và phản lực của tường tác dụng lên quả cầu.
 
-<div style="text-align: center; margin: 20px 0;">
-  <img src="/figures/bai-tap/tinh-hoc/hinh_1_6.svg" alt="Hình 1-6: Quả cầu tựa tường treo dây" style="max-width: 520px; width: 100%; margin: 0 auto; display: block;" />
-  <p style="font-size: 14px; color: #64748b; margin-top: 8px;"><em>Hình 1-6: Sơ đồ giải phóng liên kết và tam giác lực của quả cầu</em></p>
+<div class="figure-container">
+
+<img src="/figures/bai-tap/tinh-hoc/hinh_1_6.svg" alt="Hình 1-6: Quả cầu tựa tường treo dây" style="max-width: 520px; width: 100%; margin: 0 auto; display: block;" />
+
+<div class="figure-caption">
+
+Hình 1-6: Sơ đồ giải phóng liên kết và tam giác lực của quả cầu
+
+</div>
+
 </div>
 
 **Bài giải:**
@@ -139,9 +146,16 @@ $$T = \frac{P}{\cos 30^\circ} = \frac{2\sqrt{3}}{3}P, \quad N = P \cdot \tan 30^
 
 **Đề bài:** Treo vật nặng trọng lượng $P$ vào móc $O$ của giá treo $AOB$ tạo bởi hai thanh nhẹ $OA$ và $OB$ có trọng lượng không đáng kể, hai đầu liên kết bản lề với tường và bản lề với nhau tại $O$. Biết thanh $OA$ nằm ngang, thanh $OB$ nghiêng một góc $30^\circ$ so với thanh $OA$. Tìm ứng lực xuất hiện trong hai thanh.
 
-<div style="text-align: center; margin: 20px 0;">
-  <img src="/figures/bai-tap/tinh-hoc/hinh_1_7.svg" alt="Hình 1-7: Cân bằng nút của giá treo AOB" style="max-width: 480px; width: 100%; margin: 0 auto; display: block;" />
-  <p style="font-size: 14px; color: #64748b; margin-top: 8px;"><em>Hình 1-7: Sơ đồ giải phóng liên kết nút O và tam giác lực</em></p>
+<div class="figure-container">
+
+<img src="/figures/bai-tap/tinh-hoc/hinh_1_7.svg" alt="Hình 1-7: Cân bằng nút của giá treo AOB" style="max-width: 480px; width: 100%; margin: 0 auto; display: block;" />
+
+<div class="figure-caption">
+
+Hình 1-7: Sơ đồ giải phóng liên kết nút O và tam giác lực
+
+</div>
+
 </div>
 
 **Bài giải:**
@@ -175,9 +189,16 @@ $$S_A = -S_B \cos 30^\circ = -(-2P) \cdot \frac{\sqrt{3}}{2} = P\sqrt{3}$$
 1. Dây $BC$ nghiêng góc $30^\circ$ với thanh.
 2. Dây $BC$ thẳng đứng.
 
-<div style="text-align: center; margin: 20px 0;">
-  <img src="/figures/bai-tap/tinh-hoc/hinh_1_9.svg" alt="Hình 1-9: Dầm bản lề giữ bằng dây chằng" style="max-width: 500px; width: 100%; margin: 0 auto; display: block;" />
-  <p style="font-size: 14px; color: #64748b; margin-top: 8px;"><em>Hình 1-9: Sơ đồ giải phóng liên kết dầm OA</em></p>
+<div class="figure-container">
+
+<img src="/figures/bai-tap/tinh-hoc/hinh_1_9.svg" alt="Hình 1-9: Dầm bản lề giữ bằng dây chằng" style="max-width: 500px; width: 100%; margin: 0 auto; display: block;" />
+
+<div class="figure-caption">
+
+Hình 1-9: Sơ đồ giải phóng liên kết dầm OA
+
+</div>
+
 </div>
 
 **Bài giải:**
@@ -218,9 +239,16 @@ $$\sum F_y = Y_O + T - P = 0 \implies Y_O = P - \frac{3}{2}P = -\frac{1}{2}P$$
 
 **Đề bài:** Mái hiên đồng chất dạng tam giác chiều dài $AB = 6a$, trọng lượng bản thân $P$, được ngàm chặt vào tường thẳng đứng tại đầu $A$. Đầu mút $B$ chịu một tải trọng tập trung thẳng đứng $Q$. Trên suốt chiều dài $AB$ có tải trọng phân bố đều theo quy luật tam giác với cường độ lớn nhất tại $A$ bằng $q$ và bằng $0$ tại $B$. Xác định các phản lực ngàm tại $A$.
 
-<div style="text-align: center; margin: 20px 0;">
-  <img src="/figures/bai-tap/tinh-hoc/hinh_1_10.svg" alt="Hình 1-10: Mái hiên ngàm tường chịu tải tam giác" style="max-width: 480px; width: 100%; margin: 0 auto; display: block;" />
-  <p style="font-size: 14px; color: #64748b; margin-top: 8px;"><em>Hình 1-10: Sơ đồ thu gọn tải trọng phân bố và phản lực ngàm A</em></p>
+<div class="figure-container">
+
+<img src="/figures/bai-tap/tinh-hoc/hinh_1_10.svg" alt="Hình 1-10: Mái hiên ngàm tường chịu tải tam giác" style="max-width: 480px; width: 100%; margin: 0 auto; display: block;" />
+
+<div class="figure-caption">
+
+Hình 1-10: Sơ đồ thu gọn tải trọng phân bố và phản lực ngàm A
+
+</div>
+
 </div>
 
 **Bài giải:**
@@ -258,9 +286,16 @@ $$m_A = 3qa(2a) + 3aP + 6aQ = 6a^2 q + 3aP + 6aQ$$
 
 **Đề bài:** Cần cẩu $ABC$ di chuyển trên hai bánh xe $A$ và $B$ cách nhau khoảng cách $L = 1\text{ m}$. Trọng lượng của bản thân cần cẩu $P$ có đường tác dụng đi qua chính giữa đoạn $AB$. Cần cẩu dùng để nâng một vật có trọng lượng $q$ ở tầm xa cách trục đối xứng $3\text{ m}$. Ở phía đối diện có một đối trọng $Q$ đặt ở tầm xa $1\text{ m}$. Hãy xác định khoảng giá trị của đối trọng $Q$ để cần cẩu luôn luôn ổn định không bị lật trong mọi trạng thái làm việc.
 
-<div style="text-align: center; margin: 20px 0;">
-  <img src="/figures/bai-tap/tinh-hoc/hinh_1_15.svg" alt="Hình 1-15: Cần cẩu và điều kiện ổn định chống lật" style="max-width: 460px; width: 100%; margin: 0 auto; display: block;" />
-  <p style="font-size: 14px; color: #64748b; margin-top: 8px;"><em>Hình 1-15: Sơ đồ phân tích lật cần cẩu</em></p>
+<div class="figure-container">
+
+<img src="/figures/bai-tap/tinh-hoc/hinh_1_15.svg" alt="Hình 1-15: Cần cẩu và điều kiện ổn định chống lật" style="max-width: 460px; width: 100%; margin: 0 auto; display: block;" />
+
+<div class="figure-caption">
+
+Hình 1-15: Sơ đồ phân tích lật cần cẩu
+
+</div>
+
 </div>
 
 **Bài giải:**

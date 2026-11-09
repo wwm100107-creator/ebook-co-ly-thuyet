@@ -58,9 +58,16 @@ trong đó $x, y$ đo bằng mét ($\text{m}$), thời gian $t$ đo bằng giây
 2. Xác định vectơ vận tốc và gia tốc của điểm tại thời điểm $t$.
 3. Xét tính chất chuyển động nhanh dần, chậm dần.
 
-<div style="text-align: center; margin: 20px 0;">
-  <img src="/figures/bai-tap/dong-hoc/hinh_6_4.svg" alt="Hình 6-4: Quỹ đạo và vectơ vận tốc, gia tốc của điểm" style="max-width: 420px; width: 100%; margin: 0 auto; display: block;" />
-  <p style="font-size: 14px; color: #64748b; margin-top: 8px;"><em>Hình 6-4: Quỹ đạo thẳng của chất điểm trong hệ tọa độ Oxy</em></p>
+<div class="figure-container">
+
+<img src="/figures/bai-tap/dong-hoc/hinh_6_4.svg" alt="Hình 6-4: Quỹ đạo và vectơ vận tốc, gia tốc của điểm" style="max-width: 420px; width: 100%; margin: 0 auto; display: block;" />
+
+<div class="figure-caption">
+
+Hình 6-4: Quỹ đạo thẳng của chất điểm trong hệ tọa độ Oxy
+
+</div>
+
 </div>
 
 **Bài giải:**

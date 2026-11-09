@@ -51,9 +51,16 @@ $$\begin{cases}
 
 **Đề bài:** Treo vật nặng trọng lượng $P$ vào đầu $O$ của giá đỡ không gian tạo bởi 3 thanh nhẹ không trọng lượng $OA, OB, OC$ liên kết bản lề với tường và bản lề với nhau tại $O$. Biết các điểm tựa trên tường $A, B, C$ tạo thành tam giác đều cạnh $a$, đáy $BC$ nằm ngang, thanh $OA$ vuông góc với mặt phẳng tường. Các thanh $OB$ và $OC$ nghiêng góc $30^\circ$ so với thanh $OA$. Tìm ứng lực xuất hiện trong 3 thanh.
 
-<div style="text-align: center; margin: 20px 0;">
-  <img src="/figures/bai-tap/tinh-hoc/hinh_3_5.svg" alt="Hình 3-5: Giá đỡ không gian 3 thanh" style="max-width: 480px; width: 100%; margin: 0 auto; display: block;" />
-  <p style="font-size: 14px; color: #64748b; margin-top: 8px;"><em>Hình 3-5: Sơ đồ cân bằng nút O trong không gian</em></p>
+<div class="figure-container">
+
+<img src="/figures/bai-tap/tinh-hoc/hinh_3_5.svg" alt="Hình 3-5: Giá đỡ không gian 3 thanh" style="max-width: 480px; width: 100%; margin: 0 auto; display: block;" />
+
+<div class="figure-caption">
+
+Hình 3-5: Sơ đồ cân bằng nút O trong không gian
+
+</div>
+
 </div>
 
 **Bài giải:**

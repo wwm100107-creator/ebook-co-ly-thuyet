@@ -42,9 +42,16 @@ $$x_G = \frac{\sum_{k=1}^n P_k x_k}{\sum_{k=1}^n P_k}, \quad y_G = \frac{\sum_{k
 
 **Đề bài:** Tìm tọa độ trọng tâm của tấm đồng chất hình chữ $L$ có kích thước cho như hình vẽ: chiều cao tổng thể $H = 10\text{ cm}$, đáy rộng $B = 6\text{ cm}$, bề dày phần đứng và phần ngang đều bằng $b = 2\text{ cm}$.
 
-<div style="text-align: center; margin: 20px 0;">
-  <img src="/figures/bai-tap/tinh-hoc/hinh_5_5.svg" alt="Hình 5-5: Tấm phẳng đồng chất hình chữ L" style="max-width: 380px; width: 100%; margin: 0 auto; display: block;" />
-  <p style="font-size: 14px; color: #64748b; margin-top: 8px;"><em>Hình 5-5: Phân chia tấm chữ L thành hai hình chữ nhật đơn giản</em></p>
+<div class="figure-container">
+
+<img src="/figures/bai-tap/tinh-hoc/hinh_5_5.svg" alt="Hình 5-5: Tấm phẳng đồng chất hình chữ L" style="max-width: 380px; width: 100%; margin: 0 auto; display: block;" />
+
+<div class="figure-caption">
+
+Hình 5-5: Phân chia tấm chữ L thành hai hình chữ nhật đơn giản
+
+</div>
+
 </div>
 
 **Bài giải:**
