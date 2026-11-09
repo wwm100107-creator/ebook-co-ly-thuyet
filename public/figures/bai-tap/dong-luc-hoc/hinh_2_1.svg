@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 240" width="100%" height="auto" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <marker id="arr-red" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#dc2626" />
+    </marker>
+    <marker id="arr-blue" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#2563eb" />
+    </marker>
+    <pattern id="hatch2" width="8" height="8" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#cbd5e1" stroke-width="1.2" />
+    </pattern>
+  </defs>
+  <style>
+    text { font-family: 'Times New Roman', serif; }
+    .lbl { font-size: 16px; font-style: italic; fill: #0f172a; }
+    .lbl-bold { font-size: 18px; font-style: italic; font-weight: bold; fill: #0f172a; }
+  </style>
+
+  <!-- Nền ngang cố định -->
+  <line x1="40" y1="180" x2="360" y2="180" stroke="#1e293b" stroke-width="2" />
+  <rect x="40" y="180" width="320" height="20" fill="url(#hatch2)" stroke="#94a3b8" stroke-width="1" />
+
+  <!-- Vật trượt A khối lượng m1 trên nền ngang -->
+  <rect x="100" y="130" width="80" height="50" rx="3" fill="#e2e8f0" stroke="#1e293b" stroke-width="2" />
+  <text x="135" y="160" class="lbl-bold">A (m₁)</text>
+
+  <!-- Ròng rọc B cố định tại (350, 130) -->
+  <circle cx="350" cy="130" r="24" fill="#cbd5e1" stroke="#1e293b" stroke-width="2" />
+  <circle cx="350" cy="130" r="4" fill="#0f172a" />
+  <!-- Trụ đỡ ròng rọc -->
+  <line x1="350" y1="130" x2="350" y2="180" stroke="#64748b" stroke-width="2.5" />
+  <text x="365" y="125" class="lbl-bold">O</text>
+
+  <!-- Dây mềm nhẹ không dãn -->
+  <line x1="180" y1="130" x2="350" y2="106" stroke="#0f172a" stroke-width="2" />
+  <!-- Dây rủ xuống mang vật C -->
+  <line x1="374" y1="130" x2="374" y2="190" stroke="#0f172a" stroke-width="2" />
+  <rect x="354" y="190" width="40" height="40" rx="3" fill="#fed7aa" stroke="#c2410c" stroke-width="2" />
+  <text x="363" y="215" class="lbl-bold" fill="#c2410c">m₂</text>
+
+  <!-- Lực kéo P hoặc trọng lực P2 = m2g -->
+  <line x1="374" y1="210" x2="374" y2="245" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arr-red)" />
+  <text x="382" y="240" class="lbl-bold" fill="#dc2626">P₂</text>
+
+  <!-- Gia tốc a của hệ -->
+  <line x1="210" y1="110" x2="260" y2="110" stroke="#2563eb" stroke-width="2" marker-end="url(#arr-blue)" />
+  <text x="230" y="100" class="lbl-bold" fill="#2563eb">a</text>
+  
+  <line x1="420" y1="160" x2="420" y2="200" stroke="#2563eb" stroke-width="2" marker-end="url(#arr-blue)" />
+  <text x="428" y="185" class="lbl-bold" fill="#2563eb">a</text>
+</svg>

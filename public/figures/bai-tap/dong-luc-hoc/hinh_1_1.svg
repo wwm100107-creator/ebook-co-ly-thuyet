@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 260" width="100%" height="auto" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <marker id="arr-red" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#dc2626" />
+    </marker>
+    <marker id="arr-blue" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#2563eb" />
+    </marker>
+    <marker id="arr-green" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#16a34a" />
+    </marker>
+  </defs>
+  <style>
+    text { font-family: 'Times New Roman', serif; }
+    .lbl { font-size: 16px; font-style: italic; fill: #0f172a; }
+    .lbl-bold { font-size: 18px; font-style: italic; font-weight: bold; fill: #0f172a; }
+    .axis { stroke: #94a3b8; stroke-width: 1.2; stroke-dasharray: 4,3; }
+  </style>
+
+  <!-- Trục tọa độ Oz thẳng đứng hướng xuống -->
+  <line x1="120" y1="30" x2="120" y2="230" stroke="#0f172a" stroke-width="1.5" marker-end="url(#arr-blue)" />
+  <text x="130" y="225" class="lbl-bold">z</text>
+  <circle cx="120" cy="50" r="3.5" fill="#0f172a" />
+  <text x="100" y="55" class="lbl-bold">O</text>
+
+  <!-- Chất điểm M khối lượng m tại z -->
+  <circle cx="120" cy="120" r="8" fill="#2563eb" stroke="#1e293b" stroke-width="1.5" />
+  <text x="95" y="125" class="lbl-bold">M</text>
+
+  <!-- Trọng lực P = mg thẳng đứng hướng xuống -->
+  <line x1="120" y1="120" x2="120" y2="195" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arr-red)" />
+  <text x="128" y="190" class="lbl-bold" fill="#dc2626">P = mg</text>
+
+  <!-- Lực cản môi trường R = -k*v ngược chiều chuyển động (hướng lên) -->
+  <line x1="120" y1="120" x2="120" y2="60" stroke="#16a34a" stroke-width="2.5" marker-end="url(#arr-green)" />
+  <text x="128" y="70" class="lbl-bold" fill="#16a34a">R = -kv</text>
+
+  <!-- Vectơ vận tốc v hướng xuống -->
+  <line x1="160" y1="100" x2="160" y2="150" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arr-blue)" />
+  <text x="168" y="130" class="lbl-bold" fill="#2563eb">v</text>
+
+  <!-- Khung thông số giải thích bên phải -->
+  <rect x="230" y="40" width="200" height="170" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" />
+  <text x="245" y="70" font-size="15" font-weight="bold" fill="#1e293b">Phương trình vi phân:</text>
+  <text x="245" y="100" font-size="14" fill="#0f172a">m·(dv/dt) = mg - kv</text>
+  <text x="245" y="130" font-size="14" fill="#0f172a">v(t) = v_gh·(1 - e^(-kt/m))</text>
+  <text x="245" y="160" font-size="14" fill="#dc2626" font-weight="bold">v_gh = mg / k</text>
+  <text x="245" y="190" font-size="13" fill="#64748b">(Vận tốc giới hạn dừng)</text>
+</svg>

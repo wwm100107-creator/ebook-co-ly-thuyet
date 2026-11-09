@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 260" width="100%" height="auto" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <marker id="arr-axis" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto">
+      <polygon points="0 0, 6 2, 0 4" fill="#64748b" />
+    </marker>
+  </defs>
+  <style>
+    text { font-family: 'Times New Roman', serif; }
+    .lbl { font-size: 15px; font-style: italic; fill: #0f172a; }
+    .lbl-bold { font-size: 17px; font-style: italic; font-weight: bold; fill: #0f172a; }
+    .axis { stroke: #64748b; stroke-width: 1.5; }
+  </style>
+
+  <!-- Hệ trục tọa độ Oxy -->
+  <line x1="40" y1="220" x2="320" y2="220" class="axis" marker-end="url(#arr-axis)" />
+  <text x="325" y="225" class="lbl-bold">x</text>
+  <line x1="60" y1="240" x2="60" y2="20" class="axis" marker-end="url(#arr-axis)" />
+  <text x="50" y="18" class="lbl-bold">y</text>
+  <text x="45" y="235" class="lbl">O</text>
+
+  <!-- Tấm phẳng chữ L:
+       Đáy ngang rộng 4+2 = 6, cao 2.
+       Phần đứng cao 8+2 = 10, rộng 2.
+       Tọa độ (tỷ lệ 1 đơn vị = 16px):
+       (60, 220) -> (60 + 6*16 = 156, 220) -> (156, 220 - 2*16 = 188) -> (60 + 2*16 = 92, 188) -> (92, 220 - 10*16 = 60) -> (60, 60) -> Z
+  -->
+  <polygon points="60,220 188,220 188,188 92,188 92,60 60,60" fill="#e2e8f0" stroke="#1e293b" stroke-width="2.2" />
+
+  <!-- Đường phân chia 2 phần chữ nhật nét đứt -->
+  <line x1="92" y1="188" x2="92" y2="220" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,3" />
+
+  <!-- Phần 1: Hình chữ nhật đứng 2x8. S1 = 2x8 = 16 hoặc 2x6...
+       Theo sách: Phần đứng (x1=1, y1=6), S1=12. Phần đáy (x2=3, y2=1), S2=8.
+  -->
+  <!-- Trọng tâm G1 của phần đứng -->
+  <circle cx="76" cy="124" r="4" fill="#2563eb" />
+  <text x="82" y="128" class="lbl-bold" fill="#2563eb">G<tspan font-size="11">1</tspan></text>
+
+  <!-- Trọng tâm G2 của phần ngang -->
+  <circle cx="140" cy="204" r="4" fill="#2563eb" />
+  <text x="146" y="208" class="lbl-bold" fill="#2563eb">G<tspan font-size="11">2</tspan></text>
+
+  <!-- Trọng tâm toàn bộ G của chữ L -->
+  <circle cx="102" cy="156" r="5" fill="#dc2626" stroke="#1e293b" stroke-width="1.2" />
+  <text x="110" y="158" class="lbl-bold" fill="#dc2626">G</text>
+
+  <!-- Các kích thước ghi chú -->
+  <!-- Chiều cao phần đứng: 8 -->
+  <line x1="45" y1="60" x2="45" y2="188" stroke="#64748b" stroke-width="1" />
+  <text x="32" y="130" font-size="13">8</text>
+  
+  <!-- Chiều dày: 2 -->
+  <line x1="45" y1="188" x2="45" y2="220" stroke="#64748b" stroke-width="1" />
+  <text x="32" y="208" font-size="13">2</text>
+
+  <!-- Chiều rộng phần chìa: 4 -->
+  <line x1="92" y1="235" x2="188" y2="235" stroke="#64748b" stroke-width="1" />
+  <text x="135" y="250" font-size="13">4</text>
+
+  <!-- Chiều dày đứng: 2 -->
+  <line x1="60" y1="50" x2="92" y2="50" stroke="#64748b" stroke-width="1" />
+  <text x="72" y="45" font-size="13">2</text>
+</svg>

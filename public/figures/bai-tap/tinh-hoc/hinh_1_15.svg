@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 260" width="100%" height="auto" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <marker id="arr-red" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#dc2626" />
+    </marker>
+    <marker id="arr-blue" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#2563eb" />
+    </marker>
+  </defs>
+  <style>
+    text { font-family: 'Times New Roman', serif; }
+    .lbl { font-size: 15px; font-style: italic; fill: #0f172a; }
+    .lbl-bold { font-size: 17px; font-style: italic; font-weight: bold; fill: #0f172a; }
+  </style>
+
+  <!-- Đường ray mặt đất -->
+  <line x1="50" y1="210" x2="380" y2="210" stroke="#334155" stroke-width="2.5" />
+  <line x1="50" y1="216" x2="380" y2="216" stroke="#64748b" stroke-width="1.5" stroke-dasharray="8,6" />
+
+  <!-- Bánh xe tại A (x=150) và B (x=210) - khoảng cách AB = 1m -->
+  <circle cx="150" cy="204" r="6" fill="#475569" stroke="#1e293b" stroke-width="1.5" />
+  <text x="142" y="230" class="lbl-bold">A</text>
+  
+  <circle cx="210" cy="204" r="6" fill="#475569" stroke="#1e293b" stroke-width="1.5" />
+  <text x="212" y="230" class="lbl-bold">B</text>
+
+  <!-- Khung tháp cần cẩu giữa A và B -->
+  <polygon points="140,198 220,198 190,80 170,80" fill="#f1f5f9" stroke="#1e293b" stroke-width="2" />
+  <!-- Giằng chéo tháp -->
+  <line x1="145" y1="198" x2="185" y2="140" stroke="#64748b" stroke-width="1.2" />
+  <line x1="215" y1="198" x2="175" y2="140" stroke="#64748b" stroke-width="1.2" />
+  <line x1="175" y1="140" x2="190" y2="80" stroke="#64748b" stroke-width="1.2" />
+  <line x1="185" y1="140" x2="170" y2="80" stroke="#64748b" stroke-width="1.2" />
+
+  <!-- Cần ngang vươn ra 2 bên: sang trái (đối trọng Q, 1m), sang phải (vật nâng q, 3m) -->
+  <!-- Trục giữa AB là x = 180 -->
+  <!-- Đối trọng Q tại x = 180 - 60 = 120 (1m) -->
+  <!-- Móc nâng vật q tại x = 180 + 180 = 360 (3m) -->
+  <line x1="110" y1="80" x2="370" y2="80" stroke="#1e293b" stroke-width="3" stroke-linecap="round" />
+  <!-- Dây chằng đỉnh tháp -->
+  <line x1="180" y1="40" x2="110" y2="80" stroke="#475569" stroke-width="1.5" />
+  <line x1="180" y1="40" x2="360" y2="80" stroke="#475569" stroke-width="1.5" />
+  <line x1="180" y1="40" x2="180" y2="80" stroke="#1e293b" stroke-width="2" />
+
+  <!-- Trọng lượng bản thân cần cẩu P đặt tại tâm giữa AB (x=180) -->
+  <line x1="180" y1="80" x2="180" y2="170" stroke="#dc2626" stroke-width="2.4" marker-end="url(#arr-red)" />
+  <text x="186" y="160" class="lbl-bold" fill="#dc2626">P</text>
+
+  <!-- Đối trọng Q tại x=120 -->
+  <line x1="120" y1="80" x2="120" y2="125" stroke="#2563eb" stroke-width="2" />
+  <rect x="110" y="125" width="20" height="18" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" />
+  <text x="115" y="139" font-size="13" font-weight="bold" fill="#2563eb">Q</text>
+
+  <!-- Vật nâng q tại x=360 -->
+  <line x1="360" y1="80" x2="360" y2="140" stroke="#16a34a" stroke-width="2" />
+  <circle cx="360" cy="148" r="8" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5" />
+  <text x="372" y="153" class="lbl-bold" fill="#16a34a">q</text>
+
+  <!-- Kích thước đo đạc -->
+  <line x1="120" y1="25" x2="180" y2="25" stroke="#64748b" stroke-width="1" marker-start="url(#arr-blue)" marker-end="url(#arr-blue)" />
+  <text x="142" y="20" font-size="12" fill="#475569">1m</text>
+  
+  <line x1="180" y1="25" x2="360" y2="25" stroke="#64748b" stroke-width="1" marker-start="url(#arr-blue)" marker-end="url(#arr-blue)" />
+  <text x="260" y="20" font-size="12" fill="#475569">3m</text>
+</svg>

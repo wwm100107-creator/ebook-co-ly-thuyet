@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 240" width="100%" height="auto" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <marker id="arr-red" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#dc2626" />
+    </marker>
+    <marker id="arr-green" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#16a34a" />
+    </marker>
+    <pattern id="hatch3" width="8" height="8" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#cbd5e1" stroke-width="1.2" />
+    </pattern>
+  </defs>
+  <style>
+    text { font-family: 'Times New Roman', serif; }
+    .lbl { font-size: 16px; font-style: italic; fill: #0f172a; }
+    .lbl-bold { font-size: 18px; font-style: italic; font-weight: bold; fill: #0f172a; }
+    .axis { stroke: #94a3b8; stroke-width: 1.2; stroke-dasharray: 4,3; }
+  </style>
+
+  <!-- Nền ngang và gối cố định tại A(80, 180) -->
+  <line x1="50" y1="190" x2="110" y2="190" stroke="#1e293b" stroke-width="2" />
+  <rect x="50" y="190" width="60" height="15" fill="url(#hatch3)" stroke="#94a3b8" />
+  <polygon points="80,180 70,190 90,190" fill="#94a3b8" stroke="#1e293b" />
+  <circle cx="80" cy="180" r="4.5" fill="#2563eb" />
+  <text x="65" y="175" class="lbl-bold">A</text>
+
+  <!-- Thanh AB nghiêng từ A(80, 180) đến B(240, 80) -->
+  <line x1="80" y1="180" x2="240" y2="80" stroke="#1e293b" stroke-width="4" stroke-linecap="round" />
+  <circle cx="240" cy="80" r="4.5" fill="#0f172a" />
+  <text x="245" y="75" class="lbl-bold">B</text>
+
+  <!-- Thanh BC nối từ B(240, 80) đến con trượt C(400, 180) -->
+  <line x1="240" y1="80" x2="400" y2="180" stroke="#1e293b" stroke-width="4" stroke-linecap="round" />
+  
+  <!-- Con trượt C tại (400, 180) trên rãnh ngang -->
+  <rect x="375" y="170" width="50" height="20" rx="3" fill="#e2e8f0" stroke="#1e293b" stroke-width="2" />
+  <circle cx="400" cy="180" r="4.5" fill="#2563eb" />
+  <text x="405" y="165" class="lbl-bold">C</text>
+  <line x1="350" y1="190" x2="450" y2="190" stroke="#1e293b" stroke-width="2" />
+  <rect x="350" y="190" width="100" height="12" fill="url(#hatch3)" stroke="#94a3b8" />
+
+  <!-- Lực chủ động F tác dụng nằm ngang tại C -->
+  <line x1="450" y1="180" x2="405" y2="180" stroke="#dc2626" stroke-width="2.6" marker-end="url(#arr-red)" />
+  <text x="455" y="185" class="lbl-bold" fill="#dc2626">Q</text>
+
+  <!-- Lực thẳng đứng P tác dụng tại khớp B -->
+  <line x1="240" y1="40" x2="240" y2="75" stroke="#dc2626" stroke-width="2.6" marker-end="url(#arr-red)" />
+  <text x="250" y="55" class="lbl-bold" fill="#dc2626">P</text>
+
+  <!-- Di chuyển khả dĩ delta r_B và delta x_C -->
+  <line x1="400" y1="150" x2="435" y2="150" stroke="#16a34a" stroke-width="1.8" marker-end="url(#arr-green)" />
+  <text x="410" y="142" class="lbl-bold" fill="#16a34a">δx_C</text>
+
+  <line x1="240" y1="80" x2="240" y2="110" stroke="#16a34a" stroke-width="1.8" marker-end="url(#arr-green)" />
+  <text x="245" y="115" class="lbl-bold" fill="#16a34a">δy_B</text>
+</svg>

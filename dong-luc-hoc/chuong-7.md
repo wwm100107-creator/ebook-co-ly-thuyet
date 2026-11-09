@@ -172,7 +172,11 @@ Xác định vận tốc $u_1, u_2$ của hai quả cầu ngay sau va chạm.
 
 <div class="figure-box">
   <img src="/figures/dong-luc-hoc/hinh_7_3.svg" alt="Hình 7-3: Va chạm thẳng xuyên tâm hai quả cầu đàn hồi" style="max-width: 580px;" />
-  <div class="figure-caption">Hình 7-3: Sơ đồ va chạm thẳng xuyên tâm của hai quả cầu khối lượng $m_1, m_2$ với hệ số hồi phục $k$</div>
+  <div class="figure-caption">
+
+Hình 7-3: Sơ đồ va chạm thẳng xuyên tâm của hai quả cầu khối lượng $m_1, m_2$ với hệ số hồi phục $k$
+
+</div>
 </div>
 
 **Bài giải:**

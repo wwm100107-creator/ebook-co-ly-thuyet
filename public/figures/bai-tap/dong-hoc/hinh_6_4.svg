@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 260" width="100%" height="auto" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <marker id="arr-axis" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto">
+      <polygon points="0 0, 6 2, 0 4" fill="#64748b" />
+    </marker>
+    <marker id="arr-vec" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#2563eb" />
+    </marker>
+    <marker id="arr-red" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#dc2626" />
+    </marker>
+  </defs>
+  <style>
+    text { font-family: 'Times New Roman', serif; }
+    .lbl { font-size: 15px; font-style: italic; fill: #0f172a; }
+    .lbl-bold { font-size: 17px; font-style: italic; font-weight: bold; fill: #0f172a; }
+    .axis { stroke: #64748b; stroke-width: 1.5; }
+    .grid { stroke: #e2e8f0; stroke-width: 1; stroke-dasharray: 3,3; }
+  </style>
+
+  <!-- Hệ trục Oxy -->
+  <line x1="40" y1="180" x2="380" y2="180" class="axis" marker-end="url(#arr-axis)" />
+  <text x="385" y="185" class="lbl-bold">x</text>
+  <line x1="100" y1="240" x2="100" y2="30" class="axis" marker-end="url(#arr-axis)" />
+  <text x="90" y="25" class="lbl-bold">y</text>
+  <text x="85" y="195" class="lbl">O</text>
+
+  <!-- Đường thẳng quỹ đạo AB: y = (3/4)x -->
+  <!-- Điểm O(100, 180), Điểm B(x=4m -> 100+4*45=280, y=3m -> 180-3*45=45) -->
+  <line x1="60" y1="210" x2="320" y2="15" stroke="#1e293b" stroke-width="2.5" />
+  
+  <!-- Đường nét đứt gióng tọa độ của B -->
+  <line x1="280" y1="180" x2="280" y2="45" class="grid" />
+  <line x1="100" y1="45" x2="280" y2="45" class="grid" />
+
+  <text x="275" y="198" font-size="14">4</text>
+  <text x="80" y="50" font-size="14">3</text>
+
+  <!-- Điểm B và điểm A -->
+  <circle cx="280" cy="45" r="4.5" fill="#dc2626" />
+  <text x="290" y="42" class="lbl-bold" fill="#dc2626">B</text>
+
+  <circle cx="60" cy="210" r="4" fill="#0f172a" />
+  <text x="45" y="215" class="lbl-bold">A</text>
+
+  <!-- Góc alpha -->
+  <path d="M 140 180 A 40 40 0 0 0 132 156" fill="none" stroke="#0f172a" stroke-width="1.2" />
+  <text x="145" y="168" class="lbl">α</text>
+
+  <!-- Vectơ vận tốc v tại M và gia tốc a -->
+  <circle cx="190" cy="112.5" r="4.5" fill="#2563eb" />
+  <text x="180" y="105" class="lbl-bold">M</text>
+  <line x1="190" y1="112.5" x2="240" y2="75" stroke="#2563eb" stroke-width="2.4" marker-end="url(#arr-vec)" />
+  <text x="235" y="65" class="lbl-bold" fill="#2563eb">v</text>
+
+  <line x1="190" y1="112.5" x2="150" y2="142.5" stroke="#dc2626" stroke-width="2.4" marker-end="url(#arr-red)" />
+  <text x="135" y="155" class="lbl-bold" fill="#dc2626">a</text>
+</svg>

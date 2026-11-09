@@ -13,9 +13,23 @@ export default defineConfig({
     siteTitle: 'Cơ Học Lý Thuyết',
     nav: [
       { text: 'Trang Chủ', link: '/' },
-      { text: 'Tĩnh Học (Tập 1)', link: '/tinh-hoc/' },
-      { text: 'Động Học (Tập 1)', link: '/dong-hoc/' },
-      { text: 'Động Lực Học (Tập 2)', link: '/dong-luc-hoc/' },
+      {
+        text: 'Giáo Trình Lý Thuyết',
+        items: [
+          { text: 'Phần 1: Tĩnh Học (Tập 1)', link: '/tinh-hoc/' },
+          { text: 'Phần 2: Động Học (Tập 1)', link: '/dong-hoc/' },
+          { text: 'Tập 2: Động Lực Học', link: '/dong-luc-hoc/' },
+        ]
+      },
+      {
+        text: 'Sách Bài Tập',
+        items: [
+          { text: 'Tổng Quan Sách Bài Tập', link: '/bai-tap/' },
+          { text: 'Bài Tập Tĩnh Học (5 Chương)', link: '/bai-tap/tinh-hoc/' },
+          { text: 'Bài Tập Động Học (6 Chương)', link: '/bai-tap/dong-hoc/' },
+          { text: 'Bài Tập Động Lực Học (8 Chương)', link: '/bai-tap/dong-luc-hoc/' },
+        ]
+      },
       { text: 'Về Giáo Trình', link: '/gioi-thieu' }
     ],
     sidebar: {
@@ -29,7 +43,8 @@ export default defineConfig({
             { text: 'Chương 2: Hệ lực không gian', link: '/tinh-hoc/chuong-2' },
             { text: 'Chương 3: Ma sát', link: '/tinh-hoc/chuong-3' },
             { text: 'Chương 4: Trọng tâm', link: '/tinh-hoc/chuong-4' },
-            { text: 'Câu hỏi ôn tập', link: '/tinh-hoc/cau-hoi-on-tap' }
+            { text: 'Câu hỏi ôn tập', link: '/tinh-hoc/cau-hoi-on-tap' },
+            { text: '📝 Sách Bài Tập Tĩnh Học ↗', link: '/bai-tap/tinh-hoc/' }
           ]
         }
       ],
@@ -44,7 +59,8 @@ export default defineConfig({
             { text: 'Chương 3: Hợp chuyển động điểm', link: '/dong-hoc/chuong-3' },
             { text: 'Chương 4: Chuyển động song phẳng', link: '/dong-hoc/chuong-4' },
             { text: 'Câu hỏi ôn tập', link: '/dong-hoc/cau-hoi-on-tap' },
-            { text: 'Tài liệu tham khảo', link: '/dong-hoc/tai-lieu-tham-khao' }
+            { text: 'Tài liệu tham khảo', link: '/dong-hoc/tai-lieu-tham-khao' },
+            { text: '📝 Sách Bài Tập Động Học ↗', link: '/bai-tap/dong-hoc/' }
           ]
         }
       ],
@@ -62,7 +78,83 @@ export default defineConfig({
             { text: 'Chương 6: PTVP cơ hệ không tự do', link: '/dong-luc-hoc/chuong-6' },
             { text: 'Chương 7: Lý thuyết va chạm', link: '/dong-luc-hoc/chuong-7' },
             { text: 'Câu hỏi ôn tập', link: '/dong-luc-hoc/cau-hoi-on-tap' },
-            { text: 'Tài liệu tham khảo', link: '/dong-luc-hoc/tai-lieu-tham-khao' }
+            { text: 'Tài liệu tham khảo', link: '/dong-luc-hoc/tai-lieu-tham-khao' },
+            { text: '📝 Sách Bài Tập Động Lực Học ↗', link: '/bai-tap/dong-luc-hoc/' }
+          ]
+        }
+      ],
+      '/bai-tap/tinh-hoc/': [
+        {
+          text: 'SÁCH BÀI TẬP: TĨNH HỌC',
+          items: [
+            { text: 'Giới Thiệu & Mục Lục', link: '/bai-tap/tinh-hoc/' },
+            { text: 'Chương 1: Bài toán phẳng', link: '/bai-tap/tinh-hoc/chuong-1' },
+            { text: 'Chương 2: Bài toán phẳng hệ vật', link: '/bai-tap/tinh-hoc/chuong-2' },
+            { text: 'Chương 3: Bài toán không gian', link: '/bai-tap/tinh-hoc/chuong-3' },
+            { text: 'Chương 4: Bài toán ma sát', link: '/bai-tap/tinh-hoc/chuong-4' },
+            { text: 'Chương 5: Bài toán tìm trọng tâm', link: '/bai-tap/tinh-hoc/chuong-5' }
+          ]
+        },
+        {
+          text: 'Chuyển Phân Hệ',
+          items: [
+            { text: '📖 Giáo Trình Lý Thuyết Tĩnh Học', link: '/tinh-hoc/' },
+            { text: '📚 Cổng Sách Bài Tập', link: '/bai-tap/' }
+          ]
+        }
+      ],
+      '/bai-tap/dong-hoc/': [
+        {
+          text: 'SÁCH BÀI TẬP: ĐỘNG HỌC',
+          items: [
+            { text: 'Giới Thiệu & Mục Lục', link: '/bai-tap/dong-hoc/' },
+            { text: 'Chương 1: Chuyển động của điểm', link: '/bai-tap/dong-hoc/chuong-1' },
+            { text: 'Chương 2: Quay quanh trục cố định', link: '/bai-tap/dong-hoc/chuong-2' },
+            { text: 'Chương 3: Chuyển động song phẳng', link: '/bai-tap/dong-hoc/chuong-3' },
+            { text: 'Chương 4: Chuyển động cầu', link: '/bai-tap/dong-hoc/chuong-4' },
+            { text: 'Chương 5: Hợp chuyển động điểm', link: '/bai-tap/dong-hoc/chuong-5' },
+            { text: 'Chương 6: Hợp chuyển động vật', link: '/bai-tap/dong-hoc/chuong-6' }
+          ]
+        },
+        {
+          text: 'Chuyển Phân Hệ',
+          items: [
+            { text: '📖 Giáo Trình Lý Thuyết Động Học', link: '/dong-hoc/' },
+            { text: '📚 Cổng Sách Bài Tập', link: '/bai-tap/' }
+          ]
+        }
+      ],
+      '/bai-tap/dong-luc-hoc/': [
+        {
+          text: 'SÁCH BÀI TẬP: ĐỘNG LỰC HỌC',
+          items: [
+            { text: 'Giới Thiệu & Mục Lục', link: '/bai-tap/dong-luc-hoc/' },
+            { text: 'Chương 1: PTVP chuyển động chất điểm', link: '/bai-tap/dong-luc-hoc/chuong-1' },
+            { text: 'Chương 2: Các định lý tổng quát', link: '/bai-tap/dong-luc-hoc/chuong-2' },
+            { text: 'Chương 3: Di chuyển khả dĩ', link: '/bai-tap/dong-luc-hoc/chuong-3' },
+            { text: 'Chương 4: Nguyên lý Đalămbe', link: '/bai-tap/dong-luc-hoc/chuong-4' },
+            { text: 'Chương 5: Phương trình Lagrange', link: '/bai-tap/dong-luc-hoc/chuong-5' },
+            { text: 'Chương 6: Động lực học vật rắn', link: '/bai-tap/dong-luc-hoc/chuong-6' },
+            { text: 'Chương 7: Chuyển động tương đối', link: '/bai-tap/dong-luc-hoc/chuong-7' },
+            { text: 'Chương 8: Lý thuyết va chạm', link: '/bai-tap/dong-luc-hoc/chuong-8' }
+          ]
+        },
+        {
+          text: 'Chuyển Phân Hệ',
+          items: [
+            { text: '📖 Giáo Trình Lý Thuyết Động Lực Học', link: '/dong-luc-hoc/' },
+            { text: '📚 Cổng Sách Bài Tập', link: '/bai-tap/' }
+          ]
+        }
+      ],
+      '/bai-tap/': [
+        {
+          text: 'TỔNG QUAN BÀI TẬP',
+          items: [
+            { text: 'Cổng Sách Bài Tập', link: '/bai-tap/' },
+            { text: 'Bài Tập Tĩnh Học (Tập 1)', link: '/bai-tap/tinh-hoc/' },
+            { text: 'Bài Tập Động Học (Tập 2)', link: '/bai-tap/dong-hoc/' },
+            { text: 'Bài Tập Động Lực Học (Quyển 1 & 2)', link: '/bai-tap/dong-luc-hoc/' }
           ]
         }
       ]

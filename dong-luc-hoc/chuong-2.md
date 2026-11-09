@@ -157,7 +157,11 @@ Một ô tô có trọng lượng $P = mg$ chuyển động với vận tốc $v
 
 <div class="figure-box">
   <img src="/figures/dong-luc-hoc/hinh_2_3.svg" alt="Hình 2-3: Ô tô chuyển động qua đỉnh cầu vồng" style="max-width: 580px;" />
-  <div class="figure-caption">Hình 2-3: Sơ đồ lực tác dụng lên ô tô tại đỉnh cầu vồng bán kính cong $R$</div>
+  <div class="figure-caption">
+
+Hình 2-3: Sơ đồ lực tác dụng lên ô tô tại đỉnh cầu vồng bán kính cong $R$
+
+</div>
 </div>
 
 **Bài giải:**

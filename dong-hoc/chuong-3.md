@@ -130,7 +130,11 @@ Hai bờ của một con sông thẳng song song với nhau và cách nhau một
 
 <div class="figure-box">
   <img src="/figures/dong-hoc/hinh_3_6.svg" alt="Hình 3-6: Hợp vận tốc chuyển động của thuyền qua sông" style="max-width: 580px;" />
-  <div class="figure-caption">Hình 3-6: Sơ đồ hợp vận tốc thuyền qua sông: vận tốc tương đối $\vec{v}_r = \vec{u}$, vận tốc theo $\vec{v}_e = \vec{v}$ và vận tốc tuyệt đối $\vec{v}_a$</div>
+  <div class="figure-caption">
+
+Hình 3-6: Sơ đồ hợp vận tốc thuyền qua sông: vận tốc tương đối $\vec{v}_r = \vec{u}$, vận tốc theo $\vec{v}_e = \vec{v}$ và vận tốc tuyệt đối $\vec{v}_a$
+
+</div>
 </div>
 
 **Bài giải:**
@@ -180,7 +184,11 @@ Hãy xác định hình chiếu của vận tốc tuyệt đối và gia tốc t
 
 <div class="figure-box">
   <img src="/figures/dong-hoc/hinh_3_7.svg" alt="Hình 3-7: Chuyển động của phần tử khí trong rãnh rotor máy nén" style="max-width: 580px;" />
-  <div class="figure-caption">Hình 3-7: Phân tích vận tốc, gia tốc theo, tương đối và gia tốc Coriolis $\vec{a}_c$ của hạt khí trong rãnh rotor</div>
+  <div class="figure-caption">
+
+Hình 3-7: Phân tích vận tốc, gia tốc theo, tương đối và gia tốc Coriolis $\vec{a}_c$ của hạt khí trong rãnh rotor
+
+</div>
 </div>
 
 **Bài giải:**
@@ -233,7 +241,11 @@ Xác định:
 
 <div class="figure-box">
   <img src="/figures/dong-hoc/hinh_3_8.svg" alt="Hình 3-8: Cơ cấu cu-lít truyền động giữa tay quay và cần lắc" style="max-width: 580px;" />
-  <div class="figure-caption">Hình 3-8: Sơ đồ cơ cấu cu-lít: tay quay $OA$, cần lắc $O_1B$ và con chạy $A$</div>
+  <div class="figure-caption">
+
+Hình 3-8: Sơ đồ cơ cấu cu-lít: tay quay $OA$, cần lắc $O_1B$ và con chạy $A$
+
+</div>
 </div>
 
 **Bài giải:**

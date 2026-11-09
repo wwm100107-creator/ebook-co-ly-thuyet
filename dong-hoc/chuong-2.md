@@ -240,7 +240,11 @@ Xác định vận tốc $v_P$ và gia tốc $a_P$ của vật $P$.
 
 <div class="figure-box">
   <img src="/figures/dong-hoc/hinh_2_18.svg" alt="Hình 2-18: Cơ cấu truyền động liên hoàn bánh răng - tang tời" style="max-width: 600px;" />
-  <div class="figure-caption">Hình 2-18: Cơ cấu truyền động liên hoàn bánh dẫn I, khối tang hai tầng II và vật treo P</div>
+  <div class="figure-caption">
+
+Hình 2-18: Cơ cấu truyền động liên hoàn bánh dẫn I, khối tang hai tầng II và vật treo P
+
+</div>
 </div>
 
 **Bài giải:**

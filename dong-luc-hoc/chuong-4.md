@@ -161,7 +161,11 @@ Xác định lực ép $Q$ của máy ép tác dụng lên vật ép theo lực 
 
 <div class="figure-box">
   <img src="/figures/dong-luc-hoc/hinh_4_2.svg" alt="Hình 4-2: Máy ép trục vít" style="max-width: 550px;" />
-  <div class="figure-caption">Hình 4-2: Sơ đồ lực và dịch chuyển khả dĩ của cơ cấu máy ép trục vít</div>
+  <div class="figure-caption">
+
+Hình 4-2: Sơ đồ lực và dịch chuyển khả dĩ của cơ cấu máy ép trục vít
+
+</div>
 </div>
 
 **Bài giải:**

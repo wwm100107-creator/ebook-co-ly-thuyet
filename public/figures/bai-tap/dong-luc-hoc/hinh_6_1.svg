@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 250" width="100%" height="auto" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <marker id="arr-red" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#dc2626" />
+    </marker>
+    <marker id="arr-blue" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#2563eb" />
+    </marker>
+  </defs>
+  <style>
+    text { font-family: 'Times New Roman', serif; }
+    .lbl { font-size: 16px; font-style: italic; fill: #0f172a; }
+    .lbl-bold { font-size: 18px; font-style: italic; font-weight: bold; fill: #0f172a; }
+  </style>
+
+  <!-- Mặt phẳng nghiêng góc alpha = 30 độ -->
+  <polygon points="40,210 400,210 40,80" fill="#f1f5f9" stroke="#1e293b" stroke-width="2" />
+  <line x1="40" y1="210" x2="400" y2="210" stroke="#1e293b" stroke-width="2" />
+  <text x="100" y="200" font-size="14">α</text>
+
+  <!-- Đĩa tròn tâm C bán kính R lăn trên dốc nghiêng -->
+  <!-- Dốc có phương nối (40,80) đến (400,210), góc nghiêng xuống là theta -->
+  <g transform="translate(200, 105) rotate(19.8)">
+    <circle cx="0" cy="0" r="35" fill="#e2e8f0" stroke="#1e293b" stroke-width="2.2" />
+    <circle cx="0" cy="0" r="4" fill="#0f172a" />
+    <text x="-5" y="-10" class="lbl-bold">C</text>
+    
+    <!-- Điểm tiếp xúc P (tâm vận tốc tức thời) tại (0, 35) -->
+    <circle cx="0" cy="35" r="3" fill="#dc2626" />
+    <text x="-5" y="48" class="lbl-bold" fill="#dc2626">P</text>
+
+    <!-- Gia tốc khối tâm a_C hướng xuống dọc dốc -->
+    <line x1="0" y1="0" x2="45" y2="0" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arr-blue)" />
+    <text x="50" y="-5" class="lbl-bold" fill="#2563eb">a_C</text>
+
+    <!-- Lực ma sát nghỉ F_ms tại điểm tiếp xúc hướng lên dốc -->
+    <line x1="0" y1="35" x2="-35" y2="35" stroke="#dc2626" stroke-width="2.2" marker-end="url(#arr-red)" />
+    <text x="-55" y="30" class="lbl-bold" fill="#dc2626">F_ms</text>
+  </g>
+</svg>

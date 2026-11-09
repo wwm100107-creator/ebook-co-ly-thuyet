@@ -289,7 +289,11 @@ Cho cơ cấu tang tời như Hình 3-4. Tang tời có trọng lượng $P$, b�
 
 <div class="figure-box">
   <img src="/figures/dong-luc-hoc/hinh_3_4.svg" alt="Hình 3-4: Tang tời treo vật nặng Q" style="max-width: 520px;" />
-  <div class="figure-caption">Hình 3-4: Hệ cơ học gồm tang tời quay quanh trục cố định và vật nặng Q chuyển động tịnh tiến</div>
+  <div class="figure-caption">
+
+Hình 3-4: Hệ cơ học gồm tang tời quay quanh trục cố định và vật nặng Q chuyển động tịnh tiến
+
+</div>
 </div>
 
 **Bài giải:**
@@ -333,7 +337,11 @@ Một vật rắn có khối lượng $m$, khối tâm $C$ cách trục quay n�
 
 <div class="figure-box">
   <img src="/figures/dong-luc-hoc/hinh_3_8.svg" alt="Hình 3-8: Con lắc vật lý và bảo toàn cơ năng" style="max-width: 500px;" />
-  <div class="figure-caption">Hình 3-8: Dao động của con lắc vật lý quay quanh trục nằm ngang O</div>
+  <div class="figure-caption">
+
+Hình 3-8: Dao động của con lắc vật lý quay quanh trục nằm ngang O
+
+</div>
 </div>
 
 **Bài giải:**

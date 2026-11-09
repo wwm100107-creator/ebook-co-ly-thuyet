@@ -148,7 +148,11 @@ Một hình trụ tròn đặc đồng chất khối lượng $m$, bán kính $R
 
 <div class="figure-box">
   <img src="/figures/dong-luc-hoc/hinh_6_2.svg" alt="Hình 6-2: Trụ tròn lăn không trượt trên mặt phẳng nghiêng" style="max-width: 580px;" />
-  <div class="figure-caption">Hình 6-2: Mô hình cơ học trụ tròn lăn không trượt trên mặt nghiêng góc $\alpha$</div>
+  <div class="figure-caption">
+
+Hình 6-2: Mô hình cơ học trụ tròn lăn không trượt trên mặt nghiêng góc $\alpha$
+
+</div>
 </div>
 
 **Bài giải:**

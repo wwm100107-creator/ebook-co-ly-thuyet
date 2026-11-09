@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 220" width="100%" height="auto" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <marker id="arr-turn" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto">
+      <polygon points="0 0, 6 2, 0 4" fill="#2563eb" />
+    </marker>
+  </defs>
+  <style>
+    text { font-family: 'Times New Roman', serif; }
+    .lbl { font-size: 15px; font-style: italic; fill: #0f172a; }
+    .lbl-bold { font-size: 16px; font-style: italic; font-weight: bold; fill: #0f172a; }
+  </style>
+
+  <!-- Khối a: Bánh răng ăn khớp ngoài -->
+  <g transform="translate(10, 20)">
+    <!-- Bánh 1 bán kính R1=45 tại (70, 80) -->
+    <circle cx="70" cy="80" r="45" fill="#f8fafc" stroke="#1e293b" stroke-width="2" />
+    <circle cx="70" cy="80" r="4" fill="#2563eb" />
+    <!-- Bánh 2 bán kính R2=35 tại (150, 80) -->
+    <circle cx="150" cy="80" r="35" fill="#f8fafc" stroke="#1e293b" stroke-width="2" />
+    <circle cx="150" cy="80" r="4" fill="#2563eb" />
+
+    <!-- Chiều quay ngược chiều nhau -->
+    <path d="M 50 50 A 30 30 0 0 1 90 50" fill="none" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arr-turn)" />
+    <text x="65" y="40" class="lbl-bold" fill="#2563eb">ω<tspan font-size="11">1</tspan></text>
+
+    <path d="M 170 55 A 25 25 0 0 0 135 55" fill="none" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arr-turn)" />
+    <text x="145" y="45" class="lbl-bold" fill="#2563eb">ω<tspan font-size="11">2</tspan></text>
+
+    <text x="90" y="155" font-size="14" font-weight="bold" fill="#475569">a) Bánh răng ngoài</text>
+  </g>
+
+  <!-- Khối b: Truyền động đai thẳng (cùng chiều) -->
+  <g transform="translate(260, 20)">
+    <!-- Bánh 1 tại (60, 80) R=40 -->
+    <circle cx="60" cy="80" r="40" fill="#f8fafc" stroke="#1e293b" stroke-width="2" />
+    <circle cx="60" cy="80" r="4" fill="#2563eb" />
+
+    <!-- Bánh 2 tại (180, 80) R=30 -->
+    <circle cx="180" cy="80" r="30" fill="#f8fafc" stroke="#1e293b" stroke-width="2" />
+    <circle cx="180" cy="80" r="4" fill="#2563eb" />
+
+    <!-- Dây đai quấn thẳng -->
+    <line x1="60" y1="40" x2="180" y2="50" stroke="#0284c7" stroke-width="2.5" />
+    <line x1="60" y1="120" x2="180" y2="110" stroke="#0284c7" stroke-width="2.5" />
+
+    <!-- Chiều quay cùng chiều -->
+    <path d="M 40 55 A 25 25 0 0 1 75 55" fill="none" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arr-turn)" />
+    <text x="50" y="45" class="lbl-bold" fill="#2563eb">ω<tspan font-size="11">1</tspan></text>
+
+    <path d="M 165 60 A 20 20 0 0 1 195 60" fill="none" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arr-turn)" />
+    <text x="175" y="50" class="lbl-bold" fill="#2563eb">ω<tspan font-size="11">2</tspan></text>
+
+    <text x="95" y="155" font-size="14" font-weight="bold" fill="#475569">b) Đai truyền thẳng</text>
+  </g>
+</svg>

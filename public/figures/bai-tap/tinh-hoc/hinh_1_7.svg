@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 260" width="100%" height="auto" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <marker id="arr-red" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#dc2626" />
+    </marker>
+    <marker id="arr-blue" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#2563eb" />
+    </marker>
+    <pattern id="wall-hatch2" width="8" height="8" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#cbd5e1" stroke-width="1.2" />
+    </pattern>
+  </defs>
+  <style>
+    text { font-family: 'Times New Roman', serif; }
+    .lbl { font-size: 16px; font-style: italic; fill: #0f172a; }
+    .lbl-bold { font-size: 18px; font-style: italic; font-weight: bold; fill: #0f172a; }
+    .axis { stroke: #94a3b8; stroke-width: 1.2; stroke-dasharray: 4,3; }
+  </style>
+
+  <!-- Tường thẳng đứng -->
+  <rect x="40" y="20" width="20" height="220" fill="url(#wall-hatch2)" stroke="#475569" stroke-width="1.5" />
+  <line x1="60" y1="20" x2="60" y2="240" stroke="#1e293b" stroke-width="2.2" />
+
+  <!-- Bản lề A và B trên tường -->
+  <circle cx="60" cy="70" r="4.5" fill="#0f172a" />
+  <text x="42" y="65" class="lbl-bold">A</text>
+  
+  <circle cx="60" cy="180" r="4.5" fill="#0f172a" />
+  <text x="42" y="195" class="lbl-bold">B</text>
+
+  <!-- Thanh OA nằm ngang (chiều dài 190) từ (60, 70) đến O(250, 70) -->
+  <line x1="60" y1="70" x2="250" y2="70" stroke="#1e293b" stroke-width="3" stroke-linecap="round" />
+  
+  <!-- Thanh OB nghiêng từ (60, 180) đến O(250, 70) -->
+  <line x1="60" y1="180" x2="250" y2="70" stroke="#1e293b" stroke-width="3" stroke-linecap="round" />
+
+  <!-- Khớp bản lề O -->
+  <circle cx="250" cy="70" r="5" fill="#2563eb" stroke="#1e293b" stroke-width="1.5" />
+  <text x="255" y="62" class="lbl-bold">O</text>
+
+  <!-- Góc 30 độ giữa OB và OA tại O -->
+  <path d="M 215 70 A 35 35 0 0 1 221.7 89.8" fill="none" stroke="#0f172a" stroke-width="1.2" />
+  <text x="185" y="82" font-size="13">30°</text>
+
+  <!-- Tải trọng P treo tại O -->
+  <line x1="250" y1="70" x2="250" y2="160" stroke="#dc2626" stroke-width="2.6" marker-end="url(#arr-red)" />
+  <rect x="240" y="160" width="20" height="20" fill="#f8fafc" stroke="#dc2626" stroke-width="1.5" />
+  <text x="246" y="175" font-size="13" font-weight="bold" fill="#dc2626">P</text>
+
+  <!-- Biểu diễn phản lực ứng lực tại nút O: SA và SB -->
+  <!-- SA hướng sang trái (giả thiết thanh OA bị kéo) -->
+  <line x1="250" y1="70" x2="175" y2="70" stroke="#2563eb" stroke-width="2.2" marker-end="url(#arr-blue)" />
+  <text x="195" y="62" class="lbl-bold" fill="#2563eb">S<tspan font-size="12">A</tspan></text>
+
+  <!-- SB hướng dọc theo OB về phía B (giả thiết thanh OB bị kéo) -->
+  <line x1="250" y1="70" x2="190" y2="105" stroke="#2563eb" stroke-width="2.2" marker-end="url(#arr-blue)" />
+  <text x="175" y="125" class="lbl-bold" fill="#2563eb">S<tspan font-size="12">B</tspan></text>
+
+  <!-- Trục tọa độ Oxy tại O -->
+  <line x1="250" y1="70" x2="310" y2="70" class="axis" marker-end="url(#arr-blue)" />
+  <text x="315" y="75" class="lbl">x</text>
+  <line x1="250" y1="70" x2="250" y2="20" class="axis" marker-end="url(#arr-blue)" />
+  <text x="245" y="15" class="lbl">y</text>
+
+  <!-- Đa giác lực tam giác khép kín -->
+  <g transform="translate(340, 100)">
+    <text x="15" y="15" font-size="14" font-weight="bold" fill="#1e293b">Tam giác lực</text>
+    <line x1="30" y1="25" x2="30" y2="105" stroke="#dc2626" stroke-width="2.2" marker-end="url(#arr-red)" />
+    <text x="12" y="70" class="lbl-bold" fill="#dc2626">P</text>
+    <line x1="30" y1="105" x2="90" y2="70" stroke="#2563eb" stroke-width="2.2" marker-end="url(#arr-blue)" />
+    <text x="65" y="105" class="lbl-bold" fill="#2563eb">S<tspan font-size="11">B</tspan></text>
+    <line x1="90" y1="70" x2="30" y2="25" stroke="#2563eb" stroke-width="2.2" marker-end="url(#arr-blue)" />
+    <text x="65" y="40" class="lbl-bold" fill="#2563eb">S<tspan font-size="11">A</tspan></text>
+    <text x="35" y="98" font-size="12">30°</text>
+  </g>
+</svg>

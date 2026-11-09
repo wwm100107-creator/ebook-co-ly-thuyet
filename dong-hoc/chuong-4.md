@@ -203,7 +203,11 @@ Một bánh xe tròn bán kính $R$ lăn không trượt trên đường ray ph�
 
 <div class="figure-box">
   <img src="/figures/dong-hoc/hinh_4_10.svg" alt="Hình 4-10: Phân bố vận tốc của bánh xe lăn không trượt" style="max-width: 580px;" />
-  <div class="figure-caption">Hình 4-10: Xác định tâm vận tốc tức thời $P$ và vận tốc các điểm trên vành bánh xe lăn không trượt</div>
+  <div class="figure-caption">
+
+Hình 4-10: Xác định tâm vận tốc tức thời $P$ và vận tốc các điểm trên vành bánh xe lăn không trượt
+
+</div>
 </div>
 
 **Bài giải:**
@@ -267,7 +271,11 @@ Tại thời điểm góc quay của tay quay $\varphi = 60^\circ$ và thanh tru
 
 <div class="figure-box">
   <img src="/figures/dong-hoc/hinh_4_17.svg" alt="Hình 4-17: Cơ cấu tay quay con trượt OAB" style="max-width: 620px;" />
-  <div class="figure-caption">Hình 4-17: Sơ đồ động học cơ cấu tay quay con trượt: xác định tâm vận tốc tức thời $P$ của thanh truyền $AB$</div>
+  <div class="figure-caption">
+
+Hình 4-17: Sơ đồ động học cơ cấu tay quay con trượt: xác định tâm vận tốc tức thời $P$ của thanh truyền $AB$
+
+</div>
 </div>
 
 **Bài giải:**
@@ -347,7 +355,11 @@ Bánh răng hành tinh 2 có bán kính $r_2$ ăn khớp ngoài với bánh 1 (b
 
 <div class="figure-box">
   <img src="/figures/dong-hoc/hinh_4_21.svg" alt="Hình 4-21: Hệ bánh răng vi sai hành tinh" style="max-width: 600px;" />
-  <div class="figure-caption">Hình 4-21: Cơ cấu vi sai bánh răng hành tinh: bánh 1, cần OA và bánh hành tinh 2</div>
+  <div class="figure-caption">
+
+Hình 4-21: Cơ cấu vi sai bánh răng hành tinh: bánh 1, cần OA và bánh hành tinh 2
+
+</div>
 </div>
 
 **Bài giải:**
@@ -394,7 +406,11 @@ Thiết lập hệ phương trình giải tích xác định các góc vị trí
 
 <div class="figure-box">
   <img src="/figures/dong-hoc/hinh_4_24.svg" alt="Hình 4-24: Cơ cấu bốn khâu bản lề kín O1ABO2" style="max-width: 620px;" />
-  <div class="figure-caption">Hình 4-24: Mô hình giải tích vectơ bao đóng của cơ cấu bốn khâu phẳng bản lề</div>
+  <div class="figure-caption">
+
+Hình 4-24: Mô hình giải tích vectơ bao đóng của cơ cấu bốn khâu phẳng bản lề
+
+</div>
 </div>
 
 **Bài giải:**
