@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 260" width="100%" height="auto">
+  <defs>
+    <marker id="arr-red" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#ef4444" />
+    </marker>
+    <marker id="arr-blue" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#0284c7" />
+    </marker>
+  </defs>
+
+  <!-- Đường nối tâm xuyên tâm x -->
+  <line x1="50" y1="130" x2="550" y2="130" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 3" />
+
+  <!-- Quả cầu 1: tâm C1 (200, 130), bán kính R1=50, khối lượng m1 -->
+  <circle cx="200" cy="130" r="50" fill="#f0f9ff" stroke="#0284c7" stroke-width="2.5" />
+  <circle cx="200" cy="130" r="4" fill="#0284c7" />
+  <text x="200" y="125" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0284c7" text-anchor="middle">m₁</text>
+  <!-- Vận tốc trước va chạm v1 -->
+  <line x1="200" y1="130" x2="280" y2="130" stroke="#ef4444" stroke-width="2.5" marker-end="url(#arr-red)" />
+  <text x="240" y="115" font-family="sans-serif" font-size="13" font-weight="bold" fill="#ef4444">v₁</text>
+
+  <!-- Quả cầu 2: tâm C2 (380, 130), bán kính R2=40, khối lượng m2 -->
+  <circle cx="380" cy="130" r="40" fill="#f8fafc" stroke="#0369a1" stroke-width="2.5" />
+  <circle cx="380" cy="130" r="4" fill="#0369a1" />
+  <text x="380" y="125" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0369a1" text-anchor="middle">m₂</text>
+  <!-- Vận tốc trước va chạm v2 -->
+  <line x1="380" y1="130" x2="440" y2="130" stroke="#0284c7" stroke-width="2.2" marker-end="url(#arr-blue)" />
+  <text x="405" y="115" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0284c7">v₂</text>
+
+  <!-- Chú thích hệ số hồi phục k -->
+  <text x="300" y="210" font-family="sans-serif" font-size="13" font-weight="bold" fill="#475569" text-anchor="middle">Đường xuyên tâm va chạm (Hệ số hồi phục k)</text>
+</svg>

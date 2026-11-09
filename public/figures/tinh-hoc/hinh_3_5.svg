@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 440" width="100%" height="100%">
+  <defs>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2563eb"/>
+    </marker>
+    <pattern id="hatch" width="6" height="6" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="6" stroke="#94a3b8" stroke-width="1.2" />
+    </pattern>
+  </defs>
+
+  <!-- Floor and Wall -->
+  <rect x="70" y="360" width="340" height="15" fill="url(#hatch)" stroke="#475569"/>
+  <line x1="70" y1="360" x2="410" y2="360" stroke="#1e293b" stroke-width="2"/>
+  <rect x="70" y="40" width="15" height="320" fill="url(#hatch)" stroke="#475569"/>
+  <line x1="85" y1="40" x2="85" y2="360" stroke="#1e293b" stroke-width="2"/>
+
+  <!-- Origin O -->
+  <text x="65" y="375" fill="#1e293b" font-size="14" font-weight="bold">O</text>
+
+  <!-- Ladder AB (B on wall at y=100, A on floor at x=340) -->
+  <line x1="85" y1="100" x2="340" y2="360" stroke="#1e293b" stroke-width="5"/>
+  <circle cx="85" cy="100" r="4" fill="#fff" stroke="#1e293b" stroke-width="2"/>
+  <circle cx="340" cy="360" r="4" fill="#fff" stroke="#1e293b" stroke-width="2"/>
+  <text x="65" y="105" fill="#1e293b" font-size="15" font-weight="bold">B</text>
+  <text x="350" y="375" fill="#1e293b" font-size="15" font-weight="bold">A</text>
+
+  <!-- Midpoint I of ladder (weight P) -->
+  <!-- (85+340)/2 = 212.5, (100+360)/2 = 230 -->
+  <circle cx="212" cy="230" r="3.5" fill="#1e293b"/>
+  <text x="225" y="235" fill="#1e293b" font-size="14" font-weight="bold">I</text>
+  <line x1="212" y1="230" x2="212" y2="320" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+  <text x="220" y="315" fill="#dc2626" font-size="14" font-weight="bold" font-style="italic">P</text>
+
+  <!-- Angle alpha at wall B -->
+  <line x1="85" y1="100" x2="85" y2="180" stroke="#94a3b8" stroke-dasharray="3,3"/>
+  <path d="M 85 140 A 40 40 0 0 0 110 126" fill="none" stroke="#475569" stroke-width="1.5"/>
+  <text x="95" y="152" fill="#475569" font-size="13">α</text>
+
+  <!-- Reactions at B: NB horizontal, FB vertical upward (impending slip down) -->
+  <line x1="85" y1="100" x2="165" y2="100" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+  <text x="155" y="90" fill="#2563eb" font-size="13" font-style="italic">N<tspan font-size="9" dy="2">B</tspan></text>
+  <line x1="85" y1="100" x2="85" y2="35" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+  <text x="92" y="45" fill="#2563eb" font-size="13" font-style="italic">F<tspan font-size="9" dy="2">B</tspan></text>
+
+  <!-- Reactions at A: NA vertical upward, FA horizontal leftward (impending slip right) -->
+  <line x1="340" y1="360" x2="340" y2="280" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+  <text x="348" y="290" fill="#2563eb" font-size="13" font-style="italic">N<tspan font-size="9" dy="2">A</tspan></text>
+  <line x1="340" y1="360" x2="260" y2="360" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+  <text x="270" y="380" fill="#2563eb" font-size="13" font-style="italic">F<tspan font-size="9" dy="2">A</tspan></text>
+</svg>

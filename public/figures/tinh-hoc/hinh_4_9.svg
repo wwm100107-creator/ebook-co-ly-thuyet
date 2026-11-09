@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 380" width="100%" height="100%">
+  <defs>
+    <marker id="arrow-axis" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#1e293b"/>
+    </marker>
+  </defs>
+
+  <!-- Coordinate axes Oxy -->
+  <line x1="80" y1="320" x2="330" y2="320" stroke="#1e293b" stroke-width="2" marker-end="url(#arrow-axis)"/>
+  <text x="340" y="325" fill="#1e293b" font-size="15" font-weight="bold" font-style="italic">x</text>
+
+  <line x1="80" y1="320" x2="80" y2="40" stroke="#1e293b" stroke-width="2" marker-end="url(#arrow-axis)"/>
+  <text x="75" y="30" fill="#1e293b" font-size="15" font-weight="bold" font-style="italic">y</text>
+  <text x="65" y="335" fill="#1e293b" font-size="14" font-weight="bold">O</text>
+
+  <!-- L-shaped plate -->
+  <!-- Vertical part: x from 80 to 140 (w=60 -> 2cm), y from 60 to 320 (h=260 -> 10cm) -->
+  <!-- Horizontal extension: x from 140 to 200 (w=60 -> 2cm), y from 260 to 320 (h=60 -> 2cm) -->
+  <polygon points="80,60 140,60 140,260 200,260 200,320 80,320" fill="#e0f2fe" stroke="#0284c7" stroke-width="2.5"/>
+
+  <!-- Sub-rectangle partition line -->
+  <line x1="140" y1="260" x2="140" y2="320" stroke="#0284c7" stroke-dasharray="3,3" stroke-width="1.5"/>
+
+  <!-- Centroid G1 of vertical strip (x=110, y=190) -->
+  <circle cx="110" cy="190" r="3.5" fill="#1e293b"/>
+  <text x="120" y="195" fill="#1e293b" font-size="13" font-weight="bold">G<tspan font-size="9" dy="2">1</tspan></text>
+
+  <!-- Centroid G2 of horizontal tab (x=170, y=290) -->
+  <circle cx="170" cy="290" r="3.5" fill="#1e293b"/>
+  <text x="180" y="295" fill="#1e293b" font-size="13" font-weight="bold">G<tspan font-size="9" dy="2">2</tspan></text>
+
+  <!-- Overall Centroid G (xG = 4/3 cm ~ 120, yG = 4.3 cm ~ 207) -->
+  <circle cx="120" cy="207" r="4.5" fill="#dc2626"/>
+  <text x="130" y="215" fill="#dc2626" font-size="14" font-weight="bold">G</text>
+
+  <!-- Dimension annotations -->
+  <line x1="80" y1="345" x2="200" y2="345" stroke="#64748b" stroke-width="1.2"/>
+  <text x="140" y="360" fill="#475569" font-size="12" text-anchor="middle">4 cm</text>
+
+  <line x1="60" y1="60" x2="60" y2="320" stroke="#64748b" stroke-width="1.2"/>
+  <text x="45" y="195" fill="#475569" font-size="12" text-anchor="middle" transform="rotate(-90 45 195)">10 cm</text>
+
+  <text x="110" y="50" fill="#475569" font-size="12" text-anchor="middle">2 cm</text>
+  <text x="215" y="295" fill="#475569" font-size="12">2 cm</text>
+</svg>

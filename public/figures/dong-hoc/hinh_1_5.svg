@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 320" width="100%" height="auto">
+  <defs>
+    <marker id="arr-blue" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#0284c7" />
+    </marker>
+    <marker id="arr-red" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#ef4444" />
+    </marker>
+    <marker id="arr-green" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#10b981" />
+    </marker>
+    <marker id="arr-axis" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto">
+      <polygon points="0 0, 6 2, 0 4" fill="#64748b" />
+    </marker>
+  </defs>
+
+  <!-- Part (a): Quỹ đạo Elip -->
+  <g transform="translate(0, 0)">
+    <text x="180" y="30" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0284c7" text-anchor="middle">a) Quỹ đạo Elip trong mặt phẳng Oxy</text>
+    <!-- Trục Oxy -->
+    <line x1="40" y1="170" x2="330" y2="170" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-axis)" />
+    <line x1="180" y1="290" x2="180" y2="50" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-axis)" />
+    <text x="335" y="174" font-family="sans-serif" font-size="13" font-style="italic" fill="#475569">x</text>
+    <text x="175" y="45" font-family="sans-serif" font-size="13" font-style="italic" fill="#475569">y</text>
+    <text x="168" y="185" font-family="sans-serif" font-size="13" fill="#475569">O</text>
+
+    <!-- Elip b=110, d=80 -->
+    <ellipse cx="180" cy="170" rx="110" ry="75" fill="none" stroke="#0284c7" stroke-width="2.5" />
+    <text x="295" y="185" font-family="sans-serif" font-size="12" fill="#0284c7">b</text>
+    <text x="165" y="90" font-family="sans-serif" font-size="12" fill="#0284c7">d</text>
+
+    <!-- Điểm M tại góc 45 độ -->
+    <!-- x = 180 + 110*cos(45) = 257.7, y = 170 - 75*sin(45) = 117 -->
+    <circle cx="258" cy="117" r="4.5" fill="#0f172a" />
+    <text x="268" y="112" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0f172a">M</text>
+
+    <!-- Vectơ vận tốc v (tiếp tuyến elip) -->
+    <line x1="258" y1="117" x2="205" y2="60" stroke="#ef4444" stroke-width="2.2" marker-end="url(#arr-red)" />
+    <text x="200" y="52" font-family="sans-serif" font-size="13" font-weight="bold" fill="#ef4444">v</text>
+
+    <!-- Vectơ gia tốc a hướng về tâm O -->
+    <line x1="258" y1="117" x2="200" y2="155" stroke="#10b981" stroke-width="2.2" marker-end="url(#arr-green)" />
+    <text x="195" y="150" font-family="sans-serif" font-size="13" font-weight="bold" fill="#10b981">a</text>
+  </g>
+
+  <!-- Part (b): Đường đầu mút vận tốc (Hodograph) -->
+  <g transform="translate(370, 0)">
+    <text x="180" y="30" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0284c7" text-anchor="middle">b) Đường đầu mút vận tốc (Hodograph)</text>
+    <!-- Trục O1 x1 y1 -->
+    <line x1="40" y1="170" x2="330" y2="170" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-axis)" />
+    <line x1="180" y1="290" x2="180" y2="50" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-axis)" />
+    <text x="335" y="174" font-family="sans-serif" font-size="13" font-style="italic" fill="#475569">x₁ (v_x)</text>
+    <text x="185" y="45" font-family="sans-serif" font-size="13" font-style="italic" fill="#475569">y₁ (v_y)</text>
+    <text x="165" y="185" font-family="sans-serif" font-size="13" fill="#475569">O₁</text>
+
+    <!-- Elip hodograph: rx=80 (d*omega), ry=110 (b*omega) -->
+    <ellipse cx="180" cy="170" rx="80" ry="105" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-dasharray="5 3" />
+    <text x="265" y="185" font-family="sans-serif" font-size="12" fill="#ef4444">d·ω</text>
+    <text x="185" y="75" font-family="sans-serif" font-size="12" fill="#ef4444">b·ω</text>
+
+    <!-- Điểm M' tương ứng -->
+    <circle cx="236" cy="96" r="4.5" fill="#ef4444" />
+    <text x="246" y="93" font-family="sans-serif" font-size="13" font-weight="bold" fill="#ef4444">M'</text>
+    <line x1="180" y1="170" x2="236" y2="96" stroke="#ef4444" stroke-width="1.8" marker-end="url(#arr-red)" />
+  </g>
+</svg>

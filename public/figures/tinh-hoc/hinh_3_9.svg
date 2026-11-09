@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 360" width="100%" height="100%">
+  <defs>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2563eb"/>
+    </marker>
+    <pattern id="hatch" width="6" height="6" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="6" stroke="#94a3b8" stroke-width="1.2" />
+    </pattern>
+  </defs>
+
+  <!-- Ground -->
+  <rect x="60" y="270" width="330" height="15" fill="url(#hatch)" stroke="#475569"/>
+  <line x1="60" y1="270" x2="390" y2="270" stroke="#1e293b" stroke-width="2"/>
+
+  <!-- Wheel (center 220, 190, r=80) -->
+  <circle cx="220" cy="190" r="80" fill="#f8fafc" stroke="#1e293b" stroke-width="2.5"/>
+  <circle cx="220" cy="190" r="3" fill="#1e293b"/>
+  <text x="210" y="185" fill="#1e293b" font-size="14" font-weight="bold">O</text>
+
+  <!-- Active couple M (clockwise) -->
+  <path d="M 260 160 A 50 50 0 0 1 270 215" fill="none" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+  <text x="280" y="195" fill="#dc2626" font-size="15" font-weight="bold" font-style="italic">M</text>
+
+  <!-- Resistance load Q (leftward at axle O) -->
+  <line x1="220" y1="190" x2="135" y2="190" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+  <text x="145" y="180" fill="#dc2626" font-size="14" font-weight="bold" font-style="italic">Q</text>
+
+  <!-- Weight P downward -->
+  <line x1="220" y1="190" x2="220" y2="255" stroke="#dc2626" stroke-width="2" marker-end="url(#arrow-red)"/>
+  <text x="228" y="240" fill="#dc2626" font-size="13" font-style="italic">P</text>
+
+  <!-- Reactions at contact I -->
+  <line x1="220" y1="270" x2="220" y2="220" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <text x="226" y="215" fill="#2563eb" font-size="13" font-style="italic">N</text>
+
+  <line x1="220" y1="270" x2="280" y2="270" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <text x="270" y="290" fill="#2563eb" font-size="13" font-style="italic">F</text>
+
+  <!-- Rolling friction moment Ml -->
+  <path d="M 235 260 A 25 25 0 0 0 205 260" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <text x="240" y="255" fill="#2563eb" font-size="12" font-style="italic">M<tspan font-size="9" dy="2">l</tspan></text>
+</svg>

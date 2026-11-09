@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 320" width="100%" height="100%">
+  <defs>
+    <marker id="arrow-axis" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#1e293b"/>
+    </marker>
+  </defs>
+
+  <!-- Coordinate axes Oxy -->
+  <line x1="80" y1="260" x2="80" y2="40" stroke="#1e293b" stroke-width="2" marker-end="url(#arrow-axis)"/>
+  <text x="75" y="30" fill="#1e293b" font-size="15" font-weight="bold" font-style="italic">y</text>
+
+  <line x1="80" y1="260" x2="310" y2="260" stroke="#1e293b" stroke-width="2" marker-end="url(#arrow-axis)"/>
+  <text x="320" y="265" fill="#1e293b" font-size="15" font-weight="bold" font-style="italic">x</text>
+  <text x="65" y="275" fill="#1e293b" font-size="14" font-weight="bold">O</text>
+
+  <!-- Semicircle in first/fourth quadrant or quarter? In H.4-14 it's a semicircle with center O along y axis -->
+  <!-- Semicircle radius R=140, from y=260-140=120 to y=260+140=400 or center at (80,160) -->
+  <path d="M 80 50 A 110 110 0 0 1 80 270 Z" fill="#e0f2fe" stroke="#0284c7" stroke-width="2.5"/>
+
+  <!-- Centroid G at xG = 4R/(3pi) ~ 46.7, yG = 0 (relative to center O=(80,160)) -->
+  <circle cx="127" cy="160" r="4" fill="#dc2626"/>
+  <text x="135" y="165" fill="#dc2626" font-size="14" font-weight="bold">G</text>
+
+  <!-- Radius R line -->
+  <line x1="80" y1="160" x2="158" y2="82" stroke="#475569" stroke-width="1.5"/>
+  <text x="125" y="115" fill="#475569" font-size="13" font-style="italic">R</text>
+</svg>

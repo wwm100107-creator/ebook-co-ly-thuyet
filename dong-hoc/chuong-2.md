@@ -179,3 +179,92 @@ Hình 2-3: Vận tốc tiếp tuyến tại điểm ăn khớp giữa hai bánh 
 Nếu bỏ qua sự trượt của đai trên các bánh đai:
 
 $$v_1 = v_2 = v_{\text{đai}} \implies r_1 \omega_1 = r_2 \omega_2 \implies i_{12} = \frac{\omega_1}{\omega_2} = \frac{r_2}{r_1}$$
+
+
+---
+
+## 2.4. Các Thí Dụ Áp Dụng (Bài Tập Mẫu)
+
+::: tip Ý NGHĨA PHƯƠNG PHÁP
+Các bài toán về chuyển động của vật rắn quay quanh trục cố định và hệ truyền động liên hoàn thường yêu cầu liên hệ giữa vận tốc góc, gia tốc góc của các vật quay với vận tốc dài, gia tốc dài của các điểm trên vành và các vật chuyển động tịnh tiến qua các điểm ăn khớp hoặc dây đai không dãn.
+:::
+
+### Thí dụ 2-1: Dao động của kim điện kế Galvani
+
+**Đề bài:**
+Kim của điện kế Galvani có chiều dài $l$ chuyển động quay theo quy luật:
+$$\varphi = \varphi_0 \sin\left(\frac{2\pi}{T} t\right)$$
+trong đó $\varphi_0$ là độ lệch cực đại của kim khỏi vị trí cân bằng ($\varphi = 0$), $T$ là chu kỳ dao động.
+1. Xác định vận tốc góc $\omega$ và gia tốc góc $\varepsilon$ của kim.
+2. Tìm vận tốc dài $v$, gia tốc tiếp tuyến $a_t$, gia tốc pháp tuyến $a_n$ và gia tốc toàn phần $a$ của điểm đầu mút kim điện kế tại thời điểm $t = \frac{T}{4}$.
+
+**Bài giải:**
+
+Kim điện kế thực hiện chuyển động quay quanh một trục cố định đi qua gốc quay $O$ vuông góc với mặt số.
+
+**1. Vận tốc góc và gia tốc góc:**
+Đạo hàm phương trình góc quay $\varphi(t)$ theo thời gian:
+$$\omega = \dot{\varphi} = \frac{d\varphi}{dt} = \varphi_0 \frac{2\pi}{T} \cos\left(\frac{2\pi}{T} t\right)$$
+$$\varepsilon = \dot{\omega} = \frac{d^2\varphi}{dt^2} = -\varphi_0 \left(\frac{2\pi}{T}\right)^2 \sin\left(\frac{2\pi}{T} t\right)$$
+
+**2. Vận tốc và gia tốc của điểm đầu mút kim:**
+Điểm đầu mút kim vạch nên một cung tròn bán kính $R = l$.
+- Trị số vận tốc dài:
+  $$v = l |\omega| = l \varphi_0 \frac{2\pi}{T} \left|\cos\left(\frac{2\pi}{T} t\right)\right|$$
+- Thành phần gia tốc tiếp tuyến:
+  $$a_t = l |\varepsilon| = l \varphi_0 \left(\frac{2\pi}{T}\right)^2 \left|\sin\left(\frac{2\pi}{T} t\right)\right|$$
+- Thành phần gia tốc pháp tuyến:
+  $$a_n = l \omega^2 = l \varphi_0^2 \left(\frac{2\pi}{T}\right)^2 \cos^2\left(\frac{2\pi}{T} t\right)$$
+
+**3. Tại thời điểm $t = \frac{T}{4}$:**
+Góc pha: $\frac{2\pi}{T} \cdot \frac{T}{4} = \frac{\pi}{2}$.
+Khi đó:
+$$\sin\frac{\pi}{2} = 1, \quad \cos\frac{\pi}{2} = 0$$
+
+Ta thu được:
+- Vận tốc góc triệt tiêu: $\omega = 0 \implies v = 0$ (kim dừng lại tức thời ở vị trí lệch cực đại $\varphi = \varphi_0$).
+- Gia tốc góc đạt cực đại: $|\varepsilon| = \varphi_0 \left(\frac{2\pi}{T}\right)^2$.
+- Gia tốc pháp tuyến triệt tiêu: $a_n = 0$.
+- Gia tốc tiếp tuyến đạt cực đại:
+  $$a_t = l \varphi_0 \left(\frac{2\pi}{T}\right)^2$$
+- Gia tốc toàn phần của điểm đầu mút kim:
+  $$a = \sqrt{a_t^2 + a_n^2} = a_t = l \varphi_0 \left(\frac{2\pi}{T}\right)^2$$
+
+---
+
+### Thí dụ 2-2: Khảo sát hệ truyền động liên hoàn bánh răng - tang tời
+
+**Đề bài:**
+Cho cơ cấu truyền động như Hình 2-18. Bánh dẫn I có bán kính $R_1$ quay quanh trục cố định với vận tốc góc $\omega_1$ và gia tốc góc $\varepsilon_1$. Bánh bị dẫn II gồm hai tang gắn đồng trục: tầng ngoài có bán kính $R_2$ nhận truyền động từ bánh I, tầng trong là tang nhỏ có bán kính $r_2$ dùng để quấn dây treo vật nặng $P$. Dây không dãn và không trượt.
+Xác định vận tốc $v_P$ và gia tốc $a_P$ của vật $P$.
+
+<div class="figure-box">
+  <img src="/figures/dong-hoc/hinh_2_18.svg" alt="Hình 2-18: Cơ cấu truyền động liên hoàn bánh răng - tang tời" style="max-width: 600px;" />
+  <div class="figure-caption">Hình 2-18: Cơ cấu truyền động liên hoàn bánh dẫn I, khối tang hai tầng II và vật treo P</div>
+</div>
+
+**Bài giải:**
+
+Hệ cơ học gồm hai vật rắn quay quanh trục cố định (bánh I và bánh II) cùng một vật chuyển động tịnh tiến (vật $P$).
+
+**1. Liên hệ động học giữa bánh I và bánh II:**
+Tại điểm tiếp xúc (hoặc vành đai liên kết) giữa bánh I và vành ngoài bán kính $R_2$ của bánh II, điều kiện không trượt đòi hỏi vận tốc dài tại điểm tiếp xúc phải bằng nhau:
+$$v_{\text{tiếp xúc}} = R_1 \omega_1 = R_2 \omega_2$$
+Từ đó suy ra vận tốc góc của khối tang II:
+$$\omega_2 = \frac{R_1}{R_2} \omega_1$$
+
+Lấy đạo hàm hai vế theo thời gian để tìm gia tốc góc của bánh II:
+$$\varepsilon_2 = \frac{d\omega_2}{dt} = \frac{R_1}{R_2} \frac{d\omega_1}{dt} = \frac{R_1}{R_2} \varepsilon_1$$
+
+**2. Vận tốc và gia tốc của vật nặng $P$:**
+Vật nặng $P$ chuyển động tịnh tiến thẳng đứng. Vì dây không dãn và quấn chặt trên tang nhỏ bán kính $r_2$ của trục II, nên vận tốc và gia tốc của vật $P$ bằng vận tốc dài và gia tốc tiếp tuyến của một điểm trên vành tang $r_2$:
+
+- Vận tốc của vật $P$:
+  $$v_P = r_2 \omega_2 = r_2 \left(\frac{R_1}{R_2} \omega_1\right) = \frac{r_2 R_1}{R_2} \omega_1$$
+
+- Gia tốc của vật $P$:
+  $$a_P = r_2 \varepsilon_2 = r_2 \left(\frac{R_1}{R_2} \varepsilon_1\right) = \frac{r_2 R_1}{R_2} \varepsilon_1$$
+
+**3. Chiều chuyển động:**
+- Nếu bánh I quay ngược chiều kim đồng hồ thì bánh II quay cùng chiều kim đồng hồ, dây quấn lên và vật $P$ chuyển động tịnh tiến đi lên.
+- Nếu $\omega_1$ và $\varepsilon_1$ cùng dấu, vật $P$ chuyển động nhanh dần; nếu trái dấu, vật $P$ chuyển động chậm dần.

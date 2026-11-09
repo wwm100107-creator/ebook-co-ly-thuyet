@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 360" width="100%" height="100%">
+  <defs>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2563eb"/>
+    </marker>
+    <pattern id="hatch" width="6" height="6" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="6" stroke="#94a3b8" stroke-width="1.2" />
+    </pattern>
+  </defs>
+
+  <!-- Ground -->
+  <rect x="60" y="270" width="340" height="15" fill="url(#hatch)" stroke="#475569"/>
+  <line x1="60" y1="270" x2="400" y2="270" stroke="#1e293b" stroke-width="2"/>
+
+  <!-- Cylinder Roller (radius R=80, center at x=220, y=190) -->
+  <circle cx="220" cy="190" r="80" fill="#f8fafc" stroke="#1e293b" stroke-width="2.5"/>
+  <circle cx="220" cy="190" r="3" fill="#1e293b"/>
+  <text x="210" y="185" fill="#1e293b" font-size="14" font-weight="bold">O</text>
+
+  <!-- Radius line R -->
+  <line x1="220" y1="190" x2="276" y2="134" stroke="#64748b" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <text x="255" y="155" fill="#64748b" font-size="13" font-style="italic">R</text>
+
+  <!-- Weight P downward from O -->
+  <line x1="220" y1="190" x2="220" y2="260" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+  <text x="228" y="240" fill="#dc2626" font-size="14" font-weight="bold" font-style="italic">P</text>
+
+  <!-- Horizontal pull force Q at height h above ground -->
+  <!-- Say h=120, so y = 270 - 120 = 150 -->
+  <line x1="100" y1="150" x2="200" y2="150" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+  <text x="130" y="140" fill="#dc2626" font-size="14" font-weight="bold" font-style="italic">Q</text>
+
+  <!-- Dimension h -->
+  <line x1="90" y1="150" x2="90" y2="270" stroke="#64748b" stroke-width="1.2"/>
+  <line x1="85" y1="150" x2="95" y2="150" stroke="#64748b"/>
+  <line x1="85" y1="270" x2="95" y2="270" stroke="#64748b"/>
+  <text x="75" y="215" fill="#64748b" font-size="13">h</text>
+
+  <!-- Contact point I at x=220, y=270 -->
+  <!-- Rolling resistance moment M (counter-clockwise) -->
+  <path d="M 245 255 A 30 30 0 0 0 205 255" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <text x="250" y="250" fill="#2563eb" font-size="13" font-style="italic">M<tspan font-size="9" dy="2">l</tspan></text>
+
+  <!-- Friction force F (leftward) and normal force N (upward) -->
+  <line x1="220" y1="270" x2="160" y2="270" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <text x="170" y="290" fill="#2563eb" font-size="13" font-style="italic">F</text>
+  <line x1="220" y1="270" x2="220" y2="215" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <text x="226" y="215" fill="#2563eb" font-size="13" font-style="italic">N</text>
+</svg>

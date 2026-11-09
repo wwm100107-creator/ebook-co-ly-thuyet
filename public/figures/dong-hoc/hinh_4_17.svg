@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 340" width="100%" height="auto">
+  <defs>
+    <marker id="arr-red" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#ef4444" />
+    </marker>
+    <marker id="arr-blue" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#0284c7" />
+    </marker>
+  </defs>
+
+  <!-- Trục trượt của con trượt B (y = 240) -->
+  <line x1="50" y1="240" x2="600" y2="240" stroke="#64748b" stroke-width="1.5" stroke-dasharray="5 3" />
+
+  <!-- Khớp cố định O (120, 240) -->
+  <circle cx="120" cy="240" r="5" fill="#0f172a" />
+  <text x="100" y="260" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0f172a">O</text>
+
+  <!-- Tay quay OA dài r=100 nghiêng góc phi=60 độ -> A(170, 153) -->
+  <line x1="120" y1="240" x2="170" y2="153" stroke="#0284c7" stroke-width="4" />
+  <circle cx="170" cy="153" r="5" fill="#0284c7" />
+  <text x="155" y="145" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0284c7">A</text>
+  <text x="125" y="195" font-family="sans-serif" font-size="12" fill="#0284c7">r</text>
+
+  <!-- Thanh truyền AB dài l=240 -> B tại y=240: xB = 170 + sqrt(240^2 - 87^2) = 170 + 223.7 = 394 -->
+  <line x1="170" y1="153" x2="394" y2="240" stroke="#0369a1" stroke-width="3.5" />
+  <text x="290" y="185" font-family="sans-serif" font-size="12" fill="#0369a1">l</text>
+
+  <!-- Con trượt B -->
+  <rect x="370" y="222" width="48" height="36" fill="#cbd5e1" stroke="#0f172a" stroke-width="2" />
+  <circle cx="394" cy="240" r="4.5" fill="#0f172a" />
+  <text x="400" y="215" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0f172a">B</text>
+
+  <!-- Tâm vận tốc tức thời P: giao điểm kéo dài OA và đường đứng qua B -->
+  <line x1="170" y1="153" x2="228" y2="53" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3 3" />
+  <line x1="394" y1="240" x2="394" y2="-50" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3 3" />
+  <!-- Giao điểm P: x=394 -> y = 240 - (394-120)*tan(60) = 240 - 274*1.732 = 240 - 474 (ngoài khung, vẽ tượng trưng) -->
+
+  <!-- Vectơ vận tốc v_A vuông góc OA -->
+  <line x1="170" y1="153" x2="225" y2="185" stroke="#ef4444" stroke-width="2.5" marker-end="url(#arr-red)" />
+  <text x="230" y="195" font-family="sans-serif" font-size="13" font-weight="bold" fill="#ef4444">v_A = r·ω</text>
+
+  <!-- Vectơ vận tốc v_B nằm ngang -->
+  <line x1="394" y1="240" x2="490" y2="240" stroke="#ef4444" stroke-width="2.5" marker-end="url(#arr-red)" />
+  <text x="495" y="245" font-family="sans-serif" font-size="13" font-weight="bold" fill="#ef4444">v_B</text>
+
+  <!-- Góc phi -->
+  <path d="M 155 240 A 35 35 0 0 0 145 197" fill="none" stroke="#475569" stroke-width="1.2" />
+  <text x="160" y="225" font-family="sans-serif" font-size="12" font-style="italic" fill="#475569">φ</text>
+</svg>

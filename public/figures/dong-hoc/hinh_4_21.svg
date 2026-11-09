@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" width="100%" height="auto">
+  <defs>
+    <marker id="arr-red" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#ef4444" />
+    </marker>
+    <marker id="arr-blue" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#0284c7" />
+    </marker>
+  </defs>
+
+  <!-- Tâm cố định O (180, 170) -->
+  <circle cx="180" cy="170" r="5" fill="#0f172a" />
+  <text x="165" y="195" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0f172a">O</text>
+
+  <!-- Bánh răng 1 bán kính r1=60 quay quanh O -->
+  <circle cx="180" cy="170" r="60" fill="#f1f5f9" stroke="#0284c7" stroke-width="2.5" />
+  <text x="180" y="150" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0284c7" text-anchor="middle">Bánh 1 (r₁)</text>
+  <path d="M 140 140 A 50 50 0 0 1 220 140" fill="none" stroke="#ef4444" stroke-width="2" marker-end="url(#arr-red)" />
+  <text x="225" y="135" font-family="sans-serif" font-size="12" font-weight="bold" fill="#ef4444">ω₁, ε₁</text>
+
+  <!-- Tay quay OA: O(180, 170) đến A(330, 170) dài r1+r2 = 60+90 = 150 -->
+  <line x1="180" y1="170" x2="330" y2="170" stroke="#0f172a" stroke-width="3.5" />
+  <circle cx="330" cy="170" r="5" fill="#ef4444" />
+  <text x="330" y="195" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ef4444" text-anchor="middle">A</text>
+  <text x="245" y="190" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0f172a">Tay quay OA (ω₀, ε₀)</text>
+
+  <!-- Bánh răng 2 (hành tinh) tâm A bán kính r2=90 -->
+  <circle cx="330" cy="170" r="90" fill="#f8fafc" stroke="#0369a1" stroke-width="2.5" />
+  <text x="350" y="140" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0369a1">Bánh 2 (r₂)</text>
+
+  <!-- Điểm tiếp xúc ăn khớp (240, 170) -->
+  <circle cx="240" cy="170" r="4" fill="#0284c7" />
+
+  <!-- Điểm M trên vành bánh 2 vuông góc OA: M(330, 80) -->
+  <circle cx="330" cy="80" r="4.5" fill="#0f172a" />
+  <text x="330" y="68" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">M (MA ⊥ OA)</text>
+  <!-- Vectơ vận tốc v_M -->
+  <line x1="330" y1="80" x2="430" y2="80" stroke="#ef4444" stroke-width="2.5" marker-end="url(#arr-red)" />
+  <text x="435" y="85" font-family="sans-serif" font-size="13" font-weight="bold" fill="#ef4444">v_M</text>
+</svg>

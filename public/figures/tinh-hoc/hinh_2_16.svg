@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 420" width="100%" height="100%">
+  <defs>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-axis" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#1e293b"/>
+    </marker>
+  </defs>
+
+  <!-- Coordinate axes Oxyz -->
+  <line x1="150" y1="240" x2="70" y2="365" stroke="#1e293b" stroke-width="2" marker-end="url(#arrow-axis)"/>
+  <text x="60" y="380" fill="#1e293b" font-size="15" font-weight="bold" font-style="italic">x</text>
+
+  <line x1="150" y1="240" x2="460" y2="330" stroke="#1e293b" stroke-width="2" marker-end="url(#arrow-axis)"/>
+  <text x="470" y="340" fill="#1e293b" font-size="15" font-weight="bold" font-style="italic">y</text>
+
+  <line x1="150" y1="240" x2="150" y2="70" stroke="#1e293b" stroke-width="2" marker-end="url(#arrow-axis)"/>
+  <text x="158" y="70" fill="#1e293b" font-size="15" font-weight="bold" font-style="italic">z</text>
+  <text x="135" y="245" fill="#1e293b" font-size="14" font-weight="bold">O</text>
+
+  <!-- Equilateral triangle platform ABC -->
+  <!-- A=(110,305), B=(425,320), C=(200,165) -->
+  <polygon points="110,305 425,320 200,165" fill="#f1f5f9" stroke="#1e293b" stroke-width="2.5"/>
+
+  <!-- Centroid G of triangle -->
+  <!-- (110+425+200)/3 = 245, (305+320+165)/3 = 263 -->
+  <circle cx="245" cy="263" r="3.5" fill="#1e293b"/>
+  <text x="255" y="275" fill="#1e293b" font-size="14" font-weight="bold">G</text>
+
+  <!-- Point D for load Q -->
+  <circle cx="190" cy="285" r="3.5" fill="#1e293b"/>
+  <text x="180" y="305" fill="#1e293b" font-size="14" font-weight="bold">D</text>
+
+  <!-- Active force P at G -->
+  <line x1="245" y1="200" x2="245" y2="260" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+  <text x="255" y="215" fill="#dc2626" font-size="14" font-weight="bold" font-style="italic">P</text>
+
+  <!-- Active force Q at D -->
+  <line x1="190" y1="220" x2="190" y2="282" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+  <text x="198" y="235" fill="#dc2626" font-size="14" font-weight="bold" font-style="italic">Q</text>
+
+  <!-- Reactions NA, NB, NC (vertical upward) -->
+  <line x1="110" y1="305" x2="110" y2="225" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+  <text x="80" y="235" fill="#2563eb" font-size="14" font-weight="bold" font-style="italic">N<tspan font-size="10" dy="3">A</tspan></text>
+
+  <line x1="425" y1="320" x2="425" y2="240" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+  <text x="435" y="250" fill="#2563eb" font-size="14" font-weight="bold" font-style="italic">N<tspan font-size="10" dy="3">B</tspan></text>
+
+  <line x1="200" y1="165" x2="200" y2="90" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+  <text x="210" y="105" fill="#2563eb" font-size="14" font-weight="bold" font-style="italic">N<tspan font-size="10" dy="3">C</tspan></text>
+
+  <text x="100" y="325" fill="#1e293b" font-size="14" font-weight="bold">A</text>
+  <text x="430" y="335" fill="#1e293b" font-size="14" font-weight="bold">B</text>
+  <text x="208" y="165" fill="#1e293b" font-size="14" font-weight="bold">C</text>
+</svg>

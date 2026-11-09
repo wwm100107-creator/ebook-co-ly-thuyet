@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 350" width="100%" height="auto">
+  <defs>
+    <marker id="arr-red" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#ef4444" />
+    </marker>
+    <marker id="arr-blue" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#0284c7" />
+    </marker>
+    <marker id="arr-green" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#10b981" />
+    </marker>
+  </defs>
+
+  <!-- Khớp O1 của cần lắc (200, 300) -->
+  <circle cx="200" cy="300" r="5" fill="#0f172a" />
+  <text x="180" y="315" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0f172a">O₁</text>
+
+  <!-- Cần lắc O1B nghiêng 60 độ -->
+  <line x1="200" y1="300" x2="350" y2="40" stroke="#0284c7" stroke-width="4" />
+  <text x="355" y="35" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0284c7">B</text>
+
+  <!-- Khớp O của tay quay: O1-O nằm ngang (340, 300) -->
+  <line x1="200" y1="300" x2="340" y2="300" stroke="#64748b" stroke-width="1.8" stroke-dasharray="4 3" />
+  <circle cx="340" cy="300" r="5" fill="#0f172a" />
+  <text x="345" y="320" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0f172a">O</text>
+
+  <!-- Tay quay OA: vuông góc với O1O tại O (đứng lên) x=340, y=140 -->
+  <line x1="340" y1="300" x2="280" y2="160" stroke="#ef4444" stroke-width="3.5" />
+  <!-- Con chạy A trên cần lắc -->
+  <rect x="268" y="148" width="24" height="24" fill="#f8fafc" stroke="#0f172a" stroke-width="2" transform="rotate(-60 280 160)" />
+  <circle cx="280" cy="160" r="4" fill="#ef4444" />
+  <text x="250" y="160" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ef4444">A</text>
+
+  <!-- Vận tốc tuyệt đối v_a của A vuông góc OA -->
+  <line x1="280" y1="160" x2="200" y2="125" stroke="#10b981" stroke-width="2.5" marker-end="url(#arr-green)" />
+  <text x="180" y="120" font-family="sans-serif" font-size="13" font-weight="bold" fill="#10b981">v_a</text>
+
+  <!-- Vận tốc theo v_e vuông góc O1B -->
+  <line x1="280" y1="160" x2="215" y2="198" stroke="#0284c7" stroke-width="2.2" marker-end="url(#arr-blue)" />
+  <text x="185" y="215" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0284c7">v_e</text>
+
+  <!-- Vận tốc tương đối v_r dọc theo O1B -->
+  <line x1="280" y1="160" x2="315" y2="100" stroke="#ef4444" stroke-width="2.2" marker-end="url(#arr-red)" />
+  <text x="325" y="105" font-family="sans-serif" font-size="13" font-weight="bold" fill="#ef4444">v_r</text>
+</svg>

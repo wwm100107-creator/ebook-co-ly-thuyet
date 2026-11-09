@@ -154,3 +154,51 @@ trong đó:
 - $i_C$: Bán kính quán tính đối với trục trung tâm song song.
 
 > **Ứng dụng kỹ thuật:** Điểm $K$ được ứng dụng để thiết kế điểm va chạm trên búa máy, tay đập cơ khí, vợt bóng bàn, gậy đánh bóng chày nhằm triệt tiêu lực giật phản hồi truyền vào cổ tay người cầm hoặc ổ trục máy móc.
+
+
+---
+
+## 7.5. Các Thí Dụ Áp Dụng (Bài Tập Mẫu)
+
+::: tip Ý NGHĨA PHƯƠNG PHÁP
+Lý thuyết va chạm nghiên cứu các quá trình biến thiên vận tốc xảy ra trong khoảng thời gian cực ngắn $\tau \to 0$ dưới tác dụng của các lực xung lượng rất lớn. Hai định lý cơ bản được áp dụng là Định lý biến thiên động lượng dạng xung lượng và Định lý biến thiên mômen động lượng dạng xung lượng.
+:::
+
+### Thí dụ 7-1: Va chạm thẳng xuyên tâm của hai quả cầu đàn hồi
+
+**Đề bài:**
+Hai quả cầu có khối lượng $m_1$ và $m_2$ chuyển động tịnh tiến dọc theo một đường thẳng nối tâm với các vận tốc tương ứng $v_1$ và $v_2$ ($v_1 > v_2$) đến va chạm xuyên tâm với nhau (Hình 7-3). Hệ số hồi phục khi va chạm là $k$ ($0 \le k \le 1$).
+Xác định vận tốc $u_1, u_2$ của hai quả cầu ngay sau va chạm.
+
+<div class="figure-box">
+  <img src="/figures/dong-luc-hoc/hinh_7_3.svg" alt="Hình 7-3: Va chạm thẳng xuyên tâm hai quả cầu đàn hồi" style="max-width: 580px;" />
+  <div class="figure-caption">Hình 7-3: Sơ đồ va chạm thẳng xuyên tâm của hai quả cầu khối lượng $m_1, m_2$ với hệ số hồi phục $k$</div>
+</div>
+
+**Bài giải:**
+
+Chọn trục $Ox$ dọc theo đường thẳng nối tâm hai quả cầu theo chiều chuyển động.
+Trong quá trình va chạm, các lực tác dụng tương hỗ giữa hai quả cầu là nội lực xung lượng, ngoại lực theo phương ngang bằng 0.
+
+**1. Định luật bảo toàn động lượng dạng xung lượng:**
+Động lượng của hệ trước và sau va chạm bằng nhau:
+$$m_1 v_1 + m_2 v_2 = m_1 u_1 + m_2 u_2 \tag{a}$$
+
+**2. Định nghĩa hệ số hồi phục $k$ (Định luật Newton về va chạm):**
+Hệ số hồi phục $k$ bằng tỉ số giữa vận tốc phân kỳ sau va chạm và vận tốc tiếp cận trước va chạm:
+$$k = \frac{u_2 - u_1}{v_1 - v_2} \implies u_2 - u_1 = k(v_1 - v_2) \tag{b}$$
+
+**3. Giải hệ hai phương trình (a) và (b):**
+Từ (b) rút ra: $u_2 = u_1 + k(v_1 - v_2)$, thay vào (a):
+$$m_1 v_1 + m_2 v_2 = m_1 u_1 + m_2 [u_1 + k(v_1 - v_2)]$$
+$$(m_1 + m_2) u_1 = m_1 v_1 + m_2 v_2 - k m_2(v_1 - v_2) = (m_1 - k m_2) v_1 + m_2 (1 + k) v_2$$
+Suy ra vận tốc sau va chạm của quả cầu 1:
+$$u_1 = \frac{(m_1 - k m_2) v_1 + m_2 (1 + k) v_2}{m_1 + m_2}$$
+
+Tương tự, tính được vận tốc sau va chạm của quả cầu 2:
+$$u_2 = \frac{m_1 (1 + k) v_1 + (m_2 - k m_1) v_2}{m_1 + m_2}$$
+
+**4. Các trường hợp đặc biệt:**
+- **Va chạm hoàn toàn đàn hồi ($k = 1$):** Động năng của hệ được bảo toàn. Nếu $m_1 = m_2$ thì $u_1 = v_2, \; u_2 = v_1$ (hai quả cầu trao đổi vận tốc cho nhau).
+- **Va chạm hoàn toàn không đàn hồi / va chạm mềm ($k = 0$):** Sau va chạm hai vật dính liền chuyển động cùng vận tốc chung:
+  $$u_1 = u_2 = u = \frac{m_1 v_1 + m_2 v_2}{m_1 + m_2}$$

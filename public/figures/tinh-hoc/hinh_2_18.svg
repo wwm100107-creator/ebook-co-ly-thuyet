@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 380" width="100%" height="100%">
+  <defs>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2563eb"/>
+    </marker>
+    <pattern id="hatch" width="6" height="6" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="6" stroke="#94a3b8" stroke-width="1.2" />
+    </pattern>
+  </defs>
+
+  <!-- Ground supports at O (left) and C (right) -->
+  <rect x="70" y="270" width="40" height="10" fill="url(#hatch)" stroke="#334155"/>
+  <line x1="70" y1="270" x2="110" y2="270" stroke="#1e293b" stroke-width="1.5"/>
+  <polygon points="90,250 78,270 102,270" fill="#e2e8f0" stroke="#1e293b" stroke-width="1.5"/>
+  <circle cx="90" cy="250" r="4" fill="#fff" stroke="#1e293b" stroke-width="1.5"/>
+
+  <rect x="370" y="270" width="40" height="10" fill="url(#hatch)" stroke="#334155"/>
+  <line x1="370" y1="270" x2="410" y2="270" stroke="#1e293b" stroke-width="1.5"/>
+  <polygon points="390,250 378,270 402,270" fill="#e2e8f0" stroke="#1e293b" stroke-width="1.5"/>
+  <circle cx="390" cy="250" r="4" fill="#fff" stroke="#1e293b" stroke-width="1.5"/>
+
+  <!-- Rod OA (from O=90,250 through B=240,163 to A=390,77) -->
+  <line x1="90" y1="250" x2="390" y2="77" stroke="#1e293b" stroke-width="4"/>
+  <!-- Rod BC (from B=240,163 to C=390,250) -->
+  <line x1="240" y1="163" x2="390" y2="250" stroke="#1e293b" stroke-width="4"/>
+
+  <!-- Hinge B -->
+  <circle cx="240" cy="163" r="5" fill="#fff" stroke="#1e293b" stroke-width="2"/>
+  <text x="230" y="145" fill="#1e293b" font-size="15" font-weight="bold">B</text>
+
+  <!-- Labels O, A, C -->
+  <text x="68" y="250" fill="#1e293b" font-size="15" font-weight="bold">O</text>
+  <text x="395" y="75" fill="#1e293b" font-size="15" font-weight="bold">A</text>
+  <text x="400" y="255" fill="#1e293b" font-size="15" font-weight="bold">C</text>
+
+  <!-- Hanging load Q at A -->
+  <line x1="390" y1="77" x2="390" y2="135" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+  <text x="400" y="125" fill="#dc2626" font-size="14" font-weight="bold" font-style="italic">Q</text>
+
+  <!-- Weight 2P of OA at mid (x=240) -->
+  <line x1="240" y1="163" x2="240" y2="235" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+  <text x="245" y="230" fill="#dc2626" font-size="13" font-weight="bold">2P</text>
+
+  <!-- Weight P of BC at mid (x=315, y=206) -->
+  <line x1="315" y1="206" x2="315" y2="265" stroke="#dc2626" stroke-width="2" marker-end="url(#arrow-red)"/>
+  <text x="325" y="255" fill="#dc2626" font-size="13" font-weight="bold">P</text>
+
+  <!-- Angle 30 deg -->
+  <line x1="90" y1="250" x2="160" y2="250" stroke="#94a3b8" stroke-dasharray="3,3"/>
+  <path d="M 130 250 A 40 40 0 0 0 125 230" fill="none" stroke="#475569"/>
+  <text x="135" y="242" fill="#475569" font-size="12">30°</text>
+
+  <!-- Reactions at O and C -->
+  <line x1="90" y1="250" x2="90" y2="180" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+  <text x="96" y="195" fill="#2563eb" font-size="13" font-style="italic">Y<tspan font-size="9" dy="2">O</tspan></text>
+  <line x1="90" y1="250" x2="150" y2="250" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+  <text x="145" y="268" fill="#2563eb" font-size="13" font-style="italic">X<tspan font-size="9" dy="2">O</tspan></text>
+
+  <line x1="390" y1="250" x2="390" y2="180" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+  <text x="396" y="195" fill="#2563eb" font-size="13" font-style="italic">Y<tspan font-size="9" dy="2">C</tspan></text>
+  <line x1="390" y1="250" x2="450" y2="250" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+  <text x="445" y="268" fill="#2563eb" font-size="13" font-style="italic">X<tspan font-size="9" dy="2">C</tspan></text>
+</svg>

@@ -141,3 +141,42 @@ Dạng giải tích trong hệ tọa độ Descartes:
 $$\sum_{k=1}^n \Big[ (F_{kx}^e - m_k \ddot{x}_k)\delta x_k + (F_{ky}^e - m_k \ddot{y}_k)\delta y_k + (F_{kz}^e - m_k \ddot{z}_k)\delta z_k \Big] = 0 \tag{5-13}$$
 
 Phương trình $(5-12)$ là phương trình tổng quát nhất của toàn bộ cơ học cổ điển. Nó chứa đựng cả Tĩnh học (khi $\vec{a}_k = \vec{0}$) và Động lực học, đồng thời là cơ sở trực tiếp để thiết lập **Phương trình Lagrange loại II**.
+
+
+---
+
+## 5.5. Các Thí Dụ Áp Dụng (Bài Tập Mẫu)
+
+::: tip Ý NGHĨA PHƯƠNG PHÁP
+Nguyên lý Đalămbe (Phương pháp lực quán tính) cho phép chuyển bài toán động lực học về bài toán cân bằng tĩnh học hình thức bằng cách đặt thêm các vectơ lực quán tính $\vec{F}_{qt} = -m\vec{a}$ và ngẫu lực quán tính $\vec{M}_{qt} = -J\vec{\varepsilon}$.
+:::
+
+### Thí dụ 5-1: Áp lực động lên ổ trục quay của vật quay lệch tâm
+
+**Đề bài:**
+Một trục máy hình trụ tròn đồng chất khối lượng $m$, bán kính $R$ quay đều với vận tốc góc $\omega = \text{const}$ quanh trục cố định $AB$ song song với trục đối xứng của hình trụ và cách trục đối xứng một khoảng lệch tâm $e$. Khoảng cách giữa hai ổ đỡ $A$ và $B$ là $l$, khối tâm $C$ của trục nằm chính giữa hai ổ đỡ ($AC = BC = \frac{l}{2}$).
+Xác định các áp lực phụ động lực học tác dụng lên hai ổ đỡ $A$ và $B$ bằng nguyên lý Đalămbe.
+
+**Bài giải:**
+
+Trục máy quay đều quanh trục quay cố định $AB$ với $\omega = \text{const}$, do đó gia tốc góc triệt tiêu: $\varepsilon = 0$.
+Khối tâm $C$ của hình trụ vạch nên đường tròn bán kính $e$, gia tốc của khối tâm là gia tốc hướng tâm:
+$$a_C = a_C^n = e \omega^2$$
+hướng từ $C$ vuông góc vào trục quay $AB$.
+
+**1. Đặt lực quán tính Đalămbe:**
+Theo nguyên lý Đalămbe, hệ lực quán tính thu gọn về khối tâm $C$ gồm:
+- Vectơ chính lực quán tính:
+  $$\vec{F}_{qt} = -m \vec{a}_C$$
+  Độ lớn $F_{qt} = m e \omega^2$, chiều hướng ly tâm ra xa trục quay.
+- Mômen chính lực quán tính đối với khối tâm: Vì trục quay song song với trục quán tính chính trung tâm nên $\vec{M}_{C}^{qt} = \vec{0}$.
+
+**2. Thiết lập phương trình cân bằng Đalămbe:**
+Hệ cân bằng gồm các phản lực động tại ổ đỡ $\vec{R}_A^đ, \vec{R}_B^đ$ và lực quán tính ly tâm $\vec{F}_{qt}$:
+$$\vec{R}_A^đ + \vec{R}_B^đ + \vec{F}_{qt} = \vec{0}$$
+
+Lấy mômen đối với điểm $A$ và điểm $B$:
+$$\sum m_A = R_B^đ \cdot l - F_{qt} \cdot \frac{l}{2} = 0 \implies R_B^đ = \frac{1}{2} F_{qt} = \frac{1}{2} m e \omega^2$$
+$$\sum m_B = -R_A^đ \cdot l + F_{qt} \cdot \frac{l}{2} = 0 \implies R_A^đ = \frac{1}{2} F_{qt} = \frac{1}{2} m e \omega^2$$
+
+Các phản lực động $\vec{R}_A^đ, \vec{R}_B^đ$ cùng hướng ngược chiều với $\vec{F}_{qt}$, tức là hướng vào trục quay. Khi trục quay tròn, các áp lực động này quay liên tục theo thời gian tạo thành tải trọng động tác dụng phá hủy ổ bi nếu không được triệt tiêu bằng biện pháp cân bằng động.

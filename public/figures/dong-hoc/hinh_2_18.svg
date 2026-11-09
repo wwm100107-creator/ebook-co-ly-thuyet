@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 340" width="100%" height="auto">
+  <defs>
+    <marker id="arr-blue" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#0284c7" />
+    </marker>
+    <marker id="arr-red" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#ef4444" />
+    </marker>
+  </defs>
+
+  <!-- Trục I: bánh dẫn bán kính R1 -->
+  <g transform="translate(140, 140)">
+    <circle cx="0" cy="0" rx="65" ry="65" fill="#f8fafc" stroke="#0284c7" stroke-width="3" />
+    <circle cx="0" cy="0" r="5" fill="#0284c7" />
+    <text x="-10" y="-12" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0284c7">I</text>
+    <text x="20" y="30" font-family="sans-serif" font-size="12" fill="#0284c7">R₁</text>
+    <!-- Mũi tên quay omega 1, epsilon 1 -->
+    <path d="M -40 -35 A 55 55 0 0 1 40 -35" fill="none" stroke="#ef4444" stroke-width="2" marker-end="url(#arr-red)" />
+    <text x="45" y="-35" font-family="sans-serif" font-size="13" font-weight="bold" fill="#ef4444">ω₁, ε₁</text>
+  </g>
+
+  <!-- Trục II: 2 tầng R2 và r2 -->
+  <g transform="translate(380, 140)">
+    <!-- Tầng ngoài bán kính R2 -->
+    <circle cx="0" cy="0" r="90" fill="#f8fafc" stroke="#0284c7" stroke-width="2.5" />
+    <!-- Tầng trong bán kính r2 -->
+    <circle cx="0" cy="0" r="45" fill="#e2e8f0" stroke="#0369a1" stroke-width="2.5" />
+    <circle cx="0" cy="0" r="5" fill="#0284c7" />
+    <text x="-12" y="-8" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0284c7">II</text>
+    <text x="50" y="45" font-family="sans-serif" font-size="12" fill="#0284c7">R₂</text>
+    <text x="-25" y="30" font-family="sans-serif" font-size="12" fill="#0369a1">r₂</text>
+    <!-- Mũi tên quay ngược chiều -->
+    <path d="M 60 -45 A 75 75 0 0 0 -60 -45" fill="none" stroke="#ef4444" stroke-width="2" marker-end="url(#arr-red)" />
+    <text x="-85" y="-55" font-family="sans-serif" font-size="13" font-weight="bold" fill="#ef4444">ω₂, ε₂</text>
+  </g>
+
+  <!-- Dây đai / tiếp xúc giữa I và II -->
+  <line x1="140" y1="75" x2="380" y2="50" stroke="#475569" stroke-width="2" />
+  <line x1="140" y1="205" x2="380" y2="230" stroke="#475569" stroke-width="2" />
+  <text x="250" y="55" font-family="sans-serif" font-size="12" fill="#475569">Bộ truyền đai / khớp</text>
+
+  <!-- Dây treo vật P từ tang nhỏ r2 (x = 380 + 45 = 425) -->
+  <line x1="425" y1="140" x2="425" y2="260" stroke="#0f172a" stroke-width="2.5" />
+  <!-- Khối vật P -->
+  <rect x="400" y="260" width="50" height="40" fill="#cbd5e1" stroke="#0f172a" stroke-width="2" />
+  <text x="425" y="285" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0f172a" text-anchor="middle">P</text>
+  <!-- Vectơ vận tốc v_P và gia tốc a_P -->
+  <line x1="465" y1="265" x2="465" y2="305" stroke="#ef4444" stroke-width="2.2" marker-end="url(#arr-red)" />
+  <text x="475" y="290" font-family="sans-serif" font-size="13" font-weight="bold" fill="#ef4444">v_P, a_P</text>
+</svg>

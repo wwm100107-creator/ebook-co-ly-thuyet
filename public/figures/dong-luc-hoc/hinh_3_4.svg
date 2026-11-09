@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 340" width="100%" height="auto">
+  <defs>
+    <marker id="arr-red" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#ef4444" />
+    </marker>
+    <marker id="arr-blue" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#0284c7" />
+    </marker>
+  </defs>
+
+  <!-- Tang tời tâm O (220, 130), bán kính r=75 -->
+  <circle cx="220" cy="130" r="75" fill="#f8fafc" stroke="#0284c7" stroke-width="3" />
+  <circle cx="220" cy="130" r="5" fill="#0284c7" />
+  <text x="200" y="125" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0284c7">O</text>
+  <line x1="220" y1="130" x2="295" y2="130" stroke="#64748b" stroke-width="1.5" />
+  <text x="250" y="122" font-family="sans-serif" font-size="13" font-style="italic" fill="#64748b">r</text>
+
+  <!-- Khối lượng tang P, mômen quán tính J -->
+  <text x="220" y="155" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0369a1" text-anchor="middle">Tang tời (P, J)</text>
+
+  <!-- Chiều quay omega, epsilon -->
+  <path d="M 180 85 A 60 60 0 0 1 260 85" fill="none" stroke="#ef4444" stroke-width="2" marker-end="url(#arr-red)" />
+  <text x="265" y="80" font-family="sans-serif" font-size="13" font-weight="bold" fill="#ef4444">ω, ε</text>
+
+  <!-- Dây quấn mép phải tang tời tại x = 220 + 75 = 295 -->
+  <line x1="295" y1="130" x2="295" y2="250" stroke="#0f172a" stroke-width="2.5" />
+
+  <!-- Sức căng dây T -->
+  <line x1="295" y1="180" x2="295" y2="145" stroke="#ef4444" stroke-width="2" marker-end="url(#arr-red)" />
+  <text x="305" y="165" font-family="sans-serif" font-size="13" font-weight="bold" fill="#ef4444">T</text>
+
+  <!-- Vật nặng Q -->
+  <rect x="270" y="250" width="50" height="45" fill="#cbd5e1" stroke="#0f172a" stroke-width="2" />
+  <text x="295" y="278" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0f172a" text-anchor="middle">Q</text>
+
+  <!-- Trọng lực Q và gia tốc a -->
+  <line x1="295" y1="295" x2="295" y2="335" stroke="#ef4444" stroke-width="2.2" marker-end="url(#arr-red)" />
+  <text x="305" y="325" font-family="sans-serif" font-size="13" font-weight="bold" fill="#ef4444">Q = mg</text>
+  <line x1="335" y1="260" x2="335" y2="295" stroke="#0284c7" stroke-width="2.2" marker-end="url(#arr-blue)" />
+  <text x="345" y="280" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0284c7">a</text>
+</svg>

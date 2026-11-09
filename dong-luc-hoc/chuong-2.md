@@ -98,3 +98,88 @@ Chiếu lên ba trục tọa độ Descartes vuông góc, ta nhận được h�
 $$\begin{cases} m_k \ddot{x}_k = F_{kx}^e + F_{kx}^i \\ m_k \ddot{y}_k = F_{ky}^e + F_{ky}^i \\ m_k \ddot{z}_k = F_{kz}^e + F_{kz}^i \end{cases} \quad (k = 1, 2, ..., n) \tag{2-8}$$
 
 Vì số lượng nội lực $\vec{F}_k^i$ thường rất phức tạp và khó xác định, nên trong thực tế người ta ít khi giải trực tiếp hệ phương trình $(2-8)$ mà sử dụng **các định lý tổng quát của động lực học** (nơi nội lực tự động triệt tiêu) hoặc phương pháp **Cơ học giải tích** (Phương trình Lagrange loại II).
+
+
+---
+
+## 2.3. Các Thí Dụ Áp Dụng (Bài Tập Mẫu)
+
+::: tip Ý NGHĨA PHƯƠNG PHÁP
+Các bài toán về phương trình vi phân chuyển động giải quyết hai bài toán cơ bản của Động lực học:
+1. **Bài toán thuận:** Cho quy luật chuyển động của chất điểm hoặc cơ hệ, tìm lực tác dụng lên nó (áp dụng phép lấy đạo hàm).
+2. **Bài toán nghịch:** Cho các lực tác dụng và điều kiện ban đầu, tìm quy luật chuyển động (áp dụng phép tích phân phương trình vi phân).
+:::
+
+### Thí dụ 2-1: Khảo sát chuyển động rơi có lực cản môi trường
+
+**Đề bài:**
+Một vật nặng khối lượng $m$ rơi tự do không vận tốc đầu từ độ cao lớn trong không khí. Lực cản của không khí tỉ lệ bậc nhất với vận tốc: $\vec{R}_c = -\mu \vec{v}$ ($\mu > 0$ là hệ số cản).
+1. Thiết lập phương trình vi phân chuyển động của vật và tìm quy luật vận tốc $v(t)$.
+2. Xác định vận tốc giới hạn (vận tốc cực đại $v_{\max}$) khi rơi trong thời gian dài.
+3. Tìm quãng đường rơi $s(t)$ theo thời gian.
+
+**Bài giải:**
+
+Chọn trục $Oz$ thẳng đứng hướng xuống dưới, gốc $O$ tại vị trí thả vật ban đầu ($t = 0 \implies z = 0, v = 0$).
+Các lực tác dụng lên vật gồm:
+- Trọng lực: $\vec{P} = m\vec{g}$ (hướng xuống, hình chiếu $+mg$).
+- Lực cản môi trường: $\vec{R}_c = -\mu \vec{v}$ (hướng lên, hình chiếu $-\mu v$).
+
+**1. Thiết lập và giải phương trình vi phân:**
+Phương trình vi phân chuyển động theo phương $Oz$:
+$$m \frac{dv}{dt} = mg - \mu v \implies \frac{dv}{dt} + \frac{\mu}{m} v = g$$
+Đặt $k = \frac{\mu}{m}$, ta có:
+$$\frac{dv}{dt} = g - kv \implies \frac{dv}{g - kv} = dt$$
+
+Lấy tích phân hai vế với điều kiện ban đầu $v(0) = 0$:
+$$-\frac{1}{k} \ln\left(\frac{g - kv}{g}\right) = t \implies 1 - \frac{k}{g} v = e^{-kt}$$
+Suy ra quy luật vận tốc theo thời gian:
+$$v(t) = \frac{g}{k} (1 - e^{-kt}) = \frac{mg}{\mu} \left(1 - e^{-\frac{\mu}{m} t}\right)$$
+
+**2. Vận tốc giới hạn (Terminal velocity):**
+Khi thời gian rơi đủ lớn ($t \to \infty$):
+$$\lim_{t \to \infty} e^{-kt} = 0 \implies v_{\max} = v_{\text{gh}} = \frac{mg}{\mu}$$
+Vận tốc giới hạn đạt được khi lực cản không khí triệt tiêu hoàn toàn trọng lực: $R_c = \mu v_{\text{gh}} = mg$.
+
+**3. Quãng đường rơi:**
+Vì $v = \frac{dz}{dt}$ nên:
+$$z(t) = \int_0^t v(t) dt = \frac{g}{k} \int_0^t (1 - e^{-kt}) dt = \frac{g}{k} \left[t + \frac{1}{k} (e^{-kt} - 1)\right]$$
+$$z(t) = \frac{mg}{\mu} t - \frac{m^2 g}{\mu^2} \left(1 - e^{-\frac{\mu}{m} t}\right)$$
+
+---
+
+### Thí dụ 2-2: Xác định áp lực của ô tô lên đỉnh cầu vồng
+
+**Đề bài:**
+Một ô tô có trọng lượng $P = mg$ chuyển động với vận tốc $v$ không đổi qua đỉnh $A$ của một cây cầu có mặt cong lồi với bán kính cong $R$ trong mặt phẳng thẳng đứng.
+1. Xác định áp lực $N$ của ô tô tác dụng lên mặt cầu tại đỉnh $A$.
+2. Tìm vận tốc $v_{0}$ để ô tô bắt đầu rời khỏi mặt cầu (không còn tiếp xúc với mặt cầu).
+
+<div class="figure-box">
+  <img src="/figures/dong-luc-hoc/hinh_2_3.svg" alt="Hình 2-3: Ô tô chuyển động qua đỉnh cầu vồng" style="max-width: 580px;" />
+  <div class="figure-caption">Hình 2-3: Sơ đồ lực tác dụng lên ô tô tại đỉnh cầu vồng bán kính cong $R$</div>
+</div>
+
+**Bài giải:**
+
+Khảo sát ô tô như một chất điểm khối lượng $m$ tại đỉnh $A$ của cầu (Hình 2-3).
+Các lực tác dụng lên ô tô gồm:
+- Trọng lực: $\vec{P} = m\vec{g}$ thẳng đứng hướng xuống.
+- Phản lực pháp tuyến của mặt cầu: $\vec{N}$ thẳng đứng hướng lên.
+
+Phương trình cơ bản của động lực học (Định luật II Newton):
+$$m\vec{a} = \vec{P} + \vec{N}$$
+
+Chiếu phương trình lên trục pháp tuyến chính $An$ hướng thẳng đứng xuống dưới (hướng về tâm cong của mặt cầu):
+$$m a_n = P - N$$
+với gia tốc pháp tuyến tại đỉnh cầu là $a_n = \frac{v^2}{R}$.
+
+**1. Áp lực lên đỉnh cầu:**
+$$N = P - m \frac{v^2}{R} = mg \left(1 - \frac{v^2}{gR}\right)$$
+Theo định luật III Newton, áp lực của bánh xe tác dụng lên mặt cầu có độ lớn đúng bằng phản lực pháp tuyến $N$.
+Nhận xét: Vì $v > 0$ nên $N < P$, nghĩa là khi chạy qua cầu cong lồi, áp lực lên mặt cầu luôn nhỏ hơn trọng lượng tĩnh của xe. Vận tốc càng lớn thì áp lực càng giảm.
+
+**2. Vận tốc để xe rời mặt cầu:**
+Xe bắt đầu mất tiếp xúc (rời mặt cầu bay trong không khí) khi phản lực pháp tuyến triệt tiêu:
+$$N = 0 \implies 1 - \frac{v_0^2}{gR} = 0 \implies v_0 = \sqrt{gR}$$
+Nếu $v \ge \sqrt{gR}$, xe sẽ bị văng khỏi mặt đường tại đỉnh cầu.

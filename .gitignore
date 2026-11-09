@@ -5,5 +5,10 @@ dist
 .vitepress/cache
 raw_pages
 *.log
-
 .vercel
+
+# Temporary extraction artifacts
+*.png
+extracted_*
+crops_*
+*.py

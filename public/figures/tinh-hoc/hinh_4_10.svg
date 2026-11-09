@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 360" width="100%" height="100%">
+  <defs>
+    <pattern id="plate-hatch" width="8" height="8" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#94a3b8" stroke-width="1" />
+    </pattern>
+    <marker id="arrow-axis" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#1e293b"/>
+    </marker>
+  </defs>
+
+  <!-- Large circle (radius R=110, center O=180, 180) -->
+  <circle cx="180" cy="180" r="110" fill="url(#plate-hatch)" stroke="#1e293b" stroke-width="2.5"/>
+
+  <!-- Cutout small circle (radius r=45, center A=230, 180) -->
+  <circle cx="230" cy="180" r="45" fill="#ffffff" stroke="#1e293b" stroke-width="2"/>
+
+  <!-- Coordinates Oxy -->
+  <line x1="50" y1="180" x2="350" y2="180" stroke="#1e293b" stroke-width="1.8" marker-end="url(#arrow-axis)"/>
+  <text x="360" y="185" fill="#1e293b" font-size="14" font-weight="bold" font-style="italic">x</text>
+
+  <line x1="180" y1="310" x2="180" y2="50" stroke="#1e293b" stroke-width="1.8" marker-end="url(#arrow-axis)"/>
+  <text x="175" y="40" fill="#1e293b" font-size="14" font-weight="bold" font-style="italic">y</text>
+  <text x="165" y="195" fill="#1e293b" font-size="14" font-weight="bold">O</text>
+
+  <!-- Center of cutout A -->
+  <circle cx="230" cy="180" r="3" fill="#1e293b"/>
+  <text x="235" y="198" fill="#1e293b" font-size="14" font-weight="bold">A</text>
+
+  <!-- Centroid G shifted to the left (negative x) -->
+  <circle cx="160" cy="180" r="4" fill="#dc2626"/>
+  <text x="155" y="170" fill="#dc2626" font-size="14" font-weight="bold">G</text>
+
+  <!-- Radii annotations -->
+  <line x1="180" y1="180" x2="258" y2="102" stroke="#475569" stroke-width="1.2"/>
+  <text x="215" y="135" fill="#475569" font-size="13" font-style="italic">R</text>
+
+  <line x1="230" y1="180" x2="265" y2="215" stroke="#475569" stroke-width="1.2"/>
+  <text x="255" y="210" fill="#475569" font-size="12" font-style="italic">r</text>
+
+  <text x="200" y="170" fill="#475569" font-size="12">a</text>
+</svg>

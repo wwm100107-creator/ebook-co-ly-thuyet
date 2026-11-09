@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" width="100%" height="auto">
+  <defs>
+    <marker id="arr-red" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#ef4444" />
+    </marker>
+    <marker id="arr-blue" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#0284c7" />
+    </marker>
+  </defs>
+
+  <!-- Mặt phẳng nghiêng góc alpha: dốc từ (80, 80) xuống (520, 260) -->
+  <polygon points="80 80, 520 260, 80 260" fill="#f8fafc" stroke="#334155" stroke-width="2.5" />
+  <!-- Góc alpha -->
+  <path d="M 460 260 A 60 60 0 0 0 445 230" fill="none" stroke="#475569" stroke-width="1.5" />
+  <text x="430" y="250" font-family="sans-serif" font-size="13" font-style="italic" fill="#475569">α</text>
+
+  <!-- Trụ tròn bán kính R=45 lăn không trượt, tâm C tại (280, 120) -->
+  <!-- Pháp tuyến mặt nghiêng nghiêng góc alpha, tiếp xúc tại (297, 169) -->
+  <circle cx="280" cy="120" r="45" fill="#e2e8f0" stroke="#0284c7" stroke-width="3" />
+  <circle cx="280" cy="120" r="4" fill="#0284c7" />
+  <text x="285" y="115" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0284c7">C (m, R)</text>
+
+  <!-- Trọng lực P = mg tại C -->
+  <line x1="280" y1="120" x2="280" y2="200" stroke="#ef4444" stroke-width="2.5" marker-end="url(#arr-red)" />
+  <text x="288" y="190" font-family="sans-serif" font-size="13" font-weight="bold" fill="#ef4444">mg</text>
+
+  <!-- Tọa độ suy rộng s dọc mặt phẳng nghiêng -->
+  <line x1="120" y1="75" x2="340" y2="165" stroke="#0284c7" stroke-width="1.5" stroke-dasharray="4 3" />
+  <line x1="280" y1="120" x2="350" y2="149" stroke="#0284c7" stroke-width="2.2" marker-end="url(#arr-blue)" />
+  <text x="355" y="145" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0284c7">s, ṡ</text>
+
+  <!-- Chiều lăn phi -->
+  <path d="M 255 95 A 35 35 0 0 1 310 95" fill="none" stroke="#ef4444" stroke-width="2" marker-end="url(#arr-red)" />
+  <text x="315" y="95" font-family="sans-serif" font-size="13" font-weight="bold" fill="#ef4444">φ = s/R</text>
+</svg>

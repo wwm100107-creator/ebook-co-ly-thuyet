@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 360" width="100%" height="100%">
+  <defs>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2563eb"/>
+    </marker>
+    <pattern id="hatch" width="6" height="6" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="6" stroke="#94a3b8" stroke-width="1.2" />
+    </pattern>
+  </defs>
+
+  <!-- Left guide wall for Wedge A -->
+  <rect x="70" y="80" width="15" height="180" fill="url(#hatch)" stroke="#334155"/>
+  <line x1="85" y1="80" x2="85" y2="260" stroke="#1e293b" stroke-width="2"/>
+
+  <!-- Bottom guide floor for Wedge B -->
+  <rect x="85" y="260" width="340" height="15" fill="url(#hatch)" stroke="#334155"/>
+  <line x1="85" y1="260" x2="425" y2="260" stroke="#1e293b" stroke-width="2"/>
+
+  <!-- Right resisting body C -->
+  <rect x="360" y="160" width="40" height="100" fill="#e2e8f0" stroke="#1e293b" stroke-width="2"/>
+  <text x="375" y="215" fill="#1e293b" font-size="15" font-weight="bold">C</text>
+
+  <!-- Wedge A (vertical sliding) -->
+  <!-- Top flat, left vertical, right slanted inclined plane -->
+  <polygon points="100,100 170,100 170,140 100,240" fill="#f1f5f9" stroke="#1e293b" stroke-width="2.5"/>
+  <text x="130" y="135" fill="#1e293b" font-size="16" font-weight="bold">A</text>
+
+  <!-- Wedge B (horizontal sliding) -->
+  <!-- Left slanted interface with A, right flat against C, bottom horizontal -->
+  <polygon points="100,240 170,140 360,140 360,260 100,260" fill="#f8fafc" stroke="#1e293b" stroke-width="2.5"/>
+  <text x="240" y="210" fill="#1e293b" font-size="16" font-weight="bold">B</text>
+
+  <!-- Angle alpha of the wedge interface -->
+  <line x1="100" y1="240" x2="160" y2="240" stroke="#94a3b8" stroke-dasharray="3,3"/>
+  <path d="M 130 240 A 30 30 0 0 1 122 210" fill="none" stroke="#475569" stroke-width="1.2"/>
+  <text x="135" y="230" fill="#475569" font-size="13">α</text>
+
+  <!-- Downward press force P on A -->
+  <line x1="135" y1="40" x2="135" y2="95" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+  <text x="145" y="60" fill="#dc2626" font-size="14" font-weight="bold" font-style="italic">P</text>
+
+  <!-- Reactive thrust force Q from C onto B -->
+  <line x1="390" y1="200" x2="330" y2="200" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+  <text x="350" y="190" fill="#dc2626" font-size="14" font-weight="bold" font-style="italic">Q</text>
+</svg>

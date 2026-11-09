@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 340" width="100%" height="auto">
+  <defs>
+    <marker id="arr-red" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#ef4444" />
+    </marker>
+    <marker id="arr-blue" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#0284c7" />
+    </marker>
+  </defs>
+
+  <!-- Trục quay O (250, 60) -->
+  <circle cx="250" cy="60" r="5" fill="#0f172a" />
+  <text x="235" y="55" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0f172a">O</text>
+
+  <!-- Đường thẳng đứng qua O -->
+  <line x1="250" y1="60" x2="250" y2="300" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4 3" />
+
+  <!-- Thân vật rắn (con lắc) quay góc phi: khối tâm C tại (330, 200) -->
+  <path d="M 235 60 C 220 120, 260 240, 320 270 C 370 290, 410 240, 380 180 C 350 120, 280 80, 265 60 Z" fill="rgba(2, 132, 199, 0.1)" stroke="#0284c7" stroke-width="2.5" />
+
+  <!-- Đoạn OC dài d -->
+  <line x1="250" y1="60" x2="330" y2="200" stroke="#0f172a" stroke-width="2" />
+  <circle cx="330" cy="200" r="5" fill="#ef4444" />
+  <text x="340" y="195" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ef4444">C (khối tâm)</text>
+  <text x="280" y="125" font-family="sans-serif" font-size="13" font-style="italic" fill="#0f172a">d</text>
+
+  <!-- Trọng lực P = mg tại C -->
+  <line x1="330" y1="200" x2="330" y2="280" stroke="#ef4444" stroke-width="2.5" marker-end="url(#arr-red)" />
+  <text x="338" y="270" font-family="sans-serif" font-size="13" font-weight="bold" fill="#ef4444">P = mg</text>
+
+  <!-- Góc lệch phi -->
+  <path d="M 250 140 A 80 80 0 0 1 292 133" fill="none" stroke="#475569" stroke-width="1.5" />
+  <text x="265" y="160" font-family="sans-serif" font-size="13" font-style="italic" fill="#475569">φ</text>
+
+  <!-- Độ cao h = d(1 - cos phi) -->
+  <line x1="330" y1="200" x2="250" y2="200" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="3 3" />
+  <line x1="230" y1="200" x2="230" y2="260" stroke="#64748b" stroke-width="1.5" />
+  <text x="205" y="235" font-family="sans-serif" font-size="12" font-style="italic" fill="#64748b">h_c</text>
+</svg>

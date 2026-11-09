@@ -143,3 +143,45 @@ $$\frac{\partial \Pi}{\partial q_j} = 0 \quad (j = 1, 2, ..., s) \tag{4-11}$$
 :::
 
 > **Ưu điểm vượt trội:** Với một cơ hệ có $s$ bậc tự do, phương pháp tọa độ suy rộng trực tiếp cho ta đúng $s$ phương trình cân bằng độc lập, hoàn toàn không cần giải phóng các liên kết trong nội bộ hệ.
+
+
+---
+
+## 4.3. Các Thí Dụ Áp Dụng (Bài Tập Mẫu)
+
+::: tip Ý NGHĨA PHƯƠNG PHÁP
+Nguyên lý di chuyển khả dĩ (Nguyên lý công khả dĩ) là phương pháp cực kỳ mạnh mẽ của Cơ học giải tích để tìm điều kiện cân bằng của các cơ hệ phức tạp gồm nhiều khâu mà không cần tháo rời liên kết để tìm các phản lực liên kết trong.
+:::
+
+### Thí dụ 4-1: Xác định lực ép của máy ép vít bằng Nguyên lý công khả dĩ
+
+**Đề bài:**
+Cho cơ cấu máy ép trục vít như Hình 4-2. Tay vặn có chiều dài $L$ chịu tác dụng của lực $P$ vuông góc với tay vặn ở đầu mút. Trục vít có bước ren là $h$. Bỏ qua ma sát ở ren và các ổ trục.
+Xác định lực ép $Q$ của máy ép tác dụng lên vật ép theo lực vặn $P$.
+
+<div class="figure-box">
+  <img src="/figures/dong-luc-hoc/hinh_4_2.svg" alt="Hình 4-2: Máy ép trục vít" style="max-width: 550px;" />
+  <div class="figure-caption">Hình 4-2: Sơ đồ lực và dịch chuyển khả dĩ của cơ cấu máy ép trục vít</div>
+</div>
+
+**Bài giải:**
+
+Cơ hệ là một hệ có 1 bậc tự do. Cho cơ hệ một di chuyển khả dĩ là góc quay vô cùng nhỏ $\delta\varphi$ của trục vít quanh trục đứng.
+- Khi trục vít quay góc $\delta\varphi$, điểm đặt của lực vặn $P$ dịch chuyển khả dĩ một đoạn cung:
+  $$\delta s_P = L \cdot \delta\varphi$$
+  Vì lực $P$ cùng chiều với dịch chuyển nên công khả dĩ của lực $P$:
+  $$\delta A_P = P \cdot \delta s_P = P \cdot L \cdot \delta\varphi$$
+
+- Khi trục vít quay một vòng toàn phần ($2\pi$ radian), trục vít tịnh tiến một bước ren $h$. Do đó khi quay góc $\delta\varphi$, bàn ép và điểm đặt của lực ép $Q$ dịch chuyển thẳng đứng một đoạn khả dĩ:
+  $$\delta z = \frac{h}{2\pi} \delta\varphi$$
+  Lực cản của vật ép lên bàn ép ngược chiều với dịch chuyển nén xuống, do đó công khả dĩ của lực ép $Q$:
+  $$\delta A_Q = -Q \cdot \delta z = -Q \frac{h}{2\pi} \delta\varphi$$
+
+**Áp dụng Nguyên lý di chuyển khả dĩ:**
+Điều kiện cân bằng của cơ hệ:
+$$\delta A = \delta A_P + \delta A_Q = 0$$
+$$P \cdot L \cdot \delta\varphi - Q \frac{h}{2\pi} \delta\varphi = 0$$
+Vì $\delta\varphi \neq 0$ tùy ý nên:
+$$P \cdot L - Q \frac{h}{2\pi} = 0 \implies Q = \frac{2\pi L}{h} P$$
+
+Nhận xét: Tỷ số $\frac{2\pi L}{h} \gg 1$ thể hiện hệ số lợi về lực rất lớn của máy ép trục vít.

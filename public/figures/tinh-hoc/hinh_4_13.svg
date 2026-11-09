@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 320" width="100%" height="100%">
+  <!-- Axis Delta -->
+  <line x1="80" y1="30" x2="80" y2="290" stroke="#1e293b" stroke-width="2.5"/>
+  <text x="60" y="45" fill="#1e293b" font-size="16" font-weight="bold">Δ</text>
+
+  <!-- Rotating circle: center A at distance R from Delta -->
+  <!-- Say Delta x=80, A x=220, y=160, radius r=50 (R=140 > r=50) -->
+  <circle cx="220" cy="160" r="50" fill="#e0f2fe" stroke="#0284c7" stroke-width="2.5"/>
+  <circle cx="220" cy="160" r="3" fill="#1e293b"/>
+  <text x="215" y="152" fill="#1e293b" font-size="14" font-weight="bold">A</text>
+
+  <!-- Radius r -->
+  <line x1="220" y1="160" x2="255" y2="125" stroke="#0284c7" stroke-width="1.5"/>
+  <text x="245" y="140" fill="#0284c7" font-size="13" font-style="italic">r</text>
+
+  <!-- Distance R from Delta to A -->
+  <line x1="80" y1="230" x2="220" y2="230" stroke="#64748b" stroke-width="1.5"/>
+  <line x1="80" y1="225" x2="80" y2="235" stroke="#64748b"/>
+  <line x1="220" y1="160" x2="220" y2="235" stroke="#94a3b8" stroke-dasharray="2,2"/>
+  <text x="145" y="222" fill="#475569" font-size="14" font-weight="bold" font-style="italic">R</text>
+
+  <!-- Rotation arrow around Delta -->
+  <path d="M 60 140 A 25 15 0 1 1 75 175" fill="none" stroke="#2563eb" stroke-width="2"/>
+</svg>

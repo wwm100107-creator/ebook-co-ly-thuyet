@@ -244,3 +244,122 @@ Trong một cơ hệ chịu tác dụng của các lực thế và liên kết l
 
 $$T + \Pi = E = \text{const} \tag{3-28}$$
 :::
+
+
+---
+
+## 3.7. Các Thí Dụ Áp Dụng (Bài Tập Mẫu)
+
+::: tip Ý NGHĨA PHƯƠNG PHÁP
+Các định lý tổng quát của Động lực học (Định lý động lượng, Định lý khối tâm, Định lý mômen động lượng, Định lý động năng và Định luật bảo toàn cơ năng) là công cụ nền tảng để giải quyết toàn bộ các bài toán chuyển động của cơ hệ mà không cần xét đến các nội lực liên kết bên trong hệ.
+:::
+
+### Thí dụ 3-1: Ứng dụng Định lý chuyển động khối tâm (Động cơ quay lệch tâm)
+
+**Đề bài:**
+Trục của một động cơ điện có khối lượng tổng cộng $M$ được gắn cố định trên nền đàn hồi. Rotor của động cơ có khối lượng $m$ và khối tâm của nó cách trục quay một khoảng lệch tâm $e$. Động cơ quay đều quanh trục cố định nằm ngang với vận tốc góc $\omega = \text{const}$.
+Xác định lực tác dụng động lực học của động cơ lên bệ máy theo thời gian.
+
+**Bài giải:**
+
+Chọn hệ trục tọa độ $Oxy$ với gốc $O$ tại tâm trục quay của động cơ, trục $Ox$ nằm ngang, trục $Oy$ thẳng đứng hướng lên.
+Tọa độ khối tâm của rotor lệch tâm tại thời điểm $t$:
+$$x_C = e \cos\omega t, \quad y_C = e \sin\omega t$$
+
+Gia tốc của khối tâm rotor:
+$$\ddot{x}_C = -e\omega^2 \cos\omega t, \quad \ddot{y}_C = -e\omega^2 \sin\omega t$$
+
+Theo định lý chuyển động khối tâm của cơ hệ:
+$$M_{\text{hệ}} \vec{a}_C = \sum \vec{F}^{\text{ng}}$$
+Chiếu lên hai phương ngang và đứng:
+- Phương ngang: $R_x = m \ddot{x}_C = -m e \omega^2 \cos\omega t$
+- Phương đứng: $R_y - (M + m)g = m \ddot{y}_C = -m e \omega^2 \sin\omega t$
+  $$\implies R_y = (M + m)g - m e \omega^2 \sin\omega t$$
+
+Áp lực toàn phần tác dụng lên nền bệ máy gồm tải trọng tĩnh $(M+m)g$ và thành phần lực kích động tuần hoàn có biên độ $F_0 = m e \omega^2$ tần số $\omega$. Hiện tượng này gây ra rung động cưỡng bức trong máy nếu không được cân bằng động tốt.
+
+---
+
+### Thí dụ 3-2: Ứng dụng Định lý mômen động lượng (Hệ tang tời treo vật nặng)
+
+**Đề bài:**
+Cho cơ cấu tang tời như Hình 3-4. Tang tời có trọng lượng $P$, bán kính $r$, mômen quán tính đối với trục quay nằm ngang $O$ là $J_O = \frac{1}{2}\frac{P}{g}r^2$. Một sợi dây nhẹ không dãn quấn quanh tang tời, đầu tự do treo vật nặng $Q$. Bỏ qua ma sát ở trục quay.
+1. Xác định gia tốc góc $\varepsilon$ của tang tời và gia tốc chuyển động $a$ của vật nặng $Q$.
+2. Tính sức căng $T$ của sợi dây trong quá trình chuyển động.
+
+<div class="figure-box">
+  <img src="/figures/dong-luc-hoc/hinh_3_4.svg" alt="Hình 3-4: Tang tời treo vật nặng Q" style="max-width: 520px;" />
+  <div class="figure-caption">Hình 3-4: Hệ cơ học gồm tang tời quay quanh trục cố định và vật nặng Q chuyển động tịnh tiến</div>
+</div>
+
+**Bài giải:**
+
+Khảo sát riêng từng vật:
+**1. Đối với tang tời quay quanh trục $O$:**
+Áp dụng định lý mômen động lượng đối với trục quay cố định:
+$$J_O \varepsilon = \sum m_O(\vec{F}^{\text{ng}}) = T \cdot r$$
+trong đó $T$ là sức căng của dây tác dụng lên tang tời.
+
+**2. Đối với vật nặng $Q$:**
+Vật $Q$ chuyển động tịnh tiến thẳng đứng xuống dưới với gia tốc $a$:
+$$m_Q a = Q - T \implies \frac{Q}{g} a = Q - T$$
+
+**3. Điều kiện liên kết động học:**
+Vì dây không dãn và không trượt trên tang tời:
+$$a = r \cdot \varepsilon \implies \varepsilon = \frac{a}{r}$$
+
+Thay $\varepsilon$ vào phương trình mômen của tang tời:
+$$J_O \frac{a}{r} = T \cdot r \implies T = \frac{J_O}{r^2} a$$
+
+Thay biểu thức của $T$ vào phương trình chuyển động của vật $Q$:
+$$\frac{Q}{g} a = Q - \frac{J_O}{r^2} a \implies a \left(\frac{Q}{g} + \frac{J_O}{r^2}\right) = Q$$
+Với $J_O = \frac{1}{2}\frac{P}{g}r^2$, ta có:
+$$a \left(\frac{Q}{g} + \frac{1}{2}\frac{P}{g}\right) = Q \implies a = \frac{Q}{Q + \frac{1}{2}P} g$$
+
+Gia tốc góc của tang tời:
+$$\varepsilon = \frac{a}{r} = \frac{Q}{r\left(Q + \frac{1}{2}P\right)} g$$
+
+Sức căng dây $T$:
+$$T = \frac{J_O}{r^2} a = \frac{1}{2}\frac{P}{g} \cdot \frac{Q}{Q + \frac{1}{2}P} g = \frac{PQ}{2Q + P}$$
+
+---
+
+### Thí dụ 3-3: Ứng dụng Định lý động năng và Bảo toàn cơ năng (Con lắc vật lý)
+
+**Đề bài:**
+Một vật rắn có khối lượng $m$, khối tâm $C$ cách trục quay nằm ngang $O$ một khoảng $OC = d$ (Hình 3-8). Mômen quán tính của vật đối với trục quay $O$ là $J_O$. Thả vật từ vị trí lệch góc ban đầu $\varphi_0$ so với phương thẳng đứng không vận tốc đầu.
+1. Áp dụng định luật bảo toàn cơ năng, tìm vận tốc góc $\omega$ của vật theo góc lệch $\varphi$.
+2. Xác định vận tốc góc cực đại $\omega_{\max}$ khi vật đi qua vị trí cân bằng thẳng đứng ($\varphi = 0$).
+
+<div class="figure-box">
+  <img src="/figures/dong-luc-hoc/hinh_3_8.svg" alt="Hình 3-8: Con lắc vật lý và bảo toàn cơ năng" style="max-width: 500px;" />
+  <div class="figure-caption">Hình 3-8: Dao động của con lắc vật lý quay quanh trục nằm ngang O</div>
+</div>
+
+**Bài giải:**
+
+Cơ hệ chỉ chịu tác dụng của trọng lực $\vec{P} = m\vec{g}$ (lực thế) và phản lực tại trục quay cố định $O$ (không sinh công vì điểm đặt đứng yên). Do đó cơ năng của hệ được bảo toàn:
+$$E = T + \Pi = \text{const}$$
+
+**1. Động năng và thế năng của vật:**
+- Động năng của vật rắn quay quanh trục cố định:
+  $$T = \frac{1}{2} J_O \omega^2$$
+- Chọn gốc tính thế năng tại vị trí cân bằng thấp nhất của khối tâm $C$ ($\varphi = 0$):
+  Độ cao của khối tâm tại vị trí góc lệch $\varphi$:
+  $$h_C = d(1 - \cos\varphi)$$
+  Thế năng trọng trường:
+  $$\Pi(\varphi) = m g h_C = m g d (1 - \cos\varphi)$$
+
+**2. Áp dụng định luật bảo toàn cơ năng:**
+Tại vị trí ban đầu $\varphi = \varphi_0$: vật đứng yên nên $T_0 = 0$, thế năng $\Pi_0 = mgd(1 - \cos\varphi_0)$.
+Tại vị trí góc lệch $\varphi$ bất kỳ:
+$$T + \Pi = T_0 + \Pi_0$$
+$$\frac{1}{2} J_O \omega^2 + mgd(1 - \cos\varphi) = mgd(1 - \cos\varphi_0)$$
+$$\implies \frac{1}{2} J_O \omega^2 = mgd(\cos\varphi - \cos\varphi_0)$$
+
+Vận tốc góc của con lắc theo góc lệch $\varphi$:
+$$\omega(\varphi) = \sqrt{\frac{2mgd}{J_O} (\cos\varphi - \cos\varphi_0)}$$
+
+**3. Vận tốc góc cực đại tại vị trí cân bằng ($\varphi = 0$):**
+Khi con lắc đi qua vị trí cân bằng thấp nhất, $\cos 0 = 1$:
+$$\omega_{\max} = \sqrt{\frac{2mgd}{J_O} (1 - \cos\varphi_0)} = 2\sin\frac{\varphi_0}{2} \sqrt{\frac{mgd}{J_O}}$$

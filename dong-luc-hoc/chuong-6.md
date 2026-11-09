@@ -126,3 +126,56 @@ $$p_{\alpha} = \frac{\partial L}{\partial\dot{q}_{\alpha}} = \frac{\partial T}{\
 
 > **Định lý Noether:** Tương ứng với mỗi tọa độ xiclic của cơ hệ, ta nhận được một tích phân đầu về bảo toàn xung lượng suy rộng:
 > $$p_{\alpha} = \text{const} \tag{6-12}$$
+
+
+---
+
+## 6.3. Các Thí Dụ Áp Dụng (Bài Tập Mẫu)
+
+::: tip Ý NGHĨA PHƯƠNG PHÁP
+Phương pháp Lagrange loại II là đỉnh cao của Cơ học giải tích:
+1. Chọn hệ tọa độ suy rộng độc lập $q_1, q_2, \dots, q_s$ ($s$ là số bậc tự do).
+2. Thiết lập biểu thức động năng toàn phần của hệ $T(q_i, \dot{q}_i, t)$ và hàm thế $\Pi(q_i)$ (hoặc tính các lực suy rộng $Q_i$).
+3. Thay vào phương trình Lagrange loại II: $\frac{d}{dt}\left(\frac{\partial T}{\partial \dot{q}_i}\right) - \frac{\partial T}{\partial q_i} = Q_i$ để nhận được trực tiếp hệ phương trình vi phân chuyển động mà không cần xét bất kỳ phản lực liên kết lý tưởng nào.
+:::
+
+### Thí dụ 6-1: Trụ tròn lăn không trượt trên mặt phẳng nghiêng
+
+**Đề bài:**
+Một hình trụ tròn đặc đồng chất khối lượng $m$, bán kính $R$ lăn không trượt từ trạng thái nghỉ trên một mặt phẳng nghiêng góc $\alpha$ so với phương ngang (Hình 6-2).
+1. Chọn tọa độ suy rộng thích hợp và thiết lập phương trình vi phân chuyển động của hình trụ bằng phương trình Lagrange loại II.
+2. Xác định gia tốc chuyển động của khối tâm và điều kiện ma sát để trụ lăn không trượt.
+
+<div class="figure-box">
+  <img src="/figures/dong-luc-hoc/hinh_6_2.svg" alt="Hình 6-2: Trụ tròn lăn không trượt trên mặt phẳng nghiêng" style="max-width: 580px;" />
+  <div class="figure-caption">Hình 6-2: Mô hình cơ học trụ tròn lăn không trượt trên mặt nghiêng góc $\alpha$</div>
+</div>
+
+**Bài giải:**
+
+Cơ hệ có 1 bậc tự do. Chọn tọa độ suy rộng là quãng đường $s$ mà khối tâm $C$ dịch chuyển dọc theo mặt phẳng nghiêng từ vị trí ban đầu ($q = s, \; \dot{q} = \dot{s} = v_C$).
+Vì trụ lăn không trượt, góc quay của trụ liên hệ với quãng đường: $\varphi = \frac{s}{R} \implies \omega = \frac{\dot{s}}{R}$.
+
+**1. Động năng của hình trụ:**
+Trụ thực hiện chuyển động song phẳng:
+$$T = \frac{1}{2} m v_C^2 + \frac{1}{2} J_C \omega^2$$
+với mômen quán tính của trụ tròn đặc $J_C = \frac{1}{2} m R^2$:
+$$T = \frac{1}{2} m \dot{s}^2 + \frac{1}{2} \left(\frac{1}{2} m R^2\right) \left(\frac{\dot{s}}{R}\right)^2 = \frac{1}{2} m \dot{s}^2 + \frac{1}{4} m \dot{s}^2 = \frac{3}{4} m \dot{s}^2$$
+
+**2. Thế năng và lực suy rộng:**
+Chọn gốc thế năng tại vị trí ban đầu ($s = 0$):
+Khi trụ lăn xuống đoạn $s$, độ cao khối tâm giảm một lượng $h = s \sin\alpha$.
+Thế năng trọng trường:
+$$\Pi(s) = -m g s \sin\alpha$$
+Lực suy rộng của lực thế:
+$$Q_s = -\frac{\partial \Pi}{\partial s} = m g \sin\alpha$$
+
+**3. Phương trình Lagrange loại II:**
+$$\frac{\partial T}{\partial \dot{s}} = \frac{3}{2} m \dot{s} \implies \frac{d}{dt}\left(\frac{\partial T}{\partial \dot{s}}\right) = \frac{3}{2} m \ddot{s}$$
+$$\frac{\partial T}{\partial s} = 0$$
+
+Phương trình vi phân chuyển động:
+$$\frac{3}{2} m \ddot{s} - 0 = m g \sin\alpha \implies \ddot{s} = \frac{2}{3} g \sin\alpha$$
+
+Gia tốc của khối tâm là hằng số: $a_C = \ddot{s} = \frac{2}{3} g \sin\alpha$.
+Nhận xét: Nếu vật trượt không ma sát thì $a = g \sin\alpha$. Nhờ có lăn không trượt, một phần năng lượng chuyển thành động năng quay nên gia tốc chuyển động tịnh tiến chỉ bằng $\frac{2}{3}$ gia tốc trượt.
