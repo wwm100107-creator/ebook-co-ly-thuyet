@@ -7,13 +7,13 @@ hero:
   tagline: "Tác giả: GS. TSKH. ĐỖ SANH — Nhà Xuất Bản Bách Khoa Hà Nội"
   actions:
     - theme: brand
-      text: "Quyển 1: TĨNH HỌC →"
+      text: "Quyển 1: TĨNH HỌC"
       link: /tinh-hoc/
     - theme: alt
-      text: "Quyển 2: ĐỘNG HỌC →"
+      text: "Quyển 2: ĐỘNG HỌC"
       link: /dong-hoc/
     - theme: alt
-      text: "Quyển 3: ĐỘNG LỰC HỌC →"
+      text: "Quyển 3: ĐỘNG LỰC HỌC"
       link: /dong-luc-hoc/
 
 features:

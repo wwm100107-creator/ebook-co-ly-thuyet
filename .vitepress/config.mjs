@@ -3,6 +3,7 @@ import { defineConfig } from 'vitepress'
 const ICON_BOOK = '<svg class="nav-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-2px;margin-right:6px;"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 2v20"/></svg>'
 const ICON_LIBRARY = '<svg class="nav-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-2px;margin-right:6px;"><path d="m16 6 4 14"/><path d="M12 6v14"/><path d="M8 8v12"/><path d="M4 4v16"/></svg>'
 const ICON_EXERCISE = '<svg class="nav-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-2px;margin-right:6px;"><path d="M15.5 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5L15.5 3Z"/><path d="M15 3v6h6"/><path d="m9 14 2 2 4-4"/></svg>'
+const ICON_EXTERNAL = '<svg class="nav-icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-1px;margin-left:4px;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>'
 
 export default defineConfig({
   title: 'Cơ Học Lý Thuyết',
@@ -66,7 +67,7 @@ export default defineConfig({
             { text: 'Chương 3: Ma sát', link: '/tinh-hoc/chuong-3' },
             { text: 'Chương 4: Trọng tâm', link: '/tinh-hoc/chuong-4' },
             { text: 'Câu hỏi ôn tập', link: '/tinh-hoc/cau-hoi-on-tap' },
-            { text: ICON_EXERCISE + 'Sách Bài Tập Tĩnh Học ↗', link: '/bai-tap/tinh-hoc/' }
+            { text: ICON_EXERCISE + 'Sách Bài Tập Tĩnh Học' + ICON_EXTERNAL, link: '/bai-tap/tinh-hoc/' }
           ]
         }
       ],
@@ -82,7 +83,7 @@ export default defineConfig({
             { text: 'Chương 4: Chuyển động song phẳng', link: '/dong-hoc/chuong-4' },
             { text: 'Câu hỏi ôn tập', link: '/dong-hoc/cau-hoi-on-tap' },
             { text: 'Tài liệu tham khảo', link: '/dong-hoc/tai-lieu-tham-khao' },
-            { text: ICON_EXERCISE + 'Sách Bài Tập Động Học ↗', link: '/bai-tap/dong-hoc/' }
+            { text: ICON_EXERCISE + 'Sách Bài Tập Động Học' + ICON_EXTERNAL, link: '/bai-tap/dong-hoc/' }
           ]
         }
       ],
@@ -101,7 +102,7 @@ export default defineConfig({
             { text: 'Chương 7: Lý thuyết va chạm', link: '/dong-luc-hoc/chuong-7' },
             { text: 'Câu hỏi ôn tập', link: '/dong-luc-hoc/cau-hoi-on-tap' },
             { text: 'Tài liệu tham khảo', link: '/dong-luc-hoc/tai-lieu-tham-khao' },
-            { text: ICON_EXERCISE + 'Sách Bài Tập Động Lực Học ↗', link: '/bai-tap/dong-luc-hoc/' }
+            { text: ICON_EXERCISE + 'Sách Bài Tập Động Lực Học' + ICON_EXTERNAL, link: '/bai-tap/dong-luc-hoc/' }
           ]
         }
       ],
