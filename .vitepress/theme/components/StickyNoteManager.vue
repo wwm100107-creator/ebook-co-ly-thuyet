@@ -14,14 +14,24 @@ const storageKey = computed(() => {
   return `co_ly_thuyet_notes_${p || 'root'}`
 })
 
-// Load notes for current page
+// Load notes for current page and sanitize dimensions
 function loadNotes() {
   if (typeof window === 'undefined') return
   try {
     const raw = localStorage.getItem(storageKey.value)
     if (raw) {
-      notes.value = JSON.parse(raw)
-      // find highest zIndex
+      const parsed = JSON.parse(raw)
+      notes.value = parsed.map(n => ({
+        ...n,
+        width: Math.max(280, Number(n.width) || 340),
+        height: Math.max(260, Number(n.height) || 340),
+        fontSize: Number(n.fontSize) || 18,
+        colorTheme: n.colorTheme || 'yellow',
+        isCollapsed: !!n.isCollapsed,
+        text: n.text || '',
+        drawData: n.drawData || null,
+        zIndex: Number(n.zIndex) || 1000
+      }))
       const maxZ = notes.value.reduce((m, n) => Math.max(m, n.zIndex || 1000), 1000)
       topZIndex.value = maxZ + 1
     } else {
@@ -51,16 +61,17 @@ function addNote() {
   const winWidth = window.innerWidth || 800
   
   // Center roughly in current viewport reading area
-  const noteWidth = Math.min(320, winWidth - 40)
+  const noteWidth = Math.max(300, Math.min(360, winWidth - 40))
+  const noteHeight = 340
   const noteX = Math.max(20, Math.min(winWidth - noteWidth - 40, (winWidth - noteWidth) / 2))
-  const noteY = scrollY + 120 // Pinned directly at current scroll position
+  const noteY = scrollY + 100 // Pinned directly at current scroll position
 
   const newNote = {
     id: 'note_' + Date.now() + '_' + Math.random().toString(36).substr(2, 5),
     x: noteX,
     y: noteY,
     width: noteWidth,
-    height: 280,
+    height: noteHeight,
     text: '',
     fontSize: 18,
     colorTheme: 'yellow',
@@ -83,13 +94,13 @@ function updateNote(updatedNote) {
   }
 }
 
-function deleteNote(id) {
-  notes.value = notes.value.filter(n => n.id !== id)
+function deleteNote(noteId) {
+  notes.value = notes.value.filter(n => n.id !== noteId)
   saveNotes()
 }
 
-function bringToFront(id) {
-  const target = notes.value.find(n => n.id === id)
+function bringToFront(noteId) {
+  const target = notes.value.find(n => n.id === noteId)
   if (target) {
     target.zIndex = ++topZIndex.value
     saveNotes()
@@ -100,28 +111,20 @@ function toggleVisibility() {
   isVisible.value = !isVisible.value
 }
 
-function clearAllPageNotes() {
-  if (notes.value.length === 0) return
-  if (window.confirm(`Bạn có chắc muốn xóa tất cả ${notes.value.length} ghi chú trên trang này không?`)) {
-    notes.value = []
-    saveNotes()
-  }
-}
-
-onMounted(() => {
+// Reload notes whenever user navigates to a new page
+watch(() => route.path, () => {
   loadNotes()
 })
 
-// Watch route path changes to load notes for newly visited chapter
-watch(() => route.path, () => {
+onMounted(() => {
   loadNotes()
 })
 </script>
 
 <template>
   <div class="sticky-notes-system">
-    <!-- Render all sticky notes on the page -->
-    <div v-show="isVisible" class="notes-container">
+    <!-- Pinned Notes Container (spans entire document height) -->
+    <div class="notes-canvas-layer" v-show="isVisible">
       <StickyNoteItem
         v-for="note in notes"
         :key="note.id"
@@ -132,34 +135,28 @@ watch(() => route.path, () => {
       />
     </div>
 
-    <!-- Floating Master Action Bar (Always accessible at bottom-right) -->
-    <div class="notes-fab-bar">
-      <!-- Add Note button -->
-      <button class="fab-btn btn-add-note" @click="addNote" title="Dán tờ note mới vào vị trí đang đọc">
-        <span class="fab-icon">📝</span>
-        <span class="fab-text">Dán Note</span>
-        <span v-if="notes.length > 0" class="fab-badge">{{ notes.length }}</span>
-      </button>
-
-      <!-- Toggle Hide/Show notes -->
+    <!-- Global Floating Action Buttons (Bottom-Right) -->
+    <div class="sticky-fab-panel">
+      <!-- Toggle Hide/Show Button (if notes exist) -->
       <button
         v-if="notes.length > 0"
-        class="fab-btn btn-toggle-notes"
+        class="fab-btn fab-toggle"
         :class="{ 'is-hidden': !isVisible }"
         @click="toggleVisibility"
-        :title="isVisible ? 'Tạm ẩn tất cả note trên trang' : 'Hiện lại các note đã dán'"
+        :title="isVisible ? 'Ẩn tạm thời các tờ note' : 'Hiện lại các tờ note'"
       >
-        <span>{{ isVisible ? '👁️ Ẩn Note' : '👁️ Hiện Note (' + notes.length + ')' }}</span>
+        <span class="fab-icon">{{ isVisible ? '👁️' : '🙈' }}</span>
+        <span class="fab-badge" v-if="notes.length > 0">{{ notes.length }}</span>
       </button>
 
-      <!-- Clear all notes on page -->
+      <!-- Main "Dán Note" Button -->
       <button
-        v-if="notes.length > 0 && isVisible"
-        class="fab-btn btn-clear-notes"
-        @click="clearAllPageNotes"
-        title="Xóa toàn bộ note của trang này"
+        class="fab-btn fab-add"
+        @click="addNote"
+        title="Dán một tờ ghi chú mới vào vị trí này (gõ chữ Times New Roman hoặc vẽ tay bằng chuột)"
       >
-        <span>🗑️</span>
+        <span class="fab-icon">📝</span>
+        <span class="fab-text">Dán Note</span>
       </button>
     </div>
   </div>
@@ -167,126 +164,123 @@ watch(() => route.path, () => {
 
 <style scoped>
 .sticky-notes-system {
+  position: static;
+  pointer-events: none;
+}
+
+.notes-canvas-layer {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
+  height: 100%;
   pointer-events: none;
-  z-index: 900;
+  z-index: 80;
 }
 
-.notes-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  pointer-events: none;
-}
-
-.notes-container > * {
+.notes-canvas-layer :deep(.sticky-note-card) {
   pointer-events: auto;
 }
 
-/* Floating Action Bar */
-.notes-fab-bar {
+/* Floating Action Panel */
+.sticky-fab-panel {
   position: fixed;
   bottom: 24px;
   right: 24px;
   display: flex;
   align-items: center;
-  gap: 8px;
-  pointer-events: auto;
+  gap: 10px;
   z-index: 10000;
+  pointer-events: auto;
 }
 
 .fab-btn {
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 8px 14px;
-  border-radius: 24px;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  background: #ffffff;
-  color: #1e293b;
-  font-size: 13px;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 9999px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 14px;
   font-weight: 600;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16), 0 1px 4px rgba(0, 0, 0, 0.08);
   cursor: pointer;
+  border: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   user-select: none;
 }
 
-.fab-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
-}
-
-.fab-btn:active {
-  transform: translateY(0);
-}
-
-.btn-add-note {
+.fab-add {
   background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
   color: #ffffff;
-  border: none;
 }
 
-.btn-add-note:hover {
-  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+.fab-add:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(2, 132, 199, 0.4);
+  background: linear-gradient(135deg, #0369a1 0%, #075985 100%);
+}
+
+.fab-add:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.fab-toggle {
+  position: relative;
+  background: #ffffff;
+  color: #1e293b;
+  padding: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+.fab-toggle:hover {
+  background: #f8fafc;
+  transform: translateY(-2px);
+}
+
+.fab-toggle.is-hidden {
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+.fab-icon {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.fab-text {
+  letter-spacing: 0.3px;
 }
 
 .fab-badge {
-  background: #f59e0b;
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: #ef4444;
   color: #ffffff;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
-  padding: 1px 6px;
-  border-radius: 10px;
-  min-width: 16px;
-  text-align: center;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  box-shadow: 0 2px 6px rgba(239, 68, 68, 0.4);
 }
 
-.btn-toggle-notes.is-hidden {
-  background: #f1f5f9;
-  color: #64748b;
-  border-style: dashed;
-}
-
-.btn-clear-notes:hover {
-  background: #fee2e2;
-  color: #dc2626;
-  border-color: #fca5a5;
-}
-
-/* Dark mode overrides for FAB */
-:global(.dark) .fab-btn {
-  background: #1e293b;
-  color: #f1f5f9;
-  border-color: #334155;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
-}
-
-:global(.dark) .btn-add-note {
-  background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
-  color: #0f172a;
-}
-
-:global(.dark) .btn-toggle-notes.is-hidden {
-  background: #0f172a;
-  color: #94a3b8;
-}
-
-/* Media query for mobile */
 @media (max-width: 640px) {
-  .notes-fab-bar {
+  .sticky-fab-panel {
     bottom: 16px;
     right: 16px;
   }
+  .fab-add {
+    padding: 9px 14px;
+    font-size: 13px;
+  }
   .fab-text {
     display: none;
-  }
-  .fab-btn {
-    padding: 8px 10px;
   }
 }
 </style>
