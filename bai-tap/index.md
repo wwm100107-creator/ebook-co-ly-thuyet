@@ -22,7 +22,7 @@ Khảo sát trạng thái cân bằng của vật rắn và hệ vật rắn dư
 - **[Chương 3: Bài toán không gian](/bai-tap/tinh-hoc/chuong-3)** – Cân bằng hệ lực không gian, liên kết cối, bản lề trụ, ngàm 3D.
 - **[Chương 4: Bài toán ma sát](/bai-tap/tinh-hoc/chuong-4)** – Ma sát trượt Culông, góc ma sát, nón ma sát và ma sát lăn.
 - **[Chương 5: Bài toán tìm trọng tâm](/bai-tap/tinh-hoc/chuong-5)** – Trọng tâm vật thể đồng chất, phương pháp diện tích âm, định lý Guynđanh.
-- 👉 **[Xem toàn bộ Bài Tập Tĩnh Học $\rightarrow$](/bai-tap/tinh-hoc/)**
+- **[Xem toàn bộ Bài Tập Tĩnh Học $\rightarrow$](/bai-tap/tinh-hoc/)**
 :::
 
 ::: info 2. BÀI TẬP ĐỘNG HỌC (TẬP 2)
@@ -33,7 +33,7 @@ Nghiên cứu quy luật chuyển động thuần túy hình học theo thời g
 - **[Chương 4: Chuyển động quanh một điểm cố định](/bai-tap/dong-hoc/chuong-4)** – Góc Euler, trục quay tức thời, vận tốc góc tổng hợp.
 - **[Chương 5: Hợp chuyển động của điểm](/bai-tap/dong-hoc/chuong-5)** – Định lý cộng vận tốc, định lý Coriolis về gia tốc.
 - **[Chương 6: Hợp chuyển động của vật](/bai-tap/dong-hoc/chuong-6)** – Hợp các chuyển động tịnh tiến và quay.
-- 👉 **[Xem toàn bộ Bài Tập Động Học $\rightarrow$](/bai-tap/dong-hoc/)**
+- **[Xem toàn bộ Bài Tập Động Học $\rightarrow$](/bai-tap/dong-hoc/)**
 :::
 
 ::: warning 3. BÀI TẬP ĐỘNG LỰC HỌC (QUYỂN 1 & 2)
@@ -46,7 +46,7 @@ Nghiên cứu mối quan hệ giữa lực tác dụng và quy luật chuyển �
 - **[Chương 6: Động lực học vật rắn](/bai-tap/dong-luc-hoc/chuong-6)** – Vật rắn quay quanh trục, song phẳng, hiệu ứng con quay.
 - **[Chương 7: ĐLH chuyển động tương đối](/bai-tap/dong-luc-hoc/chuong-7)** – Lực quán tính ly tâm và Coriolis, cân bằng tương đối.
 - **[Chương 8: Lý thuyết va chạm](/bai-tap/dong-luc-hoc/chuong-8)** – Va chạm xuyên tâm, lệch tâm, định lý Carnot.
-- 👉 **[Xem toàn bộ Bài Tập Động Lực Học $\rightarrow$](/bai-tap/dong-luc-hoc/)**
+- **[Xem toàn bộ Bài Tập Động Lực Học $\rightarrow$](/bai-tap/dong-luc-hoc/)**
 :::
 
 ---

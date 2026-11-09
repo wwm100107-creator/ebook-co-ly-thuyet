@@ -2,11 +2,11 @@
 
 Phiên bản Ebook trực tuyến chính thức, số hóa toàn diện bộ giáo trình kinh điển **Cơ Lý Thuyết** của **GS. TSKH. ĐỖ SANH** (Nhà Xuất Bản Bách Khoa Hà Nội).
 
-🌐 **Đọc trực tuyến tại:** [https://ebook-co-ly-thuyet.vercel.app](https://ebook-co-ly-thuyet.vercel.app)
+**Đọc trực tuyến tại:** [https://ebook-co-ly-thuyet.vercel.app](https://ebook-co-ly-thuyet.vercel.app)
 
 ---
 
-## 📚 Cấu Trúc Bộ Ebook
+## Cấu Trúc Bộ Ebook
 
 Bộ Ebook số hóa bao gồm đầy đủ 3 phần:
 
@@ -41,7 +41,7 @@ Bộ Ebook số hóa bao gồm đầy đủ 3 phần:
 
 ---
 
-## 🛠️ Công Nghệ Sử Dụng
+## Công Nghệ Sử Dụng
 
 - **Engine:** [VitePress](https://vitepress.dev/) v1.6.4
 - **Toán học & Công thức:** LaTeX / KaTeX / MathJax 3 rendering sắc nét, chuẩn ký hiệu toán học Việt Nam & quốc tế
@@ -54,7 +54,7 @@ Bộ Ebook số hóa bao gồm đầy đủ 3 phần:
 
 ---
 
-## 🚀 Chạy Cục Bộ (Local Development)
+## Chạy Cục Bộ (Local Development)
 
 ```bash
 # Cài đặt thư viện
