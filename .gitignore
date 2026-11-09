@@ -14,3 +14,4 @@ crops_*
 *.py
 rendered_svg_checks/
 svg_render_pngs/
+dlh_scan_pages/
