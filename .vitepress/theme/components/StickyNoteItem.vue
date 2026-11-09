@@ -5,10 +5,14 @@ const props = defineProps({
   note: {
     type: Object,
     required: true
+  },
+  isActive: {
+    type: Boolean,
+    default: false
   }
 })
 
-const emit = defineEmits(['update', 'delete', 'bring-to-front'])
+const emit = defineEmits(['update', 'delete', 'bring-to-front', 'select'])
 
 const isDragging = ref(false)
 const dragStart = reactive({ mouseX: 0, mouseY: 0, noteX: 0, noteY: 0 })
@@ -16,15 +20,10 @@ const dragStart = reactive({ mouseX: 0, mouseY: 0, noteX: 0, noteY: 0 })
 const isResizing = ref(false)
 const resizeStart = reactive({ mouseX: 0, mouseY: 0, width: 0, height: 0 })
 
-// Mode: 'text' (đánh máy) vs 'draw' (vẽ tay)
-const mode = ref('text')
 const canvasRef = ref(null)
 const workspaceRef = ref(null)
 const textareaRef = ref(null)
 const isDrawing = ref(false)
-const brushColor = ref('#dc2626') // default red for easy marking
-const brushSize = ref(3)
-const isHighlighter = ref(false)
 const strokeHistory = ref([])
 let ctx = null
 let resizeObserver = null
@@ -39,26 +38,11 @@ const colorThemes = {
   white: { bg: '#ffffff', header: '#f8fafc', border: '#cbd5e1', text: '#0f172a' }
 }
 
-const fontSizes = [14, 16, 18, 20, 24, 28]
-const brushColors = [
-  { name: 'Đen', hex: '#1e293b' },
-  { name: 'Đỏ', hex: '#dc2626' },
-  { name: 'Xanh dương', hex: '#2563eb' },
-  { name: 'Xanh lá', hex: '#16a34a' },
-  { name: 'Vàng cam', hex: '#d97706' }
-]
-
-const brushSizes = [
-  { label: 'Mảnh', val: 2 },
-  { label: 'Vừa', val: 4 },
-  { label: 'Đậm', val: 7 },
-  { label: 'Dạ quang', val: 18, isHigh: true }
-]
-
 // Dragging logic
 function onHeaderPointerDown(e) {
-  if (e.target.closest('button') || e.target.closest('select') || e.target.closest('input')) return
+  if (e.target.closest('button')) return
   isDragging.value = true
+  emit('select', props.note.id)
   emit('bring-to-front', props.note.id)
   dragStart.mouseX = e.pageX
   dragStart.mouseY = e.pageY
@@ -81,7 +65,7 @@ function onPointerMove(e) {
     const dx = e.pageX - resizeStart.mouseX
     const dy = e.pageY - resizeStart.mouseY
     props.note.width = Math.max(260, resizeStart.width + dx)
-    props.note.height = Math.max(220, resizeStart.height + dy)
+    props.note.height = Math.max(200, resizeStart.height + dy)
     nextTick(() => resizeCanvas())
     emit('update', props.note)
   }
@@ -100,6 +84,7 @@ function onPointerUp() {
 // Resizing logic
 function onResizePointerDown(e) {
   isResizing.value = true
+  emit('select', props.note.id)
   emit('bring-to-front', props.note.id)
   resizeStart.mouseX = e.pageX
   resizeStart.mouseY = e.pageY
@@ -118,14 +103,9 @@ function toggleCollapse() {
   emit('update', props.note)
 }
 
-// Set mode
-function switchMode(newMode) {
-  mode.value = newMode
-  if (newMode === 'text') {
-    nextTick(() => {
-      if (textareaRef.value) textareaRef.value.focus()
-    })
-  }
+function onCardPointerDown() {
+  emit('select', props.note.id)
+  emit('bring-to-front', props.note.id)
 }
 
 // Canvas & Drawing Logic
@@ -187,7 +167,7 @@ function saveCanvasData() {
 }
 
 function onCanvasPointerDown(e) {
-  if (mode.value !== 'draw' || props.note.isCollapsed) return
+  if (props.note.mode !== 'draw' || props.note.isCollapsed) return
   isDrawing.value = true
   const rect = canvasRef.value.getBoundingClientRect()
   const x = e.clientX - rect.left
@@ -198,15 +178,18 @@ function onCanvasPointerDown(e) {
   ctx.beginPath()
   ctx.moveTo(x, y)
   
-  if (isHighlighter.value) {
-    ctx.strokeStyle = brushColor.value + '55' // ~33% alpha for highlight
-    ctx.lineWidth = brushSize.value
+  const bColor = props.note.brushColor || '#dc2626'
+  const bSize = props.note.brushSize || 4
+  const isHigh = !!props.note.isHighlighter
+
+  if (isHigh) {
+    ctx.strokeStyle = bColor + '55' // ~33% alpha for highlight
+    ctx.lineWidth = bSize
   } else {
-    ctx.strokeStyle = brushColor.value
-    ctx.lineWidth = brushSize.value
+    ctx.strokeStyle = bColor
+    ctx.lineWidth = bSize
   }
 
-  // Save current canvas state for undo
   try {
     const imgData = ctx.getImageData(0, 0, canvasRef.value.width, canvasRef.value.height)
     strokeHistory.value.push(imgData)
@@ -220,7 +203,7 @@ function onCanvasPointerDown(e) {
 }
 
 function onCanvasPointerMove(e) {
-  if (!isDrawing.value || mode.value !== 'draw' || !ctx) return
+  if (!isDrawing.value || props.note.mode !== 'draw' || !ctx) return
   const rect = canvasRef.value.getBoundingClientRect()
   const x = e.clientX - rect.left
   const y = e.clientY - rect.top
@@ -253,10 +236,14 @@ function undoCanvas() {
   saveCanvasData()
 }
 
-function selectBrushSize(b) {
-  brushSize.value = b.val
-  isHighlighter.value = !!b.isHigh
-}
+// Expose undo & clear to parent manager
+defineExpose({
+  undoCanvas,
+  clearCanvas,
+  focusTextarea: () => {
+    nextTick(() => textareaRef.value?.focus())
+  }
+})
 
 onMounted(() => {
   nextTick(() => {
@@ -283,16 +270,28 @@ watch(() => props.note.isCollapsed, (newVal) => {
     })
   }
 })
+
+watch(() => props.note.mode, (newMode) => {
+  if (newMode === 'text') {
+    nextTick(() => {
+      if (textareaRef.value) textareaRef.value.focus()
+    })
+  }
+})
 </script>
 
 <template>
   <div
     class="sticky-note-card"
-    :class="{ 'is-collapsed': note.isCollapsed, 'is-dragging': isDragging }"
+    :class="{
+      'is-collapsed': note.isCollapsed,
+      'is-dragging': isDragging,
+      'is-active': isActive
+    }"
     :style="{
       left: note.x + 'px',
       top: note.y + 'px',
-      width: note.isCollapsed ? '280px' : (note.width || 340) + 'px',
+      width: note.isCollapsed ? '260px' : (note.width || 340) + 'px',
       height: note.isCollapsed ? 'auto' : (note.height || 340) + 'px',
       zIndex: note.zIndex || 999,
       '--note-bg': colorThemes[note.colorTheme || 'yellow'].bg,
@@ -300,7 +299,7 @@ watch(() => props.note.isCollapsed, (newVal) => {
       '--note-border': colorThemes[note.colorTheme || 'yellow'].border,
       '--note-text': colorThemes[note.colorTheme || 'yellow'].text,
     }"
-    @pointerdown="emit('bring-to-front', note.id)"
+    @pointerdown="onCardPointerDown"
   >
     <!-- Note Top Header (Drag handle & curtain bar) -->
     <div class="note-header" @pointerdown="onHeaderPointerDown">
@@ -310,7 +309,7 @@ watch(() => props.note.isCollapsed, (newVal) => {
         <span class="note-title-preview" v-if="note.isCollapsed">
           {{ note.text ? note.text.slice(0, 18) + '...' : 'Ghi chú (đã cuộn rèm)' }}
         </span>
-        <span class="note-title" v-else>Ghi chú</span>
+        <span class="note-title" v-else>GHI CHÚ</span>
       </div>
 
       <div class="header-actions">
@@ -335,100 +334,13 @@ watch(() => props.note.isCollapsed, (newVal) => {
       </div>
     </div>
 
-    <!-- Collapsible Curtain Container -->
+    <!-- Collapsible Curtain Container (100% PURE PAPER WORKSPACE) -->
     <div class="note-curtain-wrapper" :class="{ 'curtain-rolled-up': note.isCollapsed }">
-      <!-- Toolbar Controls -->
-      <div class="note-toolbar">
-        <div class="toolbar-row primary-row">
-          <!-- Mode switcher: Viết chữ vs Vẽ tay -->
-          <div class="mode-tabs">
-            <button
-              class="tab-btn"
-              :class="{ active: mode === 'text' }"
-              @click="switchMode('text')"
-              title="Chế độ đánh máy bằng bàn phím (Font Times New Roman)"
-            >
-              ✍️ Viết chữ
-            </button>
-            <button
-              class="tab-btn"
-              :class="{ active: mode === 'draw' }"
-              @click="switchMode('draw')"
-              title="Chế độ vẽ tay bằng chuột hoặc bút cảm ứng"
-            >
-              🖌️ Vẽ tay
-            </button>
-          </div>
-
-          <!-- Text Mode Settings (Cỡ chữ & Màu giấy) -->
-          <div class="text-settings" v-if="mode === 'text'">
-            <div class="setting-item">
-              <span class="lbl-sm">Cỡ chữ:</span>
-              <select
-                v-model="note.fontSize"
-                class="font-select"
-                @change="emit('update', note)"
-              >
-                <option v-for="s in fontSizes" :key="s" :value="s">{{ s }}px</option>
-              </select>
-            </div>
-
-            <!-- Paper Theme Selector -->
-            <div class="theme-palette" title="Đổi màu giấy note">
-              <span
-                v-for="(th, name) in colorThemes"
-                :key="name"
-                class="theme-dot"
-                :class="{ active: (note.colorTheme || 'yellow') === name }"
-                :style="{ backgroundColor: th.header }"
-                @click="note.colorTheme = name; emit('update', note);"
-              />
-            </div>
-          </div>
-
-          <!-- Draw Mode Settings (Màu cọ, cỡ cọ, hoàn tác, xóa) -->
-          <div class="draw-settings" v-if="mode === 'draw'">
-            <button class="action-btn" @click="undoCanvas" title="Hoàn tác nét vẽ (Undo)">↶ Lùi</button>
-            <button class="action-btn btn-clear" @click="clearCanvas" title="Xóa toàn bộ nét vẽ">🧹 Xóa nét</button>
-          </div>
-        </div>
-
-        <!-- Draw Mode Secondary Row (Brush colors & sizes) -->
-        <div class="toolbar-row draw-palette-row" v-if="mode === 'draw'">
-          <!-- Brush Colors -->
-          <div class="brush-colors">
-            <button
-              v-for="c in brushColors"
-              :key="c.hex"
-              class="brush-dot"
-              :class="{ selected: brushColor === c.hex && !isHighlighter }"
-              :style="{ backgroundColor: c.hex }"
-              @click="brushColor = c.hex; isHighlighter = false;"
-              :title="'Cọ màu ' + c.name"
-            />
-          </div>
-
-          <!-- Brush Sizes -->
-          <div class="brush-sizes">
-            <button
-              v-for="b in brushSizes"
-              :key="b.label"
-              class="size-btn"
-              :class="{ selected: brushSize === b.val && isHighlighter === !!b.isHigh }"
-              @click="selectBrushSize(b)"
-              :title="b.label"
-            >
-              {{ b.label }}
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Note Workspace: Text Area & Drawing Canvas Layer -->
+      <!-- Workspace: Text Area & Drawing Canvas Layer -->
       <div
         ref="workspaceRef"
         class="note-workspace"
-        :class="{ 'drawing-active': mode === 'draw' }"
+        :class="{ 'drawing-active': note.mode === 'draw' }"
       >
         <!-- Text layer (Strictly Times New Roman) -->
         <textarea
@@ -438,24 +350,24 @@ watch(() => props.note.isCollapsed, (newVal) => {
           :style="{ fontSize: (note.fontSize || 18) + 'px' }"
           placeholder="✍️ Nhấp vào đây để gõ nội dung (Font Times New Roman)..."
           @input="emit('update', note)"
-          :disabled="mode === 'draw'"
+          :disabled="note.mode === 'draw'"
         />
 
         <!-- Drawing Canvas Layer (Positioned directly over text) -->
         <canvas
           ref="canvasRef"
           class="note-canvas"
-          :class="{ 'is-interactive': mode === 'draw' }"
+          :class="{ 'is-interactive': note.mode === 'draw' }"
           @pointerdown="onCanvasPointerDown"
           @pointermove="onCanvasPointerMove"
           @pointerup="onCanvasPointerUp"
           @pointerleave="onCanvasPointerUp"
         />
 
-        <!-- Floating Hint for Drawing Mode -->
-        <div class="draw-hint-overlay" v-if="mode === 'draw' && (!note.drawData && !strokeHistory.length)">
+        <!-- Floating Hint when user is in Drawing Mode -->
+        <div class="draw-hint-overlay" v-if="note.mode === 'draw' && (!note.drawData && !strokeHistory.length)">
           <div class="hint-pill">
-            🖌️ Rê chuột trực tiếp lên tờ note để vẽ hình hoặc ghi chú
+            🖌️ Rê chuột trực tiếp lên mặt note để vẽ hình hoặc ghi chú
           </div>
         </div>
       </div>
@@ -485,14 +397,19 @@ watch(() => props.note.isCollapsed, (newVal) => {
   flex-direction: column;
   user-select: none;
   touch-action: none;
-  transition: box-shadow 0.2s ease;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
   overflow: hidden;
   box-sizing: border-box;
   min-width: 260px;
 }
 
 .sticky-note-card:not(.is-collapsed) {
-  min-height: 240px;
+  min-height: 200px;
+}
+
+.sticky-note-card.is-active {
+  border-color: #0284c7;
+  box-shadow: 0 0 0 2px #0284c7, 0 14px 34px rgba(0, 0, 0, 0.26);
 }
 
 .sticky-note-card.is-dragging {
@@ -539,6 +456,7 @@ watch(() => props.note.isCollapsed, (newVal) => {
 
 .note-title {
   font-size: 12px;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -604,186 +522,12 @@ watch(() => props.note.isCollapsed, (newVal) => {
   pointer-events: none;
 }
 
-/* Toolbar */
-.note-toolbar {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  padding: 6px 10px;
-  background: rgba(255, 255, 255, 0.45);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  flex-shrink: 0;
-}
-
-.toolbar-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 6px;
-}
-
-.mode-tabs {
-  display: flex;
-  background: rgba(0, 0, 0, 0.06);
-  padding: 2px;
-  border-radius: 6px;
-  gap: 2px;
-}
-
-.tab-btn {
-  border: none;
-  background: transparent;
-  color: #475569;
-  border-radius: 4px;
-  padding: 3px 9px;
-  font-size: 11px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.15s ease;
-  user-select: none;
-}
-
-.tab-btn.active {
-  background: #0284c7;
-  color: #ffffff;
-  box-shadow: 0 1px 3px rgba(2, 132, 199, 0.3);
-}
-
-.text-settings {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.setting-item {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.lbl-sm {
-  font-size: 11px;
-  font-weight: 600;
-  color: #475569;
-}
-
-.font-select {
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  background: #ffffff;
-  border-radius: 4px;
-  padding: 2px 4px;
-  font-size: 11px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.theme-palette {
-  display: flex;
-  gap: 4px;
-  align-items: center;
-}
-
-.theme-dot {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.25);
-  cursor: pointer;
-  transition: transform 0.1s ease;
-}
-
-.theme-dot:hover {
-  transform: scale(1.15);
-}
-
-.theme-dot.active {
-  box-shadow: 0 0 0 2px #0284c7;
-  transform: scale(1.2);
-}
-
-.draw-settings {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.action-btn {
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 4px;
-  padding: 2px 8px;
-  font-size: 11px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.15s ease;
-}
-
-.action-btn:hover {
-  background: #ffffff;
-}
-
-.btn-clear:hover {
-  background: #fee2e2;
-  color: #dc2626;
-  border-color: #fca5a5;
-}
-
-/* Secondary Draw Toolbar */
-.draw-palette-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 3px;
-  border-top: 1px dashed rgba(0, 0, 0, 0.08);
-}
-
-.brush-colors {
-  display: flex;
-  gap: 4px;
-  align-items: center;
-}
-
-.brush-dot {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.25);
-  cursor: pointer;
-  padding: 0;
-  transition: transform 0.1s ease;
-}
-
-.brush-dot.selected {
-  transform: scale(1.25);
-  box-shadow: 0 0 0 2px #0284c7;
-}
-
-.brush-sizes {
-  display: flex;
-  gap: 3px;
-}
-
-.size-btn {
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  background: rgba(255, 255, 255, 0.7);
-  border-radius: 3px;
-  padding: 1px 6px;
-  font-size: 10px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.size-btn.selected {
-  background: #0284c7;
-  color: #ffffff;
-  border-color: #0284c7;
-}
-
 /* Workspace: Text Area & Drawing Canvas */
 .note-workspace {
   position: relative;
   flex: 1 1 auto;
   width: 100%;
+  height: 100%;
   min-height: 180px;
   box-sizing: border-box;
   overflow: hidden;
