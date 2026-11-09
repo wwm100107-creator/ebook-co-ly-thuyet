@@ -7,7 +7,25 @@ export default defineConfig({
   lang: 'vi-VN',
   ignoreDeadLinks: true,
   markdown: {
-    math: true
+    math: true,
+    config(md) {
+      const origInline = md.renderer.rules.math_inline
+      if (origInline) {
+        md.renderer.rules.math_inline = (tokens, idx, options, env, self) => {
+          const html = origInline(tokens, idx, options, env, self)
+          return html.replace(/<mjx-assistive-mml[\s\S]*?<\/mjx-assistive-mml>/gi, '')
+        }
+      }
+      const origBlock = md.renderer.rules.math_block
+      if (origBlock) {
+        md.renderer.rules.math_block = (tokens, idx, options, env, self) => {
+          const html = origBlock(tokens, idx, options, env, self)
+          return html
+            .replace(/<mjx-assistive-mml[\s\S]*?<\/mjx-assistive-mml>/gi, '')
+            .replace(/\s*tabindex="0"/g, '')
+        }
+      }
+    }
   },
   themeConfig: {
     siteTitle: 'Cơ Học Lý Thuyết',
