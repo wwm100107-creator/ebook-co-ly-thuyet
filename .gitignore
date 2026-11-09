@@ -12,3 +12,5 @@ raw_pages
 extracted_*
 crops_*
 *.py
+rendered_svg_checks/
+svg_render_pngs/

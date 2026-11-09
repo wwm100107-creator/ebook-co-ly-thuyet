@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 260" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 260" width="100%" height="auto" preserveAspectRatio="xMidYMid meet">
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#1e293b" />
@@ -33,7 +33,7 @@
   <g><text x="315" y="80" class="lbl-bold" fill="#dc2626">v<tspan font-size="12" dy="4">C</tspan></text><path d="M 315 62 h 12 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#dc2626" stroke-width="1.3" stroke-linecap="round" /></g>
   
   <path d="M 195 100 A 25 25 0 1 1 235 100" fill="none" stroke="#2563eb" stroke-width="2.2" marker-end="url(#arrow-blue)" />
-  <text x="240" y="105" class="lbl-bold" fill="#2563eb">&#969;</text>
+  <text x="240" y="105" class="lbl-bold" fill="#2563eb">ω</text>
   
-  <text x="120" y="235" class="lbl-bold" fill="#0f172a">T = &#189; M v<tspan font-size="12">C</tspan><tspan font-size="12">2</tspan> + &#189; J<tspan font-size="12">C</tspan> &#969;<tspan font-size="12">2</tspan></text>
+  <text x="120" y="235" class="lbl-bold" fill="#0f172a">T = ½ M v<tspan font-size="12">C</tspan><tspan font-size="12">2</tspan> + ½ J<tspan font-size="12">C</tspan> ω<tspan font-size="12">2</tspan></text>
 </svg>

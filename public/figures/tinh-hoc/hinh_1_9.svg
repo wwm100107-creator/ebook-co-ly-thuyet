@@ -1,52 +1,75 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 260" width="100%" height="auto" preserveAspectRatio="xMidYMid meet">
   <defs>
-    <marker id="arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#1e293b" />
-    </marker>
     <marker id="arrow-blue" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2563eb" />
     </marker>
-    <marker id="arrow-red" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#dc2626" />
-    </marker>
-    <pattern id="hatch" width="8" height="8" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
-      <line x1="0" y1="0" x2="0" y2="8" stroke="#94a3b8" stroke-width="1.2" />
-    </pattern>
   </defs>
   <style>
     text { font-family: 'Times New Roman', 'Cambria Math', serif; }
     .lbl { font-size: 18px; font-style: italic; fill: #0f172a; }
     .lbl-bold { font-size: 20px; font-style: italic; font-weight: bold; fill: #0f172a; }
-    .vec { stroke: #2563eb; stroke-width: 2.2; }
+    .vec { stroke: #2563eb; stroke-width: 2.4; }
     .axis { stroke: #64748b; stroke-width: 1.2; stroke-dasharray: 5,3; }
-    .solid { stroke: #1e293b; stroke-width: 1.8; fill: #f8fafc; }
+    .solid { stroke: #1e293b; stroke-width: 2; fill: #f8fafc; }
   </style>
 
-  <g transform="translate(0, 10)">
-    <circle cx="120" cy="50" r="40" class="solid" />
-    <text x="110" y="55" class="lbl-bold">A</text>
-    <circle cx="280" cy="50" r="40" class="solid" />
-    <text x="270" y="55" class="lbl-bold">B</text>
-    <line x1="60" y1="50" x2="340" y2="50" class="axis" />
+  <!-- a) Tương tác hút nhau -->
+  <g transform="translate(0, 15)">
+    <!-- Đường tác dụng chung -->
+    <line x1="50" y1="50" x2="490" y2="50" class="axis" />
     
-    <line x1="160" y1="50" x2="210" y2="50" class="vec" marker-end="url(#arrow-blue)" />
-    <g><text x="180" y="40" class="lbl-bold" fill="#2563eb">F</text><path d="M 180 22 h 13 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#2563eb" stroke-width="1.3" stroke-linecap="round" /></g>
+    <!-- Quả cầu A -->
+    <circle cx="130" cy="50" r="38" class="solid" />
+    <circle cx="130" cy="50" r="3" fill="#0f172a" />
+    <text x="122" y="56" class="lbl-bold">A</text>
     
-    <line x1="240" y1="50" x2="190" y2="50" class="vec" marker-end="url(#arrow-blue)" />
-    <g><text x="200" y="40" class="lbl-bold" fill="#2563eb">F'</text><path d="M 200 22 h 15 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#2563eb" stroke-width="1.3" stroke-linecap="round" /></g>
+    <!-- Quả cầu B -->
+    <circle cx="410" cy="50" r="38" class="solid" />
+    <circle cx="410" cy="50" r="3" fill="#0f172a" />
+    <text x="402" y="56" class="lbl-bold">B</text>
+    
+    <!-- Lực F tác dụng lên A hướng sang B -->
+    <line x1="168" y1="50" x2="245" y2="50" class="vec" marker-end="url(#arrow-blue)" />
+    <g>
+      <text x="195" y="38" class="lbl-bold" fill="#2563eb">F</text>
+      <path d="M 195 20 h 13 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#2563eb" stroke-width="1.3" stroke-linecap="round" />
+    </g>
+    
+    <!-- Lực F' tác dụng lên B hướng sang A -->
+    <line x1="372" y1="50" x2="295" y2="50" class="vec" marker-end="url(#arrow-blue)" />
+    <g>
+      <text x="325" y="38" class="lbl-bold" fill="#2563eb">F'</text>
+      <path d="M 325 20 h 15 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#2563eb" stroke-width="1.3" stroke-linecap="round" />
+    </g>
   </g>
   
-  <g transform="translate(0, 120)">
-    <circle cx="120" cy="50" r="40" class="solid" />
-    <text x="110" y="55" class="lbl-bold">A</text>
-    <circle cx="280" cy="50" r="40" class="solid" />
-    <text x="270" y="55" class="lbl-bold">B</text>
-    <line x1="60" y1="50" x2="340" y2="50" class="axis" />
+  <!-- b) Tương tác đẩy nhau -->
+  <g transform="translate(0, 135)">
+    <!-- Đường tác dụng chung -->
+    <line x1="50" y1="50" x2="490" y2="50" class="axis" />
     
-    <line x1="80" y1="50" x2="40" y2="50" class="vec" marker-end="url(#arrow-blue)" />
-    <g><text x="45" y="40" class="lbl-bold" fill="#2563eb">F'</text><path d="M 45 22 h 15 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#2563eb" stroke-width="1.3" stroke-linecap="round" /></g>
+    <!-- Quả cầu A -->
+    <circle cx="130" cy="50" r="38" class="solid" />
+    <circle cx="130" cy="50" r="3" fill="#0f172a" />
+    <text x="122" y="56" class="lbl-bold">A</text>
     
-    <line x1="320" y1="50" x2="360" y2="50" class="vec" marker-end="url(#arrow-blue)" />
-    <g><text x="340" y="40" class="lbl-bold" fill="#2563eb">F</text><path d="M 340 22 h 13 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#2563eb" stroke-width="1.3" stroke-linecap="round" /></g>
+    <!-- Quả cầu B -->
+    <circle cx="410" cy="50" r="38" class="solid" />
+    <circle cx="410" cy="50" r="3" fill="#0f172a" />
+    <text x="402" y="56" class="lbl-bold">B</text>
+    
+    <!-- Lực F' tác dụng lên A đẩy sang trái -->
+    <line x1="92" y1="50" x2="35" y2="50" class="vec" marker-end="url(#arrow-blue)" />
+    <g>
+      <text x="50" y="38" class="lbl-bold" fill="#2563eb">F'</text>
+      <path d="M 50 20 h 15 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#2563eb" stroke-width="1.3" stroke-linecap="round" />
+    </g>
+    
+    <!-- Lực F tác dụng lên B đẩy sang phải -->
+    <line x1="448" y1="50" x2="505" y2="50" class="vec" marker-end="url(#arrow-blue)" />
+    <g>
+      <text x="465" y="38" class="lbl-bold" fill="#2563eb">F</text>
+      <path d="M 465 20 h 13 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#2563eb" stroke-width="1.3" stroke-linecap="round" />
+    </g>
   </g>
 </svg>

@@ -122,27 +122,31 @@ span .mjx-container {
 }
 
 /* Figures and Book Diagrams */
-.figure-container {
+.figure-container,
+.figure-box {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 28px auto;
   padding: 16px;
-  background: #ffffff;
+  background: #ffffff !important;
   border: 1px solid #e2e8f0;
   border-radius: 10px;
   max-width: 90%;
   box-shadow: 0 4px 12px rgba(0,0,0,0.06);
 }
 
-.figure-container img {
+.figure-container img,
+.figure-box img {
   max-width: 100%;
-  height: auto;
+  height: auto !important;
   display: block;
+  margin: 0 auto;
 }
 
-.dark .figure-container {
-  background: #ffffff;
+.dark .figure-container,
+.dark .figure-box {
+  background: #ffffff !important;
   border: 1px solid #475569;
   box-shadow: 0 4px 16px rgba(0,0,0,0.3);
 }
@@ -164,7 +168,8 @@ span .mjx-container {
   overflow: visible !important;
 }
 
-.dark .figure-container .mjx-container svg {
+.dark .figure-container .mjx-container svg,
+.dark .figure-box .mjx-container svg {
   filter: none !important;
 }
 

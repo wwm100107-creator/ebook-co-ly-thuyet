@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 280" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 280" width="100%" height="auto" preserveAspectRatio="xMidYMid meet">
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#1e293b" />
@@ -34,7 +34,7 @@
   
   <line x1="220" y1="35" x2="170" y2="130" stroke="#1e293b" stroke-width="4" stroke-linecap="round" />
   <path d="M 220 70 A 35 35 0 0 1 200 80" fill="none" stroke="#2563eb" stroke-width="1.8" />
-  <text x="205" y="95" class="lbl-bold" fill="#2563eb">&#966;<tspan font-size="12">1</tspan></text>
+  <text x="205" y="95" class="lbl-bold" fill="#2563eb">φ<tspan font-size="12">1</tspan></text>
   
   <circle cx="170" cy="130" r="10" fill="#3b82f6" stroke="#1e293b" stroke-width="2" />
   <text x="140" y="135" class="lbl-bold">m<tspan font-size="12">1</tspan></text>
@@ -42,7 +42,7 @@
   
   <line x1="170" y1="130" x2="210" y2="220" stroke="#1e293b" stroke-width="4" stroke-linecap="round" />
   <path d="M 170 170 A 40 40 0 0 0 188 170" fill="none" stroke="#2563eb" stroke-width="1.8" />
-  <text x="175" y="185" class="lbl-bold" fill="#2563eb">&#966;<tspan font-size="12">2</tspan></text>
+  <text x="175" y="185" class="lbl-bold" fill="#2563eb">φ<tspan font-size="12">2</tspan></text>
   
   <circle cx="210" cy="220" r="12" fill="#ef4444" stroke="#1e293b" stroke-width="2" />
   <text x="225" y="230" class="lbl-bold">m<tspan font-size="12">2</tspan></text>
