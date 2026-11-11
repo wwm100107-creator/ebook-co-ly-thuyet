@@ -9,6 +9,9 @@
     <marker id="arr-green" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
       <polygon points="0 0, 7 2.5, 0 5" fill="#16a34a" />
     </marker>
+    <marker id="arr-dark" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#0f172a" />
+    </marker>
   </defs>
   <style>
     text { font-family: 'Times New Roman', serif; }
@@ -18,7 +21,7 @@
   </style>
 
   <!-- Trục tọa độ Oz thẳng đứng hướng xuống -->
-  <line x1="120" y1="30" x2="120" y2="230" stroke="#0f172a" stroke-width="1.5" marker-end="url(#arr-blue)" />
+  <line x1="120" y1="30" x2="120" y2="230" stroke="#0f172a" stroke-width="1.5" marker-end="url(#arr-dark)" />
   <text x="130" y="225" class="lbl-bold">z</text>
   <circle cx="120" cy="50" r="3.5" fill="#0f172a" />
   <text x="100" y="55" class="lbl-bold">O</text>
@@ -40,10 +43,10 @@
   <text x="168" y="130" class="lbl-bold" fill="#2563eb">v</text>
 
   <!-- Khung thông số giải thích bên phải -->
-  <rect x="230" y="40" width="200" height="170" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" />
-  <text x="245" y="70" font-size="15" font-weight="bold" fill="#1e293b">Phương trình vi phân:</text>
-  <text x="245" y="100" font-size="14" fill="#0f172a">m·(dv/dt) = mg - kv</text>
-  <text x="245" y="130" font-size="14" fill="#0f172a">v(t) = v_gh·(1 - e^(-kt/m))</text>
-  <text x="245" y="160" font-size="14" fill="#dc2626" font-weight="bold">v_gh = mg / k</text>
-  <text x="245" y="190" font-size="13" fill="#64748b">(Vận tốc giới hạn dừng)</text>
+  <rect x="225" y="40" width="215" height="170" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" />
+  <text x="240" y="70" font-size="15" font-weight="bold" fill="#1e293b">Phương trình vi phân:</text>
+  <text x="240" y="100" font-size="14" font-style="italic" fill="#0f172a">m·(dv/dt) = mg − kv</text>
+  <text x="240" y="132" font-size="14" font-style="italic" fill="#0f172a">v(t) = v<tspan font-size="10" dy="3">gh</tspan><tspan dy="-3">·(1 − e</tspan><tspan font-size="10" dy="-5">−kt/m</tspan><tspan dy="5">)</tspan></text>
+  <text x="240" y="162" font-size="14" font-style="italic" fill="#dc2626" font-weight="bold">v<tspan font-size="10" dy="3">gh</tspan><tspan dy="-3"> = mg / k</tspan></text>
+  <text x="240" y="190" font-size="13" fill="#64748b">(Vận tốc giới hạn dừng)</text>
 </svg>

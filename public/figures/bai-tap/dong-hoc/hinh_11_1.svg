@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 280" width="100%" height="auto" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <marker id="arr-red" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#dc2626" />
+    </marker>
+    <marker id="arr-blue" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#2563eb" />
+    </marker>
+    <marker id="arr-green" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#16a34a" />
+    </marker>
+  </defs>
+  <style>
+    text { font-family: 'Times New Roman', serif; }
+    .lbl { font-size: 15px; font-style: italic; fill: #0f172a; }
+    .lbl-bold { font-size: 16px; font-style: italic; font-weight: bold; fill: #0f172a; }
+  </style>
+
+  <!-- Vành răng ngoài cố định 3 (bán kính R3 = 115, tâm O(230, 140)) -->
+  <circle cx="230" cy="140" r="118" fill="none" stroke="#64748b" stroke-width="5" stroke-dasharray="6,3" />
+  <circle cx="230" cy="140" r="115" fill="none" stroke="#1e293b" stroke-width="2" />
+  <text x="82" y="55" class="lbl-bold" fill="#334155">Vành răng cố định 3 (R<tspan font-size="11" dy="3">3</tspan><tspan dy="-3">)</tspan></text>
+
+  <!-- Bánh răng mặt trời trung tâm 1: tâm O(230, 140), bán kính r1 = 45 -->
+  <circle cx="230" cy="140" r="45" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2.5" />
+  <circle cx="230" cy="140" r="4.5" fill="#0f172a" />
+  <text x="212" y="158" class="lbl-bold" fill="#1d4ed8">O (1)</text>
+  <text x="195" y="128" class="lbl" fill="#1d4ed8">r<tspan font-size="11" dy="3">1</tspan></text>
+
+  <!-- Chiều quay bánh trung tâm 1: ω1 -->
+  <path d="M 205 112 A 34 34 0 0 1 255 112" fill="none" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arr-blue)" />
+  <text x="258" y="108" class="lbl-bold" fill="#1d4ed8">ω<tspan font-size="11" dy="3">1</tspan></text>
+
+  <!-- Bánh răng hành tinh 2: tâm A(310, 140) (OA = r1 + r2 = 45 + 35 = 80), bán kính r2 = 35 -->
+  <circle cx="310" cy="140" r="35" fill="#dcfce7" stroke="#15803d" stroke-width="2.5" />
+  <circle cx="310" cy="140" r="4" fill="#0f172a" />
+  <text x="305" y="162" class="lbl-bold" fill="#15803d">A (2)</text>
+  <text x="312" y="122" class="lbl" fill="#15803d">r<tspan font-size="11" dy="3">2</tspan></text>
+
+  <!-- Tay quay (cần dẫn C) OA nối O(230, 140) và A(310, 140) -->
+  <line x1="230" y1="140" x2="310" y2="140" stroke="#0f172a" stroke-width="4" stroke-linecap="round" />
+  <text x="255" y="133" class="lbl-bold">C (ω<tspan font-size="11" dy="3">c</tspan><tspan dy="-3">)</tspan></text>
+
+  <!-- Điểm ăn khớp trong K(275, 140) và điểm ăn khớp ngoài P(345, 140) (Tâm vận tốc tức thời của bánh 2) -->
+  <circle cx="275" cy="140" r="3.5" fill="#2563eb" />
+  <text x="262" y="156" class="lbl-bold" fill="#2563eb">K</text>
+
+  <circle cx="345" cy="140" r="4.5" fill="#dc2626" />
+  <text x="354" y="145" class="lbl-bold" fill="#dc2626">P (v<tspan font-size="11" dy="3">P</tspan><tspan dy="-3"> = 0)</tspan></text>
+
+  <!-- Phân bố vận tốc trên đường kính KP của bánh hành tinh 2 -->
+  <!-- Vận tốc điểm K: v_K = ω1 * r1 hướng lên -->
+  <line x1="275" y1="140" x2="275" y2="70" stroke="#dc2626" stroke-width="2.3" marker-end="url(#arr-red)" />
+  <text x="248" y="72" class="lbl-bold" fill="#dc2626">v<tspan font-size="11" dy="3">K</tspan></text>
+
+  <!-- Vận tốc tâm A: v_A = v_K / 2 hướng lên -->
+  <line x1="310" y1="140" x2="310" y2="105" stroke="#16a34a" stroke-width="2.2" marker-end="url(#arr-green)" />
+  <text x="315" y="102" class="lbl-bold" fill="#16a34a">v<tspan font-size="11" dy="3">A</tspan></text>
+
+  <!-- Đường phân bố vận tốc nối đầu mút v_K(275, 70), đầu mút v_A(310, 105) tới tâm VTTT P(345, 140) -->
+  <line x1="275" y1="70" x2="345" y2="140" stroke="#dc2626" stroke-width="1.4" stroke-dasharray="4,3" />
+
+  <!-- Công thức Willis tóm tắt bên phải -->
+  <rect x="378" y="38" width="150" height="75" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" />
+  <text x="453" y="60" font-size="13" font-weight="bold" fill="#1e293b" text-anchor="middle">Công thức Willis:</text>
+  <text x="453" y="82" class="lbl" text-anchor="middle">i<tspan font-size="10" dy="3">13</tspan><tspan font-size="10" dy="-8">c</tspan><tspan dy="5"> = (ω</tspan><tspan font-size="10" dy="3">1</tspan><tspan dy="-3"> − ω</tspan><tspan font-size="10" dy="3">c</tspan><tspan dy="-3">)/(0 − ω</tspan><tspan font-size="10" dy="3">c</tspan><tspan dy="-3">)</tspan></text>
+  <text x="453" y="104" class="lbl-bold" fill="#dc2626" text-anchor="middle">ω<tspan font-size="10" dy="3">c</tspan><tspan dy="-3"> = ω</tspan><tspan font-size="10" dy="3">1</tspan><tspan dy="-3">·r</tspan><tspan font-size="10" dy="3">1</tspan><tspan dy="-3"> / (r</tspan><tspan font-size="10" dy="3">1</tspan><tspan dy="-3"> + R</tspan><tspan font-size="10" dy="3">3</tspan><tspan dy="-3">)</tspan></text>
+</svg>

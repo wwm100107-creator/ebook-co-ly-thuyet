@@ -65,6 +65,18 @@ $$J_{\Delta} = J_{\Delta_C} + M \cdot d^2 \tag{3-5}$$
 4. **Khối cầu đặc đồng chất bán kính $R$, khối lượng $M$:**
    - Đối với trục đi qua tâm cầu: $J_C = \frac{2}{5} M R^2$.
 
+<div class="figure-container">
+
+<img src="/figures/dong-luc-hoc/hinh_3_2.svg" alt="Hình 3-2: Mômen quán tính của các vật thể đồng chất cơ bản" style="max-height: 240px;" />
+
+<div class="figure-caption">
+
+Hình 3-2: Mômen quán tính của thanh mảnh, vành tròn mảnh và đĩa/trụ đặc đồng chất
+
+</div>
+
+</div>
+
 ---
 
 ## 3.2. Định Lý Động Lượng

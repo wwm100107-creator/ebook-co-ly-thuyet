@@ -45,7 +45,21 @@ $$\begin{cases}
 
 ---
 
-## 3.2. BÀI GIẢI MẪU
+## 3.2. HƯỚNG DẪN ÁP DỤNG & PHƯƠNG PHÁP GIẢI
+
+1. **Chọn đối tượng khảo sát và giải phóng liên kết không gian:**
+   - Với khớp cầu hoặc ổ đỡ chặn: thay bằng 3 thành phần phản lực $\vec{X}, \vec{Y}, \vec{Z}$ theo 3 trục tọa độ.
+   - Với ổ trượt ngắn (bản lề trụ): thay bằng 2 thành phần phản lực vuông góc với trục quay.
+   - Với ngàm không gian: thay bằng 3 phản lực $\vec{X}_A, \vec{Y}_A, \vec{Z}_A$ và 3 ngẫu lực mômen ngàm $M_{Ax}, M_{Ay}, M_{Az}$.
+2. **Nguyên tắc chọn hệ trục tọa độ $Oxyz$ tối ưu:**
+   - Chọn gốc $O$ và các trục sao cho các trục tọa độ **cắt hoặc song song** với nhiều phản lực chưa biết nhất.
+   - Đối với vật rắn có trục quay cố định (như trục truyền động đặt trên hai ổ đỡ $A, B$ hoặc tấm bản lề), chọn một trục tọa độ (ví dụ $Oy$ hoặc $Oz$) trùng với đường thẳng đi qua hai ổ đỡ $AB$. Khi đó phương trình mômen đối với trục $AB$ sẽ khử toàn bộ phản lực tại cả hai ổ đỡ $A$ và $B$, giúp tìm ngay ẩn số lực căng dây hoặc lực chủ động!
+3. **Cách tính mômen lực đối với trục nhanh nhất:**
+   - Phân tích lực $\vec{F}$ thành các thành phần song song với 3 trục tọa độ $(F_x, F_y, F_z)$ tại điểm đặt có tọa độ rõ ràng, sau đó áp dụng trực tiếp quy tắc cánh tay đòn trên mặt phẳng vuông góc với trục lấy mômen.
+
+---
+
+## 3.3. BÀI GIẢI MẪU
 
 ### Thí dụ 3-1: Giá đỡ không gian 3 thanh chịu tải
 
@@ -99,7 +113,31 @@ $$\sum F_z = -S_A - 2 S_B \cos 30^\circ = 0 \implies S_A = -2 S_B \frac{\sqrt{3}
 
 ---
 
-## 3.3. BÀI TẬP TỰ RÈN LUYỆN (CÓ ĐÁP SỐ)
+### Thí dụ 3-2: Cân bằng trục ngang mang tấm chữ nhật và đối trọng
+
+**Đề bài:** Một trục ngang $AB$ có chiều dài $2a$ quay trơn trong ổ đỡ chặn $A$ và ổ trượt $B$. Gắn cứng vào trục một tấm chữ nhật đồng chất trọng lượng $Q$, chiều rộng $b$, và một thanh nhẹ $CD$ dài $l$ vuông góc với trục mang quả nặng trọng lượng $P$ ở đầu $D$. Khi cân bằng, mặt phẳng tấm chữ nhật tạo góc $\alpha = 30^\circ$ với phương thẳng đứng, còn thanh $CD$ nằm trong mặt phẳng thẳng đứng tạo góc $\beta = 60^\circ$ với phương thẳng đứng. Tìm trọng lượng $P$ theo $Q$ và xác định các phản lực tại ổ đỡ $A, B$.
+
+**Bài giải:**
+
+**1. Chọn hệ trục tọa độ $Axyz$:**
+- Gốc tại ổ đỡ $A$, trục $Ay$ dọc theo trục quay $AB$ ($y_B = 2a$), trục $Ax$ nằm ngang vuông góc với $AB$, trục $Az$ thẳng đứng hướng lên.
+- Tại ổ đỡ $A$ có 3 thành phần phản lực $(X_A, Y_A, Z_A)$; tại ổ trượt $B$ có 2 thành phần $(X_B, Z_B)$.
+
+**2. Thiết lập phương trình mômen đối với trục quay $Ay$ (trục $AB$):**
+Các phản lực tại $A$ và $B$ đều cắt trục $Ay$ nên có mômen đối với $Ay$ bằng không:
+$$\sum m_y(\vec{F}_k) = P \cdot l \sin\beta - Q \cdot \frac{b}{2} \sin\alpha = 0$$
+$$\implies P = Q \frac{b \sin 30^\circ}{2 l \sin 60^\circ} = \frac{b}{2\sqrt{3}\,l} Q$$
+
+**3. Thiết lập các phương trình cân bằng còn lại để tìm phản lực ổ trục:**
+- Phương trình hình chiếu:
+  $$\sum F_x = X_A + X_B = 0, \qquad \sum F_y = Y_A = 0, \qquad \sum F_z = Z_A + Z_B - P - Q = 0$$
+- Phương trình mômen đối với $Az$ và $Ax$:
+  $$\sum m_z(\vec{F}_k) = -X_B \cdot 2a = 0 \implies X_B = 0 \implies X_A = 0$$
+  $$\sum m_x(\vec{F}_k) = Z_B \cdot 2a - Q \cdot a - P \cdot y_C = 0 \implies Z_B = \frac{1}{2}Q + \frac{y_C}{2a}P, \quad Z_A = P + Q - Z_B$$
+
+---
+
+## 3.4. BÀI TẬP TỰ RÈN LUYỆN (CÓ ĐÁP SỐ)
 
 ::: info Bài 3-1: Nắp hầm chữ nhật giữ thăng bằng nhờ dây cáp
 Nắp hầm hình chữ nhật $ABCD$ có trọng lượng $P = 400\text{ N}$ bản lề dọc theo cạnh $AB$ nằm ngang. Nắp được giữ nghiêng một góc $30^\circ$ so với mặt ngang nhờ dây cáp nối từ đỉnh $C$ đến một điểm trên tường thẳng đứng. Xác định lực căng của dây cáp và phản lực tại các ổ bản lề $A, B$.

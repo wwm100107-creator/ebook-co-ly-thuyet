@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 240" width="100%" height="auto" preserveAspectRatio="xMidYMid meet">
+  <style>
+    text { font-family: 'Times New Roman', serif; }
+    .lbl { font-size: 14px; font-style: italic; fill: #0f172a; }
+    .lbl-bold { font-size: 15px; font-style: italic; font-weight: bold; fill: #0f172a; }
+    .title { font-size: 13px; font-weight: bold; fill: #1e293b; }
+  </style>
+
+  <!-- 1. Thanh mảnh đồng chất dài l -->
+  <g transform="translate(15, 10)">
+    <text x="95" y="18" class="title" text-anchor="middle">a) Thanh mảnh đồng chất (M, l)</text>
+    <!-- Trục Cz qua khối tâm C -->
+    <line x1="95" y1="35" x2="95" y2="175" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3" />
+    <text x="102" y="45" class="lbl-bold" fill="#dc2626">z<tspan font-size="10" dy="3">C</tspan></text>
+    <!-- Trục Az qua đầu mút A -->
+    <line x1="25" y1="35" x2="25" y2="175" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="4,3" />
+    <text x="32" y="45" class="lbl-bold" fill="#2563eb">z<tspan font-size="10" dy="3">A</tspan></text>
+    <!-- Thanh mảnh AB -->
+    <rect x="25" y="98" width="140" height="10" rx="2" fill="#cbd5e1" stroke="#1e293b" stroke-width="1.8" />
+    <circle cx="95" cy="103" r="3.5" fill="#dc2626" />
+    <text x="86" y="92" class="lbl-bold">C</text>
+    <text x="95" y="198" class="lbl-bold" fill="#dc2626" text-anchor="middle">J<tspan font-size="10" dy="3">C</tspan><tspan dy="-3"> = Ml²/12</tspan></text>
+    <text x="95" y="218" class="lbl-bold" fill="#2563eb" text-anchor="middle">J<tspan font-size="10" dy="3">A</tspan><tspan dy="-3"> = Ml²/3</tspan></text>
+  </g>
+
+  <line x1="215" y1="20" x2="215" y2="220" stroke="#e2e8f0" stroke-width="1.5" />
+
+  <!-- 2. Vành tròn mảnh bán kính R -->
+  <g transform="translate(225, 10)">
+    <text x="95" y="18" class="title" text-anchor="middle">b) Vành trụ / Vành tròn mảnh (M, R)</text>
+    <circle cx="95" cy="105" r="52" fill="none" stroke="#0284c7" stroke-width="6" />
+    <circle cx="95" cy="105" r="3.5" fill="#0f172a" />
+    <line x1="95" y1="105" x2="147" y2="105" stroke="#1e293b" stroke-width="1.5" />
+    <text x="115" y="98" class="lbl-bold">R</text>
+    <text x="95" y="205" class="lbl-bold" fill="#0284c7" text-anchor="middle">J<tspan font-size="10" dy="3">Cz</tspan><tspan dy="-3"> = M·R²</tspan></text>
+  </g>
+
+  <line x1="425" y1="20" x2="425" y2="220" stroke="#e2e8f0" stroke-width="1.5" />
+
+  <!-- 3. Đĩa tròn / Trụ đặc đồng chất bán kính R -->
+  <g transform="translate(435, 10)">
+    <text x="95" y="18" class="title" text-anchor="middle">c) Đĩa tròn / Trụ đặc (M, R)</text>
+    <circle cx="95" cy="105" r="52" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2.5" />
+    <circle cx="95" cy="105" r="3.5" fill="#0f172a" />
+    <line x1="95" y1="105" x2="132" y2="68" stroke="#1e293b" stroke-width="1.6" />
+    <text x="105" y="82" class="lbl-bold">R</text>
+    <text x="95" y="198" class="lbl-bold" fill="#1d4ed8" text-anchor="middle">J<tspan font-size="10" dy="3">Cz</tspan><tspan dy="-3"> = ½ M·R²</tspan></text>
+    <text x="95" y="218" class="lbl" fill="#475569" text-anchor="middle">(Cầu đặc: J<tspan font-size="10" dy="3">C</tspan><tspan dy="-3"> = ⅖ M·R²)</tspan></text>
+  </g>
+</svg>

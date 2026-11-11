@@ -39,7 +39,16 @@ $$\sum \vec{F}_k + \vec{F}_{\text{qt}}^{(e)} = 0$$
 
 ---
 
-## 2. Bài Giải Mẫu Điển Hình
+## 2. Hướng Dẫn Áp Dụng & Phương Pháp Giải
+
+1. **Trình tự lập phương trình vi phân chuyển động tương đối $m\vec{a}_r = \sum\vec{F}_k + \vec{F}_{\text{qt}}^{(e)} + \vec{F}_{\text{qt}}^{(C)}$:**
+   - Gắn hệ trục tọa độ động $Oxyz$ (hoặc hệ trục tự nhiên động) cố định trên vật mang chuyển động theo đà.
+   - Đặt đầy đủ các lực thực $\vec{F}_k$, lực quán tính theo $\vec{F}_{\text{qt}}^{(e)} = -m\vec{a}_e$ (ngược chiều $\vec{a}_e$) và lực quán tính Coriolis $\vec{F}_{\text{qt}}^{(C)} = -2m(\vec{\omega}_e \times \vec{v}_r)$ (ngược chiều gia tốc Coriolis $\vec{a}_C$).
+   - Chiếu phương trình lên trục tiếp tuyến tương đối (dọc theo rãnh trượt) để được phương trình vi phân chuyển động tương đối $\ddot{x}$, và chiếu lên hai trục pháp tuyến để tìm áp lực $N_y, N_z$ đè lên thành rãnh!
+
+---
+
+## 3. Bài Giải Mẫu Điển Hình
 
 ### Thí dụ 7-1: Chất điểm chuyển động trong rãnh thẳng quay đều nằm ngang
 
@@ -117,7 +126,7 @@ $$N = \sqrt{N_y^2 + N_z^2} = \sqrt{(mg)^2 + \left[2m r_0 \omega^2 \sinh(\omega t
 
 ---
 
-## 3. Bài Tập Rèn Luyện Có Đáp Số
+## 4. Bài Tập Rèn Luyện Có Đáp Số
 
 ::: info Bài 7.1 (Độ lệch của vật rơi tự do do lực Coriolis của Trái Đất)
 Thả một vật rơi tự do từ độ cao $h = 100\text{ m}$ tại một địa điểm có vĩ độ bắc $\lambda = 45^\circ$. Bỏ qua sức cản không khí. Biết vận tốc góc tự quay của Trái Đất $\omega \approx 7.29 \times 10^{-5}\text{ rad/s}$.

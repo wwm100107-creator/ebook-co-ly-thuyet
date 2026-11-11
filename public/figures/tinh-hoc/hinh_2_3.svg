@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 250" width="100%" height="auto" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <marker id="arr-blue" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#2563eb" />
+    </marker>
+    <marker id="arr-red" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#dc2626" />
+    </marker>
+    <marker id="arr-green" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#16a34a" />
+    </marker>
+  </defs>
+  <style>
+    text { font-family: 'Times New Roman', serif; }
+    .lbl { font-size: 15px; font-style: italic; fill: #0f172a; }
+    .lbl-bold { font-size: 16px; font-style: italic; font-weight: bold; fill: #0f172a; }
+    .title { font-size: 14px; font-weight: bold; fill: #1e293b; }
+  </style>
+
+  <!-- Bên trái: Hệ lực phẳng bất kỳ (F1, F2, ..., Fn) -->
+  <g transform="translate(10, 10)">
+    <text x="135" y="18" class="title" text-anchor="middle">a) Hệ lực phẳng bất kỳ (F<tspan font-size="10" dy="3">1</tspan><tspan dy="-3">, F</tspan><tspan font-size="10" dy="3">2</tspan><tspan dy="-3">, ..., F</tspan><tspan font-size="10" dy="3">n</tspan><tspan dy="-3">)</tspan></text>
+    <ellipse cx="135" cy="130" rx="115" ry="82" fill="#f8fafc" stroke="#1e293b" stroke-width="1.8" />
+
+    <circle cx="115" cy="145" r="4" fill="#0f172a" />
+    <text x="98" y="155" class="lbl-bold">O</text>
+
+    <circle cx="80" cy="105" r="3.5" fill="#2563eb" />
+    <line x1="80" y1="105" x2="120" y2="62" stroke="#2563eb" stroke-width="2.2" marker-end="url(#arr-blue)" />
+    <text x="125" y="65" class="lbl-bold" fill="#2563eb">F<tspan font-size="11" dy="3">1</tspan></text>
+
+    <circle cx="175" cy="110" r="3.5" fill="#2563eb" />
+    <line x1="175" y1="110" x2="228" y2="95" stroke="#2563eb" stroke-width="2.2" marker-end="url(#arr-blue)" />
+    <text x="215" y="86" class="lbl-bold" fill="#2563eb">F<tspan font-size="11" dy="3">2</tspan></text>
+
+    <circle cx="165" cy="168" r="3.5" fill="#2563eb" />
+    <line x1="165" y1="168" x2="205" y2="202" stroke="#2563eb" stroke-width="2.2" marker-end="url(#arr-blue)" />
+    <text x="210" y="205" class="lbl-bold" fill="#2563eb">F<tspan font-size="11" dy="3">n</tspan></text>
+  </g>
+
+  <text x="300" y="140" font-size="24" font-weight="bold" fill="#475569" text-anchor="middle">⇔</text>
+
+  <!-- Bên phải: Vectơ chính R' và Mômen chính M_O tại tâm thu gọn O -->
+  <g transform="translate(320, 10)">
+    <text x="135" y="18" class="title" text-anchor="middle">b) Tối giản tại tâm O: (R', M<tspan font-size="10" dy="3">O</tspan><tspan dy="-3">)</tspan></text>
+    <ellipse cx="135" cy="130" rx="115" ry="82" fill="#f8fafc" stroke="#1e293b" stroke-width="1.8" />
+
+    <circle cx="115" cy="145" r="4.5" fill="#0f172a" />
+    <text x="95" y="155" class="lbl-bold">O</text>
+
+    <!-- Vectơ chính R' = sum F_k -->
+    <line x1="115" y1="145" x2="195" y2="78" stroke="#dc2626" stroke-width="2.6" marker-end="url(#arr-red)" />
+    <text x="180" y="70" class="lbl-bold" fill="#dc2626">R' = ∑F<tspan font-size="11" dy="3">k</tspan></text>
+
+    <!-- Mômen chính M_O = sum m_O(F_k) -->
+    <path d="M 145 172 A 36 36 0 1 0 90 118" fill="none" stroke="#16a34a" stroke-width="2.2" marker-end="url(#arr-green)" />
+    <text x="142" y="188" class="lbl-bold" fill="#16a34a">M<tspan font-size="11" dy="3">O</tspan><tspan dy="-3"> = ∑m</tspan><tspan font-size="11" dy="3">O</tspan><tspan dy="-3">(F</tspan><tspan font-size="11" dy="3">k</tspan><tspan dy="-3">)</tspan></text>
+  </g>
+</svg>

@@ -49,8 +49,8 @@
 
   <!-- Di chuyển khả dĩ delta r_B và delta x_C -->
   <line x1="400" y1="150" x2="435" y2="150" stroke="#16a34a" stroke-width="1.8" marker-end="url(#arr-green)" />
-  <text x="410" y="142" class="lbl-bold" fill="#16a34a">δx_C</text>
+  <text x="405" y="142" class="lbl-bold" fill="#16a34a">δx<tspan font-size="12" dy="3">C</tspan></text>
 
-  <line x1="240" y1="80" x2="240" y2="110" stroke="#16a34a" stroke-width="1.8" marker-end="url(#arr-green)" />
-  <text x="245" y="115" class="lbl-bold" fill="#16a34a">δy_B</text>
+  <line x1="240" y1="80" x2="240" y2="115" stroke="#16a34a" stroke-width="1.8" marker-end="url(#arr-green)" />
+  <text x="248" y="112" class="lbl-bold" fill="#16a34a">δy<tspan font-size="12" dy="3">B</tspan></text>
 </svg>

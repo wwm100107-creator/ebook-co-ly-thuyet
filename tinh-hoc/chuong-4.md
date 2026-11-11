@@ -93,6 +93,18 @@ $$x_C = \frac{1}{S} \iint_S x \, dS; \quad y_C = \frac{1}{S} \iint_S y \, dS \ta
 #### 3. Dây mảnh hoặc đường cong ($L$)
 $$x_C = \frac{1}{L} \int_L x \, dL; \quad y_C = \frac{1}{L} \int_L y \, dL; \quad z_C = \frac{1}{L} \int_L z \, dL \tag{4-8}$$
 
+<div class="figure-container">
+
+<img src="/figures/tinh-hoc/hinh_4_3.svg" alt="Hình 4-3: Xác định trọng tâm cung tròn đồng chất" style="max-height: 250px;" />
+
+<div class="figure-caption">
+
+Hình 4-3: Trọng tâm C của cung tròn đồng chất bán kính R, góc ở tâm 2α
+
+</div>
+
+</div>
+
 ---
 
 ### 4.2.2. Các Phương Pháp Xác Định Trọng Tâm

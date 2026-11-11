@@ -43,7 +43,17 @@ Quy tắc: Trục quay riêng $Oz$ luôn có xu hướng quay đuổi theo véct
 
 ---
 
-## 2. Bài Giải Mẫu Điển Hình
+## 2. Hướng Dẫn Áp Dụng & Phương Pháp Giải
+
+1. **Cách lập phương trình vi phân chuyển động song phẳng không bị nhầm dấu:**
+   - Luôn vẽ chiều dương giả thiết của gia tốc khối tâm $\vec{a}_C$ và gia tốc góc $\vec{\varepsilon}$ phù hợp với liên kết động học ($a_C = \varepsilon R$ theo chiều lăn không trượt).
+   - Trong phương trình $J_C \varepsilon = \sum M_C(\vec{F}_k^{(e)})$, các mômen lấy đối với **khối tâm $C$** mang dấu dương khi cùng chiều với $\vec{\varepsilon}$.
+2. **Kiểm tra điều kiện lăn không trượt:**
+   - Sau khi giải hệ phương trình tìm được lực ma sát nghỉ $F_{\text{ms}}$ và phản lực pháp tuyến $N$, luôn kiểm tra điều kiện $|F_{\text{ms}}| \le f_0 N$. Nếu vi phạm, vật xảy ra hiện tượng **vừa lăn vừa trượt**, khi đó $a_C \neq \varepsilon R$ và phải thay bằng phương trình lực ma sát trượt $F_{\text{ms}} = f N$.
+
+---
+
+## 3. Bài Giải Mẫu Điển Hình
 
 ### Thí dụ 6-1: Khảo sát chuyển động lăn không trượt của hình trụ đặc trên dốc nghiêng
 
@@ -106,7 +116,7 @@ $$f_0 \ge \frac{1}{3} \tan\alpha$$
 
 ---
 
-## 3. Bài Tập Rèn Luyện Có Đáp Số
+## 4. Bài Tập Rèn Luyện Có Đáp Số
 
 ::: info Bài 6.1 (Con lăn hai tầng - Ròng rọc vi sai)
 Một ống chỉ có bán kính vành ngoài $R$ và bán kính lõi trong $r$. Một sợi dây quấn vào lõi trong và được kéo bởi lực nằm ngang $F$. Đặt ống chỉ trên sàn ngang, ma sát đủ để không trượt.

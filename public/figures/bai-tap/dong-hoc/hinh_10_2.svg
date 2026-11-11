@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 280" width="100%" height="auto" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <marker id="arr-red" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#dc2626" />
+    </marker>
+    <marker id="arr-blue" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#2563eb" />
+    </marker>
+    <marker id="arr-green" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#16a34a" />
+    </marker>
+    <marker id="arr-purple" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#7c3aed" />
+    </marker>
+  </defs>
+  <style>
+    text { font-family: 'Times New Roman', serif; }
+    .lbl { font-size: 15px; font-style: italic; fill: #0f172a; }
+    .lbl-bold { font-size: 16px; font-style: italic; font-weight: bold; fill: #0f172a; }
+  </style>
+
+  <!-- Đường nối hai tâm cố định O(150, 140) và O1(150, 235) thẳng đứng -->
+  <line x1="150" y1="60" x2="150" y2="250" stroke="#94a3b8" stroke-width="1.3" stroke-dasharray="4,3" />
+
+  <!-- Gối cố định O1(150, 235) của thanh culit O1B -->
+  <polygon points="150,235 138,252 162,252" fill="#cbd5e1" stroke="#1e293b" stroke-width="1.5" />
+  <circle cx="150" cy="235" r="4.5" fill="#0f172a" />
+  <text x="118" y="245" class="lbl-bold">O<tspan font-size="11" dy="3">1</tspan></text>
+
+  <!-- Gối cố định O(150, 135) của tay quay OA -->
+  <polygon points="150,135 138,152 162,152" fill="#cbd5e1" stroke="#1e293b" stroke-width="1.5" />
+  <circle cx="150" cy="135" r="4.5" fill="#2563eb" />
+  <text x="125" y="140" class="lbl-bold">O</text>
+
+  <!-- Quỹ đạo tròn bán kính R=100 của đầu tay quay A quanh O(150, 135) -->
+  <circle cx="150" cy="135" r="100" fill="none" stroke="#cbd5e1" stroke-width="1.4" stroke-dasharray="5,4" />
+
+  <!-- Thanh culit O1B nghiêng góc 30 độ qua O1(150, 235) và con trượt A(250, 135) (OA nằm ngang R=100, OO1=100 -> góc O1=45 độ) -->
+  <line x1="150" y1="235" x2="340" y2="45" stroke="#0284c7" stroke-width="6" stroke-linecap="round" />
+  <line x1="150" y1="235" x2="340" y2="45" stroke="#f8fafc" stroke-width="2" />
+  <text x="348" y="48" class="lbl-bold" fill="#0284c7">B</text>
+
+  <!-- Tay quay OA nối O(150, 135) đến A(250, 135) -->
+  <line x1="150" y1="135" x2="250" y2="135" stroke="#1e293b" stroke-width="3.5" />
+  <text x="195" y="126" class="lbl-bold">R</text>
+
+  <!-- Con trượt A tại (250, 135) trượt dọc rãnh culit O1B -->
+  <g transform="translate(250, 135) rotate(-45)">
+    <rect x="-14" y="-9" width="28" height="18" rx="2" fill="#fef08a" stroke="#1e293b" stroke-width="1.8" />
+  </g>
+  <circle cx="250" cy="135" r="4" fill="#dc2626" />
+  <text x="262" y="148" class="lbl-bold">A</text>
+
+  <!-- Chiều quay tay quay ω0 -->
+  <path d="M 185 112 A 38 38 0 0 0 165 98" fill="none" stroke="#1e293b" stroke-width="1.5" marker-end="url(#arr-blue)" />
+  <text x="182" y="102" class="lbl-bold" fill="#2563eb">ω<tspan font-size="11" dy="3">0</tspan></text>
+
+  <!-- Vận tốc tuyệt đối v_a của A vuông góc với OA (thẳng đứng lên) -->
+  <line x1="250" y1="135" x2="250" y2="45" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arr-red)" />
+  <text x="222" y="52" class="lbl-bold" fill="#dc2626">v<tspan font-size="11" dy="3">a</tspan></text>
+
+  <!-- Vận tốc tương đối v_r dọc theo rãnh culit O1B (góc -45 độ) -->
+  <line x1="250" y1="135" x2="295" y2="90" stroke="#16a34a" stroke-width="2.3" marker-end="url(#arr-green)" />
+  <text x="302" y="95" class="lbl-bold" fill="#16a34a">v<tspan font-size="11" dy="3">r</tspan></text>
+
+  <!-- Vận tốc theo v_e vuông góc với culit O1B (góc -135 độ) -->
+  <line x1="250" y1="135" x2="205" y2="90" stroke="#2563eb" stroke-width="2.3" marker-end="url(#arr-blue)" />
+  <text x="178" y="88" class="lbl-bold" fill="#2563eb">v<tspan font-size="11" dy="3">e</tspan></text>
+
+  <!-- Hình bình hành vận tốc v_a = v_e + v_r -->
+  <line x1="205" y1="90" x2="250" y2="45" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="3,3" />
+  <line x1="295" y1="90" x2="250" y2="45" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="3,3" />
+
+  <!-- Gia tốc Coriolis a_C = 2(ω_e × v_r) vuông góc với v_r -->
+  <line x1="250" y1="135" x2="195" y2="80" stroke="#7c3aed" stroke-width="2" stroke-dasharray="4,2" marker-end="url(#arr-purple)" />
+  <text x="148" y="72" class="lbl-bold" fill="#7c3aed">a<tspan font-size="11" dy="3">C</tspan><tspan dy="-3"> = 2ω</tspan><tspan font-size="11" dy="3">e</tspan><tspan dy="-3">v</tspan><tspan font-size="11" dy="3">r</tspan></text>
+</svg>

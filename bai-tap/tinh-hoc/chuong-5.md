@@ -36,9 +36,22 @@ $$x_G = \frac{\sum_{k=1}^n P_k x_k}{\sum_{k=1}^n P_k}, \quad y_G = \frac{\sum_{k
 
 ---
 
-## 5.2. BÀI GIẢI MẪU
+## 5.2. HƯỚNG DẪN ÁP DỤNG & PHƯƠNG PHÁP GIẢI
 
-### Thí dụ 5-2: Trọng tâm của tấm đồng chất hình chữ L
+1. **Tận dụng tối đa tính chất đối xứng:**
+   - Nếu vật thể đồng chất có mặt phẳng đối xứng, trục đối xứng hoặc tâm đối xứng thì trọng tâm $G$ bắt buộc phải nằm trên yếu tố đối xứng đó (giúp giảm ngay 1 đến 2 tọa độ cần tính).
+2. **Bảng trọng tâm của các hình phẳng và đường cong cơ bản cần nhớ:**
+   - **Tam giác bất kỳ:** Trọng tâm $G$ nằm tại giao điểm ba đường trung tuyến (cách đáy một đoạn $\frac{1}{3}h$).
+   - **Cung tròn đồng chất bán kính $R$, góc ở tâm $2\alpha$:** Trọng tâm nằm trên trục đối xứng, cách tâm $O$ một đoạn $x_G = R \frac{\sin\alpha}{\alpha}$ (với nửa vòng tròn $\alpha = \pi/2 \implies x_G = \frac{2R}{\pi}$).
+   - **Hình quạt tròn bán kính $R$, góc ở tâm $2\alpha$:** Trọng tâm nằm trên trục đối xứng, cách tâm $O$ một đoạn $x_G = \frac{2}{3} R \frac{\sin\alpha}{\alpha}$ (với nửa hình tròn $\alpha = \pi/2 \implies x_G = \frac{4R}{3\pi}$).
+3. **Phương pháp ghép hình và diện tích âm:**
+   - Với các tiết diện kỹ thuật phức tạp (chữ $L, T, I, U$) hoặc tấm có khoét lỗ: chia thành các hình cơ bản (chữ nhật, tam giác, hình tròn), lập bảng gồm $(S_k, x_k, y_k)$ với $S_k < 0$ cho phần bị khoét rỗng.
+
+---
+
+## 5.3. BÀI GIẢI MẪU
+
+### Thí dụ 5-1: Trọng tâm của tấm đồng chất hình chữ L
 
 **Đề bài:** Tìm tọa độ trọng tâm của tấm đồng chất hình chữ $L$ có kích thước cho như hình vẽ: chiều cao tổng thể $H = 10\text{ cm}$, đáy rộng $B = 6\text{ cm}$, bề dày phần đứng và phần ngang đều bằng $b = 2\text{ cm}$.
 
@@ -85,7 +98,25 @@ $$y_G = \frac{S_1 y_1 + S_2 y_2}{S_1 + S_2} = \frac{16 \times 6 + 12 \times 1}{2
 
 ---
 
-## 5.3. BÀI TẬP TỰ RÈN LUYỆN (CÓ ĐÁP SỐ)
+### Thí dụ 5-2: Trọng tâm bản phẳng hình chữ nhật khoét lỗ bán nguyệt (Phương pháp phần âm)
+
+**Đề bài:** Một bản mỏng đồng chất hình chữ nhật có cạnh đáy $2R$ và chiều cao $h = 2R$, phía dưới bị khoét đi một nửa hình tròn đường kính $2R$ (bán kính $R$). Xác định độ cao trọng tâm $y_G$ của phần bản phẳng còn lại so với cạnh đáy.
+
+**Bài giải:**
+
+1. **Chọn hệ trục tọa độ $Oxy$:**
+   - Gốc $O$ tại tâm của nửa đường tròn bị khoét trên cạnh đáy, trục $Oy$ thẳng đứng hướng lên (là trục đối xứng của vật $\implies x_G = 0$).
+2. **Phân tích theo phương pháp diện tích âm:**
+   - **Hình 1 (Hình chữ nhật nguyên vẹn $2R \times 2R$):**
+     $$S_1 = 2R \cdot 2R = 4R^2, \qquad y_1 = R$$
+   - **Hình 2 (Phần nửa hình tròn bán kính $R$ bị khoét bỏ — mang dấu âm):**
+     $$S_2 = -\frac{1}{2}\pi R^2, \qquad y_2 = \frac{4R}{3\pi}$$
+3. **Tính tung độ trọng tâm $y_G$:**
+   $$y_G = \frac{S_1 y_1 + S_2 y_2}{S_1 + S_2} = \frac{4R^2 \cdot R - \left(\frac{1}{2}\pi R^2\right)\left(\frac{4R}{3\pi}\right)}{4R^2 - \frac{1}{2}\pi R^2} = \frac{4 - \frac{2}{3}}{4 - \frac{\pi}{2}} R = \frac{20}{3(8 - \pi)} R \approx 1.372\,R$$
+
+---
+
+## 5.4. BÀI TẬP TỰ RÈN LUYỆN (CÓ ĐÁP SỐ)
 
 ::: info Bài 5-1: Trọng tâm mặt cắt thép chữ U
 Mặt cắt thép định hình chữ U có chiều rộng đáy $100\text{ mm}$, chiều cao hai cánh $150\text{ mm}$, bề dày thành đáy và hai cánh đều bằng $10\text{ mm}$. Xác định khoảng cách từ trục đối xứng và từ đáy ngoài đến trọng tâm $G$.

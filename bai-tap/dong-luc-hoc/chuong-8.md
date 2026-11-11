@@ -41,7 +41,19 @@ Năng lượng mất mát bằng động năng của chuyển động mất đi 
 
 ---
 
-## 2. Bài Giải Mẫu Điển Hình
+## 2. Hướng Dẫn Áp Dụng & Phương Pháp Giải
+
+1. **Cách giải bài toán va chạm giữa hai vật chuyển động tịnh tiến:**
+   - Bước 1: Viết phương trình bảo toàn động lượng theo phương pháp tuyến va chạm $n$: $m_1 u_{1n} + m_2 u_{2n} = m_1 v_{1n} + m_2 v_{2n}$.
+   - Bước 2: Viết hệ thức hệ số phục hồi Newton: $u_{2n} - u_{1n} = -k(v_{2n} - v_{1n})$.
+   - Bước 3: Giải hệ 2 phương trình bậc nhất tìm $u_{1n}, u_{2n}$, sau đó tính xung lượng va chạm $S = m_1 |u_{1n} - v_{1n}|$.
+2. **Cách giải bài toán va chạm vào vật rắn quay quanh trục cố định $Oz$:**
+   - Áp dụng định lý biến thiên mômen động lượng khi va chạm đối với trục quay $Oz$ (để khử xung lượng phản lực tại ổ trục $O$):
+     $$\left(J_{Oz} + m h^2\right)\omega_2 = J_{Oz}\omega_1 + m v_1 h \quad (\text{khi va chạm mềm găm vào vật})$$
+
+---
+
+## 3. Bài Giải Mẫu Điển Hình
 
 ### Thí dụ 8-1: Va chạm thẳng của hai quả cầu đàn hồi
 
@@ -104,7 +116,7 @@ $$\Delta T = T_1 - T_2 = \frac{1}{2} (1 - k^2) \frac{m_1 m_2}{m_1 + m_2} (v_1 - 
 
 ---
 
-## 3. Bài Tập Rèn Luyện Có Đáp Số
+## 4. Bài Tập Rèn Luyện Có Đáp Số
 
 ::: info Bài 8.1 (Búa đóng cọc)
 Đầu búa khối lượng $M = 500\text{ kg}$ rơi tự do từ độ cao $h = 2\text{ m}$ xuống một cọc bê tông khối lượng $m = 200\text{ kg}$. Coi va chạm là mềm ($k = 0$). Sau va chạm, cọc lún sâu vào đất một đoạn $s = 0.05\text{ m}$.

@@ -34,7 +34,7 @@
 
   <!-- Lực quán tính ly tâm F_qt = m*omega^2*r hướng ra xa trục -->
   <line x1="300" y1="130" x2="390" y2="130" stroke="#dc2626" stroke-width="2.6" marker-end="url(#arr-red)" />
-  <text x="340" y="152" class="lbl-bold" fill="#dc2626">F_qt</text>
+  <text x="340" y="152" class="lbl-bold" fill="#dc2626">F<tspan font-size="12" dy="3">qt</tspan></text>
 
   <!-- Vận tốc góc omega quay quanh trục AB -->
   <path d="M 160 80 A 25 15 0 1 1 200 80" fill="none" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arr-blue)" />
@@ -42,8 +42,8 @@
 
   <!-- Phản lực động tại các ổ trục X_A, X_B hướng ngược lại để cân bằng F_qt -->
   <line x1="180" y1="50" x2="110" y2="50" stroke="#dc2626" stroke-width="2.2" marker-end="url(#arr-red)" />
-  <text x="110" y="42" class="lbl-bold" fill="#dc2626">X_A(đ)</text>
+  <text x="95" y="42" class="lbl-bold" fill="#dc2626">X<tspan font-size="12" dy="3">A</tspan><tspan font-size="12" dy="-9">(đ)</tspan></text>
 
   <line x1="180" y1="210" x2="110" y2="210" stroke="#dc2626" stroke-width="2.2" marker-end="url(#arr-red)" />
-  <text x="110" y="202" class="lbl-bold" fill="#dc2626">X_B(đ)</text>
+  <text x="95" y="202" class="lbl-bold" fill="#dc2626">X<tspan font-size="12" dy="3">B</tspan><tspan font-size="12" dy="-9">(đ)</tspan></text>
 </svg>

@@ -33,13 +33,13 @@
 
   <!-- Vận tốc tuyệt đối v_a của A vuông góc OA -->
   <line x1="280" y1="160" x2="200" y2="125" stroke="#10b981" stroke-width="2.5" marker-end="url(#arr-green)" />
-  <text x="180" y="120" font-family="sans-serif" font-size="13" font-weight="bold" fill="#10b981">v_a</text>
+  <text x="180" y="120" font-family="sans-serif" font-size="13" font-weight="bold" fill="#10b981">v<tspan font-size="9" dy="3">a</tspan></text>
 
   <!-- Vận tốc theo v_e vuông góc O1B -->
   <line x1="280" y1="160" x2="215" y2="198" stroke="#0284c7" stroke-width="2.2" marker-end="url(#arr-blue)" />
-  <text x="185" y="215" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0284c7">v_e</text>
+  <text x="185" y="215" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0284c7">v<tspan font-size="9" dy="3">e</tspan></text>
 
   <!-- Vận tốc tương đối v_r dọc theo O1B -->
   <line x1="280" y1="160" x2="315" y2="100" stroke="#ef4444" stroke-width="2.2" marker-end="url(#arr-red)" />
-  <text x="325" y="105" font-family="sans-serif" font-size="13" font-weight="bold" fill="#ef4444">v_r</text>
+  <text x="325" y="105" font-family="sans-serif" font-size="13" font-weight="bold" fill="#ef4444">v<tspan font-size="9" dy="3">r</tspan></text>
 </svg>

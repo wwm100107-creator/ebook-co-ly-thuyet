@@ -6,6 +6,9 @@
     <marker id="arr-blue" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
       <polygon points="0 0, 7 2.5, 0 5" fill="#2563eb" />
     </marker>
+    <marker id="arr-slate" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto-start-reverse">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#64748b" />
+    </marker>
   </defs>
   <style>
     text { font-family: 'Times New Roman', serif; }
@@ -57,9 +60,9 @@
   <text x="372" y="153" class="lbl-bold" fill="#16a34a">q</text>
 
   <!-- Kích thước đo đạc -->
-  <line x1="120" y1="25" x2="180" y2="25" stroke="#64748b" stroke-width="1" marker-start="url(#arr-blue)" marker-end="url(#arr-blue)" />
+  <line x1="120" y1="25" x2="180" y2="25" stroke="#64748b" stroke-width="1" marker-start="url(#arr-slate)" marker-end="url(#arr-slate)" />
   <text x="142" y="20" font-size="12" fill="#475569">1m</text>
   
-  <line x1="180" y1="25" x2="360" y2="25" stroke="#64748b" stroke-width="1" marker-start="url(#arr-blue)" marker-end="url(#arr-blue)" />
+  <line x1="180" y1="25" x2="360" y2="25" stroke="#64748b" stroke-width="1" marker-start="url(#arr-slate)" marker-end="url(#arr-slate)" />
   <text x="260" y="20" font-size="12" fill="#475569">3m</text>
 </svg>

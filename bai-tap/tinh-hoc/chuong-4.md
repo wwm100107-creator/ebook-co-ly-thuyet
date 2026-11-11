@@ -38,13 +38,38 @@ Khi một hình trụ hoặc quả cầu lăn trên mặt phẳng:
 
 ---
 
-## 4.2. BÀI GIẢI MẪU
+## 4.2. HƯỚNG DẪN ÁP DỤNG & PHƯƠNG PHÁP GIẢI
+
+1. **Xác định chiều của lực ma sát trượt $\vec{F}_{ms}$:**
+   - Giả sử bề mặt hoàn toàn nhẵn ($f = 0$) để xem điểm tiếp xúc có xu hướng trượt về phía nào; lực ma sát tĩnh $\vec{F}_{ms}$ luôn hướng **ngược lại** với xu hướng trượt đó.
+   - Nếu bài toán yêu cầu tìm miền giá trị của lực chủ động $Q$ để vật cân bằng ($Q_{\min} \le Q \le Q_{\max}$), cần giải **hai bài toán giới hạn riêng biệt**:
+     - Khi $Q = Q_{\min}$ (vật sắp trượt xuống): $\vec{F}_{ms}$ hướng lên trên và đạt cực đại $F_{ms} = f N$.
+     - Khi $Q = Q_{\max}$ (vật sắp trượt lên): $\vec{F}_{ms}$ đổi chiều hướng xuống dưới và đạt cực đại $F_{ms} = f N$.
+2. **Phân biệt trạng thái cân bằng thường và trạng thái cân bằng giới hạn:**
+   - Ở trạng thái cân bằng bất kỳ: **tuyệt đối không** viết ngay $F_{ms} = f N$, mà phải giữ nguyên ẩn số $F_{ms}$ trong phương trình cân bằng rồi kiểm tra bất đẳng thức $|F_{ms}| \le f N$.
+   - Chỉ khi vật ở trạng thái **sắp trượt (cân bằng giới hạn)** hoặc đang trượt mới áp dụng đẳng thức $F_{ms} = f N$.
+
+---
+
+## 4.3. BÀI GIẢI MẪU
 
 ### Thí dụ 4-1: Đai truyền trên vành bánh đai (Đai dẹt vs Đai thang)
 
-**Đề bài:** Một đoạn đai truyền bị ép vào vành bánh đai bằng lực hướng tâm $\vec{P}$ và bị kéo theo phương tiếp tuyến bằng lực $\vec{Q}$. Biết hệ số ma sát trượt tĩnh giữa đai và vành đai là $f$. Tìm tỉ số giới hạn $\frac{Q}{P}$ để đai không bị trượt trong hai trường hợp:
+**Đề bài:** Một đoạn đai truyền bị ép vào vành bánh đai bằng lực hướng tâm $\vec{P}$ (hoặc $\vec{N}$) và bị kéo theo phương tiếp tuyến bằng lực $\vec{Q}$. Biết hệ số ma sát trượt tĩnh giữa đai và vành đai là $f$. Tìm tỉ số giới hạn $\frac{Q}{P}$ để đai không bị trượt trong hai trường hợp:
 1. Đai dẹt có tiết diện chữ nhật tiếp xúc mặt vành đai.
 2. Đai hình thang cân có góc giữa hai cạnh bên rãnh nêm là $2\alpha$.
+
+<div class="figure-container">
+
+<img src="/figures/bai-tap/tinh-hoc/hinh_4_1.svg" alt="Hình 4-1: Hiệu ứng chêm rãnh đai hình thang và cân bằng vật trên mặt nghiêng nhám" style="max-width: 600px; width: 100%; margin: 0 auto; display: block;" />
+
+<div class="figure-caption">
+
+Hình 4-1: a) Phân tích phản lực trong rãnh đai hình thang cân góc 2α; b) Cân bằng vật trên mặt nghiêng có ma sát
+
+</div>
+
+</div>
 
 **Bài giải:**
 
@@ -70,7 +95,31 @@ Vì $0 < \alpha < 90^\circ$ nên $\sin\alpha < 1 \implies f' > f$.
 
 ---
 
-## 4.3. BÀI TẬP TỰ RÈN LUYỆN (CÓ ĐÁP SỐ)
+### Thí dụ 4-2: Thang tựa vào tường nhám và sàn nhám
+
+**Đề bài:** Một chiếc thang đồng chất $AB$ dài $l$, trọng lượng $P$, đầu dưới $A$ tựa lên sàn ngang có hệ số ma sát $f_1$, đầu trên $B$ dựa vào tường thẳng đứng có hệ số ma sát $f_2$. Tìm góc nghiêng nhỏ nhất $\alpha_{\min}$ của thang so với mặt sàn để thang còn đứng yên không bị trượt ngã.
+
+**Bài giải:**
+
+**1. Phân tích lực ở trạng thái cân bằng giới hạn (thang sắp trượt xuống):**
+- Đầu $A$ có xu hướng trượt ra xa tường $\implies \vec{F}_{msA}$ hướng vào tường, $F_{msA} = f_1 N_A$.
+- Đầu $B$ có xu hướng trượt xuống dưới $\implies \vec{F}_{msB}$ hướng thẳng đứng lên, $F_{msB} = f_2 N_B$.
+
+**2. Lập hệ phương trình cân bằng phẳng:**
+$$\begin{cases}
+\sum F_x = F_{msA} - N_B = f_1 N_A - N_B = 0 \implies N_B = f_1 N_A \\
+\sum F_y = N_A + F_{msB} - P = N_A + f_2 N_B - P = 0 \implies N_A(1 + f_1 f_2) = P \\
+\sum m_A(\vec{F}_k) = -P \frac{l}{2}\cos\alpha + N_B l\sin\alpha + F_{msB} l\cos\alpha = 0
+\end{cases}$$
+
+**3. Giải tìm góc giới hạn $\alpha_{\min}$:**
+Chia phương trình mômen cho $l\cos\alpha$ và thay $N_B = f_1 N_A, F_{msB} = f_1 f_2 N_A$:
+$$N_A f_1 \tan\alpha + N_A f_1 f_2 = \frac{1}{2}P = \frac{1}{2} N_A (1 + f_1 f_2)$$
+$$\implies \tan\alpha_{\min} = \frac{1 - f_1 f_2}{2 f_1}$$
+
+---
+
+## 4.4. BÀI TẬP TỰ RÈN LUYỆN (CÓ ĐÁP SỐ)
 
 ::: info Bài 4-1: Vật trượt trên mặt phẳng nghiêng
 Vật có trọng lượng $P$ đặt trên mặt phẳng nghiêng góc $\alpha$ so với mặt ngang. Hệ số ma sát trượt giữa vật và mặt phẳng là $f$. Tìm lực kéo $Q$ song song với mặt phẳng nghiêng để:

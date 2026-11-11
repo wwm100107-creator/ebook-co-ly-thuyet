@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 240" width="100%" height="auto" preserveAspectRatio="xMidYMid meet">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 265" width="100%" height="auto" preserveAspectRatio="xMidYMid meet">
   <defs>
     <marker id="arr-red" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
       <polygon points="0 0, 7 2.5, 0 5" fill="#dc2626" />
@@ -17,35 +17,40 @@
   </style>
 
   <!-- Nền ngang cố định -->
-  <line x1="40" y1="180" x2="360" y2="180" stroke="#1e293b" stroke-width="2" />
-  <rect x="40" y="180" width="320" height="20" fill="url(#hatch2)" stroke="#94a3b8" stroke-width="1" />
+  <line x1="40" y1="180" x2="350" y2="180" stroke="#1e293b" stroke-width="2" />
+  <rect x="40" y="180" width="310" height="20" fill="url(#hatch2)" stroke="#94a3b8" stroke-width="1" />
 
-  <!-- Vật trượt A khối lượng m1 trên nền ngang -->
+  <!-- Vật trượt A khối lượng m1 trên nền ngang (cao 50px, từ y=130 đến y=180) -->
   <rect x="100" y="130" width="80" height="50" rx="3" fill="#e2e8f0" stroke="#1e293b" stroke-width="2" />
-  <text x="135" y="160" class="lbl-bold">A (m₁)</text>
+  <text x="115" y="160" class="lbl-bold">A (m<tspan font-size="12" dy="3">1</tspan><tspan dy="-3">)</tspan></text>
 
-  <!-- Ròng rọc B cố định tại (350, 130) -->
-  <circle cx="350" cy="130" r="24" fill="#cbd5e1" stroke="#1e293b" stroke-width="2" />
-  <circle cx="350" cy="130" r="4" fill="#0f172a" />
-  <!-- Trụ đỡ ròng rọc -->
-  <line x1="350" y1="130" x2="350" y2="180" stroke="#64748b" stroke-width="2.5" />
-  <text x="365" y="125" class="lbl-bold">O</text>
+  <!-- Ròng rọc B cố định: tâm O(350, 144), bán kính r=24 -> đỉnh trên tại y = 144 - 24 = 120 -->
+  <line x1="330" y1="180" x2="350" y2="144" stroke="#64748b" stroke-width="3" stroke-linecap="round" />
+  <circle cx="350" cy="144" r="24" fill="#cbd5e1" stroke="#1e293b" stroke-width="2" />
+  <circle cx="350" cy="144" r="4" fill="#0f172a" />
+  <text x="352" y="114" class="lbl-bold">B</text>
 
-  <!-- Dây mềm nhẹ không dãn -->
-  <line x1="180" y1="130" x2="350" y2="106" stroke="#0f172a" stroke-width="2" />
-  <!-- Dây rủ xuống mang vật C -->
-  <line x1="374" y1="130" x2="374" y2="190" stroke="#0f172a" stroke-width="2" />
-  <rect x="354" y="190" width="40" height="40" rx="3" fill="#fed7aa" stroke="#c2410c" stroke-width="2" />
-  <text x="363" y="215" class="lbl-bold" fill="#c2410c">m₂</text>
+  <!-- Dây mềm nhẹ không dãn nằm ngang từ vật A(180, 144) tiếp tuyến đỉnh ròng rọc (y=120) -->
+  <line x1="180" y1="144" x2="350" y2="120" stroke="none" />
+  <!-- Chỉnh điểm buộc dây tại A(180, 140) và tâm ròng rọc tại (350, 164) r=24 -> đỉnh tại y=140 hoàn toàn nằm ngang! -->
+  <line x1="180" y1="120" x2="350" y2="120" stroke="#0f172a" stroke-width="2" />
+  <circle cx="180" cy="144" r="3" fill="#0f172a" opacity="0" />
+  <!-- Mấu nối dây trên lưng vật A từ y=130 lên y=120 -->
+  <rect x="172" y="118" width="8" height="12" fill="#475569" />
 
-  <!-- Lực kéo P hoặc trọng lực P2 = m2g -->
-  <line x1="374" y1="210" x2="374" y2="245" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arr-red)" />
-  <text x="382" y="240" class="lbl-bold" fill="#dc2626">P₂</text>
+  <!-- Nhánh dây thẳng đứng tiếp tuyến mép phải ròng rọc tại x = 350 + 24 = 374 -->
+  <line x1="374" y1="144" x2="374" y2="195" stroke="#0f172a" stroke-width="2" />
+  <rect x="354" y="195" width="40" height="36" rx="3" fill="#fed7aa" stroke="#c2410c" stroke-width="2" />
+  <text x="363" y="218" class="lbl-bold" fill="#c2410c">m<tspan font-size="12" dy="3">2</tspan></text>
+
+  <!-- Trọng lực P2 = m2g hướng thẳng đứng xuống -->
+  <line x1="374" y1="231" x2="374" y2="255" stroke="#dc2626" stroke-width="2.4" marker-end="url(#arr-red)" />
+  <text x="383" y="253" class="lbl-bold" fill="#dc2626">P<tspan font-size="12" dy="3">2</tspan></text>
 
   <!-- Gia tốc a của hệ -->
-  <line x1="210" y1="110" x2="260" y2="110" stroke="#2563eb" stroke-width="2" marker-end="url(#arr-blue)" />
-  <text x="230" y="100" class="lbl-bold" fill="#2563eb">a</text>
+  <line x1="210" y1="100" x2="265" y2="100" stroke="#2563eb" stroke-width="2" marker-end="url(#arr-blue)" />
+  <text x="232" y="92" class="lbl-bold" fill="#2563eb">a</text>
   
-  <line x1="420" y1="160" x2="420" y2="200" stroke="#2563eb" stroke-width="2" marker-end="url(#arr-blue)" />
-  <text x="428" y="185" class="lbl-bold" fill="#2563eb">a</text>
+  <line x1="415" y1="165" x2="415" y2="210" stroke="#2563eb" stroke-width="2" marker-end="url(#arr-blue)" />
+  <text x="424" y="192" class="lbl-bold" fill="#2563eb">a</text>
 </svg>

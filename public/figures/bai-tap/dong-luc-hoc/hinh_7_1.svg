@@ -26,11 +26,11 @@
 
   <!-- Vận tốc tương đối v_r dọc theo rãnh -->
   <line x1="240" y1="120" x2="295" y2="96" stroke="#2563eb" stroke-width="2.2" marker-end="url(#arr-blue)" />
-  <text x="300" y="90" class="lbl-bold" fill="#2563eb">v_r</text>
+  <text x="300" y="90" class="lbl-bold" fill="#2563eb">v<tspan font-size="12" dy="3">r</tspan></text>
 
   <!-- Lực quán tính Coriolis F_Cor = -2m(omega x v_r) vuông góc với rãnh -->
   <line x1="240" y1="120" x2="216" y2="65" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arr-red)" />
-  <text x="175" y="60" class="lbl-bold" fill="#dc2626">F_Cor</text>
+  <text x="172" y="60" class="lbl-bold" fill="#dc2626">F<tspan font-size="12" dy="3">Cor</tspan></text>
 
   <!-- Quay với vận tốc góc omega -->
   <path d="M 140 180 A 40 40 0 0 1 135 150" fill="none" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arr-blue)" />

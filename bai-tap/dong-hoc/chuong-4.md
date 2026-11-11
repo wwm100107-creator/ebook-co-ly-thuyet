@@ -39,11 +39,34 @@ $$\vec{\omega} = \vec{\dot{\psi}} + \vec{\dot{\theta}} + \vec{\dot{\varphi}}$$
 
 ---
 
-## 4.2. BÀI GIẢI MẪU
+## 4.2. HƯỚNG DẪN ÁP DỤNG & PHƯƠNG PHÁP GIẢI
 
-### Thí dụ 9-1: Nón lăn trên mặt nón cố định
+1. **Cách tìm trục quay tức thời $OP$ trong bài toán nón lăn không trượt:**
+   - Trục quay tức thời luôn đi qua điểm cố định $O$ và đi qua điểm tiếp xúc không trượt $A$ với bề mặt cố định ($v_A = 0 \implies OP \equiv OA$).
+2. **Cách xác định độ lớn vận tốc góc toàn phần $\omega$ và vận tốc riêng $\omega_2$:**
+   - Sử dụng tam giác vận tốc góc $\vec{\omega} = \vec{\omega}_1 + \vec{\omega}_2$, hoặc tính vận tốc tâm đáy nón $C$ theo hai cách:
+     $$v_C = \omega_1 \cdot r_C = \omega \cdot d(C, OP)$$
+     trong đó $r_C$ là khoảng cách từ $C$ đến trục tiến động $Oz$, và $d(C, OP)$ là khoảng cách từ $C$ đến trục quay tức thời $OP$.
 
-**Đề bài:** Một hình nón tròn xoay có góc ở đỉnh $2\alpha$ đỉnh tựa tại gốc $O$, lăn không trượt trên mặt phẳng nằm ngang cố định. Đáy hình nón là hình tròn bán kính $R$ lăn quanh trục thẳng đứng với vận tốc góc $\omega_1$. Tìm vận tốc góc toàn phần $\vec{\omega}$ của hình nón và vận tốc của điểm cao nhất trên đáy nón.
+---
+
+## 4.3. BÀI GIẢI MẪU (Chương 9 Sách Bài Tập Tập 2)
+
+### Thí dụ 4-1 (Thí dụ 9-1 sách gốc): Nón lăn không trượt trên mặt phẳng ngang cố định
+
+**Đề bài:** Một hình nón tròn xoay có góc ở đỉnh $2\alpha$ đỉnh tựa tại gốc $O$, lăn không trượt trên mặt phẳng nằm ngang cố định. Đáy hình nón là hình tròn bán kính $R$, trục hình nón quay quanh trục thẳng đứng với vận tốc góc tiến động $\omega_1$. Tìm vận tốc góc toàn phần $\vec{\omega}$ của hình nón và vận tốc của điểm cao nhất $B$ trên đáy nón.
+
+<div class="figure-container">
+
+<img src="/figures/bai-tap/dong-hoc/hinh_9_1.svg" alt="Hình 9-1: Nón tròn xoay lăn không trượt trên mặt phẳng cố định" style="max-width: 520px; width: 100%; margin: 0 auto; display: block;" />
+
+<div class="figure-caption">
+
+Hình 9-1: Trục quay tức thời OP và phân tích vận tốc góc của nón lăn không trượt
+
+</div>
+
+</div>
 
 **Bài giải:**
 
@@ -62,7 +85,7 @@ $$v_B = \omega \cdot h = \left(\frac{\omega_1}{\sin\alpha}\right) \cdot (2R) = \
 
 ---
 
-## 4.3. BÀI TẬP TỰ RÈN LUYỆN (CÓ ĐÁP SỐ)
+## 4.4. BÀI TẬP TỰ RÈN LUYỆN (CÓ ĐÁP SỐ)
 
 ::: info Bài 4-1: Con quay hồi chuyển đối xứng
 Một con quay đối xứng quay quanh trục đối xứng của nó với tốc độ tự quay $\dot{\varphi} = 300\text{ rad/s}$, đồng thời trục con quay thực hiện chuyển động tiến động đều quanh trục thẳng đứng với vận tốc góc $\dot{\psi} = 2\text{ rad/s}$. Góc nghiêng của trục con quay so với trục đứng là $\theta = 30^\circ = \text{const}$. Tính độ lớn của vectơ vận tốc góc toàn phần $\omega$ và gia tốc góc $\varepsilon$.

@@ -47,9 +47,24 @@ Khi quỹ đạo của điểm đã biết trước, vị trí của điểm xá
 
 ---
 
-## 1.2. BÀI GIẢI MẪU
+## 1.2. HƯỚNG DẪN ÁP DỤNG & PHƯƠNG PHÁP GIẢI
 
-### Thí dụ 6-1: Khảo sát chuyển động của điểm trong mặt phẳng
+1. **Cách tìm phương trình quỹ đạo từ phương trình chuyển động $x = x(t), y = y(t)$:**
+   - Khử tham số thời gian $t$ giữa hai phương trình để đưa về hệ thức $f(x, y) = 0$.
+   - Nếu có các hàm lượng giác $\sin(\omega t), \cos(\omega t)$: sử dụng hằng đẳng thức $\sin^2(\omega t) + \cos^2(\omega t) = 1$ để đưa về phương trình đường tròn hoặc elip.
+2. **Cách tính bán kính cong $\rho$ của quỹ đạo tại thời điểm $t$ bất kỳ (không cần biết phương trình tự nhiên $s(t)$):**
+   - Bước 1: Tính $v_x = \dot{x}, v_y = \dot{y} \implies v = \sqrt{v_x^2 + v_y^2}$.
+   - Bước 2: Tính $a_x = \ddot{x}, a_y = \ddot{y} \implies a = \sqrt{a_x^2 + a_y^2}$.
+   - Bước 3: Tính gia tốc tiếp tuyến từ đạo hàm độ lớn vận tốc (hoặc phép chiếu lên $\vec{v}$):
+     $$a_\tau = \frac{dv}{dt} = \frac{v_x a_x + v_y a_y}{v}$$
+   - Bước 4: Suy ra gia tốc pháp tuyến và bán kính cong:
+     $$a_n = \sqrt{a^2 - a_\tau^2} \quad (\text{hoặc } a_n = \frac{|v_x a_y - v_y a_x|}{v}) \implies \rho = \frac{v^2}{a_n}$$
+
+---
+
+## 1.3. BÀI GIẢI MẪU (Chương 6 Sách Bài Tập Tập 2)
+
+### Thí dụ 1-1 (Thí dụ 6-1 sách gốc): Khảo sát chuyển động của điểm trong mặt phẳng
 
 **Đề bài:** Chuyển động của một chất điểm trong mặt phẳng $Oxy$ được cho bởi các phương trình:
 $$x = 8t - 4t^2, \quad y = 6t - 3t^2$$
@@ -111,7 +126,26 @@ $$\vec{v} \cdot \vec{a} = v_x a_x + v_y a_y = 8(1-t)(-8) + 6(1-t)(-6) = -64(1-t)
 
 ---
 
-## 1.3. BÀI TẬP TỰ RÈN LUYỆN (CÓ ĐÁP SỐ)
+### Thí dụ 1-2 (Thí dụ 6-4 sách gốc): Xác định bán kính cong quỹ đạo từ tọa độ Đề-các
+
+**Đề bài:** Chuyển động của điểm $M$ trong mặt phẳng $Oxy$ được cho bởi phương trình:
+$$x = 3\cos(2t), \quad y = 4\sin(2t) \quad (x, y\text{ tính bằng cm; } t\text{ tính bằng s})$$
+Tìm phương trình quỹ đạo, vận tốc, gia tốc tiếp tuyến, gia tốc pháp tuyến và bán kính cong $\rho$ của quỹ đạo tại thời điểm $t = \frac{\pi}{4}\text{ s}$.
+
+**Bài giải:**
+
+1. **Phương trình quỹ đạo:**
+   $$\frac{x^2}{3^2} + \frac{y^2}{4^2} = \cos^2(2t) + \sin^2(2t) = 1 \implies \frac{x^2}{9} + \frac{y^2}{16} = 1 \quad (\text{Elip bán trục } a=3\text{ cm}, b=4\text{ cm})$$
+2. **Vận tốc và gia tốc tại thời điểm $t = \frac{\pi}{4}\text{ s}$ ($2t = \frac{\pi}{2}$):**
+   - $v_x = -6\sin(2t) = -6\text{ cm/s}, \quad v_y = 8\cos(2t) = 0 \implies v = 6\text{ cm/s}$.
+   - $a_x = -12\cos(2t) = 0, \quad a_y = -16\sin(2t) = -16\text{ cm/s}^2 \implies a = 16\text{ cm/s}^2$.
+3. **Gia tốc tiếp tuyến, pháp tuyến và bán kính cong:**
+   $$a_\tau = \frac{v_x a_x + v_y a_y}{v} = 0, \qquad a_n = \sqrt{a^2 - a_\tau^2} = 16\text{ cm/s}^2$$
+   $$\rho = \frac{v^2}{a_n} = \frac{6^2}{16} = \frac{36}{16} = 2.25\text{ cm}$$
+
+---
+
+## 1.4. BÀI TẬP TỰ RÈN LUYỆN (CÓ ĐÁP SỐ)
 
 ::: info Bài 1-1: Chuyển động cong phẳng parabol
 Một chất điểm chuyển động theo phương trình: $x = 2t, \quad y = 4t(1 - t)$ ($x, y$ đo bằng $\text{m}$, $t$ bằng $\text{s}$).

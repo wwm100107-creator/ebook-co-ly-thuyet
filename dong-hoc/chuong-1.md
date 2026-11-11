@@ -135,6 +135,18 @@ Hình 1-2: Hệ trục tọa độ tự nhiên $(\vec{\tau}, \vec{n}, \vec{b})$
 
 </div>
 
+<div class="figure-container">
+
+<img src="/figures/dong-hoc/hinh_1_3.svg" alt="Hình 1-3: Tọa độ cong s và bán kính cong trên quỹ đạo" style="max-height: 260px;" />
+
+<div class="figure-caption">
+
+Hình 1-3: Xác định tọa độ cong $s = \overset{\frown}{OM}$ và tâm cong $K$ trên quỹ đạo
+
+</div>
+
+</div>
+
 ---
 
 ### 1.3.2. Vận Tốc Trong Hệ Tọa Độ Tự Nhiên

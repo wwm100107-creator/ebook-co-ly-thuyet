@@ -147,7 +147,7 @@ $$\frac{\partial \Pi}{\partial q_j} = 0 \quad (j = 1, 2, ..., s) \tag{4-11}$$
 
 ---
 
-## 4.3. Các Thí Dụ Áp Dụng (Bài Tập Mẫu)
+## 4.4. Các Thí Dụ Áp Dụng (Bài Tập Mẫu)
 
 ::: tip Ý NGHĨA PHƯƠNG PHÁP
 Nguyên lý di chuyển khả dĩ (Nguyên lý công khả dĩ) là phương pháp cực kỳ mạnh mẽ của Cơ học giải tích để tìm điều kiện cân bằng của các cơ hệ phức tạp gồm nhiều khâu mà không cần tháo rời liên kết để tìm các phản lực liên kết trong.

@@ -87,6 +87,30 @@ Hình 2-1: Thu gọn hệ lực không gian về tâm O
 
 </div>
 
+<div class="figure-container">
+
+<img src="/figures/tinh-hoc/hinh_2_2.svg" alt="Hình 2-2: Bổ đề dời lực song song của Poinsot" style="max-height: 260px;" />
+
+<div class="figure-caption">
+
+Hình 2-2: Bổ đề dời lực song song về tâm thu gọn O
+
+</div>
+
+</div>
+
+<div class="figure-container">
+
+<img src="/figures/tinh-hoc/hinh_2_3.svg" alt="Hình 2-3: Thu gọn hệ lực phẳng bất kỳ về tâm O" style="max-height: 250px;" />
+
+<div class="figure-caption">
+
+Hình 2-3: Thu gọn hệ lực phẳng bất kỳ về véctơ chính và mômen chính tại O
+
+</div>
+
+</div>
+
 ---
 
 ### 2.2.2. Các Trường Hợp Tối Giản Của Hệ Lực
@@ -169,6 +193,18 @@ hoặc:
 $$\sum m_A(\vec{F}_k) = 0; \quad \sum m_B(\vec{F}_k) = 0 \tag{2-19}$$
 *(đường thẳng $AB$ không song song với phương các lực)*
 
+<div class="figure-container">
+
+<img src="/figures/tinh-hoc/hinh_2_5.svg" alt="Hình 2-5: Hợp hai lực song song cùng chiều và ngược chiều" style="max-height: 250px;" />
+
+<div class="figure-caption">
+
+Hình 2-5: Hợp hai lực song song cùng chiều và hai lực song song ngược chiều
+
+</div>
+
+</div>
+
 ---
 
 ## 2.4. Bài Toán Đòn và Vật Lật
@@ -177,6 +213,18 @@ $$\sum m_A(\vec{F}_k) = 0; \quad \sum m_B(\vec{F}_k) = 0 \tag{2-19}$$
 Đòn là một vật rắn có trục quay cố định chịu tác dụng của các lực làm quay đòn quanh trục. Điều kiện cân bằng của đòn là tổng đại số các mômen của tất cả các lực đối với trục quay bằng không:
 
 $$\sum m_O(\vec{F}_k) = 0$$
+
+<div class="figure-container">
+
+<img src="/figures/tinh-hoc/hinh_2_19.svg" alt="Hình 2-19: Sơ đồ cân bằng của đòn quay quanh trục cố định O" style="max-height: 260px;" />
+
+<div class="figure-caption">
+
+Hình 2-19: Sơ đồ lực và cánh tay đòn đối với trục quay cố định O
+
+</div>
+
+</div>
 
 ### 2.4.2. Bài Toán Vật Lật
 Xét vật đặt trên mặt tựa nằm ngang. Khi chịu tác dụng của lực ngang hoặc mômen có xu hướng làm lật vật quanh cạnh tựa $A$:

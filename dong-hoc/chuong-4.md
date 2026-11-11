@@ -173,7 +173,7 @@ $$\frac{a_A}{QA} = \frac{a_B}{QB} = \sqrt{\varepsilon^2 + \omega^4}$$
 
 ---
 
-## 4.4. Tổng Hợp Chuyển Động Song Phẳng
+## 4.5. Tổng Hợp Chuyển Động Song Phẳng
 
 Chuyển động song phẳng có thể xem là tổng hợp của hai chuyển động quay quanh hai trục song song hoặc chuyển động quay kết hợp với chuyển động tịnh tiến:
 - **Định lý về tổng hợp hai chuyển động quay quanh hai trục song song:**
@@ -185,7 +185,7 @@ Chuyển động song phẳng có thể xem là tổng hợp của hai chuyển 
 
 ---
 
-## 4.5. Các Thí Dụ Áp Dụng (Bài Tập Mẫu)
+## 4.6. Các Thí Dụ Áp Dụng (Bài Tập Mẫu)
 
 ::: tip Ý NGHĨA PHƯƠNG PHÁP
 Các bài toán chuyển động song phẳng là trọng tâm của phần Động học kỹ thuật. Có ba phương pháp chính giải bài toán vận tốc và gia tốc:

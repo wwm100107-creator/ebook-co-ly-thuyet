@@ -40,8 +40,8 @@
   <text x="42" y="205" class="lbl-bold">C</text>
 
   <!-- Góc 30 độ tại C giữa BC và tường -->
-  <path d="M 60 170 A 30 30 0 0 1 73 175" fill="none" stroke="#0f172a" stroke-width="1.2" />
-  <text x="68" y="165" font-size="13">30°</text>
+  <path d="M 60 165 A 35 35 0 0 1 83.7 174.3" fill="none" stroke="#0f172a" stroke-width="1.2" />
+  <text x="66" y="158" font-size="13">30°</text>
 
   <!-- Tải trọng P tại giữa OA (x=240) và Q tại đầu A (x=420) -->
   <line x1="240" y1="70" x2="240" y2="140" stroke="#dc2626" stroke-width="2.4" marker-end="url(#arr-red)" />

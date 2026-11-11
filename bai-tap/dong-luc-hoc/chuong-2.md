@@ -107,6 +107,27 @@ $$a = \frac{m_2 - f m_1}{m_1 + \frac{1}{2} m_0 + m_2} g$$
 
 ---
 
+### Thí dụ 2-2: Định lý chuyển động khối tâm và Định lý biến thiên mômen động lượng
+
+**Đề bài:** Một thanh mảnh đồng chất $AB$ khối lượng $M$, chiều dài $l$ có thể quay tự do không ma sát trong mặt phẳng thẳng đứng quanh trục nằm ngang cố định đi qua đầu trên $A$. Ban đầu thanh được giữ nằm ngang rồi buông nhẹ không vận tốc đầu.
+1. Áp dụng định lý động năng để tìm vận tốc góc $\omega$ của thanh khi đi qua vị trí thẳng đứng.
+2. Áp dụng định lý biến thiên mômen động lượng đối với trục quay $A$ để tìm gia tốc góc $\varepsilon$ của thanh tại góc lệch $\varphi$ bất kỳ so với phương thẳng đứng.
+
+**Bài giải:**
+
+1. **Vận tốc góc khi thanh qua vị trí thẳng đứng ($\varphi = 0$):**
+   - Động năng ban đầu: $T_0 = 0$.
+   - Động năng khi qua vị trí thẳng đứng: $T_1 = \frac{1}{2} J_A \omega^2 = \frac{1}{2}\left(\frac{1}{3} M l^2\right)\omega^2 = \frac{1}{6} M l^2 \omega^2$.
+   - Công của trọng lực khi khối tâm $C$ hạ xuống độ cao $h_C = \frac{l}{2}$: $A(P) = M g \frac{l}{2}$.
+   - Theo định lý biến thiên động năng ($T_1 - T_0 = A$):
+     $$\frac{1}{6} M l^2 \omega^2 = M g \frac{l}{2} \implies \omega = \sqrt{\frac{3g}{l}}$$
+2. **Gia tốc góc tại vị trí góc lệch $\varphi$ bất kỳ:**
+   - Mômen động lượng của thanh đối với trục quay $Az$: $L_{Az} = J_A \dot{\varphi} = \frac{1}{3} M l^2 \dot{\varphi}$.
+   - Theo định lý biến thiên mômen động lượng đối với trục $Az$:
+     $$\frac{d L_{Az}}{dt} = \sum m_{Az}(\vec{F}_k^{(e)}) \implies \frac{1}{3} M l^2 \ddot{\varphi} = -M g \frac{l}{2}\sin\varphi \implies \varepsilon = \ddot{\varphi} = -\frac{3g}{2l}\sin\varphi$$
+
+---
+
 ## 4. Bài Tập Rèn Luyện Có Đáp Số
 
 ::: info Bài 2.1 (Định lý động lượng cho súng đại bác giật lùi)

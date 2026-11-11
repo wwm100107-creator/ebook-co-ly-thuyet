@@ -35,7 +35,7 @@
   <circle cx="150" cy="140" r="5" fill="#dc2626" />
   <text x="130" y="145" class="lbl-bold" fill="#dc2626">C</text>
   
-  <line x1="150" y1="190" x2="270" y2="190" stroke="#16a34a" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)" />
+  <line x1="150" y1="190" x2="270" y2="190" stroke="#16a34a" stroke-width="2" marker-start="url(#arrow-green)" marker-end="url(#arrow-green)" />
   <text x="205" y="180" class="lbl-bold" fill="#16a34a">d</text>
   
   <text x="170" y="270" class="lbl-bold" fill="#dc2626">J<tspan font-size="12">z</tspan> = J<tspan font-size="12">z0</tspan> + M d<tspan font-size="12">2</tspan></text>

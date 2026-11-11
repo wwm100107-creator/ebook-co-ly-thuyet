@@ -46,7 +46,19 @@ Trục quay $AB$ phải là **trục quán tính chính trung tâm** của vật
 
 ---
 
-## 2. Bài Giải Mẫu Điển Hình
+## 2. Hướng Dẫn Áp Dụng & Phương Pháp Giải
+
+1. **Quy trình 4 bước giải bài toán bằng Nguyên lý Đalămbe:**
+   - **Bước 1:** Giải phóng liên kết cho cơ hệ hoặc từng vật rắn, đặt đầy đủ các ngoại lực chủ động và các phản lực liên kết.
+   - **Bước 2:** Phân tích chuyển động của từng phần tử để xác định véctơ gia tốc khối tâm $\vec{a}_C$ và gia tốc góc $\vec{\varepsilon}$.
+   - **Bước 3:** Đặt thêm hệ lực quán tính thu gọn tại khối tâm $C$ của mỗi vật: véctơ chính $\vec{R}_{\text{qt}} = -M\vec{a}_C$ (ngược chiều $\vec{a}_C$) và ngẫu lực quán tính $M_{C,\text{qt}} = -J_C \varepsilon$ (ngược chiều $\vec{\varepsilon}$).
+   - **Bước 4:** Viết các phương trình cân bằng tĩnh học hình thức cho hệ lực gồm cả lực thực và lực quán tính.
+2. **Mẹo khử ẩn số nhanh:**
+   - Lấy tổng mômen đối với giao điểm của các phản lực liên kết chưa biết (hoặc đối với tâm vận tốc tức thời $P$) để tìm ngay gia tốc mà không cần giải hệ nhiều phương trình!
+
+---
+
+## 3. Bài Giải Mẫu Điển Hình
 
 ### Thí dụ 4-1: Xác định phản lực động lên các ổ trục quay mang vật lệch tâm
 
@@ -103,7 +115,25 @@ Hai phản lực động $\vec{X}_A$ và $\vec{X}_B$ cùng phương, cùng chi�
 
 ---
 
-## 3. Bài Tập Rèn Luyện Có Đáp Số
+### Thí dụ 4-2: Áp lực động của thanh đồng chất hàn nghiêng trên trục quay
+
+**Đề bài:** Một thanh mảnh đồng chất $CD$ có khối lượng $M$, chiều dài $2l$, được hàn tại trung điểm (khối tâm $O$) vào trục quay thẳng đứng $AB$ ($AB = 2a$, $O$ là trung điểm $AB$) sao cho thanh hợp với trục quay một góc nhọn $\alpha$. Trục quay đều với vận tốc góc $\omega$. Xác định phản lực động tại hai ổ trục $A$ và $B$.
+
+**Bài giải:**
+
+1. **Thu gọn hệ lực quán tính của thanh về khối tâm $O$:**
+   - Vì khối tâm $O$ của thanh nằm ngay trên trục quay $AB$ nên $\vec{a}_O = \vec{0} \implies$ véctơ chính lực quán tính bằng không: $\vec{R}_{\text{qt}} = \vec{0}$.
+   - Mỗi phần tử $dm$ cách $O$ một đoạn $s$ trên thanh chịu lực quán tính ly tâm $dF_{\text{qt}} = dm \cdot \omega^2 (s\sin\alpha)$ có cánh tay đòn $s\cos\alpha$ đối với $O$. Hai nửa thanh tạo thành một **ngẫu lực quán tính ly tâm** nằm trong mặt phẳng chứa trục $AB$ và thanh $CD$:
+     $$M_{\text{qt}} = 2 \int_0^l \left(\frac{M}{2l}ds\right) \omega^2 s^2 \sin\alpha \cos\alpha = \frac{1}{3} M l^2 \omega^2 \sin\alpha \cos\alpha = \frac{1}{6} M l^2 \omega^2 \sin 2\alpha$$
+2. **Phương trình cân bằng Đalămbe cho trục $AB$:**
+   $$\begin{cases}
+   X_A^{\text{đ}} + X_B^{\text{đ}} = 0 \implies X_B^{\text{đ}} = -X_A^{\text{đ}} \\
+   \sum m_O = X_A^{\text{đ}} \cdot 2a - M_{\text{qt}} = 0 \implies |X_A^{\text{đ}}| = |X_B^{\text{đ}}| = \frac{M l^2 \omega^2 \sin 2\alpha}{12 a}
+   \end{cases}$$
+
+---
+
+## 4. Bài Tập Rèn Luyện Có Đáp Số
 
 ::: info Bài 4.1 (Cân bằng tĩnh và cân bằng động của đĩa lệch tâm)
 Một đĩa tròn mỏng đồng chất bán kính $R = 0.3\text{ m}$, khối lượng $M = 10\text{ kg}$ bị khoét một lỗ tròn bán kính $r = 0.05\text{ m}$ tại vị trí cách tâm đĩa $d = 0.2\text{ m}$. Trục quay đi qua tâm đĩa và vuông góc với mặt đĩa, quay với vận tốc góc $\omega = 100\text{ rad/s}$.

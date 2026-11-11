@@ -13,28 +13,29 @@
     .lbl-bold { font-size: 18px; font-style: italic; font-weight: bold; fill: #0f172a; }
   </style>
 
-  <!-- Mặt phẳng nghiêng góc alpha = 30 độ -->
+  <!-- Mặt phẳng nghiêng góc alpha: đỉnh trên (40,80), chân dốc (400,210) -->
   <polygon points="40,210 400,210 40,80" fill="#f1f5f9" stroke="#1e293b" stroke-width="2" />
-  <line x1="40" y1="210" x2="400" y2="210" stroke="#1e293b" stroke-width="2" />
-  <text x="100" y="200" font-size="14">α</text>
+  <line x1="40" y1="210" x2="420" y2="210" stroke="#1e293b" stroke-width="2" />
+  <!-- Cung góc alpha tại chân dốc (400, 210) -->
+  <path d="M 345 210 A 55 55 0 0 1 348.3 191.3" fill="none" stroke="#475569" stroke-width="1.3" />
+  <text x="328" y="204" class="lbl">α</text>
 
-  <!-- Đĩa tròn tâm C bán kính R lăn trên dốc nghiêng -->
-  <!-- Dốc có phương nối (40,80) đến (400,210), góc nghiêng xuống là theta -->
-  <g transform="translate(200, 105) rotate(19.8)">
+  <!-- Đĩa tròn tâm C bán kính R=35 tiếp xúc chính xác với mặt nghiêng tại P(202, 138.5) -->
+  <g transform="translate(213.9, 105.6) rotate(19.85)">
     <circle cx="0" cy="0" r="35" fill="#e2e8f0" stroke="#1e293b" stroke-width="2.2" />
     <circle cx="0" cy="0" r="4" fill="#0f172a" />
-    <text x="-5" y="-10" class="lbl-bold">C</text>
+    <text x="-6" y="-10" class="lbl-bold">C</text>
     
     <!-- Điểm tiếp xúc P (tâm vận tốc tức thời) tại (0, 35) -->
-    <circle cx="0" cy="35" r="3" fill="#dc2626" />
-    <text x="-5" y="48" class="lbl-bold" fill="#dc2626">P</text>
+    <circle cx="0" cy="35" r="3.5" fill="#dc2626" />
+    <text x="6" y="48" class="lbl-bold" fill="#dc2626">P</text>
 
     <!-- Gia tốc khối tâm a_C hướng xuống dọc dốc -->
-    <line x1="0" y1="0" x2="45" y2="0" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arr-blue)" />
-    <text x="50" y="-5" class="lbl-bold" fill="#2563eb">a_C</text>
+    <line x1="0" y1="0" x2="52" y2="0" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arr-blue)" />
+    <text x="56" y="4" class="lbl-bold" fill="#2563eb">a<tspan font-size="12" dy="3">C</tspan></text>
 
-    <!-- Lực ma sát nghỉ F_ms tại điểm tiếp xúc hướng lên dốc -->
-    <line x1="0" y1="35" x2="-35" y2="35" stroke="#dc2626" stroke-width="2.2" marker-end="url(#arr-red)" />
-    <text x="-55" y="30" class="lbl-bold" fill="#dc2626">F_ms</text>
+    <!-- Lực ma sát nghỉ F_ms tại điểm tiếp xúc P hướng lên dốc -->
+    <line x1="0" y1="35" x2="-42" y2="35" stroke="#dc2626" stroke-width="2.2" marker-end="url(#arr-red)" />
+    <text x="-72" y="30" class="lbl-bold" fill="#dc2626">F<tspan font-size="12" dy="3">ms</tspan></text>
   </g>
 </svg>

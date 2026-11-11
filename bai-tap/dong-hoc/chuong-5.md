@@ -48,13 +48,36 @@ trong đó:
 
 ---
 
-## 5.2. BÀI GIẢI MẪU
+## 5.2. HƯỚNG DẪN ÁP DỤNG & PHƯƠNG PHÁP GIẢI
 
-### Thí dụ 10-2: Con trượt trên cơ cấu hình bình hành
+1. **Nguyên tắc chọn điểm khảo sát $M$ và hệ quy chiếu động $Oxyz$:**
+   - Trong cơ cấu có **con trượt chạy dọc rãnh hoặc thanh dẫn** (cơ cấu culit): luôn chọn **con trượt** (hoặc chốt nối gắn với khâu kia) làm chất điểm khảo sát $M$, và chọn **khâu có rãnh trượt** làm hệ quy chiếu động!
+   - Nhờ cách chọn này, quỹ đạo tương đối của điểm $M$ là đường thẳng dọc theo rãnh, nên phương của $\vec{v}_r$ và $\vec{a}_r$ hoàn toàn xác định dọc theo rãnh.
+2. **Quy tắc xác định nhanh gia tốc Coriolis $\vec{a}_c = 2(\vec{\omega}_e \times \vec{v}_r)$ trong bài toán phẳng:**
+   - Bước 1: Tính độ lớn $a_c = 2 \omega_e v_r$ (vì $\vec{\omega}_e \perp \vec{v}_r$).
+   - Bước 2: Quay vectơ $\vec{v}_r$ một góc $90^\circ$ **theo chiều quay của $\omega_e$** để được đúng hướng của $\vec{a}_c$.
+
+---
+
+## 5.3. BÀI GIẢI MẪU (Chương 10 Sách Bài Tập Tập 2)
+
+### Thí dụ 5-1 (Thí dụ 10-2 sách gốc): Con trượt trên cơ cấu hình bình hành
 
 **Đề bài:** Một cơ cấu 4 khâu có dạng hình bình hành $O_1 A B O_2$. Tay quay $O_1 A = 0.5\text{ m}$ quay quanh trục cố định $O_1$ với vận tốc góc $\omega = 2t\text{ rad/s}$. Dọc theo thanh $AB$, một con trượt $M$ chuyển động theo quy luật:
 $$\xi = AM = 5t^2 \quad (\xi\text{ tính bằng m, } t\text{ tính bằng s})$$
 Tìm vận tốc và gia tốc tuyệt đối của con trượt $M$ tại thời điểm $t = 2\text{ s}$, biết tại thời điểm đó góc $\varphi = \widehat{AO_1 O_2} = 30^\circ$.
+
+<div class="figure-container">
+
+<img src="/figures/bai-tap/dong-hoc/hinh_10_2.svg" alt="Hình 10-2: Phân tích vận tốc và gia tốc Coriolis trên cơ cấu culit quay" style="max-width: 520px; width: 100%; margin: 0 auto; display: block;" />
+
+<div class="figure-caption">
+
+Hình 10-2: Hợp vận tốc (va = ve + vr) và gia tốc Coriolis aC trong cơ cấu con trượt – rãnh quay
+
+</div>
+
+</div>
 
 **Bài giải:**
 
@@ -93,7 +116,7 @@ Vì cơ cấu là hình bình hành ($O_1 A \parallel O_2 B$ và $O_1 A = O_2 B$
 
 ---
 
-## 5.3. BÀI TẬP TỰ RÈN LUYỆN (CÓ ĐÁP SỐ)
+## 5.4. BÀI TẬP TỰ RÈN LUYỆN (CÓ ĐÁP SỐ)
 
 ::: info Bài 5-1: Con trượt trên rãnh quay (Cơ cấu Culit)
 Một tay cần $OA$ quay đều quanh trục cố định $O$ nằm ngang với vận tốc góc không đổi $\omega = 5\text{ rad/s}$. Dọc theo rãnh của tay cần có một con trượt $M$ chuyển động ra xa gốc $O$ với vận tốc tương đối không đổi $v_r = 2\text{ m/s}$. Tại thời điểm con trượt cách gốc $O$ một khoảng cách $OM = 0.8\text{ m}$, hãy xác định:

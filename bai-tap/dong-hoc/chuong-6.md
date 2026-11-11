@@ -37,15 +37,35 @@ trong đó:
 
 ---
 
-## 6.2. BÀI GIẢI MẪU
+## 6.2. HƯỚNG DẪN ÁP DỤNG & PHƯƠNG PHÁP GIẢI
 
-### Thí dụ 11-1: Tính vận tốc góc cần dẫn trong cơ cấu hành tinh
+1. **Hai phương pháp giải cơ cấu bánh răng hành tinh và vi sai:**
+   - **Phương pháp giải tích (Công thức Willis):** Luôn quy ước rõ một chiều quay làm chiều dương chung cho cả $\omega_1, \omega_2, \omega_3, \omega_H$. Chú ý dấu $(-1)^m$ với $m$ là số cặp ăn khớp ngoài.
+   - **Phương pháp hình học (Tâm vận tốc tức thời):** Nếu có một vành răng cố định, điểm tiếp xúc ăn khớp với vành răng cố định chính là tâm vận tốc tức thời $P$ của bánh răng hành tinh ($v_P = 0$), giúp tìm trực tiếp tỉ lệ vận tốc giữa tâm bánh hành tinh và điểm ăn khớp đối diện!
+
+---
+
+## 6.3. BÀI GIẢI MẪU (Chương 11 Sách Bài Tập Tập 2)
+
+### Thí dụ 6-1 (Thí dụ 11-1 sách gốc): Tính vận tốc góc cần dẫn và bánh hành tinh
 
 **Đề bài:** Một cơ cấu bánh răng hành tinh phẳng gồm:
 - Bánh răng mặt trời cố định 1 có $Z_1 = 40$ răng đứng yên ($\omega_1 = 0$).
-- Cần dẫn $H$ quay quanh trục của bánh 1 với vận tốc góc $\omega_H = 15\text{ rad/s}$.
+- Cần dẫn $H$ (hoặc $C$) quay quanh trục của bánh 1 với vận tốc góc $\omega_H = 15\text{ rad/s}$.
 - Bánh răng hành tinh 2 có $Z_2 = 20$ răng gắn trên cần $H$ và ăn khớp ngoài với bánh 1, đồng thời ăn khớp trong với vành răng 3 có $Z_3 = 80$ răng.
 Tìm vận tốc góc tuyệt đối $\omega_2$ của bánh hành tinh 2 và $\omega_3$ của vành răng 3.
+
+<div class="figure-container">
+
+<img src="/figures/bai-tap/dong-hoc/hinh_11_1.svg" alt="Hình 11-1: Sơ đồ cơ cấu bánh răng hành tinh và phân bố vận tốc" style="max-width: 520px; width: 100%; margin: 0 auto; display: block;" />
+
+<div class="figure-caption">
+
+Hình 11-1: Cơ cấu bánh răng hành tinh và phân bố vận tốc qua tâm vận tốc tức thời P
+
+</div>
+
+</div>
 
 **Bài giải:**
 
@@ -71,7 +91,7 @@ $$-15 = -2(\omega_3 - 15) \implies 2\omega_3 - 30 = 15 \implies 2\omega_3 = 45 \
 
 ---
 
-## 6.3. BÀI TẬP TỰ RÈN LUYỆN (CÓ ĐÁP SỐ)
+## 6.4. BÀI TẬP TỰ RÈN LUYỆN (CÓ ĐÁP SỐ)
 
 ::: info Bài 6-1: Bộ vi sai đối xứng ô tô
 Bộ vi sai ô tô gồm vỏ vi sai (cần $H$) quay với vận tốc góc $\omega_H = 60\text{ rad/s}$. Khi ô tô chạy trên đường vòng cong, bánh xe bên phải (nối trục với bánh răng bán trục 2) quay với vận tốc góc $\omega_2 = 70\text{ rad/s}$. Biết hai bánh răng bán trục 1 và 2 đối xứng cùng số răng ($Z_1 = Z_2$). Xác định vận tốc góc $\omega_1$ của bánh xe bên trái.

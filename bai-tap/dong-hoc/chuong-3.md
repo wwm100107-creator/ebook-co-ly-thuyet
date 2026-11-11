@@ -46,9 +46,21 @@ trong đó:
 
 ---
 
-## 3.2. BÀI GIẢI MẪU
+## 3.2. HƯỚNG DẪN ÁP DỤNG & PHƯƠNG PHÁP GIẢI
 
-### Thí dụ 8-1: Phân tích động học cơ cấu 4 khâu bản lề
+1. **Trình tự giải bài toán vận tốc cơ cấu phẳng:**
+   - Tách cơ cấu thành từng khâu theo thứ tự từ khâu dẫn (đã biết $\omega_1$) đến các khâu bị dẫn.
+   - Với khâu chuyển động song phẳng (thanh truyền $AB$, bánh xe lăn): xác định phương vận tốc của hai điểm $A, B$, dựng hai đường vuông góc với $\vec{v}_A, \vec{v}_B$ tại $A, B$ để tìm tâm vận tốc tức thời $P$, từ đó suy ra $\omega_{AB} = \frac{v_A}{PA}$ và $v_B = \omega_{AB} \cdot PB$.
+   - Nếu hai đường vuông góc song song với nhau hoặc giao điểm ở quá xa: áp dụng **Định lý hình chiếu vận tốc** $v_A \cos\alpha = v_B \cos\beta$.
+2. **Trình tự giải bài toán gia tốc cơ cấu phẳng:**
+   - Bắt buộc phải giải xong bài toán vận tốc (tìm $\omega$ của các khâu) trước để tính được các thành phần gia tốc pháp tuyến $a_{BA}^n = \omega_{AB}^2 \cdot AB$.
+   - Viết phương trình vectơ $\vec{a}_B = \vec{a}_A + \vec{a}_{BA}^n + \vec{a}_{BA}^\tau$, sau đó chiếu lên phương vuông góc với ẩn số chưa biết (hoặc dọc theo thanh $AB$) để tìm ngay $a_B$ và $\varepsilon_{AB}$.
+
+---
+
+## 3.3. BÀI GIẢI MẪU (Chương 8 Sách Bài Tập Tập 2)
+
+### Thí dụ 3-1 (Thí dụ 8-1 sách gốc): Phân tích động học cơ cấu 4 khâu bản lề
 
 **Đề bài:** Cho cơ cấu 4 khâu bản lề phẳng $O_1 A B O_2$. Khâu dẫn $O_1 A = 0.4\text{ m}$ quay quanh trục cố định $O_1$ với vận tốc góc không đổi $\omega_1 = 10\text{ rad/s}$. Tại thời điểm khảo sát, khâu $O_1 A$ nằm nghiêng và khâu truyền $AB = 0.5\text{ m}$, khâu bị dẫn $O_2 B = 0.5\text{ m}$ có các góc nghiêng như hình vẽ. Xác định vận tốc góc của thanh truyền $AB$ và vận tốc điểm $B$.
 
@@ -94,7 +106,28 @@ $$\omega_{O2B} = \frac{v_B}{O_2 B} = \frac{3}{0.5} = 6\text{ rad/s}$$
 
 ---
 
-## 3.3. BÀI TẬP TỰ RÈN LUYỆN (CÓ ĐÁP SỐ)
+### Thí dụ 3-2 (Thí dụ 8-5 sách gốc): Vận tốc và gia tốc cơ cấu tay quay – con trượt
+
+**Đề bài:** Trong cơ cấu tay quay – con trượt $OAB$, tay quay $OA = r = 0.2\text{ m}$ quay đều quanh trục cố định $O$ với vận tốc góc $\omega_0 = 10\text{ rad/s}$. Thanh truyền $AB = l = 0.4\text{ m}$ nối với con trượt $B$ trượt theo phương nằm ngang đi qua $O$. Xác định vận tốc $v_B$, vận tốc góc $\omega_{AB}$ và gia tốc $a_B$ của con trượt tại thời điểm tay quay $OA$ vuông góc với phương trượt của $B$ ($\varphi = 90^\circ$).
+
+**Bài giải:**
+
+1. **Bài toán vận tốc tại vị trí $OA \perp OB$:**
+   - Vận tốc đầu $A$: $v_A = \omega_0 r = 10 \times 0.2 = 2\text{ m/s}$, có phương nằm ngang (song song với phương trượt $OB$).
+   - Vì $\vec{v}_A \parallel \vec{v}_B$ (cùng nằm ngang), hai đường vuông góc với $\vec{v}_A$ và $\vec{v}_B$ song song với nhau $\implies$ tâm vận tốc tức thời $P$ của thanh truyền $AB$ ở vô cùng:
+     $$\omega_{AB} = 0, \qquad v_B = v_A = 2\text{ m/s} \quad (\text{thanh } AB\text{ tịnh tiến tức thời})$$
+2. **Bài toán gia tốc:**
+   - Vì tay quay $OA$ quay đều ($\varepsilon_0 = 0$) nên gia tốc điểm $A$ chỉ có thành phần hướng tâm dọc từ $A$ về $O$:
+     $$a_A = a_A^n = \omega_0^2 r = 10^2 \times 0.2 = 20\text{ m/s}^2 \quad (\text{thẳng đứng hướng xuống})$$
+   - Vì $\omega_{AB} = 0$ tại thời điểm khảo sát nên $a_{BA}^n = \omega_{AB}^2 \cdot AB = 0$. Phương trình gia tốc:
+     $$\vec{a}_B = \vec{a}_A + \vec{a}_{BA}^\tau \quad (\text{với } \vec{a}_{BA}^\tau \perp AB)$$
+   - Góc nghiêng $\beta$ của thanh $AB$ so với phương ngang $OB$: $\sin\beta = \frac{r}{l} = \frac{0.2}{0.4} = \frac{1}{2} \implies \beta = 30^\circ$.
+   - Chiếu phương trình vectơ gia tốc lên phương thanh $AB$ (để khử $\vec{a}_{BA}^\tau$):
+     $$a_B \cos 30^\circ = -a_A \sin 30^\circ \implies |a_B| = a_A \tan 30^\circ = \frac{20}{\sqrt{3}} \approx 11.55\text{ m/s}^2$$
+
+---
+
+## 3.4. BÀI TẬP TỰ RÈN LUYỆN (CÓ ĐÁP SỐ)
 
 ::: info Bài 3-1: Bánh xe lăn không trượt trên đường ray phẳng
 Bánh xe bán kính $R = 0.5\text{ m}$ lăn không trượt trên đường ray ngang. Trục bánh xe di chuyển với vận tốc không đổi $v_O = 4\text{ m/s}$. Tìm vận tốc của điểm cao nhất $A$ trên vành bánh xe và điểm $B$ ở vị trí ngang tâm bánh xe.

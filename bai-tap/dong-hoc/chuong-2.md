@@ -66,9 +66,19 @@ Khi hai bánh truyền động tiếp xúc không trượt tại điểm ăn kh�
 
 ---
 
-## 2.2. BÀI GIẢI MẪU
+## 2.2. HƯỚNG DẪN ÁP DỤNG & PHƯƠNG PHÁP GIẢI
 
-### Thí dụ 7-1: Hãm trục máy quay chậm dần đều
+1. **Liên hệ giữa khâu quay và vật tịnh tiến (cơ cấu tời, ròng rọc, thanh răng):**
+   - Khi dây cáp quấn/nhả không trượt trên tang trống bán kính $r$: vận tốc dài và gia tốc của vật treo $P$ bằng vận tốc dài và gia tốc tiếp tuyến của điểm trên vành tang trống:
+     $$v_P = r \cdot \omega, \qquad a_P = r \cdot \varepsilon, \qquad s_P = r \cdot \varphi$$
+2. **Phân tích hệ truyền động nhiều trục (hộp tốc độ):**
+   - Viết liên tiếp tỉ số truyền giữa từng cặp bánh răng ăn khớp hoặc bộ truyền đai từ trục dẫn I đến trục cuối, sau đó suy ra $\omega_k$ và $\varepsilon_k$ theo tỷ lệ nghịch của bán kính (hoặc số răng).
+
+---
+
+## 2.3. BÀI GIẢI MẪU (Chương 7 Sách Bài Tập Tập 2)
+
+### Thí dụ 2-1 (Thí dụ 7-1 sách gốc): Hãm trục máy quay chậm dần đều
 
 **Đề bài:** Một trục máy đang quay đều với tốc độ $n_0 = 600\text{ vòng/phút}$ thì bị ngắt điện hãm phanh lại. Sau khoảng thời gian $t_1 = 20\text{ s}$ trục dừng hẳn lại. Coi chuyển động hãm là quay chậm dần đều.
 1. Tính gia tốc góc $\varepsilon$ và số vòng quay $N$ mà trục đã quay được từ khi hãm đến lúc dừng.
@@ -105,7 +115,24 @@ $$a = \sqrt{a_\tau^2 + a_n^2} = \sqrt{(0.1\pi)^2 + (10\pi^2)^2} \approx 98.7\tex
 
 ---
 
-## 2.3. BÀI TẬP TỰ RÈN LUYỆN (CÓ ĐÁP SỐ)
+### Thí dụ 2-2 (Thí dụ 7-3 sách gốc): Hệ tời nâng vật qua cặp bánh răng ăn khớp
+
+**Đề bài:** Bánh răng 1 bán kính $R_1 = 10\text{ cm}$ ăn khớp ngoài với bánh răng 2 bán kính $R_2 = 25\text{ cm}$. Đồng trục với bánh răng 2 có gắn chặt tang tời bán kính $r = 15\text{ cm}$ để cuốn dây nâng vật nặng $A$ đi lên theo quy luật $s = 0.6 t^2$ ($s$ đo bằng $\text{m}$, $t$ bằng $\text{s}$). Xác định vận tốc góc $\omega_1$, gia tốc góc $\varepsilon_1$ của bánh răng 1 và gia tốc toàn phần của một điểm $M$ trên vành bánh răng 1 tại thời điểm $t = 2\text{ s}$.
+
+**Bài giải:**
+
+1. **Vận tốc và gia tốc của vật nặng $A$ lúc $t = 2\text{ s}$:**
+   $$v_A = \dot{s} = 1.2 t = 2.4\text{ m/s}, \qquad a_A = \ddot{s} = 1.2\text{ m/s}^2$$
+2. **Vận tốc góc và gia tốc góc của trục II (bánh răng 2 và tang tời):**
+   $$\omega_2 = \frac{v_A}{r} = \frac{2.4}{0.15} = 16\text{ rad/s}, \qquad \varepsilon_2 = \frac{a_A}{r} = \frac{1.2}{0.15} = 8\text{ rad/s}^2$$
+3. **Vận tốc góc, gia tốc góc và gia tốc điểm $M$ trên vành bánh răng 1:**
+   $$\omega_1 = \omega_2 \frac{R_2}{R_1} = 16 \times \frac{25}{10} = 40\text{ rad/s}, \qquad \varepsilon_1 = \varepsilon_2 \frac{R_2}{R_1} = 8 \times 2.5 = 20\text{ rad/s}^2$$
+   $$a_{M\tau} = \varepsilon_1 R_1 = 20 \times 0.1 = 2\text{ m/s}^2, \qquad a_{Mn} = \omega_1^2 R_1 = 40^2 \times 0.1 = 160\text{ m/s}^2$$
+   $$a_M = \sqrt{a_{M\tau}^2 + a_{Mn}^2} = \sqrt{2^2 + 160^2} \approx 160.01\text{ m/s}^2$$
+
+---
+
+## 2.4. BÀI TẬP TỰ RÈN LUYỆN (CÓ ĐÁP SỐ)
 
 ::: info Bài 2-1: Hệ bánh răng truyền động nhiều cấp
 Hệ truyền động gồm bánh răng 1 ($Z_1 = 20$ răng) quay với tốc độ $n_1 = 1200\text{ vòng/phút}$ ăn khớp ngoài với bánh 2 ($Z_2 = 60$ răng). Trục của bánh 2 gắn đồng trục với bánh 3 ($Z_3 = 25$ răng) ăn khớp trong với vành răng 4 ($Z_4 = 100$ răng). Tìm tốc độ quay của vành răng 4.

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 270" width="100%" height="auto" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <marker id="arr-red" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#dc2626" />
+    </marker>
+    <marker id="arr-blue" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#2563eb" />
+    </marker>
+    <marker id="arr-green" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#16a34a" />
+    </marker>
+  </defs>
+  <style>
+    text { font-family: 'Times New Roman', serif; }
+    .lbl { font-size: 15px; font-style: italic; fill: #0f172a; }
+    .lbl-bold { font-size: 17px; font-style: italic; font-weight: bold; fill: #0f172a; }
+  </style>
+
+  <!-- Đường cong quỹ đạo (C) -->
+  <path d="M 45 220 C 120 75, 290 55, 485 185" fill="none" stroke="#1e293b" stroke-width="2.5" />
+  <text x="470" y="165" class="lbl-bold">Quỹ đạo (C)</text>
+
+  <!-- Điểm gốc O trên quỹ đạo (95, 162) -->
+  <circle cx="95" cy="162" r="4.5" fill="#0f172a" />
+  <text x="75" y="160" class="lbl-bold">O (s = 0)</text>
+
+  <!-- Chiều dương(+) của tọa độ cong s = cung OM -->
+  <path d="M 105 135 Q 165 88 225 85" fill="none" stroke="#0284c7" stroke-width="1.8" stroke-dasharray="4,2" marker-end="url(#arr-blue)" />
+  <text x="155" y="85" class="lbl-bold" fill="#0284c7">s = cung OM (+)</text>
+
+  <!-- Động điểm M(265, 97) trên quỹ đạo -->
+  <circle cx="265" cy="97" r="5" fill="#dc2626" />
+  <text x="255" y="82" class="lbl-bold" fill="#dc2626">M</text>
+
+  <!-- Trục tiếp tuyến Mt (vectơ đơn vị τ) theo chiều dương của cung s -->
+  <line x1="265" y1="97" x2="365" y2="112" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arr-red)" />
+  <text x="372" y="116" class="lbl-bold" fill="#dc2626">τ (tiếp tuyến)</text>
+
+  <!-- Trục pháp tuyến chính Mn (vectơ đơn vị n) hướng về tâm cong K(243, 242) -->
+  <line x1="265" y1="97" x2="251" y2="190" stroke="#16a34a" stroke-width="2.5" marker-end="url(#arr-green)" />
+  <text x="260" y="182" class="lbl-bold" fill="#16a34a">n (pháp tuyến chính)</text>
+
+  <!-- Đường bán kính cong ρ = MK tới tâm cong K(243, 242) -->
+  <line x1="251" y1="190" x2="243" y2="242" stroke="#94a3b8" stroke-width="1.4" stroke-dasharray="4,3" />
+  <circle cx="243" cy="242" r="4" fill="#475569" />
+  <text x="252" y="246" class="lbl-bold" fill="#475569">K (tâm cong, ρ = MK)</text>
+
+  <!-- Trục trùng pháp tuyến Mb (b = τ × n) -->
+  <line x1="265" y1="97" x2="215" y2="42" stroke="#2563eb" stroke-width="2.2" marker-end="url(#arr-blue)" />
+  <text x="150" y="38" class="lbl-bold" fill="#2563eb">b (trùng pháp tuyến)</text>
+</svg>
