@@ -1,6 +1,7 @@
 <script setup>
 import { ref, reactive, onMounted, onUnmounted, watch, nextTick } from 'vue'
 import {
+  extractTrailingSlashToken,
   getAutocompleteSuggestions,
   tryImmediateBraceTransform,
   tryExpandCommandAtCursor
@@ -31,7 +32,6 @@ const editorRef = ref(null)
 const isDrawing = ref(false)
 const strokeHistory = ref([])
 let ctx = null
-let resizeObserver = null
 let savedRange = null
 
 // Smart Drawing & Shape Snap State
@@ -39,8 +39,8 @@ const strokePoints = ref([])
 const snappedBadgeText = ref('')
 let snapshotBeforeStroke = null
 let holdSnapTimer = null
-let activeSnappedShape = null // null | 'line' | 'arrow' | 'circle' | 'square' | 'rect' | 'triangle'
-let snapBoundingBox = null // { minX, minY, maxX, maxY } when snapped from freehand loop
+let activeSnappedShape = null
+let snapBoundingBox = null
 const pressedKeys = reactive({
   shift: false,
   alt: false,
@@ -67,7 +67,6 @@ const colorThemes = {
   white: { bg: '#ffffff', header: '#f8fafc', border: '#cbd5e1', text: '#0f172a' }
 }
 
-// Helper: Escape plain text to HTML for legacy notes
 function plainTextToHtml(txt) {
   if (!txt) return ''
   return txt
@@ -77,7 +76,6 @@ function plainTextToHtml(txt) {
     .replace(/\n/g, '<br>')
 }
 
-// Initialize editor content from note.html or note.text
 function syncEditorFromNote() {
   const el = editorRef.value
   if (!el) return
@@ -89,7 +87,6 @@ function syncEditorFromNote() {
   }
 }
 
-// Save current selection range inside editorRef
 function saveSelection() {
   if (typeof window === 'undefined') return
   const sel = window.getSelection()
@@ -115,7 +112,6 @@ function restoreSelection() {
   }
 }
 
-// Query active rich-text formatting states and notify parent toolbar
 function checkFormatState() {
   if (typeof document === 'undefined' || !editorRef.value) return
   saveSelection()
@@ -137,7 +133,6 @@ function checkFormatState() {
   }
 }
 
-// Execute rich-text formatting command from dock toolbar
 function execFormat(cmd, val = null) {
   if (!editorRef.value) return
   restoreSelection()
@@ -192,7 +187,7 @@ function onPointerMove(e) {
     const dy = e.pageY - resizeStart.mouseY
     props.note.width = Math.max(260, resizeStart.width + dx)
     props.note.height = Math.max(200, resizeStart.height + dy)
-    nextTick(() => resizeCanvas())
+    nextTick(() => resizeCanvas(true))
     emit('update', props.note)
   }
 }
@@ -226,12 +221,16 @@ function onResizePointerDown(e) {
 // Toggle collapse ("Kéo rèm")
 function toggleCollapse() {
   props.note.isCollapsed = !props.note.isCollapsed
+  suggestions.value = []
+  currentSlashInfo = null
   emit('update', props.note)
 }
 
 function onCardPointerDown() {
-  emit('select', props.note.id)
-  emit('bring-to-front', props.note.id)
+  if (!props.isActive) {
+    emit('select', props.note.id)
+    emit('bring-to-front', props.note.id)
+  }
 }
 
 // === MATH COMMAND AUTOCOMPLETE & SHORTCUT EXPANSION IN CONTENTEDITABLE ===
@@ -269,9 +268,8 @@ function updateAutocompleteState() {
   }
   const { node, offset } = info
   const before = (node.nodeValue || '').slice(0, offset)
-  const match = before.match(/([/\\][a-zA-Z0-9_^{()]*)$/)
-  if (match && match[1].length >= 2) {
-    const query = match[1]
+  const query = extractTrailingSlashToken(before)
+  if (query && query.length >= 2) {
     const list = getAutocompleteSuggestions(query, 6)
     suggestions.value = list
     selectedSuggestionIdx.value = 0
@@ -284,7 +282,8 @@ function updateAutocompleteState() {
   }
 }
 
-function onEditorInput() {
+function onEditorInput(e) {
+  if (e && e.isComposing) return
   saveSelection()
   const info = getActiveTextNodeAndOffset()
   if (info) {
@@ -321,6 +320,10 @@ function applySuggestion(item) {
 }
 
 function onEditorKeyDown(e) {
+  // Never interfere with Vietnamese IME (Unikey / EVKey / Telex / VNI)
+  if (e.isComposing || e.keyCode === 229) return
+
+  // Navigate autocomplete popup if visible
   if (suggestions.value.length > 0) {
     if (e.key === 'ArrowDown') {
       e.preventDefault()
@@ -332,7 +335,7 @@ function onEditorKeyDown(e) {
       selectedSuggestionIdx.value = (selectedSuggestionIdx.value - 1 + suggestions.value.length) % suggestions.value.length
       return
     }
-    if (e.key === 'Tab' || e.key === 'Enter') {
+    if (e.key === 'Tab') {
       e.preventDefault()
       applySuggestion(suggestions.value[selectedSuggestionIdx.value])
       return
@@ -345,6 +348,7 @@ function onEditorKeyDown(e) {
     }
   }
 
+  // Expand exact command / ^sup / _sub when Space, Tab, or Enter is pressed
   if (e.key === ' ' || e.key === 'Tab' || e.key === 'Enter') {
     const info = getActiveTextNodeAndOffset()
     if (info) {
@@ -352,7 +356,7 @@ function onEditorKeyDown(e) {
       const expanded = tryExpandCommandAtCursor(node.nodeValue || '', offset)
       if (expanded) {
         e.preventDefault()
-        const suffix = e.key === ' ' ? '\u00A0' : ''
+        const suffix = e.key === ' ' ? ' ' : ''
         node.nodeValue =
           expanded.text.slice(0, expanded.cursor) +
           suffix +
@@ -362,12 +366,15 @@ function onEditorKeyDown(e) {
         currentSlashInfo = null
         setCaretInTextNode(node, nextPos)
         if (e.key === 'Enter') {
-          document.execCommand('insertLineBreak')
+          document.execCommand('insertParagraph')
         }
         syncNoteFromEditor()
         return
       }
     }
+    // Dismiss autocomplete if user pressed Space/Enter without exact command match
+    suggestions.value = []
+    currentSlashInfo = null
   }
 }
 
@@ -397,9 +404,16 @@ function insertTextAtCursor(str) {
 }
 
 // === SMART DRAWING, SHAPE TOOLS, KEYBOARD HOTKEYS & HOLD-TO-SNAP ===
+function getTargetCanvasSize() {
+  const w = Math.max(250, (props.note.width || 340) - 3)
+  const h = Math.max(160, (props.note.height || 340) - 38)
+  return { width: w, height: h }
+}
+
 function initCanvas() {
+  if (props.note.isCollapsed) return
   const canvas = canvasRef.value
-  if (!canvas || !canvas.parentElement) return
+  if (!canvas) return
   resizeCanvas(false)
   if (props.note.drawData) {
     const img = new Image()
@@ -407,6 +421,8 @@ function initCanvas() {
       const dpr = window.devicePixelRatio || 1
       ctx = canvas.getContext('2d')
       if (ctx) {
+        ctx.globalCompositeOperation = 'source-over'
+        ctx.clearRect(0, 0, canvas.width / dpr, canvas.height / dpr)
         ctx.drawImage(img, 0, 0, canvas.width / dpr, canvas.height / dpr)
       }
     }
@@ -415,12 +431,19 @@ function initCanvas() {
 }
 
 function resizeCanvas(preserve = true) {
+  if (props.note.isCollapsed) return
   const canvas = canvasRef.value
-  if (!canvas || !canvas.parentElement) return
-  const rect = canvas.parentElement.getBoundingClientRect()
-  if (rect.width === 0 || rect.height === 0) return
+  if (!canvas) return
+  const { width, height } = getTargetCanvasSize()
+  if (width <= 0 || height <= 0) return
 
   const dpr = window.devicePixelRatio || 1
+  const targetW = Math.round(width * dpr)
+  const targetH = Math.round(height * dpr)
+
+  if (canvas.width === targetW && canvas.height === targetH && ctx) {
+    return
+  }
 
   let temp = null
   if (preserve && canvas.width > 0 && canvas.height > 0) {
@@ -431,10 +454,10 @@ function resizeCanvas(preserve = true) {
     if (tempCtx) tempCtx.drawImage(canvas, 0, 0)
   }
 
-  canvas.width = Math.round(rect.width * dpr)
-  canvas.height = Math.round(rect.height * dpr)
-  canvas.style.width = rect.width + 'px'
-  canvas.style.height = rect.height + 'px'
+  canvas.width = targetW
+  canvas.height = targetH
+  canvas.style.width = width + 'px'
+  canvas.style.height = height + 'px'
 
   ctx = canvas.getContext('2d')
   if (ctx) {
@@ -449,7 +472,7 @@ function resizeCanvas(preserve = true) {
 
 function saveCanvasData() {
   const canvas = canvasRef.value
-  if (!canvas) return
+  if (!canvas || props.note.isCollapsed) return
   props.note.drawData = canvas.toDataURL()
   emit('update', props.note)
 }
@@ -480,7 +503,6 @@ function applyStrokeStyle() {
   }
 }
 
-// Determine which geometric shape is currently forced by toolbar or keyboard hotkeys
 function getForcedShapeFromInput(e) {
   const tool = props.note.drawTool || 'freehand'
   if (tool && tool !== 'freehand' && tool !== 'eraser') {
@@ -489,24 +511,16 @@ function getForcedShapeFromInput(e) {
   const shiftHeld = e?.shiftKey || pressedKeys.shift
   const altHeld = e?.altKey || pressedKeys.alt
 
-  // Hotkey combinations while drawing:
-  // Shift+C or C -> Perfect Circle
   if (pressedKeys.c) return 'circle'
-  // Shift+V or V -> Perfect Square
   if (pressedKeys.v) return 'square'
-  // Shift+R or R -> Perfect Rectangle
   if (pressedKeys.r) return 'rect'
-  // Shift+T or T -> Perfect Triangle
   if (pressedKeys.t) return 'triangle'
-  // Shift+A or A or Alt -> Force Vector Arrow
   if (pressedKeys.a || altHeld) return 'arrow'
-  // Shift+L or L or Shift alone -> Straight Line
   if (pressedKeys.l || shiftHeld) return 'line'
 
   return null
 }
 
-// Compute bounding box of recorded stroke points
 function computePointsBBox(pts) {
   let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity
   for (const p of pts) {
@@ -518,7 +532,6 @@ function computePointsBBox(pts) {
   return { minX, minY, maxX, maxY }
 }
 
-// Smart Freehand Shape Recognizer (triggered on 380ms hold at end of stroke)
 function recognizeFreehandShape(pts) {
   if (!pts || pts.length < 6) return null
   const start = pts[0]
@@ -533,7 +546,6 @@ function recognizeFreehandShape(pts) {
   }
   if (pathLen < 24) return null
 
-  // 1. Straight line check
   if (directDist / pathLen > 0.85) {
     return { type: 'line', bbox: null }
   }
@@ -544,14 +556,12 @@ function recognizeFreehandShape(pts) {
   const diag = Math.hypot(w, h)
   if (w < 16 || h < 16) return null
 
-  // 2. Closed loop check (start & end points close relative to path length)
   if (directDist < diag * 0.48 && pathLen > diag * 1.65) {
     const cx = (bbox.minX + bbox.maxX) / 2
     const cy = (bbox.minY + bbox.maxY) / 2
     const rx = w / 2
     const ry = h / 2
 
-    // Normalized radial distance from center
     let sumR = 0
     const normRs = []
     for (const p of pts) {
@@ -566,7 +576,6 @@ function recognizeFreehandShape(pts) {
     }
     const stdR = Math.sqrt(varR / pts.length)
 
-    // Shoelace polygon area
     let area2 = 0
     for (let i = 0; i < pts.length; i++) {
       const p1 = pts[i]
@@ -577,22 +586,18 @@ function recognizeFreehandShape(pts) {
     const areaRatio = polyArea / (w * h)
     const isNearlyEqualSide = Math.abs(w - h) / Math.max(w, h) < 0.22
 
-    // Circle / Ellipse check: low radial std deviation and areaRatio around pi/4 (0.785)
     if (stdR < 0.145 && areaRatio > 0.62 && areaRatio < 0.90) {
       return { type: 'circle', bbox }
     }
-    // Triangle check: areaRatio around 0.5
     if (areaRatio >= 0.34 && areaRatio <= 0.61) {
       return { type: 'triangle', bbox }
     }
-    // Square / Rectangle check
     return { type: isNearlyEqualSide ? 'square' : 'rect', bbox }
   }
 
   return null
 }
 
-// Render geometric shape onto canvas
 function renderGeometricShape(shapeType, pStart, pEnd, customBBox = null, constrainAspect = false) {
   if (!ctx || !canvasRef.value) return
   if (snapshotBeforeStroke) {
@@ -605,8 +610,6 @@ function renderGeometricShape(shapeType, pStart, pEnd, customBBox = null, constr
   let x2 = pEnd.x
   let y2 = pEnd.y
 
-  // If snapped from a closed freehand loop (e.g. user drew a full circle returning to start point),
-  // use the stroke's bounding box when start & end are very close!
   const dragDist = Math.hypot(x2 - x1, y2 - y1)
   if (customBBox && dragDist < Math.hypot(customBBox.maxX - customBBox.minX, customBBox.maxY - customBBox.minY) * 0.45 && shapeType !== 'line' && shapeType !== 'arrow') {
     x1 = customBBox.minX
@@ -620,7 +623,6 @@ function renderGeometricShape(shapeType, pStart, pEnd, customBBox = null, constr
   if (shapeType === 'line' || shapeType === 'arrow') {
     let tx = x2
     let ty = y2
-    // Snap angle to 15° increments (0°, 30°, 45°, 60°, 90°...) when Shift is held with Line/Arrow tool
     if (constrainAspect) {
       const dx = x2 - x1
       const dy = y2 - y1
@@ -655,8 +657,8 @@ function renderGeometricShape(shapeType, pStart, pEnd, customBBox = null, constr
 
   const left = Math.min(x1, x2)
   const top = Math.min(y1, y2)
-  let w = Math.abs(x2 - x1)
-  let h = Math.abs(y2 - y1)
+  const w = Math.abs(x2 - x1)
+  const h = Math.abs(y2 - y1)
 
   if (shapeType === 'square') {
     const side = Math.max(w, h)
@@ -681,27 +683,14 @@ function renderGeometricShape(shapeType, pStart, pEnd, customBBox = null, constr
   if (shapeType === 'circle') {
     const cx = (x1 + x2) / 2
     const cy = (y1 + y2) / 2
-    const r = Math.max(w, h) / 2
+    const r = Math.max(2, Math.max(w, h) / 2)
     ctx.arc(cx, cy, r, 0, Math.PI * 2)
     ctx.stroke()
     return
   }
 
-  if (shapeType === 'ellipse') {
-    const cx = (x1 + x2) / 2
-    const cy = (y1 + y2) / 2
-    if (constrainAspect) {
-      const r = Math.max(w, h) / 2
-      ctx.arc(cx, cy, r, 0, Math.PI * 2)
-    } else {
-      ctx.ellipse(cx, cy, Math.max(2, w / 2), Math.max(2, h / 2), 0, 0, Math.PI * 2)
-    }
-    ctx.stroke()
-    return
-  }
-
   if (shapeType === 'triangle') {
-    const midX = (left + left + w) / 2
+    const midX = left + w / 2
     ctx.moveTo(midX, top)
     ctx.lineTo(left + w, top + h)
     ctx.lineTo(left, top + h)
@@ -728,13 +717,18 @@ function showSnapToast(shapeType) {
 
 function onCanvasPointerDown(e) {
   if (props.note.mode !== 'draw' || props.note.isCollapsed) return
+  if (!props.isActive) {
+    emit('select', props.note.id)
+    emit('bring-to-front', props.note.id)
+  }
   isDrawing.value = true
   snappedBadgeText.value = ''
   const rect = canvasRef.value.getBoundingClientRect()
   const x = e.clientX - rect.left
   const y = e.clientY - rect.top
 
-  if (!ctx) ctx = canvasRef.value.getContext('2d')
+  if (!ctx) initCanvas()
+  if (!ctx) return
 
   strokePoints.value = [{ x, y }]
   snapBoundingBox = null
@@ -768,7 +762,6 @@ function onCanvasPointerMove(e) {
 
   strokePoints.value.push({ x, y })
 
-  // Check if user pressed a shape hotkey mid-stroke
   const forcedNow = getForcedShapeFromInput(e)
   if (forcedNow && activeSnappedShape !== forcedNow) {
     activeSnappedShape = forcedNow
@@ -788,12 +781,10 @@ function onCanvasPointerMove(e) {
     return
   }
 
-  // Freehand drawing
   applyStrokeStyle()
   ctx.lineTo(x, y)
   ctx.stroke()
 
-  // Hold-to-Snap Timer (GoodNotes style: pause pointer for 380ms at end of stroke to auto-snap!)
   if (props.note.autoShape !== false && (props.note.drawTool || 'freehand') === 'freehand') {
     if (holdSnapTimer) clearTimeout(holdSnapTimer)
     holdSnapTimer = setTimeout(() => {
@@ -830,11 +821,30 @@ function onCanvasPointerUp() {
   }
 }
 
-// Track keyboard hotkeys (Shift, C, V, R, T, A, L) for mid-stroke shape snapping
+function resetPressedKeys() {
+  pressedKeys.shift = false
+  pressedKeys.alt = false
+  pressedKeys.c = false
+  pressedKeys.v = false
+  pressedKeys.r = false
+  pressedKeys.t = false
+  pressedKeys.a = false
+  pressedKeys.l = false
+}
+
 function onGlobalKeyDown(e) {
   if (!props.isActive || props.note.mode !== 'draw' || props.note.isCollapsed) return
   const tag = (e.target?.tagName || '').toLowerCase()
   if (tag === 'input' || tag === 'textarea' || e.target?.isContentEditable) return
+
+  // Support Ctrl+Z for Undo in Draw mode, and ignore all other Ctrl/Meta shortcuts!
+  if (e.ctrlKey || e.metaKey) {
+    if (e.key.toLowerCase() === 'z') {
+      e.preventDefault()
+      undoCanvas()
+    }
+    return
+  }
 
   if (e.key === 'Shift') pressedKeys.shift = true
   if (e.key === 'Alt') pressedKeys.alt = true
@@ -843,7 +853,6 @@ function onGlobalKeyDown(e) {
     pressedKeys[k] = true
   }
 
-  // If currently drawing a stroke, immediately snap when hotkey is pressed!
   if (isDrawing.value && strokePoints.value.length >= 2) {
     const forced = getForcedShapeFromInput(e)
     if (forced) {
@@ -897,18 +906,13 @@ onMounted(() => {
   if (typeof window !== 'undefined') {
     window.addEventListener('keydown', onGlobalKeyDown)
     window.addEventListener('keyup', onGlobalKeyUp)
+    window.addEventListener('blur', resetPressedKeys)
   }
   nextTick(() => {
     syncEditorFromNote()
     setTimeout(() => {
       initCanvas()
-      if (workspaceRef.value && typeof ResizeObserver !== 'undefined') {
-        resizeObserver = new ResizeObserver(() => {
-          resizeCanvas(true)
-        })
-        resizeObserver.observe(workspaceRef.value)
-      }
-    }, 60)
+    }, 50)
   })
 })
 
@@ -916,22 +920,23 @@ onUnmounted(() => {
   if (typeof window !== 'undefined') {
     window.removeEventListener('keydown', onGlobalKeyDown)
     window.removeEventListener('keyup', onGlobalKeyUp)
+    window.removeEventListener('blur', resetPressedKeys)
   }
   if (holdSnapTimer) clearTimeout(holdSnapTimer)
-  if (resizeObserver) resizeObserver.disconnect()
 })
 
 watch(() => props.note.isCollapsed, (newVal) => {
   if (!newVal) {
     nextTick(() => {
       syncEditorFromNote()
-      setTimeout(() => initCanvas(), 80)
+      setTimeout(() => initCanvas(), 60)
     })
   }
 })
 
 watch(() => props.note.mode, (newMode) => {
   if (newMode === 'text') {
+    resetPressedKeys()
     nextTick(() => {
       if (editorRef.value) editorRef.value.focus()
     })
@@ -1046,13 +1051,13 @@ watch(() => props.note.mode, (newMode) => {
           @blur="() => { saveSelection(); setTimeout(() => { suggestions = [] }, 180); }"
         />
 
-        <!-- Live Inline \command Autocomplete Popup -->
+        <!-- Live Inline /command Autocomplete Popup -->
         <div
           v-if="suggestions.length > 0 && (note.mode || 'text') === 'text'"
           class="math-autocomplete-popup"
         >
           <div class="math-ac-header">
-            <span>Gợi ý lệnh Toán - Cơ học (Nhấn Tab / Enter / Space)</span>
+            <span>Gợi ý lệnh Toán - Cơ học (Nhấn Tab hoặc Click để chọn)</span>
           </div>
           <button
             v-for="(item, idx) in suggestions"
@@ -1113,8 +1118,6 @@ watch(() => props.note.mode, (newMode) => {
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22), 0 3px 8px rgba(0, 0, 0, 0.12);
   display: flex;
   flex-direction: column;
-  user-select: none;
-  touch-action: none;
   transition: box-shadow 0.2s ease, border-color 0.2s ease;
   overflow: hidden;
   box-sizing: border-box;
@@ -1151,6 +1154,8 @@ watch(() => props.note.mode, (newMode) => {
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   cursor: grab;
   flex-shrink: 0;
+  user-select: none;
+  touch-action: none;
 }
 
 .sticky-note-card.is-dragging .note-header {
@@ -1242,14 +1247,10 @@ watch(() => props.note.mode, (newMode) => {
   height: calc(100% - 36px);
   position: relative;
   overflow: hidden;
-  transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease;
 }
 
 .note-curtain-wrapper.curtain-rolled-up {
-  height: 0 !important;
-  max-height: 0 !important;
-  opacity: 0;
-  pointer-events: none;
+  display: none !important;
 }
 
 /* Workspace: Rich Editor & Drawing Canvas */
@@ -1258,7 +1259,7 @@ watch(() => props.note.mode, (newMode) => {
   flex: 1 1 auto;
   width: 100%;
   height: 100%;
-  min-height: 180px;
+  min-height: 164px;
   box-sizing: border-box;
   overflow: hidden;
   background: transparent;
@@ -1282,7 +1283,9 @@ watch(() => props.note.mode, (newMode) => {
   line-height: 1.5;
   outline: none;
   box-sizing: border-box;
-  user-select: text;
+  user-select: text !important;
+  -webkit-user-select: text !important;
+  cursor: text;
   z-index: 2;
   overflow-y: auto;
   white-space: pre-wrap;
@@ -1303,6 +1306,7 @@ watch(() => props.note.mode, (newMode) => {
   opacity: 0.95;
   cursor: default;
   pointer-events: none;
+  user-select: none !important;
 }
 
 /* Live Inline Math Autocomplete Popup */
@@ -1321,6 +1325,7 @@ watch(() => props.note.mode, (newMode) => {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  user-select: none;
 }
 
 .math-ac-header {
@@ -1391,9 +1396,8 @@ watch(() => props.note.mode, (newMode) => {
 /* Drawing Canvas Layer */
 .note-canvas {
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+  top: 0;
+  left: 0;
   pointer-events: none;
   z-index: 4;
 }
@@ -1402,6 +1406,8 @@ watch(() => props.note.mode, (newMode) => {
   pointer-events: auto;
   cursor: crosshair;
   z-index: 10;
+  user-select: none;
+  touch-action: none;
 }
 
 .snap-badge-overlay {
@@ -1429,36 +1435,6 @@ watch(() => props.note.mode, (newMode) => {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-.draw-hint-overlay {
-  position: absolute;
-  top: 10px;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  pointer-events: none;
-  z-index: 8;
-}
-
-.hint-pill {
-  background: rgba(15, 23, 42, 0.78);
-  color: #ffffff;
-  font-size: 10.5px;
-  padding: 4px 10px;
-  border-radius: 9999px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  pointer-events: none;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-}
-
-.hint-svg {
-  display: inline-block;
-  flex-shrink: 0;
-}
-
 /* Bottom resize corner handle */
 .note-resize-handle {
   position: absolute;
@@ -1473,6 +1449,8 @@ watch(() => props.note.mode, (newMode) => {
   opacity: 0.45;
   transition: opacity 0.15s ease;
   z-index: 20;
+  user-select: none;
+  touch-action: none;
 }
 
 .note-resize-handle:hover {

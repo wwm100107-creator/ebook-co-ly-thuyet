@@ -1,4 +1,8 @@
-// Comprehensive Math & Theoretical Mechanics Symbols + Command Shortcuts (Supports BOTH /cmd and \cmd!)
+// Comprehensive Math & Theoretical Mechanics Symbols + Command Shortcuts
+// Conflict-free design:
+// - Supports BOTH /cmd and \cmd
+// - Only triggers when '/' or '\' is at the start of a token (never inside m/s, rad/s, dv/dt, a/b, 1/2!)
+// - No 1-letter slash aliases that could collide with algebraic division
 
 export const MATH_CATEGORIES = [
   { id: 'all', name: 'Tất cả' },
@@ -12,39 +16,39 @@ export const MATH_CATEGORIES = [
 
 export const MATH_SYMBOLS = [
   // === 1. CƠ HỌC & VECTƠ (MECHANICS & VECTORS) ===
-  { symbol: 'F\u20d7', cmd: '/vec{F}', aliases: ['/vF', '/vec(F)'], label: 'Vectơ lực F', category: 'mechanics' },
-  { symbol: 'R\u20d7', cmd: '/vec{R}', aliases: ['/vR', '/vec(R)'], label: 'Hợp lực / Phản lực R', category: 'mechanics' },
-  { symbol: 'N\u20d7', cmd: '/vec{N}', aliases: ['/vN', '/vec(N)'], label: 'Phản lực pháp tuyến N', category: 'mechanics' },
-  { symbol: 'P\u20d7', cmd: '/vec{P}', aliases: ['/vP', '/vec(P)'], label: 'Trọng lực P', category: 'mechanics' },
-  { symbol: 'Q\u20d7', cmd: '/vec{Q}', aliases: ['/vQ', '/vec(Q)'], label: 'Lực Q', category: 'mechanics' },
-  { symbol: 'T\u20d7', cmd: '/vec{T}', aliases: ['/vT', '/vec(T)'], label: 'Lực căng dây T', category: 'mechanics' },
-  { symbol: 'S\u20d7', cmd: '/vec{S}', aliases: ['/vS', '/vec(S)'], label: 'Ứng lực / Xung lượng S', category: 'mechanics' },
-  { symbol: 'M\u20d7', cmd: '/vec{M}', aliases: ['/vM', '/vec(M)'], label: 'Vectơ mômen M', category: 'mechanics' },
-  { symbol: 'v\u20d7', cmd: '/vec{v}', aliases: ['/vv', '/vec(v)'], label: 'Vectơ vận tốc v', category: 'mechanics' },
-  { symbol: 'a\u20d7', cmd: '/vec{a}', aliases: ['/va', '/vec(a)'], label: 'Vectơ gia tốc a', category: 'mechanics' },
-  { symbol: 'r\u20d7', cmd: '/vec{r}', aliases: ['/vr', '/vec(r)'], label: 'Bán kính vectơ r', category: 'mechanics' },
-  { symbol: 'ω\u20d7', cmd: '/vec{omega}', aliases: ['/vomega', '/vw', '/vec(omega)'], label: 'Vectơ vận tốc góc ω', category: 'mechanics' },
-  { symbol: 'ε\u20d7', cmd: '/vec{eps}', aliases: ['/veps', '/vec(eps)'], label: 'Vectơ gia tốc góc ε', category: 'mechanics' },
-  { symbol: 'τ\u20d7', cmd: '/vec{tau}', aliases: ['/vtau', '/vec(tau)'], label: 'Vectơ đơn vị tiếp tuyến τ', category: 'mechanics' },
-  { symbol: 'n\u20d7', cmd: '/vec{n}', aliases: ['/vn', '/vec(n)'], label: 'Vectơ đơn vị pháp tuyến n', category: 'mechanics' },
-  { symbol: 'b\u20d7', cmd: '/vec{b}', aliases: ['/vb', '/vec(b)'], label: 'Vectơ trùng pháp tuyến b', category: 'mechanics' },
-  { symbol: 'K\u20d7', cmd: '/vec{K}', aliases: ['/vK', '/vec(K)'], label: 'Vectơ động lượng K', category: 'mechanics' },
-  { symbol: 'L\u20d7', cmd: '/vec{L}', aliases: ['/vL', '/vec(L)'], label: 'Mômen động lượng L', category: 'mechanics' },
-  { symbol: 'x\u0307', cmd: '/dot{x}', aliases: ['/dx', '/dot(x)'], label: 'Đạo hàm bậc 1 ẋ', category: 'mechanics' },
-  { symbol: 'x\u0308', cmd: '/ddot{x}', aliases: ['/ddx', '/ddot(x)'], label: 'Đạo hàm bậc 2 ẍ', category: 'mechanics' },
-  { symbol: 'y\u0307', cmd: '/dot{y}', aliases: ['/dy', '/dot(y)'], label: 'Đạo hàm bậc 1 ẏ', category: 'mechanics' },
-  { symbol: 'y\u0308', cmd: '/ddot{y}', aliases: ['/ddy', '/ddot(y)'], label: 'Đạo hàm bậc 2 ÿ', category: 'mechanics' },
-  { symbol: 's\u0307', cmd: '/dot{s}', aliases: ['/ds', '/dot(s)'], label: 'Vận tốc cong ṡ', category: 'mechanics' },
-  { symbol: 's\u0308', cmd: '/ddot{s}', aliases: ['/dds', '/ddot(s)'], label: 'Gia tốc tiếp s̈', category: 'mechanics' },
-  { symbol: 'φ\u0307', cmd: '/dot{phi}', aliases: ['/dphi', '/dot(phi)'], label: 'Vận tốc góc φ̇', category: 'mechanics' },
-  { symbol: 'φ\u0308', cmd: '/ddot{phi}', aliases: ['/ddphi', '/ddot(phi)'], label: 'Gia tốc góc φ̈', category: 'mechanics' },
-  { symbol: 'q\u0307', cmd: '/dot{q}', aliases: ['/dq', '/dot(q)'], label: 'Vận tốc suy rộng q̇', category: 'mechanics' },
-  { symbol: 'q\u0308', cmd: '/ddot{q}', aliases: ['/ddq', '/ddot(q)'], label: 'Gia tốc suy rộng q̈', category: 'mechanics' },
-  { symbol: 'vₐ', cmd: '/va_abs', aliases: ['v_a'], label: 'Vận tốc tuyệt đối vₐ', category: 'mechanics' },
-  { symbol: 'vₑ', cmd: '/ve_rel', aliases: ['v_e'], label: 'Vận tốc theo vₑ', category: 'mechanics' },
-  { symbol: 'vᵣ', cmd: '/vr_rel', aliases: ['v_r'], label: 'Vận tốc tương đối vᵣ', category: 'mechanics' },
-  { symbol: 'aₙ', cmd: '/an', aliases: ['a_n'], label: 'Gia tốc pháp tuyến aₙ', category: 'mechanics' },
-  { symbol: 'aₜ', cmd: '/at', aliases: ['a_t'], label: 'Gia tốc tiếp tuyến aₜ', category: 'mechanics' },
+  { symbol: 'F\u20d7', cmd: '/vF', aliases: ['/vec{F}', '/vec(F)'], label: 'Vectơ lực F', category: 'mechanics' },
+  { symbol: 'R\u20d7', cmd: '/vR', aliases: ['/vec{R}', '/vec(R)'], label: 'Hợp lực / Phản lực R', category: 'mechanics' },
+  { symbol: 'N\u20d7', cmd: '/vN', aliases: ['/vec{N}', '/vec(N)'], label: 'Phản lực pháp tuyến N', category: 'mechanics' },
+  { symbol: 'P\u20d7', cmd: '/vP', aliases: ['/vec{P}', '/vec(P)'], label: 'Trọng lực P', category: 'mechanics' },
+  { symbol: 'Q\u20d7', cmd: '/vQ', aliases: ['/vec{Q}', '/vec(Q)'], label: 'Lực Q', category: 'mechanics' },
+  { symbol: 'T\u20d7', cmd: '/vT', aliases: ['/vec{T}', '/vec(T)'], label: 'Lực căng dây T', category: 'mechanics' },
+  { symbol: 'S\u20d7', cmd: '/vS', aliases: ['/vec{S}', '/vec(S)'], label: 'Ứng lực / Xung lượng S', category: 'mechanics' },
+  { symbol: 'M\u20d7', cmd: '/vM', aliases: ['/vec{M}', '/vec(M)'], label: 'Vectơ mômen M', category: 'mechanics' },
+  { symbol: 'v\u20d7', cmd: '/vv', aliases: ['/vec{v}', '/vec(v)'], label: 'Vectơ vận tốc v', category: 'mechanics' },
+  { symbol: 'a\u20d7', cmd: '/va', aliases: ['/vec{a}', '/vec(a)'], label: 'Vectơ gia tốc a', category: 'mechanics' },
+  { symbol: 'r\u20d7', cmd: '/vr', aliases: ['/vec{r}', '/vec(r)'], label: 'Bán kính vectơ r', category: 'mechanics' },
+  { symbol: 'ω\u20d7', cmd: '/vw', aliases: ['/vomega', '/vec{omega}', '/vec(omega)'], label: 'Vectơ vận tốc góc ω', category: 'mechanics' },
+  { symbol: 'ε\u20d7', cmd: '/veps', aliases: ['/vec{eps}', '/vec(eps)'], label: 'Vectơ gia tốc góc ε', category: 'mechanics' },
+  { symbol: 'τ\u20d7', cmd: '/vtau', aliases: ['/vec{tau}', '/vec(tau)'], label: 'Vectơ đơn vị tiếp tuyến τ', category: 'mechanics' },
+  { symbol: 'n\u20d7', cmd: '/vn', aliases: ['/vec{n}', '/vec(n)'], label: 'Vectơ đơn vị pháp tuyến n', category: 'mechanics' },
+  { symbol: 'b\u20d7', cmd: '/vb', aliases: ['/vec{b}', '/vec(b)'], label: 'Vectơ trùng pháp tuyến b', category: 'mechanics' },
+  { symbol: 'K\u20d7', cmd: '/vK', aliases: ['/vec{K}', '/vec(K)'], label: 'Vectơ động lượng K', category: 'mechanics' },
+  { symbol: 'L\u20d7', cmd: '/vL', aliases: ['/vec{L}', '/vec(L)'], label: 'Mômen động lượng L', category: 'mechanics' },
+  { symbol: 'x\u0307', cmd: '/dx', aliases: ['/dot{x}', '/dot(x)'], label: 'Đạo hàm bậc 1 ẋ', category: 'mechanics' },
+  { symbol: 'x\u0308', cmd: '/ddx', aliases: ['/ddot{x}', '/ddot(x)'], label: 'Đạo hàm bậc 2 ẍ', category: 'mechanics' },
+  { symbol: 'y\u0307', cmd: '/dy', aliases: ['/dot{y}', '/dot(y)'], label: 'Đạo hàm bậc 1 ẏ', category: 'mechanics' },
+  { symbol: 'y\u0308', cmd: '/ddy', aliases: ['/ddot{y}', '/ddot(y)'], label: 'Đạo hàm bậc 2 ÿ', category: 'mechanics' },
+  { symbol: 's\u0307', cmd: '/ds', aliases: ['/dot{s}', '/dot(s)'], label: 'Vận tốc cong ṡ', category: 'mechanics' },
+  { symbol: 's\u0308', cmd: '/dds', aliases: ['/ddot{s}', '/ddot(s)'], label: 'Gia tốc tiếp s̈', category: 'mechanics' },
+  { symbol: 'φ\u0307', cmd: '/dphi', aliases: ['/dot{phi}', '/dot(phi)'], label: 'Vận tốc góc φ̇', category: 'mechanics' },
+  { symbol: 'φ\u0308', cmd: '/ddphi', aliases: ['/ddot{phi}', '/ddot(phi)'], label: 'Gia tốc góc φ̈', category: 'mechanics' },
+  { symbol: 'q\u0307', cmd: '/dq', aliases: ['/dot{q}', '/dot(q)'], label: 'Vận tốc suy rộng q̇', category: 'mechanics' },
+  { symbol: 'q\u0308', cmd: '/ddq', aliases: ['/ddot{q}', '/ddot(q)'], label: 'Gia tốc suy rộng q̈', category: 'mechanics' },
+  { symbol: 'vₐ', cmd: '/v_a', aliases: ['v_a'], label: 'Vận tốc tuyệt đối vₐ', category: 'mechanics' },
+  { symbol: 'vₑ', cmd: '/v_e', aliases: ['v_e'], label: 'Vận tốc theo vₑ', category: 'mechanics' },
+  { symbol: 'vᵣ', cmd: '/v_r', aliases: ['v_r'], label: 'Vận tốc tương đối vᵣ', category: 'mechanics' },
+  { symbol: 'aₙ', cmd: '/a_n', aliases: ['a_n'], label: 'Gia tốc pháp tuyến aₙ', category: 'mechanics' },
+  { symbol: 'aₜ', cmd: '/a_t', aliases: ['a_t'], label: 'Gia tốc tiếp tuyến aₜ', category: 'mechanics' },
   { symbol: 'a_C', cmd: '/aC', aliases: ['/ac'], label: 'Gia tốc Coriolis / khối tâm', category: 'mechanics' },
   { symbol: 'F_ms', cmd: '/fms', aliases: ['/Fms'], label: 'Lực ma sát F_ms', category: 'mechanics' },
   { symbol: 'F_qt', cmd: '/fqt', aliases: ['/Fqt'], label: 'Lực quán tính F_qt', category: 'mechanics' },
@@ -55,13 +59,13 @@ export const MATH_SYMBOLS = [
   { symbol: '∑m_O(F\u20d7ₖ) = 0', cmd: '/sumM', aliases: ['/sm'], label: 'Phương trình cân bằng mômen', category: 'mechanics' },
 
   // === 2. CHỮ HY LẠP (GREEK LETTERS) ===
-  { symbol: 'α', cmd: '/alpha', aliases: ['/a'], label: 'Alpha (góc α)', category: 'greek' },
-  { symbol: 'β', cmd: '/beta', aliases: ['/b'], label: 'Beta (góc β)', category: 'greek' },
-  { symbol: 'γ', cmd: '/gamma', aliases: ['/g'], label: 'Gamma (trọng lượng riêng γ)', category: 'greek' },
+  { symbol: 'α', cmd: '/alpha', aliases: ['/al'], label: 'Alpha (góc α)', category: 'greek' },
+  { symbol: 'β', cmd: '/beta', aliases: ['/be'], label: 'Beta (góc β)', category: 'greek' },
+  { symbol: 'γ', cmd: '/gamma', aliases: ['/ga'], label: 'Gamma (trọng lượng riêng γ)', category: 'greek' },
   { symbol: 'Γ', cmd: '/Gamma', aliases: [], label: 'Gamma hoa (Γ)', category: 'greek' },
-  { symbol: 'δ', cmd: '/delta', aliases: ['/d'], label: 'Delta thường / biến phân δ', category: 'greek' },
-  { symbol: 'Δ', cmd: '/Delta', aliases: ['/D'], label: 'Delta hoa (độ biến thiên Δ)', category: 'greek' },
-  { symbol: 'ε', cmd: '/varepsilon', aliases: ['/eps', '/epsilon'], label: 'Epsilon (gia tốc góc ε)', category: 'greek' },
+  { symbol: 'δ', cmd: '/delta', aliases: ['/del'], label: 'Delta thường / biến phân δ', category: 'greek' },
+  { symbol: 'Δ', cmd: '/Delta', aliases: ['/Del'], label: 'Delta hoa (độ biến thiên Δ)', category: 'greek' },
+  { symbol: 'ε', cmd: '/eps', aliases: ['/varepsilon', '/epsilon'], label: 'Epsilon (gia tốc góc ε)', category: 'greek' },
   { symbol: 'ζ', cmd: '/zeta', aliases: [], label: 'Zeta (ζ)', category: 'greek' },
   { symbol: 'η', cmd: '/eta', aliases: [], label: 'Eta (hiệu suất η)', category: 'greek' },
   { symbol: 'θ', cmd: '/theta', aliases: ['/th'], label: 'Theta (góc nghiêng θ)', category: 'greek' },
@@ -75,16 +79,16 @@ export const MATH_SYMBOLS = [
   { symbol: 'π', cmd: '/pi', aliases: [], label: 'Số Pi (π ≈ 3.1416)', category: 'greek' },
   { symbol: 'Π', cmd: '/Pi', aliases: [], label: 'Pi hoa (thế năng Π)', category: 'greek' },
   { symbol: 'ρ', cmd: '/rho', aliases: [], label: 'Rho (bán kính cong / khối lượng riêng ρ)', category: 'greek' },
-  { symbol: 'σ', cmd: '/sigma', aliases: [], label: 'Sigma thường (ứng suất σ)', category: 'greek' },
+  { symbol: 'σ', cmd: '/sigma', aliases: ['/sig'], label: 'Sigma thường (ứng suất σ)', category: 'greek' },
   { symbol: 'Σ', cmd: '/Sigma', aliases: [], label: 'Sigma hoa (Σ)', category: 'greek' },
   { symbol: 'τ', cmd: '/tau', aliases: [], label: 'Tau (tiếp tuyến / thời gian τ)', category: 'greek' },
-  { symbol: 'φ', cmd: '/varphi', aliases: ['/phi'], label: 'Phi (góc quay φ)', category: 'greek' },
+  { symbol: 'φ', cmd: '/phi', aliases: ['/varphi'], label: 'Phi (góc quay φ)', category: 'greek' },
   { symbol: 'Φ', cmd: '/Phi', aliases: [], label: 'Phi hoa (Φ)', category: 'greek' },
   { symbol: 'χ', cmd: '/chi', aliases: [], label: 'Chi (χ)', category: 'greek' },
   { symbol: 'ψ', cmd: '/psi', aliases: [], label: 'Psi (góc tiến động ψ)', category: 'greek' },
   { symbol: 'Ψ', cmd: '/Psi', aliases: [], label: 'Psi hoa (Ψ)', category: 'greek' },
-  { symbol: 'ω', cmd: '/omega', aliases: ['/om', '/w'], label: 'Omega (vận tốc góc ω)', category: 'greek' },
-  { symbol: 'Ω', cmd: '/Omega', aliases: ['/Om', '/W'], label: 'Omega hoa (tốc độ tiến động Ω)', category: 'greek' },
+  { symbol: 'ω', cmd: '/omega', aliases: ['/om'], label: 'Omega (vận tốc góc ω)', category: 'greek' },
+  { symbol: 'Ω', cmd: '/Omega', aliases: ['/Om'], label: 'Omega hoa (tốc độ tiến động Ω)', category: 'greek' },
 
   // === 3. TOÁN TỬ & GIẢI TÍCH (OPERATORS & CALCULUS) ===
   { symbol: '∑', cmd: '/sum', aliases: [], label: 'Tổng xích-ma (∑)', category: 'operators' },
@@ -93,39 +97,38 @@ export const MATH_SYMBOLS = [
   { symbol: '∬', cmd: '/iint', aliases: [], label: 'Tích phân kép (∬)', category: 'operators' },
   { symbol: '∭', cmd: '/iiint', aliases: [], label: 'Tích phân bội ba (∭)', category: 'operators' },
   { symbol: '∮', cmd: '/oint', aliases: [], label: 'Tích phân đường kín (∮)', category: 'operators' },
-  { symbol: '∂', cmd: '/partial', aliases: ['/part', '/pd'], label: 'Đạo hàm riêng (∂)', category: 'operators' },
+  { symbol: '∂', cmd: '/part', aliases: ['/partial', '/pd'], label: 'Đạo hàm riêng (∂)', category: 'operators' },
   { symbol: '∇', cmd: '/nabla', aliases: ['/grad'], label: 'Toán tử Nabla / Gradient (∇)', category: 'operators' },
   { symbol: '√', cmd: '/sqrt', aliases: ['/root'], label: 'Căn bậc hai (√)', category: 'operators' },
   { symbol: '∛', cmd: '/cbrt', aliases: [], label: 'Căn bậc ba (∛)', category: 'operators' },
-  { symbol: '∞', cmd: '/infty', aliases: ['/inf'], label: 'Vô cùng / Tâm ở vô cực (∞)', category: 'operators' },
+  { symbol: '∞', cmd: '/inf', aliases: ['/infty'], label: 'Vô cùng / Tâm ở vô cực (∞)', category: 'operators' },
   { symbol: '±', cmd: '/pm', aliases: ['+-'], label: 'Cộng trừ (±)', category: 'operators' },
   { symbol: '∓', cmd: '/mp', aliases: ['-+'], label: 'Trừ cộng (∓)', category: 'operators' },
-  { symbol: '×', cmd: '/times', aliases: ['/x', '/cross'], label: 'Nhân có hướng / Tích vectơ (×)', category: 'operators' },
+  { symbol: '×', cmd: '/times', aliases: ['/cross'], label: 'Nhân có hướng / Tích vectơ (×)', category: 'operators' },
   { symbol: '·', cmd: '/cdot', aliases: ['/dot'], label: 'Nhân vô hướng (·)', category: 'operators' },
   { symbol: '÷', cmd: '/div', aliases: [], label: 'Phép chia (÷)', category: 'operators' },
   { symbol: '°', cmd: '/deg', aliases: ['/degree', '^o'], label: 'Độ góc (°)', category: 'operators' },
   { symbol: '′', cmd: '/prime', aliases: [], label: 'Phẩy đạo hàm / Phút (′)', category: 'operators' },
   { symbol: '″', cmd: '/dprime', aliases: [], label: 'Hai phẩy / Giây (″)', category: 'operators' },
-  { symbol: '½', cmd: '/half', aliases: ['/1/2'], label: 'Phân số 1/2 (½)', category: 'operators' },
-  { symbol: '⅓', cmd: '/1/3', aliases: [], label: 'Phân số 1/3 (⅓)', category: 'operators' },
-  { symbol: '⅔', cmd: '/2/3', aliases: [], label: 'Phân số 2/3 (⅔)', category: 'operators' },
-  { symbol: '¼', cmd: '/1/4', aliases: [], label: 'Phân số 1/4 (¼)', category: 'operators' },
-  { symbol: '¾', cmd: '/3/4', aliases: [], label: 'Phân số 3/4 (¾)', category: 'operators' },
+  { symbol: '½', cmd: '/half', aliases: [], label: 'Phân số 1/2 (½)', category: 'operators' },
+  { symbol: '⅓', cmd: '/third', aliases: [], label: 'Phân số 1/3 (⅓)', category: 'operators' },
+  { symbol: '⅔', cmd: '/twothird', aliases: [], label: 'Phân số 2/3 (⅔)', category: 'operators' },
+  { symbol: '¼', cmd: '/quarter', aliases: [], label: 'Phân số 1/4 (¼)', category: 'operators' },
 
   // === 4. QUAN HỆ, HÌNH HỌC & MŨI TÊN (RELATIONS & ARROWS) ===
   { symbol: '≠', cmd: '/neq', aliases: ['/ne', '!='], label: 'Khác không / Không bằng (≠)', category: 'relations' },
   { symbol: '≈', cmd: '/approx', aliases: ['~~'], label: 'Xấp xỉ bằng (≈)', category: 'relations' },
   { symbol: '≡', cmd: '/equiv', aliases: ['==='], label: 'Đồng nhất / Trùng với (≡)', category: 'relations' },
   { symbol: '∼', cmd: '/sim', aliases: [], label: 'Tương đương hệ lực (∼)', category: 'relations' },
-  { symbol: '∝', cmd: '/propto', aliases: ['/prop'], label: 'Tỉ lệ thuận với (∝)', category: 'relations' },
+  { symbol: '∝', cmd: '/prop', aliases: ['/propto'], label: 'Tỉ lệ thuận với (∝)', category: 'relations' },
   { symbol: '≤', cmd: '/le', aliases: ['/leq', '<='], label: 'Nhỏ hơn hoặc bằng (≤)', category: 'relations' },
   { symbol: '≥', cmd: '/ge', aliases: ['/geq', '>='], label: 'Lớn hơn hoặc bằng (≥)', category: 'relations' },
   { symbol: '≪', cmd: '/ll', aliases: ['<<'], label: 'Rất nhỏ hơn (≪)', category: 'relations' },
   { symbol: '≫', cmd: '/gg', aliases: ['>>'], label: 'Rất lớn hơn (≫)', category: 'relations' },
   { symbol: '⊥', cmd: '/perp', aliases: ['/bot'], label: 'Vuông góc với (⊥)', category: 'relations' },
-  { symbol: '∥', cmd: '/par', aliases: ['/parallel', '//'], label: 'Song song với (∥)', category: 'relations' },
-  { symbol: '∠', cmd: '/angle', aliases: ['/ang'], label: 'Góc (∠)', category: 'relations' },
-  { symbol: '△', cmd: '/triangle', aliases: ['/tri'], label: 'Tam giác (△)', category: 'relations' },
+  { symbol: '∥', cmd: '/par', aliases: ['/parallel'], label: 'Song song với (∥)', category: 'relations' },
+  { symbol: '∠', cmd: '/ang', aliases: ['/angle'], label: 'Góc (∠)', category: 'relations' },
+  { symbol: '△', cmd: '/tri', aliases: ['/triangle'], label: 'Tam giác (△)', category: 'relations' },
   { symbol: '⇒', cmd: '/implies', aliases: ['/Rightarrow', '=>'], label: 'Suy ra (⇒)', category: 'relations' },
   { symbol: '⇔', cmd: '/iff', aliases: ['/Leftrightarrow', '<=>'], label: 'Tương đương với (⇔)', category: 'relations' },
   { symbol: '→', cmd: '/to', aliases: ['/rightarrow', '->'], label: 'Mũi tên sang phải (→)', category: 'relations' },
@@ -196,7 +199,7 @@ export const CHEATSHEET_RULES = [
     group: '1. Cú pháp gõ nhanh Vectơ & Đạo hàm Cơ học (dùng dấu / ngay cạnh phím Shift phải)',
     items: [
       { syntax: '/vF, /vv, /va + Space', result: 'F\u20d7, v\u20d7, a\u20d7', desc: 'Cách nhanh nhất để gõ vectơ lực, vận tốc, gia tốc (không cần ngoặc)' },
-      { syntax: '/vec{F} hoặc /vec(F)', result: 'F\u20d7', desc: 'Thêm mũi tên vectơ trên ký tự bất kỳ (hỗ trợ cả ngoặc tròn lẫn ngoặc nhọn)' },
+      { syntax: '/vec(F) hoặc /vec{F}', result: 'F\u20d7', desc: 'Thêm mũi tên vectơ trên ký tự bất kỳ (vừa đóng ngoặc là tự chuyển)' },
       { syntax: '/dx, /ddx + Space', result: 'x\u0307, x\u0308', desc: 'Đạo hàm bậc 1 (ẋ) và bậc 2 (ẍ) theo thời gian (hoặc /dot(x), /ddot(x))' },
       { syntax: '/dphi, /ddphi + Space', result: 'φ\u0307, φ\u0308', desc: 'Vận tốc góc φ̇ và gia tốc góc φ̈' }
     ]
@@ -213,9 +216,9 @@ export const CHEATSHEET_RULES = [
   {
     group: '3. Chữ cái Hy Lạp thông dụng (gõ /lệnh + Space/Tab)',
     items: [
-      { syntax: '/alpha, /beta, /gamma', result: 'α, β, γ', desc: 'Các góc α, β, γ (hoặc gõ tắt /a, /b, /g + Space)' },
+      { syntax: '/alpha, /beta, /gamma', result: 'α, β, γ', desc: 'Các góc α, β, γ (hoặc gõ tắt /al, /be, /ga + Space)' },
       { syntax: '/phi (hoặc /varphi)', result: 'φ', desc: 'Góc quay φ, góc ma sát φ' },
-      { syntax: '/omega, /Omega', result: 'ω, Ω', desc: 'Vận tốc góc ω, tốc độ tiến động Ω (gõ tắt /om, /w)' },
+      { syntax: '/omega, /Omega', result: 'ω, Ω', desc: 'Vận tốc góc ω, tốc độ tiến động Ω (gõ tắt /om, /Om)' },
       { syntax: '/eps (hoặc /varepsilon)', result: 'ε', desc: 'Gia tốc góc ε' },
       { syntax: '/theta, /psi, /rho, /tau', result: 'θ, ψ, ρ, τ', desc: 'Góc Euler θ, ψ; bán kính cong ρ; trục tiếp tuyến τ' },
       { syntax: '/delta, /Delta', result: 'δ, Δ', desc: 'Di chuyển khả dĩ δ; độ biến thiên Δ' }
@@ -226,7 +229,7 @@ export const CHEATSHEET_RULES = [
     items: [
       { syntax: '/sum, /int, /part', result: '∑, ∫, ∂', desc: 'Tổng xích-ma, tích phân, đạo hàm riêng' },
       { syntax: '/sqrt, /inf, /deg', result: '√, ∞, °', desc: 'Căn bậc hai, vô cực, độ góc (°)' },
-      { syntax: '/perp, /par (hoặc //)', result: '⊥, ∥', desc: 'Vuông góc (⊥), song song (∥)' },
+      { syntax: '/perp, /par', result: '⊥, ∥', desc: 'Vuông góc (⊥), song song (∥)' },
       { syntax: '=>, <=>, ->', result: '⇒, ⇔, →', desc: 'Dấu suy ra (⇒), tương đương (⇔), mũi tên (→)' },
       { syntax: '<=, >=, !=, ~~', result: '≤, ≥, ≠, ≈', desc: 'Bất đẳng thức ≤, ≥, khác ≠, xấp xỉ ≈' },
       { syntax: '/times, /cdot, +-', result: '×, ·, ±', desc: 'Tích có hướng (×), tích vô hướng (·), cộng trừ (±)' }
@@ -234,7 +237,7 @@ export const CHEATSHEET_RULES = [
   }
 ]
 
-// Build lookup map supporting BOTH '/' and '\' prefixes!
+// Build lookup map supporting BOTH '/' and '\' prefixes
 const EXACT_TOKEN_MAP = new Map()
 function registerTokenBothSlashes(token, symbol) {
   EXACT_TOKEN_MAP.set(token, symbol)
@@ -255,12 +258,21 @@ for (const item of MATH_SYMBOLS) {
 }
 
 /**
+ * Extract a valid slash command token at the end of `before` ONLY if '/' or '\'
+ * is NOT preceded by a letter, number, or ':' (prevents m/s, rad/s, dv/dt, a/b, https:// conflicts!)
+ */
+export function extractTrailingSlashToken(beforeText) {
+  if (!beforeText) return null
+  const match = beforeText.match(/(?:^|[\s([=+\-,;])([/\\][a-zA-Z][a-zA-Z0-9_^{()]*)$/)
+  if (!match) return null
+  return match[1]
+}
+
+/**
  * Search symbols/commands for autocomplete when user is typing /command or \command
  */
-export function getAutocompleteSuggestions(query, limit = 7) {
+export function getAutocompleteSuggestions(query, limit = 6) {
   if (!query || (!query.startsWith('/') && !query.startsWith('\\')) || query.length < 2) return []
-  // Ignore '//' which is parallel shorthand
-  if (query.startsWith('//')) return []
   const normalizedQuery = '/' + query.slice(1).toLowerCase()
   const results = []
 
@@ -296,8 +308,8 @@ export function tryImmediateBraceTransform(text, cursorPos) {
   const before = text.slice(0, cursorPos)
   const after = text.slice(cursorPos)
 
-  // 1. Check /cmd{...} or /cmd(...) or \cmd{...}
-  const tokenMatch = before.match(/([/\\][a-zA-Z]+(?:\{[^}]+\}|\([^)]+\)))$/)
+  // 1. Check /cmd{...} or /cmd(...) or \cmd{...} (must not be preceded by alphanumeric)
+  const tokenMatch = before.match(/(?:^|[\s([=+\-,;])([/\\][a-zA-Z]+(?:\{[^}]+\}|\([^)]+\)))$/)
   if (tokenMatch) {
     const fullToken = tokenMatch[1]
     if (EXACT_TOKEN_MAP.has(fullToken)) {
@@ -371,17 +383,14 @@ export function tryExpandCommandAtCursor(text, cursorPos) {
   const before = text.slice(0, cursorPos)
   const after = text.slice(cursorPos)
 
-  // 1. Slash or Backslash command: e.g. /alpha, /vF, /sum, \alpha
-  const slashMatch = before.match(/([/\\][a-zA-Z0-9/_]+)$/)
-  if (slashMatch) {
-    const token = slashMatch[1]
-    if (EXACT_TOKEN_MAP.has(token)) {
-      const rep = EXACT_TOKEN_MAP.get(token)
-      const startIdx = cursorPos - token.length
-      return {
-        text: text.slice(0, startIdx) + rep + after,
-        cursor: startIdx + rep.length
-      }
+  // 1. Slash or Backslash command at start of word: e.g. /alpha, /vF, /sum, \alpha
+  const token = extractTrailingSlashToken(before)
+  if (token && EXACT_TOKEN_MAP.has(token)) {
+    const rep = EXACT_TOKEN_MAP.get(token)
+    const startIdx = cursorPos - token.length
+    return {
+      text: text.slice(0, startIdx) + rep + after,
+      cursor: startIdx + rep.length
     }
   }
 
@@ -414,13 +423,13 @@ export function tryExpandCommandAtCursor(text, cursorPos) {
     }
   }
 
-  // 3. Operator shorthands: =>, <=>, ->, <-, <=, >=, !=, +-, ~~, //
-  const opMatch = before.match(/(<=>|=>|->|<-|<=|>=|!=|\+-|-\+|~~|\/\/)$/)
+  // 3. Operator shorthands: =>, <=>, ->, <-, <=, >=, !=, +-, ~~
+  const opMatch = before.match(/(<=>|=>|->|<-|<=|>=|!=|\+-|-\+|~~)$/)
   if (opMatch) {
-    const token = opMatch[1]
-    if (EXACT_TOKEN_MAP.has(token)) {
-      const rep = EXACT_TOKEN_MAP.get(token)
-      const startIdx = cursorPos - token.length
+    const opToken = opMatch[1]
+    if (EXACT_TOKEN_MAP.has(opToken)) {
+      const rep = EXACT_TOKEN_MAP.get(opToken)
+      const startIdx = cursorPos - opToken.length
       return {
         text: text.slice(0, startIdx) + rep + after,
         cursor: startIdx + rep.length

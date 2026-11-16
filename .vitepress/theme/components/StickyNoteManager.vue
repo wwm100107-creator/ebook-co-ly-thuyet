@@ -220,7 +220,9 @@ function addNote() {
 function updateNote(updatedNote) {
   const idx = notes.value.findIndex(n => n.id === updatedNote.id)
   if (idx !== -1) {
-    notes.value[idx] = { ...updatedNote }
+    if (notes.value[idx] !== updatedNote) {
+      Object.assign(notes.value[idx], updatedNote)
+    }
     saveNotes()
   }
 }
@@ -245,9 +247,11 @@ function selectNote(noteId) {
 function bringToFront(noteId) {
   const target = notes.value.find(n => n.id === noteId)
   if (target) {
-    target.zIndex = ++topZIndex.value
     activeNoteId.value = noteId
-    saveNotes()
+    if ((target.zIndex || 1000) < topZIndex.value) {
+      target.zIndex = ++topZIndex.value
+      saveNotes()
+    }
   }
 }
 
