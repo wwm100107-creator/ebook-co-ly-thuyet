@@ -1,5 +1,10 @@
 <script setup>
 import { ref, reactive, onMounted, onUnmounted, watch, nextTick } from 'vue'
+import {
+  getAutocompleteSuggestions,
+  tryImmediateBraceTransform,
+  tryExpandCommandAtCursor
+} from './mathSymbolsData'
 
 const props = defineProps({
   note: {
@@ -27,6 +32,11 @@ const isDrawing = ref(false)
 const strokeHistory = ref([])
 let ctx = null
 let resizeObserver = null
+
+// Math command autocomplete state inside the note
+const suggestions = ref([])
+const selectedSuggestionIdx = ref(0)
+const currentSlashRange = ref(null) // { start, end, query }
 
 // Color themes for the paper
 const colorThemes = {
@@ -106,6 +116,143 @@ function toggleCollapse() {
 function onCardPointerDown() {
   emit('select', props.note.id)
   emit('bring-to-front', props.note.id)
+}
+
+// === MATH COMMAND AUTOCOMPLETE & SHORTCUT EXPANSION ===
+function updateAutocompleteState() {
+  const el = textareaRef.value
+  if (!el) {
+    suggestions.value = []
+    currentSlashRange.value = null
+    return
+  }
+  const cursor = el.selectionStart || 0
+  const before = (props.note.text || '').slice(0, cursor)
+  const match = before.match(/(\\[a-zA-Z0-9/_^{]*)$/)
+  if (match && match[1].length >= 2) {
+    const query = match[1]
+    const list = getAutocompleteSuggestions(query, 6)
+    suggestions.value = list
+    selectedSuggestionIdx.value = 0
+    currentSlashRange.value = list.length > 0
+      ? { start: cursor - query.length, end: cursor, query }
+      : null
+  } else {
+    suggestions.value = []
+    currentSlashRange.value = null
+  }
+}
+
+function onTextareaInput() {
+  const el = textareaRef.value
+  if (el) {
+    const cursor = el.selectionStart || 0
+    const braceRes = tryImmediateBraceTransform(props.note.text || '', cursor)
+    if (braceRes) {
+      props.note.text = braceRes.text
+      emit('update', props.note)
+      suggestions.value = []
+      currentSlashRange.value = null
+      nextTick(() => {
+        el.focus()
+        el.setSelectionRange(braceRes.cursor, braceRes.cursor)
+      })
+      return
+    }
+  }
+  updateAutocompleteState()
+  emit('update', props.note)
+}
+
+function applySuggestion(item) {
+  const el = textareaRef.value
+  if (!el || !currentSlashRange.value) {
+    insertTextAtCursor(item.symbol)
+    return
+  }
+  const { start, end } = currentSlashRange.value
+  const current = props.note.text || ''
+  props.note.text = current.slice(0, start) + item.symbol + current.slice(end)
+  const newCursor = start + item.symbol.length
+  suggestions.value = []
+  currentSlashRange.value = null
+  emit('update', props.note)
+  nextTick(() => {
+    el.focus()
+    el.setSelectionRange(newCursor, newCursor)
+  })
+}
+
+function onTextareaKeyDown(e) {
+  // Navigate autocomplete popup if visible
+  if (suggestions.value.length > 0) {
+    if (e.key === 'ArrowDown') {
+      e.preventDefault()
+      selectedSuggestionIdx.value = (selectedSuggestionIdx.value + 1) % suggestions.value.length
+      return
+    }
+    if (e.key === 'ArrowUp') {
+      e.preventDefault()
+      selectedSuggestionIdx.value = (selectedSuggestionIdx.value - 1 + suggestions.value.length) % suggestions.value.length
+      return
+    }
+    if (e.key === 'Tab' || e.key === 'Enter') {
+      e.preventDefault()
+      applySuggestion(suggestions.value[selectedSuggestionIdx.value])
+      return
+    }
+    if (e.key === 'Escape') {
+      e.preventDefault()
+      suggestions.value = []
+      currentSlashRange.value = null
+      return
+    }
+  }
+
+  // Expand exact command / ^sup / _sub when Space, Tab, or Enter is pressed
+  if (e.key === ' ' || e.key === 'Tab' || e.key === 'Enter') {
+    const el = textareaRef.value
+    if (!el) return
+    const cursor = el.selectionStart || 0
+    const expanded = tryExpandCommandAtCursor(props.note.text || '', cursor)
+    if (expanded) {
+      e.preventDefault()
+      const suffix = e.key === ' ' ? ' ' : (e.key === 'Enter' ? '\n' : '')
+      props.note.text =
+        expanded.text.slice(0, expanded.cursor) +
+        suffix +
+        expanded.text.slice(expanded.cursor)
+      const nextPos = expanded.cursor + suffix.length
+      suggestions.value = []
+      currentSlashRange.value = null
+      emit('update', props.note)
+      nextTick(() => {
+        el.focus()
+        el.setSelectionRange(nextPos, nextPos)
+      })
+    }
+  }
+}
+
+function insertTextAtCursor(str) {
+  const el = textareaRef.value
+  const current = props.note.text || ''
+  if (!el) {
+    props.note.text = current + str
+    emit('update', props.note)
+    return
+  }
+  const start = typeof el.selectionStart === 'number' ? el.selectionStart : current.length
+  const end = typeof el.selectionEnd === 'number' ? el.selectionEnd : current.length
+  props.note.text = current.slice(0, start) + str + current.slice(end)
+  const newCursor = start + str.length
+  suggestions.value = []
+  currentSlashRange.value = null
+  emit('update', props.note)
+  nextTick(() => {
+    el.focus()
+    el.setSelectionRange(newCursor, newCursor)
+  })
 }
 
 // Canvas & Drawing Logic
@@ -239,6 +386,7 @@ function undoCanvas() {
 defineExpose({
   undoCanvas,
   clearCanvas,
+  insertTextAtCursor,
   focusTextarea: () => {
     nextTick(() => textareaRef.value?.focus())
   }
@@ -275,6 +423,9 @@ watch(() => props.note.mode, (newMode) => {
     nextTick(() => {
       if (textareaRef.value) textareaRef.value.focus()
     })
+  } else {
+    suggestions.value = []
+    currentSlashRange.value = null
   }
 })
 </script>
@@ -371,10 +522,35 @@ watch(() => props.note.mode, (newMode) => {
           v-model="note.text"
           class="note-textarea"
           :style="{ fontSize: (note.fontSize || 18) + 'px' }"
-          placeholder="Nhấp vào đây để gõ nội dung (Font Times New Roman)..."
-          @input="emit('update', note)"
+          placeholder="Nhấp để gõ (Font Times New Roman). Gõ \alpha, \sum, \vec{F}, x^2, v_x + Space để chèn ký hiệu toán..."
+          @input="onTextareaInput"
+          @keydown="onTextareaKeyDown"
+          @click="updateAutocompleteState"
+          @blur="() => setTimeout(() => { suggestions = [] }, 180)"
           :disabled="note.mode === 'draw'"
         />
+
+        <!-- Live Inline \command Autocomplete Popup -->
+        <div
+          v-if="suggestions.length > 0 && (note.mode || 'text') === 'text'"
+          class="math-autocomplete-popup"
+        >
+          <div class="math-ac-header">
+            <span>Gợi ý lệnh Toán - Cơ học (Nhấn Tab / Enter / Space)</span>
+          </div>
+          <button
+            v-for="(item, idx) in suggestions"
+            :key="item.cmd + idx"
+            type="button"
+            class="math-ac-item"
+            :class="{ active: idx === selectedSuggestionIdx }"
+            @mousedown.prevent="applySuggestion(item)"
+          >
+            <span class="math-ac-sym">{{ item.symbol }}</span>
+            <code class="math-ac-cmd">{{ item.cmd }}</code>
+            <span class="math-ac-lbl">{{ item.label }}</span>
+          </button>
+        </div>
 
         <!-- Drawing Canvas Layer (Positioned directly over text) -->
         <canvas
@@ -606,6 +782,89 @@ watch(() => props.note.mode, (newMode) => {
 .note-textarea:disabled {
   opacity: 0.95;
   cursor: default;
+}
+
+/* Live Inline Math Autocomplete Popup */
+.math-autocomplete-popup {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(8px);
+  color: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+  z-index: 15;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.math-ac-header {
+  padding: 4px 10px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #94a3b8;
+  background: rgba(30, 41, 59, 0.9);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.math-ac-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 10px;
+  border: none;
+  background: transparent;
+  color: #f1f5f9;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.12s ease;
+  width: 100%;
+}
+
+.math-ac-item:hover,
+.math-ac-item.active {
+  background: #0284c7;
+  color: #ffffff;
+}
+
+.math-ac-sym {
+  font-family: "Times New Roman", Times, "Cambria Math", serif;
+  font-size: 17px;
+  font-weight: 700;
+  min-width: 28px;
+  text-align: center;
+}
+
+.math-ac-cmd {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 11px;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 1px 5px;
+  border-radius: 4px;
+  color: #bae6fd;
+}
+
+.math-ac-item.active .math-ac-cmd {
+  background: rgba(0, 0, 0, 0.22);
+  color: #ffffff;
+}
+
+.math-ac-lbl {
+  font-size: 11px;
+  color: #cbd5e1;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.math-ac-item.active .math-ac-lbl {
+  color: #f0f9ff;
 }
 
 /* Drawing Canvas Layer */
