@@ -269,7 +269,7 @@ function updateAutocompleteState() {
   }
   const { node, offset } = info
   const before = (node.nodeValue || '').slice(0, offset)
-  const match = before.match(/(\\[a-zA-Z0-9/_^{]*)$/)
+  const match = before.match(/([/\\][a-zA-Z0-9_^{()]*)$/)
   if (match && match[1].length >= 2) {
     const query = match[1]
     const list = getAutocompleteSuggestions(query, 6)

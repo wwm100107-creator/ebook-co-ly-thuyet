@@ -696,7 +696,7 @@ onMounted(() => {
                 <path d="M12 16v-4M12 8h.01"/>
               </svg>
               <span>
-                <strong>Cách gõ lệnh trực tiếp trong tờ Note:</strong> Gõ <code>\tên_lệnh</code> rồi nhấn <strong>Space</strong>, <strong>Tab</strong> hoặc <strong>Enter</strong> (hoặc chọn từ menu gợi ý tự động hiện ra khi gõ dấu <code>\</code>).
+                <strong>Cách gõ lệnh trực tiếp trong tờ Note:</strong> Gõ <code>/tên_lệnh</code> (dấu <code>/</code> ngay cạnh phím Shift phải, hoặc dấu <code>\</code>) rồi nhấn <strong>Space</strong>, <strong>Tab</strong> hoặc <strong>Enter</strong>.
               </span>
             </div>
 
@@ -766,7 +766,7 @@ onMounted(() => {
 
         <!-- Footer Tip -->
         <div class="math-pop-footer">
-          <span>Mẹo: Trong ô viết chữ, gõ <code>\alpha</code>, <code>\omega</code>, <code>\sum</code>, <code>\vec{F}</code>, <code>\dot{x}</code>, <code>x^2</code>, <code>v_x</code> + <strong>Space</strong> để chuyển tự động.</span>
+          <span>Mẹo: Trong ô viết chữ, gõ <code>/alpha</code>, <code>/omega</code>, <code>/sum</code>, <code>/vF</code>, <code>/vec(F)</code>, <code>/dx</code>, <code>x^2</code>, <code>v_x</code> + <strong>Space</strong> để chuyển tự động.</span>
         </div>
       </div>
     </transition>
