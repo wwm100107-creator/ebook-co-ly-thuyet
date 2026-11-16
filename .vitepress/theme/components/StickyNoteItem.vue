@@ -17,7 +17,7 @@ const props = defineProps({
   }
 })
 
-const emit = defineEmits(['update', 'delete', 'bring-to-front', 'select'])
+const emit = defineEmits(['update', 'delete', 'bring-to-front', 'select', 'format-state'])
 
 const isDragging = ref(false)
 const dragStart = reactive({ mouseX: 0, mouseY: 0, noteX: 0, noteY: 0 })
@@ -27,16 +27,17 @@ const resizeStart = reactive({ mouseX: 0, mouseY: 0, width: 0, height: 0 })
 
 const canvasRef = ref(null)
 const workspaceRef = ref(null)
-const textareaRef = ref(null)
+const editorRef = ref(null)
 const isDrawing = ref(false)
 const strokeHistory = ref([])
 let ctx = null
 let resizeObserver = null
+let savedRange = null
 
 // Math command autocomplete state inside the note
 const suggestions = ref([])
 const selectedSuggestionIdx = ref(0)
-const currentSlashRange = ref(null) // { start, end, query }
+let currentSlashInfo = null // { node, startOffset, endOffset, query }
 
 // Color themes for the paper
 const colorThemes = {
@@ -46,6 +47,103 @@ const colorThemes = {
   purple: { bg: '#f3e8ff', header: '#e9d5ff', border: '#a855f7', text: '#581c87' },
   pink: { bg: '#ffe4e6', header: '#fecdd3', border: '#f43f5e', text: '#881337' },
   white: { bg: '#ffffff', header: '#f8fafc', border: '#cbd5e1', text: '#0f172a' }
+}
+
+// Helper: Escape plain text to HTML for legacy notes
+function plainTextToHtml(txt) {
+  if (!txt) return ''
+  return txt
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/\n/g, '<br>')
+}
+
+// Initialize editor content from note.html or note.text
+function syncEditorFromNote() {
+  const el = editorRef.value
+  if (!el) return
+  const targetHtml = props.note.html !== undefined && props.note.html !== null
+    ? props.note.html
+    : plainTextToHtml(props.note.text || '')
+  if (el.innerHTML !== targetHtml) {
+    el.innerHTML = targetHtml
+  }
+}
+
+// Save current selection range inside editorRef
+function saveSelection() {
+  if (typeof window === 'undefined') return
+  const sel = window.getSelection()
+  if (sel && sel.rangeCount > 0 && editorRef.value) {
+    const r = sel.getRangeAt(0)
+    if (editorRef.value.contains(r.commonAncestorContainer)) {
+      savedRange = r.cloneRange()
+    }
+  }
+}
+
+function restoreSelection() {
+  if (typeof window === 'undefined' || !editorRef.value) return
+  editorRef.value.focus()
+  if (savedRange) {
+    try {
+      const sel = window.getSelection()
+      sel.removeAllRanges()
+      sel.addRange(savedRange)
+    } catch (err) {
+      // ignore invalid range
+    }
+  }
+}
+
+// Query active rich-text formatting states and notify parent toolbar
+function checkFormatState() {
+  if (typeof document === 'undefined' || !editorRef.value) return
+  saveSelection()
+  try {
+    const state = {
+      bold: document.queryCommandState('bold'),
+      italic: document.queryCommandState('italic'),
+      underline: document.queryCommandState('underline'),
+      strikeThrough: document.queryCommandState('strikeThrough'),
+      subscript: document.queryCommandState('subscript'),
+      superscript: document.queryCommandState('superscript'),
+      justifyCenter: document.queryCommandState('justifyCenter'),
+      justifyRight: document.queryCommandState('justifyRight'),
+      insertUnorderedList: document.queryCommandState('insertUnorderedList')
+    }
+    emit('format-state', state)
+  } catch (err) {
+    // ignore
+  }
+}
+
+// Execute rich-text formatting command from dock toolbar
+function execFormat(cmd, val = null) {
+  if (!editorRef.value) return
+  restoreSelection()
+  try {
+    document.execCommand('styleWithCSS', false, true)
+    document.execCommand(cmd, false, val)
+  } catch (err) {
+    try {
+      document.execCommand(cmd, false, val)
+    } catch (e2) {
+      // ignore
+    }
+  }
+  saveSelection()
+  syncNoteFromEditor()
+  checkFormatState()
+}
+
+function syncNoteFromEditor() {
+  const el = editorRef.value
+  if (!el) return
+  props.note.html = el.innerHTML
+  props.note.text = el.innerText || el.textContent || ''
+  emit('update', props.note)
 }
 
 // Dragging logic
@@ -118,72 +216,93 @@ function onCardPointerDown() {
   emit('bring-to-front', props.note.id)
 }
 
-// === MATH COMMAND AUTOCOMPLETE & SHORTCUT EXPANSION ===
+// === MATH COMMAND AUTOCOMPLETE & SHORTCUT EXPANSION IN CONTENTEDITABLE ===
+function getActiveTextNodeAndOffset() {
+  if (typeof window === 'undefined') return null
+  const sel = window.getSelection()
+  if (!sel || sel.rangeCount === 0) return null
+  const node = sel.anchorNode
+  const offset = sel.anchorOffset
+  if (!node || !editorRef.value || !editorRef.value.contains(node)) return null
+  if (node.nodeType === Node.TEXT_NODE) {
+    return { node, offset }
+  }
+  return null
+}
+
+function setCaretInTextNode(node, offset) {
+  if (typeof window === 'undefined') return
+  const sel = window.getSelection()
+  const range = document.createRange()
+  const safeOffset = Math.max(0, Math.min(offset, (node.nodeValue || '').length))
+  range.setStart(node, safeOffset)
+  range.collapse(true)
+  sel.removeAllRanges()
+  sel.addRange(range)
+  savedRange = range.cloneRange()
+}
+
 function updateAutocompleteState() {
-  const el = textareaRef.value
-  if (!el) {
+  const info = getActiveTextNodeAndOffset()
+  if (!info) {
     suggestions.value = []
-    currentSlashRange.value = null
+    currentSlashInfo = null
     return
   }
-  const cursor = el.selectionStart || 0
-  const before = (props.note.text || '').slice(0, cursor)
+  const { node, offset } = info
+  const before = (node.nodeValue || '').slice(0, offset)
   const match = before.match(/(\\[a-zA-Z0-9/_^{]*)$/)
   if (match && match[1].length >= 2) {
     const query = match[1]
     const list = getAutocompleteSuggestions(query, 6)
     suggestions.value = list
     selectedSuggestionIdx.value = 0
-    currentSlashRange.value = list.length > 0
-      ? { start: cursor - query.length, end: cursor, query }
+    currentSlashInfo = list.length > 0
+      ? { node, startOffset: offset - query.length, endOffset: offset, query }
       : null
   } else {
     suggestions.value = []
-    currentSlashRange.value = null
+    currentSlashInfo = null
   }
 }
 
-function onTextareaInput() {
-  const el = textareaRef.value
-  if (el) {
-    const cursor = el.selectionStart || 0
-    const braceRes = tryImmediateBraceTransform(props.note.text || '', cursor)
+function onEditorInput() {
+  saveSelection()
+  const info = getActiveTextNodeAndOffset()
+  if (info) {
+    const { node, offset } = info
+    const fullText = node.nodeValue || ''
+    const braceRes = tryImmediateBraceTransform(fullText, offset)
     if (braceRes) {
-      props.note.text = braceRes.text
-      emit('update', props.note)
+      node.nodeValue = braceRes.text
+      setCaretInTextNode(node, braceRes.cursor)
       suggestions.value = []
-      currentSlashRange.value = null
-      nextTick(() => {
-        el.focus()
-        el.setSelectionRange(braceRes.cursor, braceRes.cursor)
-      })
+      currentSlashInfo = null
+      syncNoteFromEditor()
       return
     }
   }
   updateAutocompleteState()
-  emit('update', props.note)
+  syncNoteFromEditor()
+  checkFormatState()
 }
 
 function applySuggestion(item) {
-  const el = textareaRef.value
-  if (!el || !currentSlashRange.value) {
-    insertTextAtCursor(item.symbol)
+  if (currentSlashInfo && currentSlashInfo.node && editorRef.value?.contains(currentSlashInfo.node)) {
+    const { node, startOffset, endOffset } = currentSlashInfo
+    const val = node.nodeValue || ''
+    node.nodeValue = val.slice(0, startOffset) + item.symbol + val.slice(endOffset)
+    const newCursor = startOffset + item.symbol.length
+    suggestions.value = []
+    currentSlashInfo = null
+    setCaretInTextNode(node, newCursor)
+    syncNoteFromEditor()
     return
   }
-  const { start, end } = currentSlashRange.value
-  const current = props.note.text || ''
-  props.note.text = current.slice(0, start) + item.symbol + current.slice(end)
-  const newCursor = start + item.symbol.length
-  suggestions.value = []
-  currentSlashRange.value = null
-  emit('update', props.note)
-  nextTick(() => {
-    el.focus()
-    el.setSelectionRange(newCursor, newCursor)
-  })
+  insertTextAtCursor(item.symbol)
 }
 
-function onTextareaKeyDown(e) {
+function onEditorKeyDown(e) {
   // Navigate autocomplete popup if visible
   if (suggestions.value.length > 0) {
     if (e.key === 'ArrowDown') {
@@ -204,55 +323,61 @@ function onTextareaKeyDown(e) {
     if (e.key === 'Escape') {
       e.preventDefault()
       suggestions.value = []
-      currentSlashRange.value = null
+      currentSlashInfo = null
       return
     }
   }
 
   // Expand exact command / ^sup / _sub when Space, Tab, or Enter is pressed
   if (e.key === ' ' || e.key === 'Tab' || e.key === 'Enter') {
-    const el = textareaRef.value
-    if (!el) return
-    const cursor = el.selectionStart || 0
-    const expanded = tryExpandCommandAtCursor(props.note.text || '', cursor)
-    if (expanded) {
-      e.preventDefault()
-      const suffix = e.key === ' ' ? ' ' : (e.key === 'Enter' ? '\n' : '')
-      props.note.text =
-        expanded.text.slice(0, expanded.cursor) +
-        suffix +
-        expanded.text.slice(expanded.cursor)
-      const nextPos = expanded.cursor + suffix.length
-      suggestions.value = []
-      currentSlashRange.value = null
-      emit('update', props.note)
-      nextTick(() => {
-        el.focus()
-        el.setSelectionRange(nextPos, nextPos)
-      })
+    const info = getActiveTextNodeAndOffset()
+    if (info) {
+      const { node, offset } = info
+      const expanded = tryExpandCommandAtCursor(node.nodeValue || '', offset)
+      if (expanded) {
+        e.preventDefault()
+        const suffix = e.key === ' ' ? '\u00A0' : ''
+        node.nodeValue =
+          expanded.text.slice(0, expanded.cursor) +
+          suffix +
+          expanded.text.slice(expanded.cursor)
+        const nextPos = expanded.cursor + suffix.length
+        suggestions.value = []
+        currentSlashInfo = null
+        setCaretInTextNode(node, nextPos)
+        if (e.key === 'Enter') {
+          document.execCommand('insertLineBreak')
+        }
+        syncNoteFromEditor()
+        return
+      }
     }
   }
 }
 
 function insertTextAtCursor(str) {
-  const el = textareaRef.value
-  const current = props.note.text || ''
-  if (!el) {
-    props.note.text = current + str
-    emit('update', props.note)
-    return
+  if (!editorRef.value) return
+  restoreSelection()
+  const sel = window.getSelection()
+  if (sel && sel.rangeCount > 0 && editorRef.value.contains(sel.anchorNode)) {
+    const range = sel.getRangeAt(0)
+    range.deleteContents()
+    const textNode = document.createTextNode(str)
+    range.insertNode(textNode)
+    range.setStartAfter(textNode)
+    range.collapse(true)
+    sel.removeAllRanges()
+    sel.addRange(range)
+    savedRange = range.cloneRange()
+  } else {
+    editorRef.value.focus()
+    const textNode = document.createTextNode(str)
+    editorRef.value.appendChild(textNode)
+    setCaretInTextNode(textNode, str.length)
   }
-  const start = typeof el.selectionStart === 'number' ? el.selectionStart : current.length
-  const end = typeof el.selectionEnd === 'number' ? el.selectionEnd : current.length
-  props.note.text = current.slice(0, start) + str + current.slice(end)
-  const newCursor = start + str.length
   suggestions.value = []
-  currentSlashRange.value = null
-  emit('update', props.note)
-  nextTick(() => {
-    el.focus()
-    el.setSelectionRange(newCursor, newCursor)
-  })
+  currentSlashInfo = null
+  syncNoteFromEditor()
 }
 
 // Canvas & Drawing Logic
@@ -387,13 +512,15 @@ defineExpose({
   undoCanvas,
   clearCanvas,
   insertTextAtCursor,
+  execFormat,
   focusTextarea: () => {
-    nextTick(() => textareaRef.value?.focus())
+    nextTick(() => editorRef.value?.focus())
   }
 })
 
 onMounted(() => {
   nextTick(() => {
+    syncEditorFromNote()
     setTimeout(() => {
       initCanvas()
       if (workspaceRef.value && typeof ResizeObserver !== 'undefined') {
@@ -413,6 +540,7 @@ onUnmounted(() => {
 watch(() => props.note.isCollapsed, (newVal) => {
   if (!newVal) {
     nextTick(() => {
+      syncEditorFromNote()
       setTimeout(() => initCanvas(), 80)
     })
   }
@@ -421,11 +549,11 @@ watch(() => props.note.isCollapsed, (newVal) => {
 watch(() => props.note.mode, (newMode) => {
   if (newMode === 'text') {
     nextTick(() => {
-      if (textareaRef.value) textareaRef.value.focus()
+      if (editorRef.value) editorRef.value.focus()
     })
   } else {
     suggestions.value = []
-    currentSlashRange.value = null
+    currentSlashInfo = null
   }
 })
 </script>
@@ -510,24 +638,29 @@ watch(() => props.note.mode, (newMode) => {
 
     <!-- Collapsible Curtain Container (100% PURE PAPER WORKSPACE) -->
     <div class="note-curtain-wrapper" :class="{ 'curtain-rolled-up': note.isCollapsed }">
-      <!-- Workspace: Text Area & Drawing Canvas Layer -->
+      <!-- Workspace: Rich Text Editor & Drawing Canvas Layer -->
       <div
         ref="workspaceRef"
         class="note-workspace"
         :class="{ 'drawing-active': note.mode === 'draw' }"
       >
-        <!-- Text layer (Strictly Times New Roman) -->
-        <textarea
-          ref="textareaRef"
-          v-model="note.text"
-          class="note-textarea"
-          :style="{ fontSize: (note.fontSize || 18) + 'px' }"
-          placeholder="Nhấp để gõ (Font Times New Roman). Gõ \alpha, \sum, \vec{F}, x^2, v_x + Space để chèn ký hiệu toán..."
-          @input="onTextareaInput"
-          @keydown="onTextareaKeyDown"
-          @click="updateAutocompleteState"
-          @blur="() => setTimeout(() => { suggestions = [] }, 180)"
-          :disabled="note.mode === 'draw'"
+        <!-- Rich Text Layer (Strictly Times New Roman, supports Bold, Italic, Underline, Colors, Math) -->
+        <div
+          ref="editorRef"
+          class="note-rich-editor"
+          :class="{ 'is-disabled': note.mode === 'draw', 'is-empty': !note.text }"
+          :contenteditable="note.mode !== 'draw'"
+          :style="{
+            fontSize: (note.fontSize || 18) + 'px',
+            color: note.textColor || '#0f172a'
+          }"
+          data-placeholder="Nhấp để gõ (Font Times New Roman). Hỗ trợ B, I, U, đổi màu chữ & gõ lệnh \alpha, \vec{F}, x^2 + Space..."
+          @input="onEditorInput"
+          @keydown="onEditorKeyDown"
+          @keyup="checkFormatState"
+          @mouseup="checkFormatState"
+          @click="() => { updateAutocompleteState(); checkFormatState(); }"
+          @blur="() => { saveSelection(); setTimeout(() => { suggestions = [] }, 180); }"
         />
 
         <!-- Live Inline \command Autocomplete Popup -->
@@ -737,7 +870,7 @@ watch(() => props.note.mode, (newMode) => {
   pointer-events: none;
 }
 
-/* Workspace: Text Area & Drawing Canvas */
+/* Workspace: Rich Editor & Drawing Canvas */
 .note-workspace {
   position: relative;
   flex: 1 1 auto;
@@ -753,8 +886,8 @@ watch(() => props.note.mode, (newMode) => {
   background-color: rgba(255, 255, 255, 0.08);
 }
 
-/* Strictly Times New Roman Text Area */
-.note-textarea {
+/* Strictly Times New Roman Rich Text Editor */
+.note-rich-editor {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -765,23 +898,38 @@ watch(() => props.note.mode, (newMode) => {
   color: #0f172a;
   font-family: "Times New Roman", Times, "Cambria Math", serif !important;
   line-height: 1.5;
-  resize: none;
   outline: none;
   box-sizing: border-box;
   user-select: text;
   z-index: 2;
   overflow-y: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
 }
 
-.note-textarea::placeholder {
+.note-rich-editor :deep(*) {
+  font-family: "Times New Roman", Times, "Cambria Math", serif !important;
+}
+
+.note-rich-editor :deep(ul),
+.note-rich-editor :deep(ol) {
+  margin: 4px 0;
+  padding-left: 20px;
+}
+
+.note-rich-editor.is-empty::before {
+  content: attr(data-placeholder);
   color: rgba(15, 23, 42, 0.38);
   font-style: italic;
   font-family: "Times New Roman", Times, serif;
+  pointer-events: none;
+  display: block;
 }
 
-.note-textarea:disabled {
+.note-rich-editor.is-disabled {
   opacity: 0.95;
   cursor: default;
+  pointer-events: none;
 }
 
 /* Live Inline Math Autocomplete Popup */

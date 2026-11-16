@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, onMounted, watch } from 'vue'
+import { ref, reactive, computed, onMounted, watch } from 'vue'
 import { useRoute } from 'vitepress'
 import StickyNoteItem from './StickyNoteItem.vue'
 import {
@@ -19,6 +19,40 @@ const noteItemRefs = ref({})
 const showMathPanel = ref(false)
 const activeMathCat = ref('all')
 const mathSearchQuery = ref('')
+
+// Rich-text format state of current selection in active note
+const formatState = reactive({
+  bold: false,
+  italic: false,
+  underline: false,
+  strikeThrough: false,
+  subscript: false,
+  superscript: false,
+  justifyCenter: false,
+  justifyRight: false,
+  insertUnorderedList: false
+})
+
+// Text color & highlight palettes
+const textColors = [
+  { name: 'Đen mực', hex: '#0f172a' },
+  { name: 'Đỏ', hex: '#dc2626' },
+  { name: 'Xanh dương', hex: '#2563eb' },
+  { name: 'Xanh lá', hex: '#15803d' },
+  { name: 'Tím', hex: '#7c3aed' },
+  { name: 'Cam đậm', hex: '#c2410c' }
+]
+
+const textHighlights = [
+  { name: 'Không tô nền', hex: 'transparent' },
+  { name: 'Dạ quang vàng', hex: '#fde047' },
+  { name: 'Dạ quang xanh lá', hex: '#86efac' },
+  { name: 'Dạ quang xanh dương', hex: '#7dd3fc' },
+  { name: 'Dạ quang hồng', hex: '#fda4af' }
+]
+
+const activeTextColor = ref('#0f172a')
+const showColorPopover = ref(false)
 
 // Filtered symbols for the picker & cheatsheet table
 const filteredMathSymbols = computed(() => {
@@ -88,6 +122,7 @@ function loadNotes() {
         width: Math.max(280, Number(n.width) || 340),
         height: Math.max(240, Number(n.height) || 340),
         fontSize: Number(n.fontSize) || 18,
+        textColor: n.textColor || '#0f172a',
         colorTheme: n.colorTheme || 'yellow',
         mode: n.mode || 'text',
         brushColor: n.brushColor || '#dc2626',
@@ -95,6 +130,7 @@ function loadNotes() {
         isHighlighter: !!n.isHighlighter,
         isCollapsed: !!n.isCollapsed,
         text: n.text || '',
+        html: n.html !== undefined ? n.html : undefined,
         drawData: n.drawData || null,
         zIndex: Number(n.zIndex) || 1000
       }))
@@ -144,7 +180,9 @@ function addNote() {
     width: noteWidth,
     height: noteHeight,
     text: '',
+    html: '',
     fontSize: 18,
+    textColor: '#0f172a',
     colorTheme: 'yellow',
     mode: 'text',
     brushColor: '#dc2626',
@@ -177,6 +215,7 @@ function deleteNote(noteId) {
   }
   if (notes.value.length === 0) {
     showMathPanel.value = false
+    showColorPopover.value = false
   }
   saveNotes()
 }
@@ -198,7 +237,46 @@ function toggleVisibility() {
   isVisible.value = !isVisible.value
   if (!isVisible.value) {
     showMathPanel.value = false
+    showColorPopover.value = false
   }
+}
+
+function onFormatStateUpdate(st) {
+  Object.assign(formatState, st)
+}
+
+// Rich-text formatting actions
+function triggerFormat(cmd, val = null) {
+  if (!activeNote.value) return
+  if (activeNote.value.mode !== 'text') {
+    activeNote.value.mode = 'text'
+  }
+  const refComp = noteItemRefs.value[activeNote.value.id]
+  if (refComp && typeof refComp.execFormat === 'function') {
+    refComp.execFormat(cmd, val)
+  }
+}
+
+function applyTextColor(hex) {
+  activeTextColor.value = hex
+  if (!activeNote.value) return
+  const sel = typeof window !== 'undefined' ? window.getSelection() : null
+  const hasSelection = sel && sel.rangeCount > 0 && !sel.isCollapsed
+  if (hasSelection) {
+    triggerFormat('foreColor', hex)
+  } else {
+    // Apply both inline foreColor for next typed chars AND default text color if note is empty
+    if (!activeNote.value.text) {
+      activeNote.value.textColor = hex
+      saveNotes()
+    }
+    triggerFormat('foreColor', hex)
+  }
+}
+
+function applyTextHighlight(hex) {
+  if (!activeNote.value) return
+  triggerFormat('hiliteColor', hex)
 }
 
 // Active note controls in the dock
@@ -207,6 +285,7 @@ function setMode(newMode) {
   activeNote.value.mode = newMode
   if (newMode === 'draw') {
     showMathPanel.value = false
+    showColorPopover.value = false
   }
   saveNotes()
   if (newMode === 'text' && noteItemRefs.value[activeNote.value.id]) {
@@ -220,6 +299,7 @@ function toggleMathPanel() {
     activeNote.value.mode = 'text'
     saveNotes()
   }
+  showColorPopover.value = false
   showMathPanel.value = !showMathPanel.value
 }
 
@@ -229,8 +309,14 @@ function openCheatsheetTab() {
     activeNote.value.mode = 'text'
     saveNotes()
   }
+  showColorPopover.value = false
   showMathPanel.value = true
   activeMathCat.value = 'cheatsheet'
+}
+
+function toggleColorPopover() {
+  showMathPanel.value = false
+  showColorPopover.value = !showColorPopover.value
 }
 
 function insertSymbolToActiveNote(symStr) {
@@ -289,6 +375,7 @@ function triggerClear() {
 // Reload notes whenever user navigates to a new page
 watch(() => route.path, () => {
   showMathPanel.value = false
+  showColorPopover.value = false
   loadNotes()
 })
 
@@ -311,8 +398,100 @@ onMounted(() => {
         @delete="deleteNote"
         @select="selectNote"
         @bring-to-front="bringToFront"
+        @format-state="onFormatStateUpdate"
       />
     </div>
+
+    <!-- Floating Text Color & Highlight Popover -->
+    <transition name="math-pop">
+      <div
+        v-if="showColorPopover && notes.length > 0 && activeNote && isVisible"
+        class="text-style-popover"
+        @mousedown.prevent
+      >
+        <div class="tsp-header">
+          <span>Màu chữ &amp; Tô nền văn bản</span>
+          <button type="button" class="math-close-btn" @click="showColorPopover = false">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round">
+              <line x1="18" y1="6" x2="6" y2="18"/>
+              <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="tsp-section">
+          <div class="tsp-label">Màu chữ (Bôi đen chữ hoặc chọn để gõ tiếp):</div>
+          <div class="tsp-swatches">
+            <button
+              v-for="tc in textColors"
+              :key="tc.hex"
+              type="button"
+              class="tsp-color-dot"
+              :class="{ active: activeTextColor === tc.hex }"
+              :style="{ backgroundColor: tc.hex }"
+              :title="tc.name"
+              @mousedown.prevent="applyTextColor(tc.hex)"
+            />
+            <!-- Custom Color Picker -->
+            <label class="tsp-custom-color" title="Chọn màu chữ tùy chỉnh">
+              <input
+                type="color"
+                :value="activeTextColor"
+                @input="applyTextColor($event.target.value)"
+              />
+              <span>Tùy chọn</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="tsp-section">
+          <div class="tsp-label">Tô dạ quang nền chữ (Highlight):</div>
+          <div class="tsp-swatches">
+            <button
+              v-for="hl in textHighlights"
+              :key="hl.name"
+              type="button"
+              class="tsp-hl-pill"
+              :style="{
+                backgroundColor: hl.hex === 'transparent' ? '#f8fafc' : hl.hex
+              }"
+              :title="hl.name"
+              @mousedown.prevent="applyTextHighlight(hl.hex)"
+            >
+              <span v-if="hl.hex === 'transparent'">Không tô</span>
+              <span v-else>A</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="tsp-section tsp-row-between">
+          <div class="tsp-label">Căn lề &amp; Danh sách:</div>
+          <div class="tsp-align-btns">
+            <button type="button" class="fmt-btn" title="Căn trái" @mousedown.prevent="triggerFormat('justifyLeft')">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+                <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="15" y2="12"/><line x1="3" y1="18" x2="18" y2="18"/>
+              </svg>
+            </button>
+            <button type="button" class="fmt-btn" :class="{ active: formatState.justifyCenter }" title="Căn giữa" @mousedown.prevent="triggerFormat('justifyCenter')">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+                <line x1="3" y1="6" x2="21" y2="6"/><line x1="6" y1="12" x2="18" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/>
+              </svg>
+            </button>
+            <button type="button" class="fmt-btn" :class="{ active: formatState.insertUnorderedList }" title="Danh sách chấm tròn" @mousedown.prevent="triggerFormat('insertUnorderedList')">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+                <line x1="9" y1="6" x2="20" y2="6"/><line x1="9" y1="12" x2="20" y2="12"/><line x1="9" y1="18" x2="20" y2="18"/>
+                <circle cx="4.5" cy="6" r="1.2" fill="currentColor"/><circle cx="4.5" cy="12" r="1.2" fill="currentColor"/><circle cx="4.5" cy="18" r="1.2" fill="currentColor"/>
+              </svg>
+            </button>
+            <button type="button" class="fmt-btn" title="Xóa định dạng vùng bôi đen" @mousedown.prevent="triggerFormat('removeFormat')">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+                <path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M13 4 8 20"/><line x1="3" y1="3" x2="21" y2="21"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </transition>
 
     <!-- Floating Math Symbols & Command Cheatsheet Panel -->
     <transition name="math-pop">
@@ -438,7 +617,7 @@ onMounted(() => {
                   :key="item.cmd + idx"
                   type="button"
                   class="cs-cmd-row"
-                  @click="insertSymbolToActiveNote(item.symbol)"
+                  @mousedown.prevent="insertSymbolToActiveNote(item.symbol)"
                   :title="'Nhấp để chèn ' + item.symbol + ' vào tờ note'"
                 >
                   <span class="cs-row-sym">{{ item.symbol }}</span>
@@ -463,7 +642,7 @@ onMounted(() => {
               :key="item.cmd + idx"
               type="button"
               class="math-sym-card"
-              @click="insertSymbolToActiveNote(item.symbol)"
+              @mousedown.prevent="insertSymbolToActiveNote(item.symbol)"
               :title="`${item.label} — Gõ ${item.cmd} + Space hoặc nhấp để chèn`"
             >
               <span class="sym-char">{{ item.symbol }}</span>
@@ -521,14 +700,111 @@ onMounted(() => {
           </button>
         </div>
 
-        <!-- Text Mode Controls: Math Symbols & Cheatsheet, Font Size & Paper Color -->
+        <!-- Text Mode Controls: Rich Text Formatting (B, I, U, S, Sub, Sup, Text Color), Math Symbols, Font Size & Paper Color -->
         <div class="dock-subgroup" v-if="(activeNote.mode || 'text') === 'text'">
+          <!-- Rich Text Formatting Group (B, I, U, S, x₂, x², Color) -->
+          <div class="dock-format-group">
+            <!-- Bold (Ctrl+B) -->
+            <button
+              type="button"
+              class="fmt-btn"
+              :class="{ active: formatState.bold }"
+              @mousedown.prevent="triggerFormat('bold')"
+              title="In đậm (Ctrl + B)"
+            >
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 4h8a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z"/>
+                <path d="M6 12h9a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z"/>
+              </svg>
+            </button>
+
+            <!-- Italic (Ctrl+I) -->
+            <button
+              type="button"
+              class="fmt-btn"
+              :class="{ active: formatState.italic }"
+              @mousedown.prevent="triggerFormat('italic')"
+              title="In nghiêng (Ctrl + I)"
+            >
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="4" x2="10" y2="4"/>
+                <line x1="14" y1="20" x2="5" y2="20"/>
+                <line x1="15" y1="4" x2="9" y2="20"/>
+              </svg>
+            </button>
+
+            <!-- Underline (Ctrl+U) -->
+            <button
+              type="button"
+              class="fmt-btn"
+              :class="{ active: formatState.underline }"
+              @mousedown.prevent="triggerFormat('underline')"
+              title="Gạch chân (Ctrl + U)"
+            >
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 4v6a6 6 0 0 0 12 0V4"/>
+                <line x1="4" y1="20" x2="20" y2="20"/>
+              </svg>
+            </button>
+
+            <!-- Strikethrough -->
+            <button
+              type="button"
+              class="fmt-btn"
+              :class="{ active: formatState.strikeThrough }"
+              @mousedown.prevent="triggerFormat('strikeThrough')"
+              title="Gạch ngang chữ"
+            >
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 4H9a3 3 0 0 0-2.83 4"/>
+                <path d="M14 12a4 4 0 0 1 0 8H6"/>
+                <line x1="4" y1="12" x2="20" y2="12"/>
+              </svg>
+            </button>
+
+            <!-- Subscript (x₂) -->
+            <button
+              type="button"
+              class="fmt-btn fmt-text-icon"
+              :class="{ active: formatState.subscript }"
+              @mousedown.prevent="triggerFormat('subscript')"
+              title="Chỉ số dưới (Subscript x₂)"
+            >
+              <span>x<sub>2</sub></span>
+            </button>
+
+            <!-- Superscript (x²) -->
+            <button
+              type="button"
+              class="fmt-btn fmt-text-icon"
+              :class="{ active: formatState.superscript }"
+              @mousedown.prevent="triggerFormat('superscript')"
+              title="Số mũ / Chỉ số trên (Superscript x²)"
+            >
+              <span>x<sup>2</sup></span>
+            </button>
+
+            <!-- Text Color & Highlight Button -->
+            <button
+              type="button"
+              class="fmt-btn fmt-color-btn"
+              :class="{ active: showColorPopover }"
+              @mousedown.prevent="toggleColorPopover"
+              title="Đổi màu chữ, tô dạ quang nền chữ & căn lề"
+            >
+              <span class="fmt-letter-a">A</span>
+              <span class="fmt-color-bar" :style="{ backgroundColor: activeTextColor }" />
+            </button>
+          </div>
+
+          <div class="dock-divider" />
+
           <!-- Math Symbols & Cheatsheet Button -->
           <button
             type="button"
             class="dock-math-btn"
             :class="{ active: showMathPanel }"
-            @click="toggleMathPanel"
+            @mousedown.prevent="toggleMathPanel"
             title="Mở bảng Ký hiệu Toán - Cơ học & Cheatsheet gõ lệnh nhanh"
           >
             <svg class="dock-svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
@@ -542,7 +818,7 @@ onMounted(() => {
             type="button"
             class="dock-cs-btn"
             :class="{ active: showMathPanel && activeMathCat === 'cheatsheet' }"
-            @click="openCheatsheetTab"
+            @mousedown.prevent="openCheatsheetTab"
             title="Xem bảng Cheatsheet cú pháp gõ lệnh toán học"
           >
             <svg class="dock-svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -555,7 +831,7 @@ onMounted(() => {
           <div class="dock-divider" />
 
           <div class="dock-field">
-            <span class="dock-label">Cỡ chữ:</span>
+            <span class="dock-label">Cỡ:</span>
             <select
               :value="activeNote.fontSize || 18"
               class="dock-select"
@@ -701,6 +977,218 @@ onMounted(() => {
 
 .notes-canvas-layer :deep(.sticky-note-card) {
   pointer-events: auto;
+}
+
+/* Rich Text Formatting Group in Dock */
+.dock-format-group {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background: rgba(0, 0, 0, 0.04);
+  padding: 2px 4px;
+  border-radius: 8px;
+}
+
+.dark .dock-format-group {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.fmt-btn {
+  border: 1px solid transparent;
+  background: transparent;
+  color: #334155;
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.14s ease;
+}
+
+.dark .fmt-btn {
+  color: #cbd5e1;
+}
+
+.fmt-btn:hover {
+  background: rgba(2, 132, 199, 0.12);
+  color: #0284c7;
+}
+
+.fmt-btn.active {
+  background: #0284c7;
+  color: #ffffff;
+  box-shadow: 0 1px 4px rgba(2, 132, 199, 0.35);
+}
+
+.fmt-text-icon {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 13px;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.fmt-text-icon sub,
+.fmt-text-icon sup {
+  font-size: 9px;
+  font-style: normal;
+}
+
+.fmt-color-btn {
+  flex-direction: column;
+  gap: 1px;
+  width: 28px;
+}
+
+.fmt-letter-a {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.fmt-color-bar {
+  width: 14px;
+  height: 3px;
+  border-radius: 2px;
+}
+
+/* Floating Text Color & Highlight Popover */
+.text-style-popover {
+  position: fixed;
+  bottom: 78px;
+  right: 160px;
+  width: 285px;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(14px);
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  box-shadow: 0 16px 38px rgba(15, 23, 42, 0.22);
+  z-index: 10001;
+  pointer-events: auto;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.dark .text-style-popover {
+  background: rgba(15, 23, 42, 0.96);
+  border-color: #334155;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+}
+
+.tsp-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 700;
+  color: #0f172a;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.dark .tsp-header {
+  color: #f8fafc;
+  border-bottom-color: #334155;
+}
+
+.tsp-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tsp-row-between {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tsp-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.dark .tsp-label {
+  color: #94a3b8;
+}
+
+.tsp-swatches {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+
+.tsp-color-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.12s ease;
+}
+
+.tsp-color-dot:hover {
+  transform: scale(1.18);
+}
+
+.tsp-color-dot.active {
+  transform: scale(1.2);
+  box-shadow: 0 0 0 2px #0284c7;
+}
+
+.tsp-custom-color {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #0284c7;
+  cursor: pointer;
+  border: 1px dashed #94a3b8;
+  padding: 2px 7px;
+  border-radius: 9999px;
+}
+
+.tsp-custom-color input[type="color"] {
+  width: 14px;
+  height: 14px;
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.tsp-hl-pill {
+  height: 24px;
+  min-width: 30px;
+  padding: 0 7px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #0f172a;
+  cursor: pointer;
+  transition: transform 0.12s ease;
+}
+
+.tsp-hl-pill:hover {
+  transform: translateY(-1px);
+  border-color: #0284c7;
+}
+
+.tsp-align-btns {
+  display: flex;
+  gap: 4px;
 }
 
 /* Floating Math Symbols & Cheatsheet Popover */
@@ -1317,12 +1805,12 @@ onMounted(() => {
 .dock-toolbar {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(226, 232, 240, 0.9);
-  padding: 6px 12px;
+  padding: 5px 12px;
   border-radius: 9999px;
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.16), 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1354,7 +1842,7 @@ onMounted(() => {
   background: transparent;
   color: #475569;
   border-radius: 9999px;
-  padding: 5px 12px;
+  padding: 5px 11px;
   font-size: 12px;
   font-weight: 600;
   cursor: pointer;
@@ -1362,7 +1850,7 @@ onMounted(() => {
   user-select: none;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
@@ -1385,13 +1873,13 @@ onMounted(() => {
 .dock-subgroup {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 7px;
 }
 
 .dock-field {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 4px;
 }
 
 .dock-label {
@@ -1410,7 +1898,7 @@ onMounted(() => {
   background: #ffffff;
   color: #0f172a;
   border-radius: 6px;
-  padding: 3px 6px;
+  padding: 3px 5px;
   font-size: 11px;
   font-weight: 600;
   cursor: pointer;
@@ -1652,7 +2140,8 @@ onMounted(() => {
     left: 14px;
     justify-content: flex-end;
   }
-  .math-cheatsheet-popover {
+  .math-cheatsheet-popover,
+  .text-style-popover {
     right: 14px;
     left: 14px;
     bottom: 68px;
