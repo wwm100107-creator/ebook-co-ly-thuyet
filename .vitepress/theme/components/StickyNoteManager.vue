@@ -147,6 +147,8 @@ function loadNotes() {
         isCollapsed: !!n.isCollapsed,
         text: n.text || '',
         html: n.html !== undefined ? n.html : undefined,
+        labels: Array.isArray(n.labels) ? n.labels : [],
+        drawRegions: Array.isArray(n.drawRegions) ? n.drawRegions : [],
         drawData: n.drawData || null,
         zIndex: Number(n.zIndex) || 1000
       }))
@@ -206,6 +208,8 @@ function addNote() {
     brushSize: 4,
     isHighlighter: false,
     isCollapsed: false,
+    labels: [],
+    drawRegions: [],
     drawData: null,
     zIndex: ++topZIndex.value,
     createdAt: Date.now()
@@ -420,6 +424,11 @@ function triggerClear() {
   noteItemRefs.value[activeNote.value.id]?.clearCanvas()
 }
 
+function triggerAddPointLabel() {
+  if (!activeNote.value) return
+  noteItemRefs.value[activeNote.value.id]?.addPointLabelBox()
+}
+
 // Reload notes whenever user navigates to a new page
 watch(() => route.path, () => {
   showMathPanel.value = false
@@ -504,6 +513,10 @@ onMounted(() => {
             <div class="dg-row">
               <kbd>Shift + A</kbd> hoặc <kbd>A</kbd> / <kbd>Alt</kbd>
               <span>→ Mũi tên Vectơ lực (F⃗, P⃗, N⃗, v⃗)</span>
+            </div>
+            <div class="dg-row">
+              <kbd>Ctrl + T</kbd> hoặc <strong>Nhấp đúp lên hình</strong>
+              <span>→ Thêm hộp Text tọa độ điểm (A, B, O, F⃗...)</span>
             </div>
           </div>
 
@@ -1020,7 +1033,7 @@ onMounted(() => {
             </button>
           </div>
 
-          <!-- Auto-Snap Hold Toggle & Hotkey Guide -->
+          <!-- Auto-Snap Hold Toggle, Point Label Box & Hotkey Guide -->
           <button
             type="button"
             class="size-pill"
@@ -1033,10 +1046,24 @@ onMounted(() => {
 
           <button
             type="button"
+            class="dock-math-btn"
+            @mousedown.prevent="triggerAddPointLabel"
+            title="Thêm hộp Text tọa độ điểm lên hình vẽ (Phím tắt: Ctrl + T hoặc Nhấp đúp chuột lên hình)"
+          >
+            <svg class="dock-svg" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="4 7 4 4 20 4 20 7"/>
+              <line x1="9" y1="20" x2="15" y2="20"/>
+              <line x1="12" y1="4" x2="12" y2="20"/>
+            </svg>
+            <span>+Hộp Điểm (Ctrl+T)</span>
+          </button>
+
+          <button
+            type="button"
             class="dock-cs-btn"
             :class="{ active: showDrawGuide }"
             @click="toggleDrawGuide"
-            title="Xem hướng dẫn Phím tắt vẽ hình hoàn hảo (Shift, Shift+C, Shift+V, Shift+R, Shift+A...)"
+            title="Xem hướng dẫn Phím tắt vẽ hình hoàn hảo (Shift, Shift+C, Shift+V, Shift+R, Ctrl+T...)"
           >
             <span>Phím tắt Vẽ</span>
           </button>
