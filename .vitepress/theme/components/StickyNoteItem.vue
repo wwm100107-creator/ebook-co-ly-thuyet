@@ -34,6 +34,24 @@ let ctx = null
 let resizeObserver = null
 let savedRange = null
 
+// Smart Drawing & Shape Snap State
+const strokePoints = ref([])
+const snappedBadgeText = ref('')
+let snapshotBeforeStroke = null
+let holdSnapTimer = null
+let activeSnappedShape = null // null | 'line' | 'arrow' | 'circle' | 'square' | 'rect' | 'triangle'
+let snapBoundingBox = null // { minX, minY, maxX, maxY } when snapped from freehand loop
+const pressedKeys = reactive({
+  shift: false,
+  alt: false,
+  c: false,
+  v: false,
+  r: false,
+  t: false,
+  a: false,
+  l: false
+})
+
 // Math command autocomplete state inside the note
 const suggestions = ref([])
 const selectedSuggestionIdx = ref(0)
@@ -303,7 +321,6 @@ function applySuggestion(item) {
 }
 
 function onEditorKeyDown(e) {
-  // Navigate autocomplete popup if visible
   if (suggestions.value.length > 0) {
     if (e.key === 'ArrowDown') {
       e.preventDefault()
@@ -328,7 +345,6 @@ function onEditorKeyDown(e) {
     }
   }
 
-  // Expand exact command / ^sup / _sub when Space, Tab, or Enter is pressed
   if (e.key === ' ' || e.key === 'Tab' || e.key === 'Enter') {
     const info = getActiveTextNodeAndOffset()
     if (info) {
@@ -380,7 +396,7 @@ function insertTextAtCursor(str) {
   syncNoteFromEditor()
 }
 
-// Canvas & Drawing Logic
+// === SMART DRAWING, SHAPE TOOLS, KEYBOARD HOTKEYS & HOLD-TO-SNAP ===
 function initCanvas() {
   const canvas = canvasRef.value
   if (!canvas || !canvas.parentElement) return
@@ -438,36 +454,306 @@ function saveCanvasData() {
   emit('update', props.note)
 }
 
+function applyStrokeStyle() {
+  if (!ctx) return
+  const bColor = props.note.brushColor || '#dc2626'
+  const bSize = props.note.brushSize || 4
+  const isHigh = !!props.note.isHighlighter
+  const tool = props.note.drawTool || 'freehand'
+
+  ctx.globalCompositeOperation = tool === 'eraser' ? 'destination-out' : 'source-over'
+  ctx.lineCap = 'round'
+  ctx.lineJoin = 'round'
+
+  if (tool === 'eraser') {
+    ctx.strokeStyle = 'rgba(0,0,0,1)'
+    ctx.fillStyle = 'rgba(0,0,0,1)'
+    ctx.lineWidth = Math.max(16, bSize * 3)
+  } else if (isHigh) {
+    ctx.strokeStyle = bColor + '55'
+    ctx.fillStyle = bColor + '55'
+    ctx.lineWidth = bSize
+  } else {
+    ctx.strokeStyle = bColor
+    ctx.fillStyle = bColor
+    ctx.lineWidth = bSize
+  }
+}
+
+// Determine which geometric shape is currently forced by toolbar or keyboard hotkeys
+function getForcedShapeFromInput(e) {
+  const tool = props.note.drawTool || 'freehand'
+  if (tool && tool !== 'freehand' && tool !== 'eraser') {
+    return tool
+  }
+  const shiftHeld = e?.shiftKey || pressedKeys.shift
+  const altHeld = e?.altKey || pressedKeys.alt
+
+  // Hotkey combinations while drawing:
+  // Shift+C or C -> Perfect Circle
+  if (pressedKeys.c) return 'circle'
+  // Shift+V or V -> Perfect Square
+  if (pressedKeys.v) return 'square'
+  // Shift+R or R -> Perfect Rectangle
+  if (pressedKeys.r) return 'rect'
+  // Shift+T or T -> Perfect Triangle
+  if (pressedKeys.t) return 'triangle'
+  // Shift+A or A or Alt -> Force Vector Arrow
+  if (pressedKeys.a || altHeld) return 'arrow'
+  // Shift+L or L or Shift alone -> Straight Line
+  if (pressedKeys.l || shiftHeld) return 'line'
+
+  return null
+}
+
+// Compute bounding box of recorded stroke points
+function computePointsBBox(pts) {
+  let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity
+  for (const p of pts) {
+    if (p.x < minX) minX = p.x
+    if (p.y < minY) minY = p.y
+    if (p.x > maxX) maxX = p.x
+    if (p.y > maxY) maxY = p.y
+  }
+  return { minX, minY, maxX, maxY }
+}
+
+// Smart Freehand Shape Recognizer (triggered on 380ms hold at end of stroke)
+function recognizeFreehandShape(pts) {
+  if (!pts || pts.length < 6) return null
+  const start = pts[0]
+  const end = pts[pts.length - 1]
+  const dx = end.x - start.x
+  const dy = end.y - start.y
+  const directDist = Math.hypot(dx, dy)
+
+  let pathLen = 0
+  for (let i = 1; i < pts.length; i++) {
+    pathLen += Math.hypot(pts[i].x - pts[i - 1].x, pts[i].y - pts[i - 1].y)
+  }
+  if (pathLen < 24) return null
+
+  // 1. Straight line check
+  if (directDist / pathLen > 0.85) {
+    return { type: 'line', bbox: null }
+  }
+
+  const bbox = computePointsBBox(pts)
+  const w = bbox.maxX - bbox.minX
+  const h = bbox.maxY - bbox.minY
+  const diag = Math.hypot(w, h)
+  if (w < 16 || h < 16) return null
+
+  // 2. Closed loop check (start & end points close relative to path length)
+  if (directDist < diag * 0.48 && pathLen > diag * 1.65) {
+    const cx = (bbox.minX + bbox.maxX) / 2
+    const cy = (bbox.minY + bbox.maxY) / 2
+    const rx = w / 2
+    const ry = h / 2
+
+    // Normalized radial distance from center
+    let sumR = 0
+    const normRs = []
+    for (const p of pts) {
+      const nr = Math.hypot((p.x - cx) / rx, (p.y - cy) / ry)
+      sumR += nr
+      normRs.push(nr)
+    }
+    const meanR = sumR / pts.length
+    let varR = 0
+    for (const nr of normRs) {
+      varR += (nr - meanR) ** 2
+    }
+    const stdR = Math.sqrt(varR / pts.length)
+
+    // Shoelace polygon area
+    let area2 = 0
+    for (let i = 0; i < pts.length; i++) {
+      const p1 = pts[i]
+      const p2 = pts[(i + 1) % pts.length]
+      area2 += p1.x * p2.y - p2.x * p1.y
+    }
+    const polyArea = Math.abs(area2) / 2
+    const areaRatio = polyArea / (w * h)
+    const isNearlyEqualSide = Math.abs(w - h) / Math.max(w, h) < 0.22
+
+    // Circle / Ellipse check: low radial std deviation and areaRatio around pi/4 (0.785)
+    if (stdR < 0.145 && areaRatio > 0.62 && areaRatio < 0.90) {
+      return { type: 'circle', bbox }
+    }
+    // Triangle check: areaRatio around 0.5
+    if (areaRatio >= 0.34 && areaRatio <= 0.61) {
+      return { type: 'triangle', bbox }
+    }
+    // Square / Rectangle check
+    return { type: isNearlyEqualSide ? 'square' : 'rect', bbox }
+  }
+
+  return null
+}
+
+// Render geometric shape onto canvas
+function renderGeometricShape(shapeType, pStart, pEnd, customBBox = null, constrainAspect = false) {
+  if (!ctx || !canvasRef.value) return
+  if (snapshotBeforeStroke) {
+    ctx.putImageData(snapshotBeforeStroke, 0, 0)
+  }
+  applyStrokeStyle()
+
+  let x1 = pStart.x
+  let y1 = pStart.y
+  let x2 = pEnd.x
+  let y2 = pEnd.y
+
+  // If snapped from a closed freehand loop (e.g. user drew a full circle returning to start point),
+  // use the stroke's bounding box when start & end are very close!
+  const dragDist = Math.hypot(x2 - x1, y2 - y1)
+  if (customBBox && dragDist < Math.hypot(customBBox.maxX - customBBox.minX, customBBox.maxY - customBBox.minY) * 0.45 && shapeType !== 'line' && shapeType !== 'arrow') {
+    x1 = customBBox.minX
+    y1 = customBBox.minY
+    x2 = customBBox.maxX
+    y2 = customBBox.maxY
+  }
+
+  ctx.beginPath()
+
+  if (shapeType === 'line' || shapeType === 'arrow') {
+    let tx = x2
+    let ty = y2
+    // Snap angle to 15° increments (0°, 30°, 45°, 60°, 90°...) when Shift is held with Line/Arrow tool
+    if (constrainAspect) {
+      const dx = x2 - x1
+      const dy = y2 - y1
+      const len = Math.hypot(dx, dy)
+      const angle = Math.atan2(dy, dx)
+      const snapAngle = Math.round(angle / (Math.PI / 12)) * (Math.PI / 12)
+      tx = x1 + len * Math.cos(snapAngle)
+      ty = y1 + len * Math.sin(snapAngle)
+    }
+    ctx.moveTo(x1, y1)
+    ctx.lineTo(tx, ty)
+    ctx.stroke()
+
+    if (shapeType === 'arrow') {
+      const angle = Math.atan2(ty - y1, tx - x1)
+      const headLen = Math.max(11, (props.note.brushSize || 4) * 3.2)
+      ctx.beginPath()
+      ctx.moveTo(tx, ty)
+      ctx.lineTo(
+        tx - headLen * Math.cos(angle - Math.PI / 6),
+        ty - headLen * Math.sin(angle - Math.PI / 6)
+      )
+      ctx.lineTo(
+        tx - headLen * Math.cos(angle + Math.PI / 6),
+        ty - headLen * Math.sin(angle + Math.PI / 6)
+      )
+      ctx.closePath()
+      ctx.fill()
+    }
+    return
+  }
+
+  const left = Math.min(x1, x2)
+  const top = Math.min(y1, y2)
+  let w = Math.abs(x2 - x1)
+  let h = Math.abs(y2 - y1)
+
+  if (shapeType === 'square') {
+    const side = Math.max(w, h)
+    const sx = x2 >= x1 ? x1 : x1 - side
+    const sy = y2 >= y1 ? y1 : y1 - side
+    ctx.strokeRect(sx, sy, side, side)
+    return
+  }
+
+  if (shapeType === 'rect') {
+    if (constrainAspect) {
+      const side = Math.max(w, h)
+      const sx = x2 >= x1 ? x1 : x1 - side
+      const sy = y2 >= y1 ? y1 : y1 - side
+      ctx.strokeRect(sx, sy, side, side)
+    } else {
+      ctx.strokeRect(left, top, w, h)
+    }
+    return
+  }
+
+  if (shapeType === 'circle') {
+    const cx = (x1 + x2) / 2
+    const cy = (y1 + y2) / 2
+    const r = Math.max(w, h) / 2
+    ctx.arc(cx, cy, r, 0, Math.PI * 2)
+    ctx.stroke()
+    return
+  }
+
+  if (shapeType === 'ellipse') {
+    const cx = (x1 + x2) / 2
+    const cy = (y1 + y2) / 2
+    if (constrainAspect) {
+      const r = Math.max(w, h) / 2
+      ctx.arc(cx, cy, r, 0, Math.PI * 2)
+    } else {
+      ctx.ellipse(cx, cy, Math.max(2, w / 2), Math.max(2, h / 2), 0, 0, Math.PI * 2)
+    }
+    ctx.stroke()
+    return
+  }
+
+  if (shapeType === 'triangle') {
+    const midX = (left + left + w) / 2
+    ctx.moveTo(midX, top)
+    ctx.lineTo(left + w, top + h)
+    ctx.lineTo(left, top + h)
+    ctx.closePath()
+    ctx.stroke()
+  }
+}
+
+const SHAPE_NAMES_VI = {
+  line: 'Đoạn thẳng chuẩn',
+  arrow: 'Vectơ mũi tên',
+  circle: 'Hình tròn hoàn hảo',
+  square: 'Hình vuông hoàn hảo',
+  rect: 'Hình chữ nhật chuẩn',
+  triangle: 'Tam giác cân chuẩn'
+}
+
+function showSnapToast(shapeType) {
+  snappedBadgeText.value = SHAPE_NAMES_VI[shapeType] || 'Đã nắn hình chuẩn'
+  setTimeout(() => {
+    if (!isDrawing.value) snappedBadgeText.value = ''
+  }, 1100)
+}
+
 function onCanvasPointerDown(e) {
   if (props.note.mode !== 'draw' || props.note.isCollapsed) return
   isDrawing.value = true
+  snappedBadgeText.value = ''
   const rect = canvasRef.value.getBoundingClientRect()
   const x = e.clientX - rect.left
   const y = e.clientY - rect.top
 
   if (!ctx) ctx = canvasRef.value.getContext('2d')
 
-  ctx.beginPath()
-  ctx.moveTo(x, y)
-  
-  const bColor = props.note.brushColor || '#dc2626'
-  const bSize = props.note.brushSize || 4
-  const isHigh = !!props.note.isHighlighter
-
-  if (isHigh) {
-    ctx.strokeStyle = bColor + '55' // ~33% alpha for highlight
-    ctx.lineWidth = bSize
-  } else {
-    ctx.strokeStyle = bColor
-    ctx.lineWidth = bSize
-  }
+  strokePoints.value = [{ x, y }]
+  snapBoundingBox = null
+  activeSnappedShape = getForcedShapeFromInput(e)
 
   try {
-    const imgData = ctx.getImageData(0, 0, canvasRef.value.width, canvasRef.value.height)
-    strokeHistory.value.push(imgData)
-    if (strokeHistory.value.length > 20) strokeHistory.value.shift()
+    snapshotBeforeStroke = ctx.getImageData(0, 0, canvasRef.value.width, canvasRef.value.height)
+    strokeHistory.value.push(snapshotBeforeStroke)
+    if (strokeHistory.value.length > 25) strokeHistory.value.shift()
   } catch (err) {
-    // ignore cross-origin taint if any
+    snapshotBeforeStroke = null
+  }
+
+  applyStrokeStyle()
+  ctx.beginPath()
+  ctx.moveTo(x, y)
+
+  if (activeSnappedShape) {
+    showSnapToast(activeSnappedShape)
   }
 
   e.preventDefault()
@@ -480,21 +766,110 @@ function onCanvasPointerMove(e) {
   const x = e.clientX - rect.left
   const y = e.clientY - rect.top
 
+  strokePoints.value.push({ x, y })
+
+  // Check if user pressed a shape hotkey mid-stroke
+  const forcedNow = getForcedShapeFromInput(e)
+  if (forcedNow && activeSnappedShape !== forcedNow) {
+    activeSnappedShape = forcedNow
+    snapBoundingBox = computePointsBBox(strokePoints.value)
+    showSnapToast(activeSnappedShape)
+  }
+
+  if (activeSnappedShape) {
+    if (holdSnapTimer) {
+      clearTimeout(holdSnapTimer)
+      holdSnapTimer = null
+    }
+    const startPt = strokePoints.value[0]
+    const constrain = !!(e.shiftKey || pressedKeys.shift)
+    renderGeometricShape(activeSnappedShape, startPt, { x, y }, snapBoundingBox, constrain)
+    e.preventDefault()
+    return
+  }
+
+  // Freehand drawing
+  applyStrokeStyle()
   ctx.lineTo(x, y)
   ctx.stroke()
+
+  // Hold-to-Snap Timer (GoodNotes style: pause pointer for 380ms at end of stroke to auto-snap!)
+  if (props.note.autoShape !== false && (props.note.drawTool || 'freehand') === 'freehand') {
+    if (holdSnapTimer) clearTimeout(holdSnapTimer)
+    holdSnapTimer = setTimeout(() => {
+      if (!isDrawing.value || activeSnappedShape) return
+      const detected = recognizeFreehandShape(strokePoints.value)
+      if (detected) {
+        activeSnappedShape = detected.type
+        snapBoundingBox = detected.bbox
+        const firstPt = strokePoints.value[0]
+        const lastPt = strokePoints.value[strokePoints.value.length - 1]
+        renderGeometricShape(activeSnappedShape, firstPt, lastPt, snapBoundingBox, false)
+        showSnapToast(activeSnappedShape)
+      }
+    }, 380)
+  }
+
   e.preventDefault()
 }
 
 function onCanvasPointerUp() {
+  if (holdSnapTimer) {
+    clearTimeout(holdSnapTimer)
+    holdSnapTimer = null
+  }
   if (isDrawing.value) {
     isDrawing.value = false
+    if (ctx) ctx.globalCompositeOperation = 'source-over'
+    activeSnappedShape = null
+    snapBoundingBox = null
     saveCanvasData()
+    setTimeout(() => {
+      snappedBadgeText.value = ''
+    }, 900)
+  }
+}
+
+// Track keyboard hotkeys (Shift, C, V, R, T, A, L) for mid-stroke shape snapping
+function onGlobalKeyDown(e) {
+  if (!props.isActive || props.note.mode !== 'draw' || props.note.isCollapsed) return
+  const tag = (e.target?.tagName || '').toLowerCase()
+  if (tag === 'input' || tag === 'textarea' || e.target?.isContentEditable) return
+
+  if (e.key === 'Shift') pressedKeys.shift = true
+  if (e.key === 'Alt') pressedKeys.alt = true
+  const k = e.key.toLowerCase()
+  if (k in pressedKeys) {
+    pressedKeys[k] = true
+  }
+
+  // If currently drawing a stroke, immediately snap when hotkey is pressed!
+  if (isDrawing.value && strokePoints.value.length >= 2) {
+    const forced = getForcedShapeFromInput(e)
+    if (forced) {
+      activeSnappedShape = forced
+      snapBoundingBox = computePointsBBox(strokePoints.value)
+      const firstPt = strokePoints.value[0]
+      const lastPt = strokePoints.value[strokePoints.value.length - 1]
+      renderGeometricShape(activeSnappedShape, firstPt, lastPt, snapBoundingBox, pressedKeys.shift)
+      showSnapToast(activeSnappedShape)
+    }
+  }
+}
+
+function onGlobalKeyUp(e) {
+  if (e.key === 'Shift') pressedKeys.shift = false
+  if (e.key === 'Alt') pressedKeys.alt = false
+  const k = e.key.toLowerCase()
+  if (k in pressedKeys) {
+    pressedKeys[k] = false
   }
 }
 
 function clearCanvas() {
   if (!ctx || !canvasRef.value) return
   const dpr = window.devicePixelRatio || 1
+  ctx.globalCompositeOperation = 'source-over'
   ctx.clearRect(0, 0, canvasRef.value.width / dpr, canvasRef.value.height / dpr)
   strokeHistory.value = []
   props.note.drawData = null
@@ -519,6 +894,10 @@ defineExpose({
 })
 
 onMounted(() => {
+  if (typeof window !== 'undefined') {
+    window.addEventListener('keydown', onGlobalKeyDown)
+    window.addEventListener('keyup', onGlobalKeyUp)
+  }
   nextTick(() => {
     syncEditorFromNote()
     setTimeout(() => {
@@ -534,6 +913,11 @@ onMounted(() => {
 })
 
 onUnmounted(() => {
+  if (typeof window !== 'undefined') {
+    window.removeEventListener('keydown', onGlobalKeyDown)
+    window.removeEventListener('keyup', onGlobalKeyUp)
+  }
+  if (holdSnapTimer) clearTimeout(holdSnapTimer)
   if (resizeObserver) resizeObserver.disconnect()
 })
 
@@ -696,14 +1080,24 @@ watch(() => props.note.mode, (newMode) => {
           @pointerleave="onCanvasPointerUp"
         />
 
+        <!-- Live Snap Badge Feedback when a shape snaps -->
+        <div class="snap-badge-overlay" v-if="snappedBadgeText && note.mode === 'draw'">
+          <div class="snap-badge-pill">
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            <span>{{ snappedBadgeText }}</span>
+          </div>
+        </div>
+
         <!-- Floating Minimalist Hint when user switches to Drawing Mode -->
-        <div class="draw-hint-overlay" v-if="note.mode === 'draw' && (!note.drawData && !strokeHistory.length)">
+        <div class="draw-hint-overlay" v-if="note.mode === 'draw' && !snappedBadgeText && (!note.drawData && !strokeHistory.length)">
           <div class="hint-pill">
             <svg class="hint-svg" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M2 22s5-1 7-3l11-11a2.828 2.828 0 0 0-4-4L5 15c-2 2-3 7-3 7z"/>
               <path d="m15 5 4 4"/>
             </svg>
-            <span>Rê chuột lên mặt note để vẽ hình hoặc ghi chú</span>
+            <span>Vẽ rồi giữ chuột 0.4s (hoặc giữ Shift / C / V / R / A) để tự nắn hình chuẩn</span>
           </div>
         </div>
       </div>
@@ -1031,6 +1425,31 @@ watch(() => props.note.mode, (newMode) => {
   z-index: 10;
 }
 
+.snap-badge-overlay {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 12;
+}
+
+.snap-badge-pill {
+  background: #0284c7;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  box-shadow: 0 3px 10px rgba(2, 132, 199, 0.35);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
 .draw-hint-overlay {
   position: absolute;
   top: 10px;
@@ -1045,7 +1464,7 @@ watch(() => props.note.mode, (newMode) => {
 .hint-pill {
   background: rgba(15, 23, 42, 0.78);
   color: #ffffff;
-  font-size: 11px;
+  font-size: 10.5px;
   padding: 4px 10px;
   border-radius: 9999px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
@@ -1058,6 +1477,7 @@ watch(() => props.note.mode, (newMode) => {
 
 .hint-svg {
   display: inline-block;
+  flex-shrink: 0;
 }
 
 /* Bottom resize corner handle */

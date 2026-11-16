@@ -20,6 +20,9 @@ const showMathPanel = ref(false)
 const activeMathCat = ref('all')
 const mathSearchQuery = ref('')
 
+// Smart Draw Guide Popover State
+const showDrawGuide = ref(false)
+
 // Rich-text format state of current selection in active note
 const formatState = reactive({
   bold: false,
@@ -98,6 +101,17 @@ const brushSizes = [
   { label: 'Dạ quang', val: 18, isHigh: true }
 ]
 
+const drawTools = [
+  { id: 'freehand', name: 'Bút tự do (Giữ chuột 0.4s cuối nét để tự nắn hình)', short: 'Tự do' },
+  { id: 'line', name: 'Đoạn thẳng (Hoặc giữ phím Shift khi vẽ)', short: 'Đoạn' },
+  { id: 'arrow', name: 'Mũi tên Vectơ lực (Hoặc giữ phím A / Alt khi vẽ)', short: 'Vectơ' },
+  { id: 'circle', name: 'Hình tròn hoàn hảo (Hoặc giữ Shift + C / phím C khi vẽ)', short: 'Tròn' },
+  { id: 'square', name: 'Hình vuông hoàn hảo (Hoặc giữ Shift + V / phím V khi vẽ)', short: 'Vuông' },
+  { id: 'rect', name: 'Hình chữ nhật (Hoặc giữ Shift + R / phím R khi vẽ)', short: 'Chữ nhật' },
+  { id: 'triangle', name: 'Hình tam giác cân / Gối tựa (Hoặc giữ Shift + T / phím T)', short: 'Tam giác' },
+  { id: 'eraser', name: 'Tẩy nét vẽ (Rê chuột để xóa từng phần)', short: 'Tẩy' }
+]
+
 // Storage key per page path
 const storageKey = computed(() => {
   const p = route.path ? route.path.replace(/\/$/, '') : 'home'
@@ -125,6 +139,8 @@ function loadNotes() {
         textColor: n.textColor || '#0f172a',
         colorTheme: n.colorTheme || 'yellow',
         mode: n.mode || 'text',
+        drawTool: n.drawTool || 'freehand',
+        autoShape: n.autoShape !== undefined ? !!n.autoShape : true,
         brushColor: n.brushColor || '#dc2626',
         brushSize: Number(n.brushSize) || 4,
         isHighlighter: !!n.isHighlighter,
@@ -167,11 +183,10 @@ function addNote() {
   const scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0
   const winWidth = window.innerWidth || 800
   
-  // Center roughly in current viewport reading area
   const noteWidth = Math.max(300, Math.min(360, winWidth - 40))
   const noteHeight = 340
   const noteX = Math.max(20, Math.min(winWidth - noteWidth - 40, (winWidth - noteWidth) / 2))
-  const noteY = scrollY + 100 // Pinned directly at current scroll position
+  const noteY = scrollY + 100
 
   const newNote = {
     id: 'note_' + Date.now() + '_' + Math.random().toString(36).substr(2, 5),
@@ -185,6 +200,8 @@ function addNote() {
     textColor: '#0f172a',
     colorTheme: 'yellow',
     mode: 'text',
+    drawTool: 'freehand',
+    autoShape: true,
     brushColor: '#dc2626',
     brushSize: 4,
     isHighlighter: false,
@@ -216,6 +233,7 @@ function deleteNote(noteId) {
   if (notes.value.length === 0) {
     showMathPanel.value = false
     showColorPopover.value = false
+    showDrawGuide.value = false
   }
   saveNotes()
 }
@@ -238,6 +256,7 @@ function toggleVisibility() {
   if (!isVisible.value) {
     showMathPanel.value = false
     showColorPopover.value = false
+    showDrawGuide.value = false
   }
 }
 
@@ -265,7 +284,6 @@ function applyTextColor(hex) {
   if (hasSelection) {
     triggerFormat('foreColor', hex)
   } else {
-    // Apply both inline foreColor for next typed chars AND default text color if note is empty
     if (!activeNote.value.text) {
       activeNote.value.textColor = hex
       saveNotes()
@@ -286,11 +304,25 @@ function setMode(newMode) {
   if (newMode === 'draw') {
     showMathPanel.value = false
     showColorPopover.value = false
+  } else {
+    showDrawGuide.value = false
   }
   saveNotes()
   if (newMode === 'text' && noteItemRefs.value[activeNote.value.id]) {
     noteItemRefs.value[activeNote.value.id].focusTextarea()
   }
+}
+
+function setDrawTool(toolId) {
+  if (!activeNote.value) return
+  activeNote.value.drawTool = toolId
+  saveNotes()
+}
+
+function toggleAutoShape() {
+  if (!activeNote.value) return
+  activeNote.value.autoShape = !(activeNote.value.autoShape !== false)
+  saveNotes()
 }
 
 function toggleMathPanel() {
@@ -300,6 +332,7 @@ function toggleMathPanel() {
     saveNotes()
   }
   showColorPopover.value = false
+  showDrawGuide.value = false
   showMathPanel.value = !showMathPanel.value
 }
 
@@ -310,13 +343,21 @@ function openCheatsheetTab() {
     saveNotes()
   }
   showColorPopover.value = false
+  showDrawGuide.value = false
   showMathPanel.value = true
   activeMathCat.value = 'cheatsheet'
 }
 
 function toggleColorPopover() {
   showMathPanel.value = false
+  showDrawGuide.value = false
   showColorPopover.value = !showColorPopover.value
+}
+
+function toggleDrawGuide() {
+  showMathPanel.value = false
+  showColorPopover.value = false
+  showDrawGuide.value = !showDrawGuide.value
 }
 
 function insertSymbolToActiveNote(symStr) {
@@ -352,6 +393,9 @@ function setBrushColor(colorHex) {
   if (!activeNote.value) return
   activeNote.value.brushColor = colorHex
   activeNote.value.isHighlighter = false
+  if (activeNote.value.drawTool === 'eraser') {
+    activeNote.value.drawTool = 'freehand'
+  }
   saveNotes()
 }
 
@@ -376,6 +420,7 @@ function triggerClear() {
 watch(() => route.path, () => {
   showMathPanel.value = false
   showColorPopover.value = false
+  showDrawGuide.value = false
   loadNotes()
 })
 
@@ -401,6 +446,70 @@ onMounted(() => {
         @format-state="onFormatStateUpdate"
       />
     </div>
+
+    <!-- Floating Smart Drawing Guide & Hotkey Cheatsheet Popover -->
+    <transition name="math-pop">
+      <div
+        v-if="showDrawGuide && notes.length > 0 && activeNote && isVisible"
+        class="draw-guide-popover"
+      >
+        <div class="tsp-header">
+          <div class="math-pop-title">
+            <svg class="math-pop-svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9"/>
+              <polygon points="12 7 16.5 15 7.5 15"/>
+            </svg>
+            <span>Trợ Lý Vẽ Hình Học &amp; Phím Tắt Nhanh</span>
+          </div>
+          <button type="button" class="math-close-btn" @click="showDrawGuide = false">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round">
+              <line x1="18" y1="6" x2="6" y2="18"/>
+              <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="dg-body">
+          <div class="dg-highlight-box">
+            <strong>Cách 1 (Thông dụng nhất — Không cần bấm phím):</strong>
+            <div>Khi đang ở chế độ <strong>Bút tự do</strong>, bạn cứ vẽ một đường thẳng, vòng tròn, hình vuông, chữ nhật hoặc tam giác rồi <strong>giữ yên chuột 0.4 giây ở cuối nét vẽ</strong> trước khi thả tay — nét vẽ sẽ tự động biến thành hình chuẩn xác!</div>
+          </div>
+
+          <div class="dg-subtitle">Cách 2: Nhấn giữ phím tắt trong lúc kéo chuột vẽ</div>
+          <div class="dg-hotkey-list">
+            <div class="dg-row">
+              <kbd>Shift</kbd> + Kéo chuột
+              <span>→ Đoạn thẳng hoàn hảo (khóa góc 15°: 0°, 30°, 45°, 60°, 90°)</span>
+            </div>
+            <div class="dg-row">
+              <kbd>Shift + C</kbd> hoặc <kbd>C</kbd>
+              <span>→ Hình tròn hoàn hảo</span>
+            </div>
+            <div class="dg-row">
+              <kbd>Shift + V</kbd> hoặc <kbd>V</kbd>
+              <span>→ Hình vuông hoàn hảo</span>
+            </div>
+            <div class="dg-row">
+              <kbd>Shift + R</kbd> hoặc <kbd>R</kbd>
+              <span>→ Hình chữ nhật chuẩn</span>
+            </div>
+            <div class="dg-row">
+              <kbd>Shift + T</kbd> hoặc <kbd>T</kbd>
+              <span>→ Hình tam giác cân / Gối tựa</span>
+            </div>
+            <div class="dg-row">
+              <kbd>Shift + A</kbd> hoặc <kbd>A</kbd> / <kbd>Alt</kbd>
+              <span>→ Mũi tên Vectơ lực (F⃗, P⃗, N⃗, v⃗)</span>
+            </div>
+          </div>
+
+          <div class="dg-subtitle">Cách 3: Chọn trực tiếp công cụ Hình học trên thanh Dock</div>
+          <div class="dg-note">
+            Nhấp chọn biểu tượng <strong>Đoạn thẳng, Vectơ, Tròn, Vuông, Chữ nhật, Tam giác</strong> ngay trên thanh công cụ bên dưới để vẽ liên tiếp nhiều hình.
+          </div>
+        </div>
+      </div>
+    </transition>
 
     <!-- Floating Text Color & Highlight Popover -->
     <transition name="math-pop">
@@ -690,19 +799,18 @@ onMounted(() => {
             class="dock-mode-btn"
             :class="{ active: activeNote.mode === 'draw' }"
             @click="setMode('draw')"
-            title="Vẽ tay bằng chuột hoặc bút cảm ứng"
+            title="Vẽ tay & Hình học thông minh"
           >
             <svg class="dock-svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M2 22s5-1 7-3l11-11a2.828 2.828 0 0 0-4-4L5 15c-2 2-3 7-3 7z"/>
               <path d="m15 5 4 4"/>
             </svg>
-            <span>Vẽ tay</span>
+            <span>Vẽ hình</span>
           </button>
         </div>
 
         <!-- Text Mode Controls: Rich Text Formatting (B, I, U, S, Sub, Sup, Text Color), Math Symbols, Font Size & Paper Color -->
         <div class="dock-subgroup" v-if="(activeNote.mode || 'text') === 'text'">
-          <!-- Rich Text Formatting Group (B, I, U, S, x₂, x², Color) -->
           <div class="dock-format-group">
             <!-- Bold (Ctrl+B) -->
             <button
@@ -858,15 +966,86 @@ onMounted(() => {
           </div>
         </div>
 
-        <!-- Draw Mode Controls: Brush Colors, Sizes, Undo & Clear -->
+        <!-- Draw Mode Controls: Shape Tools, Auto-Snap Toggle, Brush Colors, Sizes, Undo & Clear -->
         <div class="dock-subgroup" v-if="activeNote.mode === 'draw'">
+          <!-- Geometric Shape & Freehand Tools -->
+          <div class="dock-format-group">
+            <button
+              v-for="dt in drawTools"
+              :key="dt.id"
+              type="button"
+              class="fmt-btn"
+              :class="{ active: (activeNote.drawTool || 'freehand') === dt.id }"
+              @click="setDrawTool(dt.id)"
+              :title="dt.name"
+            >
+              <!-- Freehand Icon -->
+              <svg v-if="dt.id === 'freehand'" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 17c3-6 6-6 9 0s6 6 9 0"/>
+              </svg>
+              <!-- Line Icon -->
+              <svg v-else-if="dt.id === 'line'" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round">
+                <line x1="4" y1="20" x2="20" y2="4"/>
+              </svg>
+              <!-- Force Vector Arrow Icon -->
+              <svg v-else-if="dt.id === 'arrow'" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="4" y1="20" x2="20" y2="4"/>
+                <polyline points="10 4 20 4 20 14"/>
+              </svg>
+              <!-- Circle Icon -->
+              <svg v-else-if="dt.id === 'circle'" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2">
+                <circle cx="12" cy="12" r="8"/>
+              </svg>
+              <!-- Square Icon -->
+              <svg v-else-if="dt.id === 'square'" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round">
+                <rect x="4" y="4" width="16" height="16" rx="1.5"/>
+              </svg>
+              <!-- Rectangle Icon -->
+              <svg v-else-if="dt.id === 'rect'" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round">
+                <rect x="2.5" y="6" width="19" height="12" rx="1.5"/>
+              </svg>
+              <!-- Triangle Icon -->
+              <svg v-else-if="dt.id === 'triangle'" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round">
+                <polygon points="12 4 21 19 3 19"/>
+              </svg>
+              <!-- Eraser Icon -->
+              <svg v-else-if="dt.id === 'eraser'" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m7 21-4.3-4.3c-1-1-1-2.5 0-3.4l9.6-9.6c1-1 2.5-1 3.4 0l5.6 5.6c1 1 1 2.5 0 3.4L13 21"/>
+                <path d="M22 21H7"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Auto-Snap Hold Toggle & Hotkey Guide -->
+          <button
+            type="button"
+            class="size-pill"
+            :class="{ selected: activeNote.autoShape !== false }"
+            @click="toggleAutoShape"
+            title="Bật/Tắt tự động nắn thành hình chuẩn khi giữ chuột 0.4 giây ở cuối nét vẽ tự do"
+          >
+            Tự nắn
+          </button>
+
+          <button
+            type="button"
+            class="dock-cs-btn"
+            :class="{ active: showDrawGuide }"
+            @click="toggleDrawGuide"
+            title="Xem hướng dẫn Phím tắt vẽ hình hoàn hảo (Shift, Shift+C, Shift+V, Shift+R, Shift+A...)"
+          >
+            <span>Phím tắt Vẽ</span>
+          </button>
+
+          <div class="dock-divider" />
+
           <!-- Brush Colors -->
           <div class="dock-palette" title="Chọn màu cọ">
             <button
               v-for="c in brushColors"
               :key="c.hex"
               class="brush-dot"
-              :class="{ selected: (activeNote.brushColor || '#dc2626') === c.hex && !activeNote.isHighlighter }"
+              :class="{ selected: (activeNote.brushColor || '#dc2626') === c.hex && !activeNote.isHighlighter && activeNote.drawTool !== 'eraser' }"
               :style="{ backgroundColor: c.hex }"
               @click="setBrushColor(c.hex)"
               :title="c.name"
@@ -902,14 +1081,13 @@ onMounted(() => {
               <span>Lùi</span>
             </button>
 
-            <!-- Eraser / Clear Icon -->
-            <button class="dock-action-btn btn-danger" @click="triggerClear" title="Xóa toàn bộ nét vẽ">
+            <!-- Clear All Icon -->
+            <button class="dock-action-btn btn-danger" @click="triggerClear" title="Xóa toàn bộ hình vẽ">
               <svg class="action-svg" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="m7 21-4.3-4.3c-1-1-1-2.5 0-3.4l9.6-9.6c1-1 2.5-1 3.4 0l5.6 5.6c1 1 1 2.5 0 3.4L13 21"/>
-                <path d="M22 21H7"/>
-                <path d="m5 11 9 9"/>
+                <polyline points="3 6 5 6 21 6"/>
+                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
               </svg>
-              <span>Xóa</span>
+              <span>Xóa hết</span>
             </button>
           </div>
         </div>
@@ -979,7 +1157,7 @@ onMounted(() => {
   pointer-events: auto;
 }
 
-/* Rich Text Formatting Group in Dock */
+/* Rich Text & Shape Tool Group in Dock */
 .dock-format-group {
   display: flex;
   align-items: center;
@@ -1053,6 +1231,125 @@ onMounted(() => {
   width: 14px;
   height: 3px;
   border-radius: 2px;
+}
+
+/* Floating Smart Draw Guide Popover */
+.draw-guide-popover {
+  position: fixed;
+  bottom: 78px;
+  right: 24px;
+  width: min(440px, calc(100vw - 32px));
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(14px);
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.24);
+  z-index: 10001;
+  pointer-events: auto;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.dark .draw-guide-popover {
+  background: rgba(15, 23, 42, 0.96);
+  border-color: #334155;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.55);
+}
+
+.dg-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 12px;
+  color: #334155;
+}
+
+.dark .dg-body {
+  color: #cbd5e1;
+}
+
+.dg-highlight-box {
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  color: #0369a1;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 11.5px;
+  line-height: 1.45;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.dark .dg-highlight-box {
+  background: rgba(2, 132, 199, 0.16);
+  border-color: rgba(56, 189, 248, 0.3);
+  color: #bae6fd;
+}
+
+.dg-subtitle {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-top: 2px;
+}
+
+.dark .dg-subtitle {
+  color: #f8fafc;
+}
+
+.dg-hotkey-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 7px 10px;
+}
+
+.dark .dg-hotkey-list {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+.dg-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 11.5px;
+}
+
+.dg-row kbd {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #0284c7;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.dark .dg-row kbd {
+  background: #0f172a;
+  border-color: #475569;
+  color: #38bdf8;
+}
+
+.dg-note {
+  font-size: 11px;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+.dark .dg-note {
+  color: #94a3b8;
 }
 
 /* Floating Text Color & Highlight Popover */
@@ -2141,7 +2438,8 @@ onMounted(() => {
     justify-content: flex-end;
   }
   .math-cheatsheet-popover,
-  .text-style-popover {
+  .text-style-popover,
+  .draw-guide-popover {
     right: 14px;
     left: 14px;
     bottom: 68px;
