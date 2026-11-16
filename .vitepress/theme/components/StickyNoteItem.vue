@@ -1032,13 +1032,12 @@ watch(() => props.note.mode, (newMode) => {
         <div
           ref="editorRef"
           class="note-rich-editor"
-          :class="{ 'is-disabled': note.mode === 'draw', 'is-empty': !note.text }"
+          :class="{ 'is-disabled': note.mode === 'draw' }"
           :contenteditable="note.mode !== 'draw'"
           :style="{
             fontSize: (note.fontSize || 18) + 'px',
             color: note.textColor || '#0f172a'
           }"
-          data-placeholder="Nhấp để gõ (Font Times New Roman). Hỗ trợ B, I, U, đổi màu chữ & gõ lệnh \alpha, \vec{F}, x^2 + Space..."
           @input="onEditorInput"
           @keydown="onEditorKeyDown"
           @keyup="checkFormatState"
@@ -1087,17 +1086,6 @@ watch(() => props.note.mode, (newMode) => {
               <polyline points="20 6 9 17 4 12"/>
             </svg>
             <span>{{ snappedBadgeText }}</span>
-          </div>
-        </div>
-
-        <!-- Floating Minimalist Hint when user switches to Drawing Mode -->
-        <div class="draw-hint-overlay" v-if="note.mode === 'draw' && !snappedBadgeText && (!note.drawData && !strokeHistory.length)">
-          <div class="hint-pill">
-            <svg class="hint-svg" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M2 22s5-1 7-3l11-11a2.828 2.828 0 0 0-4-4L5 15c-2 2-3 7-3 7z"/>
-              <path d="m15 5 4 4"/>
-            </svg>
-            <span>Vẽ rồi giữ chuột 0.4s (hoặc giữ Shift / C / V / R / A) để tự nắn hình chuẩn</span>
           </div>
         </div>
       </div>
@@ -1309,15 +1297,6 @@ watch(() => props.note.mode, (newMode) => {
 .note-rich-editor :deep(ol) {
   margin: 4px 0;
   padding-left: 20px;
-}
-
-.note-rich-editor.is-empty::before {
-  content: attr(data-placeholder);
-  color: rgba(15, 23, 42, 0.38);
-  font-style: italic;
-  font-family: "Times New Roman", Times, serif;
-  pointer-events: none;
-  display: block;
 }
 
 .note-rich-editor.is-disabled {
