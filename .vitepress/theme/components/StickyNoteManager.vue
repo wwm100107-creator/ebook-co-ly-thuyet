@@ -7,6 +7,7 @@ import {
   MATH_SYMBOLS,
   CHEATSHEET_RULES
 } from './mathSymbolsData'
+import { defaultNotesByPath } from '../data/defaultNotes'
 
 const route = useRoute()
 const notes = ref([])
@@ -112,6 +113,12 @@ const drawTools = [
   { id: 'eraser', name: 'Tẩy nét vẽ (Rê chuột để xóa từng phần)', short: 'Tẩy' }
 ]
 
+// Normalized path (without trailing slash or .html) for matching preset/synced notes
+const normalizedPath = computed(() => {
+  const p = route.path ? route.path.replace(/\/$/, '').replace(/\.html$/, '') : ''
+  return p || '/'
+})
+
 // Storage key per page path
 const storageKey = computed(() => {
   const p = route.path ? route.path.replace(/\/$/, '') : 'home'
@@ -124,41 +131,90 @@ const activeNote = computed(() => {
   return notes.value.find(n => n.id === activeNoteId.value) || notes.value[notes.value.length - 1]
 })
 
-// Load notes for current page and sanitize dimensions
+function getDeletedNoteIds() {
+  if (typeof window === 'undefined') return new Set()
+  try {
+    const raw = localStorage.getItem('co_ly_thuyet_deleted_note_ids')
+    return new Set(raw ? JSON.parse(raw) : [])
+  } catch {
+    return new Set()
+  }
+}
+
+function markNoteIdDeleted(noteId) {
+  if (typeof window === 'undefined') return
+  try {
+    const set = getDeletedNoteIds()
+    set.add(noteId)
+    localStorage.setItem('co_ly_thuyet_deleted_note_ids', JSON.stringify([...set]))
+  } catch {
+    // ignore
+  }
+}
+
+function sanitizeNote(n) {
+  return {
+    ...n,
+    width: Math.max(280, Number(n.width) || 340),
+    height: Math.max(240, Number(n.height) || 340),
+    fontSize: Number(n.fontSize) || 18,
+    textColor: n.textColor || '#0f172a',
+    colorTheme: n.colorTheme || 'yellow',
+    mode: n.mode || 'text',
+    drawTool: n.drawTool || 'freehand',
+    autoShape: n.autoShape !== undefined ? !!n.autoShape : true,
+    brushColor: n.brushColor || '#dc2626',
+    brushSize: Number(n.brushSize) || 4,
+    isHighlighter: !!n.isHighlighter,
+    isCollapsed: !!n.isCollapsed,
+    text: n.text || '',
+    html: n.html !== undefined ? n.html : undefined,
+    labels: Array.isArray(n.labels) ? n.labels : [],
+    drawRegions: Array.isArray(n.drawRegions) ? n.drawRegions : [],
+    drawData: n.drawData || null,
+    zIndex: Number(n.zIndex) || 1000
+  }
+}
+
+// Load notes for current page, merge with preloaded notes, and sanitize dimensions
 function loadNotes() {
   if (typeof window === 'undefined') return
   try {
-    const raw = localStorage.getItem(storageKey.value)
-    if (raw) {
-      const parsed = JSON.parse(raw)
-      notes.value = parsed.map(n => ({
-        ...n,
-        width: Math.max(280, Number(n.width) || 340),
-        height: Math.max(240, Number(n.height) || 340),
-        fontSize: Number(n.fontSize) || 18,
-        textColor: n.textColor || '#0f172a',
-        colorTheme: n.colorTheme || 'yellow',
-        mode: n.mode || 'text',
-        drawTool: n.drawTool || 'freehand',
-        autoShape: n.autoShape !== undefined ? !!n.autoShape : true,
-        brushColor: n.brushColor || '#dc2626',
-        brushSize: Number(n.brushSize) || 4,
-        isHighlighter: !!n.isHighlighter,
-        isCollapsed: !!n.isCollapsed,
-        text: n.text || '',
-        html: n.html !== undefined ? n.html : undefined,
-        labels: Array.isArray(n.labels) ? n.labels : [],
-        drawRegions: Array.isArray(n.drawRegions) ? n.drawRegions : [],
-        drawData: n.drawData || null,
-        zIndex: Number(n.zIndex) || 1000
-      }))
+    const keyPrimary = storageKey.value
+    const keyHtml = `co_ly_thuyet_notes_${normalizedPath.value}.html`
+    const keyClean = `co_ly_thuyet_notes_${normalizedPath.value}`
+    const raw =
+      localStorage.getItem(keyPrimary) ||
+      localStorage.getItem(keyHtml) ||
+      localStorage.getItem(keyClean)
+
+    const localList = raw ? JSON.parse(raw) : []
+    const deletedIds = getDeletedNoteIds()
+    const presetList = defaultNotesByPath[normalizedPath.value] || []
+
+    const mergedMap = new Map()
+    for (const item of localList) {
+      if (item && item.id) {
+        mergedMap.set(item.id, sanitizeNote(item))
+      }
+    }
+    let addedPreset = false
+    for (const preset of presetList) {
+      if (preset && preset.id && !mergedMap.has(preset.id) && !deletedIds.has(preset.id)) {
+        mergedMap.set(preset.id, sanitizeNote(preset))
+        addedPreset = true
+      }
+    }
+
+    notes.value = [...mergedMap.values()]
+    if (notes.value.length > 0) {
       const maxZ = notes.value.reduce((m, n) => Math.max(m, n.zIndex || 1000), 1000)
       topZIndex.value = maxZ + 1
-      if (notes.value.length > 0) {
-        activeNoteId.value = notes.value[notes.value.length - 1].id
+      activeNoteId.value = notes.value[notes.value.length - 1].id
+      if (addedPreset) {
+        saveNotes()
       }
     } else {
-      notes.value = []
       activeNoteId.value = null
     }
   } catch (err) {
@@ -232,6 +288,7 @@ function updateNote(updatedNote) {
 }
 
 function deleteNote(noteId) {
+  markNoteIdDeleted(noteId)
   notes.value = notes.value.filter(n => n.id !== noteId)
   if (activeNoteId.value === noteId) {
     activeNoteId.value = notes.value.length ? notes.value[notes.value.length - 1].id : null
@@ -419,6 +476,11 @@ function triggerUndo() {
   noteItemRefs.value[activeNote.value.id]?.undoCanvas()
 }
 
+function triggerRedo() {
+  if (!activeNote.value) return
+  noteItemRefs.value[activeNote.value.id]?.redoCanvas()
+}
+
 function triggerClear() {
   if (!activeNote.value) return
   noteItemRefs.value[activeNote.value.id]?.clearCanvas()
@@ -451,7 +513,7 @@ onMounted(() => {
         :key="note.id"
         :ref="el => { if (el) noteItemRefs[note.id] = el; else delete noteItemRefs[note.id] }"
         :note="note"
-        :is-active="note.id === activeNoteId"
+        :is-active="!!(activeNote && note.id === activeNote.id)"
         @update="updateNote"
         @delete="deleteNote"
         @select="selectNote"
@@ -517,6 +579,10 @@ onMounted(() => {
             <div class="dg-row">
               <kbd>Ctrl + T</kbd> hoặc <strong>Nhấp đúp lên hình</strong>
               <span>→ Thêm hộp Text tọa độ điểm (A, B, O, F⃗...)</span>
+            </div>
+            <div class="dg-row">
+              <kbd>Ctrl + Z</kbd> / <kbd>Ctrl + Y</kbd>
+              <span>→ Hoàn tác (Undo) / Làm lại (Redo) nét vẽ vừa thực hiện</span>
             </div>
           </div>
 
@@ -1101,19 +1167,28 @@ onMounted(() => {
 
           <div class="dock-divider" />
 
-          <!-- Undo & Clear with Minimalist SVGs -->
+          <!-- Undo, Redo & Clear with Minimalist SVGs -->
           <div class="dock-actions">
-            <!-- Undo Icon -->
-            <button class="dock-action-btn" @click="triggerUndo" title="Hoàn tác nét vẽ (Undo)">
+            <!-- Undo Icon (Ctrl + Z) -->
+            <button class="dock-action-btn" @click="triggerUndo" title="Hoàn tác nét vẽ (Phím tắt: Ctrl + Z)">
               <svg class="action-svg" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M3 7v6h6"/>
                 <path d="M21 17a9 9 0 0 0-9-9 9 9 0 0 0-6 2.3L3 13"/>
               </svg>
-              <span>Lùi</span>
+              <span>Lùi (Ctrl+Z)</span>
+            </button>
+
+            <!-- Redo Icon (Ctrl + Y) -->
+            <button class="dock-action-btn" @click="triggerRedo" title="Làm lại nét vẽ (Phím tắt: Ctrl + Y hoặc Ctrl + Shift + Z)">
+              <svg class="action-svg" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 7v6h-6"/>
+                <path d="M3 17a9 9 0 0 1 9-9 9 9 0 0 1 6 2.3l3 2.7"/>
+              </svg>
+              <span>Tiến</span>
             </button>
 
             <!-- Clear All Icon -->
-            <button class="dock-action-btn btn-danger" @click="triggerClear" title="Xóa toàn bộ hình vẽ">
+            <button class="dock-action-btn btn-danger" @click="triggerClear" title="Xóa toàn bộ hình vẽ (Có thể Ctrl + Z để khôi phục)">
               <svg class="action-svg" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="3 6 5 6 21 6"/>
                 <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>

@@ -31,6 +31,7 @@ const workspaceRef = ref(null)
 const editorRef = ref(null)
 const isDrawing = ref(false)
 const strokeHistory = ref([])
+const redoHistory = ref([])
 let ctx = null
 let savedRange = null
 
@@ -1221,7 +1222,8 @@ function onCanvasPointerDown(e) {
   try {
     snapshotBeforeStroke = ctx.getImageData(0, 0, canvasRef.value.width, canvasRef.value.height)
     strokeHistory.value.push(snapshotBeforeStroke)
-    if (strokeHistory.value.length > 25) strokeHistory.value.shift()
+    if (strokeHistory.value.length > 30) strokeHistory.value.shift()
+    redoHistory.value = []
   } catch (err) {
     snapshotBeforeStroke = null
   }
@@ -1320,23 +1322,35 @@ function onGlobalKeyDown(e) {
   if (!props.isActive || props.note.isCollapsed) return
 
   // Global Ctrl + T (or Alt + T) when this note is active -> Add Point / Coordinate Label Box!
-  if ((e.ctrlKey || e.metaKey || e.altKey) && e.key.toLowerCase() === 't') {
+  if ((e.ctrlKey || e.metaKey || e.altKey) && (e.key.toLowerCase() === 't' || e.code === 'KeyT')) {
     e.preventDefault()
     addPointLabelBox()
     return
   }
 
-  if (props.note.mode !== 'draw') return
   const tag = (e.target?.tagName || '').toLowerCase()
-  if (tag === 'input' || tag === 'textarea' || e.target?.isContentEditable) return
+  const isTypingInInput = tag === 'input' || tag === 'textarea' || (e.target?.isContentEditable && props.note.mode === 'text')
 
-  if (e.ctrlKey || e.metaKey) {
-    if (e.key.toLowerCase() === 'z') {
+  // Ctrl + Z (Undo drawing) & Ctrl + Y / Ctrl + Shift + Z (Redo drawing)
+  if ((e.ctrlKey || e.metaKey) && !isTypingInInput) {
+    const k = e.key.toLowerCase()
+    if ((k === 'z' || e.code === 'KeyZ') && !e.shiftKey) {
       e.preventDefault()
+      e.stopPropagation()
       undoCanvas()
+      return
+    }
+    if (k === 'y' || e.code === 'KeyY' || ((k === 'z' || e.code === 'KeyZ') && e.shiftKey)) {
+      e.preventDefault()
+      e.stopPropagation()
+      redoCanvas()
+      return
     }
     return
   }
+
+  if (props.note.mode !== 'draw' || isTypingInInput) return
+  if (e.ctrlKey || e.metaKey) return
 
   if (e.key === 'Shift') pressedKeys.shift = true
   if (e.key === 'Alt') pressedKeys.alt = true
@@ -1369,10 +1383,17 @@ function onGlobalKeyUp(e) {
 
 function clearCanvas() {
   if (!ctx || !canvasRef.value) return
+  try {
+    const curImg = ctx.getImageData(0, 0, canvasRef.value.width, canvasRef.value.height)
+    strokeHistory.value.push(curImg)
+    if (strokeHistory.value.length > 30) strokeHistory.value.shift()
+    redoHistory.value = []
+  } catch (err) {
+    // ignore
+  }
   const dpr = window.devicePixelRatio || 1
   ctx.globalCompositeOperation = 'source-over'
   ctx.clearRect(0, 0, canvasRef.value.width / dpr, canvasRef.value.height / dpr)
-  strokeHistory.value = []
   props.note.drawData = null
   props.note.drawRegions = []
   applyDrawingObstacleAvoidance()
@@ -1380,14 +1401,47 @@ function clearCanvas() {
 }
 
 function undoCanvas() {
-  if (!ctx || strokeHistory.value.length === 0) return
+  if (!ctx || !canvasRef.value) {
+    initCanvas()
+  }
+  if (!ctx || !canvasRef.value || strokeHistory.value.length === 0) {
+    snappedBadgeText.value = 'Không còn nét vẽ để hoàn tác'
+    setTimeout(() => { snappedBadgeText.value = '' }, 900)
+    return
+  }
+  try {
+    const currentImg = ctx.getImageData(0, 0, canvasRef.value.width, canvasRef.value.height)
+    redoHistory.value.push(currentImg)
+    if (redoHistory.value.length > 30) redoHistory.value.shift()
+  } catch (err) {
+    // ignore
+  }
   const lastState = strokeHistory.value.pop()
   ctx.putImageData(lastState, 0, 0)
   saveCanvasData()
+  snappedBadgeText.value = 'Đã hoàn tác nét vẽ (Ctrl + Z)'
+  setTimeout(() => { snappedBadgeText.value = '' }, 950)
+}
+
+function redoCanvas() {
+  if (!ctx || !canvasRef.value || redoHistory.value.length === 0) return
+  try {
+    const currentImg = ctx.getImageData(0, 0, canvasRef.value.width, canvasRef.value.height)
+    strokeHistory.value.push(currentImg)
+    if (strokeHistory.value.length > 30) strokeHistory.value.shift()
+  } catch (err) {
+    // ignore
+  }
+  const nextState = redoHistory.value.pop()
+  ctx.putImageData(nextState, 0, 0)
+  saveCanvasData()
+  snappedBadgeText.value = 'Đã làm lại nét vẽ (Ctrl + Y)'
+  setTimeout(() => { snappedBadgeText.value = '' }, 950)
 }
 
 defineExpose({
   undoCanvas,
+  redoCanvas,
   clearCanvas,
   insertTextAtCursor,
   execFormat,
@@ -1402,8 +1456,8 @@ defineExpose({
 
 onMounted(() => {
   if (typeof window !== 'undefined') {
-    window.addEventListener('keydown', onGlobalKeyDown)
-    window.addEventListener('keyup', onGlobalKeyUp)
+    window.addEventListener('keydown', onGlobalKeyDown, { capture: true })
+    window.addEventListener('keyup', onGlobalKeyUp, { capture: true })
     window.addEventListener('blur', resetPressedKeys)
   }
   nextTick(() => {
@@ -1416,8 +1470,8 @@ onMounted(() => {
 
 onUnmounted(() => {
   if (typeof window !== 'undefined') {
-    window.removeEventListener('keydown', onGlobalKeyDown)
-    window.removeEventListener('keyup', onGlobalKeyUp)
+    window.removeEventListener('keydown', onGlobalKeyDown, { capture: true })
+    window.removeEventListener('keyup', onGlobalKeyUp, { capture: true })
     window.removeEventListener('blur', resetPressedKeys)
   }
   if (holdSnapTimer) clearTimeout(holdSnapTimer)
@@ -1440,6 +1494,9 @@ watch(() => props.note.mode, (newMode) => {
       if (editorRef.value) editorRef.value.focus()
     })
   } else {
+    if (typeof document !== 'undefined' && document.activeElement === editorRef.value) {
+      editorRef.value?.blur()
+    }
     suggestions.value = []
     currentSlashInfo = null
   }
