@@ -615,6 +615,9 @@ function onPointerMove(e) {
   if (isDragging.value) {
     const dx = e.pageX - dragStart.mouseX
     const dy = e.pageY - dragStart.mouseY
+    if (Math.abs(dx) > 3 || Math.abs(dy) > 3) {
+      props.note.userMoved = true
+    }
     props.note.x = Math.max(10, dragStart.noteX + dx)
     props.note.y = Math.max(10, dragStart.noteY + dy)
     emit('update', props.note)

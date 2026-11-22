@@ -1,5 +1,5 @@
 <script setup>
-import { ref, reactive, computed, onMounted, watch } from 'vue'
+import { ref, reactive, computed, onMounted, watch, nextTick } from 'vue'
 import { useRoute } from 'vitepress'
 import StickyNoteItem from './StickyNoteItem.vue'
 import {
@@ -152,6 +152,8 @@ function markNoteIdDeleted(noteId) {
   }
 }
 
+const CURRENT_PRESET_VERSION = 3
+
 function sanitizeNote(n) {
   return {
     ...n,
@@ -172,7 +174,56 @@ function sanitizeNote(n) {
     labels: Array.isArray(n.labels) ? n.labels : [],
     drawRegions: Array.isArray(n.drawRegions) ? n.drawRegions : [],
     drawData: n.drawData || null,
+    anchorId: n.anchorId || null,
+    anchorDy: Number(n.anchorDy) || 0,
+    presetVersion: Number(n.presetVersion) || 0,
+    userMoved: !!n.userMoved,
     zIndex: Number(n.zIndex) || 1000
+  }
+}
+
+// Align preset notes that specify an anchorId to the exact rendered Y offset of that section heading
+function alignPresetNotesToAnchors() {
+  if (typeof window === 'undefined' || !notes.value.length) return
+  const anchored = notes.value.filter(n => n.anchorId && !n.userMoved)
+  if (!anchored.length) return
+
+  const scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0
+  // Group notes into horizontal rows by (anchorId + '::' + anchorDy)
+  const rowMap = new Map()
+  for (const n of anchored) {
+    const el = document.getElementById(n.anchorId)
+    if (!el) continue
+    const headingTop = Math.round(el.getBoundingClientRect().top + scrollY)
+    const targetY = Math.max(110, headingTop + (Number(n.anchorDy) || 0))
+    const rowKey = `${n.anchorId}::${Number(n.anchorDy) || 0}`
+    if (!rowMap.has(rowKey)) {
+      rowMap.set(rowKey, { targetY, items: [] })
+    }
+    rowMap.get(rowKey).items.push(n)
+  }
+
+  if (!rowMap.size) return
+  const rows = [...rowMap.values()].sort((a, b) => a.targetY - b.targetY)
+  let prevBottomY = 80
+  let changed = false
+
+  for (const row of rows) {
+    const actualY = Math.max(row.targetY, prevBottomY + 26)
+    let maxH = 340
+    for (const n of row.items) {
+      if (Math.abs((n.y || 0) - actualY) > 2) {
+        n.y = actualY
+        changed = true
+      }
+      const h = n.isCollapsed ? 48 : (Number(n.height) || 340)
+      if (h > maxH) maxH = h
+    }
+    prevBottomY = actualY + maxH
+  }
+
+  if (changed) {
+    saveNotes()
   }
 }
 
@@ -193,16 +244,21 @@ function loadNotes() {
     const presetList = defaultNotesByPath[normalizedPath.value] || []
 
     const mergedMap = new Map()
+    let updatedPreset = false
     for (const item of localList) {
       if (item && item.id) {
+        // Drop older auto-generated note_mmm_* notes so they upgrade cleanly to CURRENT_PRESET_VERSION
+        if (String(item.id).startsWith('note_mmm_') && (Number(item.presetVersion) || 0) < CURRENT_PRESET_VERSION) {
+          updatedPreset = true
+          continue
+        }
         mergedMap.set(item.id, sanitizeNote(item))
       }
     }
-    let addedPreset = false
     for (const preset of presetList) {
       if (preset && preset.id && !mergedMap.has(preset.id) && !deletedIds.has(preset.id)) {
         mergedMap.set(preset.id, sanitizeNote(preset))
-        addedPreset = true
+        updatedPreset = true
       }
     }
 
@@ -211,9 +267,13 @@ function loadNotes() {
       const maxZ = notes.value.reduce((m, n) => Math.max(m, n.zIndex || 1000), 1000)
       topZIndex.value = maxZ + 1
       activeNoteId.value = notes.value[notes.value.length - 1].id
-      if (addedPreset) {
+      if (updatedPreset) {
         saveNotes()
       }
+      nextTick(() => {
+        alignPresetNotesToAnchors()
+        setTimeout(() => alignPresetNotesToAnchors(), 350)
+      })
     } else {
       activeNoteId.value = null
     }
