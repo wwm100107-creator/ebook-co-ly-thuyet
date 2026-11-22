@@ -152,8 +152,8 @@ function markNoteIdDeleted(noteId) {
   }
 }
 
-const CURRENT_PRESET_VERSION = 4
-const COLLAPSED_MIGRATION_KEY = 'co_ly_thuyet_preset_v4_collapsed'
+const CURRENT_PRESET_VERSION = 5
+const COLLAPSED_MIGRATION_KEY = 'co_ly_thuyet_preset_v5_collapsed'
 const viewportWidth = ref(typeof window !== 'undefined' ? window.innerWidth : 1440)
 
 function sanitizeNote(n) {
