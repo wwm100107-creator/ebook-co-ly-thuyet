@@ -15,6 +15,9 @@ hero:
     - theme: alt
       text: "Quyển 3: ĐỘNG LỰC HỌC"
       link: /dong-luc-hoc/
+    - theme: brand
+      text: "Ôn Thi Cấp Tốc 20 Ngày (0→100)"
+      link: /on-thi/
 
 features:
   - icon: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>'
@@ -29,6 +32,10 @@ features:
     title: "Quyển 3: Động Lực Học (Dynamics)"
     details: "Khảo sát mối quan hệ giữa chuyển động của vật thể và lực tác dụng. Bao gồm: PTVP chuyển động, Các định lý tổng quát, Nguyên lý di chuyển khả dĩ, Nguyên lý Đalămbe, Phương trình Lagơrăng loại II, Lý thuyết va chạm."
     link: /dong-luc-hoc/
+  - icon: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>'
+    title: "Ôn Thi Cấp Tốc 20 Ngày (Từ 0 Đến 100)"
+    details: "Lộ trình 4 chặng bài bản cho người mất gốc: Tĩnh học, Động học, Động lực học và Cơ học giải tích với thuật toán giải từng bước, 20 bẫy đề thi và 3 đề thi thử có biểu điểm chi tiết."
+    link: /on-thi/
   - icon: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>'
     title: "100% Chuẩn Xác Theo Sách Gốc"
     details: "Số hóa trung thực từng câu chữ, hệ tiên đề, định lý, chứng minh, thí dụ và hệ thống bài tập ôn tập của GS. TSKH. Đỗ Sanh, tuyệt đối không thêm bớt."
@@ -48,3 +55,7 @@ Toàn bộ nội dung của ba học phần cốt lõi:
 1. **TĨNH HỌC (Statics)**: Cung cấp nền tảng về hệ lực, phương pháp thu gọn hệ lực, thiết lập phương trình cân bằng cho hệ vật trong không gian, bài toán ma sát và trọng tâm.
 2. **ĐỘNG HỌC (Kinematics)**: Phương pháp khảo sát chuyển động hình học thuần túy của chất điểm và vật rắn, từ chuyển động quay quanh trục cố định đến chuyển động song phẳng và hợp chuyển động phức hợp.
 3. **ĐỘNG LỰC HỌC (Dynamics)**: Xây dựng các phương trình vi phân chuyển động, các định lý tổng quát về động lượng, mômen động lượng, động năng, cơ học giải tích với nguyên lý công ảo, nguyên lý Đalămbe, phương trình Lagrange loại 2 và bài toán va chạm.
+
+::: tip Lộ trình ôn thi cho người mới bắt đầu hoặc mất gốc
+Nếu bạn cần hệ thống hóa toàn bộ kiến thức từ con số 0 để chuẩn bị cho kỳ thi Giữa kỳ và Cuối kỳ trong thời gian ngắn, hãy truy cập [**Cổng Ôn Thi Cấp Tốc 20 Ngày (0 → 100 Điểm)**](/on-thi/) với lộ trình 4 chặng bài bản, kết hợp tra cứu cùng [**Cổng Sách Bài Tập**](/bai-tap/).
+:::

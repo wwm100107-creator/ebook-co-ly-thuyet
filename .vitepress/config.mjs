@@ -53,6 +53,16 @@ export default defineConfig({
           { text: 'Bài Tập Động Lực Học (8 Chương)', link: '/bai-tap/dong-luc-hoc/' },
         ]
       },
+      {
+        text: 'Ôn Thi 20 Ngày (0→100)',
+        items: [
+          { text: 'Tổng Quan Lộ Trình 20 Ngày', link: '/on-thi/' },
+          { text: 'Chặng 1 (Ngày 1–6): Tĩnh Học (0→35)', link: '/on-thi/chang-1-tinh-hoc' },
+          { text: 'Chặng 2 (Ngày 7–12): Động Học (35→65)', link: '/on-thi/chang-2-dong-hoc' },
+          { text: 'Chặng 3 (Ngày 13–17): Động Lực Học (65→90)', link: '/on-thi/chang-3-dong-luc-hoc' },
+          { text: 'Chặng 4 (Ngày 18–20): Đề Thi & Về Đích (90→100)', link: '/on-thi/chang-4-ve-dich' }
+        ]
+      },
       { text: 'Về Giáo Trình', link: '/gioi-thieu' }
     ],
     sidebar: {
@@ -178,6 +188,27 @@ export default defineConfig({
             { text: 'Bài Tập Tĩnh Học (Tập 1)', link: '/bai-tap/tinh-hoc/' },
             { text: 'Bài Tập Động Học (Tập 2)', link: '/bai-tap/dong-hoc/' },
             { text: 'Bài Tập Động Lực Học (Quyển 1 & 2)', link: '/bai-tap/dong-luc-hoc/' }
+          ]
+        }
+      ],
+      '/on-thi/': [
+        {
+          text: 'ÔN THI CẤP TỐC 20 NGÀY (0 → 100)',
+          items: [
+            { text: 'Tổng Quan Lộ Trình 20 Ngày', link: '/on-thi/' },
+            { text: 'Chặng 1 (Ngày 1–6): Tĩnh Học (0→35)', link: '/on-thi/chang-1-tinh-hoc' },
+            { text: 'Chặng 2 (Ngày 7–12): Động Học (35→65)', link: '/on-thi/chang-2-dong-hoc' },
+            { text: 'Chặng 3 (Ngày 13–17): Động Lực Học (65→90)', link: '/on-thi/chang-3-dong-luc-hoc' },
+            { text: 'Chặng 4 (Ngày 18–20): Đề Thi & Về Đích (90→100)', link: '/on-thi/chang-4-ve-dich' }
+          ]
+        },
+        {
+          text: 'Tra Cứu Nhanh Giáo Trình',
+          items: [
+            { text: ICON_BOOK + 'Giáo Trình Tĩnh Học', link: '/tinh-hoc/' },
+            { text: ICON_BOOK + 'Giáo Trình Động Học', link: '/dong-hoc/' },
+            { text: ICON_LIBRARY + 'Giáo Trình Động Lực Học', link: '/dong-luc-hoc/' },
+            { text: ICON_EXERCISE + 'Sách Bài Tập Tổng Hợp', link: '/bai-tap/' }
           ]
         }
       ]
