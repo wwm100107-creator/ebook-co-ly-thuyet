@@ -34,7 +34,7 @@
   <text x="65" y="225" class="lbl-bold">O</text>
   
   <circle cx="260" cy="110" r="6" fill="#3b82f6" />
-  <text x="270" y="105" class="lbl-bold">M(x,y,z)</text>
+  <text x="176" y="102" class="lbl-bold">M(x,y,z)</text>
   
   <line x1="260" y1="110" x2="350" y2="65" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrow-red)" />
   <g><text x="355" y="65" class="lbl-bold" fill="#dc2626">F</text><path d="M 355 47 h 13 l -3 -2.5 m 3 2.5 l -3 2.5" fill="none" stroke="#dc2626" stroke-width="1.3" stroke-linecap="round" /></g>

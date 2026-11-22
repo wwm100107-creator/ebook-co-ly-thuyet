@@ -257,7 +257,7 @@ trong đó $\varphi = \arctan f$ là góc ma sát của bề mặt tiếp xúc.
 
 ::: tip Thí dụ 3-3: Cơ cấu ép bằng nêm và điều kiện tự hãm
 **Đề bài:**  
-Cơ cấu ép bằng nêm gồm nêm $A$ trượt trong máng thẳng đứng và nêm $B$ trượt trong máng nằm ngang (H. 3-6). Mặt tiếp xúc giữa hai nêm nghiêng một góc $\alpha$ so với phương ngang. Máng trượt thẳng đứng và máng ngang đều rất nhẵn (bỏ qua ma sát), riêng mặt nghiêng tiếp xúc giữa hai nêm có hệ số ma sát trượt $f$.  
+Cơ cấu ép bằng nêm gồm nêm $A$ trượt trong máng thẳng đứng và nêm $B$ trượt trong máng nằm ngang (H. 3-6). Mặt tiếp xúc giữa hai nêm nghiêng một góc vát $\alpha$ so với phương thẳng đứng (phương của lực ấn $\vec{P}$). Máng trượt thẳng đứng và máng ngang đều rất nhẵn (bỏ qua ma sát), riêng mặt nghiêng tiếp xúc giữa hai nêm có hệ số ma sát trượt $f$.  
 1. Xác định mối quan hệ giữa lực ép $\vec{Q}$ tác dụng lên nêm $B$ và lực tác động $\vec{P}$ ấn nêm $A$ xuống.  
 2. Tìm điều kiện góc nghiêng $\alpha$ để nêm $A$ bị tự hãm (tự khóa chặt không bị đẩy trồi ngược lên khi thôi ấn lực $\vec{P}$).
 
@@ -276,26 +276,25 @@ Hình 3-6: Cơ cấu máy ép nêm và sơ đồ phân tích lực
 **Bài giải:**  
 **1. Xác định lực ép $Q$ khi ấn lực $P$ xuống:**  
 Khi lực $\vec{P}$ ấn nêm $A$ đi xuống, nêm $B$ bị đẩy dịch chuyển sang phải. Tại mặt tiếp xúc nghiêng giữa $A$ và $B$ xuất hiện phản lực pháp tuyến $N$ và lực ma sát trượt $F = f \cdot N$. Lực ma sát cản trở chuyển động trượt của $A$ xuống nên hướng lên trên dọc theo mặt nghiêng.  
-Chiếu các lực tác dụng lên nêm $A$ theo phương thẳng đứng và lên nêm $B$ theo phương ngang:
+Chiếu các lực tác dụng lên nêm $A$ theo phương thẳng đứng và lên nêm $B$ theo phương ngang (với $\alpha$ là góc giữa mặt nghiêng và phương thẳng đứng):
 $$\begin{cases}
-N \cos\alpha + F \sin\alpha = P \\
-N \sin\alpha - F \cos\alpha = Q
+N \sin\alpha + F \cos\alpha = P \\
+N \cos\alpha - F \sin\alpha = Q
 \end{cases}$$
 
-Thay $F = f \cdot N$:
-$$P = N(\cos\alpha + f \sin\alpha); \quad Q = N(\sin\alpha - f \cos\alpha)$$
-$$\implies Q = P \cdot \dfrac{\sin\alpha - f \cos\alpha}{\cos\alpha + f \sin\alpha} = P \cdot \tan(\alpha - \varphi)$$
-với $\varphi = \arctan f$ là góc ma sát.
+Thay $F = f \cdot N = N \tan\varphi$ (với $\varphi = \arctan f$ là góc ma sát):
+$$P = N(\sin\alpha + \tan\varphi \cos\alpha); \quad Q = N(\cos\alpha - \tan\varphi \sin\alpha)$$
+$$\implies Q = P \cdot \dfrac{\cos\alpha - \tan\varphi \sin\alpha}{\sin\alpha + \tan\varphi \cos\alpha} = \dfrac{P}{\tan(\alpha + \varphi)}$$
 
 **2. Điều kiện tự hãm của nêm:**  
-Khi thôi tác dụng lực $\vec{P}$ ($P = 0$), vật bị ép $C$ có tính đàn hồi sinh ra lực đẩy ngược $Q$ có xu hướng đẩy nêm $B$ sang trái và đẩy nêm $A$ trượt lên trên.  
+Khi thôi tác dụng lực $\vec{P}$ ($P = 0$), vật bị ép $C$ có tính đàn hồi sinh ra lực đẩy ngược $Q$ có xu hướng đẩy nêm $B$ sang trái và đẩy nêm $A$ trượt trồi lên trên.  
 Lúc này xu hướng trượt đảo chiều, lực ma sát giữa hai nêm đổi chiều hướng xuống dưới dọc theo mặt nghiêng.  
-Phương trình cân bằng giới hạn để nêm $A$ không bị trượt trồi lên trở thành:
-$$Q = P \cdot \tan(\alpha + \varphi)$$
-Để nêm $A$ tự giữ chặt (tự hãm) dưới tác dụng của lực đàn hồi $Q > 0$ mà không cần ngoại lực giữ ($P \le 0$), ta phải có:
+Phản lực tổng hợp $\vec{R}$ trên mặt nghiêng hợp với pháp tuyến góc ma sát $\varphi$ hướng về phía cản trượt lên, do đó hình chiếu đứng của hợp lực lên nêm $A$ hướng xuống khi $\alpha \le \varphi$:
+$$P_{\text{giữ}} = Q \cdot \tan(\alpha - \varphi)$$
+Để nêm $A$ tự giữ chặt (tự hãm) dưới tác dụng của lực đàn hồi $Q > 0$ mà không cần ngoại lực giữ ($P_{\text{giữ}} \le 0$), ta phải có:
 $$\alpha \le \varphi$$
 
-*Kết luận:* Khi góc vát của nêm $\alpha$ nhỏ hơn hoặc bằng góc ma sát $\varphi$ ($\alpha \le \arctan f$), nêm sẽ tự hãm hoàn toàn.
+*Kết luận:* Khi góc vát $\alpha$ của nêm so với phương thẳng đứng nhỏ hơn hoặc bằng góc ma sát $\varphi$ ($\alpha \le \arctan f$), nêm sẽ tự hãm hoàn toàn.
 :::
 
 ::: tip Thí dụ 3-4: Điều kiện cân bằng của con lăn chịu lực kéo ngang

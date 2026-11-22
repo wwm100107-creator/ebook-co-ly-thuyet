@@ -182,4 +182,6 @@ Phương trình vi phân chuyển động:
 $$\frac{3}{2} m \ddot{s} - 0 = m g \sin\alpha \implies \ddot{s} = \frac{2}{3} g \sin\alpha$$
 
 Gia tốc của khối tâm là hằng số: $a_C = \ddot{s} = \frac{2}{3} g \sin\alpha$.
-Nhận xét: Nếu vật trượt không ma sát thì $a = g \sin\alpha$. Nhờ có lăn không trượt, một phần năng lượng chuyển thành động năng quay nên gia tốc chuyển động tịnh tiến chỉ bằng $\frac{2}{3}$ gia tốc trượt.
+- **Điều kiện ma sát để trụ lăn không trượt:** Xét phương trình chuyển động khối tâm dọc mặt nghiêng $m a_C = mg\sin\alpha - F_{\text{ms}} \implies F_{\text{ms}} = \frac{1}{3}mg\sin\alpha$, cùng phản lực pháp tuyến $N = mg\cos\alpha$. Điều kiện không trượt $F_{\text{ms}} \le f N$ cho:
+  $$f \ge \frac{1}{3}\tan\alpha$$
+- **Nhận xét:** Nếu vật trượt không ma sát thì $a = g \sin\alpha$. Nhờ có lăn không trượt, một phần năng lượng chuyển thành động năng quay nên gia tốc chuyển động tịnh tiến chỉ bằng $\frac{2}{3}$ gia tốc trượt.

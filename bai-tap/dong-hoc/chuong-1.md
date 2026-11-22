@@ -21,7 +21,7 @@ $$x = x(t), \quad y = y(t), \quad z = z(t)$$
   $$v_x = \dot{x} = \frac{dx}{dt}, \quad v_y = \dot{y} = \frac{dy}{dt}, \quad v_z = \dot{z} = \frac{dz}{dt}$$
   Độ lớn: $v = \sqrt{v_x^2 + v_y^2 + v_z^2}$.
 * **Vectơ gia tốc:**
-  $$a_x = \ddot{x} = \frac{dv_x}{dt}, \quad a_y = \ddot{y} = \frac{dv_y}{dt}, \quad a_z = \ddot{z} = \frac{dz}{dt}$$
+  $$a_x = \ddot{x} = \frac{dv_x}{dt}, \quad a_y = \ddot{y} = \frac{dv_y}{dt}, \quad a_z = \ddot{z} = \frac{dv_z}{dt}$$
   Độ lớn: $a = \sqrt{a_x^2 + a_y^2 + a_z^2}$.
 
 ---
@@ -156,7 +156,7 @@ Một chất điểm chuyển động theo phương trình: $x = 2t, \quad y = 4
   - Đỉnh parabol tại $x = 1\text{ m}, y = 1\text{ m}$: $v = 2\text{ m/s}, a_\tau = 0, a_n = a = 8\text{ m/s}^2 \implies \rho = \frac{v^2}{a_n} = \frac{4}{8} = 0.5\text{ m}$.
 :::
 
-::: info Bài 1-2: Chuyển động tròn đều
+::: info Bài 1-2: Chuyển động tròn biến đổi đều
 Điểm $M$ chuyển động trên đường tròn bán kính $R = 2\text{ m}$ theo quy luật cung $s = 4t - t^2$ ($\text{m}$).
 1. Tìm thời điểm chất điểm dừng lại đổi chiều.
 2. Xác định gia tốc tiếp tuyến, gia tốc pháp tuyến và gia tốc toàn phần lúc $t = 1\text{ s}$.

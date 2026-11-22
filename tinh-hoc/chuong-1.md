@@ -623,7 +623,7 @@ Giả sử ngẫu lực $(\vec{F}, \vec{F}')$ nằm trong mặt phẳng $\pi$. L
 
 Như vậy:
 
-$$(\vec{F}, \vec{F}') \sim (\vec{F}, \vec{\phi}'_1 \cdot \vec{F}', \vec{\phi}_1) \sim (\vec{F}, \vec{\phi}'_1) \text{ và } (\vec{F}', \vec{\phi}_1)$$
+$$(\vec{F}, \vec{F}') \sim (\vec{F}, \vec{\phi}'_1, \vec{F}', \vec{\phi}_1) \sim (\vec{F}, \vec{\phi}'_1) \text{ và } (\vec{F}', \vec{\phi}_1)$$
 
 Rõ ràng $(\vec{F}, \vec{\phi}'_1)$ và $(\vec{F}', \vec{\phi}_1)$ là hai ngẫu lực. Áp dụng tính chất 1, của định lí 1, ta dời các ngẫu lực $(\vec{F}, \vec{\phi}'_1)$ và $(\vec{F}', \vec{\phi}_1)$ trong mặt phẳng tác dụng của chúng, chúng ta có hai ngẫu lực $(\vec{F}_1, \vec{\phi}'_1)$ và $(\vec{F}'_1, \vec{\phi}_1)$ tương đương với hai ngẫu lực trên.
 

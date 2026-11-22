@@ -29,7 +29,7 @@ $$\vec{M}_{O,\text{qt}} = -\int \vec{r} \times \vec{a} \, dm$$
 | :--- | :--- | :--- |
 | **Tịnh tiến** | $\vec{R}_{\text{qt}} = -M\vec{a}$ | $\vec{M}_{C,\text{qt}} = 0$ (đặt tại khối tâm $C$) |
 | **Quay quanh trục $Oz$ đối xứng** | $\vec{R}_{\text{qt}} = 0$ (nếu $C \in Oz$) | $M_{z,\text{qt}} = -J_z \varepsilon$ |
-| **Quay quanh trục $Oz$ bất kỳ** | $\vec{R}_{\text{qt}} = -M\vec{a}_C$ | $M_{x,\text{qt}} = J_{xz}\omega^2 - J_{yz}\varepsilon$<br>$M_{y,\text{qt}} = J_{yz}\omega^2 + J_{xz}\varepsilon$<br>$M_{z,\text{qt}} = -J_z\varepsilon$ |
+| **Quay quanh trục $Oz$ bất kỳ** | $\vec{R}_{\text{qt}} = -M\vec{a}_C$ | $M_{x,\text{qt}} = J_{xz}\varepsilon - J_{yz}\omega^2$<br>$M_{y,\text{qt}} = J_{yz}\varepsilon + J_{xz}\omega^2$<br>$M_{z,\text{qt}} = -J_z\varepsilon$ |
 | **Song phẳng (mặt phẳng đối xứng)** | $\vec{R}_{\text{qt}} = -M\vec{a}_C$ | $M_{C,\text{qt}} = -J_C \varepsilon$ |
 
 ### 1.3. Áp lực động lên ổ trục
@@ -42,7 +42,7 @@ $$\vec{R}_B = \vec{R}_{B,\text{tĩnh}} + \vec{R}_{B,\text{động}}$$
 **Điều kiện để trục quay không chịu áp lực động:**
 Trục quay $AB$ phải là **trục quán tính chính trung tâm** của vật rắn:
 1. Trục quay đi qua khối tâm ($C \in AB \implies \vec{R}_{\text{qt}} = 0$).
-2. Trục quay là trục chính quán tính ($J_{xz} = 0, \; J_{yz} = 0 \implies \vec{M}_{\text{qt}} \perp AB$).
+2. Trục quay là trục chính quán tính tại gốc tọa độ đặt lực ($J_{xz} = 0, \; J_{yz} = 0 \implies M_{x,\text{qt}} = M_{y,\text{qt}} = 0 \implies \vec{M}_{\text{qt}} \parallel AB$).
 
 ---
 

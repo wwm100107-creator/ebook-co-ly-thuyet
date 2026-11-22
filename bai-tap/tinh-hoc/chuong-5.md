@@ -120,7 +120,7 @@ $$y_G = \frac{S_1 y_1 + S_2 y_2}{S_1 + S_2} = \frac{16 \times 6 + 12 \times 1}{2
 
 ::: info Bài 5-1: Trọng tâm mặt cắt thép chữ U
 Mặt cắt thép định hình chữ U có chiều rộng đáy $100\text{ mm}$, chiều cao hai cánh $150\text{ mm}$, bề dày thành đáy và hai cánh đều bằng $10\text{ mm}$. Xác định khoảng cách từ trục đối xứng và từ đáy ngoài đến trọng tâm $G$.
-* **Đáp số:** Do tính đối xứng, $x_G = 50\text{ mm}$; áp dụng phương pháp ghép hình hoặc diện tích âm: $y_G \approx 58.7\text{ mm}$.
+* **Đáp số:** Do tính đối xứng, $x_G = 50\text{ mm}$; áp dụng phương pháp ghép hình hoặc diện tích âm: $y_G \approx 60{,}26\text{ mm}$.
 :::
 
 ::: info Bài 5-2: Trọng tâm đĩa tròn khoét lỗ lệch tâm

@@ -17,7 +17,7 @@ Chuyển động của vật rắn có một điểm đứng yên (khớp cầu)
 ### 4.1.1. Hệ góc Euler
 Để xác định vị trí của vật rắn quanh điểm cố định $O$, ta gắn hệ trục động $Oxyz$ vào vật và hệ trục cố định $O X_1 Y_1 Z_1$ trong không gian. Vị trí của vật xác định bởi 3 góc Euler:
 1. **Góc tiến động (Precession) $\psi$:** Góc giữa trục cố định $O X_1$ và đường nút $ON$ (giao tuyến của mặt phẳng $O X_1 Y_1$ và mặt phẳng $Oxy$).
-2. **Góc nghiêng (Nutration) $\theta$:** Góc giữa trục cố định $O Z_1$ và trục động $Oz$.
+2. **Góc nghiêng (Nutation) $\theta$:** Góc giữa trục cố định $O Z_1$ và trục động $Oz$.
 3. **Góc tự quay (Spin) $\varphi$:** Góc giữa đường nút $ON$ và trục động $Ox$.
 
 ---
@@ -74,14 +74,15 @@ Hình 9-1: Trục quay tức thời OP và phân tích vận tốc góc của n�
 Vì hình nón lăn không trượt trên mặt phẳng ngang, nên đường sinh tiếp xúc giữa hình nón và mặt phẳng ngang là đường đứng yên tức thời $\rightarrow$ Đó chính là **trục quay tức thời** $OP$.
 
 **2. Phân tích vận tốc góc:**
-Chuyển động của nón là tổng hợp của chuyển động tiến động quay quanh trục đứng $Oz$ với vận tốc góc $\vec{\omega}_1$ và tự quay quanh trục đối xứng của nón với vận tốc góc $\vec{\omega}_2$.
-Để trục quay tức thời là đường sinh tiếp xúc nằm ngang, vectơ vận tốc góc tổng hợp $\vec{\omega} = \vec{\omega}_1 + \vec{\omega}_2$ phải nằm dọc theo đường sinh tiếp xúc:
-$$\omega = \frac{\omega_1}{\sin\alpha}$$
+Chuyển động của nón là tổng hợp của chuyển động tiến động quay quanh trục đứng $Oz$ với vận tốc góc $\vec{\omega}_1$ (vuông góc với đường sinh tiếp xúc nằm ngang $OA$) và tự quay quanh trục đối xứng của nón với vận tốc góc $\vec{\omega}_2$.
+Vì đường sinh tiếp xúc nằm ngang $OA$ là trục quay tức thời ($\vec{v}_{OA} = \vec{0}$), nên vectơ vận tốc góc tức thời tổng hợp $\vec{\omega} = \vec{\omega}_1 + \vec{\omega}_2$ phải nằm dọc theo đường sinh tiếp xúc $OA$, tức là $\vec{\omega} \perp \vec{\omega}_1$. Từ tam giác vectơ vận tốc góc vuông tại đầu $\vec{\omega}$ (với góc nửa đỉnh nón $\alpha$ hợp bởi trục đối xứng $\vec{\omega}_2$ và đường sinh $OA$):
+$$\tan\alpha = \frac{\omega_1}{\omega} \implies \omega = \omega_1 \cot\alpha = \frac{\omega_1 \cos\alpha}{\sin\alpha}$$
 
 **3. Vận tốc của điểm cao nhất trên đáy nón:**
-Điểm cao nhất $B$ trên vành đáy cách đường sinh tiếp xúc một khoảng cách bằng đường kính đáy: $h = 2R$.
+Đường kính đáy nón tạo với mặt phẳng ngang của đường sinh tiếp xúc $OA$ góc $(90^\circ - \alpha)$, nên khoảng cách vuông góc từ điểm cao nhất $B$ trên vành đáy đến trục quay tức thời $OA$ là:
+$$h = 2R\cos\alpha$$
 Vận tốc dài của điểm $B$:
-$$v_B = \omega \cdot h = \left(\frac{\omega_1}{\sin\alpha}\right) \cdot (2R) = \frac{2\omega_1 R}{\sin\alpha}$$
+$$v_B = \omega \cdot h = (\omega_1 \cot\alpha) \cdot (2R\cos\alpha) = 2\omega_1 R \frac{\cos^2\alpha}{\sin\alpha}$$
 
 ---
 

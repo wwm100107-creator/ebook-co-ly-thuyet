@@ -105,6 +105,10 @@ $$\left(m_1 + \frac{1}{2} m_0 + m_2\right) v \, dv = (m_2 - f m_1) g \, ds$$
 Vì $v \frac{dv}{ds} = a$, ta suy ra gia tốc không đổi của hệ:
 $$a = \frac{m_2 - f m_1}{m_1 + \frac{1}{2} m_0 + m_2} g$$
 
+- **Xác định lực căng dây $T_1, T_2$:** Áp dụng định luật II Newton riêng cho vật $A$ và vật $C$:
+  - Vật $A$: $T_1 - f m_1 g = m_1 a \implies T_1 = m_1(a + fg) = \frac{m_1\left[m_2(1 + f) + \frac{1}{2} f m_0\right]}{m_1 + \frac{1}{2} m_0 + m_2} g$.
+  - Vật $C$: $m_2 g - T_2 = m_2 a \implies T_2 = m_2(g - a) = \frac{m_2\left[m_1(1 + f) + \frac{1}{2} m_0\right]}{m_1 + \frac{1}{2} m_0 + m_2} g$.
+
 ---
 
 ### Thí dụ 2-2: Định lý chuyển động khối tâm và Định lý biến thiên mômen động lượng

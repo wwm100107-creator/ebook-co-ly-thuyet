@@ -96,9 +96,9 @@ $$m \vec{a}_r = \vec{P} + \vec{N} + \vec{F}_{\text{qt}}^{(e)} + \vec{F}_{\text{q
 
 Chiếu lên 3 trục tọa độ:
 $$\begin{cases}
-m \ddot{x} = m \omega^2 x \tag{1} \\
-0 = N_y - 2m \omega \dot{x} \tag{2} \\
-0 = N_z - mg \tag{3}
+m \ddot{x} = m \omega^2 x \quad (1) \\
+0 = N_y - 2m \omega \dot{x} \quad (2) \\
+0 = N_z - mg \quad (3)
 \end{cases}$$
 
 **4. Tích phân phương trình chuyển động tương đối:**

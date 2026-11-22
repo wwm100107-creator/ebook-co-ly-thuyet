@@ -232,7 +232,7 @@ Hình 3-3: Phân tích động năng chuyển động song phẳng theo định 
   $$T_1 - T_0 = \sum A_k^e + \sum A_k^i \tag{3-25}$$
 :::
 
-::: important Lưu ý quan trọng
+::: warning Lưu ý quan trọng
 Đối với **vật rắn tuyệt đối** hoặc hệ các vật rắn liên kết bằng các khớp bản lề, dây không giãn, ngàm cứng, lăn không trượt, thì **tổng công của các nội lực luôn luôn bằng không**:
 
 $$\sum dA_k^i = 0 \implies dT = \sum dA_k^e$$

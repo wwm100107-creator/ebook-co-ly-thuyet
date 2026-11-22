@@ -92,20 +92,22 @@ Nút $O$ chịu tác dụng của hệ 4 lực đồng quy:
 **3. Phân tích hình chiếu các lực:**
 Do tính chất đối xứng của hệ qua mặt phẳng $Oyz$:
 - Lực $\vec{P}$: $P_x = 0, \quad P_y = P, \quad P_z = 0$.
-- Ứng lực $\vec{S}_A$: nằm hoàn toàn dọc theo thanh $OA$ (trục $Oz$): $S_{Ax} = 0, \quad S_{Ay} = 0, \quad S_{Az} = -S_A$.
-- Hai thanh $OB$ và $OC$ đối xứng qua mặt phẳng $Oyz$ và cùng nghiêng $30^\circ$ với $OA$, nên:
-  $$S_B = S_C$$
-  $$S_{Bx} = S_B \sin 30^\circ \sin 60^\circ, \quad S_{Cx} = -S_C \sin 30^\circ \sin 60^\circ$$
-  $$S_{By} = S_B \sin 30^\circ \cos 60^\circ, \quad S_{Cy} = S_C \sin 30^\circ \cos 60^\circ$$
-  $$S_{Bz} = -S_B \cos 30^\circ, \quad S_{Cz} = -S_C \cos 30^\circ$$
+- Ứng lực $\vec{S}_A$: nằm dọc theo thanh $OA$ hướng về tường (ngược chiều $+Oz$): $S_{Ax} = 0, \quad S_{Ay} = 0, \quad S_{Az} = -S_A$.
+- Hai thanh $OB$ và $OC$ đối xứng qua mặt phẳng $Oyz$ và cùng nghiêng $30^\circ$ so với $OA$, sao cho $A, B, C$ trên tường lập thành tam giác đều ($\widehat{MAB} = \widehat{MAC} = 30^\circ$ với $M$ là trung điểm $BC$). Các vectơ đơn vị dọc theo $\overrightarrow{OB}, \overrightarrow{OC}$ là:
+  $$\vec{u}_B = \left(-\sin 30^\circ \sin 30^\circ,\; \sin 30^\circ \cos 30^\circ,\; -\cos 30^\circ\right) = \left(-\frac{1}{4},\; \frac{\sqrt{3}}{4},\; -\frac{\sqrt{3}}{2}\right)$$
+  $$\vec{u}_C = \left(+\sin 30^\circ \sin 30^\circ,\; \sin 30^\circ \cos 30^\circ,\; -\cos 30^\circ\right) = \left(+\frac{1}{4},\; \frac{\sqrt{3}}{4},\; -\frac{\sqrt{3}}{2}\right)$$
+  Suy ra $S_B = S_C$ với các hình chiếu:
+  $$S_{Bx} = -S_B \sin 30^\circ \sin 30^\circ = -\frac{1}{4}S_B, \quad S_{Cx} = +\frac{1}{4}S_C$$
+  $$S_{By} = S_B \sin 30^\circ \sin 60^\circ = \frac{\sqrt{3}}{4}S_B, \quad S_{Cy} = \frac{\sqrt{3}}{4}S_C$$
+  $$S_{Bz} = -S_B \cos 30^\circ = -\frac{\sqrt{3}}{2}S_B, \quad S_{Cz} = -\frac{\sqrt{3}}{2}S_C$$
 
 **4. Thiết lập hệ phương trình cân bằng:**
-$$\sum F_x = S_{Bx} + S_{Cx} = 0 \quad (\text{tự thỏa mãn do } S_B = S_C)$$
-$$\sum F_y = P - 2 S_B \sin 30^\circ \cos 60^\circ = 0 \implies P - 2 S_B \left(\frac{1}{2}\right)\left(\frac{\sqrt{3}}{2}\right) = 0$$
-$$\implies S_B = S_C = -\frac{2\sqrt{3}}{3}P$$
+$$\sum F_x = S_{Bx} + S_{Cx} = \frac{1}{4}(S_C - S_B) = 0 \quad (\text{tự thỏa mãn do } S_B = S_C)$$
+$$\sum F_y = P + 2 S_B \sin 30^\circ \sin 60^\circ = 0 \implies P + 2 S_B \left(\frac{1}{2}\right)\left(\frac{\sqrt{3}}{2}\right) = 0$$
+$$\implies S_B = S_C = -\frac{2\sqrt{3}}{3}P \quad (\text{thanh } OB, OC \text{ chịu nén})$$
 
 Chiếu lên trục $Oz$:
-$$\sum F_z = -S_A - 2 S_B \cos 30^\circ = 0 \implies S_A = -2 S_B \frac{\sqrt{3}}{2} = -2\left(-\frac{2\sqrt{3}}{3}P\right)\frac{\sqrt{3}}{2} = 2P$$
+$$\sum F_z = -S_A - 2 S_B \cos 30^\circ = 0 \implies S_A = -2 S_B \frac{\sqrt{3}}{2} = -2\left(-\frac{2\sqrt{3}}{3}P\right)\frac{\sqrt{3}}{2} = 2P \quad (\text{thanh } OA \text{ chịu kéo})$$
 
 **5. Kết luận:**
 - $S_A = 2P > 0$: Thanh $OA$ chịu **kéo**.

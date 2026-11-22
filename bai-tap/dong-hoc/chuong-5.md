@@ -63,7 +63,7 @@ trong đó:
 
 ### Thí dụ 5-1 (Thí dụ 10-2 sách gốc): Con trượt trên cơ cấu hình bình hành
 
-**Đề bài:** Một cơ cấu 4 khâu có dạng hình bình hành $O_1 A B O_2$. Tay quay $O_1 A = 0.5\text{ m}$ quay quanh trục cố định $O_1$ với vận tốc góc $\omega = 2t\text{ rad/s}$. Dọc theo thanh $AB$, một con trượt $M$ chuyển động theo quy luật:
+**Đề bài:** Một cơ cấu 4 khâu có dạng hình bình hành $O_1 A B O_2$. Tay quay $O_1 A = 0{,}5\text{ m}$ quay thuận chiều kim đồng hồ quanh trục cố định $O_1$ với vận tốc góc $\omega_0 = 2t\text{ rad/s}$. Dọc theo thanh $AB$ nằm ngang, một con trượt $M$ chuyển động theo quy luật:
 $$\xi = AM = 5t^2 \quad (\xi\text{ tính bằng m, } t\text{ tính bằng s})$$
 Tìm vận tốc và gia tốc tuyệt đối của con trượt $M$ tại thời điểm $t = 2\text{ s}$, biết tại thời điểm đó góc $\varphi = \widehat{AO_1 O_2} = 30^\circ$.
 
@@ -87,11 +87,11 @@ Hình 10-2: Hợp vận tốc (va = ve + vr) và gia tốc Coriolis aC trong cơ
 Vì cơ cấu là hình bình hành ($O_1 A \parallel O_2 B$ và $O_1 A = O_2 B$) nên thanh $AB$ thực hiện chuyển động **tịnh tiến cong**. Vận tốc góc theo đà bằng không: $\vec{\omega}_e = 0 \implies \vec{a}_c = 0$.
 
 **2. Phân tích vận tốc tại $t = 2\text{ s}$:**
-- Tại $t = 2\text{ s}$: Vận tốc góc của khâu $O_1 A$:
-  $$\omega_e = 2 \times 2 = 4\text{ rad/s}$$
-- Vận tốc theo đà $\vec{v}_e$: Do thanh $AB$ tịnh tiến cùng vận tốc với điểm $A$:
-  $$v_e = v_A = \omega_e \cdot O_1 A = 4 \times 0.5 = 2\text{ m/s}$$
-  Phương của $\vec{v}_e$ vuông góc với đoạn $O_1 A$ (nghiêng góc $60^\circ$ so với phương nằm ngang $AB$).
+- Tại $t = 2\text{ s}$, vận tốc góc của tay quay $O_1 A$:
+  $$\omega_0 = 2 \times 2 = 4\text{ rad/s}$$
+- Vận tốc theo $\vec{v}_e$: Do thanh $AB$ tịnh tiến cong nên $\vec{\omega}_e = \vec{0}$ và mọi điểm thuộc $AB$ có cùng vận tốc với điểm $A$:
+  $$v_e = v_A = \omega_0 \cdot O_1 A = 4 \times 0{,}5 = 2\text{ m/s}$$
+  Phương của $\vec{v}_e$ vuông góc với đoạn $O_1 A$ (hướng xuống–phải, nghiêng góc $90^\circ - \varphi = 60^\circ$ so với phương ngang $AB$).
 - Vận tốc tương đối $\vec{v}_r$:
   $$v_r = \dot{\xi} = \frac{d}{dt}(5t^2) = 10t = 10 \times 2 = 20\text{ m/s}$$
   Phương của $\vec{v}_r$ nằm dọc theo thanh $AB$ hướng từ $A$ sang $B$.
@@ -100,19 +100,22 @@ Vì cơ cấu là hình bình hành ($O_1 A \parallel O_2 B$ và $O_1 A = O_2 B$
   Góc giữa $\vec{v}_e$ và $\vec{v}_r$ là:
   $$\alpha = 90^\circ - \varphi = 90^\circ - 30^\circ = 60^\circ$$
   Độ lớn vận tốc tuyệt đối:
-  $$v_a = \sqrt{v_e^2 + v_r^2 + 2 v_e v_r \cos 60^\circ} = \sqrt{2^2 + 20^2 + 2(2)(20)(0.5)} = \sqrt{4 + 400 + 40} = \sqrt{444} \approx 21.07\text{ m/s}$$
+  $$v_a = \sqrt{v_e^2 + v_r^2 + 2 v_e v_r \cos 60^\circ} = \sqrt{2^2 + 20^2 + 2(2)(20)(0{,}5)} = \sqrt{4 + 400 + 40} = \sqrt{444} \approx 21{,}07\text{ m/s}$$
 
 **3. Phân tích gia tốc tại $t = 2\text{ s}$:**
 - Gia tốc tương đối:
   $$a_r = \ddot{\xi} = 10\text{ m/s}^2 \quad (\text{dọc theo } AB)$$
-- Gia tốc theo đà của điểm $A$:
-  - Gia tốc góc của tay quay: $\varepsilon_e = \frac{d\omega}{dt} = 2\text{ rad/s}^2$.
-  - Gia tốc tiếp: $a_e^\tau = \varepsilon_e \cdot O_1 A = 2 \times 0.5 = 1\text{ m/s}^2 \perp O_1 A$.
-  - Gia tốc pháp: $a_e^n = \omega_e^2 \cdot O_1 A = 4^2 \times 0.5 = 8\text{ m/s}^2$ dọc theo $A O_1$.
+- Gia tốc theo của điểm $A$ ($\vec{a}_e = \vec{a}_A = \vec{a}_e^\tau + \vec{a}_e^n$):
+  - Gia tốc góc của tay quay: $\varepsilon_0 = \frac{d\omega_0}{dt} = 2\text{ rad/s}^2$.
+  - Gia tốc tiếp: $a_e^\tau = \varepsilon_0 \cdot O_1 A = 2 \times 0{,}5 = 1\text{ m/s}^2$ ($\perp O_1 A$, cùng chiều $\vec{v}_e$, nghiêng $60^\circ$ xuống dưới phương $AB$).
+  - Gia tốc pháp: $a_e^n = \omega_0^2 \cdot O_1 A = 4^2 \times 0{,}5 = 8\text{ m/s}^2$ (dọc theo $\overrightarrow{AO_1}$, nghiêng $30^\circ$ xuống–trái).
 - Gia tốc Coriolis:
-  Do chuyển động theo đà là tịnh tiến ($\vec{\omega}_e = 0$) nên $\vec{a}_c = 0$.
-- Chiếu các vectơ gia tốc lên hai phương vuông góc, ta tính được gia tốc toàn phần:
-  $$a_a \approx 13.5\text{ m/s}^2$$
+  Do chuyển động theo là tịnh tiến cong ($\vec{\omega}_e = \vec{0}$) nên $\vec{a}_c = \vec{0}$, tức là $\vec{a}_a = \vec{a}_e + \vec{a}_r$.
+- Chiếu lên hệ trục $Ax$ dọc theo $\overrightarrow{AB}$ (hướng sang phải) và $Ay$ vuông góc lên trên:
+  $$a_{ax} = a_r - a_e^n \cos 30^\circ + a_e^\tau \cos 60^\circ = 10 - 8\frac{\sqrt{3}}{2} + 1 \times 0{,}5 \approx 3{,}57\text{ m/s}^2$$
+  $$a_{ay} = -a_e^n \sin 30^\circ - a_e^\tau \sin 60^\circ = -8 \times 0{,}5 - 1\frac{\sqrt{3}}{2} \approx -4{,}87\text{ m/s}^2$$
+  Độ lớn gia tốc toàn phần:
+  $$a_a = \sqrt{a_{ax}^2 + a_{ay}^2} \approx \sqrt{3{,}57^2 + (-4{,}87)^2} \approx 6{,}04\text{ m/s}^2$$
 
 ---
 

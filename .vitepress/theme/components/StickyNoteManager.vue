@@ -1,5 +1,5 @@
 <script setup>
-import { ref, reactive, computed, onMounted, watch, nextTick } from 'vue'
+import { ref, reactive, computed, onMounted, onUnmounted, watch, nextTick } from 'vue'
 import { useRoute } from 'vitepress'
 import StickyNoteItem from './StickyNoteItem.vue'
 import {
@@ -152,7 +152,9 @@ function markNoteIdDeleted(noteId) {
   }
 }
 
-const CURRENT_PRESET_VERSION = 3
+const CURRENT_PRESET_VERSION = 4
+const COLLAPSED_MIGRATION_KEY = 'co_ly_thuyet_preset_v4_collapsed'
+const viewportWidth = ref(typeof window !== 'undefined' ? window.innerWidth : 1440)
 
 function sanitizeNote(n) {
   return {
@@ -169,6 +171,7 @@ function sanitizeNote(n) {
     brushSize: Number(n.brushSize) || 4,
     isHighlighter: !!n.isHighlighter,
     isCollapsed: !!n.isCollapsed,
+    title: n.title ? String(n.title) : undefined,
     text: n.text || '',
     html: n.html !== undefined ? n.html : undefined,
     labels: Array.isArray(n.labels) ? n.labels : [],
@@ -182,20 +185,30 @@ function sanitizeNote(n) {
   }
 }
 
-// Align preset notes that specify an anchorId to the exact rendered Y offset of that section heading
+// Align preset notes to the right margin right next to their section heading (never overlapping textbook)
 function alignPresetNotesToAnchors() {
   if (typeof window === 'undefined' || !notes.value.length) return
+  const winW = window.innerWidth || 1440
+  viewportWidth.value = winW
+
   const anchored = notes.value.filter(n => n.anchorId && !n.userMoved)
   if (!anchored.length) return
 
   const scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0
-  // Group notes into horizontal rows by (anchorId + '::' + anchorDy)
+  const docEl = document.querySelector('.vp-doc')
+  const docRight = docEl ? Math.round(docEl.getBoundingClientRect().right) : Math.round(winW * 0.68)
+  const pillW = 268
+  const rightMarginX = (winW - docRight >= pillW + 24)
+    ? Math.min(winW - pillW - 14, docRight + 14)
+    : Math.max(12, winW - pillW - 14)
+
+  // Group notes by (anchorId + '::' + anchorDy) so same-section notes stay grouped in order
   const rowMap = new Map()
   for (const n of anchored) {
     const el = document.getElementById(n.anchorId)
     if (!el) continue
     const headingTop = Math.round(el.getBoundingClientRect().top + scrollY)
-    const targetY = Math.max(110, headingTop + (Number(n.anchorDy) || 0))
+    const targetY = Math.max(88, headingTop + (Number(n.anchorDy) || 0))
     const rowKey = `${n.anchorId}::${Number(n.anchorDy) || 0}`
     if (!rowMap.has(rowKey)) {
       rowMap.set(rowKey, { targetY, items: [] })
@@ -205,21 +218,25 @@ function alignPresetNotesToAnchors() {
 
   if (!rowMap.size) return
   const rows = [...rowMap.values()].sort((a, b) => a.targetY - b.targetY)
-  let prevBottomY = 80
+  let prevBottomY = 76
   let changed = false
 
   for (const row of rows) {
-    const actualY = Math.max(row.targetY, prevBottomY + 26)
-    let maxH = 340
+    row.items.sort((a, b) => (Number(a.x) || 0) - (Number(b.x) || 0))
+    let curY = Math.max(row.targetY, prevBottomY + 10)
     for (const n of row.items) {
-      if (Math.abs((n.y || 0) - actualY) > 2) {
-        n.y = actualY
+      if (Math.abs((n.x || 0) - rightMarginX) > 2) {
+        n.x = rightMarginX
         changed = true
       }
-      const h = n.isCollapsed ? 48 : (Number(n.height) || 340)
-      if (h > maxH) maxH = h
+      if (Math.abs((n.y || 0) - curY) > 2) {
+        n.y = curY
+        changed = true
+      }
+      const occupiedH = n.isCollapsed ? 40 : (Number(n.height) || 340)
+      curY += occupiedH + 10
+      prevBottomY = curY - 10
     }
-    prevBottomY = actualY + maxH
   }
 
   if (changed) {
@@ -242,17 +259,24 @@ function loadNotes() {
     const localList = raw ? JSON.parse(raw) : []
     const deletedIds = getDeletedNoteIds()
     const presetList = defaultNotesByPath[normalizedPath.value] || []
+    const presetIds = new Set(presetList.map(p => p && p.id).filter(Boolean))
+    const needsCollapseMigration = !localStorage.getItem(COLLAPSED_MIGRATION_KEY)
 
     const mergedMap = new Map()
     let updatedPreset = false
     for (const item of localList) {
       if (item && item.id) {
-        // Drop older auto-generated note_mmm_* notes so they upgrade cleanly to CURRENT_PRESET_VERSION
-        if (String(item.id).startsWith('note_mmm_') && (Number(item.presetVersion) || 0) < CURRENT_PRESET_VERSION) {
+        const isPresetBacked = String(item.id).startsWith('note_mmm_') || presetIds.has(item.id)
+        if (isPresetBacked && (Number(item.presetVersion) || 0) < CURRENT_PRESET_VERSION) {
           updatedPreset = true
           continue
         }
-        mergedMap.set(item.id, sanitizeNote(item))
+        const cleanItem = sanitizeNote(item)
+        if (needsCollapseMigration && !cleanItem.isCollapsed) {
+          cleanItem.isCollapsed = true
+          updatedPreset = true
+        }
+        mergedMap.set(item.id, cleanItem)
       }
     }
     for (const preset of presetList) {
@@ -260,6 +284,10 @@ function loadNotes() {
         mergedMap.set(preset.id, sanitizeNote(preset))
         updatedPreset = true
       }
+    }
+
+    if (needsCollapseMigration) {
+      localStorage.setItem(COLLAPSED_MIGRATION_KEY, '1')
     }
 
     notes.value = [...mergedMap.values()]
@@ -551,6 +579,16 @@ function triggerAddPointLabel() {
   noteItemRefs.value[activeNote.value.id]?.addPointLabelBox()
 }
 
+let resizeTimer = null
+function onWindowResize() {
+  if (typeof window === 'undefined') return
+  viewportWidth.value = window.innerWidth || 1440
+  if (resizeTimer) clearTimeout(resizeTimer)
+  resizeTimer = setTimeout(() => {
+    alignPresetNotesToAnchors()
+  }, 120)
+}
+
 // Reload notes whenever user navigates to a new page
 watch(() => route.path, () => {
   showMathPanel.value = false
@@ -561,6 +599,17 @@ watch(() => route.path, () => {
 
 onMounted(() => {
   loadNotes()
+  if (typeof window !== 'undefined') {
+    viewportWidth.value = window.innerWidth || 1440
+    window.addEventListener('resize', onWindowResize)
+  }
+})
+
+onUnmounted(() => {
+  if (typeof window !== 'undefined') {
+    window.removeEventListener('resize', onWindowResize)
+  }
+  if (resizeTimer) clearTimeout(resizeTimer)
 })
 </script>
 
@@ -574,6 +623,7 @@ onMounted(() => {
         :ref="el => { if (el) noteItemRefs[note.id] = el; else delete noteItemRefs[note.id] }"
         :note="note"
         :is-active="!!(activeNote && note.id === activeNote.id)"
+        :viewport-width="viewportWidth"
         @update="updateNote"
         @delete="deleteNote"
         @select="selectNote"
@@ -1316,7 +1366,7 @@ onMounted(() => {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 80;
+  z-index: 22;
 }
 
 .notes-canvas-layer :deep(.sticky-note-card) {

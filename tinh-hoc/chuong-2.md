@@ -440,7 +440,7 @@ Tất cả các thành phần phản lực đều xác định được duy nh�
 
 ::: tip Thí dụ 2-5: Xác định phản lực của xe ba bánh (Hệ lực song song không gian)
 **Đề bài:**  
-Một xe ba bánh được mô hình bằng tấm phẳng tam giác đều $ABC$ đồng chất, cạnh có chiều dài $a$, nằm cân bằng trên mặt ngang và tiếp xúc với mặt đường qua 3 bánh xe tại các đỉnh $A, B$ và $C$ (H. 2-16). Trọng lượng của xe là $P$ đặt tại trọng tâm $G$ của tam giác. Xe chở một kiện hàng có trọng lượng $Q$ đặt tại điểm $D$ cách cạnh $AC$ một đoạn $b$ và cách trung trực của cạnh $AB$ một đoạn $c$.  
+Một xe ba bánh được mô hình bằng tấm phẳng tam giác đều $ABC$ đồng chất, cạnh có chiều dài $a$, nằm cân bằng trên mặt ngang và tiếp xúc với mặt đường qua 3 bánh xe tại các đỉnh $A, B$ và $C$ (H. 2-16). Trọng lượng của xe là $P$ đặt tại trọng tâm $G$ của tam giác. Xe chở một kiện hàng có trọng lượng $Q$ đặt tại điểm $D$ cách cạnh $AB$ một đoạn $b$ và cách trung trực của cạnh $AB$ một đoạn $c$.  
 Xác định phản lực của mặt đường tác dụng lên mỗi bánh xe tại $A, B$ và $C$. Tìm điều kiện để xe không bị lật.
 
 <div class="figure-container">
@@ -568,9 +568,9 @@ Tách riêng từng thanh và đặt các phản lực liên kết:
 
 Giải hệ 6 phương trình trên, ta tìm được các phản lực:
 $$\begin{cases}
-X_O = \left(\dfrac{5}{4}P - Q\right)\sqrt{3}; \quad Y_O = 2Q + \dfrac{5}{4}P \\
-X_C = \left(Q - \dfrac{5}{4}P\right)\sqrt{3}; \quad Y_C = \dfrac{7}{4}P - Q \\
-X_B = \left(\dfrac{5}{4}P - Q\right)\sqrt{3}; \quad Y_B = \dfrac{3}{4}P - Q
+X_O = \left(\dfrac{5}{4}P + Q\right)\sqrt{3}; \quad Y_O = \dfrac{5}{4}P \\
+X_C = -\left(\dfrac{5}{4}P + Q\right)\sqrt{3}; \quad Y_C = \dfrac{7}{4}P + Q \\
+X_B = \left(\dfrac{5}{4}P + Q\right)\sqrt{3}; \quad Y_B = \dfrac{3}{4}P + Q
 \end{cases}$$
 
 #### Cách 2: Phương pháp hóa rắn
@@ -586,7 +586,7 @@ Kết hợp với một phương trình tách riêng thanh $BC$ lấy mômen đ�
 
 ::: tip Thí dụ 2-8: Xác định đối trọng khóa van an toàn (Bài toán đòn)
 **Đề bài:**  
-Một van an toàn hình nón $A$ được nối vào đòn ngang $CD$ tại điểm $B$ (H. 2-20). Đòn $CD$ dài $50\text{ cm}$, đồng chất, có trọng lượng $P_đ = 10\text{ N}$, quay quanh trục bản lề cố định $C$. Tại đầu $D$ của đòn treo một đối trọng $Q$ để giữ van luôn đóng chặt. Biết khoảng cách $BC = 7\text{ cm}$, đường kính miệng van $d = 6\text{ cm}$, và áp suất an toàn của hơi trong bình là $p = 50\text{ N/cm}^2$.  
+Một van an toàn hình nón $A$ được nối vào đòn ngang $CD$ tại điểm $B$ (H. 2-20). Đòn $CD$ dài $50\text{ cm}$, đồng chất, có trọng lượng $P_{\text{đ}} = 10\text{ N}$, quay quanh trục bản lề cố định $C$. Tại đầu $D$ của đòn treo một đối trọng $Q$ để giữ van luôn đóng chặt. Biết khoảng cách $BC = 7\text{ cm}$, đường kính miệng van $d = 6\text{ cm}$, và áp suất an toàn của hơi trong bình là $p = 50\text{ N/cm}^2$.  
 Xác định trọng lượng nhỏ nhất của đối trọng $Q$ cần treo tại $D$ để khóa chặt van.
 
 <div class="figure-container">
@@ -611,11 +611,11 @@ Hình 2-20: Sơ đồ van an toàn đòn bẩy và quả cân đối trọng
 2. **Khảo sát cân bằng của đòn $CD$:**  
    Các lực tác dụng lên đòn làm quay quanh trục $C$:
    - Lực đẩy từ van truyền lên đòn tại điểm $B$: lực $P = 1413{,}7\text{ N}$ hướng lên, cánh tay đòn $BC = 7\text{ cm}$.
-   - Trọng lượng của bản thân đòn: $P_đ = 10\text{ N}$ đặt tại trung điểm của đòn cách $C$ một đoạn $\frac{CD}{2} = 25\text{ cm}$.
+   - Trọng lượng của bản thân đòn: $P_{\text{đ}} = 10\text{ N}$ đặt tại trung điểm của đòn cách $C$ một đoạn $\frac{CD}{2} = 25\text{ cm}$.
    - Trọng lượng quả cân đối trọng $Q$ treo tại đầu $D$: cách $C$ một đoạn $CD = 50\text{ cm}$.
 
 3. **Phương trình cân bằng mômen đối với trục quay $C$:**
-   $$\sum m_C(\vec{F}) = P \cdot BC - P_đ \cdot \dfrac{CD}{2} - Q \cdot CD = 0$$
+   $$\sum m_C(\vec{F}) = P \cdot BC - P_{\text{đ}} \cdot \dfrac{CD}{2} - Q \cdot CD = 0$$
    $$1413{,}7 \cdot 7 - 10 \cdot 25 - Q \cdot 50 = 0$$
    $$9895{,}9 - 250 - 50 Q = 0 \implies 50 Q = 9645{,}9$$
    $$Q = \dfrac{9645{,}9}{50} \approx 192{,}9\text{ N}$$

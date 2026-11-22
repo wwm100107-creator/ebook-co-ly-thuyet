@@ -336,7 +336,7 @@ $$\frac{5q - P}{3} \le Q \le P$$
 
 ::: info Bài 1-1: Kéo bánh xe vượt bậc thềm
 Dùng lực kéo $\vec{Q}$ nằm ngang đặt vào trục để kéo bánh xe đồng chất bán kính $R$, trọng lượng $P$ từ mặt đường nằm ngang vượt lên bậc thềm cao $h = R/2$. Xác định các phản lực tại mặt đường $A$ và bậc thềm $B$. Với trị số $Q$ nào thì bánh xe bắt đầu vượt qua bậc?
-* **Đáp số:** $N_A = P - Q\frac{\sqrt{3}}{3}$; $N_B = \frac{2\sqrt{3}}{3}Q$. Bánh xe bắt đầu nhấc khỏi đường khi $Q \ge P\frac{\sqrt{3}}{3}$.
+* **Đáp số:** $N_A = P - Q\frac{\sqrt{3}}{3}$; $N_B = \frac{2\sqrt{3}}{3}Q$. Bánh xe bắt đầu nhấc khỏi đường khi $Q \ge P\sqrt{3}$.
 :::
 
 ::: info Bài 1-2: Trục ròng rọc chịu lực
@@ -385,5 +385,5 @@ Cần trục có trục đứng $AB = 1.8\text{ m}$ đỡ bởi hai ổ $A$ và 
 
 ::: info Bài 1-10: Điều kiện chống lật thân đập nước
 Một đập nước chắn có mặt cắt hình chữ nhật chiều cao $h = 12\text{ m}$, trọng lượng riêng của vật liệu xây đập là $\gamma = 30\text{ kN/m}^3$, của nước là $\gamma_n = 10\text{ kN/m}^3$. Xác định bề rộng đáy $b$ tối thiểu của đập để thân đập không bị áp lực nước làm lật quanh mép chân đập.
-* **Đáp số:** $b \ge 2\text{ m}$.
+* **Đáp số:** $b \ge 4\text{ m}$.
 :::

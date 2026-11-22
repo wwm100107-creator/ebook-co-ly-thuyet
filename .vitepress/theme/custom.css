@@ -97,7 +97,6 @@ li .mjx-container,
 span mjx-container,
 span .mjx-container {
   display: inline-block !important;
-  vertical-align: middle !important;
   overflow: visible !important;
   padding: 0 1px !important;
   margin: 0 !important;

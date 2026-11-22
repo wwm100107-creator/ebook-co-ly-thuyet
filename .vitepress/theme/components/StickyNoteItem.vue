@@ -1,5 +1,5 @@
 <script setup>
-import { ref, reactive, onMounted, onUnmounted, watch, nextTick } from 'vue'
+import { ref, reactive, computed, onMounted, onUnmounted, watch, nextTick } from 'vue'
 import {
   extractTrailingSlashToken,
   getAutocompleteSuggestions,
@@ -15,6 +15,10 @@ const props = defineProps({
   isActive: {
     type: Boolean,
     default: false
+  },
+  viewportWidth: {
+    type: Number,
+    default: 1440
   }
 })
 
@@ -77,6 +81,38 @@ const colorThemes = {
   white: { bg: '#ffffff', header: '#f8fafc', border: '#cbd5e1', text: '#0f172a' }
 }
 
+const effectiveWidth = computed(() => {
+  return props.note.isCollapsed ? 268 : (props.note.width || 340)
+})
+
+const effectiveLeft = computed(() => {
+  const rawX = Number(props.note.x) || 20
+  const vw = Number(props.viewportWidth) || (typeof window !== 'undefined' ? window.innerWidth : 1440)
+  const maxLeft = Math.max(12, vw - effectiveWidth.value - 14)
+  return Math.max(10, Math.min(rawX, maxLeft))
+})
+
+const collapsedTitle = computed(() => {
+  if (props.note.title && String(props.note.title).trim()) {
+    return String(props.note.title).trim()
+  }
+  const raw = (props.note.text || '').trim()
+  if (!raw) return props.note.drawData ? 'Hình vẽ minh họa' : 'Ghi chú (đã cuộn rèm)'
+  const lines = raw.split(/\r?\n/).map(l => l.trim()).filter(Boolean)
+  const preferred = lines.find(l => !/^HÌNH\b/i.test(l)) || lines[0] || ''
+  const clean = preferred
+    .replace(/^[\-\*•]+\s*/, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+  if (!clean) return props.note.drawData ? 'Hình vẽ minh họa' : 'Ghi chú (đã cuộn rèm)'
+  return clean.length > 36 ? clean.slice(0, 34) + '…' : clean
+})
+
+function convertVecArrowHtml(str) {
+  if (!str || !str.includes('\u20d7')) return str
+  return str.replace(/([A-Za-z0-9\u0391-\u03C9']+[\u0307\u0308]?)\u20d7/g, '<span class="m-vec">$1</span>')
+}
+
 function plainTextToHtml(txt) {
   if (!txt) return ''
   return txt
@@ -86,7 +122,7 @@ function plainTextToHtml(txt) {
         .replace(/&/g, '&amp;')
         .replace(/</g, '&lt;')
         .replace(/>/g, '&gt;')
-      return `<div>${esc || '<br>'}</div>`
+      return `<div>${convertVecArrowHtml(esc) || '<br>'}</div>`
     })
     .join('')
 }
@@ -94,9 +130,10 @@ function plainTextToHtml(txt) {
 function syncEditorFromNote() {
   const el = editorRef.value
   if (!el) return
-  const targetHtml = props.note.html !== undefined && props.note.html !== null
+  const rawHtml = props.note.html !== undefined && props.note.html !== null
     ? props.note.html
     : plainTextToHtml(props.note.text || '')
+  const targetHtml = convertVecArrowHtml(rawHtml)
   if (el.innerHTML !== targetHtml) {
     el.innerHTML = targetHtml
   }
@@ -321,9 +358,20 @@ function applyDrawingObstacleAvoidance() {
   if (regions.length === 0 || blocks.length === 0) return
 
   const wsWidth = (props.note.width || 340) - 4
-  const MIN_TEXT_COL = 95
+  const MIN_TEXT_COL = 120
+  const totalLen = (props.note.text || '').trim().length
 
-  for (const b of blocks) {
+  for (let idx = 0; idx < blocks.length; idx++) {
+    const b = blocks[idx]
+    const rawTxt = (b.innerText || b.textContent || '').trim()
+    // Keep short top "HÌNH..." captions (or short 1-2 line diagram headers) pinned at top without wrapping/pushing
+    if ((idx === 0 && /^HÌNH\b/i.test(rawTxt) && rawTxt.length < 90) || (!!props.note.drawData && blocks.length <= 2 && totalLen < 90)) {
+      b.style.marginTop = '0px'
+      b.style.paddingLeft = '0px'
+      b.style.paddingRight = '0px'
+      continue
+    }
+
     let bTop = b.offsetTop
     let bHeight = Math.max(24, b.offsetHeight)
     let bBottom = bTop + bHeight
@@ -336,27 +384,38 @@ function applyDrawingObstacleAvoidance() {
       if (bBottom > rTop && bTop < rBottom) {
         const leftSpace = reg.x - 18
         const rightSpace = (wsWidth - 18) - (reg.x + reg.w)
+        const curPadL = parseInt(b.style.paddingLeft || '0', 10)
+        const curPadR = parseInt(b.style.paddingRight || '0', 10)
 
+        let didSideWrap = false
         if (leftSpace >= MIN_TEXT_COL && leftSpace >= rightSpace) {
-          // Wrap text cleanly on the LEFT of the drawing
+          // Wrap text cleanly on the LEFT of the drawing only if enough column width remains
           const padR = Math.max(0, Math.ceil(wsWidth - reg.x + 10))
-          const curPadR = parseInt(b.style.paddingRight || '0', 10)
-          if (padR > curPadR) {
-            b.style.paddingRight = padR + 'px'
-            bHeight = Math.max(24, b.offsetHeight)
-            bBottom = bTop + bHeight
+          const nextPadR = Math.max(curPadR, padR)
+          if (wsWidth - curPadL - nextPadR - 16 >= MIN_TEXT_COL) {
+            if (nextPadR > curPadR) {
+              b.style.paddingRight = nextPadR + 'px'
+              bHeight = Math.max(24, b.offsetHeight)
+              bBottom = bTop + bHeight
+            }
+            didSideWrap = true
           }
         } else if (rightSpace >= MIN_TEXT_COL) {
-          // Wrap text cleanly on the RIGHT of the drawing
+          // Wrap text cleanly on the RIGHT of the drawing only if enough column width remains
           const padL = Math.max(0, Math.ceil(reg.x + reg.w + 10))
-          const curPadL = parseInt(b.style.paddingLeft || '0', 10)
-          if (padL > curPadL) {
-            b.style.paddingLeft = padL + 'px'
-            bHeight = Math.max(24, b.offsetHeight)
-            bBottom = bTop + bHeight
+          const nextPadL = Math.max(curPadL, padL)
+          if (wsWidth - nextPadL - curPadR - 16 >= MIN_TEXT_COL) {
+            if (nextPadL > curPadL) {
+              b.style.paddingLeft = nextPadL + 'px'
+              bHeight = Math.max(24, b.offsetHeight)
+              bBottom = bTop + bHeight
+            }
+            didSideWrap = true
           }
-        } else {
-          // Drawing spans across the note width: push the text block directly BELOW the drawing!
+        }
+
+        if (!didSideWrap) {
+          // Drawing spans across the note width (or column would squeeze too narrow): push below!
           const pushDown = Math.ceil(rBottom - bTop + 6)
           if (pushDown > 0) {
             const curMargin = parseInt(b.style.marginTop || '0', 10)
@@ -596,14 +655,19 @@ function onCanvasDblClick(e) {
 }
 
 // Dragging logic for the Note Card
+let headerDragMoved = false
+let headerWasCollapsed = false
+
 function onHeaderPointerDown(e) {
   if (e.target.closest('button')) return
+  headerDragMoved = false
+  headerWasCollapsed = !!props.note.isCollapsed
   isDragging.value = true
   emit('select', props.note.id)
   emit('bring-to-front', props.note.id)
   dragStart.mouseX = e.pageX
   dragStart.mouseY = e.pageY
-  dragStart.noteX = props.note.x
+  dragStart.noteX = effectiveLeft.value
   dragStart.noteY = props.note.y
 
   window.addEventListener('pointermove', onPointerMove)
@@ -615,10 +679,13 @@ function onPointerMove(e) {
   if (isDragging.value) {
     const dx = e.pageX - dragStart.mouseX
     const dy = e.pageY - dragStart.mouseY
-    if (Math.abs(dx) > 3 || Math.abs(dy) > 3) {
+    if (Math.abs(dx) > 4 || Math.abs(dy) > 4) {
+      headerDragMoved = true
       props.note.userMoved = true
     }
-    props.note.x = Math.max(10, dragStart.noteX + dx)
+    const vw = Number(props.viewportWidth) || (typeof window !== 'undefined' ? window.innerWidth : 1440)
+    const maxDragX = Math.max(12, vw - effectiveWidth.value - 10)
+    props.note.x = Math.max(10, Math.min(maxDragX, dragStart.noteX + dx))
     props.note.y = Math.max(10, dragStart.noteY + dy)
     emit('update', props.note)
   } else if (isResizing.value) {
@@ -636,10 +703,18 @@ function onPointerMove(e) {
 
 function onPointerUp() {
   if (isDragging.value || isResizing.value) {
+    const expandOnBarClick = isDragging.value && headerWasCollapsed && !headerDragMoved
     isDragging.value = false
     isResizing.value = false
     window.removeEventListener('pointermove', onPointerMove)
     window.removeEventListener('pointerup', onPointerUp)
+    if (expandOnBarClick) {
+      props.note.isCollapsed = false
+      suggestions.value = []
+      currentSlashInfo = null
+      emit('select', props.note.id)
+      emit('bring-to-front', props.note.id)
+    }
     emit('update', props.note)
   }
 }
@@ -665,6 +740,10 @@ function toggleCollapse() {
   props.note.isCollapsed = !props.note.isCollapsed
   suggestions.value = []
   currentSlashInfo = null
+  if (!props.note.isCollapsed) {
+    emit('select', props.note.id)
+    emit('bring-to-front', props.note.id)
+  }
   emit('update', props.note)
 }
 
@@ -1515,9 +1594,9 @@ watch(() => props.note.mode, (newMode) => {
       'is-active': isActive
     }"
     :style="{
-      left: note.x + 'px',
+      left: effectiveLeft + 'px',
       top: note.y + 'px',
-      width: note.isCollapsed ? '250px' : (note.width || 340) + 'px',
+      width: effectiveWidth + 'px',
       height: note.isCollapsed ? 'auto' : (note.height || 340) + 'px',
       zIndex: note.zIndex || 999,
       '--note-bg': colorThemes[note.colorTheme || 'yellow'].bg,
@@ -1528,7 +1607,11 @@ watch(() => props.note.mode, (newMode) => {
     @pointerdown="onCardPointerDown"
   >
     <!-- Note Top Header (Minimalist vector icons) -->
-    <div class="note-header" @pointerdown="onHeaderPointerDown">
+    <div
+      class="note-header"
+      :class="{ 'is-collapsed-bar': note.isCollapsed }"
+      @pointerdown="onHeaderPointerDown"
+    >
       <div class="header-left">
         <!-- Minimalist Grip Dots -->
         <svg class="header-icon grip-icon" viewBox="0 0 10 16" width="9" height="15" fill="currentColor" title="Giữ chuột để di chuyển">
@@ -1546,8 +1629,8 @@ watch(() => props.note.mode, (newMode) => {
           <path d="M5 17h14v-2l-2-2V5h1V3H6v2h1v8l-2 2v2Z"/>
         </svg>
 
-        <span class="note-title-preview" v-if="note.isCollapsed">
-          {{ note.text ? note.text.slice(0, 18) + '...' : 'Ghi chú (đã cuộn rèm)' }}
+        <span class="note-title-preview" v-if="note.isCollapsed" :title="collapsedTitle">
+          {{ collapsedTitle }}
         </span>
         <span class="note-title" v-else>GHI CHÚ</span>
       </div>
@@ -1832,10 +1915,17 @@ watch(() => props.note.mode, (newMode) => {
   cursor: grabbing;
 }
 
+.note-header.is-collapsed-bar {
+  cursor: pointer;
+  border-bottom: none;
+}
+
 .header-left {
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: 6px;
+  min-width: 0;
+  flex: 1 1 auto;
   font-weight: 700;
   font-size: 12px;
   color: var(--note-text, #713f12);
@@ -1844,6 +1934,7 @@ watch(() => props.note.mode, (newMode) => {
 .header-icon {
   display: inline-block;
   vertical-align: middle;
+  flex-shrink: 0;
 }
 
 .grip-icon {
@@ -1862,10 +1953,13 @@ watch(() => props.note.mode, (newMode) => {
 }
 
 .note-title-preview {
-  font-size: 12px;
-  font-family: "Times New Roman", Times, serif;
-  font-style: italic;
-  max-width: 130px;
+  font-size: 13px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 235px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1875,6 +1969,8 @@ watch(() => props.note.mode, (newMode) => {
   display: flex;
   align-items: center;
   gap: 4px;
+  flex-shrink: 0;
+  margin-left: 6px;
 }
 
 .btn-icon {
@@ -1987,7 +2083,37 @@ watch(() => props.note.mode, (newMode) => {
 
 .note-rich-editor :deep(div),
 .note-rich-editor :deep(p) {
-  transition: margin-top 0.12s ease, padding-left 0.12s ease, padding-right 0.12s ease;
+  margin: 0;
+}
+
+.note-rich-editor :deep(.m-vec) {
+  position: relative;
+  display: inline-block;
+  min-width: 0.5em;
+  padding: 0.2em 0.06em 0 0.04em;
+  text-align: center;
+  line-height: 1.12;
+  vertical-align: baseline;
+}
+
+.note-rich-editor :deep(.m-vec)::after {
+  content: "";
+  position: absolute;
+  left: 0.04em;
+  right: -0.02em;
+  top: 0.02em;
+  height: 0.34em;
+  background-color: currentColor;
+  clip-path: polygon(
+    0% 38%,
+    calc(100% - 3.2px) 38%,
+    calc(100% - 4.4px) 0%,
+    100% 50%,
+    calc(100% - 4.4px) 100%,
+    calc(100% - 3.2px) 62%,
+    0% 62%
+  );
+  pointer-events: none;
 }
 
 .note-rich-editor :deep(ul),

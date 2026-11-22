@@ -41,7 +41,7 @@
 
   <!-- Active force Q at D -->
   <line x1="190" y1="220" x2="190" y2="282" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrow-red)"/>
-  <text x="198" y="235" fill="#dc2626" font-size="14" font-weight="bold" font-style="italic">Q</text>
+  <text x="172" y="240" fill="#dc2626" font-size="14" font-weight="bold" font-style="italic">Q</text>
 
   <!-- Reactions NA, NB, NC (vertical upward) -->
   <line x1="110" y1="305" x2="110" y2="225" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
@@ -55,5 +55,5 @@
 
   <text x="100" y="325" fill="#1e293b" font-size="14" font-weight="bold">A</text>
   <text x="430" y="335" fill="#1e293b" font-size="14" font-weight="bold">B</text>
-  <text x="208" y="165" fill="#1e293b" font-size="14" font-weight="bold">C</text>
+  <text x="178" y="162" fill="#1e293b" font-size="14" font-weight="bold">C</text>
 </svg>

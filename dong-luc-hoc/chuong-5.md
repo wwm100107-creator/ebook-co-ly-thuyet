@@ -172,11 +172,11 @@ Theo nguyên lý Đalămbe, hệ lực quán tính thu gọn về khối tâm $C
 - Mômen chính lực quán tính đối với khối tâm: Vì trục quay song song với trục quán tính chính trung tâm nên $\vec{M}_{C}^{qt} = \vec{0}$.
 
 **2. Thiết lập phương trình cân bằng Đalămbe:**
-Hệ cân bằng gồm các phản lực động tại ổ đỡ $\vec{R}_A^đ, \vec{R}_B^đ$ và lực quán tính ly tâm $\vec{F}_{qt}$:
-$$\vec{R}_A^đ + \vec{R}_B^đ + \vec{F}_{qt} = \vec{0}$$
+Hệ cân bằng gồm các phản lực động tại ổ đỡ $\vec{R}_A^{\text{đ}}, \vec{R}_B^{\text{đ}}$ và lực quán tính ly tâm $\vec{F}_{qt}$:
+$$\vec{R}_A^{\text{đ}} + \vec{R}_B^{\text{đ}} + \vec{F}_{qt} = \vec{0}$$
 
 Lấy mômen đối với điểm $A$ và điểm $B$:
-$$\sum m_A = R_B^đ \cdot l - F_{qt} \cdot \frac{l}{2} = 0 \implies R_B^đ = \frac{1}{2} F_{qt} = \frac{1}{2} m e \omega^2$$
-$$\sum m_B = -R_A^đ \cdot l + F_{qt} \cdot \frac{l}{2} = 0 \implies R_A^đ = \frac{1}{2} F_{qt} = \frac{1}{2} m e \omega^2$$
+$$\sum m_A = R_B^{\text{đ}} \cdot l - F_{qt} \cdot \frac{l}{2} = 0 \implies R_B^{\text{đ}} = \frac{1}{2} F_{qt} = \frac{1}{2} m e \omega^2$$
+$$\sum m_B = -R_A^{\text{đ}} \cdot l + F_{qt} \cdot \frac{l}{2} = 0 \implies R_A^{\text{đ}} = \frac{1}{2} F_{qt} = \frac{1}{2} m e \omega^2$$
 
-Các phản lực động $\vec{R}_A^đ, \vec{R}_B^đ$ cùng hướng ngược chiều với $\vec{F}_{qt}$, tức là hướng vào trục quay. Khi trục quay tròn, các áp lực động này quay liên tục theo thời gian tạo thành tải trọng động tác dụng phá hủy ổ bi nếu không được triệt tiêu bằng biện pháp cân bằng động.
+Các phản lực động $\vec{R}_A^{\text{đ}}, \vec{R}_B^{\text{đ}}$ cùng hướng ngược chiều với $\vec{F}_{qt}$, tức là hướng vào trục quay. Khi trục quay tròn, các áp lực động này quay liên tục theo thời gian tạo thành tải trọng động tác dụng phá hủy ổ bi nếu không được triệt tiêu bằng biện pháp cân bằng động.

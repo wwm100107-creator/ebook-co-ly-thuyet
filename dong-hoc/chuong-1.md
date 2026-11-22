@@ -210,7 +210,7 @@ $$\vec{v} = v_r \vec{e}_r + v_{\theta} \vec{e}_{\theta} \tag{1-19}$$
 
 trong đó:
 - $v_r = \dot{r}$ (thành phần vận tốc dọc tia).
-- $v_{\theta} = r\dot{\theta}$ (thành phần vận tốc ngang / vận tốc góc).
+- $v_{\theta} = r\dot{\theta}$ (thành phần vận tốc ngang).
 
 Độ lớn vận tốc:
 

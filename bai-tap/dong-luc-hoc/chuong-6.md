@@ -37,8 +37,8 @@ Nếu vật lăn không trượt trên bề mặt cố định có bán kính $R
 Với con quay quay rất nhanh quanh trục đối xứng với vận tốc góc riêng $\omega_0$ rất lớn:
 Mômen ngoại lực $\vec{M}_O$ tác dụng làm trục con quay tiến động với vận tốc góc tiến động $\vec{\Omega}$:
 $$\vec{M}_O = \vec{\Omega} \times \vec{L}_O \approx \vec{\Omega} \times (J_z \omega_0 \vec{k})$$
-Độ lớn vận tốc góc tiến động:
-$$\Omega = \frac{M_O}{J_z \omega_0}$$
+Độ lớn vận tốc góc tiến động (với $\theta$ là góc hợp bởi trục quay riêng $Oz$ và trục tiến động $\vec{\Omega}$):
+$$\Omega = \frac{M_O}{J_z \omega_0 \sin\theta}$$
 Quy tắc: Trục quay riêng $Oz$ luôn có xu hướng quay đuổi theo véctơ mômen ngoại lực $\vec{M}_O$ theo đường ngắn nhất.
 
 ---

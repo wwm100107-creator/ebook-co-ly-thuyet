@@ -29,7 +29,7 @@
   <!-- Cánh tay đòn gắn chất điểm lệch tâm M tại z_M = 130 -->
   <line x1="180" y1="130" x2="300" y2="130" stroke="#1e293b" stroke-width="3" stroke-linecap="round" />
   <circle cx="300" cy="130" r="9" fill="#2563eb" stroke="#1e293b" stroke-width="2" />
-  <text x="315" y="135" class="lbl-bold">M (m)</text>
+  <text x="282" y="114" class="lbl-bold">M (m)</text>
   <text x="235" y="122" class="lbl-bold">r</text>
 
   <!-- Lực quán tính ly tâm F_qt = m*omega^2*r hướng ra xa trục -->

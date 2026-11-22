@@ -46,13 +46,13 @@
 
   <!-- Cable Tension T vector at B along BD -->
   <line x1="340" y1="300" x2="255" y2="185" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow-red)"/>
-  <text x="280" y="215" fill="#dc2626" font-size="15" font-weight="bold" font-style="italic">T</text>
+  <text x="266" y="182" fill="#dc2626" font-size="15" font-weight="bold" font-style="italic">T</text>
 
   <!-- Components of T -->
   <line x1="340" y1="300" x2="340" y2="230" stroke="#dc2626" stroke-width="1.8" marker-end="url(#arrow-red)"/>
   <text x="348" y="245" fill="#dc2626" font-size="12" font-style="italic">T<tspan font-size="9" dy="2">z</tspan></text>
   <line x1="340" y1="300" x2="295" y2="300" stroke="#dc2626" stroke-width="1.8" marker-end="url(#arrow-red)"/>
-  <text x="270" y="315" fill="#dc2626" font-size="12" font-style="italic">T<tspan font-size="9" dy="2">y</tspan></text>
+  <text x="282" y="320" fill="#dc2626" font-size="12" font-style="italic">T<tspan font-size="9" dy="2">y</tspan></text>
   <line x1="340" y1="300" x2="380" y2="250" stroke="#dc2626" stroke-width="1.8" marker-end="url(#arrow-red)"/>
   <text x="395" y="250" fill="#dc2626" font-size="12" font-style="italic">T<tspan font-size="9" dy="2">x</tspan></text>
 

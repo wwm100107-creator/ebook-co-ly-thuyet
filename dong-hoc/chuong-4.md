@@ -261,10 +261,10 @@ Do $OQ = 0{,}3\,\text{m} < R = 0{,}5\,\text{m}$, tâm gia tốc tức thời $Q$
 
 ---
 
-### Thí dụ 4-3: Cơ cấu tay quay - con trượt (Khảo sát bài toán vận tốc)
+### Thí dụ 4-3: Cơ cấu tay quay - con trượt lệch tâm (Khảo sát bài toán vận tốc)
 
 **Đề bài:**
-Cho cơ cấu tay quay - con trượt $OAB$ như Hình 4-17. Tay quay $OA = 0{,}2\,\text{m}$ quay đều quanh trục cố định $O$ với vận tốc góc $\omega = 10\,\text{rad/s}$. Thanh truyền $AB$ có chiều dài $l = 0{,}4\,\text{m}$.
+Cho cơ cấu tay quay - con trượt lệch tâm $OAB$ như Hình 4-17. Tay quay $OA = 0{,}2\,\text{m}$ quay đều quanh trục cố định $O$ với vận tốc góc $\omega = 10\,\text{rad/s}$. Thanh truyền $AB$ có chiều dài $l = 0{,}4\,\text{m}$.
 Tại thời điểm góc quay của tay quay $\varphi = 60^\circ$ và thanh truyền hợp với phương trượt nằm ngang một góc $\psi = 30^\circ$:
 1. Xác định tâm vận tốc tức thời $P$ của thanh truyền $AB$.
 2. Tìm vận tốc góc $\omega_{AB}$ của thanh truyền $AB$ và vận tốc $v_B$ của con trượt $B$.
@@ -283,31 +283,29 @@ Hình 4-17: Sơ đồ động học cơ cấu tay quay con trượt: xác địn
 **1. Vận tốc của đầu tay quay $A$:**
 Điểm $A$ chuyển động tròn quanh $O$:
 $$v_A = OA \cdot \omega = 0{,}2 \cdot 10 = 2\,\text{m/s}$$
-Phương của $\vec{v}_A$ vuông góc với tay quay $OA$.
+Phương của $\vec{v}_A$ vuông góc với tay quay $OA$. Do $\varphi = 60^\circ$ và $\psi = 30^\circ$ ($\varphi + \psi = 90^\circ$), phương của $\vec{v}_A$ trùng dọc theo thanh truyền $AB$.
 
 **2. Xác định tâm vận tốc tức thời $P$ của thanh $AB$:**
-- Con trượt $B$ chuyển động tịnh tiến dọc theo trục ngang $Ox$, do đó vectơ vận tốc $\vec{v}_B$ nằm ngang. Đường vuông góc với $\vec{v}_B$ tại $B$ là đường thẳng đứng qua $B$.
+- Con trượt $B$ chuyển động tịnh tiến dọc theo trục ngang, do đó vectơ vận tốc $\vec{v}_B$ nằm ngang. Đường vuông góc với $\vec{v}_B$ tại $B$ là đường thẳng đứng qua $B$.
 - Điểm $A$ có $\vec{v}_A \perp OA$, do đó đường vuông góc với $\vec{v}_A$ tại $A$ chính là đường kéo dài của tay quay $OA$.
 - Giao điểm của đường kéo dài $OA$ và đường thẳng đứng qua $B$ là tâm vận tốc tức thời $P$ của thanh truyền $AB$ (Hình 4-17).
 
-Trong tam giác $PAB$:
-- Góc $\widehat{PAB} = 180^\circ - (90^\circ - 60^\circ) - 30^\circ = 180^\circ - 30^\circ - 30^\circ = 120^\circ$.
-- Góc $\widehat{PBA} = 90^\circ - 30^\circ = 60^\circ$.
-- Góc $\widehat{APB} = 180^\circ - 120^\circ - 60^\circ = 0^\circ$ (hai đường song song hoặc xét tam giác vuông tương ứng).
+Trong tam giác vuông $PAB$ ($\widehat{PAB} = 90^\circ$ vì $PA$ nằm dọc $OA$ và $OA \perp AB$ tại thời điểm $\varphi + \psi = 90^\circ$):
+- Góc $\widehat{PBA} = 90^\circ - \psi = 90^\circ - 30^\circ = 60^\circ$.
+- Góc $\widehat{APB} = 90^\circ - 60^\circ = 30^\circ$.
+- Độ dài các cạnh:
+  $$PA = \frac{AB}{\tan 30^\circ} = 0{,}4\sqrt{3}\,\text{m}; \qquad PB = \frac{AB}{\sin 30^\circ} = 0{,}8\,\text{m}$$
 
-Tính trực tiếp qua hình chiếu vận tốc:
-Chiếu vận tốc của $A$ và $B$ lên phương thanh truyền $AB$:
-$$v_A \cos(\widehat{\vec{v}_A, \vec{AB}}) = v_B \cos\psi$$
-Với $\widehat{\vec{v}_A, \vec{AB}} = 90^\circ - (\varphi + \psi) = 90^\circ - (60^\circ + 30^\circ) = 0^\circ$.
-Do đó:
-$$v_A \cos 0^\circ = v_B \cos 30^\circ \implies v_B = \frac{v_A}{\cos 30^\circ} = \frac{2}{\sqrt{3}/2} = \frac{4}{\sqrt{3}} \approx 2{,}31\,\text{m/s}$$
+Vận tốc góc của thanh truyền $AB$ (bằng cách chiếu $\vec{v}_A$ lên phương $AB$ rồi lấy thành phần tương đối vuông góc $AB$, hoặc trực tiếp qua tâm $P$):
+$$\omega_{AB} = \frac{v_A}{PA} = \frac{v_A \cos(\varphi + \psi - \text{...})}{PA} = \frac{v_A \cos 60^\circ}{AB \cos 30^\circ} = \frac{2 \cdot 0{,}5}{0{,}4 \cdot \frac{\sqrt{3}}{2}} = \frac{5}{\sqrt{3}} \approx 2{,}89\,\text{rad/s}$$
 
-Vận tốc góc của thanh truyền $AB$:
-$$\omega_{AB} = \frac{v_A \sin(\varphi + \psi)}{AB \cos\psi} = \frac{2 \cdot \sin 90^\circ}{0{,}4 \cdot \cos 30^\circ} = \frac{2}{0{,}4 \cdot \frac{\sqrt{3}}{2}} = \frac{10}{\sqrt{3}} \approx 5{,}77\,\text{rad/s}$$
+Vận tốc của con trượt $B$:
+$$v_B = PB \cdot \omega_{AB} = 0{,}8 \cdot \frac{5}{\sqrt{3}} = \frac{4}{\sqrt{3}} \approx 2{,}31\,\text{m/s}$$
+*(Kiểm tra bằng định lý hình chiếu vận tốc lên phương thanh $AB$: $v_A \cos 0^\circ = v_B \cos 30^\circ \implies v_B = \frac{2}{\sqrt{3}/2} = \frac{4}{\sqrt{3}} \approx 2{,}31\,\text{m/s}$ — hoàn toàn khớp).*
 
 ---
 
-### Thí dụ 4-4: Khảo sát gia tốc của cơ cấu tay quay con trượt
+### Thí dụ 4-4: Khảo sát gia tốc của cơ cấu tay quay con trượt lệch tâm
 
 **Đề bài:**
 Tiếp tục bài toán Thí dụ 4-3, giả thiết thêm rằng tay quay $OA$ quay đều ($\varepsilon_{OA} = 0$).
@@ -323,7 +321,7 @@ Phân tích từng vectơ gia tốc:
   $$a_A = a_A^n = OA \cdot \omega^2 = 0{,}2 \cdot 10^2 = 20\,\text{m/s}^2$$
   Phương dọc theo $OA$, hướng từ $A$ về $O$.
 - **Gia tốc pháp của $B$ đối với $A$:**
-  $$a_{BA}^n = AB \cdot \omega_{AB}^2 = 0{,}4 \cdot \left(\frac{10}{\sqrt{3}}\right)^2 = \frac{40}{3} \approx 13{,}33\,\text{m/s}^2$$
+  $$a_{BA}^n = AB \cdot \omega_{AB}^2 = 0{,}4 \cdot \left(\frac{5}{\sqrt{3}}\right)^2 = \frac{10}{3} \approx 3{,}33\,\text{m/s}^2$$
   Phương dọc theo thanh $AB$, hướng từ $B$ về $A$.
 - **Gia tốc tiếp của $B$ đối với $A$:**
   $$a_{BA}^t = AB \cdot \varepsilon_{AB} = 0{,}4 \cdot \varepsilon_{AB}$$
@@ -333,14 +331,14 @@ Phân tích từng vectơ gia tốc:
 Chiếu phương trình vectơ lên trục thẳng đứng vuông góc với phương trượt (trục $Oy$ hướng lên):
 $$0 = a_{Ay} + (a_{BA}^n)_y + (a_{BA}^t)_y$$
 $$-a_A \sin 60^\circ + a_{BA}^n \sin 30^\circ + a_{BA}^t \cos 30^\circ = 0$$
-$$\implies a_{BA}^t = \frac{a_A \sin 60^\circ - a_{BA}^n \sin 30^\circ}{\cos 30^\circ} = \frac{20 \cdot \frac{\sqrt{3}}{2} - \frac{40}{3} \cdot 0{,}5}{\frac{\sqrt{3}}{2}} = 20 - \frac{40}{3\sqrt{3}} \approx 12{,}3\,\text{m/s}^2$$
+$$\implies a_{BA}^t = \frac{a_A \sin 60^\circ - a_{BA}^n \sin 30^\circ}{\cos 30^\circ} = \frac{20 \cdot \frac{\sqrt{3}}{2} - \frac{10}{3} \cdot 0{,}5}{\frac{\sqrt{3}}{2}} = 20 - \frac{10}{3\sqrt{3}} \approx 18{,}08\,\text{m/s}^2$$
 
 Gia tốc góc của thanh truyền:
-$$\varepsilon_{AB} = \frac{a_{BA}^t}{AB} = \frac{12{,}3}{0{,}4} \approx 30{,}75\,\text{rad/s}^2$$
+$$\varepsilon_{AB} = \frac{a_{BA}^t}{AB} = \frac{18{,}0755}{0{,}4} \approx 45{,}19\,\text{rad/s}^2$$
 
-Chiếu phương trình vectơ lên phương ngang (trục $Ox$) để tìm gia tốc con trượt $B$:
+Chiếu phương trình vectơ lên phương ngang (trục $Ox$):
 $$a_B = -a_A \cos 60^\circ - a_{BA}^n \cos 30^\circ + a_{BA}^t \sin 30^\circ$$
-$$a_B = -20 \cdot 0{,}5 - \frac{40}{3} \cdot \frac{\sqrt{3}}{2} + 12{,}3 \cdot 0{,}5 \approx -10 - 11{,}55 + 6{,}15 = -15{,}4\,\text{m/s}^2$$
+$$a_B = -20 \cdot 0{,}5 - \frac{10}{3} \cdot \frac{\sqrt{3}}{2} + 18{,}0755 \cdot 0{,}5 \approx -10 - 2{,}89 + 9{,}04 = -3{,}85\,\text{m/s}^2$$
 Dấu âm chỉ ra rằng con trượt $B$ đang chuyển động chậm dần (gia tốc hướng ngược chiều chuyển động).
 
 ---

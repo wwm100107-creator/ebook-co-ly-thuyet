@@ -136,5 +136,5 @@ a) Cân bằng đứng yên hoàn toàn.
 b) Lăn không trượt xuống dốc.
 * **Đáp số:**
   - a) $\tan\alpha \le \frac{k}{R}$.
-  - b) $\frac{k}{R} < \tan\alpha \le f$.
+  - b) $\frac{k}{R} < \tan\alpha \le 3f - \frac{2k}{R}$.
 :::

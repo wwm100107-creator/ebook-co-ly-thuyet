@@ -147,7 +147,7 @@ $$\omega_0 = \sqrt{\frac{g}{l}\left(1 + \frac{m}{M}\right)}$$
 
 ::: info Bài 5.1 (Con lắc kép hai thanh)
 Hai thanh đồng chất có cùng chiều dài $l$ và cùng khối lượng $m$ nối bản lề với nhau và treo vào điểm cố định $O$. Các góc lệch so với phương thẳng đứng lần lượt là $\varphi_1, \varphi_2$.
-- **Đáp số:** Động năng của hệ: $T = \frac{1}{6} m l^2 (8 \dot{\varphi}_1^2 + 2 \dot{\varphi}_2^2 + 6 \dot{\varphi}_1 \dot{\varphi}_2 \cos(\varphi_1 - \varphi_2))$.
+- **Đáp số:** Động năng của hệ: $T = \frac{1}{6} m l^2 (4 \dot{\varphi}_1^2 + \dot{\varphi}_2^2 + 3 \dot{\varphi}_1 \dot{\varphi}_2 \cos(\varphi_1 - \varphi_2))$.
 :::
 
 ::: info Bài 5.2 (Vật trượt trên lăng trụ di động)
