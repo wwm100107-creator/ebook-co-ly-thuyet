@@ -8,7 +8,7 @@ layout: doc
 Trang này tổng hợp đầy đủ các bộ **Đề Thi Thật Cuối Kỳ & Giữa Kỳ môn Cơ Lý Thuyết (`DCMH.AS1003`) — Trường Đại học Bách Khoa ĐHQG-HCM (HCMUT)** từ tài liệu đề thi gốc qua các năm (`2011–2019`), được chép chuẩn xác từ từng trang ảnh đề thi và **tự giải kiểm toán độc lập bằng đại số và tính toán số học** cho từng câu.
 
 ::: danger Cảnh báo quan trọng về các vết khoanh tay trên bản scan cũ
-Trên các bản đề thi scan cũ (`1721`, `1722`, `0002/2016`, `0001/2015`, `0002/2015`, `19/06/2014`, `Chủ đề 7`), có nhiều dấu khoanh bút bi hoặc bút chì của thí sinh cũ làm nhầm (đặc biệt ở các câu bẫy đổi dấu $\sin/\cos$, định lý Huygens–Steiner, chiều quay trục tọa độ và đáp án `e. Các đáp án còn lại đều sai`). Toàn bộ lời giải dưới đây **không phụ thuộc vết khoanh tay**, đối chiếu 100% với đáp án chính thức (với các mã có bảng key gốc như `1821/1822`, `1643/1744`, `Đề 1`) và ghi chú rõ từng sai sót khi làm nháp hoặc lỗi in ấn trong đề gốc.
+Trên các bản đề thi scan cũ có vết khoanh tay của thí sinh (`0002/2016`, `0001/2015`, `0002/2015`, `19/06/2014`, `26/12/2013`, `14/06/2012`, `17/06/2013`), có nhiều dấu khoanh bút bi hoặc bút chì làm nhầm (đặc biệt ở các câu bẫy đổi dấu $\sin/\cos$, định lý Huygens–Steiner, chiều quay trục tọa độ và đáp án `e. Các đáp án còn lại đều sai`). Riêng `1721`, `1722` là bản đề in có ô xám đánh dấu đáp án (kèm vài lỗi in trùng phương án ở `1722`), còn `Chủ đề 5–8` là bài tự luận đánh máy mẫu (có vài sai sót tính toán trong bài giải mẫu được vạch rõ bên dưới). Toàn bộ lời giải dưới đây **không phụ thuộc vết khoanh tay**, đối chiếu 100% với đáp án chính thức (với các mã có bảng key gốc như `1821/1822`, `1643/1744`, `Đề 1`) và ghi chú rõ từng sai sót khi làm nháp hoặc lỗi in ấn trong đề gốc.
 :::
 
 ---
@@ -20,11 +20,11 @@ Trên các bản đề thi scan cũ (`1721`, `1722`, `0002/2016`, `0001/2015`, `
 | Bộ đề thi thật | Ngày thi / Học kỳ | Số câu | Tình trạng đáp án gốc | Chuyển nhanh |
 | :--- | :--- | :---: | :--- | :--- |
 | **Mã Đề `1821` & `1822`** | HK II/2018-2019 (31/05/2019) | 12 câu | Có Key chính thức (tr. 5) | [Xem Đề `1821`](#de-1821) |
-| **Mã Đề `1721`** | HK II/2017-2018 (01/06/2018) | 12 câu | Có bảng đáp án in nổi & kiểm toán | [Xem Đề `1721`](#de-1721) |
-| **Mã Đề `1722`** | HK II/2017-2018 (01/06/2018) | 12 câu | Có đáp án in nổi + ghi chú trùng `4b/4d` | [Xem Đề `1722`](#de-1722) |
+| **Mã Đề `1721`** | HK II/2017-2018 (01/06/2018) | 12 câu | Có ô xám đáp án in nổi & kiểm toán | [Xem Đề `1721`](#de-1721) |
+| **Mã Đề `1722`** | HK II/2017-2018 (01/06/2018) | 12 câu | Có ô xám đáp án + ghi chú trùng `4b/4d`, `12a/12d` | [Xem Đề `1722`](#de-1722) |
 | **Mã Đề `0001` & `0002` (2016)** | HK II/2015-2016 (28/06/2016) | 10 câu/đề | Đã kiểm toán & vạch lỗi khoanh tay `0002 C8` | [Xem Đề `2016`](#de-2016) |
 | **Mã Đề `0001` & `0002` (2015)** | HK II/2014-2015 (29/06/2015) | 12 câu/đề | Đã kiểm toán & sửa nhiều câu khoanh nhầm | [Xem Đề `2015`](#de-2015) |
-| **Tuyển tập Đề `2011–2014` & Đề `1`** | 2011–2014 (6 bộ đề + Chủ đề 5–8) | 12–18 câu | Đề `1` có Key chính thức (`1A..13A`) | [Xem Tuyển Tập](#de-cac-nam-truoc) |
+| **Tuyển tập Đề `2011–2014` & Đề `1`** | 2011–2014 (các bộ đề + Chủ đề 5–8) | 12–18 câu | Đề `1` có Key chính thức (`1A..13A`) | [Xem Tuyển Tập](#de-cac-nam-truoc) |
 | **Đề Giữa Kỳ `1643` & `1744`** | HK II/2016-2017 (12/04/2017) | 12 câu/đề | Có Key chính thức (tr. 21) — Ch.9–10 | [Xem Đề `1643/1744`](#de-giua-ky-1643-1744) |
 
 ### B. Quy Trình Tự Bấm Giờ 90 Phút (Chuẩn Phòng Thi HCMUT)
@@ -59,10 +59,14 @@ Cho hệ gồm con lăn $O$ bán kính $R = 30\text{ cm}$ lăn không trượt t
     <marker id="d1-arr-blu" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <polygon points="0 0, 8 3, 0 6" fill="#0284c7" />
     </marker>
+    <marker id="d1-arr-red" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#dc2626" />
+    </marker>
   </defs>
-  <!-- Ground & Guide -->
-  <line x1="150" y1="184" x2="575" y2="184" stroke="#334155" stroke-width="2" />
-  <line x1="175" y1="162" x2="275" y2="162" stroke="#334155" stroke-width="2" />
+  <!-- Ground & Guide (centerline y = 184 aligned with I) -->
+  <line x1="297" y1="184" x2="575" y2="184" stroke="#334155" stroke-width="2" />
+  <line x1="215" y1="171" x2="325" y2="171" stroke="#334155" stroke-width="2" />
+  <line x1="215" y1="197" x2="325" y2="197" stroke="#334155" stroke-width="2" />
   <!-- Ground hatching -->
   <line x1="420" y1="184" x2="412" y2="195" stroke="#64748b" stroke-width="1.2" />
   <line x1="440" y1="184" x2="432" y2="195" stroke="#64748b" stroke-width="1.2" />
@@ -72,35 +76,37 @@ Cho hệ gồm con lăn $O$ bán kính $R = 30\text{ cm}$ lăn không trượt t
   <line x1="520" y1="184" x2="512" y2="195" stroke="#64748b" stroke-width="1.2" />
   <line x1="540" y1="184" x2="532" y2="195" stroke="#64748b" stroke-width="1.2" />
   <!-- Top guide hatching -->
-  <line x1="185" y1="162" x2="193" y2="152" stroke="#64748b" stroke-width="1.2" />
-  <line x1="205" y1="162" x2="213" y2="152" stroke="#64748b" stroke-width="1.2" />
-  <line x1="225" y1="162" x2="233" y2="152" stroke="#64748b" stroke-width="1.2" />
-  <line x1="245" y1="162" x2="253" y2="152" stroke="#64748b" stroke-width="1.2" />
+  <line x1="225" y1="171" x2="233" y2="161" stroke="#64748b" stroke-width="1.2" />
+  <line x1="245" y1="171" x2="253" y2="161" stroke="#64748b" stroke-width="1.2" />
+  <line x1="265" y1="171" x2="273" y2="161" stroke="#64748b" stroke-width="1.2" />
+  <line x1="285" y1="171" x2="293" y2="161" stroke="#64748b" stroke-width="1.2" />
+  <line x1="305" y1="171" x2="313" y2="161" stroke="#64748b" stroke-width="1.2" />
   <!-- Bottom guide hatching -->
-  <line x1="185" y1="184" x2="177" y2="194" stroke="#64748b" stroke-width="1.2" />
-  <line x1="205" y1="184" x2="197" y2="194" stroke="#64748b" stroke-width="1.2" />
-  <line x1="225" y1="184" x2="217" y2="194" stroke="#64748b" stroke-width="1.2" />
-  <line x1="245" y1="184" x2="237" y2="194" stroke="#64748b" stroke-width="1.2" />
-  <!-- Slider A -->
-  <rect x="200" y="164" width="52" height="18" rx="2" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.8" />
+  <line x1="225" y1="197" x2="217" y2="207" stroke="#64748b" stroke-width="1.2" />
+  <line x1="245" y1="197" x2="237" y2="207" stroke="#64748b" stroke-width="1.2" />
+  <line x1="265" y1="197" x2="257" y2="207" stroke="#64748b" stroke-width="1.2" />
+  <line x1="285" y1="197" x2="277" y2="207" stroke="#64748b" stroke-width="1.2" />
+  <line x1="305" y1="197" x2="297" y2="207" stroke="#64748b" stroke-width="1.2" />
+  <!-- Slider A centered on y = 184 -->
+  <rect x="245" y="175" width="52" height="18" rx="2" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.8" />
+  <line x1="210" y1="184" x2="297" y2="184" stroke="#64748b" stroke-width="1.1" stroke-dasharray="4 3" />
   <!-- Roller O -->
   <circle cx="465" cy="128" r="56" fill="#f8fafc" stroke="#0f172a" stroke-width="2.2" />
   <line x1="465" y1="72" x2="465" y2="184" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4 3" />
   <!-- Radius R arrow -->
   <line x1="465" y1="128" x2="504" y2="89" stroke="#0284c7" stroke-width="1.6" marker-end="url(#d1-arr-blu)" />
-  <!-- Rod AB (alpha = 30 deg from A(226,173) to B(465,72)) -->
-  <line x1="226" y1="173" x2="465" y2="72" stroke="#0f172a" stroke-width="3" stroke-linecap="round" />
+  <!-- Rod AB (exact alpha = 30 deg from A(271,184) to B(465,72)) -->
+  <line x1="271" y1="184" x2="465" y2="72" stroke="#0f172a" stroke-width="3" stroke-linecap="round" />
   <!-- Angle alpha arc at A -->
-  <line x1="252" y1="173" x2="320" y2="173" stroke="#64748b" stroke-width="1.1" stroke-dasharray="3 3" />
-  <path d="M 285 173 A 59 59 0 0 0 278 151" fill="none" stroke="#0284c7" stroke-width="1.5" />
+  <path d="M 329 184 A 58 58 0 0 0 321 155" fill="none" stroke="#0284c7" stroke-width="1.5" />
   <!-- Hinges A, B, O, I -->
-  <circle cx="226" cy="173" r="4" fill="#ffffff" stroke="#0f172a" stroke-width="1.8" />
+  <circle cx="271" cy="184" r="4" fill="#ffffff" stroke="#0f172a" stroke-width="1.8" />
   <circle cx="465" cy="72" r="4.2" fill="#ffffff" stroke="#0f172a" stroke-width="1.8" />
   <circle cx="465" cy="128" r="3" fill="#0f172a" />
   <circle cx="465" cy="184" r="3" fill="#0f172a" />
   <!-- Rotation arrows omega, eps (CW on right of roller) -->
   <path d="M 526 86 A 70 70 0 0 1 537 125" fill="none" stroke="#0284c7" stroke-width="1.8" marker-end="url(#d1-arr-blu)" />
-  <path d="M 538 138 A 74 74 0 0 1 524 174" fill="none" stroke="#dc2626" stroke-width="1.8" marker-end="url(#d1-arr-blk)" />
+  <path d="M 538 138 A 74 74 0 0 1 524 174" fill="none" stroke="#dc2626" stroke-width="1.8" marker-end="url(#d1-arr-red)" />
   <!-- Coordinate triad i, j, k -->
   <line x1="78" y1="68" x2="128" y2="68" stroke="#0f172a" stroke-width="1.6" marker-end="url(#d1-arr-blk)" />
   <line x1="78" y1="68" x2="78" y2="20" stroke="#0f172a" stroke-width="1.6" marker-end="url(#d1-arr-blk)" />
@@ -110,8 +116,8 @@ Cho hệ gồm con lăn $O$ bán kính $R = 30\text{ cm}$ lăn không trượt t
   <text x="135" y="72" font-family="Segoe UI, sans-serif" font-size="14" font-weight="600" fill="#0f172a">i</text>
   <text x="86" y="26" font-family="Segoe UI, sans-serif" font-size="14" font-weight="600" fill="#0f172a">j</text>
   <text x="54" y="74" font-family="Segoe UI, sans-serif" font-size="14" font-weight="600" fill="#0f172a">k</text>
-  <text x="208" y="148" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0f172a">A</text>
-  <text x="294" y="168" font-family="Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#0284c7">α = 30°</text>
+  <text x="248" y="152" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0f172a">A</text>
+  <text x="337" y="176" font-family="Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#0284c7">α = 30°</text>
   <text x="465" y="56" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0f172a">B</text>
   <text x="448" y="133" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0f172a">O</text>
   <text x="465" y="206" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0f172a">I</text>
@@ -361,7 +367,7 @@ Cho đĩa tròn bán kính $R$ quay đều quanh tâm $O$ cố định với v�
 
 ### Đề Bài 2 (Câu 3 – Câu 5: Khối Tâm, Mômen Quán Tính & Thu Gọn Lực Quán Tính)
 
-Cho đĩa tròn đặc, dày đều, tâm $B$, bán kính $R$ và thanh thẳng, mảnh, đồng chất, tiết diện đều $OA$. Thanh $OA$ được hàn trong mặt phẳng đĩa và theo phương xuyên tâm $B$ của đĩa. Hệ quay quanh tâm $O$ cố định trong mặt phẳng hệ với vận tốc góc $\omega$ và gia tốc góc $\varepsilon$ như hình vẽ. Biết $OA = L$, khối lượng $m_{OA}, m_B$, bán kính $R$, $\lvert\varepsilon\rvert = \omega^2$, góc hợp bởi $OA$ và trục $Ox$ hướng sang trái là $\alpha$, trục $Oy$ hướng xuống dưới (hệ trục tọa độ Descartes thuận với $\vec{k} = \vec{i} \times \vec{j}$ hướng vào mặt phẳng; trên hình $\vec{\omega}$ ngược chiều kim đồng hồ và $\vec{\varepsilon}$ cùng chiều kim đồng hồ).
+Cho đĩa tròn đặc, dày đều, tâm $B$, bán kính $R$ và thanh thẳng, mảnh, đồng chất, tiết diện đều $OA$. Thanh $OA$ được hàn trong mặt phẳng đĩa và theo phương xuyên tâm $B$ của đĩa. Hệ quay quanh tâm $O$ cố định trong mặt phẳng hệ với vận tốc góc $\omega$ và gia tốc góc $\varepsilon$ như hình vẽ. Biết $OA = L$, khối lượng $m_{OA}, m_B$, bán kính $R$, $\lvert\varepsilon\rvert = \omega^2$, góc hợp bởi $OA$ và trục $Ox$ hướng sang trái là $\alpha$, trục $Oy$ hướng xuống dưới (hệ trục tọa độ Descartes thuận với $\vec{k} = \vec{i} \times \vec{j}$ hướng **ra ngoài** mặt phẳng; trên hình gốc cả $\vec{\omega}$ lẫn $\vec{\varepsilon}$ đều quay cùng chiều kim đồng hồ).
 
 <div class="figure-container">
 <svg viewBox="0 0 560 275" style="width: 100%; max-width: 530px; height: auto; display: block; margin: 0 auto;" role="img" aria-label="Sơ đồ Đề 1721 Bài 2 gồm thanh OA hàn đĩa tròn B với hệ trục Ox sang trái và Oy xuống dưới">
@@ -371,6 +377,9 @@ Cho đĩa tròn đặc, dày đều, tâm $B$, bán kính $R$ và thanh thẳng,
     </marker>
     <marker id="d3-arr-blu" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <polygon points="0 0, 8 3, 0 6" fill="#0284c7" />
+    </marker>
+    <marker id="d3-arr-red" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#dc2626" />
     </marker>
   </defs>
   <!-- Pivot support at O -->
@@ -388,9 +397,9 @@ Cho đĩa tròn đặc, dày đều, tâm $B$, bán kính $R$ và thanh thẳng,
   <line x1="260" y1="198" x2="217" y2="223" stroke="#0284c7" stroke-width="1.6" marker-end="url(#d3-arr-blu)" />
   <!-- Angle alpha arc at O from -Ox down to rod -->
   <path d="M 304 42 A 56 56 0 0 0 330 89" fill="none" stroke="#0284c7" stroke-width="1.6" />
-  <!-- Rotation arrows around O: w CCW, eps CW -->
-  <path d="M 332 106 A 70 70 0 0 0 388 106" fill="none" stroke="#0284c7" stroke-width="1.6" marker-end="url(#d3-arr-blu)" />
-  <path d="M 392 78 A 54 54 0 0 1 322 76" fill="none" stroke="#dc2626" stroke-width="1.6" marker-end="url(#d3-arr-blk)" />
+  <!-- Rotation arrows around O: both w and eps CW -->
+  <path d="M 418 78 A 68 68 0 0 1 339 107" fill="none" stroke="#0284c7" stroke-width="1.6" marker-end="url(#d3-arr-blu)" />
+  <path d="M 402 61 A 46 46 0 0 1 346 86" fill="none" stroke="#dc2626" stroke-width="1.6" marker-end="url(#d3-arr-red)" />
   <!-- Points O, A, B -->
   <circle cx="360" cy="42" r="4" fill="#ffffff" stroke="#0f172a" stroke-width="1.8" />
   <circle cx="287" cy="156" r="3.5" fill="#0f172a" />
@@ -400,8 +409,8 @@ Cho đĩa tròn đặc, dày đều, tâm $B$, bán kính $R$ và thanh thẳng,
   <text x="360" y="246" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="600" fill="#0f172a">y</text>
   <text x="382" y="46" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0f172a">O</text>
   <text x="292" y="72" font-family="Segoe UI, sans-serif" font-size="14" font-weight="600" fill="#0284c7">α</text>
-  <text x="404" y="102" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0284c7">ω</text>
-  <text x="404" y="74" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#dc2626">ε</text>
+  <text x="425" y="86" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0284c7">ω</text>
+  <text x="408" y="63" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#dc2626">ε</text>
   <text x="262" y="140" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0f172a">A</text>
   <text x="272" y="206" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#dc2626">B</text>
   <text x="234" y="233" font-family="Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#0284c7">R</text>
@@ -431,7 +440,7 @@ Hình 2.1: Thanh $OA$ hàn đĩa $B$ quay quanh $O$ trong Đề `1721` Bài 2 ($
 - a. $\begin{cases} \vec{R}_{\text{qt}}' = \sqrt{2}\varepsilon\left[m_{OA}L/2 + m_B(L+R)\right]\left[\sin(\alpha+45^\circ)\vec{i} + \cos(\alpha+45^\circ)\vec{j}\right] \\ \vec{M}_O^{\text{qt}} = \left\{\left[m_{OA}L^2/12 + m_B(R^2/2 + (R+L)^2)\right]\varepsilon\right\}\vec{k} \end{cases}$
 - b. $\begin{cases} \vec{R}_{\text{qt}}' = \varepsilon\left[m_{OA}L/2 + m_B(L+R)\right]\left[\cos(\alpha+45^\circ)\vec{i} - \sin(\alpha+45^\circ)\vec{j}\right] \\ \vec{M}_O^{\text{qt}} = \left\{\left[m_{OA}L^2/3 + m_B(R^2 + (R+L)^2)\right]\varepsilon\right\}\vec{k} \end{cases}$
 - c. $\begin{cases} \vec{R}_{\text{qt}}' = \sqrt{2}\varepsilon\left[m_{OA}L/2 + m_B(L+R)\right]\left[\cos(\alpha+45^\circ)\vec{i} + \sin(\alpha+45^\circ)\vec{j}\right] \\ \vec{M}_O^{\text{qt}} = \left\{\left[m_{OA}L^2/3 + m_B(R^2/2 + (R+L)^2)\right]\varepsilon\right\}\vec{k} \end{cases}$
-- d. $\begin{cases} \vec{R}_{\text{qt}}' = \sqrt{2}\varepsilon\left[m_{OA}L/2 + m_B(L+R)\right]\left[\sin(\alpha+45^\circ)\vec{i} - \cos(\alpha+45^\circ)\vec{j}\right] \\ \vec{M}_O^{\text{qt}} = \left\{\left[m_{OA}L^2/12 + m_B(R^2/2 + (R+L)^2)\right]\varepsilon\right\}\vec{k} \end{cases}$
+- d. $\begin{cases} \vec{R}_{\text{qt}}' = \sqrt{2}\varepsilon\left[m_{OA}L/2 + m_B(L+R)\right]\left[\sin(\alpha+45^\circ)\vec{i} - \cos(\alpha+45^\circ)\vec{j}\right] \\ \vec{M}_O^{\text{qt}} = \left\{\left[m_{OA}L^2/12 + m_B\left(R^2 + (R+L)^2\right)\right]\varepsilon\right\}\vec{k} \end{cases}$
 - e. Các đáp án còn lại sai
 
 ---
@@ -483,6 +492,9 @@ Cho cơ hệ gồm lăng trụ $A$ tiết diện tam giác vuông và ống tr�
     <marker id="d4-arr-blu" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <polygon points="0 0, 8 3, 0 6" fill="#0284c7" />
     </marker>
+    <marker id="d4-arr-red" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#dc2626" />
+    </marker>
   </defs>
   <!-- Ground -->
   <line x1="70" y1="215" x2="545" y2="215" stroke="#334155" stroke-width="2" />
@@ -498,17 +510,17 @@ Cho cơ hệ gồm lăng trụ $A$ tiết diện tam giác vuông và ống tr�
   <!-- Angle alpha arc -->
   <path d="M 206 215 A 56 56 0 0 0 202 195" fill="none" stroke="#0284c7" stroke-width="1.6" />
   <!-- Force F -->
-  <line x1="78" y1="200" x2="146" y2="200" stroke="#dc2626" stroke-width="2.2" marker-end="url(#d4-arr-blk)" />
+  <line x1="78" y1="200" x2="146" y2="200" stroke="#dc2626" stroke-width="2.2" marker-end="url(#d4-arr-red)" />
   <!-- Displacement x -->
   <line x1="115" y1="138" x2="115" y2="156" stroke="#334155" stroke-width="1.6" />
   <line x1="115" y1="147" x2="175" y2="147" stroke="#0284c7" stroke-width="1.8" marker-end="url(#d4-arr-blu)" />
   <!-- Hollow cylinder B (tangent to slope at (310,155), normal (-0.351, -0.936), R=38 -> center (296.6, 119.4)) -->
   <circle cx="297" cy="119" r="38" fill="#ffffff" stroke="#0f172a" stroke-width="4" />
   <circle cx="297" cy="119" r="3" fill="#0f172a" />
-  <line x1="297" y1="119" x2="326" y2="95" stroke="#0284c7" stroke-width="1.5" marker-end="url(#d4-arr-blu)" />
+  <line x1="297" y1="119" x2="328" y2="134" stroke="#0284c7" stroke-width="1.5" marker-end="url(#d4-arr-blu)" />
   <!-- Rotation phi and couple M (CW) -->
   <path d="M 273 94 A 34 34 0 0 1 320 93" fill="none" stroke="#0284c7" stroke-width="1.5" marker-end="url(#d4-arr-blu)" />
-  <path d="M 262 72 A 54 54 0 0 1 334 73" fill="none" stroke="#dc2626" stroke-width="1.7" marker-end="url(#d4-arr-blk)" />
+  <path d="M 262 72 A 54 54 0 0 1 334 73" fill="none" stroke="#dc2626" stroke-width="1.7" marker-end="url(#d4-arr-red)" />
   <!-- Labels -->
   <text x="64" y="204" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#dc2626">F</text>
   <text x="145" y="136" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0284c7">x</text>
@@ -516,7 +528,7 @@ Cho cơ hệ gồm lăng trụ $A$ tiết diện tam giác vuông và ống tr�
   <text x="382" y="185" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#0f172a">A</text>
   <text x="314" y="174" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#334155">I</text>
   <text x="278" y="128" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0f172a">B</text>
-  <text x="312" y="118" font-family="Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#0284c7">r</text>
+  <text x="307" y="142" font-family="Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#0284c7">r</text>
   <text x="342" y="84" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0284c7">φ</text>
   <text x="297" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#dc2626">M</text>
 </svg>
@@ -543,10 +555,10 @@ Hình 2.2: Lăng trụ $A$ trượt có ma sát và ống trụ mỏng $B$ lăn 
 
 **Câu 12.** Thiết lập hệ phương trình vi phân chuyển động cho toàn hệ:
 - a. Các đáp án còn lại sai
-- b. $\begin{cases} (m_1 + m_2)\ddot{x} + (m_2 r\cos\alpha)\ddot{\varphi} = F - f_{\text{đ}}(m_1 + m_2)g \\ (m_1 r\cos\alpha)\ddot{x} + (2m_2 r^2)\ddot{\varphi} = \mathfrak{M} + m_2 g r\sin\alpha \end{cases}$
+- b. $\begin{cases} (m_1 + m_2)\ddot{x} + (m_2 r\cos\alpha)\ddot{\varphi} = F - f_{\text{đ}}(m_1 + m_2)g \\ (m_1 r\cos\alpha)\ddot{x} + (2m_1 r^2)\ddot{\varphi} = \mathfrak{M} + m_2 g r\sin\alpha \end{cases}$
 - c. $\begin{cases} (m_1 + m_2)\ddot{x} + (m_2 r\cos\alpha)\ddot{\varphi} = F + f_{\text{đ}}(m_1 + m_2)g \\ (m_1 r\cos\alpha)\ddot{x} + (2m_2 r^2)\ddot{\varphi} = \mathfrak{M} - m_1 g r\sin\alpha \end{cases}$
-- d. $\begin{cases} (m_2 r\cos\alpha)\ddot{x} + (m_2 r\cos\alpha)\ddot{\varphi} = -F - f_{\text{đ}}(m_1 + m_2)g \\ (m_1 + m_2)\ddot{x} + (2m_2 r^2)\ddot{\varphi} = \mathfrak{M} - m_2 g r\sin\alpha \end{cases}$
-- e. $\begin{cases} (m_1 + m_2)\ddot{x} + (m_2 r\cos\alpha)\ddot{\varphi} = F - f_{\text{đ}}(m_1 + m_2)g \\ (m_2 r\cos\alpha)\ddot{x} + (2m_2 r^2)\ddot{\varphi} = \mathfrak{M} - m_2 g r\sin\alpha \end{cases}$ *(bản in PDF gõ nhầm $\ddot{\varphi}$ ở số hạng đầu PT2 thay cho $\ddot{x}$)*
+- d. $\begin{cases} (m_2 r\cos\alpha)\ddot{x} + (m_2 r\cos\alpha)\ddot{\varphi} = -F - f_{\text{đ}}(m_1 + m_2)g \\ (m_1 + m_2)\ddot{x} + (2m_2 r^2)\ddot{\varphi} = \mathfrak{M} - m_1 g r\sin\alpha \end{cases}$
+- e. $\begin{cases} (m_1 + m_2)\ddot{x} + (m_2 r\cos\alpha)\ddot{\varphi} = F - f_{\text{đ}}(m_1 + m_2)g \\ (m_2 r\cos\alpha)\ddot{x} + (2m_2 r^2)\ddot{\varphi} = \mathfrak{M} - m_2 g r\sin\alpha \end{cases}$
 
 *(Lưu ý khi đọc đề `1721` Câu 12 trên trang 9 PDF: phương án `e` ở đề này không ghi câu chữ "Các đáp án còn lại sai" mà in hẳn hệ phương trình đúng `12e`!)*
 
@@ -571,7 +583,7 @@ Hình 2.2: Lăng trụ $A$ trượt có ma sát và ống trụ mỏng $B$ lăn 
   Chọn **`d`**.
 - **Câu 5 (`c`):** Khoảng cách $OC = \frac{0{,}5m_{OA}L + m_B(L+R)}{m_{\text{hệ}}}$. Do $\lvert\varepsilon\rvert = \omega^2$, hai thành phần hợp lực quán tính bằng nhau về độ lớn: $R_{\text{qt}}^n = m_{\text{hệ}}\omega^2 OC = R_{\text{qt}}^\tau = \varepsilon[0{,}5m_{OA}L + m_B(L+R)]$.
   - $\vec{R}_{\text{qt}}^n$ hướng ra xa $O$ theo tia $OC$: $\cos\alpha\vec{i} + \sin\alpha\vec{j}$.
-  - Với chiều $\vec{\varepsilon}$ cùng kim đồng hồ trong mặt phẳng $(Ox \text{ trái}, Oy \text{ xuống})$, $\vec{a}_C^\tau$ quay cùng KĐH (về phía $-\sin\alpha\vec{i} + \cos\alpha\vec{j}$? Lưu ý khi quay trong hình: chiều từ $+x$ trái xuống $+y$ dưới là ngược KĐH trên mặt giấy nên $\vec{\varepsilon}$ cùng KĐH trên mặt giấy tương ứng chiều $-\vec{k}$, làm $-\vec{a}_C^\tau$ hướng theo $-\sin\alpha\vec{i} + \cos\alpha\vec{j}$). Cộng hai vectơ vuông góc:
+  - Vì $Ox$ hướng sang trái và $Oy$ hướng xuống dưới, góc quay từ $+Ox$ sang $+Oy$ trên mặt giấy là ngược chiều kim đồng hồ nên $\vec{k} = \vec{i}\times\vec{j}$ hướng **ra ngoài** mặt phẳng. Do đó $\vec{\varepsilon}$ quay cùng KĐH ứng với $\vec{\varepsilon} = -\varepsilon\vec{k}$, suy ra gia tốc tiếp tuyến $\vec{a}_C^\tau = \vec{\varepsilon}\times\overrightarrow{OC}$ hướng theo $+\sin\alpha\vec{i} - \cos\alpha\vec{j}$, và lực quán tính tiếp tuyến (tỷ lệ với $-\vec{a}_C^\tau$) hướng ngược lại theo $-\sin\alpha\vec{i} + \cos\alpha\vec{j}$. Cộng hai vectơ vuông góc:
     $$\begin{aligned} &(\cos\alpha - \sin\alpha)\vec{i} + (\sin\alpha + \cos\alpha)\vec{j} \\ &\quad = \sqrt{2}\left[\cos(\alpha+45^\circ)\vec{i} + \sin(\alpha+45^\circ)\vec{j}\right] \end{aligned}$$
   - Mômen quán tính thu gọn về tâm quay $O$: $\vec{M}_O^{\text{qt}} = -J_O\vec{\varepsilon} = +J_O\varepsilon\vec{k}$.
   Chọn **`c`**.
@@ -597,7 +609,7 @@ Hình 2.2: Lăng trụ $A$ trượt có ma sát và ống trụ mỏng $B$ lăn 
 - **Câu 11 (`d`):** Lực đẩy $F$ cùng chiều $x$ và lực ma sát cản $-f_{\text{đ}}(m_1 + m_2)g$ cho $Q_1 = F - f_{\text{đ}}(m_1 + m_2)g$. Khi $\varphi$ tăng ($\delta x = 0$), ống trụ lăn lên dốc nên $\mathfrak{M}$ sinh công dương và trọng lực kéo xuống nên $Q_2 = \mathfrak{M} - m_2 g r\sin\alpha$ $\implies$ chọn **`d`**.
 - **Câu 12 (`e`):** Lấy đạo hàm Lagrange từ $T^{\text{hệ}}$ (ở đây hệ số của $\dot{x}\dot{\varphi}$ không phụ thuộc $x$ hay $\varphi$ nên không phát sinh số hạng $\dot{x}\dot{\varphi}$ hay $\dot{\varphi}^2$):
   $$\begin{cases} (m_1 + m_2)\ddot{x} + (m_2 r\cos\alpha)\ddot{\varphi} = F - f_{\text{đ}}(m_1 + m_2)g \\ (m_2 r\cos\alpha)\ddot{x} + (2m_2 r^2)\ddot{\varphi} = \mathfrak{M} - m_2 g r\sin\alpha \end{cases}$$
-  Phương án `b` sai vì vế phải PT2 ghi $+m_2 g r\sin\alpha$ và hệ số $m_1 r\cos\alpha$; phương án `c` sai dấu $+f_{\text{đ}}$ ở PT1 và $m_1$ ở PT2; phương án `d` sai hoàn toàn hệ số $\ddot{x}, \ddot{\varphi}$. Chỉ có **`e`** (đúng với đề gốc tr. 9) là chính xác.
+  Phương án `b` sai vì PT2 viết nhầm hệ số $m_1 r\cos\alpha$, $2m_1 r^2$ và vế phải $+m_2 g r\sin\alpha$; phương án `c` sai dấu $+f_{\text{đ}}$ ở PT1 và nhầm $m_1$ ở PT2 ($m_1 r\cos\alpha$ và $-m_1 g r\sin\alpha$); phương án `d` sai hoàn toàn hệ số $\ddot{x}, \ddot{\varphi}$, đổi dấu $-F$ ở PT1 và nhầm $-m_1 g r\sin\alpha$ ở PT2. Chỉ có **`e`** (đúng với đề gốc tr. 9) là chính xác.
 
 :::
 
@@ -631,7 +643,7 @@ Vành tròn bán kính $R$ có trục nằm ngang $AB$ tiếp xúc ở đỉnh t
 
 ### Đề Bài 2 (Câu 3 – Câu 5: Khung Chữ T Đồng Chất $OIAB$)
 
-Cho khung chữ T đồng chất $OIAB$ ($OI \perp AB$ tại trung điểm $I$ của $AB$), tổng khối lượng $m$, có $OI = 3AI = 3BI = 3l$ chuyển động quay xung quanh trục vuông góc với mặt phẳng $Oxy$ và đi qua $O$. Trục $Ox$ hướng sang phải, $Oy$ hướng lên, $\vec{k}$ hướng ra ngoài mặt phẳng; tại thời điểm đang xét, thanh $OI$ đi từ $O$ xuống dưới sang phải hợp với $+Ox$ góc $60^\circ$, vận tốc góc $\omega$ và gia tốc góc $\varepsilon$ đều quay ngược chiều kim đồng hồ.
+Cho khung chữ T đồng chất $OIAB$ ($OI \perp AB$ tại trung điểm $I$ của $AB$), tổng khối lượng $m$, có $OI = 3AI = 3BI = 3l$ chuyển động quay xung quanh trục vuông góc với mặt phẳng $Oxy$ và đi qua $O$. Trục $Ox$ hướng sang phải, $Oy$ hướng lên, $\vec{k}$ hướng ra ngoài mặt phẳng; tại thời điểm đang xét, thanh $OI$ đi từ $O$ xuống dưới sang phải hợp với $+Ox$ góc $60^\circ$ *(lưu ý: bản scan gốc tr. 11 bị mờ/thiếu chữ số góc $60^\circ$ trên hình vẽ, nhưng độ dốc hình vẽ và các đáp án `3c, 5a` xác nhận góc này bằng $60^\circ$)*, vận tốc góc $\omega$ và gia tốc góc $\varepsilon$ đều quay ngược chiều kim đồng hồ.
 
 **Câu 3.** Tọa độ khối tâm $C(x_C; y_C)$ của khung $OIAB$:
 - a. $C\left(\frac{21}{20}l;\; \frac{21\sqrt{2}}{20}l\right)$
@@ -692,13 +704,13 @@ Cơ cấu tương tự Bài 3 Đề `1721` (thanh $AB$ và $BC$ có cùng khối
 
 ### Đề Bài 4 (Câu 10 – Câu 12: Hệ Ròng Rọc $O, O_2$ Treo Tải $A, B$)
 
-Cho cơ hệ gồm ròng rọc hai tầng $O$ (khối lượng $m_1$, bán kính tầng trong $r$, bán kính tầng ngoài $R$, bán kính quán tính $\rho$) quay quanh $O$ cố định với góc quay $\varphi_1$ (ngược chiều kim đồng hồ) dưới tác dụng ngẫu $\mathfrak{M}_1$ cùng chiều $\varphi_1$. Dây tầng ngoài $R$ kéo tải $B$ (khối lượng $m_B$) đi lên mặt phẳng nghiêng góc $\alpha$; dây từ bên trái tầng trong $r$ thả xuống đỡ tâm của ròng rọc động $O_2$ (trụ tròn đặc khối lượng $m_2$, bán kính $r_2$). Ròng rọc $O_2$ quay góc $\varphi_2$ (cùng chiều kim đồng hồ) dưới tác dụng ngẫu $\mathfrak{M}_2$ cùng chiều $\varphi_2$, quấn dây bên phải treo tải $A$ (khối lượng $m_A$). Bỏ qua ma sát và khối lượng dây. Chọn $q_1 = \varphi_1$, $q_2 = \varphi_2$.
+Cho cơ hệ gồm ròng rọc hai tầng $O$ (khối lượng $m$ — ký hiệu $m_1$ trong Câu 11–12, bán kính tầng trong $r$, bán kính tầng ngoài $R$, bán kính quán tính $\rho$) quay quanh $O$ cố định với góc quay $\varphi_1$ (ngược chiều kim đồng hồ) dưới tác dụng ngẫu $M_1$ cùng chiều $\varphi_1$. Dây tầng ngoài $R$ kéo tải $B$ (khối lượng $m_B$) đi lên mặt phẳng nghiêng góc $\alpha$; dây từ bên trái tầng trong $r$ thả xuống đỡ tâm của ròng rọc động $O_2$ (trụ tròn đặc khối lượng $m_2$, bán kính $r_2$). Ròng rọc $O_2$ quay góc $\varphi_2$ (cùng chiều kim đồng hồ) dưới tác dụng ngẫu $M_2$ cùng chiều $\varphi_2$, quấn dây bên phải treo tải $A$ (khối lượng $m_A$). Bỏ qua ma sát và khối lượng dây. Chọn $q_1 = \varphi_1$, $q_2 = \varphi_2$.
 
 **Câu 10.** Tính lực suy rộng ứng với các tọa độ suy rộng $\varphi_1, \varphi_2$:
-- a. $Q_1 = \mathfrak{M}_1 - m_B g R\sin\alpha + (m_2 + m_A)gr;\; Q_2 = \mathfrak{M}_2 + m_A g r_2$
-- b. $Q_1 = \mathfrak{M}_1 - m_B g R\sin\alpha - (m_2 + m_A)gR;\; Q_2 = \mathfrak{M}_2 - m_A g r_2$
-- c. $Q_1 = \mathfrak{M}_1 + m_B g R\sin\alpha - (m_2 + m_A)gR;\; Q_2 = -\mathfrak{M}_2 + m_A g r_2$
-- d. $Q_1 = \mathfrak{M}_1 - m_B g R\sin\alpha - (m_2 + m_A)gr;\; Q_2 = -\mathfrak{M}_2 - m_A g r_2$
+- a. $Q_1 = M_1 - m_B g R\sin\alpha + (m_2 + m_A)gr;\; Q_2 = M_2 + m_A g r_2$
+- b. $Q_1 = M_1 - m_B g R\sin\alpha - (m_2 + m_A)gR;\; Q_2 = M_2 - m_A g r_2$
+- c. $Q_1 = M_1 + m_B g R\sin\alpha - (m_2 + m_A)gR;\; Q_2 = -M_2 + m_A g r_2$
+- d. $Q_1 = M_1 - m_B g R\sin\alpha - (m_2 + m_A)gr;\; Q_2 = -M_2 - m_A g r_2$
 - e. Các đáp án còn lại sai
 
 **Câu 11.** Tính động năng cơ hệ:
@@ -709,10 +721,10 @@ Cho cơ hệ gồm ròng rọc hai tầng $O$ (khối lượng $m_1$, bán kính
 - e. Các đáp án còn lại sai
 
 **Câu 12.** Hệ phương trình vi phân chuyển động cơ hệ:
-- a. $\begin{cases}\begin{aligned} &(m_B R^2 + 0{,}5m_1\rho^2 + m_2 r^2 + m_A r^2)\ddot{\varphi}_1 + m_A R r_2\ddot{\varphi}_2 \\ &\quad = \mathfrak{M}_1 - m_B g R\sin\alpha + (m_2 + m_A)gr \\[4pt] &(0{,}5m_2 + m_A)r_2^2\ddot{\varphi}_2 + m_A R r_2\ddot{\varphi}_1 = \mathfrak{M}_2 - m_A g r_2 \end{aligned}\end{cases}$
-- b. $\begin{cases}\begin{aligned} &(m_B R^2 + m_1\rho^2 + m_2 r^2 + m_A r^2)\ddot{\varphi}_1 + m_A r r_2\ddot{\varphi}_2 \\ &\quad = \mathfrak{M}_1 - m_B g R\sin\alpha - (m_2 + m_A)gr \\[4pt] &(0{,}5m_2 + m_A)r_2^2\ddot{\varphi}_2 + m_A r r_2\ddot{\varphi}_1 = \mathfrak{M}_2 + m_A g r_2 \end{aligned}\end{cases}$
-- c. $\begin{cases}\begin{aligned} &(m_B R^2 + m_1\rho^2 + m_2 r^2 + m_A r^2)\ddot{\varphi}_1 + m_A r r_2\ddot{\varphi}_2 \\ &\quad = \mathfrak{M}_1 - m_B g R\sin\alpha + (m_2 + m_A)gr \\[4pt] &(0{,}5m_2 + m_A)r_2^2\ddot{\varphi}_2 + m_A r r_2\ddot{\varphi}_1 = \mathfrak{M}_2 + m_A g r_2 \end{aligned}\end{cases}$
-- d. $\begin{cases}\begin{aligned} &(m_B R^2 + 0{,}5m_1\rho^2 + m_2 r^2 + m_A r^2)\ddot{\varphi}_1 + m_A R r_2\ddot{\varphi}_2 \\ &\quad = \mathfrak{M}_1 - m_B g R\sin\alpha + (m_2 + m_A)gr \\[4pt] &(0{,}5m_2 + m_A)r_2^2\ddot{\varphi}_2 + m_A R r_2\ddot{\varphi}_1 = \mathfrak{M}_2 - m_A g r_2 \end{aligned}\end{cases}$
+- a. $\begin{cases}\begin{aligned} &(m_B R^2 + 0{,}5m_1\rho^2 + m_2 r^2 + m_A r^2)\ddot{\varphi}_1 + m_A R r_2\ddot{\varphi}_2 \\ &\quad = M_1 - m_B g R\sin\alpha + (m_2 + m_A)gr \\[4pt] &(0{,}5m_2 + m_A)r_2^2\ddot{\varphi}_2 + m_A R r_2\ddot{\varphi}_1 = M_2 - m_A g r_2 \end{aligned}\end{cases}$
+- b. $\begin{cases}\begin{aligned} &(m_B R^2 + m_1\rho^2 + m_2 r^2 + m_A r^2)\ddot{\varphi}_1 + m_A r r_2\ddot{\varphi}_2 \\ &\quad = M_1 - m_B g R\sin\alpha - (m_2 + m_A)gr \\[4pt] &(0{,}5m_2 + m_A)r_2^2\ddot{\varphi}_2 + m_A r r_2\ddot{\varphi}_1 = M_2 + m_A g r_2 \end{aligned}\end{cases}$
+- c. $\begin{cases}\begin{aligned} &(m_B R^2 + m_1\rho^2 + m_2 r^2 + m_A r^2)\ddot{\varphi}_1 + m_A r r_2\ddot{\varphi}_2 \\ &\quad = M_1 - m_B g R\sin\alpha + (m_2 + m_A)gr \\[4pt] &(0{,}5m_2 + m_A)r_2^2\ddot{\varphi}_2 + m_A r r_2\ddot{\varphi}_1 = M_2 + m_A g r_2 \end{aligned}\end{cases}$
+- d. $\begin{cases}\begin{aligned} &(m_B R^2 + 0{,}5m_1\rho^2 + m_2 r^2 + m_A r^2)\ddot{\varphi}_1 + m_A R r_2\ddot{\varphi}_2 \\ &\quad = M_1 - m_B g R\sin\alpha + (m_2 + m_A)gr \\[4pt] &(0{,}5m_2 + m_A)r_2^2\ddot{\varphi}_2 + m_A R r_2\ddot{\varphi}_1 = M_2 - m_A g r_2 \end{aligned}\end{cases}$ *(trùng nội dung với phương án sai `a` trong bản đề in gốc)*
 - e. Tất cả các câu trả lời còn lại đều sai
 
 ::: details Xem đáp án chuẩn & lời giải chi tiết cả 12 câu Đề 1722 (đã kiểm toán mọi phương án a..e)
@@ -756,15 +768,15 @@ Cho cơ hệ gồm ròng rọc hai tầng $O$ (khối lượng $m_1$, bán kính
 
 **Bài 4 (Câu 10–12):**
 - **Câu 10 (`a`):**
-  - Khi $\delta\varphi_1 > 0$ ($\delta\varphi_2 = 0$): $\mathfrak{M}_1$ quay cùng chiều $\varphi_1$ sinh công $+\mathfrak{M}_1\delta\varphi_1$; vật $B$ đi lên dốc đoạn $R\delta\varphi_1$ nên trọng lực $B$ sinh công $-m_B g R\sin\alpha\,\delta\varphi_1$; dây ở bên trái tầng trong $r$ nhả xuống nên cụm $(O_2 + A)$ hạ xuống đoạn $r\delta\varphi_1$ sinh công $+(m_2 + m_A)gr\,\delta\varphi_1$. Suy ra $Q_1 = \mathfrak{M}_1 - m_B g R\sin\alpha + (m_2 + m_A)gr$.
-  - Khi $\delta\varphi_2 > 0$ ($\delta\varphi_1 = 0$): $\mathfrak{M}_2$ cùng chiều $\varphi_2$ sinh công $+\mathfrak{M}_2\delta\varphi_2$; vật $A$ hạ xuống đoạn $r_2\delta\varphi_2$ sinh công $+m_A g r_2\,\delta\varphi_2$. Suy ra $Q_2 = \mathfrak{M}_2 + m_A g r_2$.
+  - Khi $\delta\varphi_1 > 0$ ($\delta\varphi_2 = 0$): $M_1$ quay cùng chiều $\varphi_1$ sinh công $+M_1\delta\varphi_1$; vật $B$ đi lên dốc đoạn $R\delta\varphi_1$ nên trọng lực $B$ sinh công $-m_B g R\sin\alpha\,\delta\varphi_1$; dây ở bên trái tầng trong $r$ nhả xuống nên cụm $(O_2 + A)$ hạ xuống đoạn $r\delta\varphi_1$ sinh công $+(m_2 + m_A)gr\,\delta\varphi_1$. Suy ra $Q_1 = M_1 - m_B g R\sin\alpha + (m_2 + m_A)gr$.
+  - Khi $\delta\varphi_2 > 0$ ($\delta\varphi_1 = 0$): $M_2$ cùng chiều $\varphi_2$ sinh công $+M_2\delta\varphi_2$; vật $A$ hạ xuống đoạn $r_2\delta\varphi_2$ sinh công $+m_A g r_2\,\delta\varphi_2$. Suy ra $Q_2 = M_2 + m_A g r_2$.
   Chọn **`a`**.
 - **Câu 11 (`d`):** Vận tốc tâm $O_2$ đi xuống là $v_{O_2} = r\dot{\varphi}_1$; vận tốc tải $A$ đi xuống là $v_A = r\dot{\varphi}_1 + r_2\dot{\varphi}_2$; vận tốc tải $B$ là $v_B = R\dot{\varphi}_1$. Cộng động năng 4 vật ($J_O = m_1\rho^2$, $J_{O_2} = 0{,}5m_2 r_2^2$):
   $$\begin{aligned} T &= \frac{1}{2}m_1\rho^2\dot{\varphi}_1^2 + \frac{1}{2}m_B R^2\dot{\varphi}_1^2 + \frac{1}{2}m_2 r^2\dot{\varphi}_1^2 \\ &\quad + \frac{1}{4}m_2 r_2^2\dot{\varphi}_2^2 + \frac{1}{2}m_A(r\dot{\varphi}_1 + r_2\dot{\varphi}_2)^2 \\ &= 0{,}5(m_B R^2 + m_1\rho^2 + m_2 r^2 + m_A r^2)\dot{\varphi}_1^2 \\ &\quad + 0{,}5(0{,}5m_2 + m_A)r_2^2\dot{\varphi}_2^2 + m_A r r_2\dot{\varphi}_1\dot{\varphi}_2 \end{aligned}$$
   (Lưu ý `a, b, c` đều sai ở chỗ nhân thêm `0,5` vào $m_1\rho^2$ hoặc thay $\rho$ bằng $R$). Chọn **`d`**.
 - **Câu 12 (`c`):** Vì các hệ số trong $T$ là hằng số, hai phương trình Lagrange loại II là:
-  $$\begin{cases}\begin{aligned} &(m_B R^2 + m_1\rho^2 + m_2 r^2 + m_A r^2)\ddot{\varphi}_1 + m_A r r_2\ddot{\varphi}_2 \\ &\quad = \mathfrak{M}_1 - m_B g R\sin\alpha + (m_2 + m_A)gr \\[4pt] &(0{,}5m_2 + m_A)r_2^2\ddot{\varphi}_2 + m_A r r_2\ddot{\varphi}_1 = \mathfrak{M}_2 + m_A g r_2 \end{aligned}\end{cases}$$
-  Chọn **`c`**.
+  $$\begin{cases}\begin{aligned} &(m_B R^2 + m_1\rho^2 + m_2 r^2 + m_A r^2)\ddot{\varphi}_1 + m_A r r_2\ddot{\varphi}_2 \\ &\quad = M_1 - m_B g R\sin\alpha + (m_2 + m_A)gr \\[4pt] &(0{,}5m_2 + m_A)r_2^2\ddot{\varphi}_2 + m_A r r_2\ddot{\varphi}_1 = M_2 + m_A g r_2 \end{aligned}\end{cases}$$
+  *(Lưu ý lỗi in ấn trong PDF gốc tr. 13: hai phương án sai `12a` và `12d` bị in trùng hoàn toàn nội dung).* Chọn **`c`**.
 
 :::
 
@@ -858,6 +870,9 @@ Cho cơ hệ ròng rọc như Hình 4.2: các ròng rọc $O_1, O_2$ cố địn
     <marker id="d6-arr-blu" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <polygon points="0 0, 8 3, 0 6" fill="#0284c7" />
     </marker>
+    <marker id="d6-arr-red" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#dc2626" />
+    </marker>
   </defs>
   <!-- Ropes aligned vertically -->
   <line x1="196" y1="70" x2="196" y2="178" stroke="#0f172a" stroke-width="1.8" />
@@ -881,10 +896,10 @@ Cho cơ hệ ròng rọc như Hình 4.2: các ròng rọc $O_1, O_2$ cố địn
   <rect x="206" y="236" width="32" height="28" rx="2" fill="#cbd5e1" stroke="#0f172a" stroke-width="1.8" />
   <!-- Arrows phi1 (CCW), M1 (CCW) on O1 -->
   <path d="M 136 74 A 36 36 0 0 0 156 104" fill="none" stroke="#0284c7" stroke-width="1.6" marker-end="url(#d6-arr-blu)" />
-  <path d="M 188 38 A 36 36 0 0 0 148 40" fill="none" stroke="#dc2626" stroke-width="1.6" marker-end="url(#d6-arr-blk)" />
+  <path d="M 188 38 A 36 36 0 0 0 148 40" fill="none" stroke="#dc2626" stroke-width="1.6" marker-end="url(#d6-arr-red)" />
   <!-- Arrows phi2 (CCW), M2 (CW) on O2 -->
   <path d="M 386 92 A 62 62 0 0 0 388 58" fill="none" stroke="#0284c7" stroke-width="1.6" marker-end="url(#d6-arr-blu)" />
-  <path d="M 294 28 A 58 58 0 0 1 358 28" fill="none" stroke="#dc2626" stroke-width="1.6" marker-end="url(#d6-arr-blk)" />
+  <path d="M 294 28 A 58 58 0 0 1 358 28" fill="none" stroke="#dc2626" stroke-width="1.6" marker-end="url(#d6-arr-red)" />
   <!-- Radius arrows -->
   <line x1="170" y1="70" x2="146" y2="60" stroke="#0284c7" stroke-width="1.4" marker-end="url(#d6-arr-blu)" />
   <line x1="326" y1="75" x2="364" y2="41" stroke="#0284c7" stroke-width="1.4" marker-end="url(#d6-arr-blu)" />
@@ -1049,7 +1064,7 @@ Hai mã đề ngày 29/06/2015 (TS. Vũ Công Hòa ký duyệt) gồm **12 câu/
 - **Câu 1 (`a`):** Để tìm $\vec{N}_D$, ta giải phóng gối $D$ (giữ nguyên gối $A$ và gối $B$). Vì đoạn $ABC$ gắn cố định bởi $A$ và $B$ nên chỉ có đoạn $CD$ quay quanh khớp $C$ một góc $\delta\varphi$ $\implies$ chọn **`a`**.
 - **Câu 2 (`c` — Sửa khoanh nhầm `2b`):** Khoảng cách từ $O$ đến tâm vành $O_1$ là $L_1 + R_1 = 3R$, đến tâm đĩa $O_2$ là $L_2 + R_2 = 6R$:
   $$\begin{aligned} J_O &= \left(mR^2 + m(3R)^2\right) + \frac{1}{3}m(2R)^2 + \frac{1}{3}(2m)(4R)^2 \\ &\quad + \left(\frac{1}{2}(4m)(2R)^2 + 4m(6R)^2\right) \\ &= 10mR^2 + \frac{4}{3}mR^2 + \frac{32}{3}mR^2 + (8 + 144)mR^2 \\ &= 174mR^2 \end{aligned}$$
-  Chọn **`c`**. *(Thí sinh cũ quên $+md^2$ ở hai thanh $L_1, L_2$ lấy $\frac{1}{12}$ thay cho $\frac{1}{3}$ nên bị hụt $9mR^2$ thành $165mR^2$!).*
+  Chọn **`c`**. *(Thí sinh cũ bị hụt $9mR^2$ thành $165mR^2$ — tương đương lỗi bỏ quên $J_G$ của hai hình tròn $O_1, O_2$ là $(1 + 8)mR^2 = 9mR^2$, hoặc quên dịch trục $+md^2$ khi lấy $\frac{1}{12}$ thay $\frac{1}{3}$ cho hai thanh $L_1, L_2$.)*
 - **Câu 3 (`b`) & Câu 4 (`a` — Sửa khoanh nhầm `4e`):** Tổng khối lượng $M = 8m$. Tọa độ khối tâm:
   $$\begin{aligned} x_C &= \frac{m(-3R) + m(-R) + 2m(2R) + 4m(6R)}{8m} \\ &= \frac{24R}{8} = 3R \implies \text{chọn } \mathbf{b} \end{aligned}$$
   Theo Huygens–Steiner:
@@ -1151,7 +1166,7 @@ Tải $A$ ($m_1$), con lăn kép $B$ ($m_2$, bán kính trong $r$, bán kính ng
    Điều kiện dây luôn căng ($\tau \ge 0$) là $1{,}5g\sin\alpha \ge 150s_0 \iff s_0 \le \frac{1}{100}g\sin\alpha$ — khớp hoàn toàn bất đẳng thức của **`C`** *(bản in gốc viết nhầm `100` thay vì `150` ở biểu thức $\tau$, nhưng điều kiện $s_0$ xác nhận `7C` và kiểm chứng ngay ở Câu 8)*.
 8. **Câu 8 (`D`):** Với $R = 3r, K = \frac{1600}{9}m_2$ và dùng $\tau$ đúng từ Câu 7, viết mômen quanh tâm $B$:
    $$\begin{aligned} F &= \frac{\tau r - J_B \ddot{s}/(2r)}{3r} = \frac{1}{3}\tau - \frac{1}{6}m_2\ddot{s} \\ &= 0{,}5m_2 g\sin\alpha + \left(50 - \frac{100}{6}\right)m_2 s \\ &= 0{,}5m_2 g\sin\alpha + \frac{3}{16}K s_0\cos(10t) \end{aligned}$$
-   (Lưu ý $\frac{100}{3}m_2 = \frac{100}{3}\cdot\frac{9}{1600}K = \frac{3}{16}K$). Kết hợp điều kiện không trượt với $f = 0{,}4$ ra đáp án **`D`**.
+   (Lưu ý $\frac{100}{3}m_2 = \frac{100}{3}\cdot\frac{9}{1600}K = \frac{3}{16}K$). Điều kiện không trượt $\lvert F\rvert_{\max} \le f m_2 g = 0{,}4m_2 g$ cho bất đẳng thức đúng là $s_0 \le \frac{16m_2 g}{3K}(0{,}4 - 0{,}5\sin\alpha)$. *Cảnh báo lỗi in trên `page_068.png`:* dòng 2 của `8d` in nhầm bất đẳng thức thành $s_0 \le \frac{8m_2 g}{K}(0{,}4 - 0{,}75\sin\alpha)$ (bất đẳng thức đúng lại nằm ở `8a`), nhưng bảng đáp án chính thức tr. 69 vẫn chấm **`D`** theo biểu thức lực ma sát ở dòng 1.
 9. **Câu 9 (`B`):** Khi $R = 1{,}5r$, $v_A^2 = \dot{s}_1^2 + \dot{s}_2^2 + 2\dot{s}_1\dot{s}_2\cos\alpha$ và $v_B = 3\dot{s}_1 + \dot{s}_2 \implies V_B^2 = 9\dot{s}_1^2 + \dot{s}_2^2 + 6\dot{s}_1\dot{s}_2$. Chọn **`B`**.
 10. **Câu 10 (`D`):** Với $R = 3r, m_1 = 1{,}5m_2, m_3 = 3m_2$, thay $v_B = 1{,}5\dot{s}_1 + \dot{s}_2, \omega_B = \frac{\dot{s}_1}{2r}$ vào $T = \frac{1}{2}m_1 V_A^2 + \frac{1}{2}m_2 V_B^2 + \frac{1}{2}m_2 r^2\omega_B^2 + \frac{1}{2}m_3\dot{s}_2^2$:
     $$T = 2m_2\dot{s}_1^2 + 2{,}75m_2\dot{s}_2^2 + 1{,}5m_2\dot{s}_1\dot{s}_2(1 + \cos\alpha)$$
@@ -1182,8 +1197,8 @@ Trụ tròn đặc đồng chất $B$ ($m_B = 16m_0$, bán kính $R$) lăn khôn
 
 | Câu | 7 | 8 | 9 | 10 | 11 | 12 |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Vết khoanh cũ PDF** | `c` | `a` | `b` *(sai)* | `d` *(sai)* | `a` | `d` |
-| **Đáp án kiểm toán** | **`c`** | **`a`** | **`d`** | **`c`** | **`a`** | **`d`** |
+| **Vết khoanh cũ PDF** | `c` *(sai)* | `a` | `b` *(sai)* | `d` *(sai)* | `a` | `d` |
+| **Đáp án kiểm toán** | **`b`** | **`a`** | **`d`** | **`c`** | **`a`** | **`d`** |
 
 - **Câu 1 (`b`), Câu 2 (`a`), Câu 3 (`d`):** Với $v_{\text{đỉnh } B} = \dot{y} \implies v_B = \frac{\dot{y}}{2}$ (sang trái) và $\omega_B = \frac{\dot{y}}{2R}$ (CCW):
   $$T = \frac{1}{2}(8m_0)\dot{y}^2 + \frac{3}{4}(16m_0)\left(\frac{\dot{y}}{2}\right)^2 = (4 + 3)m_0\dot{y}^2 = 7m_0\dot{y}^2 \implies \mathbf{1b}$$
@@ -1193,7 +1208,7 @@ Trụ tròn đặc đồng chất $B$ ($m_B = 16m_0$, bán kính $R$) lăn khôn
   $$N = (50m_0 g + 8m_0\ddot{y})\cos\alpha - 8m_0\ddot{y}\sin\alpha$$
   Phương án `5a` in nhầm hệ số $-16m_0\ddot{y}\sin\alpha$ thay vì $-8m_0\ddot{y}\sin\alpha$, nên xét chặt chẽ về toán học chọn **`5d`** (`Không có kết quả đúng`).
 - **Câu 6 (`d`):** Sức căng dây nối $A$ là $T_{\text{dây}} = 8m_0(g + \ddot{y})$. Chiếu ngang trên $B$: $F_I = 8m_0 g + 16m_0\ddot{y}$; lấy mômen quanh tâm $B$: $F_I = 12m_0 g - 12m_0\ddot{y}$ (tại $\ddot{y} = \frac{g}{7}$, cả hai cùng bằng $\frac{72}{7}m_0 g$). Phương án `6a` in sai dấu `12m0(g + y'')` $\implies$ chọn **`6d`**.
-- **Câu 7 (`c`):** Khi cân bằng ($\ddot{y} = 0$), $\frac{M_0}{2R} = 10m_0 g$ (**`7c`**).
+- **Câu 7 (`b` — Sửa khoanh nhầm `7c`):** Để cơ hệ cân bằng ($\ddot{y} = 0$), công suất bằng không khi $\frac{M_0}{2R} - 8m_0 g = 0 \implies E = \frac{M_0}{2R} = 8m_0 g$ (**`7b`**). *(Trên bản scan tr. 44, thí sinh cũ khoanh nhầm `7c. E = 10 m_0 g`, vốn là giá trị đề cho làm phát sinh gia tốc $\ddot{y} = \frac{g}{7}$ ở Câu 3).*
 - **Câu 8 (`a`), Câu 9 (`d` — Sửa `9b`), Câu 10 (`c` — Sửa `10d`), Câu 11 (`a`), Câu 12 (`d`):**
   - Biểu thức động năng hệ 2 BTD ($v_A^2 = \dot{s}^2\cos^2\alpha + (\dot{y} - \dot{s}\sin\alpha)^2$, $v_B^2 = (\dot{s}\cos\alpha - \frac{\dot{y}}{2})^2 + \dot{s}^2\sin^2\alpha$):
     $$T = 7m_0\dot{y}^2 + 25m_0\dot{s}^2 - 8m_0(\sin\alpha + \cos\alpha)\dot{s}\dot{y} \implies \mathbf{8a}$$
@@ -1205,27 +1220,36 @@ Trụ tròn đặc đồng chất $B$ ($m_B = 16m_0$, bán kính $R$) lăn khôn
 
 ---
 
-### C. Đề `2` (26/12/2013, Tr. 47–48) & Bộ Đề `3`, `4` Năm 2011–2013 (Tr. 49–76 PDF)
+### C. Đề `2` (26/12/2013, Tr. 45, 47–48) & Bộ Đề `2`, `3`, `4` Năm 2011–2013 (Tr. 49–76 PDF)
 
-1. **Đề `2` HK II/09-10 (Thi 26/12/2013 — Tr. 47–48 PDF, Phần I: 9 câu hoàn chỉnh; bản scan thiếu trang Câu 10–12):**
-   - Cơ hệ gồm tải $A$ ($m_A$) trên dốc nghiêng $\alpha = 30^\circ$ nối tầng ngoài $R_B = 2r$ của ròng rọc cố định $B$ ($m_B = 1\text{ kg}, r_B = r, \rho_B = \sqrt{2}r$); dây từ bên phải tầng trong $r_B = r$ đi xuống bên trái ròng rọc động $C$ ($m_C = 2\text{ kg}, R_C = 2r$, đầu phải dây giữ cố định, trục $C$ treo tải $D$ nặng $m_D = 3\text{ kg}$, $g = 10\text{ m/s}^2$).
-   - **Đáp án kiểm toán Phần I (9 câu):** `I.1d` ($T = 5V_A^2$ với $m_A = \frac{73}{8}\text{ kg}$), `I.2b` ($\sum A\downarrow = \frac{530 - 292\sqrt{3}}{16}S_A$), `I.3b` ($\sum A\downarrow = \frac{530}{16}S_A$ khi $f=0$), `I.4c` ($a_A\downarrow = \frac{530 - 292\sqrt{3}}{160}$), `I.5b` ($1{,}477 \le m_A \le 8{,}116\text{ kg}$), `I.6b` ($a_A = 0$ khi $m_A = 8\text{ kg}, f = 0{,}4$), `I.7c` ($R_C^{\text{qt}} = 1{,}66\text{ N}\downarrow,\; M_C^{\text{qt}} = 1{,}66r\text{ CCW}$), `I.8a` ($F = 18{,}25\sqrt{3}\text{ N}\uparrow$), `I.9e` *(lưu ý: tính chính xác cho $\tau_3 \approx 25{,}12\text{ N}$ thay vì $25{,}6$ in ở `9c`)*.
+1. **Đề `2` HK II/09-10 (Thi 26/12/2013 — Tr. 47–48 & tr. 45 PDF, đủ 12 câu; trang 3 chứa Phần II Câu 10–12 được scan ở tr. 45 PDF):**
+   - Cơ hệ gồm tải $A$ ($m_A$) trên dốc nghiêng $\alpha = 30^\circ$ nối tầng ngoài $R_B = 2r$ của ròng rọc cố định $B$ ($m_B = 1\text{ kg}, r_B = r, \rho_B = \sqrt{2}r$); dây từ bên phải tầng trong $r_B = r$ đi xuống bên trái ròng rọc động $C$ ($m_C = 2\text{ kg}, R_C = 2r$, đầu phải dây giữ cố định ở Phần I hoặc nối lò xo độ cứng $k$ tại $E$ ở Phần II, trục $C$ treo tải $D$ nặng $m_D = 3\text{ kg}$, $g = 10\text{ m/s}^2$).
+   - **Đáp án kiểm toán Phần I (Câu 1–9, tr. 47–48 PDF):** `I.1d` ($T = 5V_A^2$ với $m_A = \frac{73}{8}\text{ kg}$), `I.2b` ($\sum A\downarrow = \frac{530 - 292\sqrt{3}}{16}S_A$), `I.3b` ($\sum A\downarrow = \frac{530}{16}S_A$ khi $f=0$), `I.4c` ($a_A\downarrow = \frac{530 - 292\sqrt{3}}{160}$), `I.5b` ($1{,}477 \le m_A \le 8{,}116\text{ kg}$), `I.6b` ($a_A = 0$ khi $m_A = 8\text{ kg}, f = 0{,}4$), `I.7c` ($R_C^{\text{qt}} = 1{,}66\text{ N}\downarrow,\; M_C^{\text{qt}} = 1{,}66r\text{ CCW}$ — *lưu ý chiều quay:* trên `page_048.png` mục `7c` in mũi tên **CCW** cho $M_C^{\text{qt}}$; khi $A$ xuống dốc kéo $B$ quay CCW làm nhánh trái $I_2$ của $C$ đi lên còn nhánh phải $I_1$ cố định thì $C$ quay **CW** nên $\vec{M}_C^{\text{qt}} = -J_C\vec{\varepsilon}_C$ quay **CCW**, còn nếu bài giải giả sử $C$ quay CCW thì $M_C^{\text{qt}}$ phải hướng **CW** nên dễ ngộ nhận mũi tên CCW ở `7c` là lỗi in), `I.8a` ($F = 18{,}25\sqrt{3}\text{ N}\uparrow$). Riêng **Câu 9** chỉ có 4 phương án `a..d` (không có phương án `e`): với $a_A = 0{,}155\text{ m/s}^2$ tính chuẩn được $\tau_3 = 25{,}0775 \approx 25{,}08\text{ N}$ (hoặc $25{,}12\text{ N}$ nếu cộng nhầm dấu $J_C\varepsilon_C$), không khớp phương án nào trong `a. 55,58`, `b. 41,02`, `c. 25,6`, `d. 47,76`.
+   - **Đáp án kiểm toán Phần II (Câu 10–12, tr. 45 PDF — $q_1 \equiv s\uparrow$, $q_2 \equiv y\uparrow$, $f = 0$):** **`10a`** ($\omega_C = \frac{1}{8r}(\dot{s} + 2\dot{y})\text{ CCW},\; V_C\uparrow = \frac{1}{2}\dot{y} - \frac{1}{4}\dot{s}$), **`11d`** (`Không có kết quả đúng` vì $Q_s = -m_A g\sin 30^\circ + \frac{1}{4}(m_C+m_D)g = -\frac{265}{8}$, ngược dấu với $+\frac{265}{8}$ in ở `11b`), **`12d`** (`Không có kết quả đúng` vì $Q_y = ky_0 - ky - 25 = -ky$, trong khi đề gốc `12a..c` in nhầm $\frac{5}{2}$ thay cho $25$).
 
-2. **Đề `3` HK II/2011-2012 (Thi 14/06/2012 — Tr. 49–55 PDF, 12 câu, kèm bản giải tay tr. 51–55):**
+2. **Đề `3` HK II/2011-2012 (Thi 14/06/2012 — Tr. 49–55 PDF, 12 câu, kèm bản giải tay tr. 51–55) & Biến Thể Đề `3` (Tr. 71–73 PDF):**
    - Cơ hệ gồm dầm $HI$ ($HE = EI = 2R$), trụ tâm $C$ ($m_C = 10m_0, \rho_C = r, R = 4r$) mang khối lệch tâm $D$ ($m_D = 2m_0$ ở bán kính $r$) chịu ngẫu động cơ $M = 15m_0 g R$, treo ròng rọc động $B$ ($m_B = 8m_0$, bán kính $R/2 = 2r$) và tải $A$ ($m_A = 20m_0$).
-   - **Đáp án kiểm toán 12 câu:** `1b` ($T = 70m_0 r^2\dot{\varphi}^2$), `2a` ($\sum N = (2 - \sin\varphi)2m_0 gr\dot{\varphi}$), `3c` ($\ddot{\varphi} = \frac{2-\sin\varphi}{70r}g$), `4a` ($\tau_1 = 14m_0 g + 6m_0 R\ddot{\varphi}$), `5a` ($H_x = 2m_0 r\ddot{\varphi}$), `6c` ($H_y = \frac{131}{8}m_0 g + \frac{81}{4}m_0 r\ddot{\varphi} + \frac{1}{2}m_0 r\dot{\varphi}^2$ — bản giải tay cũ tr. 55 bị sót trọng lượng $P_C = 10m_0 g$!), `7d` ($I_y = 23{,}5m_0 g + 37{,}25m_0 r\ddot{\varphi} + m_0 r\dot{\varphi}^2$), `8c` ($H_x = -2m_0 r\dot{\varphi}^2$), `9a`, `10c` ($Q_y = -ky$), `11b` ($Q_\varphi = (4 - 2\sin\varphi)m_0 gr$), `12c`. *(Ghi chú: Đề `3` ở tr. 71–74 PDF là biến thể đổi $M = 16m_0 g R, R = 2r$ với cùng dạng bài).*
+   - **Đáp án kiểm toán 12 câu (`14/06/2012`, tr. 49–50 PDF):** `1b` ($T = 70m_0 r^2\dot{\varphi}^2$), `2a` ($\sum N = (2 - \sin\varphi)2m_0 gr\dot{\varphi}$), `3c` ($\ddot{\varphi} = \frac{2-\sin\varphi}{70r}g$), `4a` ($\tau_1 = 14m_0 g + 6m_0 R\ddot{\varphi}$), `5a` ($H_x = 2m_0 r\ddot{\varphi}$), **`6d`** ($H_y = \frac{131}{8}m_0 g + 20{,}25m_0 r\ddot{\varphi} + 0{,}5m_0 r\dot{\varphi}^2$, còn `6c` là *"Không có kết quả đúng"* — lưu ý bản giải tay cũ tr. 55 bị sót trọng lượng $P_C = 10m_0 g$ trong phương trình $\sum Y$ làm $I_y$ hụt $5m_0 g$), `7d` ($I_y = 23{,}5m_0 g + 37{,}25m_0 r\ddot{\varphi} + m_0 r\dot{\varphi}^2$), `8c` ($H_x = -2m_0 r\dot{\varphi}^2$), `9a`, `10c` ($Q_y = -ky$), `11b` ($Q_\varphi = (4 - 2\sin\varphi)m_0 gr$), `12c`.
+   - **Biến thể Đề `3` (`tr. 71–73 PDF`):** Đổi thông số thành $M = 16m_0 g R,\; R = 2r$ ($R_B = r$), dẫn tới các câu có đáp án đổi theo là **`1a`** ($T = 22m_0 r^2\dot{\varphi}^2$), **`2a`**, **`3a`** ($\ddot{\varphi} = \frac{2-\sin\varphi}{22r}g$), **`9c`** ($T = 22m_0 r^2\dot{\varphi}^2 + 20m_0\dot{y}^2 - (28 + 2\sin\varphi)m_0 r\dot{\varphi}\dot{y}$), **`12a`** (các câu còn lại `4a, 5a, 6d, 7d, 8c, 10c, 11b` giữ nguyên mã phương án).
 
 3. **Đề `3` HK 2/12-13 (Thi 17/06/2013 — Tr. 57–59 PDF, 14 câu):**
    - Bánh răng 3 ($m_3 = m_0, R_3 = R_0, \rho_C = R_0$) ăn khớp ngoài bánh răng 2 ($m_2 = 4m_0, R_2 = 2R_0, r_2 = R_0, \rho_B = R_0$) nối dây kéo con lăn kép 1 ($m_1 = 40m_0, R_1 = 8R_0, r_1 = 4R_0, \rho_A = 4R_0$) lên dốc $\alpha$.
-   - **Điểm cần lưu ý khi giải đề này:** Phần I cân bằng (`R1=8R0, r1=4R0`): $\tau = \frac{2M}{R_0}$ (**`2b`**), $D_y = 5m_0 g + \tau\sin\alpha$ (**`3a`**); nếu dây nối vào tầng trong $r_1 = 4R_0$ thì $\tau = \frac{80}{3}m_0 g\sin\alpha \implies M = \frac{40}{3}m_0 g R_0\sin\alpha$ (**`1d`**) và $F_K = \frac{40}{3}m_0 g\sin\alpha$ (**`4b`**). Ở Phần II & III ($R_2 = 4R_0, r_2 = 2R_0, R_1 = 6R_0, r_1 = 3R_0$ với quan hệ cho sẵn $3V_A = 2R_0\omega_2; 6V_A = R_0\omega_3$): $\sum N = \left(\frac{6M}{R_0} - 40m_0 g\sin\alpha\right)V_A$ (**`8a`**); phần III dùng $\varphi_1 = \frac{\varphi_3}{12} - \frac{S}{6R_0}$ (**`11a`**) suy ra $Q_1 = M - 20m_0 g R_0 f_{\text{đ}}\cos\alpha$ (**`12d`**) và $T = m_0\left(\frac{205}{72}R_0^2\dot{\varphi}_3^2 + \frac{260}{9}\dot{S}^2 - \frac{80}{9}R_0\dot{\varphi}_3\dot{S}\right)$ (**`14b`**).
+   - **Đáp án kiểm toán đầy đủ 14 câu:**
+     - **Phần I (Cân bằng, `R_1 = 8R_0, r_1 = 4R_0`):** Theo hình vẽ `page_057.png` (và khớp với đáp án Phần III), dây buộc vào **tầng ngoài $R_1 = 8R_0$** của con lăn 1, nên $\tau = \frac{2M}{R_0}$ (**`2b`**), $D_y = 5m_0 g + \tau\sin\alpha$ (**`3a`**), cân bằng mômen quanh tâm tức thời $K$ cho $\tau(2R_1) = m_1 g R_1\sin\alpha$ $\implies$ $\tau = 20m_0 g\sin\alpha$ $\implies$ $M = 10m_0 g R_0\sin\alpha$ (**`1d`** — *Không có kết quả đúng*), $F_K = 20m_0 g\sin\alpha$ (**`4b`** — *Không có kết quả đúng*), và điều kiện không trượt $F_K \le f_t(40m_0 g\cos\alpha)$ cho $\tan\alpha_{\max} = 2f_t$ (**`5b`**).
+     - **Phần II (Lăn không trượt đi lên, Câu 6–10):** Với bán kính gốc ở Câu 6, $v_{\text{dây}} = 2V_A$ $\implies$ $R_0\omega_2 = 2V_A$, $R_0\omega_3 = 4V_A$ (**`6b`** — *Không có kết quả đúng*). Từ Câu 7–10, đề đổi $R_2 = 4R_0, r_2 = 2R_0, R_1 = 6R_0, r_1 = 3R_0$ và áp đặt quan hệ $3V_A = 2R_0\omega_2$, $6V_A = R_0\omega_3$ *(lưu ý đề gốc tự mâu thuẫn vì với bộ bán kính mới thì liên kết dây phải cho $V_A = R_0\omega_2$)*; tính theo đúng quan hệ Câu 7 cho $T = \frac{925}{18}m_0 V_A^2$ (**`7c`** — phương án `7a` in $\frac{1085}{18}m_0 V_A^2$ bị thiếu hệ số $\frac{1}{2}$ ở động năng quay $\frac{1}{2}J_A\omega_1^2$), công suất $\sum N = \left(\frac{6M}{R_0} - 40m_0 g\sin\alpha\right)V_A$ (**`8a`**), gia tốc $W_A = \frac{6M - 40m_0 g R_0\sin\alpha}{\frac{925}{9}m_0 R_0}$ (**`9c`** — *Không có kết quả đúng*), và điều kiện không trượt $g\sin\alpha + \frac{5}{9}W_A \le 2f_t g\cos\alpha$ (**`10b`** — *Không có kết quả đúng*).
+     - **Phần III (Vừa lăn vừa trượt, Câu 11–14):** Quan hệ động học $\varphi_1 = \frac{\varphi_3}{12} - \frac{S}{6R_0}$ (**`11a`**), lực suy rộng $Q_1 = M - 20m_0 g R_0 f_{\text{đ}}\cos\alpha$ (**`12d`**), $Q_2 = m_0 g(\pm 80 f_{\text{đ}}\cos\alpha - 40\sin\alpha)$ (**`13c`** — *Không có kết quả đúng*), và động năng $T = m_0\left(\frac{205}{72}R_0^2\dot{\varphi}_3^2 + \frac{260}{9}\dot{S}^2 - \frac{80}{9}R_0\dot{\varphi}_3\dot{S}\right)$ (**`14b`**).
 
-4. **Đề `3` HK I/11-12 (Thi 28/12/2011 — Tr. 61–62 PDF, 12 câu; bản tương đương Đề `2` tr. 69–71):**
-   - Puli kép $C$ ($m_C = 11m_0, R_C = 5r_C, \rho_C^2 = \frac{55}{22}r_C^2$) quay treo trụ đặc $B$ ($m_B = m_0, R_B = 3r_C$) và tải $A$ ($m_A = 100m_0$) bằng hai nhánh dây $I$ (bên trái bán kính $r_C$) và $H$ (bên phải bán kính $R_C$), chịu mômen $M = 223{,}8m_0 g r_C$.
-   - **Đáp án kiểm toán 12 câu:** `1c` ($\omega_B = \omega_C = \frac{V_A}{2r_C}$ CCW), `2b` ($T = 54{,}5m_0 V_A^2$), `3c` ($N = 10{,}9m_0 g V_A$), `4c` ($W_A = \frac{g}{10}$, không có trong `a, b, d`), `5d` ($\tau_I = 50{,}5m_0 g + 50{,}125m_0 W_A$, đề in nhầm giá trị này ở `6d`), `6b` ($\tau_H = 50{,}5m_0 g + 50{,}875m_0 W_A$), `9c`, `10b` ($Q_1 = -Ky_C$), `11d` ($Q_2 = M - 202m_0 g r_C$, cả `a, b, c` đều in thiếu $r_C$), `12a` ($T = (56\dot{y}_C^2 + 218r_C^2\dot{\varphi}_C^2 - 202r_C\dot{y}_C\dot{\varphi}_C)m_0$).
+4. **Đề `3` HK I/11-12 (Thi 28/12/2011 — Tr. 61–62 PDF, 12 câu):**
+   - Puli kép $C$ ($m_C = 11m_0, R_C = 5r_C, \rho_C^2 = \frac{55}{22}r_C^2$) quay **CW** dưới mômen $M = 223{,}8m_0 g r_C$, treo trụ đặc $B$ ($m_B = m_0, R_B = 3r_C$) và tải $A$ ($m_A = 100m_0$) bằng hai nhánh dây: nhánh **`I`** (bên trái, nối tầng ngoài **`R_C = 5r_C`**) và nhánh **`H`** (bên phải, nối tầng trong **`r_C`**).
+   - **Đáp án kiểm toán đủ 12 câu:** **`1c`** ($\omega_B = \omega_C = \frac{V_A}{2r_C}$ quay **CW**), **`2b`** ($T = 54{,}5m_0 V_A^2$), **`3c`** ($N = 10{,}9m_0 g V_A$), **`4c`** ($W_A = \frac{g}{10}\uparrow$, không có trong `a, b, d`), **`5a`** ($\tau_I = 50{,}5m_0 g + 50{,}875m_0 W_A$ do $(\tau_I - \tau_H)R_B = +J_B\varepsilon_B = \frac{9}{4}m_0 r_C W_A$), **`6d`** ($\tau_H = 50{,}5m_0 g + 50{,}125m_0 W_A$), **`7a`** ($C_y\downarrow = 112m_0 g + 101m_0 W_A$, $M_C\text{ CCW} = M$), **`8b`** ($D_y = 112m_0 g + 101m_0 W_A$, $M_D\text{ CCW} = (112m_0 g + 101m_0 W_A)l - M$), **`9b`** ($V_A\uparrow = 2r_C\dot{\varphi}_C - \dot{y}_C$, $\omega_B\text{ CW} = \dot{\varphi}_C$), **`10b`** ($Q_1 = -Ky_C$), **`11d`** ($Q_2 = M - 202m_0 g r_C$, cả `a, b, c` đều in thiếu $r_C$), **`12a`** ($T = (56\dot{y}_C^2 + 218r_C^2\dot{\varphi}_C^2 - 202r_C\dot{y}_C\dot{\varphi}_C)m_0$).
 
-5. **Đề `4` — Tr. 74–76 PDF (18 câu — Hệ con lăn kép + Trụ 4 + Thanh $AB$ trong lòng bán cầu):**
-   - **Bài 1 (Câu 1–12):** Con lăn kép 1 ($R_1 = 3r_1, m_1 = \frac{14}{9}m, \rho = \frac{3}{2}r_1$) kéo từ đáy tầng trong $r_1$ nối trụ rỗng 2 ($m_2 = \frac{m}{8}, R_2 = r_1$) đỡ tải 3 ($m_3 = \frac{m}{4}$) lên trụ 4 ($m_4 = \frac{3}{4}m, R_4 = 2r_1$). Kết quả kiểm toán Phần I (trụ 4 cố định, $F = \frac{3}{8}mg$): `1c` ($\bar{\omega}_1 = -\frac{V_A}{3r_1}$), `2c` ($V_3 = \frac{V_A}{3}\downarrow$), `3b` ($\vec{v}_H$ sang phải), `4e` ($T = m V_A^2$), `5a` ($T = 9mr_1^2\omega_1^2$), `6b` ($A = \frac{mg}{2}S_A$), `7a` ($W_A = \frac{g}{4}$), `8b` ($\tau_1 = \frac{mg}{6}$), `9c` ($\bar{F}_I = -\frac{11}{72}mg$). Phần II (trụ 4 quay theo $\varphi_4$ CW, $M = \frac{1}{8}mgr_1$): `10a` ($V_B = \frac{\dot{S}_A}{3} + r_1\dot{\varphi}_4$), `11d` ($\omega_2 = \frac{\dot{S}_A}{3r_1} - \dot{\varphi}_4$), `12c` ($Q_1 = \frac{1}{2}mg;\; Q_2 = \frac{1}{2}mgr_1$).
-   - **Bài 2 (Câu 13–18 — Thanh $AB$ dài $l = R$ trượt trong bán cầu trơn bán kính $R$):** `13a` (1 BTD), `14c` ($T = \frac{5m}{12}R^2\omega^2$), `15c` ($A = \frac{\sqrt{3}}{2}mgR(\sin\varphi - \sin\varphi_0)$), `16e` ($\varepsilon = \frac{3\sqrt{3}}{5}\frac{g}{R}\cos\varphi$), `17d` ($\varepsilon(90^\circ) = 0$), `18a` ($\omega^2(90^\circ) = \frac{3\sqrt{3}}{5}\frac{g}{R}$ khi $\varphi_0 = 30^\circ$).
+5. **Đề `2` — Tr. 69–71 PDF (12 câu — Cùng mô hình puli kép $C$ & trụ đặc $B$ nhưng bộ thông số riêng):**
+   - Khác với Đề `3` (`28/12/2011`), Đề `2` (`tr. 69–71 PDF`) cho dữ kiện riêng: $R_C = 3r_C,\; R_B = 2r_C,\; \rho_C = r_C,\; M = 121m_0 g r_C$ (nhánh trái $I$ nối $R_C = 3r_C$, nhánh phải $H$ nối $r_C$).
+   - **Đáp án kiểm toán đủ 12 câu:** **`1a`** ($\omega_B = \omega_C = \frac{V_A}{r_C}$ quay **CW**), **`2a`** ($T = 57m_0 V_A^2$), **`3a`** ($N = 20m_0 g V_A$), **`4d`** ($W_A\uparrow = \frac{20}{114}g = \frac{10}{57}g$), **`5b`** ($\tau_I = 50{,}5m_0 g + 51m_0 W_A$), **`6a`** ($\tau_H = 50{,}5m_0 g + 50m_0 W_A$), **`7a`** ($C_y\downarrow = 112m_0 g + 101m_0 W_A$, $M_C\text{ CCW} = M$), **`8b`** ($D_y = 112m_0 g + 101m_0 W_A$, $M_D\text{ CCW} = (112m_0 g + 101m_0 W_A)l - M$), **`9a`** ($V_A\uparrow = r_C\dot{\varphi}_C - \dot{y}_C$, $\omega_B\text{ CW} = \dot{\varphi}_C$), **`10b`** ($Q_1 = -Ky_C$), **`11d`** ($Q_2 = M - 101m_0 g r_C$, các phương án `a, b, c` in thiếu $r_C$), **`12c`** ($T = (56\dot{y}_C^2 + 57r_C^2\dot{\varphi}_C^2 - 101r_C\dot{\varphi}_C\dot{y}_C)m_0$).
+
+6. **Đề `4` — Tr. 73–76 PDF (18 câu — Hệ con lăn kép + Trụ 4 + Thanh $AB$ trong lòng bán cầu):**
+   - **Bài 1 (Câu 1–12, tr. 73–75 PDF):** Con lăn kép 1 ($R_1 = 3r_1, m_1 = \frac{14}{9}m, \rho = \frac{3}{2}r_1$) kéo từ đáy tầng trong $r_1$ nối trụ rỗng 2 ($m_2 = \frac{m}{8}, R_2 = r_1$) đỡ tải 3 ($m_3 = \frac{m}{4}$) lên trụ 4 ($m_4 = \frac{3}{4}m, R_4 = 2r_1$). Kết quả kiểm toán Phần I (trụ 4 cố định, $F = \frac{3}{8}mg$): `1c` ($\bar{\omega}_1 = -\frac{V_A}{3r_1}$), `2c` ($V_3 = \frac{V_A}{3}\downarrow$), `3b` ($\vec{v}_H$ sang phải), `4e` ($T = m V_A^2$), `5a` ($T = 9mr_1^2\omega_1^2$), `6b` ($A = \frac{mg}{2}S_A$), `7a` ($W_A = \frac{g}{4}$), `8b` ($\tau_1 = \frac{mg}{6}$), `9c` ($\bar{F}_I = -\frac{11}{72}mg$). Phần II (trụ 4 quay theo chiều dương $\varphi_4$ **CCW**, ngẫu $M = \frac{1}{8}mgr_1$ **CCW**): `10a` ($V_B = \frac{\dot{S}_A}{3} + r_1\dot{\varphi}_4$), `11d` ($\omega_2 = \frac{\dot{S}_A}{3r_1} - \dot{\varphi}_4$), `12c` ($Q_1 = \frac{1}{2}mg;\; Q_2 = \frac{1}{2}mgr_1$). *(Ghi chú lỗi in trên `page_075.png`: tiêu đề Phần II gõ nhầm "II. Trụ A tâm D" thay cho "Trụ 4 tâm D", phương án `10a` in thiếu dấu chấm đạo hàm trên $S_A$, `10b` in thiếu chỉ số $A$ ở $\dot{S}$).*
+   - **Bài 2 (Câu 13–18, tr. 75–76 PDF — Thanh $AB$ dài $l = R$ trượt trong bán cầu trơn bán kính $R$):** `13a` (1 BTD), `14c` ($T = \frac{5m}{12}R^2\omega^2$), `15c` ($A = \frac{\sqrt{3}}{2}mgR(\sin\varphi - \sin\varphi_0)$), `16e` ($\varepsilon = \frac{3\sqrt{3}}{5}\frac{g}{R}\cos\varphi$), `17d` ($\varepsilon(90^\circ) = 0$), `18a` ($\omega^2(90^\circ) = \frac{3\sqrt{3}}{5}\frac{g}{R}$ khi $\varphi_0 = 30^\circ$).
 
 ---
 
@@ -1237,10 +1261,10 @@ Cuối tập PDF (tr. 77–102) là tuyển tập 8 chủ đề tự luận mẫ
 
 | Chủ đề | Cơ hệ & Phương pháp | Kết quả chuẩn & Điểm cần cảnh giác |
 | :--- | :--- | :--- |
-| **Chủ đề 5**<br>*(tr. 90–91)* | Thanh $OA = 200\text{ mm}$ quay đều CW $\omega_1 = 6{,}3\text{ s}^{-1}$, chốt $A$ trượt trên rãnh $BC$ tại $\theta = 30^\circ$ (Hợp chuyển động + Coriolis) | $v_e = 1{,}09\text{ m/s}$, $\omega_{BC} = 3{,}15\text{ rad/s}$,<br>$v_r = 0{,}63\text{ m/s}$, $a_c = 2\omega_{BC}v_r = 3{,}97\text{ m/s}^2$,<br>$\varepsilon_{BC} = 16{,}2\text{ rad/s}^2$. |
-| **Chủ đề 6**<br>*(tr. 92–94)* | Tấm vuông chuyển động song phẳng điều khiển bởi $OA = 100\text{ mm}$ và $BC = 200\text{ mm}$ | Định lý hình chiếu và dời cực gia tốc tìm $\varepsilon_{\text{tấm}}$ và $\varepsilon_{CB}$. Lưu ý: trang đề 92 và trang giải 93–94 ghép từ hai biến thể kích thước khác nhau. |
+| **Chủ đề 5**<br>*(tr. 90–91)* | Thanh $OA = 200\text{ mm}$ quay đều CW $\omega_1 = 6{,}3\text{ s}^{-1}$, chốt $A$ trượt trên rãnh $BC$ tại $\theta = 30^\circ$ (Hợp chuyển động + Coriolis) | $v_e = 1{,}09\text{ m/s}$, $\omega_{BC} = 3{,}15\text{ rad/s}$ (CW),<br>$v_r = 0{,}63\text{ m/s}$, $a_c = 2\omega_{BC}v_r = 3{,}97\text{ m/s}^2$,<br>**$\varepsilon_{BC} = 0\text{ rad/s}^2$** *(cảnh báo: bài giải mẫu tr. 90–91 vẽ ngược chiều $\vec{a}_c^A$ rồi cộng Pythagore hai vectơ cùng phương $\perp BC$ ra $16{,}2\text{ rad/s}^2$ là **sai**)*. |
+| **Chủ đề 6**<br>*(tr. 92–94)* | Tấm vuông chuyển động song phẳng điều khiển bởi $OA = 100\text{ mm}$ và $BC = 200\text{ mm}$ | Đề tr. 92 và bài giải tr. 93–94 dùng **cùng bộ kích thước** ($OM=60,\; PA=128\text{ mm}$), nhưng tr. 94 tính nhầm $PB = 100\text{ mm}$ (đúng: $96\text{ mm}$) làm sai $\omega_3 = 1{,}475\text{ s}^{-1}$, $\varepsilon_2 = 3{,}125\text{ s}^{-2}$, $\varepsilon_3 = 14{,}185\text{ s}^{-2}$.<br>**Chuẩn SymPy:** $\omega_2 = 2{,}953\text{ s}^{-1}$, **$\omega_3 = 1{,}4175\text{ s}^{-1}$**, **$\varepsilon_2 = 3{,}401\text{ s}^{-2}$**, **$\varepsilon_3 = 14{,}358\text{ s}^{-2}$**. |
 | **Chủ đề 7**<br>*(tr. 95–96)* | Cơ cấu hành tinh: vành $R$ cố định, bánh $S$ ($\omega_S = 6{,}3\text{ s}^{-1}$), bánh $P$, cần $A$ ($r_P = 20\text{ mm}$, $r_S = 40\text{ mm}$, $r_R = 80\text{ mm}$, Willis) | **Lỗi tính nháp tr. 96:** viết nhầm $-\frac{r_S}{r_P} = -0{,}5$ thành $\omega_A = -0{,}9\text{ s}^{-1}$. Đúng Willis: $\frac{\omega_P - \omega_A}{0 - \omega_A} = \frac{80}{20} = 4$ $\implies \omega_P = -3\omega_A$ và $\frac{\omega_P - \omega_A}{\omega_S - \omega_A} = -\frac{40}{20} = -2$ cho **$\omega_A = +2{,}1\text{ rad/s}$** (cùng chiều $\omega_S$) và **$\omega_P = -6{,}3\text{ rad/s}$** (ngược chiều). |
-| **Chủ đề 8**<br>*(tr. 97–102)* | Tay quay $AB = 50\text{ mm}$ ($630\text{ vòng/phút}$ CCW) kéo thanh $BD = 250\text{ mm}$ ($5\text{ kg}$), con chạy $D$ trượt đứng cách $A$ $150\text{ mm}$ (Tâm $I$ + Đalămbe) | $\omega_A = 21\pi\text{ rad/s}$ nên tại $\theta = 0^\circ$ có $\omega_{BD} = \frac{21\pi}{4} \approx 16{,}49\text{ rad/s}$ (tài liệu tr. 98 làm tròn $\pi \approx 3$ thành $\frac{63}{4} = 15{,}75\text{ rad/s}$). |
+| **Chủ đề 8**<br>*(tr. 97–102)* | Tay quay $AB = 50\text{ mm}$ ($630$ vòng/phút CCW) kéo thanh $BD = 250\text{ mm}$ ($5\text{ kg}$), con chạy $D$ trượt đứng cách $A$ $150\text{ mm}$ (Tâm $I$ + Đalămbe) | Tại $\theta = 0^\circ$: $\omega_A = 21\pi\text{ rad/s}$, $\omega_{BD} = \frac{21\pi}{4} \approx 16{,}49\text{ rad/s}$.<br>**Lỗi nặng ở tr. 99, 101:** bỏ qua mômen quán tính $J_G\varepsilon_{BD}$ của thanh $BD$ nặng $5\text{ kg}$ và đảo dấu $\vec{a}_G$ tại $90^\circ$ (ra sai $N_D = 619{,}95\text{ N}$ và $417{,}37\text{ N}$). **Chuẩn SymPy:** **$N_D = 283{,}41\text{ N}$** ($0^\circ$) và **$N_D = 101{,}57\text{ N}$** ($90^\circ$, hướng sang phải; tức $-283{,}41\text{ N}$ và $-101{,}57\text{ N}$ theo chiều vẽ sang trái). |
 
 ---
 
@@ -1261,6 +1285,8 @@ Hai đề thi giữa kỳ ngày 12/04/2017 (70 phút, PGS.TS. Vũ Công Hòa & T
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
 | **Đề `1643`** | `a` | **`d`** | **`b`** | **`c`** | **`b`** | `d` |
 | **Đề `1744`** | `c` | **`b`** | **`c`** | **`a`** | **`b`** | `a` |
+
+*(Ghi chú Đề `1643` Câu 12, tr. 17 PDF: bản đề in gốc gõ trùng ký hiệu `d.` cho cả hai phương án cuối là `d. 3 điểm không thẳng hàng` và `d. 3 điểm`; đáp án đúng theo bảng key tr. 21 là `d. 3 điểm không thẳng hàng`.)*
 
 ::: details Xem giải nhanh 8 câu Chương 9–10 trong Đề `1643` & `1744` (tr. 15–20 PDF)
 

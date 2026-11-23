@@ -18,7 +18,7 @@ Nếu bạn là người **tay ngang (mất gốc hoàn toàn)** và mục tiêu
 | :--- | :--- | :--- | :--- |
 | **Ngày 11** | Công thức vàng tính Động năng $T$ | Không bao giờ sót thành phần $J_O$ hay $\frac{3}{4}mv_C^2$; giải gọn Đề `1821` Câu 5 & Đề `1721`/`1722` Câu 9 | [Chương 3 (Mục 3.5)](/dong-luc-hoc/chuong-3) · [BT C.2](/bai-tap/dong-luc-hoc/chuong-2) |
 | **Ngày 12** | Bí kíp tính Tổng công $\sum A$ trong 60 giây | Dùng mẹo thế biên $\theta = \theta_0 \implies \sum A = 0$ triệt bẫy dấu lò xo, trọng lực trên Đề `1721`, `1722`, `2016` | [Chương 3 (Mục 3.5)](/dong-luc-hoc/chuong-3) · [BT C.2](/bai-tap/dong-luc-hoc/chuong-2) |
-| **Ngày 13** | Đạo hàm 2 vế tìm $\varepsilon, a$ & tính $v$ | Giải trọn bộ 4 câu liên hoàn Đề `1821` (5–8), `0001/2016` (3–6) và bắt gọn bẫy `6e` ở Đề `0002/2016` | [Chương 3 (Mục 3.6)](/dong-luc-hoc/chuong-3) · [BT C.6](/bai-tap/dong-luc-hoc/chuong-6) |
+| **Ngày 13** | Đạo hàm 2 vế tìm $\varepsilon, a$ & tính $v$ | Giải trọn bộ 4 câu liên hoàn Đề `1821` (5–8), `0001/2016` (3–6) và bắt gọn bẫy `6e` ở Đề `0002/2016` | [Chương 3 (Mục 3.5)](/dong-luc-hoc/chuong-3) · [BT C.2](/bai-tap/dong-luc-hoc/chuong-2) |
 | **Ngày 14** | Hệ dây kéo ròng rọc, con lăn kép & ma sát | Làm chủ tâm tức thời $I$ cho con lăn kép quấn tầng trong, dây chùng ở Đề `0001`/`0002` (2015), `2014`, `2011` | [Chương 3](/dong-luc-hoc/chuong-3) · [Đề thi thật HCMUT](/on-thi/de-thi-that-hcmut) |
 | **Ngày 15** | Bộ 12 câu thi thật bấm giờ (25 phút) | Hoàn thành 3 chùm × 4 câu đề thi thật dưới áp lực thời gian + Checklist 20 giây chống bẫy đáp án `e` | [Ngân hàng đề thi thật](/on-thi/de-thi-that-hcmut) |
 :::
@@ -89,11 +89,11 @@ Mỗi vật rắn trong cơ hệ phẳng chỉ rơi vào **đúng 1 trong 3 chuy
   <text x="104" y="72" text-anchor="end" font-family="sans-serif" font-size="13" font-weight="700" fill="#0f172a">O</text>
   <text x="166" y="136" text-anchor="end" font-family="sans-serif" font-size="12" font-weight="700" fill="#0f172a">A</text>
   <text x="248" y="182" font-family="sans-serif" font-size="12" font-weight="700" fill="#dc2626">G</text>
-  <text x="157" y="92" font-family="sans-serif" font-size="11" fill="#0369a1">L</text>
+  <text x="146" y="108" text-anchor="end" font-family="sans-serif" font-size="11" fill="#0369a1">L</text>
   <text x="224" y="140" font-family="sans-serif" font-size="11" fill="#0369a1">L</text>
   <!-- Angle phi* arc -->
   <path d="M 158 68 A 38 38 0 0 1 148 95" fill="none" stroke="#d97706" stroke-width="1.8" />
-  <text x="166" y="86" font-family="sans-serif" font-size="12" font-weight="700" fill="#b45309">phi*</text>
+  <text x="165" y="85" font-family="sans-serif" font-size="12" font-weight="700" fill="#b45309">φ*</text>
   <!-- g vector -->
   <line x1="72" y1="120" x2="72" y2="174" stroke="#dc2626" stroke-width="2" />
   <polygon points="68,172 72,180 76,172" fill="#dc2626" />
@@ -136,7 +136,7 @@ Mỗi vật rắn trong cơ hệ phẳng chỉ rơi vào **đúng 1 trong 3 chuy
   <text x="478" y="120" font-family="sans-serif" font-size="11" fill="#334155">l</text>
   <!-- Angle theta arc at A -->
   <path d="M 484 185 A 40 40 0 0 0 473 158" fill="none" stroke="#0284c7" stroke-width="1.8" />
-  <text x="492" y="168" font-family="sans-serif" font-size="12" font-weight="700" fill="#0284c7">theta</text>
+  <text x="492" y="168" font-family="sans-serif" font-size="12" font-weight="700" fill="#0284c7">θ</text>
   <!-- Positive direction arrow (+) above disk -->
   <path d="M 678 122 A 42 42 0 0 0 634 118" fill="none" stroke="#0f766e" stroke-width="2" />
   <polygon points="637,112 628,119 638,124" fill="#0f766e" />
@@ -191,7 +191,7 @@ Cho cơ hệ như Hình 11-1 (bên phải): thanh $AB$ và $BC$ có cùng khối
    $$T_{AB} = \frac{1}{6}m_1 l^2 \omega^2$$
 
 2. **Động năng thanh $BC$ (chuyển động song phẳng):**
-   - Do tam giác $ABC$ cân ($AB = BC = l$), góc nghiêng của $BC$ là $-\theta$ nên vận tốc góc của $BC$ có độ lớn $\lvert\omega_{BC}\rvert = \omega$ (chiều $\overline{\omega}_1 = -\omega$).
+   - Do tam giác $ABC$ cân ($AB = BC = l$), góc nghiêng của $BC$ là $-\theta$ nên vận tốc góc của $BC$ có độ lớn $\lvert\omega_{BC}\rvert = \omega$ (chiều $\bar{\omega}_1 = -\omega$).
    - Chọn gốc tọa độ tại $A$: khối tâm $G$ (trung điểm $BC$) có tọa độ:
      $$x_G = l\cos\theta + \frac{l}{2}\cos\theta = \frac{3}{2}l\cos\theta, \qquad y_G = \frac{1}{2}l\sin\theta$$
    - Đạo hàm theo $t$ (với $\dot{\theta} = \omega$):
@@ -253,7 +253,7 @@ Chỉ cần bấm máy tính thay $\theta = \theta_0$ vào từng đáp án `a, 
 ### 2. Giải chi tiết 4 bài tính công từ đề thi thật HCMUT
 
 ::: info Bài mẫu 12-1 — Đề 1721 Câu 8 (8b) & Đề 1722 Câu 8 (8c)
-Trong cơ hệ 2 thanh $AB = BC = l$ ($m_1 = 5\text{ kg}$) + đĩa lăn không trượt $C$ ($m_2 = 10\text{ kg}$) ở Hình 11-1, lò xo nối từ điểm cố định $A$ đến tâm $C$ có độ cứng $K = 500\text{ N/m}$ và **không biến dạng tại vị trí $\theta = 60^\circ$**. Lấy $g = 10\text{ m/s}^2$. Tính tổng công của các ngoại lực khi thanh $AB$ quay ngược chiều kim đồng hồ từ $\theta_0 = 30^\circ$ đến vị trí có $\theta < 60^\circ$:
+Trong cơ hệ 2 thanh $AB = BC = l$ (mỗi thanh khối lượng $m_1 = 5\text{ kg}$) + đĩa tròn đặc lăn không trượt $C$ ($m_2 = 10\text{ kg}$) ở Hình 11-1, lò xo nối từ điểm cố định $A$ đến tâm $C$ có độ cứng $K = 500\text{ N/m}$ và **không biến dạng tại vị trí $\theta = 60^\circ$**. Lấy $g = 10\text{ m/s}^2$. Tính tổng công của các ngoại lực khi thanh $AB$ quay ngược chiều kim đồng hồ từ $\theta_0 = 30^\circ$ đến vị trí có $\theta < 60^\circ$:
 - **Đề `1721` ($l = 0{,}15\text{ m}$):** Đáp án `8b`: $\sum A = 1{,}14 - 7{,}5\sin\theta + 22{,}5\cos\theta - 22{,}5\cos^2\theta\text{ (J)}$.
 - **Đề `1722` ($l = 0{,}20\text{ m}$):** Đáp án `8c`: $\sum A = 0{,}36 - 10\sin\theta + 40\cos\theta - 40\cos^2\theta\text{ (J)}$.
 :::
@@ -374,8 +374,8 @@ $$\frac{dT}{dt} = \sum N = \frac{d\left(\sum A\right)}{dt}$$
   <text x="180" y="148" text-anchor="end" font-family="sans-serif" font-size="12" font-weight="700" fill="#dc2626">G</text>
   <text x="264" y="192" text-anchor="end" font-family="sans-serif" font-size="12" font-weight="700" fill="#0f172a">B</text>
   <path d="M 142 82 A 46 46 0 0 1 136 103" fill="none" stroke="#0284c7" stroke-width="1.8" />
-  <text x="155" y="99" font-family="sans-serif" font-size="12" font-weight="700" fill="#0284c7">theta</text>
-  <text x="189" y="254" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#475569">l = 0,4 m; theta0 = 30 deg -> theta = 0 deg</text>
+  <text x="155" y="99" font-family="sans-serif" font-size="12" font-weight="700" fill="#0284c7">θ</text>
+  <text x="189" y="254" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#475569">l = 0,4 m; θ₀ = 30° → θ = 0°</text>
 
   <!-- Right: De 0002/2016 Bai 1 -->
   <!-- Right vertical wall at x=668, bottom horizontal floor at y=220 -->
@@ -400,13 +400,13 @@ $$\frac{dT}{dt} = \sum N = \frac{d\left(\sum A\right)}{dt}$$
   <text x="540" y="236" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#0f172a">B</text>
   <!-- Angle theta between rod AB and vertical wall at A -->
   <path d="M 658 124 A 40 40 0 0 1 631 113" fill="none" stroke="#0284c7" stroke-width="1.8" />
-  <text x="646" y="138" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#0284c7">theta</text>
+  <text x="646" y="138" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#0284c7">θ</text>
   <!-- Force P pulling B to left -->
   <line x1="528" y1="211" x2="462" y2="211" stroke="#dc2626" stroke-width="2.4" />
   <polygon points="464,206 454,211 464,216" fill="#dc2626" />
   <text x="488" y="198" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#dc2626">P = 50 N</text>
-  <text x="526" y="152" text-anchor="end" font-family="sans-serif" font-size="11" fill="#0f766e">IB = l cos theta</text>
-  <text x="571" y="254" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#475569">l = 0,8 m; theta0 = 0 deg -> 45 deg (Bẫy 6e!)</text>
+  <text x="526" y="152" text-anchor="end" font-family="sans-serif" font-size="11" fill="#0f766e">IB = l cos θ</text>
+  <text x="571" y="254" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#475569">l = 0,8 m; θ₀ = 0° → 45° (Bẫy 6e!)</text>
 </svg>
 <div class="figure-caption">
 
@@ -501,7 +501,7 @@ Trong các đề thi thật các năm `2011–2015`, ngoài cơ hệ thanh–lò
   <!-- Incline 30 deg: bottom-left (42, 240) up to (215, 140) -->
   <line x1="42" y1="240" x2="215" y2="140" stroke="#475569" stroke-width="2.5" />
   <line x1="42" y1="240" x2="180" y2="240" stroke="#94a3b8" stroke-width="1.5" />
-  <text x="98" y="232" font-family="sans-serif" font-size="11" font-weight="700" fill="#475569">30 deg</text>
+  <text x="98" y="232" font-family="sans-serif" font-size="11" font-weight="700" fill="#475569">30°</text>
   <!-- Block B on incline (rotated -30 deg around (115, 184)) -->
   <g transform="rotate(-30 115 184)">
     <rect x="97" y="168" width="36" height="24" rx="2" fill="#fef3c7" stroke="#d97706" stroke-width="2" />
@@ -529,7 +529,7 @@ Trong các đề thi thật các năm `2011–2015`, ngoài cơ hệ thanh–lò
   <line x1="418" y1="240" x2="595" y2="120" stroke="#475569" stroke-width="2.5" />
   <line x1="595" y1="120" x2="730" y2="120" stroke="#475569" stroke-width="2.5" />
   <line x1="418" y1="240" x2="520" y2="240" stroke="#94a3b8" stroke-width="1.5" />
-  <text x="468" y="232" font-family="sans-serif" font-size="11" font-weight="700" fill="#475569">alpha</text>
+  <text x="468" y="232" font-family="sans-serif" font-size="11" font-weight="700" fill="#475569">α</text>
   <!-- Small pulley O at corner (595, 110), radius 11 -->
   <circle cx="595" cy="110" r="11" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.8" />
   <text x="595" y="92" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#0f172a">O</text>
@@ -634,12 +634,12 @@ Cơ hệ Hình 14-1 (bên phải): con lăn kép tâm $A$ (bán kính ngoài $R$
 
 ::: info Bài thực chiến 14-3 — Đề 1 HK II/13-14 (19/06/2014) Câu 1–3 & Đề 3 (28/12/2011) Câu 1–4
 - **Đề `1` HK II/13-14 (Trường hợp I — Đáp án `1b, 2a, 3d`):**
-  Con lăn trụ đặc $B$ ($m_B = 16m_0$, bán kính $R$) lăn không trượt trên lăng trụ $C$ bị chốt $H$ giữ đứng yên; dây từ **đỉnh trên** của $B$ (cách tâm tức thời $I$ đoạn $2R$) nối qua ròng rọc nhẹ xuống vật $A$ ($m_A = 8m_0$, tọa độ $y$ hướng lên). Ngẫu lực $M_0$ đặt vào $B$ chiều ngược KĐH sao cho $\frac{M_0}{R} = 20m_0 g$.
+  Con lăn trụ đặc $B$ ($m_B = 16m_0$, bán kính $R$) lăn không trượt trên **mặt trên nằm ngang** của lăng trụ $C$ (được chốt $H$ giữ đứng yên trên dốc nghiêng); dây từ **đỉnh trên** của $B$ (cách tâm tức thời $I$ đoạn $2R$) nối qua ròng rọc nhẹ xuống vật $A$ ($m_A = 8m_0$, tọa độ $y$ hướng lên). Ngẫu lực $M_0$ đặt vào $B$ chiều ngược KĐH sao cho $\frac{M_0}{R} = 20m_0 g$.
   - Vì $v_A = \dot{y} = 2 v_B \implies v_B = \frac{\dot{y}}{2}$ và $\omega_B = \frac{\dot{y}}{2R}$.
   - Động năng hệ:
     $$\begin{aligned} T &= \frac{1}{2}m_A\dot{y}^2 + \frac{3}{4}m_B v_B^2 \\ &= 4m_0\dot{y}^2 + \frac{3}{4}(16m_0)\left(\frac{\dot{y}}{2}\right)^2 = 7m_0\dot{y}^2 \end{aligned}$$
     Suy ra **chọn `1b`**.
-  - Ghi chú thực tế đề: theo quy ước đề thi bỏ qua thành phần độ dốc trên nhánh công suất thuần của cặp $M_0, m_A$: $N = M_0\omega_B - m_A g\dot{y} = 10m_0 g\dot{y} - 8m_0 g\dot{y} = 2m_0 g\dot{y}$ (**chọn `2a`**), đạo hàm ra $14m_0\dot{y}\ddot{y} = 2m_0 g\dot{y} \implies \ddot{y} = \frac{g}{7}$ (**chọn `3d`**).
+  - Vì con lăn $B$ lăn trên **mặt trên nằm ngang** của lăng trụ $C$ (còn $C$ bị chốt $H$ giữ đứng yên) nên độ cao của khối tâm $B$ không đổi ($\Delta y_B = 0$), trọng lực $\vec{P}_B$ vuông góc với phương dịch chuyển ngang của $B$ nên có công suất bằng $0$. Chỉ còn ngẫu lực $M_0$ (cùng chiều quay của $B$) và trọng lực tải $A$ (đi lên ngược chiều trọng lực) sinh công: $N = M_0\omega_B - m_A g\dot{y} = 10m_0 g\dot{y} - 8m_0 g\dot{y} = 2m_0 g\dot{y}$ (**chọn `2a`**), đạo hàm ra $14m_0\dot{y}\ddot{y} = 2m_0 g\dot{y} \implies \ddot{y} = \frac{g}{7}$ (**chọn `3d`**).
 
 - **Đề `3` (28/12/2011) Câu 1–4 (Đáp án `1c, 2b, 3c, 4c` — Bẫy Câu 4):**
   Puly kép cố định $C$ ($m_C = 11m_0$, $R_C = 5r_C$, $\rho_C^2 = \frac{55}{22}r_C^2 = \frac{5}{2}r_C^2$) chịu mômen $M = 223{,}8m_0 g r_C$ quay cùng KĐH. Nhánh dây trái $I$ quấn từ $R_C = 5r_C$ đi xuống đỡ bên trái trụ đặc động $B$ ($m_B = m_0, R_B = 3r_C$), nhánh phải $H$ quấn từ $r_C$ đi xuống đỡ bên phải $B$ (mang tải $A$ với $m_A = 100m_0$).
@@ -668,65 +668,66 @@ Hãy tự đặt đồng hồ đúng **25 phút** để giải trọn bộ 12 c�
   <text x="571" y="30" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="700" fill="#b45309">Chùm 3: Đề 3 (28/12/2011) — Câu 1–4</text>
 
   <!-- Left: De 2 (26/12/2013) -->
-  <!-- Incline 30 deg from (40, 222) to (215, 118) -->
-  <line x1="40" y1="222" x2="215" y2="118" stroke="#475569" stroke-width="2.5" />
-  <line x1="40" y1="222" x2="170" y2="222" stroke="#94a3b8" stroke-width="1.4" />
-  <text x="95" y="214" font-family="sans-serif" font-size="11" font-weight="700" fill="#475569">30 deg</text>
-  <g transform="rotate(-30.7 110 165)">
-    <rect x="92" y="149" width="36" height="24" rx="2" fill="#fef3c7" stroke="#d97706" stroke-width="2" />
-    <text x="110" y="165" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#b45309">A</text>
+  <!-- Incline ~30.7 deg from (38, 204) to (198, 109) -->
+  <line x1="38" y1="204" x2="198" y2="109" stroke="#475569" stroke-width="2.5" />
+  <line x1="38" y1="204" x2="170" y2="204" stroke="#94a3b8" stroke-width="1.4" />
+  <text x="92" y="196" font-family="sans-serif" font-size="11" font-weight="700" fill="#475569">30°</text>
+  <g transform="rotate(-30.7 106.3 150.6)">
+    <rect x="88.3" y="139.6" width="36" height="22" rx="2" fill="#fef3c7" stroke="#d97706" stroke-width="2" />
+    <text x="106.3" y="154.6" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#b45309">A</text>
   </g>
-  <!-- Pulley B at (228, 92): R_B = 34, r_B = 17 -->
-  <circle cx="228" cy="92" r="34" fill="#e0f2fe" stroke="#0284c7" stroke-width="2" />
-  <circle cx="228" cy="92" r="17" fill="#bae6fd" stroke="#0369a1" stroke-width="1.8" />
-  <circle cx="228" cy="92" r="3" fill="#0f172a" />
-  <text x="228" y="84" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#0f172a">B</text>
-  <!-- Rope tau1 from A to top of B -->
-  <line x1="124" y1="147" x2="212" y2="62" stroke="#0f172a" stroke-width="1.8" />
+  <!-- Pulley B at (239.3, 104.3): R_B = 28, r_B = 14 -->
+  <circle cx="239.3" cy="104.3" r="28" fill="#e0f2fe" stroke="#0284c7" stroke-width="2" />
+  <circle cx="239.3" cy="104.3" r="14" fill="#bae6fd" stroke="#0369a1" stroke-width="1.8" />
+  <circle cx="239.3" cy="104.3" r="3" fill="#0f172a" />
+  <text x="260" y="74" font-family="sans-serif" font-size="11" font-weight="700" fill="#0f172a">B</text>
+  <!-- Rope tau1 parallel to incline (~30.7 deg) from A to top-left tangent of B -->
+  <line x1="121.8" y1="141.4" x2="225.0" y2="80.2" stroke="#0f172a" stroke-width="1.8" />
+  <text x="164" y="102" text-anchor="end" font-family="sans-serif" font-size="11" font-weight="700" fill="#334155">τ₁</text>
   <!-- Ceiling above right side of C -->
-  <line x1="272" y1="54" x2="324" y2="54" stroke="#475569" stroke-width="2.5" />
-  <!-- Movable pulley C at (271, 175), R_C = 26 -->
-  <circle cx="271" cy="175" r="26" fill="#ccfbf1" stroke="#0d9488" stroke-width="2" />
-  <circle cx="271" cy="175" r="3" fill="#0f172a" />
-  <text x="271" y="169" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#0f172a">C</text>
-  <!-- Rope tau2 from right of inner B (245, 92) down to left of C (245, 175) -->
-  <line x1="245" y1="92" x2="245" y2="175" stroke="#0f172a" stroke-width="1.8" />
-  <!-- Rope tau3 from right of C (297, 175) up to ceiling (297, 54) -->
-  <line x1="297" y1="54" x2="297" y2="175" stroke="#0f172a" stroke-width="1.8" />
+  <line x1="284" y1="54" x2="334" y2="54" stroke="#475569" stroke-width="2.5" />
+  <!-- Movable pulley C at (281.3, 172), R_C = 28 -->
+  <circle cx="281.3" cy="172" r="28" fill="#ccfbf1" stroke="#0d9488" stroke-width="2" />
+  <circle cx="281.3" cy="172" r="3" fill="#0f172a" />
+  <text x="281.3" y="165" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#0f172a">C</text>
+  <!-- Rope tau2 from right of inner B (253.3, 104.3) down to left of C (253.3, 172) -->
+  <line x1="253.3" y1="104.3" x2="253.3" y2="172" stroke="#0f172a" stroke-width="1.8" />
+  <!-- Rope tau3 from right of C (309.3, 172) up to ceiling (309.3, 54) -->
+  <line x1="309.3" y1="54" x2="309.3" y2="172" stroke="#0f172a" stroke-width="1.8" />
   <!-- Block D hanging from C -->
-  <line x1="271" y1="175" x2="271" y2="212" stroke="#0f172a" stroke-width="1.8" />
-  <rect x="255" y="212" width="32" height="24" rx="2" fill="#dcfce7" stroke="#16a34a" stroke-width="2" />
-  <text x="271" y="229" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#15803d">D</text>
-  <text x="189" y="250" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#475569">RB = 2rB = 2r; RC = 2r; VC = VA / 4</text>
+  <line x1="281.3" y1="172" x2="281.3" y2="205" stroke="#0f172a" stroke-width="1.8" />
+  <rect x="265.3" y="205" width="32" height="24" rx="2" fill="#dcfce7" stroke="#16a34a" stroke-width="2" />
+  <text x="281.3" y="221" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#15803d">D</text>
+  <text x="189" y="250" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#475569">RB = 2rB = 2r; RC = 2r</text>
 
   <!-- Right: De 3 (28/12/2011) -->
   <!-- Wall at x=436, beam D-C from (436, 92) to (595, 92) -->
   <line x1="436" y1="52" x2="436" y2="145" stroke="#475569" stroke-width="2.5" />
   <line x1="436" y1="92" x2="595" y2="92" stroke="#475569" stroke-width="2.5" />
   <text x="450" y="84" font-family="sans-serif" font-size="11" font-weight="700" fill="#0f172a">D</text>
-  <!-- Pulley C at (595, 92), RC = 42, rC = 14 -->
-  <circle cx="595" cy="92" r="42" fill="#e0f2fe" stroke="#0284c7" stroke-width="2" />
-  <circle cx="595" cy="92" r="14" fill="#bae6fd" stroke="#0369a1" stroke-width="1.8" />
+  <!-- Pulley C at (595, 92), RC = 45, rC = 9 (5:1 ratio) -->
+  <circle cx="595" cy="92" r="45" fill="#e0f2fe" stroke="#0284c7" stroke-width="2" />
+  <circle cx="595" cy="92" r="9" fill="#bae6fd" stroke="#0369a1" stroke-width="1.8" />
   <circle cx="595" cy="92" r="3" fill="#0f172a" />
-  <text x="595" y="84" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#0f172a">C</text>
+  <text x="614" y="83" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#0f172a">C</text>
   <!-- Torque M clockwise arrow on right of C -->
-  <path d="M 648 70 A 56 56 0 0 1 648 115" fill="none" stroke="#dc2626" stroke-width="2" />
-  <polygon points="643,112 652,118 652,108" fill="#dc2626" />
-  <text x="666" y="96" font-family="sans-serif" font-size="12" font-weight="700" fill="#dc2626">M</text>
-  <!-- Cylinder B centered at (581, 180), RB = 28 -->
-  <!-- Left edge of B = 553 (matches left of C: 595-42=553!), Right edge of B = 609 (matches right of rC: 595+14=609!) -->
-  <line x1="553" y1="92" x2="553" y2="180" stroke="#0f172a" stroke-width="1.8" />
-  <line x1="609" y1="92" x2="609" y2="180" stroke="#0f172a" stroke-width="1.8" />
-  <text x="541" y="148" text-anchor="end" font-family="sans-serif" font-size="11" font-weight="700" fill="#334155">I</text>
-  <text x="620" y="148" font-family="sans-serif" font-size="11" font-weight="700" fill="#334155">H</text>
-  <circle cx="581" cy="180" r="28" fill="#fef3c7" stroke="#d97706" stroke-width="2" />
-  <circle cx="581" cy="180" r="3" fill="#0f172a" />
-  <text x="581" y="172" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#0f172a">B</text>
+  <path d="M 650 68 A 59 59 0 0 1 650 116" fill="none" stroke="#dc2626" stroke-width="2" />
+  <polygon points="645,113 654,119 654,109" fill="#dc2626" />
+  <text x="668" y="96" font-family="sans-serif" font-size="12" font-weight="700" fill="#dc2626">M</text>
+  <!-- Cylinder B centered at (577, 176), RB = 27 (3:1 ratio) -->
+  <!-- Left rope I at x=550 (595-45), Right rope H at x=604 (595+9) -->
+  <line x1="550" y1="92" x2="550" y2="176" stroke="#0f172a" stroke-width="1.8" />
+  <line x1="604" y1="92" x2="604" y2="176" stroke="#0f172a" stroke-width="1.8" />
+  <text x="538" y="148" text-anchor="end" font-family="sans-serif" font-size="11" font-weight="700" fill="#334155">I</text>
+  <text x="615" y="148" font-family="sans-serif" font-size="11" font-weight="700" fill="#334155">H</text>
+  <circle cx="577" cy="176" r="27" fill="#fef3c7" stroke="#d97706" stroke-width="2" />
+  <circle cx="577" cy="176" r="3" fill="#0f172a" />
+  <text x="577" y="168" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#0f172a">B</text>
   <!-- Load A hanging from B -->
-  <line x1="581" y1="180" x2="581" y2="212" stroke="#0f172a" stroke-width="1.8" />
-  <rect x="565" y="212" width="32" height="24" rx="2" fill="#dcfce7" stroke="#16a34a" stroke-width="2" />
-  <text x="581" y="229" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#15803d">A</text>
-  <text x="571" y="250" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#475569">RC = 5rC, RB = 3rC; omegaB = omegaC = VA/(2rC)</text>
+  <line x1="577" y1="176" x2="577" y2="212" stroke="#0f172a" stroke-width="1.8" />
+  <rect x="561" y="212" width="32" height="24" rx="2" fill="#dcfce7" stroke="#16a34a" stroke-width="2" />
+  <text x="577" y="229" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#15803d">A</text>
+  <text x="571" y="250" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#475569">RC = 5rC, tầng trong rC, RB = 3rC</text>
 </svg>
 <div class="figure-caption">
 
@@ -737,12 +738,12 @@ Hình 15-1: Sơ đồ cơ hệ Chùm 2 (Đề 26/12/2013) và Chùm 3 (Đề 28/
 
 ### Chùm 1 (8 phút — Đề `1721` Bài 3, Câu 6–9)
 
-Dùng cơ hệ Hình 11-1 (bên phải) với $m_1 = 5\text{ kg}$, $m_2 = 10\text{ kg}$, $l = 15\text{ cm}$, $R = 5\text{ cm}$, $K = 500\text{ N/m}$ (không biến dạng ở $\theta = 60^\circ$), $g = 10\text{ m/s}^2$. Thanh $AB$ quay ngược chiều KĐH từ $\theta_0 = 30^\circ$ với vận tốc góc $\omega$ tại vị trí $30^\circ < \theta < 60^\circ$.
-- **Câu 1 (Đề `1721` — Câu 6):** Xác định vận tốc góc thanh $BC$ ($\overline{\omega}_1$) và đĩa $C$ ($\overline{\omega}_2$) theo $\omega$:
-  - `a.` $\overline{\omega}_1 = -\omega;\; \overline{\omega}_2 = 8\omega\sin\theta$
-  - `b.` $\overline{\omega}_1 = -\omega;\; \overline{\omega}_2 = -8\omega\sin\theta$
-  - `c.` $\overline{\omega}_1 = -\omega;\; \overline{\omega}_2 = 6\omega\sin\theta$
-  - `d.` $\overline{\omega}_1 = -\omega;\; \overline{\omega}_2 = -6\omega\sin\theta$
+Dùng cơ hệ Hình 11-1 (bên phải) gồm hai thanh đồng chất $AB, BC$ có cùng chiều dài $l = 15\text{ cm}$ và khối lượng **mỗi thanh** $m_1 = 5\text{ kg}$, cùng đĩa tròn đặc $C$ khối lượng $m_2 = 10\text{ kg}$, bán kính $R = 5\text{ cm}$; lò xo độ cứng $K = 500\text{ N/m}$ (không biến dạng ở $\theta = 60^\circ$), $g = 10\text{ m/s}^2$. Thanh $AB$ quay ngược chiều KĐH từ $\theta_0 = 30^\circ$ với vận tốc góc $\omega$ tại vị trí $30^\circ < \theta < 60^\circ$.
+- **Câu 1 (Đề `1721` — Câu 6):** Xác định vận tốc góc thanh $BC$ ($\bar{\omega}_1$) và đĩa $C$ ($\bar{\omega}_2$) theo $\omega$:
+  - `a.` $\bar{\omega}_1 = -\omega;\; \bar{\omega}_2 = 8\omega\sin\theta$
+  - `b.` $\bar{\omega}_1 = -\omega;\; \bar{\omega}_2 = -8\omega\sin\theta$
+  - `c.` $\bar{\omega}_1 = -\omega;\; \bar{\omega}_2 = 6\omega\sin\theta$
+  - `d.` $\bar{\omega}_1 = -\omega;\; \bar{\omega}_2 = -6\omega\sin\theta$
   - `e.` Các kết quả còn lại đều sai
 - **Câu 2 (Đề `1721` — Câu 7):** Độ lớn vận tốc khối tâm $G$ của thanh $BC$ theo $\omega$:
   - `a.` $V_G = 0{,}075\omega\sqrt{5 - 4\cos 2\theta}$
@@ -765,16 +766,16 @@ Dùng cơ hệ Hình 11-1 (bên phải) với $m_1 = 5\text{ kg}$, $m_2 = 10\tex
 
 ::: details Nhấn để xem đáp án và giải nhanh Chùm 1
 - **Đáp án chuẩn:** `1c` — `2e` — `3b` — `4d`.
-- **Câu 1 (`c`):** $x_C = 2l\cos\theta \implies \dot{x}_C = -2l\sin\theta\cdot\omega$ (đĩa $C$ tiến sang trái, nên quay ngược KĐH chiều dương $(+)$). Tốc độ góc đĩa: $\overline{\omega}_2 = \frac{2l\omega\sin\theta}{R} = \frac{30}{5}\omega\sin\theta = 6\omega\sin\theta$. Thanh $BC$ xoay góc $-\theta \implies \overline{\omega}_1 = -\omega$.
+- **Câu 1 (`c`):** $x_C = 2l\cos\theta \implies \dot{x}_C = -2l\sin\theta\cdot\omega$ (đĩa $C$ tiến sang trái, nên quay ngược KĐH chiều dương $(+)$). Tốc độ góc đĩa: $\bar{\omega}_2 = \frac{2l\omega\sin\theta}{R} = \frac{30}{5}\omega\sin\theta = 6\omega\sin\theta$. Thanh $BC$ xoay góc $-\theta \implies \bar{\omega}_1 = -\omega$.
 - **Câu 2 (`e`):** $V_G = \frac{l}{2}\omega\sqrt{5 - 4\cos 2\theta} = 0{,}075\omega\sqrt{5 - 4\cos 2\theta}$. Nhận xét $5 - 4\cos 2\theta = 5 - 4(1 - 2\sin^2\theta) = 1 + 8\sin^2\theta$ nên cả `a` và `c` đều đúng!
-- **Câu 3 (`b`) & Câu 4 (`d`):** Xem chứng minh đầy đủ ở Ngày 11 và Ngày 12. Chú ý kiểm tra nhanh biên $\theta = 30^\circ$ trên `3b` ra đúng $0$!
+- **Câu 3 (`b`) & Câu 4 (`d`):** Xem chứng minh đầy đủ ở Ngày 11 và Ngày 12. Lưu ý giá trị chính xác của hằng số ở Câu 3 là $\frac{165}{8} - \frac{45\sqrt{3}}{4} \approx 1{,}1394\text{ J}$, đề gốc làm tròn thành $1{,}14$ (sai số $\approx 5{,}7\cdot 10^{-4}\text{ J}$, nên kiểm tra nhanh biên $\theta = 30^\circ$ trên `3b` cho $\approx 0{,}0006 \approx 0$, vẫn chọn chắc chắn `3b`).
 :::
 
 ---
 
 ### Chùm 2 (9 phút — Đề `2` 26/12/2013, Bài I Câu 1–4)
 
-Cơ hệ Hình 15-1 (bên trái): tải $A$ ($m_A = \frac{73}{8}\text{ kg}$) trên mặt nghiêng góc $\alpha = 30^\circ$, ròng rọc kép $B$ ($m_B = 1\text{ kg}$, $R_B = 2r_B = 2r$, $\rho_B = \sqrt{2}r$), ròng rọc động trụ tròn đặc $C$ ($m_C = 2\text{ kg}$, $R_C = 2r$) treo tải $D$ ($m_D = 3\text{ kg}$), $g = 10\text{ m/s}^2$. Thả hệ từ trạng thái đứng yên. (Ký hiệu $\uparrow$ là $A$ đi lên dốc, $\downarrow$ là $A$ đi xuống dốc).
+Cơ hệ Hình 15-1 (bên trái): tải $A$ ($m_A = \frac{73}{8}\text{ kg}$) trên mặt nghiêng góc $\alpha = 30^\circ$, hệ số ma sát trượt động (và tĩnh) giữa tải $A$ và mặt dốc nghiêng bằng $f$ (lấy $f = 0{,}4$ ở Câu 6, 8 và $f = 0$ ở Câu 7; bỏ qua ma sát tại các vị trí khác), ròng rọc kép cố định $B$ ($m_B = 1\text{ kg}$, $R_B = 2r_B = 2r$, $\rho_B = \sqrt{2}r$), ròng rọc động trụ tròn đặc $C$ ($m_C = 2\text{ kg}$, $R_C = 2r$) treo tải $D$ ($m_D = 3\text{ kg}$), $g = 10\text{ m/s}^2$. Thả hệ từ trạng thái đứng yên. (Ký hiệu $\uparrow$ là $A$ đi lên dốc, $\downarrow$ là $A$ đi xuống dốc).
 - **Câu 5:** Động năng cơ hệ $T$ theo $V_A$:
   - `a.` $T = \frac{7}{2}V_A^2$ $\quad$ `b.` $T = V_A^2$ $\quad$ `c.` $T = \frac{11}{2}V_A^2$ $\quad$ `d.` $T = 5V_A^2$
 - **Câu 6:** Tổng công $\sum A$ theo độ dời $S_A$ khi $f = 0{,}4$:
@@ -808,7 +809,7 @@ Cơ hệ Hình 15-1 (bên trái): tải $A$ ($m_A = \frac{73}{8}\text{ kg}$) tr�
 
 ### Chùm 3 (8 phút — Đề `3` 28/12/2011, Câu 1–4)
 
-Dùng cơ hệ Hình 15-1 (bên phải) với $m_A = 100m_0$, $m_B = m_0$, $m_C = 11m_0$, $R_C = 5r_C$, $R_B = 3r_C$, $\rho_C^2 = \frac{55}{22}r_C^2$, $M = 223{,}8m_0 g r_C$ (chiều quay cùng KĐH). Gọi $V_A \uparrow$ là vận tốc đi lên của tải $A$:
+Dùng cơ hệ Hình 15-1 (bên phải): puli kép cố định $C$ hai tầng có bán kính ngoài $R_C = 5r_C$ (quấn nhánh dây trái $I$) và tầng trong $r_C$ (quấn nhánh dây phải $H$); trụ động $B$ là **trụ tròn đặc đồng chất** ($J_B = \frac{1}{2}m_B R_B^2$) treo tải $A$. Cho $m_A = 100m_0$, $m_B = m_0$, $m_C = 11m_0$, $R_B = 3r_C$, $\rho_C^2 = \frac{55}{22}r_C^2$, mômen động cơ $M = 223{,}8m_0 g r_C$ (chiều quay cùng KĐH) tác động lên puli $C$. Gọi $V_A \uparrow$ là vận tốc đi lên của tải $A$:
 - **Câu 9:** Vận tốc góc $\omega_B, \omega_C$ theo $V_A \uparrow$:
   - `a.` $\omega_B = \omega_C = \frac{V_A}{r_C}$ $\quad$ `b.` $\omega_B = \frac{2V_A}{r_C};\; \omega_C = \frac{V_A}{r_C}$ $\quad$ `c.` $\omega_B = \omega_C = \frac{V_A}{2r_C}$ $\quad$ `d.` Không có kết quả đúng
 - **Câu 10:** Động năng $T$ của cơ hệ:

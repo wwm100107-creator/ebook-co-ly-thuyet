@@ -1,4 +1,96 @@
+import { createRequire } from 'node:module'
 import { defineConfig } from 'vitepress'
+
+const localRequire = createRequire(import.meta.url)
+const mj3Require = createRequire(localRequire.resolve('markdown-it-mathjax3/package.json'))
+const { mathjax } = mj3Require('mathjax-full/js/mathjax.js')
+const { TeX } = mj3Require('mathjax-full/js/input/tex.js')
+const { SVG } = mj3Require('mathjax-full/js/output/svg.js')
+const { liteAdaptor } = mj3Require('mathjax-full/js/adaptors/liteAdaptor.js')
+const { RegisterHTMLHandler } = mj3Require('mathjax-full/js/handlers/html.js')
+const { AllPackages } = mj3Require('mathjax-full/js/input/tex/AllPackages.js')
+const juice = mj3Require('juice/client')
+
+const VN_MATH_RE = /[\u00C0-\u1EF9đĐ]/
+const NARROW_CHARS = new Set([...'iIljltfr.,:;\'"!|()[]/\\`1ìíỉĩịÌÍỈĨỊ'])
+const MEDIUM_CHARS = new Set([...'abcdefghkmnopqsuvwxyzABCDEFGHJKLMNOPQRSTUVWXYZ023456789+-=*/%'])
+const WIDE_CHARS = new Set([...'mwMW@#%&QOGĐƯƠĂÂÊÔ'])
+
+/**
+ * Estimate proportional width (in em) for Vietnamese/Latin strings in MathJax <text>.
+ * Prevents MathJax liteAdaptor's fixed 0.6em unknownCharWidth from splitting accented words.
+ */
+function estimateTextWidthEm(str) {
+  let width = 0
+  for (const ch of str) {
+    if (ch === ' ' || ch === '\u00A0') width += 0.27
+    else if (NARROW_CHARS.has(ch)) width += 0.30
+    else if (WIDE_CHARS.has(ch)) width += 0.72
+    else if (ch >= 'A' && ch <= 'Z') width += 0.65
+    else if (MEDIUM_CHARS.has(ch)) width += 0.49
+    else if (/[\u00C0-\u1EF9]/.test(ch)) {
+      const base = ch.normalize('NFD')[0]
+      if ('iI'.includes(base)) width += 0.30
+      else if ('mMwW'.includes(base)) width += 0.72
+      else if (base >= 'A' && base <= 'Z') width += 0.65
+      else width += 0.50
+    } else {
+      width += 0.55
+    }
+  }
+  return width
+}
+
+function createVietnameseMathRenderer() {
+  const adaptor = liteAdaptor()
+  const origNodeSize = adaptor.nodeSize.bind(adaptor)
+  adaptor.nodeSize = (node, em, local) => {
+    const txt = adaptor.textContent(node) || ''
+    if (txt.length > 0) {
+      return [estimateTextWidthEm(txt), 0.8]
+    }
+    return origNodeSize(node, em, local)
+  }
+  // Unregister immediately so markdown-it-mathjax3's ASCII pipeline never resolves our custom adaptor.
+  const handler = RegisterHTMLHandler(adaptor)
+  mathjax.handlers.unregister(handler)
+  const inputJax = new TeX({ packages: AllPackages })
+  // Do not use quotes inside mtextFont; juice corrupts inline style="..." attributes containing quotes.
+  const outputJax = new SVG({ fontCache: 'none', mtextFont: 'sans-serif' })
+  const doc = handler.create('', { InputJax: inputJax, OutputJax: outputJax })
+
+  return (texStr, display) => {
+    const node = doc.convert(texStr, { display })
+    const html = adaptor.outerHTML(node)
+    const sheet = adaptor.outerHTML(outputJax.styleSheet(doc))
+    return juice(html + sheet)
+  }
+}
+
+const renderVietnameseMath = createVietnameseMathRenderer()
+
+function stripMathChrome(html, isBlock) {
+  let out = html.replace(/<mjx-assistive-mml[\s\S]*?<\/mjx-assistive-mml>/gi, '')
+  if (isBlock) {
+    out = out.replace(/\s*tabindex="0"/g, '')
+  }
+  return out
+}
+
+function wrapMathRule(origRule, isBlock) {
+  if (!origRule) return origRule
+  return (tokens, idx, options, env, self) => {
+    const content = tokens[idx]?.content || ''
+    if (VN_MATH_RE.test(content)) {
+      try {
+        return stripMathChrome(renderVietnameseMath(content, isBlock), isBlock)
+      } catch {
+        // Fall back to default markdown-it-mathjax3 renderer if custom rendering fails.
+      }
+    }
+    return stripMathChrome(origRule(tokens, idx, options, env, self), isBlock)
+  }
+}
 
 const ICON_BOOK = '<svg class="nav-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-2px;margin-right:6px;"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 2v20"/></svg>'
 const ICON_LIBRARY = '<svg class="nav-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-2px;margin-right:6px;"><path d="m16 6 4 14"/><path d="M12 6v14"/><path d="M8 8v12"/><path d="M4 4v16"/></svg>'
@@ -15,22 +107,8 @@ export default defineConfig({
   markdown: {
     math: true,
     config(md) {
-      const origInline = md.renderer.rules.math_inline
-      if (origInline) {
-        md.renderer.rules.math_inline = (tokens, idx, options, env, self) => {
-          const html = origInline(tokens, idx, options, env, self)
-          return html.replace(/<mjx-assistive-mml[\s\S]*?<\/mjx-assistive-mml>/gi, '')
-        }
-      }
-      const origBlock = md.renderer.rules.math_block
-      if (origBlock) {
-        md.renderer.rules.math_block = (tokens, idx, options, env, self) => {
-          const html = origBlock(tokens, idx, options, env, self)
-          return html
-            .replace(/<mjx-assistive-mml[\s\S]*?<\/mjx-assistive-mml>/gi, '')
-            .replace(/\s*tabindex="0"/g, '')
-        }
-      }
+      md.renderer.rules.math_inline = wrapMathRule(md.renderer.rules.math_inline, false)
+      md.renderer.rules.math_block = wrapMathRule(md.renderer.rules.math_block, true)
     }
   },
   themeConfig: {

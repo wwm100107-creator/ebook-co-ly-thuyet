@@ -106,6 +106,12 @@ span .mjx-container {
   filter: invert(0.9) hue-rotate(180deg);
 }
 
+/* Match Vietnamese text inside MathJax SVG to VitePress base font */
+.mjx-container text[data-variant="-explicitFont"],
+mjx-container text[data-variant="-explicitFont"] {
+  font-family: var(--vp-font-family-base);
+}
+
 /* Callouts for Math/Mechanics blocks */
 .box-dinh-nghia {
   background: rgba(2, 132, 199, 0.06);
@@ -169,6 +175,7 @@ span .mjx-container {
 .dark .figure-container,
 .dark .figure-box {
   background: #ffffff !important;
+  color: #1e293b;
   border: 1px solid #475569;
   box-shadow: 0 4px 16px rgba(0,0,0,0.3);
 }
@@ -200,6 +207,11 @@ span .mjx-container {
   color: #1e293b;
 }
 
+.dark .figure-caption code {
+  color: #0369a1;
+  background-color: #f1f5f9;
+}
+
 /* Original Page Preview Modal / Details */
 details.page-preview {
   margin: 20px 0;
@@ -226,4 +238,46 @@ details.page-preview summary {
   border-radius: 6px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.12);
   margin-top: 12px;
+}
+
+/* Mobile responsiveness: allow block equation horizontal scroll and prevent inline SVG / CTA overflow */
+@media (max-width: 768px) {
+  .mjx-container[display="true"],
+  mjx-container[display="true"],
+  .vp-doc .mjx-container[display="true"],
+  .vp-doc mjx-container[display="true"] {
+    max-width: 100%;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .vp-doc .mjx-container:not([display="true"]),
+  .vp-doc mjx-container:not([display="true"]) {
+    max-width: 100%;
+  }
+
+  .vp-doc .mjx-container:not([display="true"]) svg,
+  .vp-doc mjx-container:not([display="true"]) svg {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .VPHero .actions .action {
+    flex-shrink: 1;
+    max-width: 100%;
+  }
+
+  .VPHero .VPButton,
+  .VPHero .actions .VPButton.medium {
+    white-space: normal;
+    text-align: center;
+    line-height: 1.35;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    max-width: 100%;
+    height: auto;
+  }
 }

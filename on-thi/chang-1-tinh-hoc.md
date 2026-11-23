@@ -5,16 +5,16 @@ layout: doc
 
 # Chặng 1 (Ngày 1 – Ngày 5): Xóa Mù Cho Người Tay Ngang & Làm Chủ Chương 9–10
 
-Chặng 1 được thiết kế dành riêng cho sinh viên **mất gốc hoặc bắt đầu từ số `0`** ôn thi Cuối kỳ môn **`DCMH.AS1003` (Cơ Lý Thuyết — ĐH Bách Khoa TPHCM)** với mục tiêu tổng trên **`8,0` điểm**. Thay vì học lan man toàn bộ phần Giữa kỳ, bạn chỉ cần **2 ngày đầu để "xóa mù" đúng các công cụ vector – chiếu góc – con lăn**, rồi dùng **3 ngày tiếp theo ăn trọn Khối A (Chương 9–10)** gồm: **Song phẳng 3 khâu**, **Hợp chuyển động Coriolis**, và **Hệ bánh răng hành tinh Willis** (chiếm `2` đến `4` câu trong đề thi Cuối kỳ `10–13` câu).
+Chặng 1 được thiết kế dành riêng cho sinh viên **mất gốc hoặc bắt đầu từ số `0`** ôn thi Cuối kỳ môn **`DCMH.AS1003` (Cơ Lý Thuyết — ĐH Bách Khoa TPHCM)** với mục tiêu tổng trên **`8,0` điểm**. Thay vì học lan man toàn bộ phần Giữa kỳ, bạn chỉ cần **2 ngày đầu để "xóa mù" đúng các công cụ vectơ – chiếu góc – con lăn**, rồi dùng **3 ngày tiếp theo ăn trọn Khối A (Chương 9–10)** gồm: **Song phẳng 3 khâu**, **Hợp chuyển động Coriolis**, và **Hệ bánh răng (cố định, hành tinh, vi sai — Willis)** (chiếm `2` đến `4` câu trong đề thi Cuối kỳ `10–13` câu).
 
 ::: info Lộ trình Chặng 1 (5 ngày — 90 đến 120 phút/ngày)
 | Ngày | Nội dung trọng tâm | Đề thi thật thực hành | Giáo trình gốc đối chiếu |
 | :--- | :--- | :--- | :--- |
-| **Ngày 1** | **Từ điển cứu hộ 30 phút:** $(\vec{i},\vec{j},\vec{k})$, dấu CCW/CW, kề $\cos$ đối $\sin$, quay $90^\circ$ & lực cơ bản | Chuẩn hóa mọi dấu vector đề thi | [Tĩnh học C1](/tinh-hoc/chuong-1) · [C3](/tinh-hoc/chuong-3) |
+| **Ngày 1** | **Từ điển cứu hộ 30 phút:** $(\vec{i},\vec{j},\vec{k})$, dấu CCW/CW, kề $\cos$ đối $\sin$, quay $90^\circ$ & lực cơ bản | Chuẩn hóa mọi dấu vectơ đề thi | [Tĩnh học C1](/tinh-hoc/chuong-1) · [C3](/tinh-hoc/chuong-3) |
 | **Ngày 2** | **Tâm vận tốc tức thời ($I$) & Con lăn lăn không trượt:** $v_O = \omega R$ và bẫy $a_I^{\text{đĩa}} \neq 0$ | Nền tảng cứng Chương 10 | [Động học C4](/dong-hoc/chuong-4) |
 | **Ngày 3** | **Song phẳng 3 khâu Ch.10:** Phương pháp hình chiếu & tâm tức thời $I$ | Đề `1821` (C1–4), `0001/2016` (C7–8), `1721`/`1722` (C6–7), `1643`/`1744` | [Động học C4](/dong-hoc/chuong-4) · [BT C3](/bai-tap/dong-hoc/chuong-3) |
-| **Ngày 4** | **Chương 9 Coriolis:** Phân biệt $(e, r, a)$ & $\vec{a}_c = 2(\vec{\omega}_e \times \vec{v}_r)$ | Đề `1721` (C1–2), `1722` (C1–2), `1643`/`1744` (C8–9) | [Động học C3](/dong-hoc/chuong-3) · [BT C5](/bai-tap/dong-hoc/chuong-5) |
-| **Ngày 5** | **Hệ bánh răng hành tinh, vi sai (Willis) & Mini-Test 10 câu bấm giờ 15 phút** | Chủ đề 7 & Đề chuẩn AS1003 có bẫy `e` | [Động học C4](/dong-hoc/chuong-4) · [BT C6](/bai-tap/dong-hoc/chuong-6) |
+| **Ngày 4** | **Chương 9 Coriolis:** Phân biệt $(e, r, a)$, $\vec{a}_c = 2(\vec{\omega}_e \times \vec{v}_r)$ & giải ngược rãnh trượt | Đề `1721` (C1–2), `1722` (C1–2), `1643`/`1744` (C8–9), Chủ đề 5 | [Động học C3](/dong-hoc/chuong-3) · [BT C5](/bai-tap/dong-hoc/chuong-5) |
+| **Ngày 5** | **Hệ bánh răng (cố định, hành tinh, vi sai — Willis) & Mini-Test 10 câu bấm giờ 15 phút** | Chủ đề 7 & Đề chuẩn AS1003 có bẫy `e` | [Động học C4](/dong-hoc/chuong-4) · [BT C6](/bai-tap/dong-hoc/chuong-6) |
 :::
 
 > Điều hướng nhanh: [Tổng quan lộ trình 20 ngày (AS1003)](/on-thi/) · [Tiếp sang Chặng 2: Ch.11–13 D'Alembert](/on-thi/chang-2-dong-hoc) · [Ngân hàng Đề thi thật HCMUT](/on-thi/de-thi-that-hcmut)
@@ -28,15 +28,19 @@ Nếu bạn quên sạch phép chiếu lượng giác, tích có hướng hay qu
 ### 1. Hệ trục thuận $(\vec{i}, \vec{j}, \vec{k})$ & Quy ước dấu quay CCW / CW
 
 Trên trang giấy (hoặc màn hình), ta dùng hệ trục tọa độ Đề-các thuận $Oxyz$ gồm:
-- Trục $Ox$ gắn vector đơn vị $\vec{i}$ (thường hướng **sang phải**).
-- Trục $Oy$ gắn vector đơn vị $\vec{j}$ (thường hướng **lên trên**).
-- Trục $Oz$ gắn vector đơn vị $\vec{k}$ vuông góc với mặt giấy, **hướng thẳng ra ngoài về phía mắt bạn** (ký hiệu bằng vòng tròn có dấu chấm giữa $\odot$).
+- Trục $Ox$ gắn vectơ đơn vị $\vec{i}$ (thường hướng **sang phải**).
+- Trục $Oy$ gắn vectơ đơn vị $\vec{j}$ (thường hướng **lên trên**).
+- Trục $Oz$ gắn vectơ đơn vị $\vec{k}$ vuông góc với mặt giấy, **hướng thẳng ra ngoài về phía mắt bạn** (ký hiệu bằng vòng tròn có dấu chấm giữa $\odot$).
 
 ::: tip Quy tắc bàn tay phải bắt buộc nhớ (Chuẩn mọi đề AS1003)
 Xòe bàn tay phải, đặt các ngón tay uốn theo chiều quay của vật trong mặt phẳng $Oxy$:
 - **Quay ngược chiều kim đồng hồ (CCW):** Ngón cái chỉ **ra ngoài** (cùng chiều $+\vec{k}$) $\implies$ mang **dấu DƯƠNG $(+)$**, tức $\vec{\omega} = +\omega\vec{k}$.
 - **Quay cùng chiều kim đồng hồ (CW):** Ngón cái chỉ **vào trong** (ngược chiều $+\vec{k}$) $\implies$ mang **dấu ÂM $(-)$**, tức $\vec{\omega} = -\omega\vec{k}$.
 :::
+
+**Quy ước ký hiệu chữ có gạch trên đầu ($\bar{\omega}, \bar{\varepsilon}$) và chữ không gạch ($\omega, \varepsilon$):**
+- **Chữ có gạch trên đầu ($\bar{\omega}, \bar{\varepsilon}$):** Là **giá trị đại số có dấu** chiếu lên trục $+\vec{k}$ (`+` khi quay **CCW**, `-` khi quay **CW**). Ví dụ: vật quay CW với tốc độ $4\text{ rad/s}$ thì độ lớn không âm là $\omega = 4\text{ rad/s}$, còn giá trị đại số là $\bar{\omega} = -4\text{ rad/s}$ (viết vectơ: $\vec{\omega} = \bar{\omega}\vec{k} = -4\vec{k}$).
+- **Chữ không gạch ($\omega, \varepsilon$):** Là **độ lớn không âm** ($\omega = |\bar{\omega}| \ge 0$, $\varepsilon = |\bar{\varepsilon}| \ge 0$). *(Lưu ý: Trong một số đề thi gốc phần Hệ bánh răng hoặc khi đề đã quy ước chiều quay dương chung, đề có thể in gọn $\omega_1, \omega_H$ không gạch đầu nhưng khi thay số vẫn phải gắn dấu $+/-$ tương ứng như $\bar{\omega}$.)*
 
 **Cảnh báo dấu của gia tốc góc $\vec{\varepsilon}$:** Đừng thấy vật đang quay CW mà vội viết $\bar{\varepsilon} < 0$!
 - Nếu vật quay **nhanh dần**, $\vec{\varepsilon}$ **cùng chiều** với $\vec{\omega}$ (cùng CW thì $\bar{\varepsilon} < 0$; cùng CCW thì $\bar{\varepsilon} > 0$).
@@ -92,7 +96,7 @@ $$\begin{aligned}
 Để làm tiếp phần Động lực học ở Chặng 2, 3, 4 mà không cần học lại toàn bộ tập Tĩnh học, bạn chỉ cần bỏ túi đúng **4 đại lượng lực – mômen** sau:
 
 1. **Trọng lực:** Độ lớn $P = mg$ (với $g = 9{,}81\text{ m/s}^2$ hoặc $10\text{ m/s}^2$ tùy đề bài cho), luôn đặt tại **trọng tâm $G$** và hướng thẳng đứng xuống dưới. Nếu vật nằm trên mặt dốc nghiêng góc $\alpha$ so với phương ngang: thành phần kéo trượt dọc dốc là $P\sin\alpha$, thành phần ép vuông góc mặt dốc là $P\cos\alpha$.
-2. **Lực đàn hồi lò xo:** Độ lớn $F_{\text{đh}} = k\Delta l$, với $k\text{ (N/m)}$ là độ cứng và $\Delta l = \lvert l - l_0 \rvert\text{ (m)}$ là độ biến dạng (kéo giãn hoặc nén), luôn hướng về vị trí tự nhiên không biến dạng.
+2. **Lực đàn hồi lò xo:** Độ lớn $F_{\text{đh}} = k\Delta l$, với $k\text{ (N/m)}$ là độ cứng và $\Delta l = \lvert l - l_0 \rvert\text{ (m)}$ là độ biến dạng (kéo dãn hoặc nén), luôn hướng về vị trí tự nhiên không biến dạng.
 3. **Lực ma sát trượt động:** Khi vật trượt trên mặt phẳng nhám, phản lực pháp tuyến $\vec{N}$ vuông góc mặt tựa hướng vào vật, còn lực ma sát trượt động ngược chiều vận tốc trượt tương đối và có độ lớn:
    $$F_{\text{ms}} = f_{\text{đ}} N \quad (\text{hoặc } \mu N)$$
    *(Chú ý: Ở bài toán con lăn **lăn không trượt**, điểm tiếp xúc nền có $v_I = 0$ nên ma sát nghỉ **không sinh công**, nhưng vẫn xuất hiện trong phương trình lực!)*
@@ -130,7 +134,7 @@ $$\vec{v}_B = \vec{v}_A + \vec{v}_{BA} = \vec{v}_A + \vec{\omega} \times \overri
 $$\vec{a}_B = \vec{a}_A + \vec{a}_{BA}^n + \vec{a}_{BA}^t = \vec{a}_A - \omega^2\overrightarrow{AB} + \vec{\varepsilon} \times \overrightarrow{AB}$$
 
 **Tuyệt chiêu Định lý hình chiếu vận tốc (Tìm độ lớn $v$ trong 1 dòng):**
-Vì thanh $AB$ cứng không co giãn, hình chiếu vận tốc hai đầu mút lên đường thẳng $AB$ luôn bằng nhau:
+Vì thanh $AB$ cứng không co dãn, hình chiếu vận tốc hai đầu mút lên đường thẳng $AB$ luôn bằng nhau:
 
 $$\text{hch}_{AB}(\vec{v}_A) = \text{hch}_{AB}(\vec{v}_B) \iff v_A \cos\alpha = v_B \cos\beta$$
 
@@ -332,9 +336,9 @@ Hình 1.2: Cơ cấu con lăn O, thanh truyền AB và con chạy A của Đề 
 
 **Các câu hỏi trong đề (đối chiếu đáp án chính thức trang 5 PDF):**
 - **Câu 1:** Độ lớn vận tốc góc thanh $AB$ và vận tốc dài con chạy $A$ (`c`: $\omega_{AB} = 0,\; V_A = 30\text{ cm/s}$).
-- **Câu 2:** Vector gia tốc dài điểm $B$ ($\text{cm/s}^2$) (`b`: $\vec{a}_B = 12\vec{i} - 7{,}5\vec{j}$).
-- **Câu 3:** Vector gia tốc con chạy $A$ ($\text{cm/s}^2$) (`c`: $\vec{a}_A = 7{,}67\vec{i}$).
-- **Câu 4:** Vector gia tốc góc thanh $AB$ ($\text{rad/s}^2$) (`b`: $\vec{\varepsilon}_{AB} = -0{,}07\vec{k}$).
+- **Câu 2:** Vectơ gia tốc dài điểm $B$ ($\text{cm/s}^2$) (`b`: $\vec{a}_B = 12\vec{i} - 7{,}5\vec{j}$).
+- **Câu 3:** Vectơ gia tốc con chạy $A$ ($\text{cm/s}^2$) (`c`: $\vec{a}_A = 7{,}67\vec{i}$).
+- **Câu 4:** Vectơ gia tốc góc thanh $AB$ ($\text{rad/s}^2$) (`b`: $\vec{\varepsilon}_{AB} = -0{,}07\vec{k}$).
 
 **Lời giải chi tiết từng bước cho người mất gốc:**
 
@@ -352,7 +356,7 @@ Hình 1.2: Cơ cấu con lăn O, thanh truyền AB và con chạy A của Đề 
      $$\omega_{AB} = 0\text{ rad/s}, \qquad V_A = v_B = 30\text{ cm/s}$$
      **Chốt Câu 1: chọn `c`.**
 
-3. **Giải Câu 2 (`b`) — Tìm vector gia tốc $\vec{a}_B$ ($\text{cm/s}^2$):**
+3. **Giải Câu 2 (`b`) — Tìm vectơ gia tốc $\vec{a}_B$ ($\text{cm/s}^2$):**
    - Chuẩn hóa dấu quay của con lăn (CW $\implies$ dấu âm): $\vec{\omega} = -0{,}5\vec{k}\text{ rad/s}$ và $\vec{\varepsilon} = -0{,}2\vec{k}\text{ rad/s}^2$.
    - Gia tốc tâm $O$ (song song mặt sàn, sang phải theo chiều lăn nhanh dần):
      $$\vec{a}_O = +\varepsilon R\,\vec{i} = 0{,}2 \cdot 30\,\vec{i} = +6\vec{i}\text{ (cm/s}^2\text{)}$$
@@ -717,6 +721,142 @@ Chọn 2 trục trực giao tại $E$ gắn theo đĩa: phương hướng tâm $
 
 ---
 
+### 3. Kỹ thuật giải ngược tìm $\bar{\omega}_e, \bar{\varepsilon}_e$ cho bài toán rãnh trượt (Cơ cấu culit)
+
+Ở hai bài mẫu `4.1` và `4.2`, đề cho sẵn chuyển động theo ($\omega_e$) và chuyển động tương đối ($v_r$) rồi bắt tìm $\vec{v}_a, \vec{a}_a$ (**bài toán thuận**). Trong đề cương `AS1003` (Mục `9.3`) còn một dạng kinh điển khác là **bài toán giải ngược**: cho khâu dẫn $OA$ mang chốt $A$ trượt dọc rãnh thẳng của cần lắc $BC$ quay quanh $C$, bắt tìm vận tốc góc $\bar{\omega}_{BC}$ và gia tốc góc $\bar{\varepsilon}_{BC}$ của khâu mang rãnh $BC$.
+
+**Bí quyết cho người tay ngang — Chọn $(M, e)$ đúng và Chiếu vuông góc rãnh ($\perp BC$):**
+
+1. **Chọn đúng điểm & hệ quy chiếu:**
+   - **Điểm khảo sát $M$:** Luôn chọn **tâm chốt $A$** (thuộc tay quay dẫn $OA$ quay quanh $O$). Nhờ vậy, chuyển động **tuyệt đối $(a)$** của $A$ chỉ là chuyển động tròn quanh $O$, ta biết trọn vẹn $\vec{v}_a$ và $\vec{a}_a = \vec{a}_a^n + \vec{a}_a^t$.
+   - **Hệ quy chiếu động $(e)$:** Gắn liền với **thanh mang rãnh $BC$** (quay quanh $C$). Nhờ rãnh $BC$ thẳng ($\rho = \infty \implies \vec{a}_r^n = \vec{0}$), chuyển động **tương đối $(r)$** của chốt $A$ chỉ chạy thẳng **dọc theo rãnh $BC$**.
+2. **Tại sao phải chiếu lên phương VUÔNG GÓC với rãnh ($\perp BC$)?**
+   - Trong phương trình vận tốc $\vec{v}_a = \vec{v}_e + \vec{v}_r$: ta chưa biết cả $v_r$ lẫn $\omega_e$. Vì $\vec{v}_r$ chạy **dọc** theo rãnh $BC$, nên khi chiếu lên phương **vuông góc rãnh ($\perp BC$)**, hình chiếu của $\vec{v}_r$ **tự động bằng $0$**! Trong khi đó $\vec{v}_e \perp BC$ nằm nguyên trên trục chiếu này:
+     $$\text{hch}_{\perp BC}\!\left(\vec{v}_a\right) = \text{hch}_{\perp BC}\!\left(\vec{v}_e\right) \implies \text{tính ngay } \bar{\omega}_e = \bar{\omega}_{BC}$$
+     Sau đó chiếu lên phương **dọc rãnh ($\parallel BC$)** (lúc này $\vec{v}_e$ bằng $0$) để lấy tiếp **$v_r$** (chuẩn bị cho $\vec{a}_c$).
+   - Trong phương trình gia tốc $\vec{a}_a^n + \vec{a}_a^t = \vec{a}_e^n + \vec{a}_e^t + \vec{a}_r + \vec{a}_c$: lúc này ta chưa biết cả $a_r$ lẫn $\bar{\varepsilon}_e$! Cũng nhờ $\vec{a}_r$ (dọc rãnh) và $\vec{a}_e^n$ (hướng dọc $AC$ về tâm $C$) **cùng nằm dọc đường thẳng rãnh $BC$**, nên khi chiếu lên phương **vuông góc rãnh ($\perp BC$)**, **CẢ $\vec{a}_r$ LẪN $\vec{a}_e^n$ ĐỀU TRIỆT TIÊU BẰNG $0$**! Chỉ còn:
+     $$\text{hch}_{\perp BC}\!\left(\vec{a}_a\right) = \text{hch}_{\perp BC}\!\left(\vec{a}_e^t\right) + \text{hch}_{\perp BC}\!\left(\vec{a}_c\right)$$
+     Từ phương trình 1 ẩn duy nhất này, ta giải thẳng ra **$\bar{\varepsilon}_e = \bar{\varepsilon}_{BC}$** mà không cần tính $a_r$ hay $a_e^n$!
+
+::: warning Cảnh báo sống còn về chiều $\vec{a}_c$ khi chiếu giải ngược
+Vì $\vec{a}_c = 2(\vec{\omega}_e \times \vec{v}_r)$ cũng nằm trọn trên phương $\perp BC$, chỉ cần vẽ nhầm chiều $\vec{a}_c$ ngược $180^\circ$ là kết quả $\bar{\varepsilon}_e$ sẽ sai hoàn toàn! Luôn kiểm tra đủ 2 bước: **(1)** xác định đúng chiều mũi tên $\vec{v}_r$ từ phép chiếu vận tốc; **(2)** **quay $\vec{v}_r$ đúng $90^\circ$ theo chiều quay của $\vec{\omega}_e$** để được $\vec{a}_c$.
+:::
+
+### Bài mẫu 4.3 (Chủ đề 5 — Tài liệu luyện thi trang 90–91 PDF, đã kiểm toán lại chính xác)
+
+**Đề bài nguyên văn:** Thanh $OA$ ($OA = 200\text{ mm} = 0{,}2\text{ m}$) quay đều **cùng chiều kim đồng hồ (CW)** quanh trục cố định $O$ với vận tốc góc $\omega_1 = 6{,}3\text{ rad/s}$ ($\text{tức } 6{,}3\text{ s}^{-1}$). Chốt $A$ gắn trên đầu thanh $OA$ trượt dọc theo rãnh thẳng của thanh $BC$ quay quanh trục cố định $C$ nằm trên cùng đường ngang bên phải $O$. Theo cấu tạo cơ cấu, tại mọi vị trí góc ngoài tại $O$ (giữa $OA$ và tia kéo dài sang trái của $CO$) là $2\theta$, góc trong tại $C$ là $\widehat{OCA} = \theta$. Tại vị trí $\theta = 30^\circ$, hãy tính vận tốc góc và gia tốc góc của thanh $BC$.
+
+<div class="figure-container">
+<svg viewBox="0 0 740 285" style="width: 100%; max-width: 700px; height: auto; display: block; margin: 0 auto;" role="img" aria-label="Cơ cấu culit tam giác cân OAC và phép chiếu tìm vận tốc góc gia tốc góc thanh BC trong Chủ đề 5">
+  <defs>
+    <marker id="m4b-k" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#0f172a" />
+    </marker>
+    <marker id="m4b-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#0284c7" />
+    </marker>
+    <marker id="m4b-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#dc2626" />
+    </marker>
+    <marker id="m4b-t" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#0d9488" />
+    </marker>
+  </defs>
+  <rect x="10" y="10" width="350" height="265" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
+  <text x="185" y="34" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="13" font-weight="700" fill="#0f172a">1. Cơ cấu tam giác cân OAC (θ = 30°)</text>
+  <line x1="45" y1="230" x2="325" y2="230" stroke="#64748b" stroke-width="1.6" stroke-dasharray="5 3" />
+  <line x1="66" y1="107" x2="280" y2="230" stroke="#334155" stroke-width="11" stroke-linecap="round" />
+  <line x1="66" y1="107" x2="280" y2="230" stroke="#ffffff" stroke-width="5" stroke-linecap="round" />
+  <line x1="170" y1="230" x2="115" y2="135" stroke="#0f172a" stroke-width="3.2" stroke-linecap="round" />
+  <polygon points="170,230 160,247 180,247" fill="#cbd5e1" stroke="#0f172a" stroke-width="1.5" />
+  <polygon points="280,230 270,247 290,247" fill="#cbd5e1" stroke="#0f172a" stroke-width="1.5" />
+  <circle cx="170" cy="230" r="4" fill="#0f172a" />
+  <circle cx="280" cy="230" r="4" fill="#0f172a" />
+  <circle cx="115" cy="135" r="5" fill="#dc2626" stroke="#0f172a" stroke-width="1.8" />
+  <text x="185" y="263" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11.5" font-weight="600" fill="#475569">OA = OC = 200 mm, ω₁ = 6,3 rad/s (CW)</text>
+  <text x="185" y="246" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="12.5" font-weight="700" fill="#0f172a">O</text>
+  <text x="294" y="224" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="12.5" font-weight="700" fill="#0f172a">C</text>
+  <text x="103" y="148" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="12.5" font-weight="700" fill="#0f172a">A</text>
+  <text x="58" y="100" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="12.5" font-weight="700" fill="#0f172a">B</text>
+  <path d="M 136 230 A 34 34 0 0 1 153 200.5" fill="none" stroke="#d97706" stroke-width="1.8" />
+  <text x="128" y="216" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11.5" font-weight="700" fill="#b45309">2θ = 60°</text>
+  <path d="M 228 230 A 52 52 0 0 1 235 204" fill="none" stroke="#d97706" stroke-width="1.8" />
+  <text x="223" y="213" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11.5" font-weight="700" fill="#b45309">θ = 30°</text>
+  <path d="M 139 176 A 62 62 0 0 1 192 172" fill="none" stroke="#0284c7" stroke-width="2" marker-end="url(#m4b-b)" />
+  <text x="198" y="168" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="12" font-weight="700" fill="#0284c7">ω₁ (CW)</text>
+  <line x1="115" y1="135" x2="146" y2="81" stroke="#0284c7" stroke-width="1.8" stroke-dasharray="3 2" marker-end="url(#m4b-b)" />
+  <text x="152" y="82" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11.5" font-weight="700" fill="#0369a1">e⊥ (⊥ BC)</text>
+
+  <rect x="380" y="10" width="350" height="265" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
+  <text x="555" y="34" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="13" font-weight="700" fill="#0f172a">2. Chiếu tại A: v_a = v_e + v_r &amp; Hướng đúng a_c</text>
+  <line x1="445" y1="95" x2="660" y2="219" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 3" />
+  <text x="438" y="92" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11.5" font-weight="700" fill="#475569">B</text>
+  <text x="668" y="224" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11.5" font-weight="700" fill="#475569">C</text>
+  <line x1="500" y1="230" x2="594" y2="68" stroke="#cbd5e1" stroke-width="1.3" stroke-dasharray="3 3" />
+  <line x1="545" y1="153" x2="588" y2="78" stroke="#0284c7" stroke-width="2.4" marker-end="url(#m4b-b)" />
+  <text x="580" y="70" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="12" font-weight="700" fill="#0284c7">v_e = 1,09</text>
+  <line x1="545" y1="153" x2="588" y2="178" stroke="#0d9488" stroke-width="2.4" marker-end="url(#m4b-t)" />
+  <text x="598" y="177" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="12" font-weight="700" fill="#0f766e">v_r = 0,63</text>
+  <line x1="545" y1="153" x2="632" y2="103" stroke="#0f172a" stroke-width="2.4" marker-end="url(#m4b-k)" />
+  <text x="640" y="106" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="12" font-weight="700" fill="#0f172a">v_a = 1,26</text>
+  <line x1="588" y1="78" x2="632" y2="103" stroke="#94a3b8" stroke-width="1.1" stroke-dasharray="3 2" />
+  <line x1="588" y1="178" x2="632" y2="103" stroke="#94a3b8" stroke-width="1.1" stroke-dasharray="3 2" />
+  <line x1="545" y1="153" x2="585" y2="222" stroke="#d97706" stroke-width="2.2" marker-end="url(#m4b-k)" />
+  <text x="592" y="226" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11.5" font-weight="700" fill="#b45309">a_a^n = 7,94</text>
+  <line x1="585" y1="222" x2="525" y2="188" stroke="#d97706" stroke-width="1.2" stroke-dasharray="3 2" />
+  <line x1="545" y1="153" x2="508" y2="217" stroke="#dc2626" stroke-width="2.5" marker-end="url(#m4b-r)" />
+  <text x="498" y="218" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11.5" font-weight="700" fill="#dc2626">a_c = 3,97</text>
+  <text x="498" y="233" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10.5" font-weight="600" fill="#dc2626">(quay v_r 90° CW)</text>
+  <circle cx="545" cy="153" r="4.5" fill="#0f172a" />
+  <text x="534" y="148" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="12.5" font-weight="700" fill="#0f172a">A</text>
+  <text x="555" y="263" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11.5" font-weight="600" fill="#475569">a_{a,⊥} = a_{c,⊥} = −3,97 m/s² ⇒ ε_BC = 0</text>
+</svg>
+<div class="figure-caption">
+
+Hình 1.5: Giải ngược cơ cấu tam giác cân OAC (Chủ đề 5) bằng phép chiếu vuông góc rãnh BC và chiều đúng của gia tốc Coriolis
+
+</div>
+</div>
+
+**Lời giải chi tiết theo 3 bước chiếu vuông góc rãnh $BC$:**
+
+1. **Bước 0 — Nhận diện tam giác cân $OAC$ và độ dài $AC$:**
+   - Trong $\triangle OAC$, góc ngoài tại đỉnh $O$ bằng tổng hai góc trong không kề nó: $2\theta = \widehat{OCA} + \widehat{OAC} = \theta + \widehat{OAC} \implies \widehat{OAC} = \theta$.
+   - Vậy $\triangle OAC$ luôn **cân tại $O$** với $OC = OA = 200\text{ mm} = 0{,}2\text{ m}$ ở mọi thời điểm!
+   - Tại $\theta = 30^\circ$: $\widehat{AOC} = 180^\circ - 2\theta = 120^\circ$, nên chiều dài từ chốt quay $C$ tới điểm $A$ là:
+     $$AC = 2 \cdot OA\cos 30^\circ = 2 \cdot 0{,}2 \cdot \frac{\sqrt{3}}{2} = 0{,}2\sqrt{3} \approx 0{,}3464\text{ m}$$
+
+2. **Bước 1 — Giải vận tốc (chiếu $\perp BC$ tìm $\bar{\omega}_{BC}$, rồi chiếu $\parallel BC$ tìm $\vec{v}_r$):**
+   - Đặt hệ trục địa phương tại $A$: trục $\vec{e}_\parallel$ dọc rãnh từ $B$ hướng xuống $C$ (góc $-30^\circ$ so với $+Ox$); trục $\vec{e}_\perp$ vuông góc rãnh hướng lên-phải (góc $+60^\circ$ so với $+Ox$, tức chiều quay **CW** của thanh $BC$).
+   - Thanh $OA$ (góc $+120^\circ$ so với $+Ox$) quay CW $\implies$ vận tốc tuyệt đối $\vec{v}_a$ của $A$ hướng lên-phải ở góc $+30^\circ$ (lệch góc $30^\circ$ so với $\vec{e}_\perp$), có độ lớn:
+     $$v_a = OA \cdot \omega_1 = 0{,}2 \cdot 6{,}3 = 1{,}26\text{ m/s}$$
+   - **Chiếu $\vec{v}_a = \vec{v}_e + \vec{v}_r$ lên $\vec{e}_\perp$ (khử $v_r$):**
+     $$v_e = v_a\cos 30^\circ = 1{,}26 \cdot \frac{\sqrt{3}}{2} = 0{,}63\sqrt{3} \approx 1{,}091\text{ m/s} \quad (\text{hướng } +\vec{e}_\perp)$$
+     Vì $\vec{v}_e$ hướng lên-phải quanh tâm $C$, thanh $BC$ quay **cùng chiều kim đồng hồ (CW)** với:
+     $$\omega_{BC} = \frac{v_e}{AC} = \frac{0{,}63\sqrt{3}}{0{,}2\sqrt{3}} = 3{,}15\text{ rad/s} \implies \bar{\omega}_{BC} = -3{,}15\text{ rad/s}\text{ (CW)}$$
+   - **Chiếu $\vec{v}_a = \vec{v}_e + \vec{v}_r$ lên $\vec{e}_\parallel$ (khử $v_e$):**
+     $$v_r = v_a\sin 30^\circ = 1{,}26 \cdot 0{,}5 = +0{,}63\text{ m/s}$$
+     Vậy $\vec{v}_r$ hướng **dọc rãnh từ $A$ tiến về $C$** ($+\vec{e}_\parallel$, xuống-phải).
+
+3. **Bước 2 — Giải gia tốc (chiếu $\perp BC$ khử cả $\vec{a}_r$ và $\vec{a}_e^n$ để tìm $\bar{\varepsilon}_{BC}$):**
+   Xét phương trình $\vec{a}_a^n + \vec{a}_a^t = \vec{a}_e^n + \vec{a}_e^t + \vec{a}_r + \vec{a}_c$, chiếu toàn bộ lên trục $+\vec{e}_\perp$:
+   - **$\vec{a}_a^t = \vec{0}$** (vì thanh $OA$ quay **đều**, $\varepsilon_1 = 0$).
+   - **$\vec{a}_a^n$:** Độ lớn $a_a^n = \omega_1^2 \cdot OA = (6{,}3)^2 \cdot 0{,}2 = 7{,}938\text{ m/s}^2$, hướng từ $A$ về $O$ (góc $-60^\circ$ so với $+Ox$, hợp với $+\vec{e}_\perp$ góc $120^\circ$):
+     $$a_{a,\perp} = 7{,}938 \cos 120^\circ = -7{,}938 \cdot 0{,}5 = -3{,}969\text{ m/s}^2$$
+   - **$\vec{a}_e^n$ và $\vec{a}_r$:** Cả hai cùng nằm dọc phương rãnh $BC$ nên hình chiếu lên $\vec{e}_\perp$ **đều bằng $0$**.
+   - **$\vec{a}_c = 2(\vec{\omega}_{BC} \times \vec{v}_r)$:** Độ lớn $a_c = 2\omega_{BC}v_r = 2 \cdot 3{,}15 \cdot 0{,}63 = 3{,}969\text{ m/s}^2$. Để tìm chiều $\vec{a}_c$, lấy $\vec{v}_r$ (hướng xuống-phải theo $+\vec{e}_\parallel$) **quay $90^\circ$ theo chiều quay CW của $\vec{\omega}_{BC}$** $\implies \vec{a}_c$ hướng **xuống-trái dọc $-\vec{e}_\perp$**! Suy ra:
+     $$a_{c,\perp} = -3{,}969\text{ m/s}^2$$
+   - Thay vào phương trình chiếu lên $+\vec{e}_\perp$ ($a_{a,\perp} = a_{e,\perp}^t + a_{c,\perp}$):
+     $$-3{,}969 = a_{e,\perp}^t + (-3{,}969) \implies a_{e,\perp}^t = 0 \implies \bar{\varepsilon}_{BC} = 0\text{ rad/s}^2$$
+
+**Kiểm tra giải tích nhanh (bắt lỗi trong 10 giây):** Ở mọi góc $\theta$, góc của $OA$ là $\varphi_1 = 180^\circ - 2\theta \implies \bar{\omega}_1 = -2\dot{\theta}$, còn góc của $BC$ là $\varphi_{BC} = 180^\circ - \theta \implies \bar{\omega}_{BC} = -\dot{\theta} = \frac{1}{2}\bar{\omega}_1$. Vì $\bar{\omega}_1 = -6{,}3\text{ rad/s}$ **không đổi**, $\bar{\omega}_{BC} = -3{,}15\text{ rad/s}$ cũng **không đổi**, do đó **$\bar{\varepsilon}_{BC} = 0\text{ rad/s}^2$** ở mọi thời điểm!
+
+::: danger Lưu ý đính chính tài liệu tham khảo (Chủ đề 5 — trang 90–91 PDF)
+Trong bài giải mẫu cũ ở trang 90–91 PDF, tác giả đã **vẽ ngược chiều $\vec{a}_c$** (chĩa lên trên thay vì quay $\vec{v}_r$ góc $90^\circ$ **CW** xuống-trái theo $-\vec{e}_\perp$), sau đó ở trang 91 lại cộng Pytago $\sqrt{3{,}97^2 + 3{,}97^2} = 5{,}614$ cho hai thành phần cùng phương vuông góc $BC$, dẫn tới đáp số sai $\varepsilon_{BC} = 16{,}2\text{ rad/s}^2$. Kết quả đúng toán học là **$\omega_{BC} = 3{,}15\text{ rad/s}$ (CW)** và **$\varepsilon_{BC} = 0\text{ rad/s}^2$**!
+:::
+
+---
+
 ### Bài tập rèn luyện Ngày 4 (Đề Giữa kỳ `1643` & `1744` — Có đáp số)
 
 **Bài 4.1 (Đề `1643` Câu 8–9, Key `8d, 9b`):** Thanh $OA$ nằm ở góc $\varphi$ so với $+Ox$, quay **CCW** với $\omega, \varepsilon$ ($\varepsilon$ chiều CW). Chất điểm $M$ chạy dọc thanh $OA$ hướng ra xa $O$ với tốc độ $u$, khoảng cách $OM = s$. Tìm $\vec{v}_a^M$ và $\vec{a}_c^M$ theo $\vec{i}, \vec{j}$.
@@ -739,24 +879,130 @@ Chọn 2 trục trực giao tại $E$ gắn theo đĩa: phương hướng tâm $
 
 ---
 
-## Ngày 5: Hệ Bánh Răng Hành Tinh, Vi Sai (Willis) & Mini-Test 10 Câu
+## Ngày 5: Hệ Bánh Răng Cố Định, Hành Tinh, Vi Sai (Willis) & Mini-Test 10 Câu
 
-### 1. Công thức Willis chuẩn & Quy tắc đếm dấu $(-1)^k$
+*(Lưu ý đơn vị xuyên suốt Ngày 5: trong nhiều đề thi AS1003, vận tốc góc được ghi là $\text{s}^{-1}$ thay cho $\text{rad/s}$ — hai đơn vị này tương đương nhau hoàn toàn: **$1\text{ s}^{-1} = 1\text{ rad/s}$**, vì radian không thứ nguyên.)*
 
-Hệ bánh răng có cần quay $H$ gồm 2 loại: **Hệ hành tinh** (có ít nhất 1 bánh trung tâm đứng yên cố định) và **Hệ vi sai** (tất cả bánh trung tâm và cần $H$ đều quay). Để giải mọi bài hệ bánh răng trong 60 giây, ta dùng **phương pháp đảo chuyển động gắn lên cần $H$ (Công thức Willis)**:
+### 1. Hệ bánh răng cố định ($\bar{\omega}_H = 0$) & Quy tắc đồng trục
+
+Trước khi học hệ hành tinh có cần quay $H$, ta phải nắm chắc **hệ bánh răng thường (trục cố định)** — đây cũng chính là nền tảng để hiểu công thức Willis khi "hãm đứng cần $H$". Trong hệ cố định, tâm quay của mọi bánh răng đều đứng yên ($\bar{\omega}_H = 0$).
+
+1. **Công thức tỉ số truyền đại số (có dấu) của hệ bánh răng cố định:**
+   Khi truyền động từ bánh dẫn $1$ qua chuỗi các cặp ăn khớp tới bánh bị dẫn $n$:
+   $$\frac{\bar{\omega}_1}{\bar{\omega}_n} = (-1)^k \frac{Z_{\text{bị dẫn}}}{Z_{\text{dẫn}}} = (-1)^k \prod_{\text{cặp ăn khớp}} \frac{Z_{\text{bị dẫn}}}{Z_{\text{dẫn}}}$$
+   *(Nếu đề cho bán kính $r$ hoặc đường kính $d$ cùng môđun thì thay $\frac{Z_{\text{bị dẫn}}}{Z_{\text{dẫn}}}$ bằng $\frac{r_{\text{bị dẫn}}}{r_{\text{dẫn}}} = \frac{d_{\text{bị dẫn}}}{d_{\text{dẫn}}}$.)*
+
+2. **Phân biệt Ăn khớp NGOÀI ($-$) vs Ăn khớp TRONG ($+$) và đếm số $k$:**
+   - **Ăn khớp NGOÀI (dấu $-$):** Hai bánh chạm mép ngoài vào nhau, hai tâm nằm ở hai phía tiếp điểm $\implies$ **quay ngược chiều** nhau. Mỗi cặp ăn khớp ngoài tính là $1$ lần đổi dấu vào $k$.
+   - **Ăn khớp TRONG (dấu $+$):** Bánh nhỏ lồng bên trong vành răng bao, hai tâm nằm cùng phía tiếp điểm $\implies$ **quay cùng chiều** nhau, **không** cộng vào $k$.
+   - **Đếm $k$:** Đếm tổng số cặp **ăn khớp ngoài** dọc đường truyền từ $1$ tới $n$: $k$ **lẻ** $\implies$ vế phải mang dấu **$(-)$**; $k$ **chẵn** $\implies$ vế phải mang dấu **$(+)$**.
+
+3. **Quy tắc vàng cho 2 bánh răng gắn cứng ĐỒNG TRỤC ($\bar{\omega}_2 = \bar{\omega}_3$):**
+   Khi hai bánh $(2)$ và $(3)$ cùng gắn chặt trên **một trục quay chung** (cụm bánh răng kép hai tầng): chúng quay như **một vật rắn duy nhất** nên **cùng vận tốc góc cả độ lớn lẫn dấu**:
+   $$\bar{\omega}_2 = \bar{\omega}_3$$
+   *Cảnh báo lỗi hay gặp:* Giữa $2$ và $3$ **không** phải cặp ăn khớp! Tuyệt đối không viết tỉ số $\frac{Z_3}{Z_2}$ hay đếm dấu giữa chúng. Ta chỉ lập tỉ số cho từng cặp ăn khớp thực sự rồi nối qua $\bar{\omega}_2 = \bar{\omega}_3$:
+   $$\frac{\bar{\omega}_1}{\bar{\omega}_4} = \frac{\bar{\omega}_1}{\bar{\omega}_2} \cdot \underbrace{1}_{\bar{\omega}_2 = \bar{\omega}_3} \cdot \frac{\bar{\omega}_3}{\bar{\omega}_4} = (-1)^k \left(\frac{Z_2}{Z_1}\right)\left(\frac{Z_4}{Z_3}\right)$$
+
+<div class="figure-container">
+<svg viewBox="0 0 740 270" style="width: 100%; max-width: 700px; height: auto; display: block; margin: 0 auto;" role="img" aria-label="Quy tắc ăn khớp ngoài trong và sơ đồ hệ 4 bánh răng cố định có cặp đồng trục">
+  <defs>
+    <marker id="m5f-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#0284c7" />
+    </marker>
+    <marker id="m5f-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#dc2626" />
+    </marker>
+    <marker id="m5f-t" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#0d9488" />
+    </marker>
+  </defs>
+  <rect x="10" y="10" width="320" height="250" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
+  <text x="170" y="34" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="13" font-weight="700" fill="#0f172a">1. Quy tắc dấu ăn khớp phẳng</text>
+  <circle cx="92" cy="96" r="26" fill="#e0f2fe" stroke="#0284c7" stroke-width="2" stroke-dasharray="4 3" />
+  <circle cx="154" cy="96" r="36" fill="#ffffff" stroke="#0f172a" stroke-width="2" stroke-dasharray="4 3" />
+  <circle cx="118" cy="96" r="4" fill="#dc2626" />
+  <path d="M 76 78 A 20 20 0 0 0 76 114" fill="none" stroke="#0284c7" stroke-width="1.8" marker-end="url(#m5f-b)" />
+  <path d="M 168 72 A 28 28 0 0 1 168 120" fill="none" stroke="#dc2626" stroke-width="1.8" marker-end="url(#m5f-r)" />
+  <text x="92" y="100" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11.5" font-weight="700" fill="#0369a1">+</text>
+  <text x="154" y="100" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11.5" font-weight="700" fill="#b91c1c">−</text>
+  <text x="206" y="91" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="12" font-weight="700" fill="#b91c1c">Ngoài: dấu (−)</text>
+  <text x="206" y="109" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="600" fill="#475569">(quay ngược chiều)</text>
+  <circle cx="132" cy="196" r="42" fill="#ffffff" stroke="#0f172a" stroke-width="2" stroke-dasharray="5 3" />
+  <circle cx="152" cy="196" r="22" fill="#ccfbf1" stroke="#0d9488" stroke-width="2" stroke-dasharray="4 2" />
+  <circle cx="174" cy="196" r="4" fill="#0d9488" />
+  <path d="M 102 178 A 34 34 0 0 0 102 214" fill="none" stroke="#0d9488" stroke-width="1.8" marker-end="url(#m5f-t)" />
+  <path d="M 142 182 A 15 15 0 0 0 142 210" fill="none" stroke="#0d9488" stroke-width="1.6" marker-end="url(#m5f-t)" />
+  <text x="192" y="191" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="12" font-weight="700" fill="#0f766e">Trong: dấu (+)</text>
+  <text x="192" y="209" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="600" fill="#475569">(quay cùng chiều)</text>
+
+  <rect x="344" y="10" width="386" height="250" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
+  <text x="537" y="34" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="13" font-weight="700" fill="#0f172a">2. Ví dụ 4 bánh răng (có 1 cặp đồng trục)</text>
+  <line x1="372" y1="82" x2="452" y2="82" stroke="#0f172a" stroke-width="2.4" />
+  <polygon points="386,82 379,95 393,95" fill="#cbd5e1" stroke="#0f172a" stroke-width="1.3" />
+  <rect x="428" y="64" width="12" height="36" rx="2" fill="#e0f2fe" stroke="#0284c7" stroke-width="2" />
+  <text x="434" y="55" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11.5" font-weight="700" fill="#0369a1">1 (Z₁=20)</text>
+  <line x1="388" y1="154" x2="574" y2="154" stroke="#0f172a" stroke-width="2.6" />
+  <polygon points="402,154 395,167 409,167" fill="#cbd5e1" stroke="#0f172a" stroke-width="1.3" />
+  <polygon points="496,154 489,167 503,167" fill="#cbd5e1" stroke="#0f172a" stroke-width="1.3" />
+  <rect x="428" y="100" width="12" height="108" rx="2" fill="#fef3c7" stroke="#d97706" stroke-width="2" />
+  <text x="434" y="224" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11.5" font-weight="700" fill="#b45309">2 (Z₂=80)</text>
+  <rect x="548" y="132" width="12" height="44" rx="2" fill="#fef3c7" stroke="#d97706" stroke-width="2" />
+  <text x="554" y="122" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11.5" font-weight="700" fill="#b45309">3 (Z₃=25)</text>
+  <path d="M 540 56 H 622 V 184 H 540 V 176 H 612 V 64 H 540 Z" fill="#e2e8f0" stroke="#334155" stroke-width="1.8" />
+  <line x1="622" y1="120" x2="704" y2="120" stroke="#0f172a" stroke-width="2.4" />
+  <polygon points="676,120 669,133 683,133" fill="#cbd5e1" stroke="#0f172a" stroke-width="1.3" />
+  <text x="676" y="96" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11.5" font-weight="700" fill="#334155">4 (Z₄=125)</text>
+  <circle cx="434" cy="100" r="4" fill="#dc2626" />
+  <text x="450" y="104" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="700" fill="#dc2626">Ngoài (−)</text>
+  <circle cx="554" cy="176" r="4" fill="#0d9488" />
+  <text x="554" y="202" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="700" fill="#0f766e">Trong (+)</text>
+  <rect x="524" y="227" width="178" height="24" rx="5" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.2" />
+  <text x="613" y="243" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11.5" font-weight="700" fill="#0369a1">Đồng trục: ω₂ = ω₃</text>
+</svg>
+<div class="figure-caption">
+
+Hình 1.6: Quy tắc dấu cặp ăn khớp ngoài/trong và mô hình hệ 4 bánh răng cố định có cặp đồng trục (2, 3)
+
+</div>
+</div>
+
+::: tip Ví dụ 5.1 (Tính nhẩm trong 15 giây): Hệ 4 bánh răng cố định có 1 cặp đồng trục
+**Đề bài:** Cho hệ bánh răng trục cố định như Hình 1.6: bánh dẫn $1$ ($Z_1 = 20$) quay **CCW** với $\bar{\omega}_1 = +100\text{ rad/s}$, ăn khớp **ngoài** với bánh $2$ ($Z_2 = 80$). Bánh $2$ gắn cứng **đồng trục** với bánh $3$ ($Z_3 = 25$), còn bánh $3$ ăn khớp **trong** với vành răng $4$ ($Z_4 = 125$). Tính $\bar{\omega}_2, \bar{\omega}_3$ và $\bar{\omega}_4$.
+
+**Lời giải nhanh (2 cách để tự kiểm tra trong phòng thi):**
+- **Cách 1 (Đi từng khâu — chống nhầm):**
+  1. Cặp $1-2$ ăn khớp **ngoài** (đổi dấu $-$):
+     $$\frac{\bar{\omega}_1}{\bar{\omega}_2} = -\frac{Z_2}{Z_1} = -\frac{80}{20} = -4 \implies \bar{\omega}_2 = \frac{+100}{-4} = -25\text{ rad/s}\text{ (CW)}$$
+  2. Bánh $2$ và $3$ **gắn cứng đồng trục**:
+     $$\bar{\omega}_3 = \bar{\omega}_2 = -25\text{ rad/s}\text{ (CW)}$$
+  3. Cặp $3-4$ ăn khớp **trong** (giữ dấu $+$):
+     $$\frac{\bar{\omega}_3}{\bar{\omega}_4} = +\frac{Z_4}{Z_3} = +\frac{125}{25} = +5 \implies \bar{\omega}_4 = \frac{-25}{+5} = -5\text{ rad/s}\text{ (CW)}$$
+- **Cách 2 (Bấm máy 1 dòng):** Dọc mạch $1 \to 2(=3) \to 4$ chỉ có **$k = 1$** cặp ăn khớp ngoài ($1-2$):
+  $$\begin{aligned}
+  \frac{\bar{\omega}_1}{\bar{\omega}_4} &= (-1)^1 \cdot \frac{Z_2}{Z_1} \cdot \frac{Z_4}{Z_3} = -\frac{80}{20} \cdot \frac{125}{25} = -20 \\
+  \implies \bar{\omega}_4 &= \frac{+100}{-20} = -5\text{ rad/s}\text{ (CW)}
+  \end{aligned}$$
+:::
+
+---
+
+### 2. Hệ bánh răng hành tinh, vi sai: Công thức Willis chuẩn & Quy tắc đếm dấu $(-1)^k$
+
+Hệ bánh răng có cần quay $H$ gồm 2 loại: **Hệ hành tinh** (có ít nhất 1 bánh trung tâm đứng yên cố định) và **Hệ vi sai** (tất cả bánh trung tâm và cần $H$ đều quay). Để giải mọi bài hệ bánh răng có cần quay trong 60 giây, ta dùng **phương pháp đảo chuyển động gắn lên cần $H$ (Công thức Willis)** — thực chất là trừ $\bar{\omega}_H$ vào mọi vận tốc góc để đưa về hệ cố định ở Mục 1:
 
 $$\begin{aligned}
-\frac{\omega_1 - \omega_H}{\omega_n - \omega_H} &= (-1)^k \frac{Z_{\text{bị dẫn}}}{Z_{\text{dẫn}}} \\
-&= (-1)^k \prod_{\text{cặp}} \frac{r_{\text{bị dẫn}}}{r_{\text{dẫn}}}
+\frac{\bar{\omega}_1 - \bar{\omega}_H}{\bar{\omega}_n - \bar{\omega}_H} &= (-1)^k \frac{Z_{\text{bị dẫn}}}{Z_{\text{dẫn}}} \\
+&= (-1)^k \prod_{\text{cặp ăn khớp}} \frac{r_{\text{bị dẫn}}}{r_{\text{dẫn}}}
 \end{aligned}$$
 
 **3 quy tắc sống còn khi bấm máy Công thức Willis:**
-1. **Giữ đúng thứ tự "Đầu trên – Đuôi dưới" và "Bị dẫn trên – Dẫn dưới":** Nếu tử số là $\omega_1 - \omega_H$ thì ở vế phải, kích thước/số răng của bánh **$1$** nằm ở **mẫu**, còn của bánh **$n$** nằm ở **tử**:
-   $$\frac{\omega_1 - \omega_H}{\omega_2 - \omega_H} = \pm \frac{Z_2}{Z_1} = \pm \frac{r_2}{r_1}$$
+1. **Giữ đúng thứ tự "Đầu trên – Đuôi dưới" và "Bị dẫn trên – Dẫn dưới":** Nếu tử số là $\bar{\omega}_1 - \bar{\omega}_H$ thì ở vế phải, kích thước/số răng của bánh **$1$** nằm ở **mẫu**, còn của bánh **$n$** nằm ở **tử**:
+   $$\frac{\bar{\omega}_1 - \bar{\omega}_H}{\bar{\omega}_2 - \bar{\omega}_H} = \pm \frac{Z_2}{Z_1} = \pm \frac{r_2}{r_1}$$
+   *(Lưu ý: Trong nhiều đề thi gốc, đề viết gọn $\omega_1, \omega_H$ không có gạch đầu nhưng khi thay số vào Willis bắt buộc lấy **giá trị đại số có dấu** $\bar{\omega}$: `+` CCW, `-` CW!)*
 2. **Dấu $(-1)^k$:** Với mỗi cặp bánh răng ăn khớp trực tiếp:
    - **Ăn khớp TRONG** (bánh con lồng trong vành răng bao): cùng chiều quay tương đối $\implies$ **dấu $(+)$**.
    - **Ăn khớp NGOÀI** (hai bánh chạm mép ngoài vào nhau): ngược chiều quay tương đối $\implies$ **dấu $(-)$**.
-   Khi nối một mạch từ bánh $1$ qua nhiều bánh trung gian tới bánh $n$, chỉ cần đếm số cặp ăn khớp **ngoài** $k$: $k$ chẵn lấy $+$, $k$ lẻ lấy $-$.
+   Khi nối một mạch từ bánh $1$ qua nhiều bánh trung gian tới bánh $n$, chỉ cần đếm số cặp ăn khớp **ngoài** $k$: $k$ chẵn lấy $+$, $k$ lẻ lấy $-$. *(Nếu trong cụm hành tinh có 2 bánh gắn cứng đồng trục trên cần $H$, tương tự Mục 1 ta lấy $\bar{\omega}_2 - \bar{\omega}_H = \bar{\omega}_3 - \bar{\omega}_H$.)*
 3. **Điều kiện hình học đồng trục $S - P - R$:** Khi cần $H$ mang bánh hành tinh $P$ quay đồng trục giữa bánh mặt trời $S$ và vành răng bao $R$, ta luôn có:
    $$r_R = r_S + 2r_P, \qquad Z_R = Z_S + 2Z_P$$
 
@@ -807,55 +1053,55 @@ $$\begin{aligned}
 </svg>
 <div class="figure-caption">
 
-Hình 1.5: Sơ đồ hệ bánh răng hành tinh S–P–R và quy tắc đếm cặp ăn khớp trong/ngoài theo Willis
+Hình 1.7: Sơ đồ hệ bánh răng hành tinh S–P–R và quy tắc đếm cặp ăn khớp trong/ngoài theo Willis
 
 </div>
 </div>
 
 ---
 
-### Ví dụ 5.1 & 5.2: Thực hành Hệ Hành Tinh và Vi Sai
+### Ví dụ 5.2 & 5.3: Thực hành Hệ Hành Tinh và Vi Sai
 
-::: tip Ví dụ 5.1 (Chủ đề 7 — Tài liệu luyện thi trang 95–96 PDF, đã kiểm toán lại chính xác)
-**Đề bài:** Cho hệ thống bánh răng hành tinh như Hình 1.5. Vành răng ngoài $R$ được giữ cố định ($\omega_R = 0$). Bánh răng mặt trời $S$ có đường kính $d_S = 80\text{ mm}$ ($r_S = 40\text{ mm}$) quay với vận tốc góc $\omega_S = +6{,}3\text{ s}^{-1}$. Hai bánh hành tinh $P$ có đường kính $d_P = 40\text{ mm}$ ($r_P = 20\text{ mm}$) gắn trên cần quay $A$. Tính vận tốc góc của cần $A$ ($\omega_A$) và bánh hành tinh $P$ ($\omega_P$).
+::: tip Ví dụ 5.2 (Chủ đề 7 — Tài liệu luyện thi trang 95–96 PDF, đã kiểm toán lại chính xác)
+**Đề bài:** Cho hệ thống bánh răng hành tinh như Hình 1.7. Vành răng ngoài $R$ được giữ cố định ($\bar{\omega}_R = 0$). Bánh răng mặt trời $S$ có đường kính $d_S = 80\text{ mm}$ ($r_S = 40\text{ mm}$) quay với vận tốc góc $\bar{\omega}_S = +6{,}3\text{ s}^{-1}$ (tức $+6{,}3\text{ rad/s}$, vì $1\text{ s}^{-1} = 1\text{ rad/s}$). Hai bánh hành tinh $P$ có đường kính $d_P = 40\text{ mm}$ ($r_P = 20\text{ mm}$) gắn trên cần quay $A$. Tính vận tốc góc của cần $A$ ($\bar{\omega}_A$) và bánh hành tinh $P$ ($\bar{\omega}_P$).
 
 **Lời giải chuẩn bằng Công thức Willis:**
 1. **Kiểm tra bán kính vành $R$:** $r_R = r_S + 2r_P = 40 + 2(20) = 80\text{ mm}$.
-2. **Cặp ăn khớp trong $P - R$ (lấy $\omega_R = 0$):**
+2. **Cặp ăn khớp trong $P - R$ (lấy $\bar{\omega}_R = 0$):**
    $$\begin{aligned}
-   \frac{\omega_P - \omega_A}{0 - \omega_A} &= +\frac{r_R}{r_P} = +\frac{80}{20} = 4 \\
-   \implies \omega_P - \omega_A &= -4\omega_A \implies \omega_P = -3\omega_A \quad (1)
+   \frac{\bar{\omega}_P - \bar{\omega}_A}{0 - \bar{\omega}_A} &= +\frac{r_R}{r_P} = +\frac{80}{20} = 4 \\
+   \implies \bar{\omega}_P - \bar{\omega}_A &= -4\bar{\omega}_A \implies \bar{\omega}_P = -3\bar{\omega}_A \quad (1)
    \end{aligned}$$
 3. **Cặp ăn khớp ngoài $P - S$:**
-   $$\frac{\omega_P - \omega_A}{\omega_S - \omega_A} = -\frac{r_S}{r_P} = -\frac{40}{20} = -2 \quad (2)$$
-4. **Thế $(1)$ và $\omega_S = 6{,}3\text{ s}^{-1}$ vào $(2)$:**
+   $$\frac{\bar{\omega}_P - \bar{\omega}_A}{\bar{\omega}_S - \bar{\omega}_A} = -\frac{r_S}{r_P} = -\frac{40}{20} = -2 \quad (2)$$
+4. **Thế $(1)$ và $\bar{\omega}_S = +6{,}3\text{ rad/s}$ vào $(2)$:**
    $$\begin{aligned}
-   \frac{-3\omega_A - \omega_A}{6{,}3 - \omega_A} &= -2 \iff -4\omega_A = -12{,}6 + 2\omega_A \\
-   \iff 6\omega_A &= 12{,}6 \implies \omega_A = +2{,}1\text{ s}^{-1}
+   \frac{-3\bar{\omega}_A - \bar{\omega}_A}{6{,}3 - \bar{\omega}_A} &= -2 \iff -4\bar{\omega}_A = -12{,}6 + 2\bar{\omega}_A \\
+   \iff 6\bar{\omega}_A &= 12{,}6 \implies \bar{\omega}_A = +2{,}1\text{ rad/s}\text{ (hay } +2{,}1\text{ s}^{-1}\text{)}
    \end{aligned}$$
-   Thế vào $(1)$: $\omega_P = -3(2{,}1) = -6{,}3\text{ s}^{-1}$.
+   Thế vào $(1)$: $\bar{\omega}_P = -3(2{,}1) = -6{,}3\text{ rad/s}\text{ (hay } -6{,}3\text{ s}^{-1}\text{)}$.
 
 **Kết luận:** Cần $A$ quay **cùng chiều** bánh $S$ với tốc độ $2{,}1\text{ s}^{-1}$, bánh hành tinh $P$ quay **ngược chiều** bánh $S$ với tốc độ $6{,}3\text{ s}^{-1}$.
-*(Lưu ý đính chính tài liệu tham khảo trang 96 PDF: Trong bài giải cũ ở trang 96 viết nhầm tỷ số $\frac{r_S}{r_P} = 0{,}5$ và đánh rơi dấu trừ khi giải phương trình (2) nên mới ra $2{,}7$ và $-0{,}9$; kết quả đúng toán học phải là $\omega_A = +2{,}1\text{ s}^{-1}$ và $\omega_P = -6{,}3\text{ s}^{-1}$ như trên!)*
+*(Lưu ý đính chính tài liệu tham khảo trang 96 PDF: Trong bài giải cũ ở trang 96 viết nhầm tỉ số $\frac{r_S}{r_P} = 0{,}5$ và đánh rơi dấu trừ khi giải phương trình (2) nên mới ra $2{,}7$ và $-0{,}9$; kết quả đúng toán học phải là $\bar{\omega}_A = +2{,}1\text{ s}^{-1}$ và $\bar{\omega}_P = -6{,}3\text{ s}^{-1}$ như trên!)*
 :::
 
-::: tip Ví dụ 5.2: Hệ bánh răng vi sai cho biết số răng ($Z_1, Z_2, Z_3$)
-**Đề bài:** Trong hộp số vi sai cấu trúc $S(1) - P(2) - R(3)$ như Hình 1.5 có $Z_1 = 18$ răng, $Z_2 = 27$ răng, $Z_3 = 72$ răng (kiểm tra $18 + 2\cdot 27 = 72$). Biết bánh $1$ quay $\omega_1 = +20\text{ rad/s}$ (CCW) và cần $H$ quay $\omega_H = +5\text{ rad/s}$ (CCW). Tìm $\omega_3$ và $\omega_2$.
+::: tip Ví dụ 5.3: Hệ bánh răng vi sai cho biết số răng ($Z_1, Z_2, Z_3$)
+**Đề bài:** Trong hộp số vi sai cấu trúc $S(1) - P(2) - R(3)$ như Hình 1.7 có $Z_1 = 18$ răng, $Z_2 = 27$ răng, $Z_3 = 72$ răng (kiểm tra $18 + 2\cdot 27 = 72$). Biết bánh $1$ quay $\bar{\omega}_1 = +20\text{ rad/s}$ (CCW) và cần $H$ quay $\bar{\omega}_H = +5\text{ rad/s}$ (CCW). Tìm $\bar{\omega}_3$ và $\bar{\omega}_2$.
 
 **Lời giải nhanh:**
 - Áp dụng Willis nối thẳng $1 \to 3$ (qua $2$, có $k = 1$ cặp ăn khớp ngoài):
-  $$\frac{\omega_1 - \omega_H}{\omega_3 - \omega_H} = -\frac{Z_3}{Z_1} \implies \frac{20 - 5}{\omega_3 - 5} = -\frac{72}{18} = -4$$
-  $$\implies \omega_3 - 5 = -\frac{15}{4} = -3{,}75 \implies \omega_3 = +1{,}25\text{ rad/s} \quad (\text{CCW})$$
+  $$\frac{\bar{\omega}_1 - \bar{\omega}_H}{\bar{\omega}_3 - \bar{\omega}_H} = -\frac{Z_3}{Z_1} \implies \frac{20 - 5}{\bar{\omega}_3 - 5} = -\frac{72}{18} = -4$$
+  $$\implies \bar{\omega}_3 - 5 = -\frac{15}{4} = -3{,}75 \implies \bar{\omega}_3 = +1{,}25\text{ rad/s} \quad (\text{CCW})$$
 - Áp dụng Willis cho cặp ăn khớp trong $2 - 3$:
   $$\begin{aligned}
-  \frac{\omega_2 - 5}{1{,}25 - 5} &= +\frac{Z_3}{Z_2} = \frac{72}{27} = \frac{8}{3} \\
-  \implies \omega_2 - 5 &= \frac{8}{3}(-3{,}75) = -10 \implies \omega_2 = -5\text{ rad/s} \quad (\text{CW})
+  \frac{\bar{\omega}_2 - 5}{1{,}25 - 5} &= +\frac{Z_3}{Z_2} = \frac{72}{27} = \frac{8}{3} \\
+  \implies \bar{\omega}_2 - 5 &= \frac{8}{3}(-3{,}75) = -10 \implies \bar{\omega}_2 = -5\text{ rad/s} \quad (\text{CW})
   \end{aligned}$$
 :::
 
 ---
 
-### 2. Mini-Test Chốt Chặng 1 (10 Câu Trắc Nghiệm Chuẩn AS1003 — Bấm Giờ 15 Phút)
+### 3. Mini-Test Chốt Chặng 1 (10 Câu Trắc Nghiệm Chuẩn AS1003 — Bấm Giờ 15 Phút)
 
 Hãy đặt đồng hồ **15 phút**, tự giải toàn bộ 10 câu trên giấy nháp (đặc biệt cảnh giác với phương án **`e. Các đáp án còn lại đều sai`**) trước khi mở đáp án từng câu bên dưới!
 
@@ -918,7 +1164,7 @@ Hãy đặt đồng hồ **15 phút**, tự giải toàn bộ 10 câu trên gi�
 - Tâm tức thời $I$ là giao điểm đường đứng qua $A$ và đường ngang qua $B$: $IA = L\sin 30^\circ = 0{,}5\text{ m}$, nên $\omega_{AB} = \frac{v_A}{IA} = \frac{2}{0{,}5} = 4\text{ rad/s}$.
 :::
 
-**Câu 5.** Con lăn $O$ bán kính $R = 20\text{ cm}$ lăn không trượt trên nền ngang sang phải với $\omega = 1\text{ rad/s}$ (CW) và $\varepsilon = 0{,}5\text{ rad/s}^2$ (CW). Thanh $AB$ nối đỉnh cao nhất $B$ của con lăn ($OB$ thẳng đứng) với con chạy $A$ trượt trên cùng đường ngang tiếp xúc sàn $I$, góc $\widehat{BAI} = 45^\circ$. Tìm vectơ gia tốc con chạy $A$ ($\text{cm/s}^2$) (với $\vec{i}$ sang phải, $\vec{j}$ hướng lên):
+**Câu 5.** Con lăn $O$ bán kính $R = 20\text{ cm}$ lăn không trượt trên nền ngang sang phải với $\omega = 1\text{ rad/s}$ (CW) và $\varepsilon = 0{,}5\text{ rad/s}^2$ (CW). Thanh $AB$ nối đỉnh cao nhất $B$ của con lăn ($OB$ thẳng đứng) với con chạy $A$ nằm bên trái điểm tiếp xúc $I$ và trượt trên cùng đường ngang tiếp xúc sàn qua $I$, góc $\widehat{BAI} = 45^\circ$. Tìm vectơ gia tốc con chạy $A$ ($\text{cm/s}^2$) (với $\vec{i}$ sang phải, $\vec{j}$ hướng lên):
 - **a.** $\vec{a}_A = 20\vec{i}$
 - **b.** $\vec{a}_A = 10\vec{i}$
 - **c.** $\vec{a}_A = -20\vec{i}$
@@ -1011,5 +1257,5 @@ Hãy đặt đồng hồ **15 phút**, tự giải toàn bộ 10 câu trên gi�
 ---
 
 ::: tip Tổng kết Chặng 1 (Mốc 0 → 3,0 Điểm Khối A — Chương 9 & 10)
-Nếu bạn làm đúng từ **`8/10` câu trở lên** trong Mini-Test 15 phút trên, bạn đã xóa mù hoàn toàn phần vector – con lăn và làm chủ chắc chắn Khối A (`Ch.9–10`) của đề thi Cuối kỳ AS1003. Hãy bước tiếp ngay sang **[Chặng 2 (Ngày 6 – Ngày 10): Ch.11, 12.1 & 13 — Khối Tâm, Steiner & D'Alembert](/on-thi/chang-2-dong-hoc)** hoặc xem thêm đề thi các năm tại **[Ngân Hàng Đề Thi Thật HCMUT](/on-thi/de-thi-that-hcmut)**.
+Nếu bạn làm đúng từ **`8/10` câu trở lên** trong Mini-Test 15 phút trên, bạn đã xóa mù hoàn toàn phần vectơ – con lăn và làm chủ chắc chắn Khối A (`Ch.9–10`) của đề thi Cuối kỳ AS1003. Hãy bước tiếp ngay sang **[Chặng 2 (Ngày 6 – Ngày 10): Ch.11, 12.1 & 13 — Khối Tâm, Steiner & D'Alembert](/on-thi/chang-2-dong-hoc)** hoặc xem thêm đề thi các năm tại **[Ngân Hàng Đề Thi Thật HCMUT](/on-thi/de-thi-that-hcmut)**.
 :::

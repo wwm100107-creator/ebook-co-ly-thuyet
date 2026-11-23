@@ -1,19 +1,19 @@
 ---
-title: "Chặng 2 (Ngày 6 – Ngày 10): Chương 11, 12.1 & 13 — Khối Tâm, D'Alembert & Phản Lực Động (AS1003)"
+title: "Chặng 2 (Ngày 6 – Ngày 10): Chương 11, 12.1–12.2 & 13 — Động Lực Học, Khối Tâm, D'Alembert & Phản Lực Động (AS1003)"
 layout: doc
 ---
 
-# Chặng 2 (Ngày 6 – Ngày 10): Chương 11, 12.1 & 13 — Đặc Trưng Hình Học Khối Lượng, Nguyên Lý D'Alembert & Phản Lực Động
+# Chặng 2 (Ngày 6 – Ngày 10): Chương 11, 12.1–12.2 & 13 — Định Lý Tổng Quát, Đặc Trưng Khối Lượng, Nguyên Lý D'Alembert & Phản Lực Động
 
-Chào mừng bạn bước vào **Chặng 2** của lộ trình **20 ngày chinh phục Cuối kỳ `AS1003` (Bách Khoa TPHCM)** từ mốc `3,0 → 5,0+` điểm. Sau khi đã "xóa mù" chiếu vectơ, tâm vận tốc tức thời $I$ và ăn trọn **Khối A (Ch.9–10)** ở [Chặng 1](/on-thi/chang-1-tinh-hoc), Chặng 2 giúp bạn làm chủ hoàn toàn **Khối B**: nhóm câu **Đặc trưng hình học khối lượng ($x_C, y_C, J_O, J_C$)**, **Định lý chuyển động khối tâm**, **Thu gọn hệ lực quán tính D'Alembert**, **Phản lực động ổ trục** và **Điều kiện không trượt / không lật**.
+Chào mừng bạn bước vào **Chặng 2** của lộ trình **20 ngày chinh phục Cuối kỳ `AS1003` (Bách Khoa TPHCM)** từ mốc `3,0 → 5,0+` điểm. Sau khi đã "xóa mù" chiếu vectơ, tâm vận tốc tức thời $I$ và ăn trọn **Khối A (Ch.9–10)** ở [Chặng 1](/on-thi/chang-1-tinh-hoc), Chặng 2 giúp bạn làm chủ toàn bộ nền tảng **Chương 11–12.2** và trọn **Khối B**: nhóm câu **Đặc trưng hình học khối lượng ($x_C, y_C, J_O, J_C$)**, **Định lý chuyển động khối tâm – Động lượng – Mômen động lượng**, **Thu gọn hệ lực quán tính D'Alembert**, **Phản lực động ổ trục (2D & 3D)** và **Điều kiện không trượt / không lật**.
 
 ::: info Lộ trình Chặng 2 (Ngày 6 – Ngày 10 | 90–120 phút/ngày)
 | Ngày | Nội dung trọng tâm (Đề cương AS1003) | Mục tiêu làm được ngay sau buổi học | Đối chiếu giáo trình gốc |
 | :--- | :--- | :--- | :--- |
-| **Ngày 6** | **Ch.11 & 12.2:** PTVP chất điểm, ma sát trượt động & định lý khối tâm | Viết được $m\vec{a} = \sum\vec{F}$ trên trục tự nhiên $(\vec{\tau}, \vec{n})$ & Đề-các; ăn câu lý thuyết điều kiện tịnh tiến & khối tâm (Đề `2016`) | [ĐLH Ch.2](/dong-luc-hoc/chuong-2) · [ĐLH Ch.3](/dong-luc-hoc/chuong-3) · [BT ĐLH Ch.1](/bai-tap/dong-luc-hoc/chuong-1) |
+| **Ngày 6** | **Ch.11.1–11.2 & 12.2:** HQC quán tính, 2 bài toán ĐLH, PTVP cơ hệ, Định lý Động lượng & Mômen động lượng | Thuần thục $(\vec{\tau}, \vec{n})$ & Đề-các; ăn câu lý thuyết nội lực, tịnh tiến, bảo toàn khối tâm & $J_1\bar{\omega}_1 = J_2\bar{\omega}_2$ | [ĐLH Ch.1](/dong-luc-hoc/chuong-1) · [ĐLH Ch.2](/dong-luc-hoc/chuong-2) · [ĐLH Ch.3](/dong-luc-hoc/chuong-3) · [BT Ch.1](/bai-tap/dong-luc-hoc/chuong-1) · [BT Ch.2](/bai-tap/dong-luc-hoc/chuong-2) |
 | **Ngày 7** | **Ch.12.1:** Khối tâm tổng hợp ($x_C, y_C$) & Mômen quán tính ($J_O, J_C$) | Thuần thục bảng tra $J_G$, định lý Steiner $J_O = J_G + m\cdot OG^2$; giải gọn **Đề `1721` (3–4)**, **Đề `1722` (3–4)** & **Đề `0001/2015` (2–4)** | [ĐLH Ch.3 (Mục 3.1)](/dong-luc-hoc/chuong-3) · [BT ĐLH Ch.2](/bai-tap/dong-luc-hoc/chuong-2) |
 | **Ngày 8** | **Ch.13:** Nguyên lý D'Alembert & Thu gọn lực quán tính về tâm $O$ hoặc $C$ | Dùng ẩn dụ xe buýt phanh gấp không bao giờ nhầm dấu; xử lý gọn mẫu $\lvert\varepsilon\rvert = \omega^2$ ($\alpha + 45^\circ$) ở **Đề `1721` (5)**, **Đề `1722` (5)**, **Đề `2015`** | [ĐLH Ch.5](/dong-luc-hoc/chuong-5) · [BT ĐLH Ch.4](/bai-tap/dong-luc-hoc/chuong-4) |
-| **Ngày 9** | **Ch.13 Nâng cao:** Phản lực động ổ trục & Điều kiện không trượt / không lật | Đưa bài toán động về tĩnh học bằng 3 bước; tính ra số $(A_x, A_y)$, lực ma sát động & áp lực $N$ trên **Đề `0002/2015` (4)** và **Đề `1` (pp.67–69)** | [ĐLH Ch.5](/dong-luc-hoc/chuong-5) · [BT ĐLH Ch.4](/bai-tap/dong-luc-hoc/chuong-4) |
+| **Ngày 9** | **Ch.13 Nâng cao (13.3):** Phản lực động ổ trục 2D & 3D, Cân bằng động & Không trượt / Không lật | Tính $(A_x, A_y)$, lực ma sát động trên **Đề `0002/2015` (4)**, **Đề `1` (pp.67–69)**; nắm phản lực động 2 ổ đỡ 3D & điều kiện $x_C=y_C=J_{xz}=J_{yz}=0$ | [ĐLH Ch.5](/dong-luc-hoc/chuong-5) · [BT ĐLH Ch.4](/bai-tap/dong-luc-hoc/chuong-4) |
 | **Ngày 10** | **Mini-Test 10 câu Ch.11–13** & Bảng bấm máy 30 giây | Tự bấm giờ 25 phút rèn phản xạ né bẫy $J_O$ vs $J_C$, bẫy dấu $\vec{i}, \vec{j}, \vec{k}$ và bẫy đáp án `e` | [Chặng 3: Chùm Động năng](/on-thi/chang-3-dong-luc-hoc) |
 :::
 
@@ -21,34 +21,36 @@ Chào mừng bạn bước vào **Chặng 2** của lộ trình **20 ngày chinh
 
 ---
 
-## Ngày 6: Chương 11 & 12.2 — Phương Trình Vi Phân Chất Điểm, Ma Sát Trượt Động & Định Lý Khối Tâm
+## Ngày 6: Chương 11 (11.1–11.2) & 12.2 — Hệ Quy Chiếu Quán Tính, PTVP Cơ Hệ, Động Lượng & Mômen Động Lượng
 
-### 1. Tư duy từ số 0: Tĩnh học đứng yên vs Động lực học đang chạy
+### 1. Nền tảng Chương 11 (11.1–11.2): Hệ quy chiếu quán tính, 2 bài toán cơ bản & PTVP chất điểm / cơ hệ
 
-Nếu ở Tĩnh học vật đứng yên nên tổng lực bằng không ($\sum \vec{F} = \vec{0}$), thì khi vật **chuyển động có gia tốc** $\vec{a}$, hợp lực không triệt tiêu mà chính bằng $m\vec{a}$:
+Nếu ở Tĩnh học vật đứng yên nên tổng lực bằng không ($\sum \vec{F} = \vec{0}$), thì trong Động lực học khi vật **chuyển động có gia tốc** $\vec{a}$, hợp lực tác dụng lên chất điểm không triệt tiêu mà chính bằng $m\vec{a}$:
 
 $$m\vec{a} = \sum_{k=1}^{n} \vec{F}_k$$
 
-Người tay ngang chỉ cần nhớ đúng **2 hệ trục chiếu** cho phương trình này:
+#### A. Hệ quy chiếu quán tính & 4 định luật Newton
+- **Hệ quy chiếu quán tính (HQC QT):** Là hệ quy chiếu trong đó một chất điểm cô lập (không chịu tác dụng lực nào) sẽ đứng yên hoặc chuyển động thẳng đều. Trong các bài toán cơ học kỹ thuật thông thường trên mặt đất, hệ quy chiếu gắn với Trái Đất được coi gần đúng là hệ quy chiếu quán tính.
+- **4 tiên đề nền tảng (Định luật Newton):**
+  1. **Định luật I (Quán tính):** Nếu $\sum \vec{F}_k = \vec{0} \implies \vec{v} = \text{const}$.
+  2. **Định luật II (Phương trình cơ bản):** $m\vec{a} = m\dfrac{d^2\vec{r}}{dt^2} = \sum \vec{F}_k$.
+  3. **Định luật III (Tác dụng – phản tác dụng):** $\vec{F}_{12} = -\vec{F}_{21}$ (hai lực đặt trên **hai vật khác nhau**, không tự triệt tiêu khi tách riêng từng vật).
+  4. **Định luật IV (Độc lập tác dụng):** $\vec{a} = \sum \vec{a}_k = \frac{1}{m}\sum \vec{F}_k$.
 
-#### A. Hệ trục Đề-các $(Ox, Oy)$ — dùng cho vật trượt thẳng hoặc quỹ đạo phẳng $(x, y)$
-Chiếu $m\vec{a} = \sum\vec{F}_k$ lên hai trục vuông góc cố định:
+#### B. Hai bài toán cơ bản của Động lực học (Mục 11.1)
+Mọi bài toán chất điểm đều quy về đúng 1 trong 2 chiều đi của phương trình $m\ddot{\vec{r}} = \vec{F}$:
+1. **Bài toán thuận (Bài toán thứ nhất):** Cho biết khối lượng $m$ và quy luật chuyển động $\vec{r}(t)$ (hoặc tọa độ $x(t), y(t)$). Ta lấy đạo hàm bậc hai theo thời gian tìm gia tốc $\vec{a} = \ddot{\vec{r}}$ rồi suy ra hợp lực $\vec{F} = m\ddot{\vec{r}}$ (hoặc phản lực liên kết).
+2. **Bài toán nghịch (Bài toán thứ hai):** Cho biết khối lượng $m$, biểu thức các lực tác dụng $\vec{F}(t, \vec{r}, \dot{\vec{r}})$ và **điều kiện ban đầu** tại $t = t_0$ ($\vec{r}(t_0) = \vec{r}_0,\; \vec{v}(t_0) = \vec{v}_0$). Ta viết PTVP $m\ddot{\vec{r}} = \vec{F}$, tích phân hai lần và dùng $(\vec{r}_0, \vec{v}_0)$ để xác định hằng số tích phân, thu được quy luật chuyển động $\vec{r}(t)$.
 
-$$\begin{cases} m\ddot{x} = \sum F_{kx} \\ m\ddot{y} = \sum F_{ky} \end{cases}$$
-
-#### B. Hệ trục Tự nhiên $(\vec{\tau}, \vec{n}, \vec{b})$ — dùng cho vật trượt trên mặt cong, mặt cầu, cầu vồng
-Gắn trực tiếp lên chất điểm $M$ tại thời điểm khảo sát:
-- Trục tiếp tuyến $\vec{\tau}$: dọc theo tiếp tuyến quỹ đạo, hướng theo chiều chuyển động.
-- Trục pháp tuyến chính $\vec{n}$: vuông góc $\vec{\tau}$, **luôn hướng vào tâm cong (phía lõm) của quỹ đạo**.
-- Trục trùng pháp tuyến $\vec{b}$: vuông góc với mặt phẳng quỹ đạo (chứa $\vec{\tau}$ và $\vec{n}$).
-
-Chiếu phương trình cơ bản lên 3 trục tự nhiên:
-
-$$\begin{cases}
-m a_\tau = m\dot{v} = m\ddot{s} = \sum F_{k\tau} \\
-m a_n = m\dfrac{v^2}{\rho} = \sum F_{kn} \\
-0 = \sum F_{kb}
-\end{cases}$$
+#### C. Hai hệ trục chiếu PTVP chất điểm: Đề-các $(Ox, Oy)$ & Tự nhiên $(\vec{\tau}, \vec{n}, \vec{b})$
+- **Hệ trục Đề-các $(Ox, Oy)$** (vật trượt thẳng hoặc chuyển động phẳng theo tọa độ $x, y$):
+  $$\begin{cases} m\ddot{x} = \sum F_{kx} \\ m\ddot{y} = \sum F_{ky} \end{cases}$$
+- **Hệ trục Tự nhiên $(\vec{\tau}, \vec{n}, \vec{b})$** (vật trượt trên mặt cong, mặt cầu, cầu vồng): gắn tại chất điểm $M$, với $\vec{\tau}$ dọc tiếp tuyến theo chiều chuyển động, $\vec{n}$ vuông góc $\vec{\tau}$ **luôn hướng vào tâm cong (phía lõm)**, $\vec{b}$ vuông góc mặt phẳng mật tiếp $(\vec{\tau}, \vec{n})$:
+  $$\begin{cases}
+  m a_\tau = m\dot{v} = m\ddot{s} = \sum F_{k\tau} \\
+  m a_n = m\dfrac{v^2}{\rho} = \sum F_{kn} \\
+  0 = \sum F_{kb}
+  \end{cases}$$
 
 ::: warning 3 điều kiện sống còn trong bài toán ly tâm, bứt mặt cong & ma sát
 1. **Điều kiện còn tựa lên mặt cong (không bị văng/bứt khỏi mặt trụ–cầu):** Phản lực pháp tuyến $N \ge 0$. Tại đúng khoảnh khắc vật bắt đầu **bứt khỏi mặt**, ta đặt **$N = 0$** vào phương trình trục $\vec{n}$ để rút ra góc rời mặt hoặc vận tốc giới hạn!
@@ -56,33 +58,77 @@ m a_n = m\dfrac{v^2}{\rho} = \sum F_{kn} \\
 3. **Khi vật đã trượt (ma sát trượt động):** Lực ma sát có độ lớn $F_{\text{ms}} = f_{\text{đ}} N$ (hoặc $\mu N$) và **luôn hướng ngược chiều vận tốc trượt tương đối** của vật so với mặt tiếp xúc.
 :::
 
-#### C. Liên hệ với Chương 12.2: Định lý chuyển động khối tâm & Điều kiện vật rắn tịnh tiến
-Trong cơ hệ nhiều chất điểm (hoặc vật rắn) có tổng khối lượng $M = \sum m_k$ và khối tâm $C$, các nội lực tương tác giữa các phần tử trong hệ luôn xuất hiện từng cặp trực đối (Định luật III Newton) nên **tổng nội lực và tổng mômen nội lực đều tự triệt tiêu bằng không**. Vì vậy ta có **hai định lý vàng** cực hay ra trong câu lý thuyết mở đầu đề HCMUT:
+#### D. Phương trình vi phân chuyển động của hệ chất điểm (Mục 11.2)
+Với một cơ hệ gồm $n$ chất điểm (hoặc nhiều vật liên kết nhau), mỗi chất điểm thứ $k$ (khối lượng $m_k$) chịu tác dụng đồng thời của **ngoại lực** $\vec{F}_k^{(e)}$ (từ bên ngoài hệ) và **nội lực** $\vec{F}_k^{(i)}$ (tương tác giữa các phần tử trong cùng hệ):
 
-1. **Định lý chuyển động khối tâm & Định lý biến thiên động lượng ($\vec{Q} = M\vec{v}_C$):**
-   $$M\vec{a}_C = \frac{d\vec{Q}}{dt} = \sum \vec{F}_k^{(e)}$$
-   **Hệ quả thi trắc nghiệm:** Chuyển động của khối tâm $C$ **chỉ phụ thuộc vào ngoại lực tác động lên hệ**, hoàn toàn không bị ảnh hưởng bởi nội lực! (Xem ngay Đề `0002/2016` Câu 2 bên dưới).
+$$m_k \ddot{\vec{r}}_k = \vec{F}_k^{(e)} + \vec{F}_k^{(i)} \qquad (k = 1, 2, \dots, n)$$
 
-2. **Định lý biến thiên mômen động lượng & Điều kiện vật rắn chuyển động tịnh tiến:**
-   - Đối với điểm cố định $O$: $\dfrac{d\vec{L}_O}{dt} = \sum \vec{M}_O\left(\vec{F}_k^{(e)}\right)$.
-   - Đối với **khối tâm $C$** (với $\vec{L}_C = J_C \vec{\omega}$ trong chuyển động phẳng):
-     $$\frac{d\vec{L}_C}{dt} = J_C \vec{\varepsilon} = \sum \vec{M}_C\left(\vec{F}_k^{(e)}\right)$$
-   - **Điều kiện để vật rắn chuyển động tịnh tiến** (không quay, xuất phát từ nghỉ hoặc đang có $\vec{\omega} = \vec{0}$ giữ $\vec{\varepsilon} = \vec{0}$):
-     $$\sum \vec{M}_C\left(\vec{F}_k^{(e)}\right) = \vec{0}$$
-     **Cảnh báo bẫy lý thuyết:** Không được chọn điều kiện "tổng ngoại lực và tổng mômen bằng không" (đó là **đứng yên cân bằng**, không thể tăng tốc tịnh tiến!), và cũng không được lấy mômen đối với điểm $O$ bất kỳ khác $C$ (vì $\sum \vec{M}_O^{(e)} = \vec{M}_O(M\vec{a}_C) + \sum \vec{M}_C^{(e)} \neq \vec{0}$ khi $\vec{a}_C \neq \vec{0}$!).
+Theo Định luật III Newton, các nội lực xuất hiện từng cặp trực đối nên có **hai tính chất bất biến**:
+
+$$\sum_{k=1}^n \vec{F}_k^{(i)} = \vec{0}, \qquad \sum_{k=1}^n \vec{M}_O\left(\vec{F}_k^{(i)}\right) = \vec{0}$$
+
+::: danger CẢNH BÁO BẪY LÝ THUYẾT: Tổng lực & mômen nội lực bằng 0, NHƯNG công nội lực thì sao?
+Dù tổng vectơ nội lực $\sum \vec{F}_k^{(i)} = \vec{0}$ và tổng mômen nội lực $\sum \vec{M}_O(\vec{F}_k^{(i)}) = \vec{0}$, **tổng công của các nội lực nói chung KHÁC KHÔNG ($\sum A_k^{(i)} \neq 0$)**!
+- Lý do: Hai nội lực $\vec{F}_{12}$ và $\vec{F}_{21}$ bằng nhau ngược chiều nhưng đặt lên **hai điểm khác nhau**; nếu hai điểm đó dịch chuyển tương đối khác nhau — như khi **cơ hệ bị biến dạng** (lò xo nối hai vật co giãn) hoặc có **ma sát trượt giữa các vật trong hệ** — thì tổng công nội lực không triệt tiêu!
+- Chỉ đối với **vật rắn tuyệt đối** hoặc hệ các vật rắn nối với nhau bằng liên kết lý tưởng không biến dạng (dây không giãn, khớp nhẵn, lăn không trượt) thì $\sum A_k^{(i)} = 0$.
+:::
 
 ---
 
-### 2. Thuật toán giải 4 bước bài toán PTVP chất điểm & cơ hệ
+### 2. Chương 12.2: Định Lý Khối Tâm, Định Lý Động Lượng & Định Lý Mômen Động Lượng
+
+Vì tổng nội lực và tổng mômen nội lực luôn tự triệt tiêu khi cộng cả hệ, ta rút ngay ra các **định lý tổng quát không chứa ẩn nội lực** (cực hay ra trong cả câu lý thuyết lẫn bài toán tính nhanh bảo toàn):
+
+*(Quy ước ký hiệu xuyên suốt: chữ có gạch trên đầu như $\bar{\omega}, \bar{\varepsilon}$ biểu thị **giá trị đại số có dấu** ($+$ khi quay CCW, $-$ khi quay CW); chữ không gạch như $\omega, \varepsilon$ là độ lớn không âm khi chiều quay đã xác định rõ).*
+
+#### A. Định lý chuyển động khối tâm & Định lý Động lượng
+- **Động lượng của cơ hệ** (ký hiệu $\vec{Q}$, hoặc $\vec{K}$ trong giáo trình Đỗ Sanh):
+  $$\vec{Q} = \sum_{k=1}^n m_k \vec{v}_k = M\vec{v}_C \qquad \left(M = \sum_{k=1}^n m_k\right)$$
+- **Xung lượng của lực $\vec{F}$** trong khoảng thời gian $[t_0;\; t_1]$: $\vec{S} = \int_{t_0}^{t_1} \vec{F}\,dt$ (khi $\vec{F}$ không đổi thì $\vec{S} = \vec{F}\,\Delta t$).
+- **Định lý biến thiên động lượng & Định lý chuyển động khối tâm:**
+  - *Dạng vi phân:*
+    $$M\vec{a}_C = \frac{d\vec{Q}}{dt} = \sum_{k=1}^n \vec{F}_k^{(e)}$$
+  - *Dạng hữu hạn:*
+    $$\vec{Q}_1 - \vec{Q}_0 = \sum_{k=1}^n \vec{S}_k^{(e)}$$
+    *(Chiếu lên trục $Ox$: $Q_{1x} - Q_{0x} = \sum S_{kx}^{(e)}$).*
+- **Hệ quả thi trắc nghiệm — Bảo toàn động lượng & Bảo toàn vị trí khối tâm:**
+  1. Chuyển động khối tâm $C$ **chỉ phụ thuộc vào ngoại lực**, hoàn toàn không chịu ảnh hưởng của nội lực! (Xem Đề `0002/2016` Câu 2 bên dưới).
+  2. **Bảo toàn động lượng theo trục chiếu:** Nếu tổng hình chiếu ngoại lực lên trục $Ox$ bằng không ($\sum F_{kx}^{(e)} = 0$) thì động lượng theo phương đó bảo toàn: $Q_x = M v_{Cx} = \text{const}$.
+  3. **Bảo toàn vị trí khối tâm:** Nếu ban đầu hệ đứng yên ($\vec{v}_{C0} = \vec{0}$) và $\sum F_{kx}^{(e)} = 0$, thì hoành độ khối tâm $C$ giữ nguyên ($x_C = \text{const} \implies \Delta x_C = 0$):
+     $$m_1 \Delta x_1 + m_2 \Delta x_2 = 0$$
+     *(Tổng quát cho $n$ vật: $\sum_{k=1}^n m_k \Delta x_k = 0$).*
+
+#### B. Định lý Mômen động lượng & Điều kiện vật rắn chuyển động tịnh tiến
+- **Mômen động lượng:**
+  - Đối với điểm cố định $O$: $\vec{L}_O = \sum_{k=1}^n \left(\vec{r}_k \times m_k \vec{v}_k\right)$.
+  - Đối với **vật rắn quay quanh trục cố định $Oz$**: $L_z = J_z \bar{\omega}$.
+- **Định lý biến thiên mômen động lượng:**
+  - Quanh điểm cố định $O$: $\dfrac{d\vec{L}_O}{dt} = \sum \vec{M}_O\left(\vec{F}_k^{(e)}\right)$.
+  - Quanh **trục quay cố định $Oz$** (PTVP chuyển động quay):
+    $$\frac{dL_z}{dt} = J_z \bar{\varepsilon} = \sum M_z\left(\vec{F}_k^{(e)}\right)$$
+    *(Dạng hữu hạn với xung lượng ngoại lực: $J_z(\bar{\omega}_1 - \bar{\omega}_0) = \sum M_z(\vec{S}_k^{(e)})$).*
+  - Quanh **khối tâm $C$** (vật rắn chuyển động phẳng):
+    $$\frac{d\vec{L}_C}{dt} = J_C \vec{\varepsilon} = \sum \vec{M}_C\left(\vec{F}_k^{(e)}\right)$$
+- **Định luật bảo toàn mômen động lượng:**
+  Nếu tổng mômen ngoại lực đối với trục cố định $Oz$ bằng không ($\sum M_z^{(e)} = 0$) thì $L_z = J_z \bar{\omega} = \text{const}$:
+  $$J_1 \bar{\omega}_1 = J_2 \bar{\omega}_2$$
+  *(Khi người hoặc vật thu gọn về gần trục quay làm $J_z$ giảm, vận tốc góc $\omega$ phải tăng tương ứng!)*
+- **Điều kiện để vật rắn chuyển động tịnh tiến** (không quay, giữ $\vec{\varepsilon} = \vec{0}$):
+  $$\sum \vec{M}_C\left(\vec{F}_k^{(e)}\right) = \vec{0}$$
+  **Cảnh báo bẫy lý thuyết:** Không được chọn điều kiện "tổng ngoại lực và tổng mômen bằng không" (đó là **đứng yên cân bằng**, không thể tăng tốc tịnh tiến!), và cũng không được lấy mômen đối với điểm $O$ bất kỳ khác $C$ (vì $\sum \vec{M}_O^{(e)} = \vec{M}_O(M\vec{a}_C) + \sum \vec{M}_C^{(e)} \neq \vec{0}$ khi $\vec{a}_C \neq \vec{0}$!).
+
+---
+
+### 3. Thuật toán giải 4 bước bài toán PTVP chất điểm & cơ hệ
 
 - **Bước 1:** Vẽ đầy đủ các ngoại lực tác dụng lên vật (trọng lực $\vec{P} = m\vec{g}$, phản lực $\vec{N}$ vuông góc mặt tựa, lực ma sát $\vec{F}_{\text{ms}}$ ngược chiều chuyển động, lực căng dây $\vec{T}$, lực lò xo).
 - **Bước 2:** Chọn hệ trục thích hợp: quỹ đạo cong tròn dùng $(\vec{\tau}, \vec{n})$ với $+\vec{n}$ hướng **vào tâm cong**; trượt thẳng dùng $(Ox, Oy)$ với $+Ox$ dọc phương trượt.
 - **Bước 3:** Chiếu $m\vec{a} = \sum\vec{F}$ (hoặc $M\vec{a}_C = \sum\vec{F}^{(e)}$ cho cả cơ hệ) lên từng trục.
-- **Bước 4:** Thay điều kiện biên tương ứng ($N = 0$ để tìm điểm rời mặt; $F_{\text{ms}} = f_{\text{đ}} N$ khi vật đã trượt; $\ddot{s}_C = 0$ để tìm phản lực nền).
+- **Bước 4:** Thay điều kiện biên tương ứng ($N = 0$ để tìm điểm rời mặt; $F_{\text{ms}} = f_{\text{đ}} N$ khi vật đã trượt; áp dụng $\sum F_{kx}^{(e)} = 0 \implies m_1\Delta x_1 + m_2\Delta x_2 = 0$ hoặc $\sum M_z^{(e)} = 0 \implies J_1\omega_1 = J_2\omega_2$ cho bài toán bảo toàn).
 
 ---
 
-### 3. Ví dụ minh họa từ lý thuyết & đề thi thật
+### 4. Ví dụ minh họa từ lý thuyết, định luật bảo toàn & đề thi thật
 
 #### Ví dụ 6-1 (Hai câu lý thuyết kinh điển Đề `0001/2016` & `0002/2016`)
 1. **Đề `0002/2016` — Câu 2 (`p.26`):** *"Khối tâm $C$ của cơ hệ chuyển động chịu ảnh hưởng của:"*
@@ -96,9 +142,9 @@ Trong cơ hệ nhiều chất điểm (hoặc vật rắn) có tổng khối lư
 2. **Đề `0001/2016` — Câu 2 (`p.23`):** *"Điều kiện để vật rắn chuyển động tịnh tiến là:"*
    - `a.` Tổng các ngoại lực bằng tổng các nội lực
    - `b.` Tổng các ngoại lực bằng không
-   - `c.` Tổng các ngoại lực và tổng các moment ngoại lực đối với tâm $C$ bằng không
-   - `d.` Tổng moment các ngoại lực đối với khối tâm $C$ bằng không
-   - `e.` Tổng moment các ngoại lực đối với điểm $O$ bất kỳ khác tâm $C$ bằng không
+   - `c.` Tổng các ngoại lực và tổng các mômen ngoại lực đối với tâm $C$ bằng không
+   - `d.` Tổng mômen các ngoại lực đối với khối tâm $C$ bằng không
+   - `e.` Tổng mômen các ngoại lực đối với điểm $O$ bất kỳ khác tâm $C$ bằng không
    - **Giải & Chốt đáp án `2d`:** Chuyển động tịnh tiến nghĩa là gia tốc góc $\vec{\varepsilon} = \vec{0}$ (trong khi $\vec{a}_C$ có thể khác $\vec{0}$!). Từ $J_C \vec{\varepsilon} = \sum \vec{M}_C^{(e)}$, điều kiện cần là $\sum \vec{M}_C^{(e)} = \vec{0}$. Phương án `c` ép thêm $\sum \vec{F}^{(e)} = \vec{0}$ sẽ thành vật đứng yên; phương án `e` lấy mômen quanh điểm $O \neq C$ bị dính thêm mômen lực quán tính $-M\vec{a}_C$ nên sai.
 
 #### Ví dụ 6-2 (Trục Tự nhiên): Chất điểm rời mặt cầu trơn
@@ -143,17 +189,41 @@ Trong cơ hệ nhiều chất điểm (hoặc vật rắn) có tổng khối lư
     \end{aligned}$$
   Đối chiếu **Đề `1` (`p.69`) Câu 13**: khớp tuyệt đối đáp án chính thức **`13a`**!
 
+#### Ví dụ 6-4 (Chuẩn trắc nghiệm 12.2 — Bảo toàn vị trí khối tâm & Bẫy độ dời tương đối)
+**Đề bài:** Một chiếc thuyền khối lượng $M = 160\text{ kg}$ ban đầu đứng yên trên mặt nước phẳng lặng (bỏ qua mọi lực cản theo phương ngang). Một người khối lượng $m = 40\text{ kg}$ đi từ mũi đến lái thuyền với quãng đường dài $L = 3{,}0\text{ m}$ **so với thuyền**. Độ dịch chuyển của thuyền so với mặt nước là:
+- `a.` $0{,}75\text{ m}$ $\quad$ `b.` $0{,}60\text{ m}$ $\quad$ `c.` $0{,}48\text{ m}$ $\quad$ `d.` $1{,}20\text{ m}$ $\quad$ `e.` Các đáp án còn lại đều sai
+
+**Giải nhanh & Phá bẫy (Chốt `b`):**
+- Vì $\sum F_x^{(e)} = 0$ và hệ ban đầu đứng yên ($\vec{v}_{C0} = \vec{0}$), hoành độ khối tâm chung bảo toàn ($m\,\Delta x_{\text{người}} + M\,\Delta x_{\text{thuyền}} = 0$).
+- **Cẩn thận bẫy `0,75 m` (`a`):** $L = 3{,}0\text{ m}$ là độ dời **tương đối so với thuyền**, KHÔNG phải độ dời tuyệt đối so với mặt nước! Gọi thuyền giật lùi đoạn $d$ ($\Delta x_{\text{thuyền}} = -d$), thì độ dời tuyệt đối của người so với nước là $\Delta x_{\text{người}} = L - d$.
+- Thay vào định luật bảo toàn vị trí khối tâm:
+  $$m(L - d) + M(-d) = 0 \implies d = \frac{mL}{M + m} = \frac{40 \cdot 3{,}0}{160 + 40} = \frac{120}{200} = 0{,}60\text{ m}$$
+
+#### Ví dụ 6-5 (Chuẩn trắc nghiệm 12.2 — Bảo toàn mômen động lượng $J_1\bar{\omega}_1 = J_2\bar{\omega}_2$)
+**Đề bài:** Một sàn quay hình đĩa tròn đặc đồng chất khối lượng $M = 120\text{ kg}$, bán kính $R = 2\text{ m}$ đang quay tự do không ma sát quanh trục thẳng đứng đi qua tâm $O$ với vận tốc góc $\omega_1 = 1{,}5\text{ rad/s}$. Một người khối lượng $m = 60\text{ kg}$ (coi như chất điểm) ban đầu đứng ở mép sàn ($r_1 = R = 2\text{ m}$), sau đó đi vào đứng cách tâm $r_2 = 1\text{ m}$. Vận tốc góc mới $\omega_2$ của sàn quay bằng:
+- `a.` $2{,}0\text{ rad/s}$ $\quad$ `b.` $6{,}0\text{ rad/s}$ $\quad$ `c.` $2{,}4\text{ rad/s}$ $\quad$ `d.` $3{,}0\text{ rad/s}$ $\quad$ `e.` Các đáp án còn lại đều sai
+
+**Giải nhanh & Phá bẫy (Chốt `c`):**
+- Toàn bộ ngoại lực (trọng lực thẳng đứng song song trục $Oz$, phản lực ổ quay cắt trục $Oz$) đều có mômen quanh trục quay $Oz$ bằng $0$ ($\sum M_z^{(e)} = 0$), nên mômen động lượng $L_z = J_z \omega$ được bảo toàn:
+  - Mômen quán tính của sàn đĩa đặc: $J_{\text{sàn}} = \frac{1}{2}MR^2 = \frac{1}{2}(120)(2^2) = 240\text{ kg}\cdot\text{m}^2$.
+  - Khi người ở mép ($r_1 = 2\text{ m}$): $J_1 = 240 + 60(2^2) = 480\text{ kg}\cdot\text{m}^2$.
+  - Khi người ở $r_2 = 1\text{ m}$: $J_2 = 240 + 60(1^2) = 300\text{ kg}\cdot\text{m}^2$.
+- Áp dụng $J_1 \omega_1 = J_2 \omega_2$:
+  $$\omega_2 = \frac{J_1}{J_2}\omega_1 = \frac{480}{300} \cdot 1{,}5 = 2{,}4\text{ rad/s}$$
+  *(Bẫy `a` $2{,}0\text{ rad/s}$ dùng nhầm $MR^2$ của vành mỏng; bẫy `b` $6{,}0\text{ rad/s}$ quên cộng $J_{\text{sàn}}$!).*
+
 ---
 
-### 4. Bẫy hay sai & Bài tập tự luyện Ngày 6
+### 5. Bẫy hay sai & Bài tập tự luyện Ngày 6
 
-::: warning 3 Bẫy hay sai ở Ngày 6
+::: warning 4 Bẫy hay sai ở Ngày 6
 1. **Đặt sai chiều $a_n$:** Gia tốc pháp tuyến $\vec{a}_n$ luôn hướng **vào tâm cong**, nên $\sum F_{kn} = m\frac{v^2}{\rho}$ phải lấy dấu $(+)$ cho lực hướng vào tâm (như $mg\cos\theta$), dấu $(-)$ cho lực hướng ra ngoài (như phản lực $N$ trên cầu lồi).
 2. **Nhầm công thức ma sát tĩnh vs trượt động:** Khi vật đã trượt, lực ma sát luôn là $F_{\text{ms}} = f_{\text{đ}} N$ (không được viết dấu $\le$); chỉ khi tìm điều kiện **không trượt / cân bằng** mới viết $\lvert F_{\text{ms}} \rvert \le f_0 N$.
-3. **Đưa nội lực vào Định lý khối tâm:** Lực căng dây hay phản lực giữa hai vật trong cùng hệ tuyệt đối không xuất hiện trong $M\vec{a}_C = \sum\vec{F}^{(e)}$ của cả hệ!
+3. **Đưa nội lực vào Định lý khối tâm hoặc tưởng công nội lực luôn $= 0$:** Nội lực không xuất hiện trong $M\vec{a}_C = \sum\vec{F}^{(e)}$ hay $J_z\bar{\varepsilon} = \sum M_z^{(e)}$, nhưng **công của nội lực $\sum A^{(i)}$ vẫn khác $0$** nếu hệ biến dạng hoặc có ma sát trượt bên trong hệ!
+4. **Nhầm độ dời tương đối thành tuyệt đối trong $m_1\Delta x_1 + m_2\Delta x_2 = 0$:** Phải đổi độ dời của người/vật nhỏ về hệ quy chiếu gắn với mặt đất ($\Delta x_{\text{người}} = L - d$) trước khi thế vào công thức bảo toàn khối tâm!
 :::
 
-::: info Bài tập tự luyện Ngày 6 (Có đáp số kiểm toán)
+::: info Bài tập tự luyện Ngày 6 (Có đáp số kiểm toán — Xem thêm ở [BT ĐLH Chương 2](/bai-tap/dong-luc-hoc/chuong-2))
 **Bài 6-1:** Một khối hộp nặng $m = 10\text{ kg}$ trượt xuống dốc nghiêng góc $\alpha = 30^\circ$ có hệ số ma sát trượt động $f_{\text{đ}} = 0{,}25$ ($g = 9{,}81\text{ m/s}^2$). Tính áp lực pháp tuyến $N$, lực ma sát trượt động $F_{\text{ms}}$ và gia tốc trượt $a$ của khối hộp.
 - **Đáp số:** $N = mg\cos 30^\circ \approx 84{,}96\text{ N}$; $\quad F_{\text{ms}} = f_{\text{đ}} N \approx 21{,}24\text{ N}$; $\quad a = g(\sin 30^\circ - f_{\text{đ}}\cos 30^\circ) \approx 2{,}78\text{ m/s}^2$.
 
@@ -204,11 +274,11 @@ Trong đề thi `AS1003`, trước khi viết được lực quán tính hay đ�
 ### 2. Giải chi tiết 3 bài đề thi thật (Kiểm toán 100% bằng Python)
 
 <div class="figure-container">
-<svg viewBox="0 0 760 320" style="width: 100%; max-width: 740px; height: auto; display: block; margin: 0 auto;" role="img" aria-label="Sơ đồ hệ ghép thanh và đĩa Đề 1721 Bài 2 và phân tích vector lực quán tính ở Đề 1721 Câu 5">
+<svg viewBox="0 0 760 320" style="width: 100%; max-width: 740px; height: auto; display: block; margin: 0 auto;" role="img" aria-label="Sơ đồ hệ ghép thanh và đĩa Đề 1721 Bài 2 và phân tích vectơ lực quán tính ở Đề 1721 Câu 5">
   <rect x="8" y="8" width="364" height="304" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
   <rect x="388" y="8" width="364" height="304" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
   <text x="190" y="30" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="700" fill="#0369a1">Đề 1721 Bài 2 (Câu 3–4): Tọa độ C &amp; J_O</text>
-  <text x="570" y="30" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="700" fill="#0f766e">Đề 1721 Câu 5: Góc (alpha + 45°) khi |eps| = w^2</text>
+  <text x="570" y="30" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="700" fill="#0f766e">Đề 1721 Câu 5: Góc (α + 45°) khi |ε| = ω²</text>
 
   <!-- Left Panel: De 1721 Bai 2 -->
   <!-- Pivot O at (256, 72) -->
@@ -258,12 +328,12 @@ Trong đề thi `AS1003`, trước khi viết được lực quán tính hay đ�
 
   <!-- Angle alpha arc from +Ox down-left to OA -->
   <path d="M 186 72 A 70 70 0 0 0 221 133" fill="none" stroke="#d97706" stroke-width="1.8" />
-  <text x="172" y="110" text-anchor="end" font-family="sans-serif" font-size="12" font-weight="700" fill="#b45309">alpha</text>
+  <text x="172" y="110" text-anchor="end" font-family="sans-serif" font-size="12" font-weight="700" fill="#b45309">α</text>
 
   <!-- CW omega and eps arrows around O -->
   <path d="M 275 110 A 42 42 0 0 1 226 105" fill="none" stroke="#dc2626" stroke-width="1.7" />
   <polygon points="229,110 222,102 233,102" fill="#dc2626" />
-  <text x="290" y="114" font-family="sans-serif" font-size="11" font-weight="700" fill="#dc2626">w, eps (CW)</text>
+  <text x="290" y="114" font-family="sans-serif" font-size="11" font-weight="700" fill="#dc2626">ω, ε (CW)</text>
 
   <!-- Right Panel: Vector sum R_qt^n + R_qt^t when |eps|=w^2 -->
   <!-- Origin O' at (640, 82) -->
@@ -296,22 +366,22 @@ Trong đề thi `AS1003`, trước khi viết được lực quán tính hay đ�
   <line x1="592" y1="188" x2="543" y2="222" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="3,3" />
   <line x1="558" y1="139" x2="543" y2="222" stroke="#dc2626" stroke-width="2.8" />
   <polygon points="539,215 542,228 549,217" fill="#dc2626" />
-  <text x="542" y="246" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#dc2626">R_qt = sqrt(2) M eps OC</text>
+  <text x="542" y="246" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#dc2626">R_qt = √2·M·ε·OC</text>
 
   <!-- Reference horizontal at C for alpha+45 -->
   <line x1="558" y1="139" x2="466" y2="139" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="3,3" />
   <path d="M 520 139 A 38 38 0 0 0 551 176" fill="none" stroke="#d97706" stroke-width="1.7" />
-  <text x="512" y="156" text-anchor="end" font-family="sans-serif" font-size="11" font-weight="700" fill="#b45309">a + 45°</text>
+  <text x="512" y="156" text-anchor="end" font-family="sans-serif" font-size="11" font-weight="700" fill="#b45309">α + 45°</text>
 
   <!-- M_O^qt CCW arrow at O -->
   <path d="M 672 68 A 34 34 0 0 0 622 52" fill="none" stroke="#dc2626" stroke-width="2" />
   <polygon points="626,56 616,52 624,47" fill="#dc2626" />
   <text x="682" y="64" font-family="sans-serif" font-size="11" font-weight="700" fill="#dc2626">M_O^qt (+k)</text>
-  <text x="570" y="294" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#475569">Góc giữa R_qt^n và R_qt là đúng 45° nên cộng thêm 45° vào alpha!</text>
+  <text x="570" y="294" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#475569">Góc giữa R_qt^n và R_qt là đúng 45° nên cộng thêm 45° vào α!</text>
 </svg>
 <div class="figure-caption">
 
-Hình 7-1: Hệ ghép thanh OA và đĩa tròn B của Đề 1721 Bài 2 (trái) và hình bình hành giải thích góc alpha + 45° khi |eps| = w^2 (phải)
+Hình 7-1: Hệ ghép thanh OA và đĩa tròn B của Đề 1721 Bài 2 (trái) và hình bình hành giải thích góc α + 45° khi |ε| = ω² (phải)
 
 </div>
 </div>
@@ -396,7 +466,7 @@ Hình 7-1: Hệ ghép thanh OA và đĩa tròn B của Đề 1721 Bài 2 (trái)
   <!-- CCW omega & eps at O -->
   <path d="M 122 108 A 28 28 0 0 0 128 66" fill="none" stroke="#16a34a" stroke-width="1.7" />
   <polygon points="124,71 128,60 133,70" fill="#16a34a" />
-  <text x="140" y="56" font-family="sans-serif" font-size="11" font-weight="700" fill="#15803d">w, eps (CCW)</text>
+  <text x="140" y="56" font-family="sans-serif" font-size="11" font-weight="700" fill="#15803d">ω, ε (CCW)</text>
   <text x="275" y="150" font-family="sans-serif" font-size="11" fill="#334155">m_OI = (3/5)m</text>
   <text x="275" y="168" font-family="sans-serif" font-size="11" fill="#334155">m_AB = (2/5)m</text>
   <text x="275" y="186" font-family="sans-serif" font-size="11" fill="#dc2626">OC = 2,1 l</text>
@@ -487,7 +557,7 @@ Tìm $J_O$ (Câu 2), $x_C$ (Câu 3) và $J_C$ (Câu 4). *(Lưu ý: trên bản P
      \end{aligned}$$
    - **Tổng cộng:**
      $$J_O = 10 + \frac{4}{3} + \frac{32}{3} + 152 = 10 + 12 + 152 = 174mR^2$$
-   - **Vì sao vết khoanh tay `2b` ($165mR^2$) trên PDF là SAI?** Vì người khoanh đã quên cộng mômen quán tính riêng quanh tâm của vành $O_1$ ($1mR^2$) và đĩa $O_2$ ($8mR^2$), làm hụt mất đúng $1 + 8 = 9mR^2$ ($174 - 9 = 165$)! Đáp án chuẩn xác là **`2c`** ($174mR^2$).
+   - **Vì sao vết khoanh tay `2b` ($165mR^2$) trên PDF là SAI?** Lỗi thiếu đúng $9mR^2$ ($174 - 9 = 165$) thường rơi vào 1 trong 2 sai lầm kinh điển: hoặc **quên cộng mômen quán tính riêng quanh tâm** của vành $O_1$ ($1mR^2$) và đĩa $O_2$ ($8mR^2$: $1 + 8 = 9mR^2$), hoặc **lấy nhầm $\frac{1}{12}$ thay vì $\frac{1}{3}$** (quên $+md^2$) cho hai thanh $L_1, L_2$ (làm hụt $\frac{4-1}{3} + \frac{32-8}{3} = 1 + 8 = 9mR^2$)! Đáp án chuẩn xác là **`2c`** ($174mR^2$).
 
 4. **Mômen quán tính $J_C$ (Câu 4 — Chốt `4a`, vạch trần khoanh sai `4e`):**
    Áp dụng Huygens–Steiner đảo chiều từ $O$ về khối tâm chung $C$ ($OC = 3R$, $M_{\text{tổng}} = 8m$):
@@ -621,14 +691,14 @@ Do đó:
      \end{aligned}$$
      Phương trình quay quanh $A$: $\sum M_A = M - J_{zA}\varepsilon = 0 \implies \varepsilon = \frac{M}{J_{zA}} = \frac{10}{1/3} = 30\text{ rad/s}^2$ $\implies$ Chốt **`3a`**.
 
-2. **Đề `2` (`26/12/2013` Câu 7, `p. 48` — Key chuẩn `7c`):** Ròng rọc động trụ tròn đặc $C$ khối lượng $m_C = 2\text{ kg}$, bán kính $R_C = 2r$ treo tải $D$, nhánh dây phải cố định trần, nhánh trái đi lên cuốn vào ròng rọc $B$. Khi hệ số ma sát ở $A$ là $f = 0$, ta tính được $a_A = \frac{530}{160} = \frac{53}{16}\text{ m/s}^2$ đi xuống, kéo ròng rọc $C$ đi lên với $a_C = \frac{a_A}{4} = \frac{53}{64} \approx 0{,}8281\text{ m/s}^2$ và quay ngược KĐH với $\varepsilon_C = \frac{a_C}{R_C} = \frac{a_C}{2r}$. Khi thu gọn lực quán tính của ròng rọc $C$ về tâm $C$:
+2. **Đề `2` (`26/12/2013` Câu 7, `p. 48` — Key chuẩn `7c`):** Ròng rọc động trụ tròn đặc $C$ khối lượng $m_C = 2\text{ kg}$, bán kính $R_C = 2r$ treo tải $D$, nhánh dây phải gắn cố định lên trần, nhánh trái đi lên cuốn vào tầng trong $r_B = r$ của ròng rọc cố định $B$. Khi hệ số ma sát ở $A$ là $f = 0$, tải $A$ trượt xuống dốc với $a_A = \frac{530}{160} = \frac{53}{16}\text{ m/s}^2$, kéo ròng rọc $B$ quay **ngược chiều kim đồng hồ (CCW)** và kéo nhánh dây trái của $C$ đi lên với $a_{\text{trái}} = \frac{a_A}{2}$ (trong khi nhánh phải của $C$ đứng yên). Do đó tâm $C$ đi lên với $a_C = \frac{a_A}{4} = \frac{53}{64} \approx 0{,}8281\text{ m/s}^2$ và ròng rọc $C$ quay **cùng chiều kim đồng hồ (CW)** với $\varepsilon_C = \frac{a_C}{R_C} = \frac{a_C}{2r}$. Khi thu gọn hệ lực quán tính của ròng rọc $C$ về tâm $C$:
    - Hợp lực quán tính hướng **xuống** (ngược với $\vec{a}_C$ hướng lên): $R_C^{\text{qt}} = m_C a_C = 2 \cdot \frac{53}{64} = \frac{53}{32} \approx 1{,}66\text{ N}$.
-   - Mômen quán tính quanh $C$ quay **thuận KĐH** (ngược với $\vec{\varepsilon}_C$ ngược KĐH):
+   - Mômen ngẫu lực quán tính quanh $C$ quay **ngược chiều kim đồng hồ (CCW)** (vì $\vec{M}_C^{\text{qt}} = -J_C \vec{\varepsilon}_C$ ngược chiều với $\vec{\varepsilon}_C$ đang quay CW):
      $$\begin{aligned}
      M_C^{\text{qt}} &= J_C \varepsilon_C = \left(\frac{1}{2}m_C R_C^2\right)\frac{a_C}{R_C} \\
      &= \frac{1}{2}(2)(2r)\left(\frac{53}{64}\right) = \frac{53}{32}r \approx 1{,}66r\text{ N}\cdot\text{m}
      \end{aligned}$$
-   - Khớp chính xác phương án **`7c`**!
+   - Khớp hoàn toàn cả trị số lẫn mũi tên **CCW** của phương án **`7c`** trên đề thi thật (`p. 48`)!
 
 ---
 
@@ -704,7 +774,7 @@ Muốn tìm phản lực tại chốt bản lề $O$ (gồm $X_O, Y_O$), áp l�
   <text x="282" y="114" font-family="sans-serif" font-size="12" font-weight="700" fill="#dc2626">M (CCW)</text>
   <path d="M 142 220 A 35 35 0 0 0 120 166" fill="none" stroke="#16a34a" stroke-width="1.8" />
   <polygon points="116,172 118,160 126,168" fill="#16a34a" />
-  <text x="58" y="170" font-family="sans-serif" font-size="11" font-weight="700" fill="#15803d">w, eps</text>
+  <text x="58" y="170" font-family="sans-serif" font-size="11" font-weight="700" fill="#15803d">ω, ε</text>
 
   <!-- Right panel: Free-body + D'Alembert forces -->
   <line x1="436" y1="188" x2="680" y2="188" stroke="#cbd5e1" stroke-width="1.3" stroke-dasharray="4,3" />
@@ -732,15 +802,15 @@ Muốn tìm phản lực tại chốt bản lề $O$ (gồm $X_O, Y_O$), áp l�
   <!-- F_tau^qt CW perp AE -->
   <line x1="558" y1="118" x2="602" y2="194" stroke="#dc2626" stroke-width="2.6" />
   <polygon points="595,192 605,200 604,187" fill="#dc2626" />
-  <text x="612" y="198" font-family="sans-serif" font-size="11" font-weight="700" fill="#dc2626">F_tau^qt (60° dưới +x)</text>
+  <text x="612" y="198" font-family="sans-serif" font-size="11" font-weight="700" fill="#dc2626">F_τ^qt (60° dưới +x)</text>
 
-  <!-- M_E^qt CW arc around E -->
-  <path d="M 542 142 A 28 28 0 0 1 580 144" fill="none" stroke="#b45309" stroke-width="2" />
-  <polygon points="577,138 585,147 574,146" fill="#b45309" />
+  <!-- M_E^qt CW arc centered strictly at E(558, 118) -->
+  <path d="M 563.2 142.5 A 25 25 0 0 1 541.3 136.6" fill="none" stroke="#b45309" stroke-width="2" />
+  <polygon points="539.8,135.2 548.4,137.6 543.1,143.6" fill="#b45309" />
   <text x="556" y="166" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#b45309">M_E^qt (CW)</text>
 
   <text x="570" y="246" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#0f766e">A_x = -10,76 N;  A_y = +18,28 N (Khớp 4c!)</text>
-  <text x="570" y="263" text-anchor="middle" font-family="sans-serif" font-size="10.5" fill="#475569">Lưu ý: Đặt đủ F_n^qt và F_tau^qt như hình 2d mới ra đúng số!</text>
+  <text x="570" y="263" text-anchor="middle" font-family="sans-serif" font-size="10.5" fill="#475569">Lưu ý: Đặt đủ F_n^qt và F_τ^qt như hình 2d mới ra đúng số!</text>
 </svg>
 <div class="figure-caption">
 
@@ -790,7 +860,7 @@ Hình 9-1: Áp dụng 3 bước Tĩnh động lực tính phản lực chốt A 
    &= 1{,}5m_2 g\sin\alpha + 150m_2 s_0\cos(10t)
    \end{aligned}$$
    - Để dây không bị chùng ($\tau \ge 0$ tại lúc $\cos(10t) = -1$): $1{,}5m_2 g\sin\alpha - 150m_2 s_0 \ge 0 \implies s_0 \le \frac{g\sin\alpha}{100}$.
-   - **Ghi chú đối chiếu đề thi thật `p.68–69`:** Đáp án chính thức của Bộ môn chọn **`7c`** ($\tau = 1{,}5m_2 g\sin\alpha + 100m_2 s_0\cos(10t)$ và $s_0 \le \frac{1}{100}g\sin\alpha$), trong đó có lỗi đánh máy số hạng sau quên nhân $1{,}5$ ($100$ thay vì $150$), nhưng ngay ở Câu 8 bên dưới chính tác giả vẫn dùng hệ số $150$ thật để ra đúng **`8d`**!
+   - **Ghi chú đối chiếu đề thi thật `p.68–69`:** Đáp án chính thức của Bộ môn chọn **`7c`** ($\tau = 1{,}5m_2 g\sin\alpha + 100m_2 s_0\cos(10t)$ và $s_0 \le \frac{1}{100}g\sin\alpha$), trong đó có lỗi đánh máy số hạng sau quên nhân $1{,}5$ ($100$ thay vì $150$), nhưng ngay ở Câu 8 bên dưới chính tác giả vẫn dùng hệ số $150$ thật để ra đúng **`8d`** (đồng thời ở dòng 2 của `8d` bản in gốc `page_068.png` cũng in nhầm bất đẳng thức không trượt — xem chi tiết ở bước 2 dưới)!
 
 2. **Tìm lực ma sát $F$ tại $H$ bằng Tĩnh động lực cho con lăn $B$ (`8d`):**
    - **Quan hệ động học:** Khi tâm $B$ lăn không trượt sang phải đoạn $x$, đáy tầng trong bán kính $r$ nằm cách điểm tiếp xúc $H$ đoạn $(R - r)$ nên dây đi sang phải đoạn $s = \frac{R - r}{R}x = \frac{2}{3}x \implies x_{\text{động}} = 1{,}5s$, góc quay $\theta_{\text{động}} = \frac{x_{\text{động}}}{R} = \frac{s}{2r}$.
@@ -809,7 +879,12 @@ Hình 9-1: Áp dụng 3 bước Tĩnh động lực tính phản lực chốt A 
    - Để ý $\frac{100}{3}m_2 = \frac{3}{16}\left(\frac{1600}{9}m_2\right) = \frac{3}{16}K$! Suy ra:
      $$F = 0{,}5m_2 g\sin\alpha + \frac{3}{16}K s_0\cos(10t) \quad (\text{hướng sang trái})$$
      *(Kiểm tra lại bằng phương trình mômen quanh tâm $B$: $F\cdot R - \tau\cdot r = J_B\ddot{\theta} \iff F(3r) - \tau r = m_2 r^2(-50s_0\cos 10t / r)$, thay số khớp chính xác tuyệt đối!)*.
-   - **Đối chiếu bảng đáp án chuẩn `p.69`:** Khớp chính xác phương án **`8d`** (`F = 0,5 m_2 g sin\alpha + \frac{3}{16} K s_0 \cos(10t)`).
+   - **Điều kiện con lăn $B$ lăn không trượt tại $H$:** Vì $B$ chuyển động ngang nên $N_H = m_2 g$; từ $\lvert F \rvert_{\max} \le f N_H = 0{,}4m_2 g$ (lúc $\cos(10t) = +1$):
+     $$\begin{aligned}
+     0{,}5m_2 g\sin\alpha + \frac{3}{16}K s_0 &\le 0{,}4m_2 g \\
+     \implies s_0 &\le \frac{16m_2 g}{3K}(0{,}4 - 0{,}5\sin\alpha)
+     \end{aligned}$$
+   - **Ghi chú đối chiếu đề thi thật (`pp. 68–69`):** Đáp án Key chính thức tr. 69 chọn **`8d`** (khớp chính xác biểu thức $F = 0{,}5m_2 g\sin\alpha + \frac{3}{16}K s_0\cos(10t)$). Tuy nhiên, cần lưu ý bản in đề gốc `page_068.png` tại dòng 2 của **`8d`** in sai bất đẳng thức không trượt thành $s_0 \le \frac{8m_2 g}{K}(0{,}4 - 0{,}75\sin\alpha)$ thay vì công thức đúng $s_0 \le \frac{16m_2 g}{3K}(0{,}4 - 0{,}5\sin\alpha)$ (bất đẳng thức đúng lại bị in sang phương án `8a`).
 
 ---
 
@@ -833,9 +908,72 @@ Hình 9-1: Áp dụng 3 bước Tĩnh động lực tính phản lực chốt A 
 
 ---
 
+### 3. Chương 13.3: Phản lực động trục quay 2 ổ đỡ 3D & Điều kiện cân bằng động
+
+Ở mục 1 và 2 trên ta mới giải bài toán **phẳng 2D** (quay quanh 1 khớp bản lề $O$). Trong thực tế máy móc (trục khuỷu, rôto động cơ, trục gắn các khối lệch tâm ở các mặt cắt khác nhau dọc trục), vật rắn khối lượng $M$ quay quanh trục cố định $Az$ đi qua **2 ổ đỡ $A$ và $B$** cách nhau khoảng $l$ sẽ tạo ra các **phản lực động 3D** $\vec{R}_A^{\text{đ}}, \vec{R}_B^{\text{đ}}$ (tách riêng khỏi phản lực tĩnh do trọng lực).
+
+#### A. Thu gọn hệ lực quán tính 3D & Công thức tính $\vec{R}_A^{\text{đ}}, \vec{R}_B^{\text{đ}}$
+Gắn hệ trục Đề-các thuận $Axyz$ quay cùng vật với gốc $A(0; 0; 0)$, ổ đỡ $B(0; 0; l)$ nằm trên trục $+Az$, khối tâm chung $C(x_C; y_C; z_C)$, vận tốc góc $\omega$ và gia tốc góc đại số $\bar{\varepsilon}$ quanh $Az$:
+- **Hợp lực quán tính** (gồm lực ly tâm $\omega^2$ và lực tiếp tuyến $\bar{\varepsilon}$):
+  $$\begin{cases}
+  R_{\text{qt}, x} = M\left(\omega^2 x_C + \bar{\varepsilon} y_C\right) \\
+  R_{\text{qt}, y} = M\left(\omega^2 y_C - \bar{\varepsilon} x_C\right)
+  \end{cases}$$
+- **Mômen hệ lực quán tính quanh $Ax, Ay$** (với tích quán tính $J_{xz} = \sum m_k x_k z_k$ và $J_{yz} = \sum m_k y_k z_k$):
+  $$\begin{aligned}
+  M_{x,\text{qt}} &= J_{xz}\bar{\varepsilon} - J_{yz}\omega^2 \\
+  M_{y,\text{qt}} &= J_{yz}\bar{\varepsilon} + J_{xz}\omega^2
+  \end{aligned}$$
+- **Phản lực động tác dụng lên 2 ổ đỡ $A$ và $B$** (từ $\sum M_{Ax}=0,\; \sum M_{Ay}=0,\; \sum X=0,\; \sum Y=0$):
+  $$\begin{cases}
+  X_B^{\text{đ}} = -\dfrac{M_{y,\text{qt}}}{l} = -\dfrac{J_{yz}\bar{\varepsilon} + J_{xz}\omega^2}{l} \\[8pt]
+  Y_B^{\text{đ}} = \dfrac{M_{x,\text{qt}}}{l} = \dfrac{J_{xz}\bar{\varepsilon} - J_{yz}\omega^2}{l}
+  \end{cases}$$
+  $$\begin{cases}
+  X_A^{\text{đ}} = -R_{\text{qt}, x} - X_B^{\text{đ}} \\
+  Y_A^{\text{đ}} = -R_{\text{qt}, y} - Y_B^{\text{đ}}
+  \end{cases}$$
+
+*(Mẹo thực chiến cho người tay ngang: Với trục mang vài chất điểm hoặc khối lệch tâm rời rạc, bạn không cần nhớ công thức $J_{xz}, J_{yz}$ — chỉ cần vẽ thẳng các lực ly tâm $m_k\omega^2 r_k$ và tiếp tuyến $m_k\bar{\varepsilon} r_k$ tại từng điểm rồi viết cân bằng Tĩnh học 3D quanh $A$, kết quả khớp 100%!)*
+
+#### B. Điều kiện cân bằng động trục quay (Câu hỏi lý thuyết tủ!)
+Muốn trục quay êm, **phản lực động ở cả hai ổ đỡ hoàn toàn bằng không** ($\vec{R}_A^{\text{đ}} = \vec{R}_B^{\text{đ}} = \vec{0}$ với mọi $\omega, \bar{\varepsilon}$) thì cả $\vec{R}_{\text{qt}} = \vec{0}$ lẫn $M_{x,\text{qt}} = M_{y,\text{qt}} = 0$, tức là trục quay $Az$ phải là **trục quán tính chính trung tâm**:
+
+$$x_C = 0, \quad y_C = 0, \qquad J_{xz} = 0, \quad J_{yz} = 0$$
+
+- **$x_C = y_C = 0$ (Cân bằng tĩnh):** Khối tâm $C$ nằm ngay trên trục quay $Az$.
+- **$J_{xz} = J_{yz} = 0$ (Trục quán tính chính):** Trục quay $Az$ là trục quán tính chính tại gốc $A$.
+
+::: warning Cảnh báo bẫy trắc nghiệm lý thuyết Cân bằng động
+Đừng chọn đáp án *"chỉ cần khối tâm nằm trên trục quay ($x_C = y_C = 0$)"*! Nếu $x_C = y_C = 0$ mà $J_{xz} \neq 0$ hoặc $J_{yz} \neq 0$ (chẳng hạn 2 khối nặng bằng nhau đặt lệch về hai phía ngược chiều ở **hai độ cao $z_1 \neq z_2$ khác nhau**), trục đã cân bằng tĩnh nhưng **chưa cân bằng động**: nó vẫn sinh ra ngẫu lực ly tâm làm hai ổ $A, B$ chịu hai phản lực động ngược chiều nhau ($\vec{R}_A^{\text{đ}} = -\vec{R}_B^{\text{đ}} \neq \vec{0}$)!
+:::
+
+#### Ví dụ 9-4 (Minh họa 13.3 đã kiểm toán SymPy): Đã cân bằng tĩnh nhưng chưa cân bằng động!
+**Đề bài:** Một trục nhẹ thẳng đứng $AB$ dài $l = 1{,}0\text{ m}$ ($A$ ở $z = 0$, $B$ ở $z = 1{,}0\text{ m}$) quay đều với vận tốc góc $\omega = 10\text{ rad/s}$ ($\bar{\varepsilon} = 0$). Trên trục gắn 2 chất điểm $m_1 = m_2 = 2\text{ kg}$ đặt lệch tâm ở hai phía đối diện tại tọa độ $M_1(+0{,}2\text{ m};\; 0;\; 0{,}2\text{ m})$ và $M_2(-0{,}2\text{ m};\; 0;\; 0{,}8\text{ m})$. Kiểm tra trạng thái cân bằng và tính các phản lực động $\vec{R}_A^{\text{đ}}, \vec{R}_B^{\text{đ}}$.
+
+**Lời giải nhanh theo 2 cách đối chiếu:**
+1. **Kiểm tra điều kiện cân bằng tĩnh & cân bằng động:**
+   - Khối tâm: $x_C = \dfrac{2(0{,}2) + 2(-0{,}2)}{4} = 0$, $y_C = 0 \implies$ trục **đã cân bằng tĩnh** ($R_{\text{qt},x} = R_{\text{qt},y} = 0$).
+   - Tích quán tính: $J_{yz} = 0$, và:
+     $$\begin{aligned}
+     J_{xz} &= m_1 x_1 z_1 + m_2 x_2 z_2 \\
+     &= 2(0{,}2)(0{,}2) + 2(-0{,}2)(0{,}8) = -0{,}24\text{ kg}\cdot\text{m}^2 \neq 0
+     \end{aligned}$$
+     Do $J_{xz} \neq 0$ nên trục **chưa cân bằng động**!
+2. **Tính phản lực động tại $A$ và $B$:**
+   - *Cách 1 (Thay công thức 3D với $\bar{\varepsilon} = 0,\; \omega^2 = 100$):*
+     $M_{x,\text{qt}} = 0$, $M_{y,\text{qt}} = J_{xz}\omega^2 = -0{,}24(100) = -24\text{ N}\cdot\text{m}$, suy ra:
+     $$\begin{aligned}
+     X_B^{\text{đ}} &= -\frac{-24}{1{,}0} = +24\text{ N}, & X_A^{\text{đ}} &= -X_B^{\text{đ}} = -24\text{ N} \\
+     Y_A^{\text{đ}} &= Y_B^{\text{đ}} = 0
+     \end{aligned}$$
+   - *Cách 2 (Đặt trực tiếp lực ly tâm):* Tại $z_1 = 0{,}2\text{ m}$ có $F_1^{\text{qt}} = 2(10^2)(0{,}2) = 40\text{ N}$ (hướng $+Ax$); tại $z_2 = 0{,}8\text{ m}$ có $F_2^{\text{qt}} = 40\text{ N}$ (hướng $-Ax$). Cặp lực tạo ngẫu lực quay độ lớn $40(0{,}8 - 0{,}2) = 24\text{ N}\cdot\text{m}$, đòi hỏi cặp phản lực ở 2 đầu trục $X_B^{\text{đ}} = +24\text{ N}$ và $X_A^{\text{đ}} = -24\text{ N}$ giữ cân bằng!
+
+---
+
 ## Ngày 10: Mini-Test 10 Câu Chương 11–13 & Công Thức Bấm Máy 30 Giây
 
-### 1. Bảng Công Thức Bấm Máy 30 Giây Phòng Thi (Chương 11, 12.1 & 13)
+### 1. Bảng Công Thức Bấm Máy 30 Giây Phòng Thi (Chương 11, 12.1–12.2 & 13)
 
 | Tình huống gặp trong đề AS1003 | Công thức bấm máy 30 giây | Bẫy `e` cần soi ngay trước khi tô |
 | :--- | :--- | :--- |
@@ -844,6 +982,7 @@ Hình 9-1: Áp dụng 3 bước Tĩnh động lực tính phản lực chốt A 
 | **Thu gọn D'Alembert về $O$ khi $\lvert\varepsilon\rvert = \omega^2$** | $R_{\text{qt}} = \sqrt{2}\,M\varepsilon \cdot OC$; $\quad \vec{M}_O^{\text{qt}} = -J_O\vec{\varepsilon}$ | Kiểm tra chiều $Ox, Oy$ (trái/phải, lên/xuống) và dấu CW ($-\vec{k}$) / CCW ($+\vec{k}$). |
 | **Thu gọn về $O$ vs thu gọn về $C$** | Về $O \implies \vec{M}_O^{\text{qt}} = -J_O\vec{\varepsilon}$; Về $C \implies \vec{M}_C^{\text{qt}} = -J_C\vec{\varepsilon}$ | Đề hỏi tại $C$ mà bấm $J_O$ (hoặc ngược lại) là dính bẫy ngay lập tức! |
 | **Tìm phản lực động ổ trục $(O_x, O_y)$** | $\sum M_O = 0 \implies \varepsilon$; rồi đặt $\vec{R}_{\text{qt}}^n, \vec{R}_{\text{qt}}^t$ tại $C$ bấm $\sum X = 0, \sum Y = 0$ | Không bao giờ được bỏ $\vec{R}_{\text{qt}}^n$ khi $\omega \neq 0$ dù đề cho nhỏ! |
+| **Cân bằng động trục quay 3D (2 ổ đỡ)** | Cân bằng tĩnh: $x_C = y_C = 0$<br>Cân bằng động: thêm $J_{xz} = J_{yz} = 0$ | Không được quên điều kiện $J_{xz} = J_{yz} = 0$: trục cân bằng tĩnh vẫn rung nếu lệch đối xứng ở $z_1 \neq z_2$! |
 | **Lăn có ma sát / vật cao dễ lật** | Kiểm cả $\lvert F_{\text{ms}} \rvert \le f_0 N$ **và** điều kiện không lật $N_{\text{mép}} \ge 0$ | Giả sử lăn không trượt ra $F_{\text{ms}} > f_0 N$ thì **bắt buộc giải lại theo chế độ có trượt** ($F_{\text{ms}} = f_{\text{đ}} N$)! |
 
 ---

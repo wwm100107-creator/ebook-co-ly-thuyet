@@ -47,11 +47,11 @@ features:
     title: "100% Chuẩn Xác Theo Sách Gốc"
     details: "Số hóa trung thực từng câu chữ, hệ tiên đề, định lý, chứng minh, thí dụ và hệ thống bài tập ôn tập của GS. TSKH. Đỗ Sanh, tuyệt đối không thêm bớt."
   - icon: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 15 3 6 4-13h11"/><path d="M14 9h7"/><path d="M14 15h7"/></svg>'
-    title: "Công Thức Toán Học KaTeX Sắc Nét"
+    title: "Công Thức Toán Học Sắc Nét"
     details: "Toàn bộ ký hiệu vector, phương trình vi phân, tích phân, ma trận chuyển động được hiển thị chuẩn LaTeX học thuật, hiển thị sắc nét ở mọi độ phân giải."
   - icon: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>'
     title: "Tìm Kiếm Nhanh & Đối Chiếu Bản Gốc"
-    details: "Tích hợp công cụ tìm kiếm tức thì toàn văn bài giảng, hỗ trợ chế độ xem đối chiếu trang sách gốc và giao diện sáng / tối tối ưu cho việc học tập."
+    details: "Tích hợp công cụ tìm kiếm tức thì toàn văn bài giảng, hỗ trợ chế độ xem đối chiếu trang sách gốc và giao diện sáng / tối được tối ưu cho việc học tập."
 ---
 
 ## Giới Thiệu Bộ Giáo Trình
