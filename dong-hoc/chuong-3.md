@@ -1,306 +1,499 @@
-# Chương 3: Hợp Chuyển Động Điểm
+# Chương 3: Hợp chuyển động điểm
 
-Hợp chuyển động điểm khảo sát chuyển động của một điểm đồng thời đối với hai hệ quy chiếu: một hệ quy chiếu được chọn làm cố định và một hệ quy chiếu chuyển động (hệ quy chiếu động).
+Trong chương 1 chúng ta đã khảo sát chuyển động của điểm đối với hệ quy chiếu cố định. Trong thực tế, nhiều khi chúng ta phải khảo sát chuyển động của điểm đối với hệ quy chiếu, mà hệ quy chiếu này lại chuyển động đối với hệ quy chiếu cố định. Trong chương này sẽ thiết lập hai định lí cơ bản của bài toán hợp chuyển động điểm : định lí hợp vận tốc và định lí hợp gia tốc.
 
 ---
 
-## 3.1. Các Khái Niệm Cơ Bản
+## 3.1. Định nghĩa về các loại chuyển động
 
-Xét hệ quy chiếu cố định $Oxyz$ và hệ quy chiếu động $O'x'y'z'$ chuyển động đối với hệ $Oxyz$. Một điểm $M$ chuyển động trong không gian.
+### 3.1.1. Mô hình bài toán
+
+Điểm $M$ chuyển động đối với hệ quy chiếu động $Oxyz$. Thông thường hệ quy chiếu động $Oxyz$ này được gắn liền với một vật rắn $S$ nào đó (H. 3–1). Hệ quy chiếu động $Oxyz$ chuyển động đối với hệ quy chiếu cố định $O_1 x_1 y_1 z_1$.
+
+Bài toán đặt ra là khảo sát chuyển động của điểm $M$ đối với hệ quy chiếu $Oxyz$ đang chuyển động đối với hệ quy chiếu $O_1 x_1 y_1 z_1$.
 
 <div class="figure-container">
 
-<img src="/figures/dong-hoc/hinh_3_1.svg" alt="Hình 3-1: Các hệ quy chiếu trong hợp chuyển động điểm" style="max-height: 280px;" />
+<img src="/figures/dong-hoc/hinh_3_1.svg" alt="Hình 3-1" style="max-height: 290px;" />
 
 <div class="figure-caption">
 
-Hình 3-1: Hệ quy chiếu cố định $Oxyz$ và hệ quy chiếu động $O'x'y'z'$
+Hình 3-1
 
 </div>
 
 </div>
 
-### 1. Chuyển Động Tuyệt Đối
-Là chuyển động của điểm $M$ đối với hệ quy chiếu cố định $Oxyz$.
-- Quỹ đạo, vận tốc và gia tốc của điểm trong chuyển động này được gọi là **quỹ đạo tuyệt đối**, **vận tốc tuyệt đối** $\vec{v}_a$ và **gia tốc tuyệt đối** $\vec{a}_a$.
+### 3.1.2. Định nghĩa về chuyển động tuyệt đối, tương đối và chuyển động theo
 
-### 2. Chuyển Động Tương Đối
-Là chuyển động của điểm $M$ đối với hệ quy chiếu động $O'x'y'z'$ (xem hệ $O'x'y'z'$ như đứng yên).
-- Quỹ đạo, vận tốc và gia tốc trong chuyển động này được gọi là **quỹ đạo tương đối**, **vận tốc tương đối** $\vec{v}_r$ và **gia tốc tương đối** $\vec{a}_r$.
+#### 1. Chuyển động tuyệt đối
 
-### 3. Chuyển Động Theo
-Là chuyển động của hệ quy chiếu động $O'x'y'z'$ (hoặc vật mang hệ trục đó) đối với hệ quy chiếu cố định $Oxyz$.
-- Xét điểm cố định $M'$ thuộc hệ động trùng với vị trí của điểm $M$ tại thời điểm $t$ đang xét. Vận tốc và gia tốc của điểm $M'$ đối với hệ cố định được gọi là **vận tốc theo** $\vec{v}_e$ và **gia tốc theo** $\vec{a}_e$ của điểm $M$ tại thời điểm đó.
-- Vận tốc góc và gia tốc góc của hệ động đối với hệ cố định được gọi là vận tốc góc theo $\vec{\omega}_e$ và gia tốc góc theo $\vec{\varepsilon}_e$.
+Chuyển động của điểm $M$ đối với hệ quy chiếu cố định $O_1 x_1 y_1 z_1$ được gọi là chuyển động tuyệt đối. Vận tốc, gia tốc của điểm $M$ trong chuyển động tuyệt đối (nghĩa là tính toán trong hệ quy chiếu cố định) được gọi là vận tốc tuyệt đối, gia tốc tuyệt đối. Kí hiệu : $\vec{v}_a, \vec{a}_a$.
+
+Ta có :
+
+$$\vec{v}_a = \frac{d\overrightarrow{O_1 M}}{dt} = \frac{d\vec{r}}{dt} \tag{3-1}$$
+
+$$\vec{a}_a = \frac{d^2\overrightarrow{O_1 M}}{dt^2} = \frac{d^2\vec{r}}{dt^2} \tag{3-2}$$
+
+#### 2. Chuyển động tương đối
+
+Chuyển động của điểm $M$ đối với hệ quy chiếu động $Oxyz$ được gọi là chuyển động tương đối. Vận tốc, gia tốc điểm $M$ trong chuyển động tương đối (nghĩa là tính toán trong hệ quy chiếu động) được gọi là vận tốc tương đối, gia tốc tương đối. Kí hiệu : $\vec{v}_r, \vec{a}_r$.
+
+Kí hiệu $\vec{i}, \vec{j}, \vec{k}$, là các vectơ đơn vị trên các trục $Ox, Oy, Oz$. Tọa độ của điểm $M$ trong hệ quy chiếu động là $x, y, z$. Khi đó ta có :
+
+$$\overrightarrow{OM} = x\vec{i} + y\vec{j} + z\vec{k}$$
+
+Theo định nghĩa trên biểu thức của $\vec{v}_r, \vec{a}_r$ có dạng :
+
+$$\vec{v}_r = \frac{d\overrightarrow{OM}}{dt} = \left(\frac{d\overrightarrow{OM}}{dt}\right) \text{ xem } \vec{i}, \vec{j}, \vec{k} \text{ là các vectơ hằng số :}$$
+
+$$= \frac{dx}{dt}\vec{i} + \frac{dy}{dt}\vec{j} + \frac{dz}{dt}\vec{k} \tag{3-3}$$
+
+$$\vec{a}_r = \frac{d^2\overrightarrow{OM}}{dt^2} = \frac{d^2 x}{dt^2}\vec{i} + \frac{d^2 y}{dt^2}\vec{j} + \frac{d^2 z}{dt^2}\vec{k} \tag{3-4}$$
+
+#### 3. Chuyển động theo
+
+Chuyển động của hệ quy chiếu động $Oxyz$ đối với hệ quy chiếu cố định $O_1 x_1 y_1 z_1$ gọi là chuyển động theo.
+
+Để có thể thiết lập biểu thức của vận tốc theo, gia tốc theo, ta đưa vào khái niệm trùng điểm. Gọi điểm $M^*$ của hệ quy chiếu động mà ở thời điểm khảo sát có cùng vị trí với điểm $M$ là trùng điểm của điểm $M$ tại thời điểm đó. Như thế ở mỗi thời điểm, điểm $M$ trùng với một điểm $M^*$ nào đó của hệ quy chiếu động.
+
+Vận tốc, gia tốc tuyệt đối của trùng điểm $M^*$ tại thời điểm khảo sát (nghĩa là tính toán trong hệ quy chiếu cố định) được gọi là vận tốc theo, gia tốc theo của điểm $M$ tại thời điểm đó. Kí hiệu : $\vec{v}_e, \vec{a}_e$.
+
+Gọi $x^*, y^*, z^*$ là tọa độ của trùng điểm $M^*$ trong hệ quy chiếu động $Oxyz$ ($x^*, y^*, z^*$ là các hằng số). Ta có :
+
+$$\overrightarrow{O_1 M^*} = \overrightarrow{O_1 O} + \overrightarrow{OM^*} = \overrightarrow{O_1 O} + x^*\vec{i} + y^*\vec{j} + z^*\vec{k}$$
+
+Theo định nghĩa :
+
+$$\vec{v}_e = \vec{v}_{M^*} = \frac{d\overrightarrow{O_1 M^*}}{dt} = \frac{d\overrightarrow{O_1 O}}{dt} + x^*\frac{d\vec{i}}{dt} + y^*\frac{d\vec{j}}{dt} + z^*\frac{d\vec{k}}{dt}$$
+
+$$\vec{a}_e = \vec{a}_{M^*} = \frac{d^2\overrightarrow{O_1 M^*}}{dt^2} = \frac{d^2\overrightarrow{O_1 O}}{dt^2} + x^*\frac{d^2\vec{i}}{dt^2} + y^*\frac{d^2\vec{j}}{dt^2} + z^*\frac{d^2\vec{k}}{dt^2}$$
+
+Do $x(t) = x^*(t), y(t) = y^*(t), z(t) = z^*(t)$ nên ta có :
+
+$$\vec{v}_e = \frac{d\overrightarrow{O_1 O}}{dt} + x\frac{d\vec{i}}{dt} + y\frac{d\vec{j}}{dt} + z\frac{d\vec{k}}{dt} \tag{3-5}$$
+
+$$\vec{a}_e = \frac{d^2\overrightarrow{O_1 O}}{dt^2} + x\frac{d^2\vec{i}}{dt^2} + y\frac{d^2\vec{j}}{dt^2} + z\frac{d^2\vec{k}}{dt^2} \tag{3-6}$$
+
+Trong các bài toán áp dụng, để tính vận tốc theo, gia tốc theo ta tưởng tượng dừng điểm $M$ lại trên hệ quy chiếu động. Sau đó tính toán vận tốc, gia tốc của điểm $M$ do chuyển động của hệ động đối với hệ quy chiếu cố định gây ra.
 
 ---
 
-## 3.2. Các Định Lý Cơ Bản
+## 3.2. Các định lí hợp vận tốc và hợp gia tốc
 
-Bán kính véctơ của điểm $M$ đối với gốc cố định $O$ liên hệ với bán kính véctơ đối với gốc động $O'$:
+### 3.2.1. Định lí hợp vận tốc
 
-$$\vec{r}(t) = \vec{r}_{O'}(t) + \vec{r}'(t) \tag{3-1}$$
+::: tip Định lí hợp vận tốc
+*Ở mỗi thời điểm, vận tốc tuyệt đối của điểm bằng tổng hình học các vận tốc tương đối và vận tốc theo của nó.*
 
-trong đó $\vec{r}' = x'\vec{i}' + y'\vec{j}' + z'\vec{k}'$ là vị trí của $M$ trong hệ động.
-
----
-
-### 3.2.1. Định Lý Hợp Vận Tốc
-
-::: tip Định lý hợp vận tốc
-Tại mỗi thời điểm, véctơ vận tốc tuyệt đối của điểm bằng tổng hình học của véctơ vận tốc theo và véctơ vận tốc tương đối:
-
-$$\vec{v}_a = \vec{v}_e + \vec{v}_r \tag{3-2}$$
+$$\vec{v}_a = \vec{v}_r + \vec{v}_e \tag{3-7}$$
 :::
 
-- **Phương pháp hình bình hành vận tốc:** $\vec{v}_a$ là đường chéo của hình bình hành dựng trên hai cạnh $\vec{v}_e$ và $\vec{v}_r$.
-- Độ lớn của vận tốc tuyệt đối:
-  $$v_a = \sqrt{v_e^2 + v_r^2 + 2 v_e v_r \cos(\widehat{\vec{v}_e, \vec{v}_r})} \tag{3-3}$$
+*Chứng minh :*
 
----
+Theo hình 3–2 ta có :
 
-### 3.2.2. Định Lý Hợp Gia Tốc (Định Lý Coriolis)
-
-Lấy đạo hàm của công thức vận tốc $\vec{v}_a = \vec{v}_e + \vec{v}_r$ theo thời gian:
-
-::: tip Định lý Coriolis
-Tại mỗi thời điểm, véctơ gia tốc tuyệt đối của điểm bằng tổng hình học của gia tốc theo, gia tốc tương đối và gia tốc Coriolis (gia tốc phụ):
-
-$$\vec{a}_a = \vec{a}_e + \vec{a}_r + \vec{a}_c \tag{3-4}$$
-:::
-
-Trong đó:
-- $\vec{a}_e$: Gia tốc theo (gia tốc của điểm trùng $M'$ thuộc hệ động). Nếu hệ động quay với vận tốc góc $\vec{\omega}_e$, gia tốc góc $\vec{\varepsilon}_e$ quanh trục qua $O'$ thì:
-  $$\vec{a}_e = \vec{a}_{O'} + (\vec{\varepsilon}_e \times \vec{r}') + \vec{\omega}_e \times (\vec{\omega}_e \times \vec{r}') = \vec{a}_{O'} + \vec{a}_e^t + \vec{a}_e^n$$
-- $\vec{a}_r$: Gia tốc tương đối ($\vec{a}_r = \vec{a}_r^t + \vec{a}_r^n$).
-- $\vec{a}_c$: **Gia tốc Coriolis** (hay gia tốc phụ, gia tốc quán tính phối hợp).
+$$\overrightarrow{O_1 M} = \overrightarrow{O_1 O} + \overrightarrow{OM} = \overrightarrow{O_1 O} + x\vec{i} + y\vec{j} + z\vec{k}$$
 
 <div class="figure-container">
 
-<img src="/figures/dong-hoc/hinh_3_2.svg" alt="Hình 3-2: Xác định véctơ gia tốc Coriolis" style="max-height: 270px;" />
+<img src="/figures/dong-hoc/hinh_3_2.svg" alt="Hình 3-2" style="max-height: 290px;" />
 
 <div class="figure-caption">
 
-Hình 3-2: Quy tắc xác định phương chiều của gia tốc Coriolis $\vec{a}_c$
+Hình 3-2
 
 </div>
 
 </div>
 
----
+[Đính chính bản in: Trong Hình 3–2, kí hiệu tại điểm $M$ in nhầm là $M \equiv M$, đúng là $M \equiv M^*$]
 
-### 3.2.3. Các Đặc Trưng Của Gia Tốc Coriolis
+Đạo hàm biểu thức trên ta được :
 
-Biểu thức xác định gia tốc Coriolis:
+$$\frac{d\overrightarrow{O_1 M}}{dt} = \frac{d\overrightarrow{O_1 O}}{dt} + x \cdot \frac{d\vec{i}}{dt} + y\frac{d\vec{j}}{dt} + z\frac{d\vec{k}}{dt} + \frac{dx}{dt}\vec{i} + \frac{dy}{dt}\vec{j} + \frac{dz}{dt}\vec{k}$$
 
-$$\vec{a}_c = 2(\vec{\omega}_e \times \vec{v}_r) \tag{3-5}$$
+Chú ý đến $(3-1)$, $(3-3)$ và $(3-5)$ ta suy ra :
 
-1. **Phương:** Vuông góc với mặt phẳng chứa véctơ vận tốc góc theo $\vec{\omega}_e$ và véctơ vận tốc tương đối $\vec{v}_r$.
-2. **Chiều:** Xác định theo quy tắc vặn nút chai quay từ $\vec{\omega}_e$ sang $\vec{v}_r$ theo góc nhỏ hơn, hoặc theo quy tắc bàn tay phải (ngón cái chỉ chiều $\vec{a}_c$).
-   - *Quy tắc Jukovsky (khi $\vec{\omega}_e \perp \vec{v}_r$):* Chiếu véctơ $\vec{v}_r$ lên mặt phẳng vuông góc với $\vec{\omega}_e$, sau đó quay hình chiếu ấy đi một góc $90^\circ$ theo chiều quay của $\vec{\omega}_e$, ta được chiều của $\vec{a}_c$.
-3. **Độ lớn:**
-   $$a_c = 2 \omega_e v_r \sin(\widehat{\vec{\omega}_e, \vec{v}_r}) \tag{3-6}$$
-
-#### Các Trường Hợp Gia Tốc Coriolis Bằng Không ($\vec{a}_c = \vec{0}$):
-- Hệ quy chiếu động chuyển động tịnh tiến ($\vec{\omega}_e = \vec{0}$).
-- Vận tốc tương đối của điểm bằng không tại thời điểm khảo sát ($\vec{v}_r = \vec{0}$).
-- Véctơ vận tốc tương đối song song cùng phương với trục quay của hệ quy chiếu động ($\vec{v}_r \parallel \vec{\omega}_e \implies \sin 0^\circ = 0$).
-
-Khi $\vec{a}_c = \vec{0}$, định lý hợp gia tốc trở thành dạng đơn giản: $\vec{a}_a = \vec{a}_e + \vec{a}_r$.
-
+$$\vec{v}_a = \vec{v}_e + \vec{v}_r$$
 
 ---
 
-## 3.3. Các Thí Dụ Áp Dụng (Bài Tập Mẫu)
+### 3.2.2. Định lí hợp gia tốc
 
-::: tip Ý NGHĨA PHƯƠNG PHÁP
-Để giải quyết bài toán hợp chuyển động của điểm:
-1. Xác định điểm khảo sát $M$, hệ quy chiếu cố định và hệ quy chiếu động.
-2. Phân biệt rõ ba chuyển động: chuyển động tương đối (điểm đối với hệ động), chuyển động theo (điểm thuộc hệ động trùng với điểm khảo sát tại thời điểm đó đối với hệ cố định), và chuyển động tuyệt đối (điểm đối với hệ cố định).
-3. Thiết lập phương trình vectơ vận tốc: $\vec{v}_a = \vec{v}_e + \vec{v}_r$ và vectơ gia tốc: $\vec{a}_a = \vec{a}_e + \vec{a}_r + \vec{a}_c$.
-4. Chọn hệ trục tọa độ thích hợp để chiếu các phương trình vectơ tìm các đại lượng chưa biết.
+::: tip Định lí hợp gia tốc
+*Ở mỗi thời điểm, gia tốc tuyệt đối của điểm bằng tổng hình học của gia tốc tương đối, gia tốc theo và gia tốc Côriôlit*
+
+$$\vec{a}_a = \vec{a}_r + \vec{a}_e + \vec{a}_c \tag{3-8}$$
+
+Khi hệ động $Oxyz$ chuyển động tịnh tiến : $\vec{a}_c = \vec{0}$
+
+Khi hệ động $Oxyz$ chuyển động quay quanh một trục cố định với vận tốc góc $\vec{\omega}_e$ thì $\vec{a}_c = 2\vec{\omega}_e \wedge \vec{v}_r$
 :::
 
-### Thí dụ 3-1: Bài toán chuyển động của thuyền qua sông
+*Chứng minh :* Đạo hàm hai lần biểu thức :
 
-**Đề bài:**
-Hai bờ của một con sông thẳng song song với nhau và cách nhau một khoảng bằng $h$. Dòng nước chảy với vận tốc $v$ không đổi theo phương song song với bờ. Một người chèo thuyền sang sông với vận tốc tương đối đối với nước là $u = \text{const}$.
-1. Xác định hướng của vận tốc tương đối $\vec{u}$ để thời gian thuyền sang sông là ngắn nhất.
-2. Với điều kiện thời gian ngắn nhất đó, xác định vị trí cập bến của thuyền ở bờ bên kia.
+$$\overrightarrow{O_1 M} = \overrightarrow{O_1 O} + x\vec{i} + y\vec{j} + z\vec{k}$$
 
-<div class="figure-box">
-  <img src="/figures/dong-hoc/hinh_3_6.svg" alt="Hình 3-6: Hợp vận tốc chuyển động của thuyền qua sông" style="max-width: 580px;" />
-  <div class="figure-caption">
+ta được :
 
-Hình 3-6: Sơ đồ hợp vận tốc thuyền qua sông: vận tốc tương đối $\vec{v}_r = \vec{u}$, vận tốc theo $\vec{v}_e = \vec{v}$ và vận tốc tuyệt đối $\vec{v}_a$
+$$\begin{aligned}
+\frac{d^2\overrightarrow{O_1 M}}{dt^2} &= \frac{d^2\overrightarrow{O_1 O}}{dt^2} + x\frac{d^2\vec{i}}{dt^2} + y\frac{d^2\vec{j}}{dt^2} + z\frac{d^2\vec{k}}{dt^2} + \frac{d^2 x}{dt^2}\vec{i} + \frac{d^2 y}{dt^2}\vec{j} + \frac{d^2 z}{dt^2}\vec{k} + \\
+&+ 2\left(\frac{dx}{dt} \cdot \frac{d\vec{i}}{dt} + \frac{dy}{dt} \cdot \frac{d\vec{j}}{dt} + \frac{dz}{dt} \cdot \frac{d\vec{k}}{dt}\right)
+\end{aligned}$$
 
-</div>
-</div>
+Chú ý đến $(3-2)$. $(3-4)$ và $(3-6)$ ta có :
 
-**Bài giải:**
-
-- **Hệ cơ học:** Điểm khảo sát là chiếc thuyền.
-- **Hệ quy chiếu:**
-  - Hệ quy chiếu động: gắn liền với dòng nước chuyển động tịnh tiến với vận tốc dòng chảy $\vec{v}_e = \vec{v}$.
-  - Hệ quy chiếu cố định: gắn liền với bờ sông. Gốc $O$ tại điểm xuất phát, trục $Ox$ dọc theo bờ sông theo chiều dòng nước, trục $Oy$ vuông góc với bờ hướng sang bờ bên kia (Hình 3-6).
-
-**1. Hợp vận tốc:**
-Theo định lý hợp vận tốc:
-$$\vec{v}_a = \vec{v}_e + \vec{v}_r$$
-trong đó:
-- $\vec{v}_e$ có độ lớn $v$, hướng dọc theo trục $Ox$.
-- $\vec{v}_r$ có độ lớn $u$, hợp với trục $Oy$ một góc $\alpha$.
-
-Chiếu phương trình vectơ lên hai trục tọa độ $Ox$ và $Oy$:
-$$v_{ax} = \dot{x} = v + u \sin\alpha$$
-$$v_{ay} = \dot{y} = u \cos\alpha$$
-
-**2. Thời gian sang sông:**
-Tích phân theo phương trình trục $Oy$ với điều kiện ban đầu $y(0) = 0$:
-$$y(t) = (u \cos\alpha) t$$
-Khi thuyền sang tới bờ bên kia thì $y(t) = h$:
-$$h = (u \cos\alpha) t \implies t = \frac{h}{u \cos\alpha}$$
-
-Để thời gian sang sông $t$ là ngắn nhất ($t_{\min}$), mẫu số $u \cos\alpha$ phải đạt cực đại:
-$$\cos\alpha = 1 \implies \alpha = 0$$
-Nghĩa là mũi thuyền phải luôn hướng vuông góc với dòng sông.
-Khi đó thời gian sang sông ngắn nhất là:
-$$t_{\min} = \frac{h}{u}$$
-
-**3. Vị trí cập bến của thuyền:**
-Khi $\alpha = 0$, ta có $\sin\alpha = 0 \implies v_{ax} = v$.
-Quãng đường thuyền bị dòng nước đẩy trôi xuôi theo dòng dọc trục $Ox$ là:
-$$x = v \cdot t_{\min} = \frac{v}{u} h$$
-Như vậy, thuyền cập bến bờ bên kia tại điểm cách điểm đối diện điểm xuất phát một khoảng xuôi dòng là $x = \frac{v}{u} h$.
-
----
-
-### Thí dụ 3-2: Chuyển động của hạt khí trong rãnh cánh rotor máy nén khí
-
-**Đề bài:**
-Một rotor máy nén khí quay đều quanh trục cố định $O$ vuông góc với mặt phẳng hình vẽ với vận tốc góc $\omega = \text{const}$. Trong rotor có các ống dẫn khí cong $AB$. Không khí chuyển động dọc theo rãnh với vận tốc tương đối có trị số không đổi $v_r = \text{const}$.
-Tại điểm $C$ trên ống, bán kính $OC = r$, bán kính cong của đường rãnh tại $C$ là $\rho$, góc giữa pháp tuyến của rãnh tại $C$ và bán kính $OC$ là $\beta$.
-Hãy xác định hình chiếu của vận tốc tuyệt đối và gia tốc tuyệt đối của một phần tử khí tại $C$.
-
-<div class="figure-box">
-  <img src="/figures/dong-hoc/hinh_3_7.svg" alt="Hình 3-7: Chuyển động của phần tử khí trong rãnh rotor máy nén" style="max-width: 580px;" />
-  <div class="figure-caption">
-
-Hình 3-7: Phân tích vận tốc, gia tốc theo, tương đối và gia tốc Coriolis $\vec{a}_c$ của hạt khí trong rãnh rotor
-
-</div>
-</div>
-
-**Bài giải:**
-
-- **Điểm khảo sát:** Phần tử khí tại vị trí $C$.
-- **Hệ quy chiếu:**
-  - Hệ động: gắn liền với rotor quay đều với vận tốc góc $\omega$.
-  - Hệ cố định: gắn liền với vỏ máy.
-
-**1. Bài toán vận tốc:**
-Theo định lý hợp vận tốc:
-$$\vec{v}_a = \vec{v}_e + \vec{v}_r$$
-- Vận tốc tương đối $\vec{v}_r$: tiếp tuyến với rãnh tại $C$, độ lớn $v_r$.
-- Vận tốc theo $\vec{v}_e$: do rotor quay quanh $O$, điểm $C$ có $v_e = r \omega$, phương vuông góc với bán kính $OC$.
-Hai vectơ $\vec{v}_e$ và $\vec{v}_r$ hợp với nhau một góc $\beta$ (Hình 3-7).
-
-Độ lớn của vận tốc tuyệt đối:
-$$v_a = \sqrt{v_e^2 + v_r^2 + 2 v_e v_r \cos\beta} = \sqrt{r^2 \omega^2 + v_r^2 + 2 r \omega v_r \cos\beta}$$
-
-**2. Bài toán gia tốc:**
-Theo định lý Coriolis:
 $$\vec{a}_a = \vec{a}_e + \vec{a}_r + \vec{a}_c$$
-Phân tích từng thành phần gia tốc:
-- **Gia tốc theo $\vec{a}_e$:** Rotor quay đều ($\varepsilon_e = 0$) nên gia tốc tiếp theo triệt tiêu $a_e^t = 0$. Gia tốc pháp theo:
-  $$a_e = a_e^n = r \omega^2$$
-  hướng từ $C$ về tâm quay $O$.
-- **Gia tốc tương đối $\vec{a}_r$:** Vì hạt khí chuyển động dọc rãnh với vận tốc tương đối không đổi $v_r = \text{const}$ nên gia tốc tiếp tương đối $a_r^t = 0$. Gia tốc pháp tương đối:
-  $$a_r = a_r^n = \frac{v_r^2}{\rho}$$
-  hướng dọc theo pháp tuyến chính của rãnh về tâm cong.
-- **Gia tốc Coriolis $\vec{a}_c$:**
-  Vì trục quay vuông góc với mặt phẳng chứa rãnh nên $\vec{\omega} \perp \vec{v}_r$. Độ lớn:
-  $$a_c = 2 \omega v_r$$
-  Chiều của $\vec{a}_c$ xác định bằng cách quay vectơ $\vec{v}_r$ một góc $90^\circ$ theo chiều quay của $\vec{\omega}$.
 
-Chiếu phương trình vectơ lên các trục vuông góc tại $C$, ta nhận được các hình chiếu của gia tốc tuyệt đối:
-$$a_{ax} = (2\omega v_r - \frac{v_r^2}{\rho}) \sin\beta$$
-$$a_{ay} = -r\omega^2 - (2\omega v_r - \frac{v_r^2}{\rho}) \cos\beta$$
+trong đó :
+
+$$a_c = 2\left(\frac{dx}{dt} \cdot \frac{d\vec{i}}{dt} + \frac{dy}{dt} \cdot \frac{d\vec{j}}{dt} + \frac{dz}{dt} \cdot \frac{d\vec{k}}{dt}\right)$$
+
+[Đính chính bản in: Ở vế trái biểu thức trên bản in thiếu dấu vectơ trên $a_c$, đúng là $\vec{a}_c$]
+
+gọi là gia tốc Côriôlit.
+
+Khi hệ quy chiếu động $Oxyz$ chuyển động tịnh tiến, các vectơ đơn vị $\vec{i}, \vec{j}, \vec{k}$ là các vectơ hằng. Do đó $\vec{a}_c = \vec{0}$.
+
+Khi hệ quy chiếu động chuyển động quay quanh một trục cố định $\Delta$ (H. 3–3), ta lấy điểm $O$ trên trục $\Delta$ làm gốc hệ quy chiếu ấy. Theo công thức tính vận tốc Ơle trong chương 2.
+
+<div class="figure-container">
+
+<img src="/figures/dong-hoc/hinh_3_3.svg" alt="Hình 3-3" style="max-height: 250px;" />
+
+<div class="figure-caption">
+
+Hình 3-3
+
+</div>
+
+</div>
+
+Ta có :
+
+$$\frac{d\vec{i}}{dt} = \vec{\omega}_e \wedge \vec{i} \, ; \quad \frac{d\vec{j}}{dt} = \vec{\omega}_e \wedge \vec{j} \, ; \quad \frac{d\vec{k}}{dt} = \vec{\omega}_e \wedge \vec{k}$$
+
+Từ đó ta suy ra :
+
+$$\vec{a}_c = 2\vec{\omega}_e \wedge \left(\frac{dx}{dt}\vec{i} + \frac{dy}{dt}\vec{j} + \frac{dz}{dt}\vec{k}\right) = 2\vec{\omega}_e \wedge \vec{v}_r \tag{3-9}$$
+
+*Chú ý.* Khi làm các bài tập ta có thể sử dụng quy tắc thực hành để xác định vectơ gia tốc Côriôlit như sau :
+
+Khi điểm $M$ chuyển động trên một mặt phẳng thì $\vec{\omega}_e \perp \vec{v}_r$. Khi đó ta quay vectơ $\vec{v}_r$ theo chiều quay của $\vec{\omega}_e$ đi một góc $90^\circ$, ta sẽ được phương và chiều của vectơ $\vec{a}_c$. Độ lớn của nó được tính theo công thức $a_c = 2\omega_e v_r$ (H.3–4).
+
+<div class="figure-container">
+
+<img src="/figures/dong-hoc/hinh_3_4.svg" alt="Hình 3-4" style="max-height: 220px;" />
+
+<div class="figure-caption">
+
+Hình 3-4
+
+</div>
+
+</div>
+
+<div class="figure-container">
+
+<img src="/figures/dong-hoc/hinh_3_5.svg" alt="Hình 3-5" style="max-height: 220px;" />
+
+<div class="figure-caption">
+
+Hình 3-5
+
+</div>
+
+</div>
+
+Khi điểm $M$ không chuyển động trên một mặt phẳng. Trong mặt phẳng $(\vec{v}_r, \vec{\omega}_e)$ chiếu vectơ $\vec{v}_r$ lên mặt phẳng vuông góc với $\vec{\omega}_e$ ta được vectơ $\vec{v}'_r$. Ta có $v'_r = v_r \sin\alpha$. Sau đó quay vectơ $\vec{v}'_r$ một góc $90^\circ$ theo chiều của $\vec{\omega}_e$ ta được phương và chiều của $\vec{a}_c$. Độ lớn của nó (H.3–5).
+
+$$a_c = 2\omega_e v'_r = 2\omega_e v_r \sin\alpha.$$
 
 ---
 
-### Thí dụ 3-3: Cơ cấu cu-lít (Khảo sát tay quay và cần lắc)
+## 3.3. Các thí dụ áp dụng
 
-**Đề bài:**
-Khảo sát chuyển động của cơ cấu cu-lít như Hình 3-8. Tay quay $OA = 0{,}2\,\text{m}$ quay đều quanh trục cố định $O$ với vận tốc góc $\omega = 4\pi\,\text{rad/s}$. Con chạy $A$ được nối khớp với đầu tay quay $OA$ và trượt dọc theo rãnh của cần lắc $O_1B$. Cần lắc $O_1B$ quay quanh trục cố định $O_1$.
-Tại thời điểm khảo sát, tay quay vuông góc với đường nối tâm $OO_1$ ($\widehat{AOO_1} = 90^\circ$), góc nghiêng của cần lắc $\widehat{AO_1O} = 60^\circ$.
-Xác định:
-1. Vận tốc góc $\omega_1$ và gia tốc góc $\varepsilon_1$ của cần lắc $O_1B$.
-2. Vận tốc tương đối $v_r$ và gia tốc tương đối $a_r$ của con chạy đối với rãnh cần lắc.
-3. Gia tốc Coriolis $\vec{a}_c$.
+### Thí dụ 3-1
 
-<div class="figure-box">
-  <img src="/figures/dong-hoc/hinh_3_8.svg" alt="Hình 3-8: Cơ cấu cu-lít truyền động giữa tay quay và cần lắc" style="max-width: 580px;" />
-  <div class="figure-caption">
+**Thí dụ 3 – 1.** Hai bờ của một con sông song song với nhau. Chiều rộng của dòng sông là $h$. Dòng sông chảy với vận tốc $\vec{v}$ có trị số không đổi. Một người lái thuyền sang ngang với vận tốc tương đối là $\vec{u}$. Xác định hướng của vận tốc $\vec{u}$ để cho thời gian sang sông là ngắn nhất. Với điều kiện đó xác định vị trí cập bến của thuyền.
 
-Hình 3-8: Sơ đồ cơ cấu cu-lít: tay quay $OA$, cần lắc $O_1B$ và con chạy $A$
+**Bài giải**
+
+Vật điểm khảo sát là con thuyền. Hệ quy chiếu động là dòng nước, hệ quy chiếu cố định là một mốc ở bờ sông. Khi đó con thuyền sẽ tham gia hai chuyển động : chuyển động tương đối với vận tốc $\vec{v}_r = \vec{u}$ và chuyển động theo với vận tốc $\vec{v}_e = \vec{v}$.
+
+Theo định lí hợp vận tốc :
+
+$$\vec{v}_a = \vec{u} + \vec{v}$$
+
+Chiếu đẳng thức này lên các trục tọa độ ta được :
+
+$$v_{ax} = u\sin\alpha + v \, ; \quad v_{ay} = u\cos\alpha$$
+
+Từ đó tích phân lên, với điều kiện đầu $x(0) = 0 \, ; \; y(0) = 0$, ta được :
+
+$$x = (u\sin\alpha + v)t \, ; \quad y = (u\cos\alpha)t$$
+
+Khi thuyền cập bến : $y = (u\cos\alpha)t = h$. Vậy thời gian sang sông là :
+
+$$t = \frac{h}{u\cos\alpha}$$
+
+$$\text{Khi } \alpha = 0 \Rightarrow \cos\alpha = 1 \Rightarrow t_{\min} = \frac{h}{u}$$
+
+Vị trí cập bến của con thuyền sẽ bị lùi một đoạn so với điểm xuất phát là :
+
+$$x = \frac{v}{u}h$$
+
+<div class="figure-container">
+
+<img src="/figures/dong-hoc/hinh_3_6.svg" alt="Hình 3-6" style="max-height: 230px;" />
+
+<div class="figure-caption">
+
+Hình 3-6
 
 </div>
+
 </div>
 
-**Bài giải:**
+---
 
-- **Điểm khảo sát:** Điểm $A$ trên con chạy.
-- **Hệ quy chiếu:**
-  - Hệ động: gắn liền với cần lắc $O_1B$ đang quay quanh $O_1$.
-  - Hệ cố định: gắn liền với giá đỡ và các trục quay $O, O_1$.
-- **Chiều dài hình học:**
-  Trong tam giác vuông $O_1OA$ tại $O$:
-  $$O_1A = \frac{OA}{\sin 60^\circ} = \frac{0{,}2}{\frac{\sqrt{3}}{2}} = \frac{0{,}4}{\sqrt{3}}\,\text{m}$$
+### Thí dụ 3-2
 
-**1. Bài toán vận tốc:**
-Định lý hợp vận tốc:
-$$\vec{v}_a = \vec{v}_e + \vec{v}_r$$
-- Vận tốc tuyệt đối $\vec{v}_a$: của điểm $A$ do tay quay $OA$ quay đều quanh $O$:
-  $$v_a = OA \cdot \omega = 0{,}2 \cdot 4\pi = 0{,}8\pi\,\text{m/s}$$
-  Phương vuông góc với $OA$ (nằm ngang).
-- Vận tốc theo $\vec{v}_e$: của điểm thuộc cần lắc trùng với $A$:
-  $$v_e = O_1A \cdot \omega_1$$
-  Phương vuông góc với cần lắc $O_1B$.
-- Vận tốc tương đối $\vec{v}_r$: trượt dọc theo rãnh cần lắc $O_1B$.
+**Thí dụ 3 – 2.** Một máy nén khí có các ống dẫn khí cong quay đều quanh trục $O$ vuông góc với mặt phẳng hình vẽ với vận tốc góc $w$. Không khí chạy dọc theo các ống với vận tốc tương đối có trị số không đổi $v_r$. Tìm hình chiếu vận tốc và gia tốc của một phân tử khí nằm ở điểm $C$ của ống $AB$ trên các trục $Ox, Oy$. Cho biết bán kính cong của ống ở điểm $C$ là $\rho$ góc giữa pháp tuyến của đường cong $AB$ ở điểm $C$ và bán kính $CO$ là $\varphi$. Bán kính $CO$ bằng $r$.
 
-Tam giác vận tốc tạo thành tam giác vuông vì $\vec{v}_e \perp \vec{v}_r$:
-$$v_e = v_a \cos 30^\circ = 0{,}8\pi \cdot \frac{\sqrt{3}}{2} = 0{,}4\pi \sqrt{3}\,\text{m/s}$$
-$$v_r = v_a \sin 30^\circ = 0{,}8\pi \cdot 0{,}5 = 0{,}4\pi\,\text{m/s}$$
+[Đính chính bản in: Kí hiệu vận tốc góc ở đề bài in là $w$, các biểu thức trong bài giải bên dưới thống nhất dùng $\omega$]
 
-Vận tốc góc của cần lắc $O_1B$:
-$$\omega_1 = \frac{v_e}{O_1A} = \frac{0{,}4\pi \sqrt{3}}{0{,}4 / \sqrt{3}} = 3\pi\,\text{rad/s}$$
+**Bài giải**
 
-**2. Bài toán gia tốc:**
-Định lý hợp gia tốc (Coriolis):
-$$\vec{a}_a = \vec{a}_e^n + \vec{a}_e^t + \vec{a}_r^n + \vec{a}_r^t + \vec{a}_c$$
-trong đó:
-- Tay quay $OA$ quay đều quanh $O$ nên gia tốc tuyệt đối chỉ có thành phần hướng tâm:
-  $$a_a = a_a^n = OA \cdot \omega^2 = 0{,}2 \cdot (4\pi)^2 = 3{,}2\pi^2\,\text{m/s}^2$$
-  hướng từ $A$ về $O$.
-- Rãnh thẳng nên bán kính cong $\rho = \infty \implies a_r^n = 0, \; \vec{a}_r = \vec{a}_r^t$ hướng dọc theo cần lắc $O_1B$.
-- Gia tốc hướng tâm theo của điểm $A$ đối với $O_1$:
-  $$a_e^n = O_1A \cdot \omega_1^2 = \frac{0{,}4}{\sqrt{3}} \cdot (3\pi)^2 = 1{,}2\sqrt{3}\pi^2\,\text{m/s}^2$$
-  hướng từ $A$ về $O_1$.
-- Gia tốc tiếp theo:
-  $$a_e^t = O_1A \cdot \varepsilon_1$$
-  vuông góc với cần lắc $O_1B$.
-- Gia tốc Coriolis:
-  $$a_c = 2 \omega_1 v_r = 2 \cdot (3\pi) \cdot (0{,}4\pi) = 2{,}4\pi^2\,\text{m/s}^2$$
-  Chiều của $\vec{a}_c$ thu được bằng cách quay $\vec{v}_r$ một góc $90^\circ$ theo chiều của $\omega_1$.
+*Phân tích.* Ta khảo sát chuyển động của hạt lỏng ở vị trí $C$ của ống dẫn khí $AB$. Chọn rôto máy nén khí làm hệ quy chiếu động và giá máy làm hệ quy chiếu cố định.
 
-Chiếu phương trình gia tốc lên phương vuông góc với cần lắc $O_1B$:
-$$a_a \cos 60^\circ = a_e^t + a_c$$
-$$\implies a_e^t = a_a \cos 60^\circ - a_c = 3{,}2\pi^2 \cdot 0{,}5 - 2{,}4\pi^2 = 1{,}6\pi^2 - 2{,}4\pi^2 = -0{,}8\pi^2\,\text{m/s}^2$$
-Dấu trừ chỉ ra rằng vectơ $\vec{a}_e^t$ ngược chiều giả thiết, tức là cần lắc $O_1B$ đang quay chậm dần.
+Với cách chọn trên, chuyển động tương đối của hạt lỏng là chuyển động cong đều trong rãnh $AB$, chuyển động theo là chuyển động của roto quay đều quanh trục $O$. Chuyển động tuyệt đối của hạt lỏng chưa biết và cần xác định.
 
-Gia tốc góc của cần lắc:
-$$\varepsilon_1 = \frac{|a_e^t|}{O_1A} = \frac{0{,}8\pi^2}{0{,}4 / \sqrt{3}} = 2\sqrt{3}\pi^2\,\text{rad/s}^2$$
+*Bài toán vận tốc.* Sử dụng định lí hợp vận tốc.
 
-Chiếu phương trình lên phương dọc theo cần lắc $O_1B$ để tìm gia tốc tương đối:
-$$a_r = a_a \sin 60^\circ - a_e^n = 3{,}2\pi^2 \cdot \frac{\sqrt{3}}{2} - 1{,}2\sqrt{3}\pi^2 = 1{,}6\sqrt{3}\pi^2 - 1{,}2\sqrt{3}\pi^2 = 0{,}4\sqrt{3}\pi^2\,\text{m/s}^2$$
+$$\vec{v}_a = \vec{v}_e + \vec{v}_r \qquad \text{(a)}$$
+
+Trong bài toán này $\vec{v}_r$ đã biết, vuông góc với pháp tuyến tại điểm $C$. Do roto quay quanh trục $O$ nên $\vec{v}_e$ của hạt lỏng vuông góc với bán kính $OC$ hướng theo chiều quay của roto và độ lớn là $v_e = OC.\omega = r.\omega$. Hai vectơ $\vec{v}_e$ và $\vec{v}_r$ tạo với nhau 1 góc $\varphi$ (H. 3–7). Chiếu đẳng thức (a) lên các trục $Ox, Oy$ ta được :
+
+$$\begin{aligned}
+v_{ax} &= v_r \cos\varphi + r.\omega \\
+v_{ay} &= v_r \sin\varphi
+\end{aligned}$$
+
+<div class="figure-container">
+
+<img src="/figures/dong-hoc/hinh_3_7.svg" alt="Hình 3-7" style="max-height: 290px;" />
+
+<div class="figure-caption">
+
+Hình 3-7
+
+</div>
+
+</div>
+
+*Bài toán gia tốc.* Sử dụng định lí hợp gia tốc.
+
+$$\vec{a}_a = \vec{a}_e + \vec{a}_r + \vec{a}_c \qquad \text{(b)}$$
+
+Theo giả thiết, hạt lỏng chuyển động đều trong rãnh cong $AB$, nên $a_r^t = 0, a_r^n = v_r^2 / \rho$. Vectơ $\vec{a}_r^n$ hướng từ $C$ về $I$. Do roto quay đều nên $a_e^t = 0, a_e^n = r\omega^2$. Vectơ $\vec{a}_e^n$ hướng từ $C$ vào $O$. Do $\vec{v}_r \perp \vec{\omega}_e$ nên vectơ gia tốc Côriôlit $\vec{a}_c$ được xác định theo quy tắc đã nêu trong hình 3–4. Vectơ $\vec{a}_c$ hướng vuông góc với $\vec{v}_r$ và ngược chiều với $\vec{a}_r^n, a_c = 2\omega v_r$. Căn cứ vào hình vẽ 3–7 và biểu thức (b) ta dễ dàng tìm được các thành phần của vectơ gia tốc tuyệt đối :
+
+$$a_{ax} = \left(2v_r\omega - \frac{v_r^2}{\rho}\right)\sin\varphi$$
+
+$$a_{ay} = -\left[r\omega^2 + \left(2v_r\omega - \frac{v_r^2}{\rho}\right)\cos\varphi\right]$$
+
+---
+
+### Thí dụ 3-3
+
+**Thí dụ 3 – 3.** Khảo sát chuyển động của cơ cấu culit như hình 3–8. Giả thiết rằng tay quay $OA = 0{,}2\text{m}$ quay đều quanh $O$ với vận tốc $\omega_o = 4\pi \, 1/\text{s}$. Nhờ con chạy $A$ có thể trượt dọc cần lắc $O_1 B$ mà chuyển động được truyền sang cần lắc $O_1 B$. Ở thời điểm khảo sát $O_1 AO = 60^\circ \, ; \; AOO_1 = 90^\circ$. Tìm vận tốc góc, gia tốc góc của cần lắc ở vị trí đó.
+
+**Bài giải**
+
+*Phân tích.* Chọn con trượt $A$ làm vật điểm khảo sát. Lấy cần lắc $O_1 B$ làm hệ quy chiếu chuyển động.
+
+- Chuyển động tuyệt đối : Chuyển động của điểm $A$ đối với giá cố định. Đó là chuyển động tròn đều, tâm $O$, bán kính $OA$.
+- Chuyển động tương đối : chuyển động của điểm $A$ đối với thanh $O_1 B$. Đó là chuyển động thẳng.
+- Chuyển động theo : chuyển động của thanh $O_1 B$ đối với giá cố định. Đó là chuyển động của vật rắn quay quanh một trục cố định.
+
+*Bài toán vận tốc :* Áp dụng định lí hợp vận tốc.
+
+$$\vec{v}_a = \vec{v}_e + \vec{v}_r \qquad \text{(a)}$$
+
+Vì chuyển động tuyệt đối của điểm $A$ đã biết, nên vectơ $\vec{v}_a$ đã biết hoàn toàn, $\vec{v}_a \perp OA$, có chiều phù hợp với chiều quay của $\omega_o$, $v_a = a\omega_o$. Vectơ $\vec{v}_r$ hướng dọc theo $O_1 B$, chiều và trị số của nó chưa biết. Cần lắc $O_1 B$ chuyển động quay quanh $O_1$, nên trùng điểm $A^*$ của $A$ chuyển động tròn. Do đó $\vec{v}_e \perp O_1 A$. Ta cũng chưa biết chiều và trị số của nó.
+
+[Đính chính bản in: Trong biểu thức $v_a = a\omega_o$ ở trên, tác giả kí hiệu $a = OA = 0{,}2\text{m}$, tức $v_a = OA.\omega_o$ như dòng tính ngay bên dưới]
+
+Từ hình vẽ 3–8 ta dễ dàng tìm được :
+
+$$v_e = v_a \sin 30^\circ \, ; \quad v_r = v_a \cos 30^\circ.$$
+
+Do $v_a = OA.\omega_o = 0{,}8\pi\text{m/s}$. Nên ta có :
+
+$$v_r = 0{,}4\sqrt{3}\pi, \quad v_e = 0{,}4\pi.$$
+
+Biết giá trị và hướng của $\vec{v}_e$, ta tìm được chiều quay và trị số của cần lắc $\overline{\omega}_1$ :
+
+$$\omega_1 = \frac{v_e}{O_1 A} = \frac{0{,}4\pi}{2.OA} = \pi \, 1/\text{s}$$
+
+Vận tốc góc $\overline{\omega}_1$ có chiều ngược chiều kim đồng hồ như hình vẽ.
+
+<div class="figure-container">
+
+<img src="/figures/dong-hoc/hinh_3_8.svg" alt="Hình 3-8" style="max-height: 330px;" />
+
+<div class="figure-caption">
+
+Hình 3-8
+
+</div>
+
+</div>
+
+*Bài toán gia tốc :* Áp dụng công thức :
+
+$$\vec{a}_a = \vec{a}_e + \vec{a}_r + \vec{a}_c$$
+
+Do chuyển động tuyệt đối là chuyển động tròn đều nên $\vec{a}_a = \vec{a}_a^n$.
+
+Chuyển động theo là chuyển động quay quanh một trục cố định nên $\vec{a}_e = \vec{a}_e^n + \vec{a}_e^t$. Công thức gia tốc trên có dạng :
+
+$$\vec{a}_a^n = \vec{a}_e^n + \vec{a}_e^t + \vec{a}_r + \vec{a}_c \qquad \text{(b)}$$
+
+trong đó :
+
+$\vec{a}_a^n$ hướng từ $A$ vào $O$ ; $a_a^n = OA.\omega_o^2 = 0{,}2.16\pi^2 = 3{,}2\pi^2$ ;
+
+$\vec{a}_e^n$ hướng từ $A$ vào $O_1$ ; $a_e^n = O_1 A.\omega_1^2 = 0{,}4\pi^2$.
+
+$\vec{a}_c$ được xác định theo quy tắc đã nêu trên hình 3–4. Vectơ $a_c$ vuông góc với $O_1 B$ như hình vẽ. Độ lớn của $a_c = 2\omega_1 v_r = 2\pi \cdot 0{,}4\sqrt{3}\pi = 0{,}8\sqrt{3}\pi^2$. Vectơ $\vec{a}_e^t$ hướng vuông góc $O_1 B$ nhưng chưa biết chiều và trị số. Vectơ $\vec{a}_r$ hướng dọc theo cần lắc $O_1 B$ nhưng chưa biết chiều và trị số.
+
+Chiếu đẳng thức (b) lên trục $O_1 B$ và trục vuông góc với $O_1 B$ :
+
+$$\begin{aligned}
+-a_a^n \cos 60^\circ &= -a_r - a_e^n \\
+a_a^n \sin 60^\circ &= a_c - a_e^t
+\end{aligned}$$
+
+Từ đó suy ra :
+
+$$a_r = a_a^n \cos 60^\circ - a_e^n = 1{,}6\pi^2 - 0{,}4\pi^2 = 1{,}2\pi^2$$
+
+$$a_e^t = a_c - a_a^n \sin 60^\circ = 0{,}8\sqrt{3}\pi^2 - 1{,}6\sqrt{3}\pi^2 = -0{,}8\sqrt{3}\pi^2$$
+
+Như vậy vectơ $\vec{a}_e^t$ ngược chiều với chiều đã vẽ trên hình 3–9.
+
+Trị số của gia tốc góc của cần lắc $O_1 B$ :
+
+$$\varepsilon_1 = \frac{a_e^t}{O_1 A} = \frac{0{,}8\sqrt{3}\pi^2}{0{,}4} = 2\sqrt{3}\pi^2 \, 1/\text{s}^2.$$
+
+[Đính chính bản in: Ở công thức tính độ lớn $\varepsilon_1$ trên cần hiểu là $\dfrac{|a_e^t|}{O_1 A}$; ngoài ra trên Hình 3–9 kí hiệu gia tốc góc in nhầm là $\varepsilon_2$ (đúng là $\varepsilon_1$) và tại $A$ ghi $\vec{a}_A^n$ ứng với $\vec{a}_a^n$]
+
+Căn cứ vào chiều đúng của $\vec{a}_e^t$, ta biết được chiều của $\varepsilon_1$. Trên hình vẽ $\overline{\varepsilon}_1$ có chiều ngược chiều kim đồng hồ.
+
+<div class="figure-container">
+
+<img src="/figures/dong-hoc/hinh_3_9.svg" alt="Hình 3-9" style="max-height: 320px;" />
+
+<div class="figure-caption">
+
+Hình 3-9
+
+</div>
+
+</div>
+
+---
+
+### Thí dụ 3-4
+
+**Thí dụ 3 – 4.** Khảo sát chuyển động của cơ cấu cam (H. 3–10). Cho biết cam là một đĩa tròn lệch tâm quay đều quanh trục cố định $O$ với vận tốc góc $\omega_o$. Khoảng cách giữa tâm $I$ của đĩa và $O$ là $e$. Cần $AB$ chuyển động tịnh tiến dọc theo rãnh định hướng $K$. Xác định vận tốc và gia tốc của cần ở vị trí như hình vẽ 3–10.
+
+**Bài giải**
+
+*Phân tích :* Ta khảo sát chuyển động của điểm $A$ trên cần. Chọn hệ động là cam, hệ cố định là giá máy. Như thế chuyển động tương đối của $A$ là chuyển động tròn quanh tâm $I$. Chuyển động theo là chuyển động quay của cam quanh $O$. Chuyển động tuyệt đối là chuyển động thẳng đứng lên xuống theo trục $AB$.
+
+*Bài toán vận tốc :* Sử dụng định lí hợp vận tốc :
+
+$$\vec{v}_a = \vec{v}_e + \vec{v}_r \qquad \text{(a)}$$
+
+Trong thí dụ này $\vec{v}_e$ đã biết, vuông góc với $OA$ và có độ lớn là $v_e = l\omega_o$. Trong đó :
+
+$$\begin{aligned}
+l = OA &= \sqrt{(r + e\cos 45^\circ)^2 + (e\sin 45^\circ)^2} \\
+&= \sqrt{r^2 + e^2 + er\sqrt{2}}
+\end{aligned}$$
+
+Vectơ $\vec{v}_r$ vuông góc với $IA$, chưa biết về chiều và trị số.
+
+Vectơ $\vec{v}_a$ hướng theo trục $AB$, chưa biết về chiều và trị số. Dựa trên hình vẽ 3–10 và công thức (a), ta dễ dàng xác định được :
+
+$$v_a = v_e \cos 60^\circ = \frac{1}{2}l\omega_o$$
+
+$$v_r = v_e \cos 30^\circ = \frac{\sqrt{3}}{2}l\omega_o$$
+
+<div class="figure-container">
+
+<img src="/figures/dong-hoc/hinh_3_10.svg" alt="Hình 3-10" style="max-height: 330px;" />
+
+<div class="figure-caption">
+
+Hình 3-10
+
+</div>
+
+</div>
+
+*Bài toán gia tốc :* Sử dụng định lí hợp gia tốc :
+
+$$\vec{a}_a = \vec{a}_e + \vec{a}_r + \vec{a}_c \qquad \text{(b)}$$
+
+Do cam quay đều, nên $a_e^t = 0 \, ; \; a_e^n = l\omega_o^2$. Điểm $A$ chuyển động tương đối trên vành cam nên $\vec{a}_r = \vec{a}_r^t + \vec{a}_r^n$. Trong đó $\vec{a}_r^n$ hướng từ $A$ vào $I$ và có giá trị :
+
+$$a_r^n = \frac{v_r^2}{r} = \frac{3}{4r}l^2\omega_o^2$$
+
+Thành phần $\vec{a}_r^t$ hướng vuông góc với $IA$, chưa biết về chiều và trị số. Do $\vec{v}_r \perp \vec{\omega}_e$ nên vectơ gia tốc $\vec{a}_c$ được xác định theo quy tắc đã nêu trên hình 3–4. Vectơ $\vec{a}_c$ vuông góc với $\vec{v}_r$ và ngược chiều với $\vec{a}_r^n \, ; \; a_c = 2\omega_o v_r = l\omega_o^2\sqrt{3}$. Do cần chuyển động tịnh tiến, nên $\vec{a}_a$ hướng dọc thanh $AB$. Ta chưa biết về chiều và trị số của nó.
+
+Như thế hệ thức (b) bây giờ có dạng :
+
+$$\vec{a}_a = \vec{a}_e^n + \vec{a}_r^t + \vec{a}_r^n + \vec{a}_c \qquad \text{(c)}$$
+
+Trong đó hai vectơ $\vec{a}_a$ và $\vec{a}_r^t$ chưa biết về chiều và trị số (H. 3–11). Chiếu hệ thức (c) lên phương $IA$ ta được :
+
+$$\begin{aligned}
+a_a &= a_e^n \cos 30^\circ - a_r^n + a_c = \\
+&= -l\omega_o \frac{2\sqrt{3}}{2} - \frac{3}{4r}l^2\omega_o^2 + l\omega_o^2\sqrt{3} = \\
+&= -l\omega_o^2\left(\frac{3l}{4r} - \frac{\sqrt{3}}{2}\right)
+\end{aligned}$$
+
+[Đính chính bản in: Ở dòng thứ nhất vế phải in thiếu dấu trừ trước $a_e^n \cos 30^\circ$ (đúng là $-a_e^n \cos 30^\circ - a_r^n + a_c$); ở dòng thứ hai số mũ $2$ của $\omega_o^2$ bị xếp nhầm lên tử số thành $-l\omega_o \dfrac{2\sqrt{3}}{2}$, đúng là $-l\omega_o^2 \dfrac{\sqrt{3}}{2}$]
+
+<div class="figure-container">
+
+<img src="/figures/dong-hoc/hinh_3_11.svg" alt="Hình 3-11" style="max-height: 340px;" />
+
+<div class="figure-caption">
+
+Hình 3-11
+
+</div>
+
+</div>
+
+Do ở vị trí như hình 3–11 thì $l > r$; vậy $a_a < 0$; $\vec{a}_a$ phải hướng từ $A$ tới $I$. Muốn tìm $\vec{a}_r^t$, ta chiếu hệ thức (c) lên phương vuông góc với $AI$.
+
+---
+
+### Nhận xét chung
+
+*Nhận xét chung :* Khi tính toán vận tốc và gia tốc trong chương này, ta thường dẫn đến việc giải phương trình vectơ.
+
+$$\sum_{i=1}^n \vec{a}_i = \sum_{j=1}^m \vec{b}_i$$
+
+[Đính chính bản in: Tổng ở vế phải bản in ghi $\displaystyle\sum_{j=1}^m \vec{b}_i$, đúng chỉ số là $\displaystyle\sum_{j=1}^m \vec{b}_j$]
+
+Nếu $\vec{a}_i, \vec{b}_j$ là các vectơ trong không gian, thì phương trình trên tương đương với ba phương trình vô hướng. Bài toán giải được khi có ba ẩn. Nếu $\vec{a}_i, \vec{b}_j$ là các vectơ nằm cùng trong một mặt phẳng, thì phương trình vectơ trên tương đương với hai phương trình vô hướng. Bài toán giải được khi có hai ẩn. Ẩn ở đây là trị số và dấu của nó.
+
+Nếu trong phương trình trên, có một vectơ hoàn toàn chưa biết, bài toán thuộc loại bài toán tổng hợp. Nếu có hai (hoặc ba trong bài toán không gian) vectơ chưa biết về trị số, còn phương đã biết, bài toán thuộc loại bài toán phân tích. Như thế các thí dụ 3–1 và 3–2 ở trên thuộc loại bài toán tổng hợp, còn các thí dụ 3–3 và 3–4 là các bài toán phân tích.
