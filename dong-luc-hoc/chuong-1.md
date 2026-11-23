@@ -1,107 +1,161 @@
 # Chương 1: Các Khái Niệm và Hệ Tiên Đề Của Động Lực Học
 
-Động lực học là phần chính của cơ học nghiên cứu mối quan hệ giữa chuyển động của các vật thể và các lực tác dụng tương hỗ gây ra chuyển động đó.
+Động lực học là một phần của cơ học lý thuyết nhằm nghiên cứu các quy luật của chuyển động cơ học của các vật thể dưới tác dụng của lực. Như đã biết, tĩnh học chỉ nghiên cứu các quy luật cân bằng của vật rắn dưới tác dụng của các lực, còn động học nghiên cứu chuyển động về mặt hình học. Động lực học nghiên cứu chuyển động của các vật thể một cách toàn diện nhằm thiết lập các mối quan hệ có tính chất quy luật giữa hai loại đại lượng: các đại lượng đặc trưng cho tác dụng của lực và các đại lượng đặc trưng cho chuyển động của vật thể.
+
+Động lực học được xây dựng trên hệ tiên đề do Galilê và Niutơn đưa ra, thường được gọi là hệ tiên đề Niutơn hay còn gọi là các định luật Niutơn.
 
 ---
 
-## 1.1. Các Khái Niệm Cơ Bản
+## 1.1. Các Khái Niệm
 
-### 1.1.1. Khối Lượng
-Khối lượng là đại lượng vật lý vô hướng, dương, đặc trưng cho mức độ quán tính của vật thể (khả năng bảo toàn trạng thái chuyển động của vật khi chịu lực tác dụng) và đặc trưng cho tương tác hấp dẫn của nó với các vật thể khác.
-- Kí hiệu: $m$.
-- Đơn vị trong hệ SI: Kilôgam ($\text{kg}$).
-- Trong cơ học cổ điển Niutơn, khối lượng của một vật thể là một đại lượng không đổi ($m = \text{const}$), không phụ thuộc vào trạng thái chuyển động cũng như hệ quy chiếu khảo sát.
+### 1.1.1. Vật thể
 
-### 1.1.2. Hệ Quy Chiếu Quán Tính
-Hệ quy chiếu quán tính là hệ quy chiếu trong đó một chất điểm cô lập (không chịu lực nào tác dụng) sẽ chuyển động thẳng đều hoặc đứng yên.
-- Hệ quy chiếu gắn với hệ Mặt Trời và các định tinh xa xôi được coi là hệ quy chiếu quán tính chuẩn mực (hệ nhật tâm Copernicus).
-- Trong các bài toán kỹ thuật thông thường trên mặt đất, hệ quy chiếu gắn với quả đất được coi gần đúng là hệ quy chiếu quán tính.
+Trong cơ học lý thuyết vật thể được mô hình dưới các dạng sau:
 
-### 1.1.3. Lực
-Lực là đại lượng véctơ đặc trưng cho tác dụng tương hỗ cơ học giữa các vật thể, là nguyên nhân làm thay đổi trạng thái chuyển động cơ học (gây ra gia tốc) hoặc làm biến dạng vật thể.
-- Kí hiệu: $\vec{F}$.
-- Được đặc trưng bởi ba yếu tố: điểm đặt, phương chiều và cường độ (môđun).
+*Chất điểm:* còn được gọi là vật điểm, là một điểm hình học có mang khối lượng. Chất điểm là mô hình của các vật thể mà kích thước của nó có thể bỏ qua được do nhỏ so với các vật thể khác hoặc không đóng vai trò gì trong quá trình khảo sát chuyển động, ví dụ khi xác định tầm xa của viên đạn hoặc khi khảo sát chuyển động của các vật tịnh tiến có thể xem chúng là chất điểm.
+
+*Cơ hệ:* là tập hợp hữu hạn hoặc vô hạn các chất điểm trong đó chuyển động của một chất điểm bất kỳ phụ thuộc vào chuyển động của các chất điểm còn lại, nghĩa là chuyển động của các chất điểm phụ thuộc vào nhau. Nói khác đi, giữa các chất điểm của cơ hệ tồn tại các tương tác cơ học. Tùy thuộc vào bản chất của tương tác cơ học giữa các chất điểm, cơ hệ được phân thành cơ hệ tự do và cơ hệ không tự do.
+
+*Cơ hệ tự do là tập hợp các chất điểm mà mối tương tác cơ học giữa chúng được biểu hiện thuần túy qua lực tác dụng. Nói khác đi, cơ hệ tự do, là tập hợp các chất điểm tự do, tức là chất điểm mà di chuyển của nó (di chuyển vô cùng bé) từ vị trí đang xét theo bất kỳ phương nào cũng không bị cản trở. Thái dương hệ là một thí dụ về cơ hệ tự do.*
+
+*Cơ hệ không tự do, còn được gọi là cơ hệ chịu liên kết, là tập hợp các chất điểm mà trong chuyển động của chúng, ngoài lực tác dụng, vị trí và vận tốc của các chất điểm bị ràng buộc bởi một số điều kiện hình học và động học cho trước được gọi là những liên kết. Cơ cấu máy là một thí dụ về cơ hệ không tự do.*
+
+*Vật rắn tuyệt đối:* là một cơ hệ gồm vô số các chất điểm mà khoảng cách giữa hai chất điểm bất kỳ của nó không đổi trong suốt thời gian chuyển động. Trong thực tế các vật mà biến dạng của nó có thể bỏ qua do bé hoặc do không đóng vai trò quan trọng trong quá trình khảo sát chuyển động, được xem là vật rắn tuyệt đối, thường được gọi vắn tắt là vật rắn.
+
+### 1.1.2. Lực
+
+Khái niệm lực đã được định nghĩa trong tĩnh học. Đó là tác dụng tương hỗ cơ học giữa các vật thể. Như đã biết, các đặc trưng của lực là đường tác dụng, điểm đặt và cường độ của lực. Lực được biểu diễn nhờ vectơ lực. Trong tĩnh học chỉ liên quan với các lực hằng, trong động lực học, lực nói chung là đại lượng biến đổi (biến đổi cả về độ lớn và hướng). Lực biến đổi có thể phụ thuộc vào thời gian, vị trí và vận tốc của chất điểm và có thể phụ thuộc đồng thời vào các đại lượng vừa nêu. Trong trường hợp tổng quát, biểu thức của lực có dạng
+
+$$\vec{F} = \vec{F}(t, \vec{r}, \vec{v}) \tag{1-1}$$
+
+Các lực tác dụng lên cơ hệ có thể phân thành ngoại lực và nội lực. Ngoại lực được ký hiệu bởi $\vec{F}_e$ là lực do các vật thể bên ngoài cơ hệ tác dụng lên các chất điểm thuộc cơ hệ. Nội lực, được ký hiệu bởi $\vec{F}_i$, là lực do các chất điểm thuộc cơ hệ tác dụng lẫn nhau. Các lực tác dụng lên cơ hệ cũng có thể được phân thành lực hoạt động và lực liên kết. Lực liên kết được ký hiệu bởi $\vec{R}$, là lực do các liên kết tác dụng lên các chất điểm của cơ hệ. Các lực không phải là lực liên kết, được gọi là lực hoạt động.
+
+Việc phân loại lực theo cách nào sẽ tùy thuộc vào phương pháp được dùng để khảo sát cơ hệ.
+
+### 1.1.3. Hệ quy chiếu quán tính
+
+Muốn khảo sát chuyển động của các vật thể trước hết phải chọn hệ quy chiếu. Trong động lực học hệ quy chiếu được chọn là hệ quy chiếu quán tính, đó là hệ quy chiếu mà trong đó định luật quán tính của Galilê được nghiệm đúng. Trong thực tế, tùy thuộc yêu cầu của độ chính xác của bài toán khảo sát, người ta chọn các hệ quy chiếu quán tính gần đúng. Trong thiên văn hệ quy chiếu quán tính được chọn là hệ trục tọa độ có gốc ở tâm mặt trời và ba trục hướng đến ba ngôi sao cố định. Trong kỹ thuật hệ quy chiếu quán tính được chọn thường là hệ trục tọa độ gắn liền với quả đất.
 
 ---
 
-## 1.2. Hệ Tiên Đề Của Động Lực Học (Các Định Luật Newton)
+## 1.2. Hệ Tiên Đề Của Động Lực Học
 
-Nền tảng của động lực học cổ điển được xây dựng trên bốn định luật cơ bản do Isaac Newton đề xuất năm 1687:
+### Tiên đề thứ nhất (định luật quán tính)
 
-### Định Luật 1: Định Luật Quán Tính
-::: tip Định luật 1 Newton
-Một chất điểm cô lập hoàn toàn (không chịu lực nào tác dụng, hoặc chịu một hệ lực triệt tiêu lẫn nhau) sẽ giữ nguyên trạng thái đứng yên hoặc chuyển động thẳng đều mãi mãi:
+::: tip Tiên đề thứ nhất (định luật quán tính)
+*Chất điểm không chịu tác dụng của lực nào sẽ đứng yên hoặc chuyển động thẳng đều.*
 
-$$\sum \vec{F}_k = \vec{0} \implies \vec{v} = \text{const} \tag{1-1}$$
+*Trạng thái đứng yên hay chuyển động thẳng đều của chất điểm được gọi là trạng thái quán tính của nó.*
 :::
 
-### Định Luật 2: Định Luật Cơ Bản Của Động Lực Học
-::: tip Định luật 2 Newton
-Gia tốc của một chất điểm tỉ lệ thuận với hợp lực tác dụng lên nó, có cùng phương chiều với hợp lực và tỉ lệ nghịch với khối lượng của chất điểm:
+Như vậy theo tiên đề này, nếu không có lực tác dụng lên chất điểm (chất điểm như vậy được gọi là chất điểm cô lập) thì nó có trạng thái quán tính. Nói khác đi, chất điểm cô lập sẽ bảo toàn trạng thái quán tính của mình cho đến khi chưa có lực tác dụng buộc nó thay đổi trạng thái chuyển động. Bằng cách như vậy định luật quán tính không những cho một tiêu chuẩn về hệ quy chiếu quán tính mà còn phát hiện và khẳng định lực là nguyên nhân duy nhất làm biến đổi trạng thái chuyển động của chất điểm. Do đó, định luật quán tính là một trong những phát minh vĩ đại nhất của con người.
 
-$$\vec{a} = \frac{\vec{F}}{m} \iff m \vec{a} = \vec{F} \tag{1-2}$$
+### Tiên đề thứ hai (Định luật cơ bản của động lực học)
 
-Dưới dạng phương trình vi phân chuyển động:
-
-$$m \frac{d^2\vec{r}}{dt^2} = \vec{F} \tag{1-3}$$
+::: tip Tiên đề thứ hai (Định luật cơ bản của động lực học)
+*Trong hệ quy chiếu quán tính, dưới tác dụng của lực, chất điểm chuyển động với gia tốc có cùng hướng với lực và có giá trị tỷ lệ với cường độ của lực (H.1.1).*
 :::
 
-### Định Luật 3: Định Luật Tác Dụng và Phản Tác Dụng
-::: tip Định luật 3 Newton
-Lực tác dụng và lực phản tác dụng giữa hai chất điểm bất kỳ luôn luôn có cùng đường tác dụng, cùng độ lớn nhưng ngược chiều nhau:
+Như vậy tiên đề thứ hai được biểu thị bằng hệ thức:
 
-$$\vec{F}_{12} = -\vec{F}_{21} \tag{1-4}$$
-:::
-*Lưu ý:* Hai lực tác dụng và phản tác dụng đặt vào hai vật thể khác nhau nên không bao giờ là hai lực cân bằng trên cùng một vật.
+$$\vec{F} = m\vec{a} \tag{1-2}$$
 
-### Định Luật 4: Định Luật Độc Lập Tác Dụng Của Lực
-::: tip Định luật 4 Newton
-Khi có nhiều lực $\vec{F}_1, \vec{F}_2, ..., \vec{F}_n$ đồng thời tác dụng lên một chất điểm, mỗi lực gây ra cho chất điểm một gia tốc độc lập hoàn toàn như khi nó tác dụng riêng lẻ:
+trong đó hệ số tỷ lệ $m$ có giá trị không đổi, là số đo quán tính của chất điểm, được gọi là khối lượng của chất điểm. Tiên đề thứ hai thiết lập mối quan hệ về số lượng giữa lực tác dụng và gia tốc mà chất điểm thu được dưới tác dụng của lực đó.
 
-$$\vec{a} = \sum_{k=1}^n \vec{a}_k = \sum_{k=1}^n \frac{\vec{F}_k}{m} = \frac{1}{m} \sum_{k=1}^n \vec{F}_k \tag{1-5}$$
-:::
+Đẳng thức $(1-2)$ còn được gọi là phương trình cơ bản của động lực học.
 
 <div class="figure-container">
 
-<img src="/figures/dong-luc-hoc/hinh_1_1.svg" alt="Hình 1-1: Định luật cơ bản của động lực học Newton" style="max-height: 260px;" />
+<img src="/figures/dong-luc-hoc/hinh_1_1.svg" alt="Hình 1-1" style="max-height: 240px;" />
 
 <div class="figure-caption">
 
-Hình 1-1: Phương trình cơ bản của động lực học chất điểm $m\vec{a} = \sum\vec{F}_k$
+Hình 1-1
 
 </div>
 
 </div>
+
+Từ $(1-2)$ khi $\vec{F} = 0$ ta có $\vec{a} = 0$ tức $\vec{v} = \text{hằng vectơ}$ (bao gồm cả trường hợp $\vec{v} = \vec{0}$), tức chất điểm cô lập sẽ có trạng thái quán tính. Tuy nhiên từ đó không thể nói rằng tiên đề thứ nhất là hệ quả của tiên đề thứ hai, bởi vì như trên đã nêu, tiên đề thứ nhất cho một tiêu chuẩn về hệ quy chiếu quán tính mà trong đó tiên đề thứ hai được thiết lập.
+
+[Đính chính bản in: Trong câu trên, vế phải của $\vec{F} = 0$ và $\vec{a} = 0$ là vectơ không $\vec{0}$.]
+
+Khi viết $(1-2)$ cho chất điểm rơi tự do trong trọng trường ta có:
+
+$$P = mg \tag{1-3}$$
+
+nó thiết lập mối quan hệ giữa trọng lượng và khối lượng của chất điểm.
+
+### Tiên đề thứ ba (Định luật tác dụng và phản tác dụng)
+
+::: tip Tiên đề thứ ba (Định luật tác dụng và phản tác dụng)
+*Các lực tác dụng tương hỗ giữa hai chất điểm có cùng đường tác dụng, ngược chiều và cùng cường độ.*
+:::
+
+Cần lưu ý rằng hai lực tác dụng tương hỗ giữa hai chất điểm không phải là cặp lực cân bằng vì chúng đặt vào hai chất điểm khác nhau. Tiên đề thứ ba không liên quan đến các yếu tố động học nên nó đúng đối với hệ quy chiếu bất kỳ.
+
+Giá trị đặc biệt của tiên đề thứ ba còn ở chỗ nó mô tả tương tác giữa hai chất điểm và do đó cho khả năng khảo sát động lực học cơ hệ.
+
+Theo tiên đề thứ ba, hệ nội lực sẽ gồm các lực từng đôi một trực đối nhau. Do đó suy ra tính chất của hệ nội lực: Vectơ chính và momen chính của hệ nội lực đối với một điểm bất kỳ luôn luôn triệt tiêu, tức là :
+
+$$\vec{R}^i = \sum \vec{F}_k^i = \vec{0} \text{ và } \vec{m}_o^i = \sum \vec{m}_o(\vec{F}_k^i) = \vec{0} \tag{1-4}$$
+
+Tuy nhiên như đã lưu ý ở trên, hệ nội lực không phải là hệ lực cân bằng.
+
+### Tiên đề thứ tư (Định luật về tính độc lập giữa tác dụng của các lực)
+
+::: tip Tiên đề thứ tư (Định luật về tính độc lập giữa tác dụng của các lực)
+*Dưới tác dụng đồng thời của một số lực, chất điểm có gia tốc bằng tổng hình học các gia tốc mà chất điểm có được khi mỗi lực tác dụng riêng biệt.*
+:::
+
+Giả sử chất điểm có khối lượng $m$ chịu tác dụng các lực $\vec{F}_1, \vec{F}_2, \dots, \vec{F}_n$. Theo tiên đề thứ tư và áp dụng tiên đề thứ hai, chất điểm chuyển động với gia tốc $\vec{a}$ được tính theo công thức :
+
+$$\vec{a} = \sum_{k=1}^n \frac{\vec{F}_k}{m}$$
+
+Do đó:
+
+$$m\vec{a} = \sum_{k=1}^n \vec{F}_k \tag{1-5}$$
+
+Điều đó có nghĩa là dưới tác dụng của các lực $\vec{F}_1, \vec{F}_2, \dots, \vec{F}_n$ chất điểm sẽ chuyển động với gia tốc thỏa mãn tiên đề thứ hai, trong đó lực tác dụng lên chất điểm là hợp lực của hệ lực $\vec{F}_1, \vec{F}_2, \dots, \vec{F}_n$. Nói khác đi, trong động lực học chất điểm cho phép sử dụng quy tắc hình bình hành lực đã nêu trong phần tĩnh học.
+
+### Tiên đề thứ năm (Tiên đề giải phóng liên kết)
+
+::: tip Tiên đề thứ năm (Tiên đề giải phóng liên kết)
+*Chất điểm không tự do (tức chất điểm chịu liên kết) có thể được xem như chất điểm tự do bằng cách giải phóng nó khỏi liên kết và thay thế liên kết đó bằng phản lực liên kết.*
+:::
+
+Tiên đề thứ năm cho phép áp dụng bốn tiên đề nêu trên, chúng được phát biểu đối với chất điểm tự do, cho động lực học chất điểm không tự do.
 
 ---
 
 ## 1.3. Hai Bài Toán Cơ Bản Của Động Lực Học
 
-Dựa trên phương trình cơ bản $m\ddot{\vec{r}} = \vec{F}$, động lực học giải quyết hai bài toán cơ bản sau:
+Động lực học nhằm giải quyết hai bài toán cơ bản sau:
 
-### Bài Toán Thuận (Bài Toán Thứ Nhất)
-- **Cho biết:** Khối lượng $m$ của chất điểm và quy luật chuyển động của nó: $\vec{r} = \vec{r}(t)$.
-- **Yêu cầu:** Tìm hợp lực $\vec{F}$ tác dụng lên chất điểm.
-- **Phương pháp giải:** Lấy đạo hàm hai lần bán kính véctơ $\vec{r}(t)$ theo thời gian để tìm gia tốc $\vec{a} = \ddot{\vec{r}}$, sau đó áp dụng định luật 2 Newton:
-  $$\vec{F} = m \frac{d^2\vec{r}}{dt^2}$$
+### Bài toán thứ nhất – bài toán thuận
 
-### Bài Toán Nghịch (Bài Toán Thứ Hai)
-- **Cho biết:** Khối lượng $m$ của chất điểm, các lực tác dụng lên chất điểm $\vec{F} = \vec{F}(t, \vec{r}, \dot{\vec{r}})$ và các **điều kiện ban đầu** tại thời điểm $t = t_0$:
-  $$\vec{r}(t_0) = \vec{r}_0; \quad \vec{v}(t_0) = \vec{v}_0$$
-- **Yêu cầu:** Xác định quy luật chuyển động của chất điểm: $\vec{r} = \vec{r}(t)$.
-- **Phương pháp giải:** Thiết lập và giải hệ phương trình vi phân chuyển động cấp hai:
-  $$m \frac{d^2\vec{r}}{dt^2} = \vec{F}(t, \vec{r}, \dot{\vec{r}})$$
-  Tích phân phương trình vi phân và xác định các hằng số tích phân từ điều kiện ban đầu.
+Cho biết chuyển động của vật thể, hãy xác định lực đã gây ra chuyển động đó.
+
+### Bài toán thứ hai – bài toán ngược
+
+Cho biết các lực tác dụng lên vật thể và những điều kiện đầu của chuyển động, hãy xác định chuyển động của vật thể ấy.
 
 ---
 
 ## 1.4. Hệ Đơn Vị Cơ Học
 
-Trong hệ đơn vị quốc tế (SI - Système International d'Unités):
-- **Ba đơn vị cơ bản:**
-  - Chiều dài: mét ($\text{m}$).
-  - Thời gian: giây ($\text{s}$).
-  - Khối lượng: kilôgam ($\text{kg}$).
-- **Đơn vị lực dẫn xuất:** Niutơn ($\text{N}$).
-  Một Niutơn là lực truyền cho một vật có khối lượng $1\text{ kg}$ một gia tốc $1\text{ m/s}^2$:
-  $$1\text{ N} = 1\text{ kg} \cdot \text{m/s}^2$$
+Ở nước ta Nhà nước đã ban hành bảng đơn vị đo lường hợp pháp, xây dựng trên cơ sở của hệ đơn vị quốc tế SI.
+
+Theo bảng đơn vị này các đại lượng cơ bản trong cơ học là: độ dài, khối lượng và thời gian. Lực là đại lượng dẫn xuất. Các đơn vị cơ bản tương ứng là: mét, kí hiệu là $\text{m}$; kilôgam, ký hiệu là $\text{kg}$ và giây ký hiệu là $\text{s}$.
+
+Để tìm đơn vị tương ứng của đại lượng dẫn xuất lực, ta sử dụng phương trình cơ bản của động lực học
+
+$$F = ma$$
+
+Với $m = 1\text{kg}$; $a = 1\text{m/s}^2$ thì $F = 1\text{kg} \cdot 1\text{m/s}^2 = 1\text{kgm/s}^2$, nó được gọi là Niutơn, kí hiệu $\text{N}$. Vậy:
+
+$$1\text{N} = 1\text{kgm/s}^2$$
+
+Niutơn là lực gây cho vật có khối lượng một kilôgam gia tốc một mét trên giây bình phương.
+
+Đơn vị của các đại lượng khác sẽ được xác định nhờ vào mối quan hệ của chúng với các đại lượng cơ bản.
