@@ -3,6 +3,7 @@ import { defineConfig } from 'vitepress'
 const ICON_BOOK = '<svg class="nav-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-2px;margin-right:6px;"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 2v20"/></svg>'
 const ICON_LIBRARY = '<svg class="nav-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-2px;margin-right:6px;"><path d="m16 6 4 14"/><path d="M12 6v14"/><path d="M8 8v12"/><path d="M4 4v16"/></svg>'
 const ICON_EXERCISE = '<svg class="nav-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-2px;margin-right:6px;"><path d="M15.5 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5L15.5 3Z"/><path d="M15 3v6h6"/><path d="m9 14 2 2 4-4"/></svg>'
+const ICON_TARGET = '<svg class="nav-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-2px;margin-right:6px;"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg>'
 const ICON_EXTERNAL = '<svg class="nav-icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-1px;margin-left:4px;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>'
 
 export default defineConfig({
@@ -54,13 +55,14 @@ export default defineConfig({
         ]
       },
       {
-        text: 'Ôn Thi 20 Ngày (0→100)',
+        text: 'Ôn Thi 20 Ngày (AS1003)',
         items: [
-          { text: 'Tổng Quan Lộ Trình 20 Ngày', link: '/on-thi/' },
-          { text: 'Chặng 1 (Ngày 1–6): Tĩnh Học (0→35)', link: '/on-thi/chang-1-tinh-hoc' },
-          { text: 'Chặng 2 (Ngày 7–12): Động Học (35→65)', link: '/on-thi/chang-2-dong-hoc' },
-          { text: 'Chặng 3 (Ngày 13–17): Động Lực Học (65→90)', link: '/on-thi/chang-3-dong-luc-hoc' },
-          { text: 'Chặng 4 (Ngày 18–20): Đề Thi & Về Đích (90→100)', link: '/on-thi/chang-4-ve-dich' }
+          { text: 'Tổng Quan Lộ Trình 20 Ngày (AS1003)', link: '/on-thi/' },
+          { text: 'Chặng 1 (Ngày 1–5): Xóa Mù & Ch.9–10', link: '/on-thi/chang-1-tinh-hoc' },
+          { text: 'Chặng 2 (Ngày 6–10): Ch.11, 12.1 & 13 (D\'Alembert)', link: '/on-thi/chang-2-dong-hoc' },
+          { text: 'Chặng 3 (Ngày 11–15): Ch.12.2–12.3 (Động Năng)', link: '/on-thi/chang-3-dong-luc-hoc' },
+          { text: 'Chặng 4 (Ngày 16–20): Ch.14–15 (Lagrange II & Sổ Tay)', link: '/on-thi/chang-4-ve-dich' },
+          { text: 'Ngân Hàng Đề Thi Thật HCMUT AS1003', link: '/on-thi/de-thi-that-hcmut' }
         ]
       },
       { text: 'Về Giáo Trình', link: '/gioi-thieu' }
@@ -193,13 +195,14 @@ export default defineConfig({
       ],
       '/on-thi/': [
         {
-          text: 'ÔN THI CẤP TỐC 20 NGÀY (0 → 100)',
+          text: 'ÔN THI CUỐI KỲ AS1003 (20 NGÀY)',
           items: [
-            { text: 'Tổng Quan Lộ Trình 20 Ngày', link: '/on-thi/' },
-            { text: 'Chặng 1 (Ngày 1–6): Tĩnh Học (0→35)', link: '/on-thi/chang-1-tinh-hoc' },
-            { text: 'Chặng 2 (Ngày 7–12): Động Học (35→65)', link: '/on-thi/chang-2-dong-hoc' },
-            { text: 'Chặng 3 (Ngày 13–17): Động Lực Học (65→90)', link: '/on-thi/chang-3-dong-luc-hoc' },
-            { text: 'Chặng 4 (Ngày 18–20): Đề Thi & Về Đích (90→100)', link: '/on-thi/chang-4-ve-dich' }
+            { text: ICON_TARGET + 'Tổng Quan Lộ Trình 20 Ngày (AS1003)', link: '/on-thi/' },
+            { text: ICON_BOOK + 'Chặng 1 (Ngày 1–5): Xóa Mù & Ch.9–10', link: '/on-thi/chang-1-tinh-hoc' },
+            { text: ICON_BOOK + 'Chặng 2 (Ngày 6–10): Ch.11, 12.1 & 13 (D\'Alembert)', link: '/on-thi/chang-2-dong-hoc' },
+            { text: ICON_BOOK + 'Chặng 3 (Ngày 11–15): Ch.12.2–12.3 (Động Năng)', link: '/on-thi/chang-3-dong-luc-hoc' },
+            { text: ICON_BOOK + 'Chặng 4 (Ngày 16–20): Ch.14–15 (Lagrange II & Sổ Tay)', link: '/on-thi/chang-4-ve-dich' },
+            { text: ICON_EXERCISE + 'Ngân Hàng Đề Thi Thật HCMUT AS1003', link: '/on-thi/de-thi-that-hcmut' }
           ]
         },
         {
