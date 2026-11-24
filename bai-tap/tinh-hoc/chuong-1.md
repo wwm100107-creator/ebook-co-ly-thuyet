@@ -3,387 +3,823 @@ title: "Bài Tập Tĩnh Học - Chương 1: Bài Toán Phẳng"
 layout: doc
 ---
 
-# Chương 1: Bài Toán Phẳng
+# Phần một: TĨNH HỌC
 
-> [!NOTE] Cơ sở lý thuyết liên quan
-> Xem lý thuyết chi tiết về hệ tiên đề tĩnh học, mômen lực và điều kiện cân bằng tại: **[Giáo trình Lý thuyết: Chương 1 – Khái niệm & Hệ tiên đề Tĩnh học](/tinh-hoc/chuong-1)**.
+# CHƯƠNG 1: BÀI TOÁN PHẲNG
 
-Trước hết chúng ta xét các bài toán phẳng một vật: đó là các bài toán dẫn đến việc khảo sát cân bằng của một vật rắn chịu tác dụng của hệ lực phẳng.
+Trước hết chúng ta xét các bài toán phẳng một vật : đó là các bài toán dẫn đến việc khảo sát cân bằng của một vật rắn chịu tác dụng của hệ lực phẳng.
 
 ---
 
-## 1.1. CƠ SỞ LÝ THUYẾT
+## 1.1. CƠ SỞ LÍ THUYẾT
 
 ### 1.1.1. Lực hoạt động và phản lực liên kết
-* **Lực hoạt động (Chủ lực):** Có quy luật xác định hoặc tập trung, hoặc phân bố. Lực phân bố xác định bởi biểu đồ và cường độ phân bố $q$ (đơn vị $\text{N/m}$ hay $\text{kN/m}$). Khi thu gọn:
-  - Phân bố đều hình chữ nhật: hợp lực $Q = q \cdot l$, đặt tại trung điểm đoạn tải.
-  - Phân bố tam giác: hợp lực $Q = \frac{1}{2} q \cdot l$, đặt tại vị trí cách đáy lớn một đoạn $\frac{1}{3} l$ (tức cách đỉnh tam giác $\frac{2}{3} l$).
-  - Phân bố hình thang: chia thành hình chữ nhật và tam giác để thu gọn.
-* **Phản lực liên kết:** Phản lực liên kết từ vật gây liên kết đặt vào vật khảo sát được biểu diễn dưới dạng lực và ngẫu lực tập trung.
 
-#### Bảng 1-1: Đặc điểm các phản lực liên kết thường gặp trong mặt phẳng
-
-| Loại liên kết | Cấu tạo & Cách biểu diễn | Đặc điểm phản lực liên kết |
-| :--- | :--- | :--- |
-| **Tựa (mặt tựa nhẵn)** | Mặt tiếp xúc trơn nhẵn | Thẳng góc với mặt tựa (mặt tiếp xúc), hướng vào vật khảo sát: phản lực pháp tuyến $\vec{N}$. |
-| **Dây mềm** | Sợi dây mềm, không giãn, bỏ qua trọng lượng | Nằm dọc theo dây, hướng ra ngoài vật khảo sát (kéo căng dây): sức căng dây $\vec{T}$. |
-| **Thanh nhẹ hai đầu bản lề** | Thanh thẳng hoặc cong, hai đầu có chốt bản lề, không chịu tải giữa thân | Nằm dọc theo đường nối hai đầu bản lề (hướng vào thanh khi nén, hướng ra ngoài khi kéo): ứng lực thanh $\vec{S}$. |
-| **Bản lề trụ (chốt tròn)** | Trục chốt xuyên qua lỗ tròn | Phương chiều chưa biết, thường phân tích thành 2 thành phần vuông góc $\vec{X}_O, \vec{Y}_O$. |
-| **Gối di động (con lăn)** | Bản lề đặt trên các con lăn | Vuông góc với mặt phẳng lăn: phản lực $\vec{N}$. |
-| **Ngàm phẳng** | Đầu vật bị chôn chặt vào tường | Ngăn cản chuyển động tịnh tiến và quay: gồm hai thành phần lực $\vec{X}_A, \vec{Y}_A$ và một ngẫu lực mômen ngàm $m_A$. |
-
----
-
-### 1.1.2. Phép chiếu lực và tính vectơ chính
-Cho lực $\vec{F}$ nghiêng với trục $Ox$ góc nhọn $\alpha$. Hình chiếu của lực lên các trục:
-$$F_x = \pm F\cos\alpha, \quad F_y = \pm F\sin\alpha$$
-*(lấy dấu $+$ khi cùng chiều trục, dấu $-$ khi ngược chiều trục).*
-
-Vectơ chính của hệ lực $\vec{F}_1, \vec{F}_2, \dots, \vec{F}_n$:
-$$\vec{R}' = \sum_{k=1}^n \vec{F}_k \implies R'_x = \sum_{k=1}^n F_{kx}, \quad R'_y = \sum_{k=1}^n F_{ky}$$
-Trị số: $R' = \sqrt{{R'_x}^2 + {R'_y}^2}$.
-
----
-
-### 1.1.3. Mômen của lực đối với một điểm trong mặt phẳng
-Mômen của lực $\vec{F}$ đối với tâm $O$ bằng tích trị số lực với cánh tay đòn $d$ (khoảng cách vuông góc từ $O$ đến đường tác dụng của lực):
-$$m_O(\vec{F}) = \pm F \cdot d$$
-*Quy ước:* Lấy dấu $(+)$ nếu lực có xu hướng làm vật quay quanh $O$ ngược chiều kim đồng hồ; dấu $(-)$ nếu quay thuận chiều kim đồng hồ.
-*Công thức giải tích (Định lý Varignon):*
-$$m_O(\vec{F}) = x F_y - y F_x$$
-
----
-
-### 1.1.4. Điều kiện cân bằng của hệ lực phẳng
-Đối với hệ lực phẳng bất kỳ tác dụng lên một vật rắn, điều kiện cần và đủ để vật cân bằng là hệ 3 phương trình độc lập. Có 3 dạng tương đương:
-
-* **Dạng 1 (Hai phương trình hình chiếu, một phương trình mômen):**
-  $$\sum F_x = 0, \quad \sum F_y = 0, \quad \sum m_O(\vec{F}) = 0$$
-* **Dạng 2 (Một phương trình hình chiếu, hai phương trình mômen):**
-  $$\sum F_x = 0, \quad \sum m_A(\vec{F}) = 0, \quad \sum m_B(\vec{F}) = 0$$
-  *(Điều kiện: Đường nối $AB$ không vuông góc với trục chiếu $Ox$).*
-* **Dạng 3 (Ba phương trình mômen đối với 3 điểm không thẳng hàng):**
-  $$\sum m_A(\vec{F}) = 0, \quad \sum m_B(\vec{F}) = 0, \quad \sum m_C(\vec{F}) = 0$$
-  *(Điều kiện: Ba tâm lấy mômen $A, B, C$ không cùng nằm trên một đường thẳng).*
-
----
-
-## 1.2. HƯỚNG DẪN ÁP DỤNG & QUY TRÌNH GIẢI
-
-Để giải một bài toán cân bằng vật rắn phẳng, ta thực hiện nghiêm ngặt theo **3 bước chuẩn mực**:
-
-1. **Bước 1: Chọn đối tượng & Giải phóng liên kết**
-   - Xác định rõ vật rắn cần khảo sát cân bằng.
-   - Thay thế các vật gây liên kết bằng các phản lực liên kết thích ứng theo đúng Bảng 1-1. Đặt tên và vẽ rõ chiều giả thiết của từng lực.
-2. **Bước 2: Phân tích đặc điểm hệ lực & Chọn phương trình cân bằng tối ưu**
-   - Đếm số ẩn số phản lực liên kết (thường là $\le 3$ ẩn đối với bài toán tĩnh định).
-   - Chọn hệ trục tọa độ $Oxy$ sao cho càng nhiều lực trùng hoặc song song với trục chiếu càng tốt.
-   - Chọn tâm lấy mômen tại giao điểm của nhiều lực chưa biết để triệt tiêu các lực ẩn số này ra khỏi phương trình mômen.
-3. **Bước 3: Thiết lập, giải hệ phương trình & Biện luận kết quả**
-   - Giải tìm các trị số ẩn.
-   - Biện luận: Nếu trị số nhận được mang dấu dương $(+)$, chiều giả thiết là đúng; nếu mang dấu âm $(-)$, chiều thực tế ngược với chiều giả thiết trên hình vẽ.
-
----
-
-## 1.3. BÀI GIẢI MẪU (WORKED EXAMPLES)
-
-### Thí dụ 1-1: Cân bằng quả cầu tựa tường treo dây
-
-**Đề bài:** Quả cầu đồng chất tâm $O$, trọng lượng $P$, tựa vào tường nhẵn thẳng đứng tại $C$ và được treo bởi sợi dây $AB$ dài bằng bán kính $R$ ($AB = R$). Điểm $A$ chốt cố định trên tường. Tìm sức căng của dây và phản lực của tường tác dụng lên quả cầu.
+Lực hoạt động có quy luật xác định hoặc tập trung, hoặc phân bố. Lực phân bố xác định bởi biểu đồ và cường độ phân bố (niutơn/mét) và thường được thu gọn. Với hệ lực song song cùng chiều phân bố đều hoặc theo tam giác, kết quả thu gọn trên hình 1–1a, b. Trường hợp phân bố theo hình thang, có thể quy về phân bố đều và tam giác, thí dụ trên hình 1–1c. Kết quả thu gọn hệ lực song song cùng chiều phân bố tổng quát trên chiều dài được ghi trên hình 1–1d : lực thu gọn song song cùng chiều với hệ lực phân bố, đặt tại trọng tâm và có cường độ bằng số đo diện tích $S$ (theo đơn vị thích hợp) của biểu đồ phân bố.
 
 <div class="figure-container">
-
-<img src="/figures/bai-tap/tinh-hoc/hinh_1_6.svg" alt="Hình 1-6: Quả cầu tựa tường treo dây" style="max-width: 520px; width: 100%; margin: 0 auto; display: block;" />
-
-<div class="figure-caption">
-
-Hình 1-6: Sơ đồ giải phóng liên kết và tam giác lực của quả cầu
-
+  <img src="/figures/bai-tap/tinh-hoc/hinh_1_1.svg" alt="Hình 1-1" class="figure-img" />
+  <p class="figure-caption">Hình 1-1</p>
 </div>
 
-</div>
+Phản lực liên kết từ vật gây liên kết (vật có gạch chéo) đặt vào vật khảo sát (vẽ trắng) được biểu diễn dưới dạng lực và ngẫu lực tập trung.
 
-**Bài giải:**
+Bảng 1–1 ghi đặc điểm các phản lực liên kết thường gặp.
 
-**1. Khảo sát quả cầu tâm $O$:**
-Các lực tác dụng lên quả cầu gồm:
-- Trọng lực $\vec{P}$ đặt tại khối tâm $O$, hướng thẳng đứng xuống dưới.
-- Phản lực pháp tuyến $\vec{N}$ của tường tại điểm tựa nhẵn $C$, vuông góc với tường (hướng theo phương ngang sang phải qua tâm $O$).
-- Sức căng dây $\vec{T}$ đặt tại điểm tiếp xúc $B$, dọc theo đường thẳng $AB$ hướng về $A$.
+#### Bảng 1–1
 
-Vì hai lực $\vec{N}$ và $\vec{P}$ cắt nhau tại tâm $O$, nên để quả cầu cân bằng, đường tác dụng của sức căng $\vec{T}$ bắt buộc phải đi qua $O$ (tức $A, B, O$ thẳng hàng). Hệ 3 lực $(\vec{P}, \vec{N}, \vec{T})$ là hệ lực đồng quy tại $O$.
+| Liên kết (1) | Cấu tạo và cách biểu diễn (2) | Đặc điểm phản lực (3) |
+| :--- | :---: | :--- |
+| **Tựa** (không ma sát) | <img src="/figures/bai-tap/tinh-hoc/bang_1_1_1.svg" alt="Tựa (không ma sát)" style="max-height: 140px; margin: 0 auto; display: block;" /> | Thẳng góc với mặt tựa (mặt tiếp xúc), hướng vào vật khảo sát, kí hiệu $N$, tên gọi : phản lực pháp. |
+| **Dây** (mềm và không co dãn) | <img src="/figures/bai-tap/tinh-hoc/bang_1_1_2.svg" alt="Dây (mềm và không co dãn)" style="max-height: 140px; margin: 0 auto; display: block;" /> | Nằm theo dây, hướng ra ngoài vật khảo sát (kéo căng dây) kí hiệu $T$, tên gọi : sức căng. |
+| **Thanh** (chỉ chịu nén hoặc kéo) | <img src="/figures/bai-tap/tinh-hoc/bang_1_1_3.svg" alt="Thanh (chỉ chịu nén hoặc kéo)" style="max-height: 140px; margin: 0 auto; display: block;" /> | Nằm theo thanh (đường nối hai đầu thanh), hướng vào (ra) thanh khi thanh bị kéo (nén), kí hiệu $S$, tên gọi ứng lực. |
+| **Bản lề** (trơn nhẵn) | <img src="/figures/bai-tap/tinh-hoc/bang_1_1_4.svg" alt="Bản lề (trơn nhẵn)" style="max-height: 140px; margin: 0 auto; display: block;" /> | Lực đặt tại bản lề, chia ra hai thành phần (thường nằm theo hai trục tọa độ $X, Y$) tên gọi : các phản lực bản lề. |
+| **Ngàm** | <img src="/figures/bai-tap/tinh-hoc/bang_1_1_5.svg" alt="Ngàm" style="max-height: 140px; margin: 0 auto; display: block;" /> | Hai thành phần lực $X, Y$ và một ngẫu lực mômen $M$, tên gọi : phản lực và ngẫu phản lực ngàm. |
 
-**2. Xét tam giác hình học $OCA$:**
-Tam giác $OCA$ vuông tại $C$, cạnh huyền $OA = AB + BO = R + R = 2R$. Cạnh góc vuông $OC = R$.
-Do đó:
-$$\cos\widehat{COA} = \frac{OC}{OA} = \frac{R}{2R} = \frac{1}{2} \implies \widehat{COA} = 60^\circ$$
+Khi gặp các liên kết phức tạp, chúng ta phải phân tích cấu tạo của liên kết, trạng thái chịu lực của vật rắn, điều kiện làm việc của liên kết, các di chuyển bị liên kết cản trở để quy về các liên kết đơn giản đã giới thiệu trên nhờ quy tắc sau :
 
-**3. Phương pháp giải tích:**
-Chọn trục $Ox$ nằm ngang hướng sang phải, trục $Oy$ thẳng đứng hướng lên:
-- Lực $\vec{P}$: $P_x = 0, \quad P_y = -P$
-- Phản lực $\vec{N}$: $N_x = N, \quad N_y = 0$
-- Sức căng $\vec{T}$: $T_x = -T \cos 60^\circ = -\frac{1}{2}T, \quad T_y = T \sin 60^\circ = \frac{\sqrt{3}}{2}T$
+Tương ứng một di chuyển (thẳng, quay) bị ngăn trở, liên kết tạo được một phản lực (lực, ngẫu lực) ngược chiều di chuyển.
 
-Thiết lập hệ phương trình cân bằng:
-$$\sum F_x = N - \frac{1}{2}T = 0 \quad (1)$$
-$$\sum F_y = -P + \frac{\sqrt{3}}{2}T = 0 \quad (2)$$
+Bảng 1–2 ghi đặc điểm phản lực ở một số liên kết phức tạp thường gặp.
 
-Từ phương trình (2) ta tìm được sức căng dây:
-$$T = \frac{P}{\sin 60^\circ} = \frac{2P}{\sqrt{3}} = \frac{2\sqrt{3}}{3}P$$
+#### Bảng 1–2
 
-Thay vào phương trình (1) ta được phản lực tường:
-$$N = \frac{1}{2}T = \frac{\sqrt{3}}{3}P$$
-
-**4. Phương pháp hình học (Tam giác lực):**
-Vì hệ ba lực đồng quy cân bằng, tam giác lực phải khép kín. Ta vẽ $\vec{P}$ thẳng đứng hướng xuống, từ mút của $\vec{P}$ kẻ đường nằm ngang theo phương của $\vec{N}$, từ gốc của $\vec{P}$ kẻ đường nghiêng $60^\circ$ theo phương của $\vec{T}$.
-Tam giác lực tạo thành là tam giác vuông tại góc giữa $\vec{P}$ và $\vec{N}$, có góc nhọn đối diện $\vec{N}$ bằng $30^\circ$ (góc kề với $\vec{P}$ là $60^\circ$):
-$$T = \frac{P}{\cos 30^\circ} = \frac{2\sqrt{3}}{3}P, \quad N = P \cdot \tan 30^\circ = \frac{\sqrt{3}}{3}P$$
-*Kết quả hoàn toàn trùng khớp với phương pháp giải tích.*
+| Liên kết (1) | Cấu tạo và cách biểu diễn (2) | Đặc điểm phản lực (3) |
+| :--- | :---: | :--- |
+| **Ổ trụ ngắn** | <img src="/figures/bai-tap/tinh-hoc/bang_1_2_1.svg" alt="Ổ trụ ngắn" style="max-height: 140px; margin: 0 auto; display: block;" /> | Ngăn trở di chuyển thẳng góc với trục (trong mặt phẳng tác dụng của hệ lực cho). Phản lực như phản lực tựa. |
+| **Cối** (ổ trụ ngắn có mặt chắn) | <img src="/figures/bai-tap/tinh-hoc/bang_1_2_2.svg" alt="Cối (ổ trụ ngắn có mặt chắn)" style="max-height: 140px; margin: 0 auto; display: block;" /> | Ngăn cản di chuyển thẳng góc và di chuyển dọc trục (trong mặt phẳng tác dụng của hệ lực cho). Phản lực có hai thành phần như bản lề. |
+| **Ổ trục dài** | <img src="/figures/bai-tap/tinh-hoc/bang_1_1_6.svg" alt="Ổ trục dài" style="max-height: 160px; margin: 0 auto; display: block;" /> | Ngăn di chuyển thẳng góc với trục và di chuyển quay. Có một phản lực như tựa và một ngẫu phản lực như ngàm. |
+| **Gối cố định** | <img src="/figures/bai-tap/tinh-hoc/bang_1_1_7.svg" alt="Gối cố định" style="max-height: 130px; margin: 0 auto; display: block;" /> | Ngăn di chuyển thẳng theo hai phương (không ngăn trở di chuyển quay). Phản lực có hai thành phần như bản lề. |
+| **Gối di động** (có con lăn) | <img src="/figures/bai-tap/tinh-hoc/bang_1_1_8.svg" alt="Gối di động (có con lăn)" style="max-height: 130px; margin: 0 auto; display: block;" /> | Ngăn di chuyển theo phương thẳng góc với mặt nền. Phản lực có một thành phần như tựa. |
 
 ---
 
-### Thí dụ 1-2: Cân bằng giá treo AOB
+### 1.1.2. Chiếu lực và tính vectơ chính {#_1-1-2-phep-chieu-luc-va-tinh-vecto-chinh}
 
-**Đề bài:** Treo vật nặng trọng lượng $P$ vào móc $O$ của giá treo $AOB$ tạo bởi hai thanh nhẹ $OA$ và $OB$ có trọng lượng không đáng kể, hai đầu liên kết bản lề với tường và bản lề với nhau tại $O$. Biết thanh $OA$ nằm ngang, thanh $OB$ nghiêng một góc $30^\circ$ so với thanh $OA$. Tìm ứng lực xuất hiện trong hai thanh.
+Cho lực $\vec{F}$ nghiêng với trục $x$ một góc (nhọn) $\alpha$. Hình chiếu của lực lên các trục (H. 1–2) cho bởi công thức :
+
+$$\overline{F}_x = \pm F\cos\alpha, \quad \overline{F}_y = \pm F\sin\alpha,$$
+
+trong đó : $F$ – trị số của lực ; dấu $+$ ($-$) khi lực thuận (ngược) với chiều trục.
 
 <div class="figure-container">
-
-<img src="/figures/bai-tap/tinh-hoc/hinh_1_7.svg" alt="Hình 1-7: Cân bằng nút của giá treo AOB" style="max-width: 480px; width: 100%; margin: 0 auto; display: block;" />
-
-<div class="figure-caption">
-
-Hình 1-7: Sơ đồ giải phóng liên kết nút O và tam giác lực
-
+  <img src="/figures/bai-tap/tinh-hoc/hinh_1_2.svg" alt="Hình 1-2" class="figure-img" />
+  <p class="figure-caption">Hình 1-2</p>
 </div>
 
-</div>
+Các trường hợp đặc biệt, nếu $\vec{F}$ thẳng góc với trục $x$, hình chiếu $\overline{F}_x = 0$ ; nếu $\vec{F}$ song song với trục $x$, hình chiếu $\overline{F}_x = \pm F$.
 
-**Bài giải:**
+Cho hệ lực $\vec{F}_j$ ($j = 1, 2, \dots, n$). Vectơ chính, kí hiệu $\vec{R}'$, là tổng hình học các vectơ lực :
 
-**1. Khảo sát cân bằng nút $O$:**
-Nút $O$ chịu tác dụng của các lực đồng quy:
-- Trọng lượng của vật nặng $\vec{P}$ hướng thẳng đứng xuống.
-- Ứng lực của thanh $OA$: $\vec{S}_A$ nằm dọc theo $OA$. Giả thiết thanh $OA$ bị kéo, lực $\vec{S}_A$ hướng từ $O$ về $A$.
-- Ứng lực của thanh $OB$: $\vec{S}_B$ nằm dọc theo $OB$. Giả thiết thanh $OB$ bị kéo, lực $\vec{S}_B$ hướng từ $O$ về $B$.
+$$\vec{R}' = \sum_{j=1}^n \vec{F}_j .$$
 
-**2. Lập phương trình cân bằng:**
-Chọn trục $Ox$ dọc theo $AO$ hướng sang phải, trục $Oy$ thẳng đứng hướng lên:
-$$\sum F_x = -S_A - S_B \cos 30^\circ = 0 \quad (1)$$
-$$\sum F_y = -P - S_B \sin 30^\circ = 0 \quad (2)$$
+Để xác định vectơ chính, có thể áp dụng hai phương pháp.
 
-Từ (2):
-$$S_B = -\frac{P}{\sin 30^\circ} = -2P$$
+**1. Phương pháp giải tích :** *Hình chiếu của vectơ chính lên một trục tọa độ bằng tổng hình chiếu các lực trên trục đó.*
 
-Thay vào (1):
-$$S_A = -S_B \cos 30^\circ = -(-2P) \cdot \frac{\sqrt{3}}{2} = P\sqrt{3}$$
+$$\overline{R}'_x = \sum_{j=1}^n \overline{F}_{jx} \, ; \quad \overline{R}'_y = \sum_{j=1}^n \overline{F}_{jy} .$$
 
-**3. Biện luận bản chất chịu lực:**
-- $S_A = P\sqrt{3} > 0$: Giả thiết đúng $\rightarrow$ Thanh $OA$ chịu **kéo**.
-- $S_B = -2P < 0$: Dấu âm chứng tỏ chiều thực tế của lực ngược với chiều giả thiết $\rightarrow$ Thanh $OB$ thực tế bị đẩy về nút $O$, nghĩa là thanh $OB$ chịu **nén** với độ lớn lực nén bằng $2P$.
+Từ đó có thể tính trị số và phương chiều vectơ chính :
 
----
+$$R' = \sqrt{(R'_x)^2 + (R'_y)^2} \quad \begin{cases} \cos(x, \vec{R}') = \dfrac{\overline{R}'_x}{R'} \, ; \\[8pt] \cos(y, \vec{R}') = \dfrac{\overline{R}'_y}{R'} . \end{cases}$$
 
-### Thí dụ 1-4: Dầm bản lề giữ bằng dây chằng
+**2. Phương pháp hình học**
 
-**Đề bài:** Thanh $OA$ đồng chất, trọng lượng không đáng kể, nối bản lề với tường tại $O$ và chịu lực thẳng đứng $\vec{P}$ tại đầu $A$. Để giữ dầm nằm ngang, người ta dùng sợi dây $BC$ nối từ điểm $B$ trên thanh đến điểm neo $C$ trên tường thẳng đứng. Biết khoảng cách $OB = 2BA$. Tính sức căng $T$ của dây và phản lực bản lề $O$ trong hai trường hợp:
-1. Dây $BC$ nghiêng góc $30^\circ$ với thanh.
-2. Dây $BC$ thẳng đứng.
+Vectơ chính $\vec{R}'$ là vectơ khép kín đa giác lực, đó là vectơ nối điểm đầu tới điểm cuối của một đường gẫy khúc có các cạnh tương ứng tương đẳng (song song, cùng chiều, cùng độ dài) với các vectơ lực (H. 1–3). Trường hợp hai điểm đầu và cuối của đa giác lực trùng nhau, vectơ chính $\vec{R}' = 0$, chúng ta nói đa giác lực tự khép kín.
 
 <div class="figure-container">
-
-<img src="/figures/bai-tap/tinh-hoc/hinh_1_9.svg" alt="Hình 1-9: Dầm bản lề giữ bằng dây chằng" style="max-width: 500px; width: 100%; margin: 0 auto; display: block;" />
-
-<div class="figure-caption">
-
-Hình 1-9: Sơ đồ giải phóng liên kết dầm OA
-
+  <img src="/figures/bai-tap/tinh-hoc/hinh_1_3.svg" alt="Hình 1-3" class="figure-img" />
+  <p class="figure-caption">Hình 1-3</p>
 </div>
-
-</div>
-
-**Bài giải:**
-
-Đặt $BA = a \implies OB = 2a \implies OA = 3a$.
-
-**Trường hợp 1: Dây $BC$ nghiêng $30^\circ$ so với thanh**
-Khảo sát cân bằng dầm $OA$:
-- Ngoại lực: Lực tập trung $\vec{P}$ tại $A$ hướng xuống.
-- Sức căng dây $\vec{T}$ tại $B$ hướng theo phương $BC$ (nghiêng góc $30^\circ$ lên phía trên sang trái).
-- Phản lực bản lề $O$: phân tích thành hai thành phần $\vec{X}_O$ (nằm ngang sang phải) và $\vec{Y}_O$ (thẳng đứng hướng lên).
-
-Lập 3 phương trình cân bằng:
-$$\sum m_O(\vec{F}) = -P \cdot OA + T \cdot OB \cdot \sin 30^\circ = 0 \quad (1)$$
-$$\sum F_x = X_O - T \cos 30^\circ = 0 \quad (2)$$
-$$\sum F_y = Y_O + T \sin 30^\circ - P = 0 \quad (3)$$
-
-Từ phương trình mômen (1):
-$$-P(3a) + T(2a) \cdot \frac{1}{2} = 0 \implies T \cdot a = 3Pa \implies T = 3P$$
-
-Thay $T = 3P$ vào (2) và (3):
-$$X_O = T \cos 30^\circ = 3P \cdot \frac{\sqrt{3}}{2} = \frac{3\sqrt{3}}{2}P$$
-$$Y_O = P - T \sin 30^\circ = P - 3P \cdot \frac{1}{2} = -\frac{1}{2}P$$
-
-*Biện luận:* $Y_O < 0$, vậy thành phần phản lực thẳng đứng tại $O$ thực tế hướng xuống dưới. Phản lực toàn phần tại bản lề:
-$$R_O = \sqrt{X_O^2 + Y_O^2} = \sqrt{\left(\frac{3\sqrt{3}}{2}P\right)^2 + \left(-\frac{1}{2}P\right)^2} = \sqrt{\frac{27}{4} + \frac{1}{4}}P = P\sqrt{7}$$
-
-**Trường hợp 2: Dây $BC$ thẳng đứng**
-Khi dây thẳng đứng, toàn bộ hệ lực tác dụng gồm $\vec{P}$ và $\vec{T}$ đều theo phương thẳng đứng. Do đó $X_O = 0$.
-Phương trình mômen đối với $O$:
-$$\sum m_O(\vec{F}) = -P(3a) + T(2a) = 0 \implies T = \frac{3}{2}P$$
-Phương trình hình chiếu trục thẳng đứng:
-$$\sum F_y = Y_O + T - P = 0 \implies Y_O = P - \frac{3}{2}P = -\frac{1}{2}P$$
 
 ---
 
-### Thí dụ 1-5: Mái hiên chịu tải phân bố tam giác
+### 1.1.3. Tính mômen lực và mômen chính
 
-**Đề bài:** Mái hiên đồng chất dạng tam giác chiều dài $AB = 6a$, trọng lượng bản thân $P$, được ngàm chặt vào tường thẳng đứng tại đầu $A$. Đầu mút $B$ chịu một tải trọng tập trung thẳng đứng $Q$. Trên suốt chiều dài $AB$ có tải trọng phân bố đều theo quy luật tam giác với cường độ lớn nhất tại $A$ bằng $q$ và bằng $0$ tại $B$. Xác định các phản lực ngàm tại $A$.
+Cho lực $\vec{F}$ và điểm $O$. Mômen lực $\vec{F}$ đối với $O$ là lượng đại số :
+
+$$\overline{m}_o(\vec{F}) = \pm F.h,$$
+
+trong đó : $F$ – trị số lực ; $h = OH$ – tay đòn (khoảng cách từ $O$ đến đường tác dụng của lực) ; dấu $+$ ($-$) tương ứng khi lực quay ngược (thuận) chiều kim đồng hồ quanh $O$.
+
+Để tính mômen lực, ngoài cách trực tiếp áp dụng định nghĩa, có thể áp dụng hai phương pháp sau.
 
 <div class="figure-container">
-
-<img src="/figures/bai-tap/tinh-hoc/hinh_1_10.svg" alt="Hình 1-10: Mái hiên ngàm tường chịu tải tam giác" style="max-width: 480px; width: 100%; margin: 0 auto; display: block;" />
-
-<div class="figure-caption">
-
-Hình 1-10: Sơ đồ thu gọn tải trọng phân bố và phản lực ngàm A
-
+  <img src="/figures/bai-tap/tinh-hoc/hinh_1_4.svg" alt="Hình 1-4" class="figure-img" />
+  <p class="figure-caption">Hình 1-4</p>
 </div>
 
-</div>
+**1. Phương pháp phân lực**
 
-**Bài giải:**
+Phân tích lực ra hai thành phần, thí dụ : $\vec{F}_1 = \vec{F}_x$, $\vec{F}_2 = \vec{F}_y$, và tính tổng mômen các thành phần :
 
-**1. Thu gọn các hệ lực hoạt động:**
-- Tải phân bố tam giác có diện tích biểu đồ:
-  $$Q_1 = \frac{1}{2} q \cdot AB = \frac{1}{2} q (6a) = 3qa$$
-  Điểm đặt của hợp lực $Q_1$ nằm tại trọng tâm tam giác tải trọng, cách ngàm $A$ một đoạn:
-  $$d_1 = \frac{1}{3} AB = \frac{1}{3} (6a) = 2a$$
-- Trọng lực bản thân $P$ của mái hiên đồng chất đặt tại chính giữa $AB$, cách $A$ một đoạn $d_P = 3a$.
-- Lực tập trung $Q$ đặt tại mút $B$, cách $A$ một đoạn $d_B = 6a$.
+$$\overline{m}_o(\vec{F}) = \overline{m}_o(\vec{F}_1) + \overline{m}_o(\vec{F}_2).$$
 
-**2. Giải phóng liên kết ngàm tại $A$:**
-Tại ngàm $A$ phát sinh:
-- Phản lực nằm ngang $X_A$.
-- Phản lực thẳng đứng $Y_A$ (giả thiết hướng lên).
-- Mômen ngàm phản lực $m_A$ (giả thiết quay ngược chiều kim đồng hồ).
+**2. Phương pháp giải tích :** Gọi $x, y$ – tọa độ điểm đặt $A$ của lực ; $\overline{F}_x, \overline{F}_y$ – các hình chiếu của lực trên các trục tọa độ. Chúng ta có :
 
-**3. Thiết lập các phương trình cân bằng:**
-$$\sum F_x = X_A = 0$$
-$$\sum F_y = Y_A - Q_1 - P - Q = 0 \implies Y_A = P + Q + 3qa$$
-$$\sum m_A(\vec{F}) = m_A - Q_1(2a) - P(3a) - Q(6a) = 0$$
+$$\overline{m}_o(\vec{F}) = x\overline{F}_y - y\overline{F}_x .$$
 
-Thay $Q_1 = 3qa$ vào phương trình mômen:
-$$m_A = 3qa(2a) + 3aP + 6aQ = 6a^2 q + 3aP + 6aQ$$
+Trường hợp lực $\vec{F}$ qua $O$, $\overline{m}_o(\vec{F}) = 0$.
 
-**Kết luận:**
-- $X_A = 0$
-- $Y_A = P + Q + 3qa$
-- $m_A = 3aP + 6aQ + 6a^2 q$
+Mômen chính của hệ lực đối với $O$ kí hiệu $\overline{M}^o$ là tổng mômen các lực đối với $O$ :
 
----
-
-### Thí dụ 1-10: Cần cẩu chạy trên ray – Điều kiện chống lật
-
-**Đề bài:** Cần cẩu $ABC$ di chuyển trên hai bánh xe $A$ và $B$ cách nhau khoảng cách $L = 1\text{ m}$. Trọng lượng của bản thân cần cẩu $P$ có đường tác dụng đi qua chính giữa đoạn $AB$. Cần cẩu dùng để nâng một vật có trọng lượng $q$ ở tầm xa cách trục đối xứng $3\text{ m}$. Ở phía đối diện có một đối trọng $Q$ đặt ở tầm xa $1\text{ m}$. Hãy xác định khoảng giá trị của đối trọng $Q$ để cần cẩu luôn luôn ổn định không bị lật trong mọi trạng thái làm việc.
+$$\overline{M}^o = \sum_{j=1}^n \overline{m}_o(\vec{F}_j) .$$
 
 <div class="figure-container">
-
-<img src="/figures/bai-tap/tinh-hoc/hinh_1_15.svg" alt="Hình 1-15: Cần cẩu và điều kiện ổn định chống lật" style="max-width: 460px; width: 100%; margin: 0 auto; display: block;" />
-
-<div class="figure-caption">
-
-Hình 1-15: Sơ đồ phân tích lật cần cẩu
-
+  <img src="/figures/bai-tap/tinh-hoc/hinh_1_5.svg" alt="Hình 1-5" class="figure-img" />
+  <p class="figure-caption">Hình 1-5</p>
 </div>
 
-</div>
+Trường hợp đặc biệt của ngẫu lực $(\vec{F}, \vec{F}^*)$, mômen chính không phụ thuộc $O$ nên được gọi là mômen ngẫu lực và bằng :
 
-**Bài giải:**
+$$\overline{M} \equiv \overline{m}(\vec{F}, \vec{F}^*) = \pm F.d,$$
 
-Cần cẩu có thể bị lật theo hai phía:
-1. **Lật quanh bánh $A$ (lật về phía sau do đối trọng $Q$ quá nặng):** Nguy hiểm nhất xảy ra khi cần cẩu không nâng tải ($q = 0$).
-2. **Lật quanh bánh $B$ (lật về phía trước do vật nâng $q$ quá nặng kéo xuống):** Nguy hiểm nhất xảy ra khi cẩu tải trọng cực đại $q$.
+trong đó : $d$ – khoảng cách hai lực hay tay đòn ngẫu lực ; $F$ – trị số chung của hai lực ; dấu $+$ ($-$) tương ứng khi ngẫu lực quay ngược (thuận) chiều kim đồng hồ.
 
-**1. Điều kiện không lật quanh gối $A$ (khi không nâng tải, $q = 0$):**
-Khi cần cẩu sắp lật quanh bánh xe $A$, bánh xe $B$ bắt đầu nhấc lên khỏi mặt đất, tức phản lực tại $B$ triệt tiêu: $N_B \ge 0$.
-Lấy mômen đối với tâm quay lật $A$:
-Mômen chống lật (mômen giữ) do trọng lượng bản thân $P$ tạo ra:
-$$M_{\text{giữ}} = P \cdot d_{PA} = P \cdot (0.5\text{ m})$$
-Mômen gây lật do đối trọng $Q$ tạo ra:
-$$M_{\text{lật}} = Q \cdot d_{QA} = Q \cdot (1\text{ m} - 0.5\text{ m}) = 0.5 Q$$
-
-Để cần cẩu không bị lật quanh $A$:
-$$M_{\text{lật}} \le M_{\text{giữ}} \implies 0.5 Q \le 0.5 P \implies Q \le P$$
-
-**2. Điều kiện không lật quanh gối $B$ (khi nâng tải $q$):**
-Khi cần cẩu sắp lật quanh $B$, bánh xe $A$ bắt đầu nhấc lên khỏi ray, do đó $N_A \ge 0$.
-Lấy mômen đối với tâm quay lật $B$:
-Mômen gây lật do vật nâng $q$ tạo ra:
-$$M_{\text{lật}} = q \cdot d_{qB} = q \cdot (3\text{ m} - 0.5\text{ m}) = 2.5 q$$
-Mômen giữ thăng bằng do bản thân cần cẩu $P$ và đối trọng $Q$ tạo ra:
-$$M_{\text{giữ}} = P \cdot d_{PB} + Q \cdot d_{QB} = P(0.5) + Q(1 + 0.5) = 0.5 P + 1.5 Q$$
-
-Để cần cẩu không lật quanh $B$:
-$$M_{\text{lật}} \le M_{\text{giữ}} \implies 2.5 q \le 0.5 P + 1.5 Q$$
-$$\implies 1.5 Q \ge 2.5 q - 0.5 P \implies Q \ge \frac{5q - P}{3}$$
-
-**Kết luận:** Để cần cẩu làm việc an toàn không bị lật trong mọi tình huống, trị số đối trọng $Q$ phải thỏa mãn bất đẳng thức kép:
-$$\frac{5q - P}{3} \le Q \le P$$
+Với hệ ngẫu lực, mômen chính bằng tổng mômen các ngẫu lực.
 
 ---
 
-## 1.4. BÀI TẬP TỰ RÈN LUYỆN (CÓ ĐÁP SỐ)
+### 1.1.4. Các điều kiện cân bằng
 
-::: info Bài 1-1: Kéo bánh xe vượt bậc thềm
-Dùng lực kéo $\vec{Q}$ nằm ngang đặt vào trục để kéo bánh xe đồng chất bán kính $R$, trọng lượng $P$ từ mặt đường nằm ngang vượt lên bậc thềm cao $h = R/2$. Xác định các phản lực tại mặt đường $A$ và bậc thềm $B$. Với trị số $Q$ nào thì bánh xe bắt đầu vượt qua bậc?
-* **Đáp số:** $N_A = P - Q\frac{\sqrt{3}}{3}$; $N_B = \frac{2\sqrt{3}}{3}Q$. Bánh xe bắt đầu nhấc khỏi đường khi $Q \ge P\sqrt{3}$.
-:::
+**Định lí :** *Điều kiện cần và đủ để hệ lực phẳng cân bằng là vectơ chính và mômen chính (đối với điểm $O$ bất kỳ) triệt tiêu :*
 
-::: info Bài 1-2: Trục ròng rọc chịu lực
-Trục của ròng rọc nhỏ được đỡ bởi hai thanh nhẹ $OA$ và $OB$ nghiêng đều $60^\circ$ với phương nằm ngang. Vòng qua ròng rọc là sợi dây một đầu treo vật nặng $P$, đầu kia chịu lực kéo $F = P$ nghiêng $30^\circ$ với phương ngang. Xác định ứng lực trong hai thanh.
-* **Đáp số:** $S_A = P\frac{\sqrt{3}}{3}$ (thanh $OA$ chịu kéo); $S_B = -2P\frac{\sqrt{3}}{3}$ (thanh $OB$ chịu nén).
-:::
+$$\vec{R}' = \sum_{j=1}^n \vec{F}_j = 0 \, ; \quad \overline{M}_o = \sum_{j=1}^n \overline{m}_o(\vec{F}_j) = 0.$$
 
-::: info Bài 1-3: Dầm chôn vào tường chịu lực
-Dầm đồng chất dài $4\text{ m}$, trọng lượng $5\text{ kN}$ được chôn thẳng góc vào tường dày $0.5\text{ m}$. Dầm tỳ lên hai cạnh tường tại $A$ và $B$. Xác định phản lực tại $A$ và $B$ khi đầu tự do $C$ treo vật nặng $P = 40\text{ kN}$.
-* **Đáp số:** $N_A = 340\text{ kN}, \quad N_B = 295\text{ kN}$.
-:::
+Từ định lí trên có thể suy ra rằng, hệ lực phẳng có ba phương trình cân bằng viết theo ba dạng sau :
 
-::: info Bài 1-4: Xe chở hàng trên dầm cầu
-Xe có trọng lượng $P_1 = 40\text{ kN}$ chạy trên dầm đồng chất nằm ngang $AB$ dài $L$, trọng lượng dầm $P = 60\text{ kN}$. Vị trí trọng tâm xe cách $A$ một đoạn $AC$. Đặt tỉ số $n = \frac{AC}{AB}$. Xác định các phản lực gối tựa $A$ và $B$ theo tỉ số $n$.
-* **Đáp số:** $N_A = (7 - 4n) \times 10\text{ kN}; \quad N_B = (3 + 4n) \times 10\text{ kN}$.
-:::
+*Dạng 1 :*
 
-::: info Bài 1-5: Trục quay mang 3 đĩa tròn
-Trục nằm ngang trên hai ổ đỡ $A$ và $B$ cách nhau $300\text{ cm}$. Trên trục lắp 3 đĩa tròn có trọng lượng $P_1 = 3\text{ kN}$ (cách $A$ $95\text{ cm}$), $P_2 = 5\text{ kN}$ (chính giữa trục), $P_3 = 2\text{ kN}$ (cách $B$ $35\text{ cm}$). Tìm phản lực tại hai ổ đỡ $A$ và $B$.
-* **Đáp số:** $N_A = 4.78\text{ kN}, \quad N_B = 5.22\text{ kN}$.
-:::
+$$\sum_{j=1}^n \overline{F}_{jx} = 0 \, ; \quad \sum_{j=1}^n \overline{F}_{jy} = 0 \, ; \quad \sum_{j=1}^n \overline{m}_o(\vec{F}_j) = 0 \, ;$$
 
-::: info Bài 1-6: Thanh treo bản lề có thanh chống chéo
-Thanh nằm ngang $AB$ dài $3\text{ m}$ liên kết bản lề tại $A$ với tường. Tại $C$ cách $A$ đoạn $2\text{ m}$ có thanh chống $CD$ liên kết bản lề với trần nhà nghiêng $60^\circ$. Đầu $B$ chịu tải trọng thẳng đứng $P = 10\text{ kN}$. Bỏ qua trọng lượng các thanh. Tính phản lực tại $A$ và ứng lực thanh $CD$.
-* **Đáp số:** $X_A = 10\frac{\sqrt{3}}{2}\text{ kN}, \quad Y_A = 5\text{ kN}, \quad S_C = 10\sqrt{3}\text{ kN}$.
-:::
+$$Ox \perp Oy.$$
 
-::: info Bài 1-7: Giàn cầu chịu lực gió thổi ngang
-Cầu đồng chất $AB = 2a$, trọng lượng $P$, nằm trên gối cố định $A$ và gối di động $B$. Ở độ cao $h$ có lực gió nằm ngang $Q$ tác dụng vào giàn cầu. Xác định phản lực tại $A$ và $B$ trong hai trường hợp:
-a) Gối di động $B$ nằm trên mặt phẳng ngang.
-b) Gối di động $B$ nằm trên mặt dốc nghiêng $30^\circ$.
-* **Đáp số:**
-  - a) $X_A = -Q; \quad Y_A = \frac{P}{2} - Q\frac{h}{2a}; \quad N_B = \frac{P}{2} + Q\frac{h}{2a}$.
-  - b) $X_A = \frac{P\sqrt{3}}{6} + Q\left(\frac{h\sqrt{3}}{6a} - 1\right); \quad Y_A = \frac{P}{2} - Q\frac{h}{2a}; \quad N_B = \left(P + Q\frac{h}{a}\right)\frac{\sqrt{3}}{3}$.
-:::
+*Dạng 2 :*
 
-::: info Bài 1-8: Dầm ngàm chịu tải trọng phức hợp
-Dầm côngxon ngàm tại đầu gốc, chịu tải trọng phân bố đều $q = 1.5\text{ kN/m}$ trên đoạn $3\text{ m}$, ngẫu lực tập trung $m = 2\text{ kNm}$ và lực tập trung $F = 4\text{ kN}$ nghiêng $45^\circ$ ở đầu mút cách ngàm $5\text{ m}$. Tính các thành phần phản lực ngàm.
-* **Đáp số:** $X_O = 2.8\text{ kN}; \quad Y_O = 1.67\text{ kN}; \quad m_O = -5.35\text{ kNm}$.
-:::
+$$\sum_{j=1}^n \overline{F}_{j\Delta} = 0 \, ; \quad \sum_{j=1}^n \overline{m}_A(\vec{F}_j) = 0 \, ; \quad \sum_{j=1}^n \overline{m}_B(\vec{F}_j) = 0 \, ;$$
 
-::: info Bài 1-9: Cần trục nâng vật nặng
-Cần trục có trục đứng $AB = 1.8\text{ m}$ đỡ bởi hai ổ $A$ và $B$. Tay cần vươn xa $2.4\text{ m}$ treo vật nặng $9.6\text{ kN}$. Tìm phản lực tại hai ổ đỡ $A$ và $B$.
-* **Đáp số:** $X_A = 12.8\text{ kN}, \quad Y_A = 9.6\text{ kN}; \quad X_B = 12.8\text{ kN}$.
-:::
+$AB$ không thẳng góc với $\Delta$.
 
-::: info Bài 1-10: Điều kiện chống lật thân đập nước
-Một đập nước chắn có mặt cắt hình chữ nhật chiều cao $h = 12\text{ m}$, trọng lượng riêng của vật liệu xây đập là $\gamma = 30\text{ kN/m}^3$, của nước là $\gamma_n = 10\text{ kN/m}^3$. Xác định bề rộng đáy $b$ tối thiểu của đập để thân đập không bị áp lực nước làm lật quanh mép chân đập.
-* **Đáp số:** $b \ge 4\text{ m}$.
-:::
+*Dạng 3 :*
+
+$$\sum_{j=1}^n \overline{m}_A(\vec{F}_j) = 0 \, ; \quad \sum_{j=1}^n \overline{m}_B(\vec{F}_j) = 0 \, ; \quad \sum_{j=1}^n \overline{m}_C(\vec{F}_j) = 0 \, ;$$
+
+$A, B, C$ không thẳng hàng.
+
+Trường hợp các hệ lực đặc biệt.
+
+– Hệ lực đồng quy có hai phương trình cân bằng sau :
+
+$$\sum_{j=1}^n \overline{F}_{jx} = 0 \, ; \quad \sum_{j=1}^n \overline{F}_{jy} = 0.$$
+
+– Hệ lực song song với trục $y$ có hai phương trình cân bằng :
+
+$$\sum_{j=1}^n \overline{F}_{jy} = 0 \, ; \quad \sum_{j=1}^n \overline{m}_o(\vec{F}_j) = 0 \, ;$$
+
+hoặc
+
+$$\sum_{j=1}^n \overline{m}_A(\vec{F}_j) = 0 \, ; \quad \sum_{j=1}^n \overline{m}_B(\vec{F}_j) = 0 \, ;$$
+
+$AB$ không song song với trục $y$.
+
+Đối với hệ lực đồng quy, chúng ta còn sử dụng điều kiện cân bằng dưới dạng hình học.
+
+**Định lí :** *Điều kiện cần và đủ để hệ lực đồng quy cân bằng là đa giác lực tự khép kín.*
+
+Một số hệ quả thường được áp dụng :
+
+– Hệ ba lực cân bằng, trong đó có hai lực đồng quy là hệ đồng quy phẳng (lực thứ ba đồng quy với hai lực đầu) ;
+
+– Hệ $n$ lực cân bằng, trong đó có $(n - 1)$ lực song song là hệ lực song song (lực thứ $n$ song song với $n - 1$ lực đầu) ;
+
+– Hai lực cân bằng với một ngẫu lực phải tạo thành một ngẫu lực ngược chiều quay và cùng trị số mômen.
+
+Các quy tắc biến đổi lực cũng được áp dụng :
+
+– Quy tắc trượt lực ;
+
+– Quy tắc phân và hợp bình hành ;
+
+– Quy tắc dời lực song song ;
+
+– Quy tắc phân và hợp lực song song ;
+
+– Quy tắc biến đổi ngẫu lực.
+
+---
+
+## 1.2. HƯỚNG DẪN ÁP DỤNG
+
+Chúng ta đi sâu hơn về phương pháp giải.
+
+***Bước 1.*** Ở bước này, việc đầu tiên là chọn vật khảo sát. Vật khảo sát có thể là : – một vật rắn ; – một "vật" do nhiều vật ghép lại ; – một phần tưởng tượng tách ra từ một "vật" (phần không khảo sát đặt vào phần khảo sát những lực giữ vai trò của phản lực liên kết) ; – một nút, điểm tập trung các dây, các thanh.
+
+Việc thứ hai là vẽ phản lực. Phản lực liên kết tựa và liên kết dây có phương chiều xác định, cần phải vẽ đúng. Phản lực các liên kết thanh, bản lề, ngàm có chiều chưa biết trước được vẽ theo giả định (đáp số dương, chiều giả định đúng ; đáp số âm – chiều ngược lại). Chú ý chọn cách phân tích các phản lực bản lề và ngàm (không nhất thiết phải theo trục $x, y$).
+
+***Bước 2.*** Phải nắm vững đặc điểm hệ lực khảo sát : đồng quy, song song hay bất kì ; từ đó xác định số phương trình cân bằng độc lập có thể lập được (2 hoặc 3). Dựa vào đặc điểm các phản lực ẩn để chọn trục chiếu và tâm lấy mômen thích hợp thì phương trình lập được sẽ chứa ít ẩn và dễ giải. Thường chiếu lên trục thẳng góc với lực ẩn và lấy mômen đối với điểm đồng quy của nhiều lực ẩn.
+
+Nếu hệ lực khảo sát là đồng quy phẳng, có thể dùng điều kiện cân bằng dạng hình học (đa giác lực tự khép kín). Trong trường hợp số lực ít, có thể dùng phương pháp biến đổi lực. Ở bài toán đòn, vật lật, phương trình cân bằng cần lập chỉ chứa các lực hoạt động.
+
+***Bước 3.*** Giải các phương trình để tìm các ẩn (các phản lực liên kết hoặc các điều kiện cân bằng).
+
+---
+
+## 1.3. BÀI GIẢI MẪU {#_1-3-bai-giai-mau-worked-examples}
+
+### 1.3.1. Bài toán tìm phản lực liên kết
+
+#### Thí dụ 1–1.
+Quả cầu đồng chất tâm $O$, trọng lượng $P$, tựa vào tường ở $C$ và được treo bởi dây $AB$ dài bằng bán kính. Tìm sức căng và phản lực của tường (H. 1–6).
+
+<div class="figure-container">
+  <img src="/figures/bai-tap/tinh-hoc/hinh_1_6.svg" alt="Hình 1-6" class="figure-img" />
+  <p class="figure-caption">Hình 1-6</p>
+</div>
+
+*Bài giải :* Khảo sát quả cầu $O$. Hệ lực tác dụng gồm có :
+
+– Trọng lực $\vec{P}$ ;
+
+– Sức căng $\vec{T}$ của dây (đặt tại $B$, hướng về $A$) ;
+
+– Phản lực $\vec{N}$ của tường (đặt tại $C$, hướng về $O$). Đây là hệ cân bằng có hai lực $\vec{N}$ và $\vec{P}$ đồng quy tại $O$ ; vì vậy, sức căng $\vec{T}$ đi qua $O$ (nghĩa là $OBA$ thẳng hàng) và cả ba lực nằm trong mặt phẳng thẳng đứng (vì chứa $\vec{P}$) qua $A$ (vì chứa $\vec{T}$) và thẳng góc với tường (vì chứa $\vec{N}$).
+
+Chú ý rằng $OCA$ là tam giác vuông tại $C$, có góc $\widehat{O} = 60^\circ$ (vì $OA = 2OC$) dễ dàng tính được
+
+$$\overline{P}_x = 0 \, ; \quad \overline{N}_x = N \, ; \quad \overline{T}_x = -T\cos 60^\circ = -\frac{T}{2} \, ,$$
+
+$$\overline{P}_y = -P \, ; \quad \overline{N}_y = 0 \, ; \quad \overline{T}_y = T\sin 60^\circ = T\frac{\sqrt{3}}{2} \, .$$
+
+Hai phương trình cân bằng của hệ lực đồng quy $(\vec{P}, \vec{N}, \vec{T})$ là :
+
+$$\begin{cases} \sum \overline{F}_x = N - \dfrac{T}{2} = 0 \, ; \\[8pt] \sum \overline{F}_y = -P + T\dfrac{\sqrt{3}}{2} = 0 \, . \end{cases}$$
+
+Phương trình thứ hai cho
+
+$$T = \frac{2P}{\sqrt{3}} = \frac{2P\sqrt{3}}{3} \, .$$
+
+Thay vào phương trình thứ nhất sẽ được :
+
+$$N = P\frac{\sqrt{3}}{3} \, .$$
+
+Có thể giải bài toán này một cách khác :
+
+*Phương pháp hình học.* Hệ lực đồng quy cân bằng, nên đa giác lực tự khép kín. Đó là tam giác lực có ba cạnh tương ứng tương đẳng với các lực nên có thể vẽ như sau : – trước hết vẽ lực $\vec{P}$, – vẽ tiếp đường song song với $OC$, – từ điểm đầu, vẽ đường song song với $OA$, – giao điểm hai đường vừa vẽ xác định phản lực $\vec{N}$ và sức căng $\vec{T}$.
+
+Tam giác vẽ được là tam giác vuông có góc $60^\circ$ nên dễ dàng tìm được :
+
+$$T = \frac{P}{\sin 60^\circ} = \frac{2P\sqrt{3}}{3} \, ; \quad N = P\text{ctg}60^\circ = \frac{P\sqrt{3}}{3} \, .$$
+
+*Phương pháp biến đổi lực.* Nguyên tắc của phương pháp này là biến đổi lực hoạt động ra các thành phần thích hợp với liên kết. Trong bài toán này lực hoạt động là trọng lực $P$, phép biến đổi là phép bình hành, các thành phần thích hợp với liên kết $\vec{P}_A$ nằm dọc dây và $\vec{P}_C$ nằm theo pháp tuyến $OC$ ; đó là hai lực tương ứng ngược chiều và cùng trị số với sức căng $\vec{T}$ và phản lực pháp $\vec{N}$.
+
+---
+
+#### Thí dụ 1–2.
+Treo vật nặng $P$ vào móc $O$ của giá treo $AOB$ tạo bởi hai thanh $OA$ và $OB$ trọng lượng không đáng kể, nối với nhau và với tường nhờ bản lề. Biết $OA$ nằm ngang, $OB$ nghiêng $30^\circ$ với $OA$, tìm ứng lực của hai thanh.
+
+<div class="figure-container">
+  <img src="/figures/bai-tap/tinh-hoc/hinh_1_7.svg" alt="Hình 1-7" class="figure-img" />
+  <p class="figure-caption">Hình 1-7</p>
+</div>
+
+*Bài giải :* Khảo sát cân bằng của nút $O$. Hệ lực tác dụng gồm – trọng lực $\vec{P}$ ; – các ứng lực $\vec{S}_A$ và $\vec{S}_B$ của hai thanh (giả thiết các thanh bị kéo nên các ứng lực từ $O$ về $A$ và $B$). Chú ý rằng, tuy hai đầu là bản lề, nhưng thanh không chịu lực ở khoảng giữa nên chỉ chịu nén và kéo, thanh giữ vai trò vật gây liên kết.
+
+Chọn hệ trục như hình vẽ, và lập hai phương trình hình chiếu (hệ lực đồng quy), (H. 1–7).
+
+$$\sum \overline{F}_x = -S_A - S_B\cos 30^\circ = -S_A - S_B\frac{\sqrt{3}}{2} = 0 \, ;$$
+
+$$\sum \overline{F}_y = -P - S_B\cos 60^\circ = -P - S_B\frac{1}{2} = 0 \, ;$$
+
+Kết quả : $S_B = -2P \, ; \quad S_A = P\sqrt{3}.$
+
+$S_B < 0$ chứng tỏ thanh $OB$ bị nén (giả thiết $OB$ bị kéo là sai ; lực $\vec{S}_B$ thực ra ngược lại chiều vẽ trên hình), $S_A > 0$ – thanh $OA$ bị kéo.
+
+*Phương pháp hình học.* Vẽ lực $\vec{P}$, – vẽ tiếp đường song song với $OB$ ; – từ điểm đầu, vẽ đường song song với $OA$, – giao điểm của hai đường vừa vẽ cho $\vec{S}_B, \vec{S}_A$ (chiều đúng). Xét tam giác lực, dễ dàng tìm ra kết quả : $S_B = 2P \, ; \quad S_A = P\sqrt{3}.$
+
+*Phương pháp biến đổi lực.* Phân tích $\vec{P}$ theo quy tắc hình bình hành ra hai thành phần $\vec{P}_A$ và $\vec{P}_B$ nằm theo $OA$ và $OB$, tương ứng ngược chiều với ứng lực $\vec{S}_A, \vec{S}_B$ của hai thanh (trên hình hai ứng lực $\vec{S}_A, \vec{S}_B$ vẽ quá dài và $\vec{S}_B$ vẽ sai chiều).
+
+---
+
+#### Thí dụ 1–3.
+Một quạt gồm rôto $A$ và cánh quạt $B$ gắn cứng vào trục $O_1O_2$ được đỡ cân bằng ở vị trí nằm ngang nhờ hai ổ đỡ $O_1$ và $O_2$. Biết $O_1A = AO_2 = 10\text{cm}$, $O_2B = 5\text{cm}$, trọng lượng rôto $P = 20\text{N}$, trọng lượng cánh quạt $Q = 4\text{N}$ ; các ổ đỡ ngắn trong đó ổ $O_1$ có mặt chắn (H. 1–8). Tìm phản lực các ổ đỡ khi quạt đứng yên.
+
+<div class="figure-container">
+  <img src="/figures/bai-tap/tinh-hoc/hinh_1_8.svg" alt="Hình 1-8" class="figure-img" />
+  <p class="figure-caption">Hình 1-8</p>
+</div>
+
+*Bài giải :* Khảo sát trục $O_1O_2$ có gắn rôto và cánh quạt. Trên hình vẽ, biểu diễn các lực tác dụng (quạt nằm im, mặt chắn ở $O_1$ không làm việc nên ở $O_1$ chỉ có phản lực đứng như $O_2$). Do hệ lực song song nên có hai phương trình cân bằng :
+
+$$\sum \overline{m}_{O_1}(\vec{F}) = 20N_2 - 10P + 25Q = 0 \, ;$$
+
+$$\sum \overline{m}_{O_2}(\vec{F}) = -20N_1 + 10P - 5Q = 0 \, .$$
+
+Kết quả :
+
+$$N_2 = \frac{P}{2} + \frac{5}{4}Q = 15\text{ N} \, ;$$
+
+$$N_1 = \frac{P}{2} - \frac{1}{4}Q = 9\text{ N}.$$
+
+*Phương pháp biến đổi lực :* Dùng quy tắc phân lực song song để biến đổi hai lực $\vec{P}, \vec{Q}$ ra các thành phần ép vào các ổ đỡ : phân lực $\vec{P}$ thành hai lực cùng trị số $P_1 = P_2 = \dfrac{P}{2}$ ép thẳng đứng vào hai ổ đỡ $O_1, O_2$ và phân lực $\vec{Q}$ nằm ngoài $O_1O_2$ thành hai lực : $\vec{Q}_2$ ép xuống $O_2$ với trị số
+
+$$Q_2 = Q\frac{O_1B}{O_1O_2} = \frac{5}{4}Q,$$
+
+và $\vec{Q}_1$ tại $O_1$, hướng lên, với trị số
+
+$$Q_1 = Q \times \frac{O_2B}{O_1O_2} = \frac{1}{4}Q.$$
+
+---
+
+#### Thí dụ 1–4.
+Thanh $OA$, trọng lượng không đáng kể, nối bản lề với tường ở $O$ và chịu lực thẳng đứng $\vec{P}$ ở $A$. Để giữ thanh nằm ngang, dùng dây $BC$. Biết $OB = 2BA$, tính sức căng của dây và phản lực bản lề $O$ khi :
+
+1– dây $BC$ nghiêng $30^\circ$ với thanh
+
+2– dây $BC$ thẳng đứng, (H. 1–9).
+
+<div class="figure-container">
+  <img src="/figures/bai-tap/tinh-hoc/hinh_1_9.svg" alt="Hình 1-9" class="figure-img" />
+  <p class="figure-caption">Hình 1-9</p>
+</div>
+
+*Bài giải :* Xét cân bằng của thanh $OA$.
+
+1 – Trường hợp $BC$ nghiêng. Hệ lực tác dụng gồm : lực hoạt động $\vec{P}$, sức căng $\vec{T}$, hai phản lực bản lề $\vec{X}_o$ và $\vec{Y}_o$. Đây là hệ lực phẳng bất kì nên lập được ba phương trình cân bằng :
+
+$$\sum \overline{F}_x = X_o - T\frac{\sqrt{3}}{2} = 0 \, ;$$
+
+$$\sum \overline{F}_y = Y_o + \frac{T}{2} - P = 0 \, ;$$
+
+$$\sum \overline{m}_o(\vec{F}) = -P.OA + T.OB\sin 30^\circ = 0,$$
+
+(tay đòn của $\vec{T}$ là $OH = OB\sin 30^\circ$).
+
+Kết quả :
+
+$$T = 3P, \quad X_o = 3P\frac{\sqrt{3}}{2}, \quad Y_o = -\frac{P}{2} \, .$$
+
+Có thể đưa hệ về ba lực đồng quy.
+
+Thực vậy, có thể xem thanh chịu tác dụng của các lực $\vec{P}, \vec{T}$ và phản lực bản lề $\vec{R}_o$ (không tách ra hai thành phần). Vì hai lực đầu đồng quy tại $D$ nên $\vec{R}_o$ nằm trên $OD$. Gọi $\alpha$ là góc nghiêng của $\vec{R}_o$ với thanh $OA$ và lập hai phương trình cân bằng :
+
+$$\sum \overline{F}_x = R_o\cos\alpha - T\frac{\sqrt{3}}{2} = 0,$$
+
+$$\sum \overline{F}_y = -P + T\frac{1}{2} - R_o\sin\alpha = 0.$$
+
+Kết quả : $R_o = P\sqrt{7} \, ; \quad T = 3P.$
+
+(Góc $\alpha$ được xác định từ hệ thức
+
+$$\text{tg}\alpha = \frac{AD}{OA} = \frac{AB\text{tg}30^\circ}{OA} = \frac{\sqrt{3}}{9} \, .$$
+
+do đó :
+
+$$\sin\alpha = \frac{\text{tg}\alpha}{\sqrt{1 + \text{tg}^2\alpha}} = \frac{1}{2\sqrt{7}} \, ,$$
+
+$$\cos\alpha = \frac{1}{\sqrt{1 + \text{tg}^2\alpha}} = 3\frac{\sqrt{3}}{2} / \sqrt{7}).$$
+
+Cũng có thể giải bằng đa giác lực hoặc bằng biến đổi lực (trượt $\vec{P}$ về $D$ rồi phân tích ra hai thành phần nằm theo $BC$ và $OD$).
+
+2– Trường hợp $BC$ thẳng đứng : Vì $\vec{P}, \vec{T}$ thẳng đứng nên phản lực bản lề chỉ có thành phần thẳng đứng $\vec{Y}_o$. Chúng ta có hệ lực song song và lập được hai phương trình cân bằng
+
+$$\sum \overline{m}_B(\vec{F}) = -P.BA - Y_o.BO = 0 \, ;$$
+
+$$\sum \overline{m}_o(\vec{F}) = -P.OA + T.OB = 0.$$
+
+Kết quả : $Y_o = -\dfrac{P}{2} \, ; \quad T = \dfrac{3}{2}P.$
+
+Có thể giải bằng cách phân tích lực $\vec{P}$ ra hai thành phần song song nằm theo $BC$ và $Oy$.
+
+---
+
+#### Thí dụ 1–5.
+Mái hiên đồng chất dạng tam giác, chiều dài $AB = 6a$, trọng lượng $P$, bị ngàm vào tường ở đầu $A$. Đầu $B$ chịu tải tập trung thẳng đứng $Q$ ; trên chiều dài $AB$, đặt tải thẳng đứng phân bố đều cường độ $q$. Xác định phản lực tại $A$.
+
+<div class="figure-container">
+  <img src="/figures/bai-tap/tinh-hoc/hinh_1_10.svg" alt="Hình 1-10" class="figure-img" />
+  <p class="figure-caption">Hình 1-10</p>
+</div>
+
+*Bài giải :* Xét cân bằng của mái hiên. Hệ lực tác dụng gồm : – tải tập trung $\vec{Q}$ ; – tải phân bố đều thu về lực thẳng đứng $\vec{Q}_1$ đặt tại giữa mái hiên, trị số $Q_1 = 6aq$ ; – trọng lực $\vec{P}$ (xem như hệ lực phân bố tam giác) đặt cách $A$ một đoạn $2a$ ; – các phản lực $\vec{X}_A, \vec{Y}_A$ và ngẫu phản lực $\overline{M}_A$ của ngàm $A$. Chú ý rằng ngẫu lực không có hình chiếu và mômen ngẫu không phụ thuộc tâm lấy mômen, dễ dàng lập được ba phương trình cân bằng :
+
+$$\sum \overline{F}_x = X_A = 0 \, ; \quad \sum \overline{F}_y = Y_A - P - Q - Q_1 = 0,$$
+
+$$\sum \overline{m}_A(\vec{F}) = M_A - 2aP - 6aQ - 3aQ_1 = 0.$$
+
+Kết quả : $M_A = 2aP + 6aQ + 18a^2q.$
+
+$$X_A = 0 \, ; \quad Y_A = P + Q + 6aq.$$
+
+*Phương pháp biến đổi lực :* Dời song song cả ba lực $\vec{Q}, \vec{Q}_1, \vec{P}$ về $A$ chúng ta được :
+
+1– Ba lực nén xuống với tổng trị số $P + Q + 6aq$ ;
+
+2– Ba ngẫu quay thuận kim đồng hồ với tổng mômen bằng :
+
+$$2aP + 6aQ + 18a^2q.$$
+
+---
+
+#### Thí dụ 1–6.
+Ống trụ tròn đồng chất $AB$, trọng lượng $P$, bán kính $R$, chiều cao $h$, có thể trượt dọc cột trụ thẳng đứng, nhẵn, cùng bán kính. Giữ ống cân bằng nhờ dây buộc vào đầu dưới $B$ và nghiêng góc $\alpha$ với cột. Tìm sức căng của dây và phản lực của cột (H. 1–11).
+
+<div class="figure-container">
+  <img src="/figures/bai-tap/tinh-hoc/hinh_1_11.svg" alt="Hình 1-11" class="figure-img" />
+  <p class="figure-caption">Hình 1-11</p>
+</div>
+
+*Bài giải :* Xét cân bằng của ống trụ dưới tác dụng của hệ lực.
+
+– trọng lực $\vec{P}$ ; – sức căng $\vec{T}$ ; – các phản lực của cột.
+
+Có thể biểu diễn các phản lực cột theo hai cách khác nhau :
+
+*Cách 1.* Quan niệm ống trụ bị sức căng $\vec{T}$ làm lệch nên sẽ tựa vào cạnh phải của cột ở đầu $A$ và vào cạnh trái ở đầu $B$. Như thế cột có hai phản lực tựa $\vec{N}_A, \vec{N}_B$.
+
+Lập ba phương trình cân bằng :
+
+$$\sum \overline{m}_B(\vec{F}) = P.R - N_A.h = 0 \, ;$$
+
+$$\sum \overline{F}_y = T\cos\alpha - P = 0 \, ;$$
+
+$$\sum \overline{m}_A(\vec{F}) = P.R - N_B.h + T.h\sin\alpha = 0.$$
+
+Kết quả : $N_A = P\dfrac{R}{h} \, ; \quad T = \dfrac{P}{\cos\alpha} \, ; \quad N_B = P\dfrac{R}{h} + P\text{tg}\alpha.$
+
+*Cách 2.* Quan niệm cột ngăn cản di chuyển ngang và di chuyển quay (vì ống trụ dài) ; vậy cột có phản lực ngang $\vec{N}$ và ngẫu phản lực $\overline{M}$ (thu gọn về giữa cột). Lập ba phương trình cân bằng :
+
+$$\sum \overline{F}_x = N + T\sin\alpha = 0,$$
+
+$$\sum \overline{F}_y = -P + T\cos\alpha = 0.$$
+
+$$\sum \overline{m}_B(\vec{F}) = M + P.R - N\frac{h}{2} = 0.$$
+
+Kết quả : $T = \dfrac{P}{\cos\alpha} \, ; \quad N = -P\text{tg}\alpha \, ;$
+
+$$M = -PR - \frac{Ph}{2}\text{tg}\alpha.$$
+
+---
+
+#### Thí dụ 1–7.
+Vật nặng $P$ được treo vào móc có dạng $3/4$ cung tròn bán kính $R$. Vì bị gẫy ở $A$ nên cần hàn lại. Để xác định yêu cầu của mối hàn, hãy xác định lực tác dụng tương hỗ ở hai phần móc khi làm việc (H. 1–12).
+
+<div class="figure-container">
+  <img src="/figures/bai-tap/tinh-hoc/hinh_1_12.svg" alt="Hình 1-12" class="figure-img" />
+  <p class="figure-caption">Hình 1-12</p>
+</div>
+
+*Bài giải :* Tưởng tượng cắt đôi móc và xét cân bằng của một phần móc, thí dụ, phần trên. Hệ lực tác dụng gồm : – lực kéo $\vec{P}$ ; – các phản lực ở $A$. Mối hàn vững chắc nên tại $A$ có liên kết ngàm và phản lực liên kết gồm : 2 lực vuông góc $\vec{N}_A, \vec{Q}_A$ và một ngẫu lực có mômen $\overline{M}_A$. Lập 3 phương trình cân bằng rồi giải chúng, ta được :
+
+$$N_A = P \, ; \quad Q_A = 0 \, ; \quad M_A = RQ.$$
+
+Người ta gọi : $\vec{N}$ – lực dọc ; $\vec{Q}_A$ – lực cắt ; $\overline{M}_A$ – mômen uốn.
+
+---
+
+### 1.3.2. Bài toán tìm điều kiện cân bằng
+
+#### Thí dụ 1–8.
+Thanh đồng chất $AB = 2a$, trọng lượng $P$, đầu $A$ tựa lên tường nhẵn, đầu $B$ được giữ bằng dây $BC$ nghiêng $30^\circ$ với tường. Tìm góc nghiêng $\alpha$ của thanh với tường để có cân bằng (H. 1–13).
+
+<div class="figure-container">
+  <img src="/figures/bai-tap/tinh-hoc/hinh_1_13.svg" alt="Hình 1-13" class="figure-img" />
+  <p class="figure-caption">Hình 1-13</p>
+</div>
+
+*Bài giải :* Thanh $AB$ chịu ba lực : $\vec{P}, \vec{T}, \vec{N}$. Xem đó là hệ lực phẳng bất kì, chúng ta có ba phương trình cân bằng. Nhưng vì chỉ cần tìm $\alpha$ (không cần tìm $T, N$), chúng ta chỉ cần lập một phương trình mômen đối với giao điểm $D$ của hai phản lực $\vec{T}$ và $\vec{N}$ :
+
+$$\sum \overline{m}_D(\vec{F}) = P.HD = 0.$$
+
+Từ đó suy ra : $HD = 0$.
+
+Dễ dàng tính được :
+
+$$\begin{aligned}
+DH &= HK - DK \\
+&= a\sin\alpha - BK\text{tg}30^\circ = a\sin\alpha - 2a\cos\alpha \cdot \frac{\sqrt{3}}{3} \\
+&= a\left(\sin\alpha - \frac{2\sqrt{3}}{3}\cos\alpha\right).
+\end{aligned}$$
+
+Kết quả : $\text{tg}\alpha = \dfrac{2\sqrt{3}}{3} \, .$
+
+---
+
+#### Thí dụ 1–9.
+Để kéo vật nặng $P$ lên cao, người ta cuốn dây treo vật vào một khối trụ (tang tời) bán kính $R$, quay được quanh trục $O$ nằm ngang và tác dụng lực $\vec{Q}$ vào đầu $A$ của tay quay $OA = a$ gắn chặt vào khối trụ. Biết $\vec{Q}$ thẳng góc với $OA$, tìm trị số $Q$ cần thiết (H. 1–14).
+
+<div class="figure-container">
+  <img src="/figures/bai-tap/tinh-hoc/hinh_1_14.svg" alt="Hình 1-14" class="figure-img" />
+  <p class="figure-caption">Hình 1-14</p>
+</div>
+
+*Bài giải :* Tời là một đòn (vật quay chịu hệ lực phẳng thẳng góc với trục quay). Ngoài hai lực hoạt động $\vec{P}$ và $\vec{Q}$, tời còn chịu phản lực của trục $O$. Phương trình mômen đối với $O$ sẽ không có mặt của phản lực và cho chúng ta điều kiện cân bằng :
+
+$$P.R = Q.a \quad \text{hay} \quad Q = P\frac{R}{a} \, .$$
+
+---
+
+#### Thí dụ 1–10.
+Cần cẩu $ABC$ chạy được trên hai bánh xe $A, B$ cách nhau $1\text{ mét}$. Trọng lượng cần cẩu $P$ đi qua điểm giữa của $AB$. Vật cần nâng có trọng lượng $q$ ở tầm xa $3\text{ mét}$. Ở phía đối, tầm xa $1\text{ mét}$ có đối trọng $Q$ (H. 1–15). Xác định trị số $Q$ để cần cẩu không bị lật.
+
+<div class="figure-container">
+  <img src="/figures/bai-tap/tinh-hoc/hinh_1_15.svg" alt="Hình 1-15" class="figure-img" />
+  <p class="figure-caption">Hình 1-15</p>
+</div>
+
+*Bài giải :* Ở trạng thái làm việc bình thường, cần cẩu chịu ba lực hoạt động $\vec{P}, \vec{q}, \vec{Q}$ và hai phản lực tại $A$ và $B$. Ở trạng thái sắp lật (quanh $A$ hoặc quanh $B$) một phản lực (ở $B$ hoặc $A$) sẽ triệt tiêu. Lập phương trình mômen với trục lật ($A$ hoặc $B$) chúng ta được trị số tới hạn $Q$.
+
+Xét khả năng lật quanh $A$ nguy hiểm nhất khi $q = 0$. Lực $\vec{Q}$ gây lật. Điều kiện cân bằng là :
+
+$$M_{\text{lật}} = Q \cdot 0,5 \le P \cdot 0,5 = M_{\text{giữ}} \quad \text{hay} \quad Q \le P.$$
+
+Xét khả năng lật quanh $B$, chúng ta có :
+
+$$M_{\text{lật}} = q \cdot 2,5 \le P \cdot 0,5 + Q \cdot 1,5$$
+
+hay
+
+$$Q \ge \frac{5}{3}q - \frac{1}{3}P.$$
+
+Để cần cẩu không bị lật, phải chọn $Q$ sao cho
+
+$$\frac{5q - P}{3} \le Q \le P.$$
+
+---
+
+#### Thí dụ 1–11.
+Đập nước có thiết diện chữ nhật, chiều cao $AB = h = 12\text{m}$ trọng lượng riêng $30\text{ kN/m}^3$. Tìm bề rộng $2d$ để đập không bị lật khi nước cao sát mặt đập. Cho trọng lượng riêng của nước là $10\text{ kN/m}^3$. (H. 1–16).
+
+<div class="figure-container">
+  <img src="/figures/bai-tap/tinh-hoc/hinh_1_16.svg" alt="Hình 1-16" class="figure-img" />
+  <p class="figure-caption">Hình 1-16</p>
+</div>
+
+*Bài giải :* Xét cân bằng của một mét dài của đập. Đập có thể bị lật quanh $A$. Lực gây lật là sức ép của nước, lực giữ khỏi lật là trọng lượng đập. Áp suất nước tăng dần theo chiều sâu, chúng ta có hệ lực phân bố tam giác thu về lực $\vec{Q}$ nằm ngang, cách đáy khoảng $h/3$. Áp suất ở đáy đập bằng trọng lượng cột nước cao $h\text{ m}$, có diện tích đáy $1\text{m}^2$, nghĩa là bằng $10h\text{ kN/m}^2$. Vậy trị số :
+
+$$Q = \frac{1}{2} \times h \times 10h = 5h^2\text{ kN}.$$
+
+Trọng lượng đập bằng $P = 2dh \times 30\text{kN}$.
+
+Điều kiện không lật :
+
+$$M_{\text{giữ}} = P.d = 2d^2h \cdot 30 \ge \frac{h}{3} \cdot 5h^2 = M_{\text{lật}}$$
+
+hay
+
+$$d \ge \frac{h}{6} = 2\text{ mét}.$$
+
+---
+
+## 1.4. BÀI TẬP {#_1-4-bai-tap-tu-ren-luyen-co-đap-so}
+
+**1–1.** Dùng lực kéo $Q$ nằm ngang để kéo bánh xe đồng chất bán kính $R$ trọng lượng $P$ từ mặt đường $A$ vượt lên mặt đường $B$ ; bậc $AB = h = R/2$. Xác định phản lực tại $A$ và $B$. Với trị số $Q$ nào bánh xe có thể vượt qua bậc, (H. 1–17).
+
+<div class="figure-container">
+  <img src="/figures/bai-tap/tinh-hoc/hinh_1_17.svg" alt="Hình 1-17" class="figure-img" />
+  <p class="figure-caption">Hình 1-17</p>
+</div>
+
+*Trả lời :*
+
+$$N_A = P - Q\frac{\sqrt{3}}{3} \, , \quad N_B = \frac{2}{3}Q\sqrt{3}.$$
+
+Xe vượt qua bậc khi $Q \ge P\dfrac{\sqrt{3}}{3} \, .$
+
+*Hướng dẫn :* Góc $AOB = 60^\circ$, xe vượt qua bậc khi bắt đầu rời mặt $A$ (phản lực $N_A = 0$).
+
+---
+
+**1–2.** Trục của ròng rọc nhỏ được đỡ bởi hai thanh $OA$ và $OB$, trọng lượng không đáng kể, nghiêng đều $60^\circ$ với đường nằm ngang. Vòng qua ròng rọc là sợi dây, đầu treo vật nặng $P$, đầu kia nghiêng $30^\circ$ với đường nằm ngang và chịu lực $F$ ($= P$) để giữ vật cân bằng. Xác định ứng lực của hai thanh. (H. 1–18)
+
+<div class="figure-container">
+  <img src="/figures/bai-tap/tinh-hoc/hinh_1_18.svg" alt="Hình 1-18" class="figure-img" />
+  <p class="figure-caption">Hình 1-18</p>
+</div>
+
+*Trả lời :* $S_A = P\dfrac{\sqrt{3}}{3} \, , \quad S_B = -2P\dfrac{\sqrt{3}}{3} \, .$
+
+---
+
+**1–3.** Dầm đồng chất dài $4\text{m}$, trọng lượng $5\text{kN}$, được chôn thẳng góc vào bức tường dày $0,5\text{m}$. Dầm làm việc ở chế độ tựa lên hai cạnh tường $A$ và $B$. Xác định các phản lực tại $A$ và $B$ nếu đầu $C$ của dầm treo vật nặng $P = 40\text{kN}$. (H. 1–19).
+
+<div class="figure-container">
+  <img src="/figures/bai-tap/tinh-hoc/hinh_1_19.svg" alt="Hình 1-19" class="figure-img" />
+  <p class="figure-caption">Hình 1-19</p>
+</div>
+
+*Trả lời :* $N_A = 340\text{kN}, \quad N_B = 295\text{kN}.$
+
+---
+
+**1–4.** Xe mang vật nặng $P_1 = 40\text{kN}$ chạy trên dầm nằm ngang $AB$ ; dầm này đồng chất, trọng lượng $P = 60\text{kN}$, tựa trên hai ray $A$ và $B$. Vị trí của xe được xác định bằng vị trí $C$ là điểm giữa của hai tâm bánh xe. Tìm phản lực tại $A$ và $B$ theo tỉ số $n = \dfrac{AC}{AB}$ (H. 1–20).
+
+<div class="figure-container">
+  <img src="/figures/bai-tap/tinh-hoc/hinh_1_20.svg" alt="Hình 1-20" class="figure-img" />
+  <p class="figure-caption">Hình 1-20</p>
+</div>
+
+*Trả lời :* $N_A = (7 - 4n).10\text{kN} \, ; \quad N_B = (3 + 4n).10\text{kN}.$
+
+---
+
+**1–5.** Trục nằm ngang trên hai ổ đỡ $A$ và $B$, được lắp ba đĩa tròn có trọng lượng $P_1 = 3\text{kN}$, $P_2 = 5\text{kN}$, $P_3 = 2\text{kN}$. Kích thước ghi trên hình vẽ, trọng lượng bản thân của trục không đáng kể, tìm phản lực các ổ đỡ, (H. 1–21)
+
+<div class="figure-container">
+  <img src="/figures/bai-tap/tinh-hoc/hinh_1_21.svg" alt="Hình 1-21" class="figure-img" />
+  <p class="figure-caption">Hình 1-21</p>
+</div>
+
+*Trả lời :* $N_B = 5,22\text{kN} \, ; \quad N_A = 4,78\text{kN}.$
+
+---
+
+**1–6.** Thanh $AB$ được mắc vào tường nhờ bản lề $A$ và được giữ nằm ngang nhờ thanh $CD$ ; thanh $CD$ có hai đầu là bản lề nối vào thanh $AB$ và trần. Góc nghiêng giữa hai thanh là $60^\circ$, trọng lượng hai thanh đều không đáng kể. Cho $AC = 2\text{m}$, $CB = 1\text{m}$. Tìm phản lực tại bản lề $A$ và $C$ khi đầu $B$ chịu lực thẳng đứng $P = 10\text{kN}$. (H. 1–22).
+
+<div class="figure-container">
+  <img src="/figures/bai-tap/tinh-hoc/hinh_1_22.svg" alt="Hình 1-22" class="figure-img" />
+  <p class="figure-caption">Hình 1-22</p>
+</div>
+
+*Trả lời :* $X_A = 10\dfrac{\sqrt{3}}{2}\text{ kN}, \quad Y_A = 5\text{kN}, \quad S_C = 10\sqrt{3}\text{ kN}.$
+
+*Hướng dẫn :* $CD$ là thanh gây liên kết.
+
+---
+
+**1–7.** Cầu (xem như đồng chất) $AB = 2a$, trọng lượng $P$, nằm trên gối cố định $A$ và gối di động $B$. Ở độ cao $h$ có lực gió nằm ngang $Q$. Xác định phản lực tại $A$ và $B$ trong hai trường hợp sau :
+
+a) Gối di động $B$ di chuyển trên mặt phẳng ngang (H. 1–23a).
+
+b) Gối di động $B$ di chuyển trên mặt phẳng nghiêng góc $30^\circ$ với mặt nằm ngang, (H. 1–23b).
+
+<div class="figure-container">
+  <img src="/figures/bai-tap/tinh-hoc/hinh_1_23.svg" alt="Hình 1-23" class="figure-img" />
+  <p class="figure-caption">Hình 1-23</p>
+</div>
+
+*Trả lời :*
+
+a) $X_A = -Q \, ; \quad Y_A = \dfrac{P}{2} - Q\dfrac{h}{2a} \, ; \quad N_B = \dfrac{P}{2} + Q\dfrac{h}{2a} \, ;$
+
+b) $X_A = \dfrac{P\sqrt{3}}{6} + Q\left(\dfrac{h\sqrt{3}}{6a} - 1\right) \, ; \quad Y_A = \dfrac{P}{2} - Q\dfrac{h}{2a} \, ;$
+
+$$N_B = \left(P + Q\frac{h}{a}\right)\frac{\sqrt{3}}{3} \, .$$
+
+---
+
+**1–8.** Xác định phản lực ở ngàm của dầm nằm ngang có trọng lượng không đáng kể, chịu lực như hình 1–24.
+
+<div class="figure-container">
+  <img src="/figures/bai-tap/tinh-hoc/hinh_1_24.svg" alt="Hình 1-24" class="figure-img" />
+  <p class="figure-caption">Hình 1-24</p>
+</div>
+
+*Trả lời :* $X_o = 2,8\text{kN} \, ; \quad Y_o = 1,67\text{kN} \, ; \quad M_o = -5,35\text{kNm}.$
+
+---
+
+**1–9.** Xác định phản lực ở ngàm của dầm nằm ngang, trọng lượng không đáng kể, chịu lực như hình 1–25.
+
+<div class="figure-container">
+  <img src="/figures/bai-tap/tinh-hoc/hinh_1_25.svg" alt="Hình 1-25" class="figure-img" />
+  <p class="figure-caption">Hình 1-25</p>
+</div>
+
+*Trả lời :* $X_o = 2,5\text{kN}, \quad Y_o = 13,7\text{kN}, \quad M_o = -27\text{kNm}.$
+
+---
+
+**1–10.** Cần trục $ABC$ có trục thẳng đứng $AB = 1,8\text{m}$ và được đỡ bằng hai ổ $A$ và $B$. Đầu $C$ có tầm xa $2,4\text{m}$ dùng để treo một xuồng nặng $9,6\text{kN}$. Xác định các phản lực tại $A$ và $B$. Bỏ qua trọng lượng cần trục, (H. 1–26).
+
+<div class="figure-container">
+  <img src="/figures/bai-tap/tinh-hoc/hinh_1_26.svg" alt="Hình 1-26" class="figure-img" />
+  <p class="figure-caption">Hình 1-26</p>
+</div>
+
+*Trả lời :* $X_A = 12,8\text{kN} \, ; \quad Y_A = 9,6\text{kN} \, ; \quad X_B = 12,8\text{kN}.$
+
+---
+
+**1–11.** Chày ép $AB$ trượt được theo máng trượt thẳng đứng $CD$. Chày chịu lực ép $P = 1\text{kN}$, nghiêng $30^\circ$ với chày. Biết $AB = 40\text{cm}$, $CD = 30\text{cm}$, $AC = DB = 5\text{cm}$. Tìm sức ép xuống vật $B$ và phản lực của máng trượt. Bỏ qua trọng lượng và đường kính của chày, (H. 1–27).
+
+<div class="figure-container">
+  <img src="/figures/bai-tap/tinh-hoc/hinh_1_27.svg" alt="Hình 1-27" class="figure-img" />
+  <p class="figure-caption">Hình 1-27</p>
+</div>
+
+*Trả lời :* $N_B = \dfrac{\sqrt{3}}{2}\text{ kN} \, ; \quad N_C = 0,58\text{kN} \, ; \quad N_D = 0,08\text{kN},$ (khi quy máng về hai liên kết tựa).
+
+$N = \dfrac{1}{2}\text{kN} \, ; \quad M = 0,1\text{kNm},$ (khi quy về loại ngàm).
+
+---
+
+**1–12.** Vật nặng $P$ treo ở đầu dây cuốn vào vành trong của đĩa bán kính $r$. Vành ngoài của đĩa bán kính $R$ có răng ăn vào cóc hãm nằm ngang $AB$. Tìm phản lực của trục $O$ và của cóc hãm, (H. 1–28).
+
+<div class="figure-container">
+  <img src="/figures/bai-tap/tinh-hoc/hinh_1_28.svg" alt="Hình 1-28" class="figure-img" />
+  <p class="figure-caption">Hình 1-28</p>
+</div>
+
+*Trả lời :* $S_{AB} = P \cdot \dfrac{r}{R} \, ; \quad X_o = -P\dfrac{r}{R}, \quad Y_o = P.$
+
+---
+
+**1–13.** Lực kéo nằm ngang $Q$ đặt ở đầu $E$ của móc $ABCDE$ bị ngàm ở đầu $A$ và có dạng như hình vẽ ($AB = DE$ và bằng bán kính $R$ của nửa đường tròn $BCD$). Tìm phản lực ngàm $A$, nội lực ở các mặt cắt tại $B, C$ và $D$, (H. 1–29).
+
+<div class="figure-container">
+  <img src="/figures/bai-tap/tinh-hoc/hinh_1_29.svg" alt="Hình 1-29" class="figure-img" />
+  <p class="figure-caption">Hình 1-29</p>
+</div>
+
+*Trả lời :*
+
+$$X_A = -Q \, ; \quad Y_A = 0 \, ; \quad \overline{M}_A = QR \, ;$$
+
+$$X_B = \pm Q \, ; \quad Y_B = 0 \, ; \quad \overline{M}_B = \pm RQ \, ;$$
+
+$$X_C = \pm Q \, ; \quad Y_C = 0 \, ; \quad \overline{M}_C = \pm 2QR \, ;$$
+
+$$X_D = \pm Q \, ; \quad Y_D = 0 \, ; \quad \overline{M}_D = \pm QR.$$
+
+---
+
+**1–14.** Nhẫn $A$ lồng vào đường tròn $O$ (nằm trong mặt thẳng đứng). Treo vào nhẫn vật nặng $P$. Mặt khác buộc vào nhẫn sợi dây $ABC$, đầu $C$ (sau khi vắt qua ròng rọc $B$ đặt ở vị trí cao nhất của đường tròn) treo vật nặng $Q$. Xác định góc $\varphi$ khi cân bằng (H. 1–30).
+
+<div class="figure-container">
+  <img src="/figures/bai-tap/tinh-hoc/hinh_1_30.svg" alt="Hình 1-30" class="figure-img" />
+  <p class="figure-caption">Hình 1-30</p>
+</div>
+
+*Trả lời :* $\varphi = \arccos\dfrac{Q}{2P} \, .$
+
+---
+
+**1–15.** Thanh đồng chất $AB$ trọng lượng $P = 20\text{N}$ có trục quay nằm ngang $A$, đầu $B$ treo vật nặng $p = 10\text{N}$. Buộc sợi dây vào đầu $B$, đầu dây kia treo vật nặng $Q = 20\text{N}$ sau khi vắt qua ròng rọc nhỏ $D$. Biết $AD$ nằm ngang, $AD = AB$. Tìm góc nghiêng $\alpha$ của thanh khi cân bằng, (H. 1–31).
+
+<div class="figure-container">
+  <img src="/figures/bai-tap/tinh-hoc/hinh_1_31.svg" alt="Hình 1-31" class="figure-img" />
+  <p class="figure-caption">Hình 1-31</p>
+</div>
+
+*Trả lời :* $\alpha = 60^\circ.$
+
+---
+
+**1–16.** Đòn $ABC$ trọng lượng $80\text{N}$ gồm hai tay đòn $AB = 0,4\text{m}$ và $BC = 1\text{m}$ vuông góc với nhau tại trục nằm ngang $B$ của đòn. Tại hai đầu $A$ và $C$, buộc hai sợi dây, đầu treo hai vật nặng $P_1 = 310\text{N}$, $P_2 = 100\text{N}$ khi vòng qua hai ròng rọc nhỏ $E$ và $F$. Biết ở vị trí cân bằng, góc $\widehat{EAB} = 135^\circ$, trọng tâm $G$ của đòn cách đường thẳng đứng $BD$ một đoạn $0,212\text{m}$. Xác định góc $\varphi = \widehat{BCF}$, (H. 1–32).
+
+<div class="figure-container">
+  <img src="/figures/bai-tap/tinh-hoc/hinh_1_32.svg" alt="Hình 1-32" class="figure-img" />
+  <p class="figure-caption">Hình 1-32</p>
+</div>
+
+*Trả lời :* $\varphi_1 = 45^\circ \, ; \quad \varphi_2 = 135^\circ.$
+
+---
+
+**1–17.** Bể nước trọng lượng $P$ được đặt trên tháp hai chân $PA, PB$ tại $A$ là gối cố định, $B$ là gối di động. Ở độ cao $h$, có lực gió nằm ngang $Q$ hướng theo chiều từ $B$ đến $A$. Tìm khoảng cách $a = AB$ để tháp khỏi bị lật, (H. 1–33).
+
+<div class="figure-container">
+  <img src="/figures/bai-tap/tinh-hoc/hinh_1_33.svg" alt="Hình 1-33" class="figure-img" />
+  <p class="figure-caption">Hình 1-33</p>
+</div>
+
+*Trả lời :* $a \ge 2Q\dfrac{h}{P} \, .$
+
+---
+
+**1–18.** Xe $A$ chạy trên hai bánh $D$ và $E$ cách nhau $2\text{m}$. Xe mang theo cần nằm ngang $BC = 5\text{m}$, đầu cần là gầu $C$ đầy quặng nặng $Q = 15\text{kN}$. Xác định trọng lượng $P$ (tác dụng trên đường trung trực của $DE$) để xe khỏi bị lật, (H. 1–34).
+
+<div class="figure-container">
+  <img src="/figures/bai-tap/tinh-hoc/hinh_1_34.svg" alt="Hình 1-34" class="figure-img" />
+  <p class="figure-caption">Hình 1-34</p>
+</div>
+
+*Trả lời :* $P \ge 60\text{kN}.$
+
+---
+
+**1–19.** Khi lượn tròn, mặt đường nghiêng góc $\alpha$ với mặt nằm ngang (tâm lượn ở phía thấp).
+
+Biết khoảng cách hai bánh xe $AB = 2a$, trọng lượng xe là $P$ (trọng tâm $C$ nằm trên trung trực của $AB$ và cách mặt đường một đoạn $h$), (H. 1–35). Xác định vận tốc tối đa $v$ để xe không bị lật, biết rằng lực quán tính li tâm đặt tại $C$, nằm ngang và có trị số
+
+$$Q = \frac{P}{g} \cdot \frac{v^2}{R} \, ,$$
+
+($g$ – gia tốc trọng trường, $R$ – bán kính lượn).
+
+<div class="figure-container">
+  <img src="/figures/bai-tap/tinh-hoc/hinh_1_35.svg" alt="Hình 1-35" class="figure-img" />
+  <p class="figure-caption">Hình 1-35</p>
+</div>
+
+*Trả lời :* $v^2 \le gR\dfrac{a + h\text{tg}\alpha}{h - a\text{tg}\alpha} \, .$
+
+---
+
+**1–20.** Tìm bề dày cần thiết của chân đập để đập không bị lật khi nước ở mức cao nhất $h = 6\text{m}$ sát mặt đập. Xét hai trường hợp : 1) Thiết diện đập là tam giác. 2) Thiết diện đập là hình thang có đáy nhỏ bằng nửa đáy lớn. Biết trọng lượng riêng của đập là $24\text{kN/m}^3$ và của nước là $10\text{kN/m}^3$, (H. 1–36).
+
+<div class="figure-container">
+  <img src="/figures/bai-tap/tinh-hoc/hinh_1_36.svg" alt="Hình 1-36" class="figure-img" />
+  <p class="figure-caption">Hình 1-36</p>
+</div>
+
+*Trả lời :* 1) $a = \sqrt{\dfrac{15}{2}}\text{ m} \, ; \quad$ 2) $a = \sqrt{\dfrac{15}{11}}\text{ m} \, .$
