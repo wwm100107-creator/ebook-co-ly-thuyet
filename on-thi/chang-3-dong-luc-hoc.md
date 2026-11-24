@@ -1,846 +1,1015 @@
 ---
-title: "Chặng 3 (Ngày 11–15): Mỏ Vàng 4 Câu Định Lý Động Năng (AS1003)"
+title: "Chặng 3 (Ngày 11–15): Định Lý Động Năng, Thế Năng & Cơ Hệ Tổng Hợp (AS1003)"
 layout: doc
 ---
 
-# Chặng 3 (Ngày 11 – Ngày 15): Chương 12.2–12.3 — Làm Chủ Tuyệt Đối "Mỏ Vàng 4 Câu Liên Hoàn" Định Lý Động Năng
+# Chặng 3 (Ngày 11 – Ngày 15): Định Lý Biến Thiên Động Năng, Trường Lực Thế & Cơ Hệ Tổng Hợp
 
-Nếu bạn là người **tay ngang (mất gốc hoàn toàn)** và mục tiêu là vượt qua cột mốc `8,0+` trong đề thi Cuối kỳ **Cơ Lý Thuyết (`AS1003` — ĐH Bách Khoa TPHCM)**, thì **Chặng 3** chính là phần sinh lời cao nhất toàn khóa. Trong hầu hết các mã đề thi thật (`1821`, `1721`, `1722`, `0001/2016`, `0002/2016`, `0001/2015`, `0002/2015`, `2014`, `2013`, `2011`...), đề luôn có một bài toán cơ hệ **1 bậc tự do** đi kèm đúng **4 câu trắc nghiệm liên hoàn**, chiếm tới **33%–40% tổng số điểm cả bài thi**.
+Trong đề cương học phần **Cơ Lý Thuyết (`AS1003` — Trường Đại học Bách Khoa ĐHQG-HCM)**, phần **Định lý biến thiên động năng đối với cơ hệ một bậc tự do** (Chương 12.2–12.3 theo đề cương môn học, tương ứng [Mục 3.5 và 3.6 Giáo trình Động lực học Chương 3](/dong-luc-hoc/chuong-3) và [Mục 2.4 Sách Bài Tập Động lực học Chương 2](/bai-tap/dong-luc-hoc/chuong-2)) chiếm từ 3 đến 4 câu trắc nghiệm liên hoàn trong hầu hết các mã đề thi cuối kỳ (`1821`, `1721`, `1722`, `0001/2016`, `0002/2016`, `0001/2015`, `0002/2015`).
 
-Điều tuyệt vời là cấu trúc của chùm 4 câu này gần như lặp lại y hệt qua mọi năm:
-- **Câu 1 của chùm:** Tính Động năng $T(\omega)$ hoặc $T(\dot{\theta})$ của cơ hệ.
-- **Câu 2 của chùm:** Tính Tổng công ngoại lực $\sum A$ khi hệ dịch chuyển từ góc đầu $\theta_0$ đến $\theta$ (hoặc công suất $\sum N$).
-- **Câu 3 của chùm:** Đạo hàm hai vế $\dfrac{dT}{dt} = \sum N$ (dạng vi phân) để rút thẳng gia tốc góc $\varepsilon(\theta)$ hoặc gia tốc dài $a$.
-- **Câu 4 của chùm:** Thế vào $T - T_0 = \sum A$ (dạng hữu hạn) để tìm vận tốc góc $\omega$ hoặc vận tốc điểm $v_G$, $V_B$ tại một vị trí cho trước.
+Cấu trúc giải tích của bài toán này đòi hỏi tính chính xác tuyệt đối theo chuỗi phụ thuộc nhân quả: nếu sai mômen quán tính hoặc sai tỷ số truyền vận tốc ở bước thiết lập động năng $T$, hoặc sai dấu công của lò xo có biến dạng đầu $\Delta l_0 \neq 0$ ở bước tính tổng công $\sum A$, toàn bộ các câu tiếp theo tìm vận tốc $\omega, v$, gia tốc $\varepsilon, a$ và phản lực động lực đều sai dây chuyền. Chặng 3 xây dựng nền tảng chứng minh từ nguyên lý cơ bản đến bài toán tổng hợp kết hợp Nguyên lý D'Alembert trong 5 ngày học nghiêm ngặt (thời lượng yêu cầu `3–4` giờ làm việc thực chất mỗi ngày).
 
-::: tip Bản đồ tổng quan Chặng 3 (Ngày 11 – Ngày 15 | Định lý Động năng Ch.12.2–12.3)
-| Ngày | Chủ đề trọng tâm | Mục tiêu làm được ngay sau buổi học | Đối chiếu giáo trình |
+::: info Phân bổ chương trình học Chặng 3 (Ngày 11 – Ngày 15)
+| Ngày | Nội dung học thuật trọng tâm | Đầu ra năng lực bắt buộc | Tài liệu đối chiếu |
 | :--- | :--- | :--- | :--- |
-| **Ngày 11** | Công thức vàng tính Động năng $T$ | Không bao giờ sót thành phần $J_O$ hay $\frac{3}{4}mv_C^2$; giải gọn Đề `1821` Câu 5 & Đề `1721`/`1722` Câu 9 | [Chương 3 (Mục 3.5)](/dong-luc-hoc/chuong-3) · [BT C.2](/bai-tap/dong-luc-hoc/chuong-2) |
-| **Ngày 12** | Bí kíp tính Tổng công $\sum A$ trong 60 giây | Dùng mẹo thế biên $\theta = \theta_0 \implies \sum A = 0$ triệt bẫy dấu lò xo, trọng lực trên Đề `1721`, `1722`, `2016` | [Chương 3 (Mục 3.5)](/dong-luc-hoc/chuong-3) · [BT C.2](/bai-tap/dong-luc-hoc/chuong-2) |
-| **Ngày 13** | Đạo hàm 2 vế tìm $\varepsilon, a$ & tính $v$ | Giải trọn bộ 4 câu liên hoàn Đề `1821` (5–8), `0001/2016` (3–6) và bắt gọn bẫy `6e` ở Đề `0002/2016` | [Chương 3 (Mục 3.5)](/dong-luc-hoc/chuong-3) · [BT C.2](/bai-tap/dong-luc-hoc/chuong-2) |
-| **Ngày 14** | Hệ dây kéo ròng rọc, con lăn kép & ma sát | Làm chủ tâm tức thời $I$ cho con lăn kép quấn tầng trong, dây chùng ở Đề `0001`/`0002` (2015), `2014`, `2011` | [Chương 3](/dong-luc-hoc/chuong-3) · [Đề thi thật HCMUT](/on-thi/de-thi-that-hcmut) |
-| **Ngày 15** | Bộ 12 câu thi thật bấm giờ (25 phút) | Hoàn thành 3 chùm × 4 câu đề thi thật dưới áp lực thời gian + Checklist 20 giây chống bẫy đáp án `e` | [Ngân hàng đề thi thật](/on-thi/de-thi-that-hcmut) |
+| **Ngày 11** | Chứng minh Động năng Cơ hệ & Liên hệ Động học 1 BTD | Chứng minh Định lý König, công thức quanh tâm tức thời $I$; quy đổi vận tốc theo $q$ cho 5 cơ cấu chuẩn | [GT ĐLH Ch.3 (3.5)](/dong-luc-hoc/chuong-3) · [SBT ĐLH Ch.2 (2.4)](/bai-tap/dong-luc-hoc/chuong-2) |
+| **Ngày 12** | Công Nguyên tố, Công Hữu hạn, Thế năng & Sai số Lực Thế | Chứng minh công trọng lực, ngẫu lực, lò xo có $\Delta l_0 \neq 0$, ma sát trượt vs nghỉ, kiểm toán biên $\sum A(q_0) = 0$ | [GT ĐLH Ch.3 (3.5–3.6)](/dong-luc-hoc/chuong-3) · [SBT ĐLH Ch.2](/bai-tap/dong-luc-hoc/chuong-2) |
+| **Ngày 13** | Hai Dạng Định lý Động năng ($T - T_0 = \sum A$ và $\frac{dT}{dt} = \sum N$) | Chuẩn hóa $T = \frac{1}{2}M_{\text{td}}(q)\dot{q}^2$, đạo hàm đủ số hạng $\dot{q}^3$; giải trọn chùm 4 câu `1821`, `2016` | [SBT ĐLH Ch.2 (2.4.3)](/bai-tap/dong-luc-hoc/chuong-2) · [Đề thật HCMUT](/on-thi/de-thi-that-hcmut#de-1821) |
+| **Ngày 14** | Cơ hệ Tổng hợp: Kết hợp Động năng & D'Alembert | Tìm sức căng dây $S$, kiểm tra không trượt $\lvert F_{\text{msn}}\rvert \le f_0 N$, tìm góc tách mặt $N(\theta^*) = 0$ | [SBT ĐLH Ch.6 (6.4–6.5)](/bai-tap/dong-luc-hoc/chuong-6) · [Đề `1721`](/on-thi/de-thi-that-hcmut#de-1721) |
+| **Ngày 15** | Cổng Kiểm Định Chặng 3 (12 câu / 35 phút, cấm mở sách) | Giải độc lập 3 chùm × 4 câu chuẩn `AS1003`; đạt tối thiểu `8/12` câu trước khi sang Chặng 4 | [Ngân hàng đề thi thật](/on-thi/de-thi-that-hcmut) |
 :::
-
-> **Nhịp học đề xuất (90–120 phút/ngày):** Đọc kỹ phần quy tắc nhận diện (20 phút) $\rightarrow$ Tự đặt bút tính từng bước các ví dụ đề thi thật (45 phút) $\rightarrow$ Tự làm lại bài luyện không nhìn lời giải và kiểm tra lại bằng mẹo biên $\theta = \theta_0$ (30 phút).
 
 ---
 
-## Ngày 11: Công Thức Vàng Tính Động Năng $T$ Của Cơ Hệ (Không Bao Giờ Sót Thành Phần)
+## Ngày 11: Chứng Minh Động Năng Cơ Hệ & Thiết Lập Liên Hệ Động Học 1 Bậc Tự Do {#ngay-11}
 
-### 1. Kiến thức nền cho người mất gốc: Động năng chỉ có 3 khuôn duy nhất
+### 11.1. Định nghĩa tổng quát và hai chuyển động cơ bản của vật rắn
 
-Động năng $T$ của một vật rắn luôn **không âm** ($T \ge 0$) và là **đại lượng vô hướng** (không cần quan tâm dấu $+$ hay $-$ của chiều quay vì luôn bình phương $v^2, \omega^2$). Động năng toàn cơ hệ bằng tổng động năng của từng vật rắn cộng lại:
+Xét cơ hệ gồm $N$ chất điểm $M_k$ có khối lượng $m_k$ và vận tốc tuyệt đối $\vec{v}_k$ ($k = \overline{1, N}$) trong hệ quy chiếu quán tính. Động năng của cơ hệ là đại lượng vô hướng không âm được định nghĩa bởi tổng:
 
-$$T_{\text{hệ}} = T_1 + T_2 + \dots + T_n$$
+$$T = \frac{1}{2}\sum_{k=1}^{N} m_k v_k^2 = \frac{1}{2}\sum_{k=1}^{N} m_k \left(\vec{v}_k \cdot \vec{v}_k\right)$$
 
-Mỗi vật rắn trong cơ hệ phẳng chỉ rơi vào **đúng 1 trong 3 chuyển động** dưới đây:
+Khi cơ hệ gồm $n$ vật rắn hoặc vật biến dạng (dây có khối lượng, băng tải), tính cộng tính của tổng cho phép tách động năng toàn hệ thành tổng động năng từng bộ phận: $T = \sum_{j=1}^{n} T_j$. Đối với một vật rắn khối lượng $m = \sum m_k$:
 
-| Dạng chuyển động của vật | Cách nhận diện trên hình | Công thức tính $T$ chuẩn | Mẹo chống sai cho người mất gốc |
-| :--- | :--- | :--- | :--- |
-| **1. Tịnh tiến** | Vật trượt thẳng (con trượt, tải treo dây) không quay | $T = \dfrac{1}{2} m v_C^2$ | Mọi điểm trên vật có cùng vận tốc $v = v_C$. |
-| **2. Quay quanh trục cố định $O$** | Thanh hoặc đĩa gắn vào **chốt bản lề cố định $O$** | $T = \dfrac{1}{2} J_O \omega^2$ | **Cấm lấy $J_G$** nếu $O \neq G$! Bắt buộc dời trục $J_O = J_G + m \cdot OG^2$. |
-| **3. Chuyển động song phẳng** | Thanh nối 2 khớp động, hoặc đĩa/trụ đang **lăn trên mặt phẳng** | $\begin{aligned} T &= \dfrac{1}{2}m v_C^2 + \dfrac{1}{2}J_C \omega^2 \\ &= \dfrac{1}{2} J_I \omega^2 \end{aligned}$ | Phải có **đủ 2 số hạng** (tịnh tiến của khối tâm $C$ + quay quanh $C$), hoặc lấy $J_I$ quanh tâm tức thời $I$. |
+1. **Chuyển động tịnh tiến:** Tại thời điểm đang xét, mọi điểm thuộc vật rắn có cùng vectơ vận tốc bằng vận tốc khối tâm $C$ ($\vec{v}_k = \vec{v}_C \implies v_k = v_C$):
 
-::: warning Bốn công thức "tủ" giúp tính xong $T$ một vật trong 3 giây
-1. **Thanh mảnh đồng chất dài $L$, khối lượng $m$, quay quanh một đầu $O$:**
-   Vì $J_G = \frac{1}{12}mL^2$ và $OG = \frac{L}{2}$, theo Huygens–Steiner: $J_O = \frac{1}{12}mL^2 + m\left(\frac{L}{2}\right)^2 = \frac{1}{3}mL^2$. Suy ra:
-   $$T_{\text{thanh quay đầu}} = \frac{1}{2}\left(\frac{1}{3}mL^2\right)\omega^2 = \frac{1}{6}mL^2\omega^2$$
-2. **Thanh mảnh đồng chất ($m, L$) trượt giữa hai tường/rãnh vuông góc:**
-   Khoảng cách từ tâm vận tốc tức thời $I$ tới trung điểm $G$ luôn không đổi bằng $IG = \frac{L}{2}$ (trung tuyến ứng với cạnh huyền tam giác vuông). Do đó $J_I = \frac{1}{12}mL^2 + m\left(\frac{L}{2}\right)^2 = \frac{1}{3}mL^2$, suy ra luôn:
-   $$T_{\text{thanh trượt 2 tường vuông}} = \frac{1}{6}mL^2\omega^2$$
-3. **Đĩa tròn đặc / Trụ tròn đặc ($m, R$, $J_C = \frac{1}{2}mR^2$) lăn không trượt trên nền đứng yên:**
-   Liên hệ lăn không trượt là $v_C = \omega R \implies \omega = \frac{v_C}{R}$. Thay vào công thức song phẳng:
-   $$T_{\text{đĩa đặc lăn}} = \frac{1}{2}m v_C^2 + \frac{1}{2}\left(\frac{1}{2}m R^2\right)\left(\frac{v_C}{R}\right)^2 = \frac{3}{4}m v_C^2 = \frac{3}{4}m R^2 \omega^2$$
-4. **Ống trụ mỏng / Vành tròn mỏng ($m, R$, $J_C = mR^2$) lăn không trượt trên nền đứng yên:**
-   $$T_{\text{ống mỏng lăn}} = \frac{1}{2}m v_C^2 + \frac{1}{2}(m R^2)\left(\frac{v_C}{R}\right)^2 = m v_C^2 = m R^2 \omega^2$$
+   $$T_{\text{tt}} = \frac{1}{2}\left(\sum_{k=1}^{N} m_k\right) v_C^2 = \frac{1}{2} m v_C^2$$
+
+2. **Chuyển động quay quanh trục cố định $\Delta$:** Mọi phần tử $M_k$ cách trục quay $\Delta$ khoảng vuông góc $r_k$ có độ lớn vận tốc $v_k = r_k \omega$, trong đó $\omega = \lvert\dot{\varphi}\rvert$ là độ lớn vận tốc góc của vật rắn:
+
+   $$T_{\text{q}} = \frac{1}{2}\sum_{k=1}^{N} m_k \left(r_k \omega\right)^2 = \frac{1}{2}\left(\sum_{k=1}^{N} m_k r_k^2\right)\omega^2 = \frac{1}{2} J_\Delta \omega^2$$
+
+   Nếu trục quay cố định $\Delta$ song song với trục trung tâm $\Delta_C$ (đi qua khối tâm $C$) và cách $\Delta_C$ một khoảng $d$, định lý Huygens–Steiner bắt buộc áp dụng để tính $J_\Delta$:
+
+   $$J_\Delta = J_{\Delta_C} + m d^2$$
+
+---
+
+### 11.2. Chứng minh Định lý König và công thức động năng qua tâm vận tốc tức thời $I$
+
+Xét vật rắn phẳng (hoặc vật rắn có mặt phẳng đối xứng chất) khối lượng $m$ thực hiện **chuyển động song phẳng** song song với mặt phẳng cố định $\Pi_0$. Gọi $C$ là khối tâm vật rắn, $\vec{v}_C$ là vận tốc khối tâm và $\vec{\omega}$ là vectơ vận tốc góc tức thời vuông góc với $\Pi_0$.
+
+#### a) Chứng minh Định lý König theo giải tích vectơ
+
+Xét phần tử khối lượng $m_k$ tại $M_k$. Đặt $\vec{\rho}_k = \overrightarrow{CM}_k$ là vectơ định vị tương đối từ khối tâm $C$ tới $M_k$. Theo định nghĩa khối tâm, ta luôn có đồng nhất thức:
+
+$$\sum_{k=1}^{N} m_k \vec{\rho}_k = \vec{0}$$
+
+Theo công thức phân bố vận tốc của vật rắn với cực là khối tâm $C$, vận tốc tuyệt đối của phần tử $M_k$ là $\vec{v}_k = \vec{v}_C + \vec{\omega} \times \vec{\rho}_k$. Thay vào định nghĩa động năng và khai triển bình phương vô hướng:
+
+$$\begin{aligned}
+T &= \frac{1}{2}\sum_{k=1}^{N} m_k \left(\vec{v}_C + \vec{\omega} \times \vec{\rho}_k\right)^2 \\
+  &= \frac{1}{2}\left(\sum_{k=1}^{N} m_k\right) v_C^2 + \vec{v}_C \cdot \left[\vec{\omega} \times \left(\sum_{k=1}^{N} m_k \vec{\rho}_k\right)\right] \\
+  &\quad + \frac{1}{2}\sum_{k=1}^{N} m_k \left\lvert\vec{\omega} \times \vec{\rho}_k\right\rvert^2
+\end{aligned}$$
+
+Số hạng giao thoa ở giữa bằng $0$ do $\sum m_k \vec{\rho}_k = \vec{0}$ (lưu ý: số hạng này chỉ triệt tiêu tổng quát khi cực được chọn là **khối tâm $C$** hoặc điểm cố định; nếu chọn cực $A \neq C$ đang chuyển động thì không được viết $T = \frac{1}{2}mv_A^2 + \frac{1}{2}J_A\omega^2$). Ở số hạng thứ ba, gọi $r_k$ là khoảng cách từ $M_k$ đến trục $Cz$ đi qua $C$ và song song với $\vec{\omega}$; khi đó $\lvert\vec{\omega} \times \vec{\rho}_k\rvert = \omega r_k$. Vì $J_C = \sum_{k=1}^{N} m_k r_k^2$, ta thu được **Định lý König**:
+
+$$T = \frac{1}{2} m v_C^2 + \frac{1}{2} J_C \omega^2$$
+
+#### b) Chứng minh công thức động năng đối với tâm vận tốc tức thời $I$
+
+Tại thời điểm vật rắn song phẳng không tịnh tiến tức thời ($\omega \neq 0$), luôn tồn tại duy nhất trục quay tức thời đi qua **tâm vận tốc tức thời $I$** (vuông góc với mặt phẳng chuyển động) sao cho $\vec{v}_I = \vec{0}$. Khi đó vận tốc của khối tâm $C$ có độ lớn $v_C = IC \cdot \omega$. Thay $v_C = IC \cdot \omega$ vào biểu thức Định lý König và áp dụng định lý Huygens–Steiner cho hai trục song song qua $C$ và $I$:
+
+$$\begin{aligned}
+T &= \frac{1}{2} m \left(IC \cdot \omega\right)^2 + \frac{1}{2} J_C \omega^2 \\
+  &= \frac{1}{2}\left(J_C + m \cdot IC^2\right)\omega^2 = \frac{1}{2} J_I \omega^2
+\end{aligned}$$
+
+::: warning Bốn biểu thức động năng cơ bản cần suy dẫn chuẩn xác
+1. **Thanh mảnh đồng chất (khối lượng $m$, chiều dài $l$) quay quanh một đầu cố định $O$:**
+   Với $J_C = \frac{1}{12}ml^2$ và $OC = \frac{l}{2}$, ta có $J_O = \frac{1}{12}ml^2 + m\left(\frac{l}{2}\right)^2 = \frac{1}{3}ml^2$, suy ra:
+   $$T = \frac{1}{2}J_O\omega^2 = \frac{1}{6} m l^2 \omega^2$$
+2. **Đĩa tròn đặc hoặc trụ tròn đặc đồng chất ($m, R$, $J_C = \frac{1}{2}mR^2$) lăn không trượt trên mặt cố định:**
+   Tại tiếp điểm $I$, $\vec{v}_I = \vec{0} \implies v_C = R\omega$ và $J_I = \frac{1}{2}mR^2 + mR^2 = \frac{3}{2}mR^2$:
+   $$T = \frac{1}{2}J_I\omega^2 = \frac{3}{4} m R^2 \omega^2 = \frac{3}{4} m v_C^2$$
+3. **Vành tròn mỏng hoặc ống trụ rỗng thành mỏng ($m, R$, $J_C = mR^2$) lăn không trượt trên mặt cố định:**
+   Với $J_I = mR^2 + mR^2 = 2mR^2$ và $v_C = R\omega$:
+   $$T = \frac{1}{2}J_I\omega^2 = m R^2 \omega^2 = m v_C^2$$
+4. **Vật rắn bất kỳ khối lượng $m$ có bán kính quán tính đối với khối tâm là $\rho$ ($J_C = m\rho^2$) lăn không trượt trên mặt cố định bán kính ngoài $R$:**
+   $$T = \frac{1}{2} m \left(1 + \frac{\rho^2}{R^2}\right) v_C^2 = \frac{1}{2} m \left(R^2 + \rho^2\right)\omega^2$$
+:::
+
+---
+
+### 11.3. Thiết lập liên hệ động học 1 bậc tự do cho 5 mẫu cơ cấu trọng tâm
+
+Đối với cơ hệ dừng 1 bậc tự do định vị bởi tọa độ suy rộng $q$, bước quyết định trước khi cộng động năng là biểu diễn mọi vận tốc dài $v_k$ và vận tốc góc $\omega_i$ theo duy nhất $\dot{q}$ thông qua điều kiện không dãn của dây và điều kiện không trượt tại tiếp điểm.
+
+#### Mẫu 1: Ròng rọc động treo tải ở tâm
+
+<div class="figure-container">
+  <img src="/figures/bai-tap/dong-luc-hoc/hinh_3_6.svg" alt="Dây mềm không dãn vắt qua ròng rọc động" class="figure-img" />
+  <p class="figure-caption">Hình 11.1: Mô hình dây mềm không dãn vắt qua ròng rọc động (Hình 3-6 Sách Bài Tập Động Lực Học Chương 3)</p>
+</div>
+
+Xét ròng rọc động tâm $C$, bán kính $R$, có hai nhánh dây song song không trượt đối với vành ròng rọc. Chọn trục chiếu song song với hai nhánh dây, gọi $v_{\text{tr}}, v_{\text{ph}}$ là hình chiếu đại số vận tốc của hai nhánh dây tại hai điểm tiếp tuyến trái và phải:
+- Vận tốc khối tâm $C$ bằng trung bình cộng đại số vận tốc hai nhánh dây, còn vận tốc góc $\omega$ xác định từ hiệu đại số:
+
+  $$v_C = \frac{v_{\text{tr}} + v_{\text{ph}}}{2}, \qquad \omega = \frac{\left\lvert v_{\text{ph}} - v_{\text{tr}}\right\rvert}{2R}$$
+
+- **Trường hợp một nhánh dây buộc cố định** ($v_{\text{tr}} = 0$, nhánh phải kéo với vận tốc $v$): Tiếp điểm với nhánh dây cố định là tâm vận tốc tức thời $I$ của ròng rọc động ($IC = R$, đường kính sang nhánh động bằng $2R$), suy ra:
+
+  $$v_C = \frac{1}{2} v, \qquad \omega = \frac{v}{2R} = \frac{v_C}{R}$$
+
+#### Mẫu 2: Tang trống hai tầng đồng tâm bán kính $R, r$ (tời cố định và con lăn kép)
+
+<div class="figure-container">
+  <img src="/figures/bai-tap/dong-luc-hoc/hinh_2_8.svg" alt="Tời hai tầng bán kính r và R quấn hai nhánh dây" class="figure-img" />
+  <p class="figure-caption">Hình 11.2: Tang trống hai tầng đồng tâm bán kính r và R quay quanh trục cố định O (Hình 2-8 Sách Bài Tập Động Lực Học Chương 2)</p>
+</div>
+
+Cần phân biệt rạch ròi hai cấu hình liên kết của tang hai tầng đồng tâm (bán kính ngoài $R$, bán kính trong $r < R$):
+1. **Tang quay quanh trục cố định $O$** (như `Thí dụ 2–5` Hình 11.2, hoặc tời vi sai `Bài 2.35`): Chọn góc quay của tang làm tọa độ suy rộng $q = \varphi$ ($\omega = \lvert\dot{\varphi}\rvert$). Vì $O$ cố định, vận tốc hai nhánh dây tỷ lệ thuận với bán kính tầng quấn dây:
+
+   $$v_1 = r\lvert\dot{\varphi}\rvert, \qquad v_2 = R\lvert\dot{\varphi}\rvert \implies \frac{v_1}{r} = \frac{v_2}{R} = \omega$$
+
+   Nếu hai nhánh dây từ $R$ và $r$ cùng vắt xuống nâng một ròng rọc động (tời vi sai `Bài 2.35` — `/figures/bai-tap/dong-luc-hoc/hinh_2_50.svg`, một tầng thu dây và một tầng nhả dây khi tang quay góc $\varphi$), vận tốc tâm ròng rọc động là $v_D = \frac{1}{2}(R - r)\lvert\dot{\varphi}\rvert$.
+
+2. **Con lăn hai tầng lăn không trượt trên mặt cố định bằng vành ngoài $R$** (như `Bài 6.26`, Đề `0002/2015` C5–8, `Đề 1` C1–8): Tâm vận tốc tức thời $I$ nằm tại điểm tiếp xúc của vành ngoài $R$ với nền cố định, nên $v_C = R\omega$. Khi đó vận tốc điểm dây rời khỏi tầng trong bán kính $r$ phụ thuộc vị trí nhả dây so với $I$:
+   - **Dây rời ở đỉnh tầng trong** (khác phía $I$ so với tâm $C$, khoảng cách đến $I$ bằng $R + r$):
+
+     $$v_{\text{dây}} = (R + r)\omega = \left(1 + \frac{r}{R}\right) v_C$$
+
+   - **Dây rời ở đáy tầng trong** (nằm giữa $C$ và $I$, khoảng cách đến $I$ bằng $R - r$):
+
+     $$v_{\text{dây}} = (R - r)\omega = \left(1 - \frac{r}{R}\right) v_C$$
+
+#### Mẫu 3: Con lăn vừa quay vừa quấn hoặc nhả dây trên mặt nghiêng
+
+<div class="figure-container">
+  <img src="/figures/bai-tap/dong-luc-hoc/hinh_6_29.svg" alt="Khối trụ tròn quấn dây chuyển động trên mặt phẳng nghiêng" class="figure-img" />
+  <p class="figure-caption">Hình 11.3: Khối trụ tròn quấn dây chuyển động dọc mặt phẳng nghiêng góc alpha (Hình 6-29 Sách Bài Tập Động Lực Học Chương 6)</p>
+</div>
+
+Trên mặt phẳng nghiêng góc $\alpha$, phải kiểm tra điểm nào có vận tốc bằng không trước khi viết liên hệ giữa $v_C$ và $\omega$:
+- **Trường hợp A — Đầu dây buộc cố định vào cọc trên dốc, dây quấn không trượt vào mép trên của trụ bán kính $R$** (mô hình `Bài 6.11` Hình 11.3): Do dây không dãn và đầu dây cố định, điểm tiếp tuyến $K$ giữa dây và mép trên trụ chính là tâm vận tốc tức thời ($v_K = 0$). Suy ra khối tâm $C$ đi xuống dốc với $v_C = R\omega$, còn điểm tiếp xúc $I$ giữa đáy trụ và mặt dốc **trượt xuống dốc** với vận tốc $v_I = 2R\omega = 2v_C \neq 0$ (lực ma sát tại $I$ là ma sát trượt động và sinh công âm).
+- **Trường hợp B — Con lăn lăn không trượt trên mặt dốc cố định, dây ở mép trên kéo qua ròng rọc nối vật treo** (mô hình Đề `19/06/2014` hoặc Chùm 3 Ngày 15): Điểm tiếp xúc mặt dốc $I$ có $v_I = 0$, khối tâm con lăn có $v_C = R\omega$, còn dây ở mép trên có vận tốc dọc dốc $v_{\text{dây}} = 2R\omega = 2v_C$.
+
+#### Mẫu 4: Thanh mảnh trượt trong hai rãnh vuông góc
+
+<div class="figure-container">
+  <img src="/figures/bai-tap/dong-luc-hoc/hinh_6_10.svg" alt="Thanh đồng chất AB tựa trên tường thẳng đứng và nền nằm ngang vuông góc" class="figure-img" />
+  <p class="figure-caption">Hình 11.4: Thanh đồng chất AB chiều dài l chuyển động có hai đầu tựa trên hai phương vuông góc (Hình 6-10 Sách Bài Tập Động Lực Học Chương 6)</p>
+</div>
+
+Xét thanh mảnh đồng chất $AB$ chiều dài $l$, khối lượng $m$, có đầu $A$ trượt dọc trục thẳng đứng $Oy$ và đầu $B$ trượt dọc trục nằm ngang $Ox$ vuông góc với $Oy$. Chọn góc nghiêng $q = \theta$ hợp bởi thanh $AB$ và trục $Ox$ làm tọa độ suy rộng ($\omega = \lvert\dot{\theta}\rvert$):
+- Tọa độ các điểm $A, B$ và khối tâm $G$ (trung điểm $AB$):
+
+  $$x_A = 0,\quad y_A = l\sin\theta;\qquad x_B = l\cos\theta,\quad y_B = 0$$
+
+  $$x_G = \frac{l}{2}\cos\theta,\qquad y_G = \frac{l}{2}\sin\theta$$
+
+- Đạo hàm theo thời gian $t$ thu được độ lớn vận tốc hai đầu trượt và khối tâm:
+
+  $$v_A = \lvert\dot{y}_A\rvert = l\lvert\cos\theta\rvert\cdot\lvert\dot{\theta}\rvert,\qquad v_B = \lvert\dot{x}_B\rvert = l\lvert\sin\theta\rvert\cdot\lvert\dot{\theta}\rvert$$
+
+  $$v_G^2 = \dot{x}_G^2 + \dot{y}_G^2 = \frac{l^2}{4}\left(\sin^2\theta + \cos^2\theta\right)\dot{\theta}^2 = \frac{l^2}{4}\dot{\theta}^2$$
+
+- Đối chiếu bằng tâm vận tốc tức thời $I$: giao điểm hai đường vuông góc với $\vec{v}_A$ và $\vec{v}_B$ là đỉnh $I(l\cos\theta, l\sin\theta)$ của hình chữ nhật $OBIA$. Suy ra $IA = l\lvert\cos\theta\rvert$, $IB = l\lvert\sin\theta\rvert$ và đường trung tuyến ứng với cạnh huyền tam giác vuông $IAB$ luôn có độ dài không đổi $IG = \frac{l}{2}$ với mọi $\theta$. Động năng thanh $AB$ bằng:
+
+  $$\begin{aligned}
+  T_{AB} &= \frac{1}{2} m v_G^2 + \frac{1}{2} J_G \dot{\theta}^2 = \frac{1}{2} J_I \dot{\theta}^2 \\
+         &= \frac{1}{2}\left(\frac{1}{12} m l^2 + m \frac{l^2}{4}\right)\dot{\theta}^2 = \frac{1}{6} m l^2 \dot{\theta}^2
+  \end{aligned}$$
+
+  Cần lưu ý: tính chất $J_I = \frac{1}{3}ml^2 = \text{const}$ chỉ nghiệm đúng khi hai phương trượt của $A$ và $B$ **vuông góc nhau** và con trượt ở $A, B$ có khối lượng không đáng kể. Nếu con trượt $B$ có khối lượng $m_B \neq 0$, phải cộng thêm $T_B = \frac{1}{2}m_B v_B^2 = \frac{1}{2}m_B l^2\sin^2\theta\,\dot{\theta}^2$ làm xuất hiện hệ số phụ thuộc góc $\theta$.
+
+#### Mẫu 5: Cơ hệ bánh răng–thanh răng và bánh răng hành tinh ăn khớp
+
+<div class="figure-container">
+  <img src="/figures/bai-tap/dong-luc-hoc/hinh_2_24.svg" alt="Cơ cấu bánh răng hành tinh ăn khớp không trượt trên bánh trung tâm cố định" class="figure-img" />
+  <p class="figure-caption">Hình 11.5: Cơ cấu tay quay OA và bánh răng 2 lăn không trượt trên bánh răng cố định 1 (Hình 2-24 Sách Bài Tập Động Lực Học Chương 2)</p>
+</div>
+
+Tại điểm ăn khớp $K$ giữa hai bánh răng hoặc giữa bánh răng và thanh răng, điều kiện truyền động không trượt đòi hỏi hai điểm tiếp xúc thuộc hai khâu có cùng vận tốc tuyệt đối ($\vec{v}_{K_1} = \vec{v}_{K_2}$):
+1. **Bánh răng tâm cố định $O$ (bán kính $R$) ăn khớp thanh răng tịnh tiến:**
+   Vận tốc điểm ăn khớp $K$ bằng vận tốc thanh răng $v_{\text{tr}}$, suy ra $v_{\text{tr}} = R\omega$.
+2. **Bánh răng chuyển động song phẳng (bán kính $R$) lăn không trượt giữa thanh răng dưới cố định và thanh răng trên tịnh tiến:**
+   Điểm ăn khớp dưới là tâm vận tốc tức thời $I$ ($v_I = 0$), tâm bánh răng có vận tốc $v_C = R\omega$, còn điểm ăn khớp trên cùng kéo thanh răng trên với vận tốc $v_{\text{tr trên}} = 2R\omega = 2v_C$.
+3. **Bánh răng hành tinh (`Thí dụ 2–14` Hình 11.5):**
+   Tay quay $OA$ dài $r_1 + r_2$ quay quanh $O$ với $\dot{\varphi} = \omega$ kéo tâm $A$ của bánh răng động 2 (bán kính $r_2$) với vận tốc $v_A = (r_1 + r_2)\omega$. Do bánh răng 1 (bán kính $r_1$) cố định, điểm ăn khớp $K$ là tâm vận tốc tức thời của bánh 2, cho phép suy ra ngay vận tốc góc tuyệt đối của bánh 2:
+
+   $$v_A = r_2 \omega_2 \implies \omega_2 = \frac{r_1 + r_2}{r_2}\omega = \left(1 + \frac{r_1}{r_2}\right)\omega$$
+
+---
+
+### 11.4. Bài toán mẫu kiểm chứng: Đề thi thật `1721` và `1722` (Câu 6, 7, 9)
+
+::: info Đề bài đối chiếu ([Đề `1721` & `1722` — Bài 3, Câu 6, 7, 9](/on-thi/de-thi-that-hcmut#de-1721))
+Bản lề cố định $A$ nối thanh mảnh đồng chất $AB$, khớp bản lề $B$ nối tiếp thanh mảnh đồng chất $BC$ (cùng khối lượng $m_1 = 5\text{ kg}$ và cùng chiều dài $AB = BC = l$). Đầu $C$ gắn vào tâm của đĩa tròn đặc đồng chất bán kính $R = 0{,}05\text{ m}$, khối lượng $m_2 = 10\text{ kg}$ lăn không trượt trên mặt phẳng ngang đi qua $A$. Gọi $\theta$ ($15^\circ < \theta < 60^\circ$) là góc nghiêng của thanh $AB$ so với phương ngang (chiều dương ngược chiều kim đồng hồ) và $\omega = \dot{\theta}$. Xác định:
+1. Vận tốc góc đại số $\bar{\omega}_1$ của thanh $BC$ và $\bar{\omega}_2$ của đĩa $C$ theo $\omega$.
+2. Độ lớn vận tốc khối tâm $G$ của thanh $BC$.
+3. Biểu thức động năng toàn cơ hệ $T(\theta, \omega)$ với $l = 0{,}15\text{ m}$ (Đề `1721`) và $l = 0{,}20\text{ m}$ (Đề `1722`).
+:::
+
+**Giải tích từng bước:**
+
+1. **Thiết lập liên hệ động học theo tọa độ suy rộng $q = \theta$:**
+   Chọn hệ trục $Ax$ nằm ngang hướng sang phải qua $C$, $Ay$ thẳng đứng hướng lên. Do tam giác $ABC$ cân tại $B$ ($AB = BC = l$), góc đáy tại $C$ cũng bằng $\theta$. Khi thanh $AB$ quay ngược chiều kim đồng hồ góc $+\theta$ ($\dot{\theta} = \omega > 0$), thanh $BC$ nghiêng góc $-\theta$ nên quay cùng chiều kim đồng hồ với vận tốc góc đại số:
+
+   $$\bar{\omega}_1 = -\omega$$
+
+   Hoành độ tâm đĩa $C$ là $x_C = 2l\cos\theta \implies \dot{x}_C = -2l\sin\theta \cdot \omega$. Khi $\theta$ tăng ($\omega > 0$), tâm $C$ tiến sang trái với tốc độ $\lvert\dot{x}_C\rvert = 2l\omega\sin\theta$. Vì đĩa $C$ lăn không trượt trên sàn ngang cố định dưới tâm $C$, đĩa $C$ quay **ngược chiều kim đồng hồ** ($\bar{\omega}_2 > 0$):
+
+   $$\begin{aligned}
+   \bar{\omega}_2 &= -\frac{\dot{x}_C}{R} = \frac{2l\sin\theta}{R}\omega \\
+                  &= \begin{cases}
+                  6\omega\sin\theta & \text{(Đề 1721: } l = 0{,}15\text{ m)} \\
+                  8\omega\sin\theta & \text{(Đề 1722: } l = 0{,}20\text{ m)}
+                  \end{cases}
+   \end{aligned}$$
+
+   Kết quả khớp đáp án **`6c`** (Đề `1721`) và **`6a`** (Đề `1722`).
+
+2. **Vận tốc khối tâm $G$ của thanh song phẳng $BC$:**
+   Tọa độ trung điểm $G$ của thanh $BC$ là $x_G = l\cos\theta + \frac{l}{2}\cos\theta = \frac{3}{2}l\cos\theta$ và $y_G = \frac{l}{2}\sin\theta$. Đạo hàm theo $t$:
+
+   $$\dot{x}_G = -\frac{3}{2}l\omega\sin\theta, \qquad \dot{y}_G = \frac{1}{2}l\omega\cos\theta$$
+
+   $$\begin{aligned}
+   v_G^2 &= \dot{x}_G^2 + \dot{y}_G^2 = \frac{l^2\omega^2}{4}\left(9\sin^2\theta + \cos^2\theta\right) \\
+         &= \frac{l^2\omega^2}{4}\left(1 + 8\sin^2\theta\right) = \frac{l^2\omega^2}{4}\left(5 - 4\cos 2\theta\right)
+   \end{aligned}$$
+
+   Khai căn hai biểu thức tương đương lượng giác trên cho $v_G = \frac{l}{2}\omega\sqrt{1 + 8\sin^2\theta} = \frac{l}{2}\omega\sqrt{5 - 4\cos 2\theta}$, khớp đồng thời hai phương án của Câu 7 (`7e` ở Đề `1721` với $\frac{l}{2} = 0{,}075\text{ m}$, và `7d` ở Đề `1722` với $\frac{l}{2} = 0{,}10\text{ m}$).
+
+3. **Tổng hợp động năng toàn cơ hệ $T = T_{AB} + T_{BC} + T_C$:**
+   - Thanh $AB$ quay quanh $A$ cố định: $T_{AB} = \frac{1}{6}m_1 l^2\omega^2$.
+   - Thanh $BC$ chuyển động song phẳng (Định lý König với $J_G = \frac{1}{12}m_1 l^2$):
+
+     $$\begin{aligned}
+     T_{BC} &= \frac{1}{2}m_1 v_G^2 + \frac{1}{2}\left(\frac{1}{12}m_1 l^2\right)\omega^2 \\
+            &= m_1 l^2\omega^2\left(\frac{5 - 4\cos 2\theta}{8} + \frac{1}{24}\right) = m_1 l^2\omega^2\left(\frac{2}{3} - \frac{1}{2}\cos 2\theta\right)
+     \end{aligned}$$
+
+   - Đĩa tròn đặc $C$ lăn không trượt trên sàn ngang ($m_2 = 2m_1 = 10\text{ kg}$):
+
+     $$\begin{aligned}
+     T_C &= \frac{3}{4}m_2 v_C^2 = \frac{3}{4}(2m_1)\left(4l^2\sin^2\theta\cdot\omega^2\right) \\
+         &= 6m_1 l^2\left(\frac{1 - \cos 2\theta}{2}\right)\omega^2 = 3m_1 l^2(1 - \cos 2\theta)\omega^2
+     \end{aligned}$$
+
+   - Cộng ba thành phần với $m_1 = 5\text{ kg}$:
+
+     $$\begin{aligned}
+     T(\theta, \omega) &= m_1 l^2\left[\left(\frac{1}{6} + \frac{2}{3} + 3\right) - \left(\frac{1}{2} + 3\right)\cos 2\theta\right]\omega^2 \\
+                       &= 5l^2\left(\frac{23}{6} - \frac{7}{2}\cos 2\theta\right)\omega^2
+     \end{aligned}$$
+
+   Thay $l = 0{,}15\text{ m}$ được $5l^2 = 0{,}1125$ (Đề `1721` — đáp án **`9d`**); thay $l = 0{,}20\text{ m}$ được $5l^2 = 0{,}2$ (Đề `1722` — đáp án **`9d`**).
+
+---
+
+## Ngày 12: Công Nguyên Tố, Công Hữu Hạn, Thế Năng & Phân Tích Lỗi Sai Lực Thế {#ngay-12}
+
+### 12.1. Chứng minh biểu thức công của trọng lực và ngẫu lực ngoại lực
+
+Công nguyên tố của lực $\vec{F}$ đặt tại điểm $M$ có vectơ định vị $\vec{r}$ và vận tốc $\vec{v} = \frac{d\vec{r}}{dt}$ trong vi phân thời gian $dt$ là:
+
+$$d'A = \vec{F}\cdot d\vec{r} = \vec{F}\cdot\vec{v}\,dt = F_x\,dx + F_y\,dy + F_z\,dz$$
+
+*(Ký hiệu $d'A$ nhấn mạnh công nguyên tố nói chung là dạng vi phân không toàn phần đối với các lực không thế).* Trên cung quỹ đạo hữu hạn từ vị trí đầu $M_1$ đến vị trí cuối $M_2$, công hữu hạn là tích phân đường loại hai: $A_{12} = \int_{\widehat{M_1 M_2}} \vec{F}\cdot d\vec{r}$.
+
+#### a) Công của trọng lực đối với chất điểm và cơ hệ
+
+<div class="figure-container">
+  <img src="/figures/dong-luc-hoc/hinh_3_15.svg" alt="Chất điểm chịu tác dụng trọng lực di chuyển trên đường cong không gian" class="figure-img" />
+  <p class="figure-caption">Hình 12.1: Chất điểm M chịu tác dụng của trọng lực P di chuyển dọc đường cong từ M1 đến M2 (Hình 3-15 Giáo trình Động Lực Học Chương 3)</p>
+</div>
+
+Chọn hệ trục Đề-các $Oxyz$ với trục $Oz$ hướng thẳng đứng lên trên. Trọng lực tác dụng lên phần tử $M_k$ khối lượng $m_k$ có hình chiếu $P_{kx} = 0$, $P_{ky} = 0$, $P_{kz} = -m_k g$. Khi toàn cơ hệ (tổng khối lượng $M = \sum_{k=1}^{N} m_k$, cao độ khối tâm $z_C = \frac{1}{M}\sum_{k=1}^{N} m_k z_k$) dịch chuyển từ vị trí $(1)$ sang vị trí $(2)$:
+
+$$\begin{aligned}
+A_P &= \sum_{k=1}^{N} \int_{z_{k1}}^{z_{k2}} (-m_k g)\,dz_k \\
+    &= -g\left(\sum_{k=1}^{N} m_k z_{k2} - \sum_{k=1}^{N} m_k z_{k1}\right) \\
+    &= -M g \left(z_{C2} - z_{C1}\right) = \pm M g \left\lvert\Delta h_C\right\rvert
+\end{aligned}$$
+
+Công của hệ trọng lực không phụ thuộc hình dạng quỹ đạo của từng chất điểm mà chỉ phụ thuộc hiệu cao độ vị trí đầu và cuối của khối tâm $C$: dương ($+$) khi khối tâm hạ thấp ($z_{C2} < z_{C1}$), âm ($-$) khi khối tâm nâng cao ($z_{C2} > z_{C1}$), và bằng $0$ khi khối tâm dịch chuyển ngang ($z_{C2} = z_{C1}$).
+
+#### b) Công của ngẫu lực ngoại lực tác dụng lên vật rắn
+
+<div class="figure-container">
+  <img src="/figures/bai-tap/dong-luc-hoc/hinh_2_15.svg" alt="Ngẫu lực có vectơ mômen M tác dụng lên vật rắn quay quanh trục" class="figure-img" />
+  <p class="figure-caption">Hình 12.2: Vật rắn chịu tác dụng ngẫu lực có vectơ mômen M (Hình 2-15 Sách Bài Tập Động Lực Học Chương 2)</p>
+</div>
+
+Xét vật rắn chuyển động song phẳng (hoặc quay quanh trục cố định $Oz$) với vectơ vận tốc góc $\vec{\omega} = \dot{\varphi}\,\vec{k}$, chịu tác dụng một ngẫu lực gồm hai lực song song ngược chiều $\vec{F}_A = \vec{F}$ đặt tại $A$ và $\vec{F}_B = -\vec{F}$ đặt tại $B$ nằm trong mặt phẳng chuyển động. Thay $\vec{v}_A = \vec{v}_B + \vec{\omega}\times\overrightarrow{BA}$ vào tổng công nguyên tố của cặp lực:
+
+$$\begin{aligned}
+d'A_M &= \vec{F}\cdot\vec{v}_A\,dt + (-\vec{F})\cdot\vec{v}_B\,dt \\
+      &= \vec{F}\cdot\left(\vec{\omega}\times\overrightarrow{BA}\right)dt = \left(\overrightarrow{BA}\times\vec{F}\right)\cdot\vec{\omega}\,dt \\
+      &= \vec{M}\cdot\vec{\omega}\,dt = M_z\,d\varphi
+\end{aligned}$$
+
+Lấy tích phân từ góc định vị đầu $\varphi_1$ đến góc cuối $\varphi_2$:
+
+$$A_M = \int_{\varphi_1}^{\varphi_2} M_z(\varphi)\,d\varphi$$
+
+Trong trường hợp mômen đại số $M_z = \text{const}$, ta có $A_M = M_z(\varphi_2 - \varphi_1)$: công mang dấu dương nếu chiều tác dụng của ngẫu lực trùng với chiều góc quay thực tế từ $\varphi_1$ đến $\varphi_2$, và mang dấu âm nếu ngược chiều.
+
+---
+
+### 12.2. Công của lực đàn hồi lò xo khi $\Delta l_0 \neq 0$ & Chứng minh sai lầm toán học phổ biến
+
+<div class="figure-container">
+  <img src="/figures/dong-luc-hoc/hinh_3_22.svg" alt="Độ biến dạng của lò xo tại vị trí cân bằng tĩnh và vị trí bất kỳ" class="figure-img" />
+  <p class="figure-caption">Hình 12.3: Khảo sát độ biến dạng của lò xo so với trạng thái tự nhiên khi có biến dạng ban đầu khác không (Hình 3-22 Giáo trình Động Lực Học Chương 3)</p>
+</div>
+
+Xét lò xo đàn hồi tuyến tính có độ cứng $k$ ($[\text{N/m}]$) và chiều dài tự nhiên (khi chưa chịu lực) là $l_{\text{tn}}$. Tại vị trí bất kỳ có chiều dài $l$, đặt biến số $u = l - l_{\text{tn}}$ là **độ biến dạng đại số tính từ chiều dài tự nhiên** ($u > 0$ khi dãn, $u < 0$ khi nén).
+
+Theo định luật Hooke, hình chiếu lực đàn hồi của lò xo lên chiều tăng của $u$ là $F_{\text{lx}}(u) = -k u$, nên công nguyên tố của lực đàn hồi trong biến thiên $du = dl$ luôn bằng $d'A_{\text{lx}} = -k u\,du$. Khi lò xo chuyển từ trạng thái đầu $(1)$ có độ biến dạng $u_1 = \Delta l_1$ sang trạng thái cuối $(2)$ có độ biến dạng $u_2 = \Delta l_2$:
+
+$$\begin{aligned}
+A_{\text{lx}} &= \int_{\Delta l_1}^{\Delta l_2} (-k u)\,du = -\frac{1}{2} k \left[u^2\right]_{\Delta l_1}^{\Delta l_2} \\
+              &= -\frac{1}{2} k \left(\Delta l_2^2 - \Delta l_1^2\right) = \frac{1}{2} k \left(\Delta l_1^2 - \Delta l_2^2\right)
+\end{aligned}$$
+
+::: danger Chứng minh giải tích vì sao công thức $-\frac{1}{2}k(\Delta l_2 - \Delta l_1)^2$ là SAI khi $\Delta l_1 = \Delta l_0 \neq 0$
+Giả sử tại vị trí xuất phát $(1)$, lò xo đã có biến dạng ban đầu $\Delta l_1 = \Delta l_0 \neq 0$, và trong quá trình chuyển động đầu lò xo dãn thêm một đoạn $s = \Delta l_2 - \Delta l_0 \neq 0$ (tức $\Delta l_2 = \Delta l_0 + s$).
+- **Tính theo tích phân định luật Hooke chính xác:**
+  $$\begin{aligned}
+  A_{\text{lx}}^{\text{đúng}} &= -\frac{1}{2}k\left[(\Delta l_0 + s)^2 - \Delta l_0^2\right] \\
+                               &= -k \Delta l_0 \cdot s - \frac{1}{2} k s^2
+  \end{aligned}$$
+- **Tính theo công thức ngộ nhận** $A_{\text{lx}}^{\text{sai}} = -\frac{1}{2}k(\Delta l_2 - \Delta l_1)^2$ $= -\frac{1}{2}k s^2$:
+  Hiệu số giữa biểu thức đúng và biểu thức sai là:
+  $$\begin{aligned}
+  \Delta A_{\text{sai số}} &= A_{\text{lx}}^{\text{đúng}} - A_{\text{lx}}^{\text{sai}} \\
+                           &= -k \Delta l_0 \cdot s \neq 0 \quad (\forall\,\Delta l_0 \neq 0,\; s \neq 0)
+  \end{aligned}$$
+
+**Nguyên nhân toán học và cơ học:** Hàm lực đàn hồi $F_{\text{lx}}(u) = -ku$ là hàm bậc nhất đi qua gốc $u = 0$ chứ không bằng $0$ tại $u = \Delta l_0$. Tích phân xác định $\int_{\Delta l_1}^{\Delta l_2} (-ku)\,du$ biểu thị diện tích đại số của **hình thang** giới hạn bởi hai tung độ $-k\Delta l_1$ và $-k\Delta l_2$:
+
+$$-\frac{k\Delta l_1 + k\Delta l_2}{2}(\Delta l_2 - \Delta l_1) = -\frac{1}{2}k\left(\Delta l_2^2 - \Delta l_1^2\right)$$
+
+Viết nhầm $-\frac{1}{2}k(\Delta l_2 - \Delta l_1)^2$ đồng nghĩa với việc tự ý gán lực căng đầu $F_0 = -k\Delta l_0 = 0$ và đánh mất toàn bộ công của thành phần lực căng tĩnh ban đầu $-k\Delta l_0 \cdot s$. Biểu thức hiệu bình phương $\frac{1}{2}k(\Delta l_1^2 - \Delta l_2^2)$ chỉ rút gọn thành $-\frac{1}{2}k\Delta l_2^2$ trong trường hợp duy nhất $\Delta l_1 = 0$ (vị trí đầu trùng với trạng thái lò xo tự nhiên).
+:::
+
+---
+
+### 12.3. Phân biệt công của lực ma sát trượt động và lực ma sát nghỉ khi lăn không trượt
+
+<div class="figure-container">
+  <img src="/figures/bai-tap/dong-luc-hoc/hinh_2_25.svg" alt="Tời kéo vật A trượt lên mặt phẳng nghiêng có hệ số ma sát trượt f" class="figure-img" />
+  <p class="figure-caption">Hình 12.4: Vật A trượt trên mặt phẳng nghiêng góc alpha có hệ số ma sát trượt động f (Hình 2-25 Sách Bài Tập Động Lực Học Chương 2)</p>
+</div>
+
+Trong bài toán cơ hệ nhiều vật, sai lầm thường gặp là nhầm lẫn khả năng sinh công giữa tiếp xúc trượt và tiếp xúc lăn không trượt:
+
+1. **Ma sát trượt động (khi vận tốc trượt tương đối tại tiếp điểm $\vec{v}_{\text{tr}} \neq \vec{0}$):**
+   Theo định luật Coulomb về ma sát trượt động, lực ma sát trượt tác dụng lên vật có độ lớn $F_{\text{ms}} = f N$ và luôn hướng ngược chiều vectơ vận tốc trượt tương đối $\vec{v}_{\text{tr}}$ ($\vec{F}_{\text{ms}} = -f N \frac{\vec{v}_{\text{tr}}}{\lvert\vec{v}_{\text{tr}}\rvert}$). Công nguyên tố trên nền cố định bằng:
+
+   $$\begin{aligned}
+   d'A_{\text{ms}} &= \vec{F}_{\text{ms}} \cdot \vec{v}_{\text{tr}}\,dt \\
+                   &= -f N \left\lvert\vec{v}_{\text{tr}}\right\rvert dt = -f N\,ds < 0
+   \end{aligned}$$
+
+   Nếu áp lực pháp tuyến $N$ không đổi dọc quãng đường trượt thực tế $s$ (ví dụ vật $A$ khối lượng $m$ trượt dọc mặt nghiêng cố định góc $\alpha$ ở Hình 12.4 có $N = mg\cos\alpha = \text{const}$), công hữu hạn là:
+
+   $$A_{\text{ms}} = -f N \cdot s = -f m g \cos\alpha \cdot s$$
+
+   Lực ma sát trượt là **lực tiêu tán (không có thế)**: công phụ thuộc vào tổng chiều dài đường đi $s$ chứ không chỉ phụ thuộc vị trí đầu–cuối.
+
+2. **Ma sát nghỉ tại điểm tiếp xúc $I$ của vật lăn không trượt:**
+
+<div class="figure-container">
+  <img src="/figures/dong-luc-hoc/hinh_3_18.svg" alt="Rơmoóc có hai bánh xe lăn không trượt trên mặt đường nằm ngang" class="figure-img" />
+  <p class="figure-caption">Hình 12.5: Các bánh xe lăn không trượt trên nền đường cố định có vận tốc điểm tiếp xúc bằng không (Hình 3-18 Giáo trình Động Lực Học Chương 3)</p>
+</div>
+
+   Khi bánh xe hoặc con lăn lăn không trượt trên mặt tựa cố định (Hình 12.5), bản thân lực ma sát nghỉ $\vec{F}_{\text{msn}}$ tại điểm tiếp xúc $I$ nói chung **khác không** ($\vec{F}_{\text{msn}} \neq \vec{0}$, chính lực này tạo mômen làm bánh xe quay có gia tốc góc). Tuy nhiên, điều kiện động học lăn không trượt bắt buộc điểm tiếp xúc $I$ thuộc vật lăn là tâm vận tốc tức thời ($\vec{v}_I = \vec{0}$) tại mọi thời điểm $t$. Do đó công nguyên tố và công hữu hạn của $\vec{F}_{\text{msn}}$ triệt tiêu đồng nhất:
+
+   $$d'A_{\text{msn}} = \vec{F}_{\text{msn}} \cdot \vec{v}_I\,dt = \vec{F}_{\text{msn}} \cdot \vec{0}\,dt = 0 \implies A_{\text{msn}} = 0$$
+
+   *Mở rộng cho mặt tựa chuyển động:* Nếu con lăn lăn không trượt trên mặt nghiêng của một lăng trụ đang chuyển động với vận tốc $\vec{v}_{\text{lt}}$ (như [Đề `1721` Bài 4](/on-thi/de-thi-that-hcmut#de-1721)), điều kiện không trượt cho $\vec{v}_I = \vec{v}_{\text{lt}}$. Khi xét toàn cơ hệ gồm cả con lăn và lăng trụ, cặp nội lực ma sát nghỉ trực đối $(\vec{F}_{\text{msn}}, -\vec{F}_{\text{msn}})$ có tổng công nguyên tố bằng $\vec{F}_{\text{msn}}\cdot\vec{v}_I\,dt - \vec{F}_{\text{msn}}\cdot\vec{v}_{\text{lt}}\,dt$, rút gọn thành $\vec{F}_{\text{msn}}\cdot(\vec{v}_I - \vec{v}_{\text{lt}})dt = 0$.
+
+---
+
+### 12.4. Hàm thế năng $\Pi(q)$ và Điều kiện biên kiểm toán $q = q_0 \implies \sum A(q_0) = 0$
+
+#### a) Thế năng và tích phân năng lượng trong trường lực thế
+
+Đối với hệ lực thế (trọng lực, lực đàn hồi lò xo thẳng, ngẫu lực đàn hồi lò xo xoắn $M = -c\varphi$), công nguyên tố là vi phân toàn phần âm của hàm thế năng $\Pi(q)$: $d'A^{(c)} = -d\Pi(q)$. Khi cơ hệ chuyển từ vị trí đầu $q_0$ đến vị trí bất kỳ $q$, tổng công các lực thế bằng độ giảm thế năng:
+
+$$A_{q_0 \to q}^{(c)} = \Pi(q_0) - \Pi(q)$$
+
+Nếu mọi lực sinh công trên cơ hệ đều là lực thế ($\sum A^{\text{không thế}} = 0$), Định lý biến thiên động năng $T(q, \dot{q}) - T(q_0, \dot{q}_0) = \Pi(q_0) - \Pi(q)$ dẫn trực tiếp đến **Định luật bảo toàn cơ năng**:
+
+$$E = T(q, \dot{q}) + \Pi(q) = T(q_0, \dot{q}_0) + \Pi(q_0) = \text{const}$$
+
+#### b) Tính chất biên bảo toàn $q = q_0 \implies \sum A(q_0) = 0$ để tự kiểm toán tổng công
+
+Đối với cơ hệ 1 bậc tự do chuyển động đơn điệu từ cấu hình ban đầu $q = q_0$ đến cấu hình $q$, tổng công hữu hạn của tất cả các lực hoạt động được xác định bởi tích phân xác định của lực suy rộng $Q(u)$:
+
+$$\begin{aligned}
+\sum A(q) &= \int_{q_0}^{q} Q(u)\,du \\
+          &= \left[\Pi(q_0) - \Pi(q)\right] + \int_{q_0}^{q} Q_{\text{không thế}}(u)\,du
+\end{aligned}$$
+
+Theo tính chất giải tích hiển nhiên của tích phân xác định khi cận trên trùng với cận dưới ($\int_{q_0}^{q_0} Q(u)\,du \equiv 0$), mọi biểu thức giải tích đúng của tổng công $\sum A(q)$ bắt buộc thỏa mãn **điều kiện biên kiểm toán**:
+
+$$q = q_0 \implies \sum A(q_0) = 0$$
+
+Trong phòng thi, nếu biểu thức $\sum A(q)$ vừa thiết lập không triệt tiêu khi thay $q = q_0$, chắc chắn đã xảy ra một trong ba lỗi đại số: (1) bỏ sót hằng số thế năng đầu $\frac{1}{2}k\Delta l_0^2$ hoặc $\pm mg y_{C0}$; (2) khai triển thiếu số hạng chéo $2ab$ trong bình phương biến dạng lò xo; hoặc (3) ngược dấu giới hạn tích phân.
+
+::: info Kiểm chứng thực tế trên Đề `1721` Câu 8 & Đề `0001/2016` Câu 4
+1. **[Đề `1721` Câu 8](/on-thi/de-thi-that-hcmut#de-1721)** ($m_1 = 5\text{ kg}$, $l = 0{,}15\text{ m}$, $K = 500\text{ N/m}$ không biến dạng tại $\theta = 60^\circ$, đi từ $\theta_0 = 30^\circ$ đến $\theta < 60^\circ$, $g = 10\text{ m/s}^2$):
+   - Chiều dài tự nhiên lò xo: $l_{\text{tn}} = 2l\cos 60^\circ = l$. Biến dạng tại góc $\theta$: $\Delta l(\theta) = l(2\cos\theta - 1)$, tại $\theta_0 = 30^\circ$: $\Delta l_0 = l(\sqrt{3} - 1) \neq 0$.
+   - Tổng công trọng lực hai thanh và lực đàn hồi lò xo:
+     $$\begin{aligned}
+     \sum A(\theta) &= -2m_1 g\frac{l}{2}(\sin\theta - \sin 30^\circ) + \frac{1}{2}K\left[\Delta l_0^2 - \Delta l(\theta)^2\right] \\
+                    &= -7{,}5(\sin\theta - 0{,}5) + 5{,}625\left[(3 - 2\sqrt{3}) + 4\cos\theta - 4\cos^2\theta\right] \\
+                    &\approx 1{,}14 - 7{,}5\sin\theta + 22{,}5\cos\theta - 22{,}5\cos^2\theta\text{ (J)}
+     \end{aligned}$$
+   - **Kiểm toán biên tại $\theta = \theta_0 = 30^\circ$:** Thay $\sin 30^\circ = 0{,}5$ và $\cos 30^\circ = \frac{\sqrt{3}}{2}$ vào phương án **`8b`** cho $1{,}14 - 3{,}75 + 19{,}4856 - 16{,}875 \approx 0\text{ J}$, trong khi các phương án nhiễu `8c, 8d, 8e` cho giá trị khác không ($+2{,}66\text{ J}$, $+12{,}66\text{ J}$, $+7{,}50\text{ J}$) nên bị bác bỏ ngay về mặt toán học.
+2. **[Đề `0001/2016` Câu 4](/on-thi/de-thi-that-hcmut#de-2016)** (thanh $AB$ dài $l = 0{,}4\text{ m}$, $m = 10\text{ kg}$, lò xo $K = 800\text{ N/m}$ tự nhiên tại $\theta = 0^\circ$, đi từ $\theta_0 = 30^\circ$ về $\theta < 30^\circ$, $g = 9{,}81\text{ m/s}^2$):
+   $$\begin{aligned}
+   \sum A(\theta) &= \frac{1}{2}(800)\left(0{,}4^2\sin^2 30^\circ - 0{,}4^2\sin^2\theta\right) \\
+                  &\quad - 10(9{,}81)(0{,}2)(\sin 30^\circ - \sin\theta) \\
+                  &= 6{,}19 + 19{,}62\sin\theta - 64\sin^2\theta\text{ (J)}
+   \end{aligned}$$
+   Thay $\theta = 30^\circ$: $\sum A(30^\circ) = 6{,}19 + 9{,}81 - 16 = 0\text{ J}$ (xác nhận phương án **`4b`**; phương án `4a` ghi hằng số $1{,}14$ cho $\sum A(30^\circ) = -5{,}05\text{ J} \neq 0$).
+:::
+
+---
+
+## Ngày 13: Hai Dạng Định Lý Động Năng ($T - T_0 = \sum A$ và $\frac{dT}{dt} = \sum N$) Thực Chiến {#ngay-13}
+
+### 13.1. Cơ sở giải tích và phạm vi áp dụng của hai dạng Định lý Động năng
+
+Xuất phát từ phương trình Newton cho chất điểm thứ $k$ của cơ hệ: $m_k \frac{d\vec{v}_k}{dt} = \vec{F}_k^e + \vec{F}_k^i$. Nhân vô hướng hai vế với $\vec{v}_k$ và lấy tổng theo $k = \overline{1, N}$, chú ý đạo hàm $\frac{d}{dt}\left(\frac{1}{2}m_k v_k^2\right)$ bằng $m_k \vec{v}_k \cdot \frac{d\vec{v}_k}{dt}$, ta thu được hai dạng tương đương của Định lý biến thiên động năng:
+
+1. **Dạng đạo hàm theo thời gian (dạng công suất — tìm gia tốc $a, \varepsilon$ và PTVP chuyển động):**
+
+   $$\frac{dT}{dt} = \sum N^e + \sum N^i = \sum_{k} \vec{F}_k \cdot \vec{v}_k + \sum_{j} \vec{M}_j \cdot \vec{\omega}_j$$
+
+   Đối với cơ hệ gồm các vật rắn tuyệt đối nối với nhau bằng liên kết lý tưởng dừng (dây không dãn, khớp bản lề trơn, ăn khớp không trượt), tổng công suất của các phản lực liên kết và nội lực cứng bằng không; chỉ còn công suất của ngoại lực hoạt động, lực đàn hồi lò xo nội và lực ma sát trượt động (hoặc lực cản nhớt $F_c = -\beta v$).
+
+2. **Dạng tích phân hữu hạn (tìm vận tốc $v, \omega$ theo vị trí $q$):**
+   Tích phân hai vế phương trình vi phân $dT = \sum d'A^e + \sum d'A^i$ từ thời điểm đầu $t_0$ (cấu hình $q_0$, động năng $T_0$) đến thời điểm $t$ (cấu hình $q$, động năng $T$):
+
+   $$T - T_0 = \sum A_{q_0 \to q}^e + \sum A_{q_0 \to q}^i$$
+
+   *Lưu ý phân giới hạn phương pháp:* Dạng hữu hạn chỉ áp dụng trực tiếp khi tính được tích phân công theo tọa độ $q$. Nếu hệ chịu lực cản phụ thuộc vận tốc (chẳng hạn mômen cản $M_c = -\beta\omega$ ở `Thí dụ 2–15` hoặc lực cản môi trường $F_c = -\beta v$ ở `Thí dụ 3–6`), không thể tính $\int \beta v\,ds$ trước khi biết $v(s)$; khi đó bắt buộc viết dạng đạo hàm $\frac{dT}{dt} = \sum N$ để lập phương trình vi phân rồi phân ly biến số tích phân.
+
+---
+
+### 13.2. Kỹ thuật chuẩn hóa $T = \frac{1}{2}M_{\text{td}}(q)\dot{q}^2$ và đạo hàm chứa số hạng $\dot{q}^3$
+
+Xét cơ hệ dừng 1 bậc tự do có vị trí xác định bởi tọa độ suy rộng $q(t)$. Mọi vận tốc khối tâm và vận tốc góc trong hệ đều biểu diễn tuyến tính thuần nhất qua $\dot{q}$, do đó động năng toàn hệ luôn đưa được về dạng chuẩn tắc:
+
+$$T(q, \dot{q}) = \frac{1}{2} M_{\text{td}}(q)\,\dot{q}^2$$
+
+trong đó $M_{\text{td}}(q) > 0$ là **khối lượng tương đương (thu gọn)** nếu $q$ có thứ nguyên độ dài ($\text{kg}$), hoặc **mômen quán tính tương đương (thu gọn)** nếu $q$ là góc quay ($\text{kg}\cdot\text{m}^2$).
+
+Khi lấy đạo hàm toàn phần của $T(q(t), \dot{q}(t))$ theo thời gian $t$, cả hai thừa số $M_{\text{td}}(q)$ và $\dot{q}^2$ đều phụ thuộc $t$ thông qua $q(t)$. Áp dụng quy tắc đạo hàm hàm hợp và đạo hàm của tích:
+
+$$\begin{aligned}
+\frac{dT}{dt} &= \frac{1}{2}\frac{d M_{\text{td}}(q)}{dt}\,\dot{q}^2 + \frac{1}{2} M_{\text{td}}(q)\cdot 2\dot{q}\ddot{q} \\
+              &= M_{\text{td}}(q)\,\ddot{q}\dot{q} + \frac{1}{2}\frac{d M_{\text{td}}(q)}{dq}\,\dot{q}^3
+\end{aligned}$$
+
+Mặt khác, tổng công suất mọi lực tác dụng lên hệ có dạng $\sum N = Q(q, \dot{q})\,\dot{q}$ (nếu tính được tổng công hữu hạn $\sum A(q)$ chỉ phụ thuộc vị trí thì $Q(q) = \frac{d(\sum A)}{dq}$). Cân bằng $\frac{dT}{dt} = \sum N$ và giản ước nhân tử chung $\dot{q} \neq 0$ khi cơ hệ đang chuyển động:
+
+$$M_{\text{td}}(q)\,\ddot{q} + \frac{1}{2}\frac{d M_{\text{td}}(q)}{dq}\,\dot{q}^2 = Q(q, \dot{q})$$
+
+::: danger Cảnh báo lỗi bỏ sót số hạng $\frac{1}{2}\frac{dM_{\text{td}}}{dq}\dot{q}^3$ khi $M_{\text{td}}$ phụ thuộc tọa độ $q$
+- **Khi $M_{\text{td}} = \text{const}$** (như hệ ròng rọc–tời, con lăn trên mặt phẳng, con lắc vật lý, hoặc thanh đơn độc trượt trong hai rãnh vuông góc không gắn con trượt nặng): $\frac{dM_{\text{td}}}{dq} = 0$, phương trình rút gọn thành $M_{\text{td}}\ddot{q} = Q(q, \dot{q})$.
+- **Khi $M_{\text{td}}(q)$ biến thiên theo $q$** (như cơ cấu culít, cơ cấu tay quay–thanh truyền, hệ hai thanh nối con trượt hoặc đĩa lăn ở Đề `1721`/`1722` Bài 3): $\frac{dM_{\text{td}}}{dq} \neq 0$. Nếu tự ý đưa $M_{\text{td}}(q)$ ra ngoài dấu đạo hàm như hằng số sẽ làm mất hoàn toàn số hạng $\frac{1}{2}\frac{dM_{\text{td}}}{dq}\dot{q}^2$. Số hạng này chỉ bằng $0$ tại đúng thời điểm khởi hành từ trạng thái nghỉ ($\dot{q}_0 = 0$), và khác không tại mọi vị trí đang chuyển động ($\dot{q} \neq 0$).
 :::
 
 <div class="figure-container">
-<svg viewBox="0 0 760 275" style="width: 100%; max-width: 720px; height: auto; display: block; margin: 0 auto;" role="img" aria-label="Sơ đồ cơ hệ Đề 1821 Bài 2 và Đề 1721/1722 Bài 3">
-  <rect x="8" y="8" width="362" height="258" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
-  <rect x="390" y="8" width="362" height="258" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
-  <text x="189" y="30" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="700" fill="#0369a1">Đề 1821 — Bài 2 (Câu 5–8)</text>
-  <text x="571" y="30" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="700" fill="#0f766e">Đề 1721 / 1722 — Bài 3 (Câu 6–9)</text>
-
-  <!-- Left panel: De 1821 Bai 2 -->
-  <line x1="95" y1="54" x2="145" y2="54" stroke="#475569" stroke-width="2" />
-  <line x1="103" y1="54" x2="111" y2="46" stroke="#64748b" stroke-width="1.2" />
-  <line x1="115" y1="54" x2="123" y2="46" stroke="#64748b" stroke-width="1.2" />
-  <line x1="127" y1="54" x2="135" y2="46" stroke="#64748b" stroke-width="1.2" />
-  <!-- Axes Ox right, Oy down -->
-  <line x1="120" y1="68" x2="270" y2="68" stroke="#64748b" stroke-width="1.4" stroke-dasharray="4,3" />
-  <polygon points="268,64 276,68 268,72" fill="#64748b" />
-  <text x="282" y="72" font-family="sans-serif" font-size="12" font-weight="700" fill="#334155">x</text>
-  <line x1="120" y1="68" x2="120" y2="212" stroke="#64748b" stroke-width="1.4" stroke-dasharray="4,3" />
-  <polygon points="116,210 120,218 124,210" fill="#64748b" />
-  <text x="106" y="216" font-family="sans-serif" font-size="12" font-weight="700" fill="#334155">y</text>
-  <!-- Rod O-A-G at ~40 deg -->
-  <line x1="120" y1="68" x2="180" y2="126" stroke="#0f172a" stroke-width="3.5" />
-  <!-- Heavy body around G -->
-  <ellipse cx="236" cy="180" rx="44" ry="24" transform="rotate(44 236 180)" fill="#bae6fd" stroke="#0284c7" stroke-width="2" />
-  <line x1="180" y1="126" x2="236" y2="180" stroke="#0f172a" stroke-width="1.6" stroke-dasharray="3,3" />
-  <!-- Hinge O, points A, G -->
-  <polygon points="113,54 127,54 120,68" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.5" />
-  <circle cx="120" cy="68" r="4.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.8" />
-  <circle cx="180" cy="126" r="3.5" fill="#0f172a" />
-  <circle cx="236" cy="180" r="4" fill="#dc2626" />
-  <text x="104" y="72" text-anchor="end" font-family="sans-serif" font-size="13" font-weight="700" fill="#0f172a">O</text>
-  <text x="166" y="136" text-anchor="end" font-family="sans-serif" font-size="12" font-weight="700" fill="#0f172a">A</text>
-  <text x="248" y="182" font-family="sans-serif" font-size="12" font-weight="700" fill="#dc2626">G</text>
-  <text x="146" y="108" text-anchor="end" font-family="sans-serif" font-size="11" fill="#0369a1">L</text>
-  <text x="224" y="140" font-family="sans-serif" font-size="11" fill="#0369a1">L</text>
-  <!-- Angle phi* arc -->
-  <path d="M 158 68 A 38 38 0 0 1 148 95" fill="none" stroke="#d97706" stroke-width="1.8" />
-  <text x="165" y="85" font-family="sans-serif" font-size="12" font-weight="700" fill="#b45309">φ*</text>
-  <!-- g vector -->
-  <line x1="72" y1="120" x2="72" y2="174" stroke="#dc2626" stroke-width="2" />
-  <polygon points="68,172 72,180 76,172" fill="#dc2626" />
-  <text x="60" y="152" text-anchor="end" font-family="sans-serif" font-size="12" font-weight="700" fill="#dc2626">g</text>
-  <text x="189" y="254" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#475569">OA = AG = L; m1 = m0, m2 = 2m0</text>
-
-  <!-- Right panel: De 1721/1722 Bai 3 -->
-  <!-- Ground horizontal line and wall -->
-  <line x1="428" y1="120" x2="428" y2="235" stroke="#475569" stroke-width="2.5" />
-  <line x1="414" y1="230" x2="730" y2="230" stroke="#475569" stroke-width="2.5" />
-  <!-- Hatching on ground -->
-  <line x1="435" y1="230" x2="427" y2="238" stroke="#64748b" stroke-width="1.2" />
-  <line x1="475" y1="230" x2="467" y2="238" stroke="#64748b" stroke-width="1.2" />
-  <line x1="515" y1="230" x2="507" y2="238" stroke="#64748b" stroke-width="1.2" />
-  <line x1="555" y1="230" x2="547" y2="238" stroke="#64748b" stroke-width="1.2" />
-  <line x1="595" y1="230" x2="587" y2="238" stroke="#64748b" stroke-width="1.2" />
-  <line x1="635" y1="230" x2="627" y2="238" stroke="#64748b" stroke-width="1.2" />
-  <line x1="675" y1="230" x2="667" y2="238" stroke="#64748b" stroke-width="1.2" />
-  <line x1="715" y1="230" x2="707" y2="238" stroke="#64748b" stroke-width="1.2" />
-  <!-- Disk C: center (654, 185), R = 45 -->
-  <circle cx="654" cy="185" r="45" fill="#ccfbf1" stroke="#0d9488" stroke-width="2.2" />
-  <!-- Horizontal axis from A(444, 185) to C(654, 185) with spring -->
-  <line x1="444" y1="185" x2="504" y2="185" stroke="#64748b" stroke-width="1.5" />
-  <polyline points="504,185 512,177 522,193 532,177 542,193 552,177 562,193 570,185" fill="none" stroke="#d97706" stroke-width="2" />
-  <line x1="570" y1="185" x2="654" y2="185" stroke="#64748b" stroke-width="1.5" />
-  <text x="537" y="170" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#b45309">K</text>
-  <!-- Rods AB and BC: A(444,185), B(549,88), C(654,185) -->
-  <line x1="444" y1="185" x2="549" y2="88" stroke="#0f172a" stroke-width="3.2" />
-  <line x1="549" y1="88" x2="654" y2="185" stroke="#0f172a" stroke-width="3.2" />
-  <!-- Joints A, B, C, midpoint G -->
-  <circle cx="444" cy="185" r="4.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.8" />
-  <circle cx="549" cy="88" r="4.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.8" />
-  <circle cx="654" cy="185" r="4.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.8" />
-  <circle cx="601.5" cy="136.5" r="3.5" fill="#dc2626" />
-  <!-- Labels -->
-  <text x="438" y="206" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#0f172a">A</text>
-  <text x="549" y="74" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#0f172a">B</text>
-  <text x="668" y="182" font-family="sans-serif" font-size="12" font-weight="700" fill="#0f172a">C</text>
-  <text x="620" y="128" font-family="sans-serif" font-size="12" font-weight="700" fill="#dc2626">G</text>
-  <text x="478" y="120" font-family="sans-serif" font-size="11" fill="#334155">l</text>
-  <!-- Angle theta arc at A -->
-  <path d="M 484 185 A 40 40 0 0 0 473 158" fill="none" stroke="#0284c7" stroke-width="1.8" />
-  <text x="492" y="168" font-family="sans-serif" font-size="12" font-weight="700" fill="#0284c7">θ</text>
-  <!-- Positive direction arrow (+) above disk -->
-  <path d="M 678 122 A 42 42 0 0 0 634 118" fill="none" stroke="#0f766e" stroke-width="2" />
-  <polygon points="637,112 628,119 638,124" fill="#0f766e" />
-  <text x="668" y="106" font-family="sans-serif" font-size="12" font-weight="700" fill="#0f766e">(+)</text>
-  <!-- Radius R line -->
-  <line x1="654" y1="185" x2="686" y2="216" stroke="#0d9488" stroke-width="1.4" />
-  <text x="678" y="202" font-family="sans-serif" font-size="11" font-weight="700" fill="#0f766e">R</text>
-  <text x="571" y="254" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#475569">Đĩa C lăn không trượt; AB = BC = l</text>
-</svg>
-<div class="figure-caption">
-
-Hình 11-1: Hai mô hình kinh điển tính động năng trong đề thi Cuối kỳ AS1003 (Đề 1821 và Đề 1721/1722)
-
-</div>
+  <img src="/figures/bai-tap/dong-luc-hoc/hinh_2_28.svg" alt="Cơ cấu culít gồm tay quay OA và máng trượt tịnh tiến ngang" class="figure-img" />
+  <p class="figure-caption">Hình 13.1: Cơ cấu culít có mômen quán tính thu gọn phụ thuộc góc quay phi (Hình 2-28 — Thí dụ 2-17 Sách Bài Tập Động Lực Học Chương 2)</p>
 </div>
 
-### 2. Giải chi tiết 2 ví dụ thật từ đề thi HCMUT
+**Minh họa chuẩn qua `Thí dụ 2–17` ([SBT Động Lực Học Chương 2](/bai-tap/dong-luc-hoc/chuong-2)):**
+Trên Hình 13.1, tay quay $OA = a$ (mômen quán tính $J_O$, chịu ngẫu lực $M$) quay góc $q = \varphi$ kéo máng trượt khối lượng $m$ tịnh tiến ngang (chịu lực cản ngang $F$). Hoành độ máng trượt là $x = a\cos\varphi \implies v = \dot{x} = -a\sin\varphi\,\dot{\varphi}$.
+1. **Đưa động năng về dạng chuẩn $T = \frac{1}{2}M_{\text{td}}(\varphi)\dot{\varphi}^2$:**
 
-::: info Ví dụ thật 1 — Đề 1821 Câu 5 (HK II/2018-2019 — Đáp án chính thức: 5a)
-Hệ thống con lắc bao gồm thanh thẳng $OA$ khối lượng $m_1 = m_0$, được hàn cứng với vật nặng có khối tâm $G$ (các điểm $O, A, G$ thẳng hàng và $OA = AG = L$). Vật nặng có khối lượng $m_2 = 2m_0$ và bán kính quán tính đối với $G$ là $\rho$. Cho $m_0 = 2\text{ kg}$, $L = 0{,}2\text{ m}$, $\rho = 0{,}3\text{ m}$, vận tốc góc hệ là $\omega$. Xác định động năng hệ theo $\omega$:
-- **a.** $T = \dfrac{77}{150}\omega^2$ $\qquad$ **b.** $T = \dfrac{53}{150}\omega^2$ $\qquad$ **c.** $T = \dfrac{79}{300}\omega^2$ $\qquad$ **d.** $T = \dfrac{127}{300}\omega^2$ $\qquad$ **e.** Các đáp án còn lại sai
-:::
+   $$\begin{aligned}
+   T &= \frac{1}{2}J_O\dot{\varphi}^2 + \frac{1}{2}m\left(-a\sin\varphi\,\dot{\varphi}\right)^2 \\
+     &= \frac{1}{2}\underbrace{\left(J_O + m a^2\sin^2\varphi\right)}_{M_{\text{td}}(\varphi)}\dot{\varphi}^2
+   \end{aligned}$$
 
-**Lời giải từng bước:**
-1. Toàn bộ cơ hệ (thanh $OA$ + vật nặng) hàn cứng thành **một vật rắn duy nhất** quay quanh trục cố định $O$, nên dùng công thức:
-   $$T = \frac{1}{2} J_O \omega^2$$
-2. Tính $J_O$ cho từng phần:
-   - Thanh mảnh $OA$ quay quanh đầu $O$:
-     $$J_{O,\text{thanh}} = \frac{1}{3}m_0 L^2 = \frac{1}{3}(2)(0{,}2)^2 = \frac{2}{75}\text{ kg}\cdot\text{m}^2$$
-   - Vật nặng có mômen quán tính quanh khối tâm $G$ là $J_G = m_2\rho^2 = 2m_0\rho^2$. Khoảng cách từ trục quay $O$ tới $G$ là $OG = OA + AG = 2L$. Áp dụng **Huygens–Steiner**:
-     $$\begin{aligned} J_{O,\text{vật}} &= J_G + m_2 \cdot OG^2 = 2m_0\left(\rho^2 + 4L^2\right) \\ &= 4\left(0{,}3^2 + 4 \cdot 0{,}2^2\right) = 4(0{,}09 + 0{,}16) = 1\text{ kg}\cdot\text{m}^2 \end{aligned}$$
-3. Cộng mômen quán tính quanh $O$:
-   $$J_O = \frac{2}{75} + 1 = \frac{77}{75}\text{ kg}\cdot\text{m}^2$$
-4. Suy ra động năng của cơ hệ:
-   $$T = \frac{1}{2} J_O \omega^2 = \frac{1}{2}\cdot\frac{77}{75}\omega^2 = \frac{77}{150}\omega^2 \implies \textbf{Chọn 5a}$$
+2. **Đạo hàm theo $t$ giữ đủ số hạng $\dot{\varphi}^3$:**
+   Ta có $\frac{dM_{\text{td}}}{d\varphi} = 2 m a^2\sin\varphi\cos\varphi = m a^2\sin 2\varphi$. Do đó:
 
-::: warning Nhận diện bẫy ở Câu 5 Đề 1821
-- Nếu bạn quên $m_2 \cdot OG^2$ hoặc thay nhầm $OG = L$ (thay vì $2L$), hoặc lấy nhầm $J_O$ thanh là $\frac{1}{12}m_0 L^2$, kết quả sẽ rơi ngay vào các phương án nhiễu `b`, `c`, `d`.
-:::
+   $$\frac{dT}{dt} = \left(J_O + m a^2\sin^2\varphi\right)\ddot{\varphi}\dot{\varphi} + \frac{1}{2} m a^2\sin 2\varphi\,\dot{\varphi}^3$$
+
+3. **Cân bằng với công suất $\sum N = (M - F a\sin\varphi)\dot{\varphi}$ (chia cho $\dot{\varphi} \neq 0$):**
+
+   $$\left(J_O + m a^2\sin^2\varphi\right)\ddot{\varphi} + \frac{1}{2} m a^2\sin 2\varphi\,\dot{\varphi}^2 + F a\sin\varphi - M = 0$$
 
 ---
 
-::: info Ví dụ thật 2 — Đề 1721 Câu 9 (9d) & Đề 1722 Câu 9 (9d)
-Cho cơ hệ như Hình 11-1 (bên phải): thanh $AB$ và $BC$ có cùng khối lượng $m_1 = 5\text{ kg}$ và cùng chiều dài $l$. Đĩa tròn đặc $C$ có bán kính $R = 5\text{ cm}$, khối lượng $m_2 = 10\text{ kg}$ và lăn không trượt trên mặt phẳng ngang qua $A$. Biết $\omega = \dot{\theta}$ là vận tốc góc của thanh $AB$ tại vị trí $30^\circ < \theta < 60^\circ$. Tính động năng $T$ của hệ theo $\omega, \theta$ với:
-- **Đề `1721` ($l = 15\text{ cm} = 0{,}15\text{ m}$):** Chứng minh $T = 0{,}1125\left(\dfrac{23}{6} - \dfrac{7}{2}\cos 2\theta\right)\omega^2\text{ (J)}$ (**Đáp án `9d`**).
-- **Đề `1722` ($l = 20\text{ cm} = 0{,}20\text{ m}$):** Chứng minh $T = 0{,}2\left(\dfrac{23}{6} - \dfrac{7}{2}\cos 2\theta\right)\omega^2\text{ (J)}$ (**Đáp án `9d`**).
-:::
+### 13.3. Giải mẫu chi tiết trọn bộ 4 câu liên hoàn từ đề thi thật HCMUT
 
-**Chứng minh chi tiết từng thành phần ($T = T_{AB} + T_{BC} + T_C$):**
-
-1. **Động năng thanh $AB$ (quay quanh bản lề cố định $A$):**
-   $$T_{AB} = \frac{1}{6}m_1 l^2 \omega^2$$
-
-2. **Động năng thanh $BC$ (chuyển động song phẳng):**
-   - Do tam giác $ABC$ cân ($AB = BC = l$), góc nghiêng của $BC$ là $-\theta$ nên vận tốc góc của $BC$ có độ lớn $\lvert\omega_{BC}\rvert = \omega$ (chiều $\bar{\omega}_1 = -\omega$).
-   - Chọn gốc tọa độ tại $A$: khối tâm $G$ (trung điểm $BC$) có tọa độ:
-     $$x_G = l\cos\theta + \frac{l}{2}\cos\theta = \frac{3}{2}l\cos\theta, \qquad y_G = \frac{1}{2}l\sin\theta$$
-   - Đạo hàm theo $t$ (với $\dot{\theta} = \omega$):
-     $$\dot{x}_G = -\frac{3}{2}l\sin\theta \cdot \omega, \qquad \dot{y}_G = \frac{1}{2}l\cos\theta \cdot \omega$$
-   - Bình phương vận tốc khối tâm $G$:
-     $$\begin{aligned} v_G^2 &= \dot{x}_G^2 + \dot{y}_G^2 = l^2\omega^2\left(\frac{9}{4}\sin^2\theta + \frac{1}{4}\cos^2\theta\right) \\ &= l^2\omega^2\left(\frac{9}{8}(1 - \cos 2\theta) + \frac{1}{8}(1 + \cos 2\theta)\right) \\ &= l^2\omega^2\left(\frac{5}{4} - \cos 2\theta\right) \end{aligned}$$
-   - Áp dụng công thức song phẳng cho thanh $BC$ ($J_G = \frac{1}{12}m_1 l^2$):
-     $$\begin{aligned} T_{BC} &= \frac{1}{2}m_1 v_G^2 + \frac{1}{2}\left(\frac{1}{12}m_1 l^2\right)\omega^2 \\ &= m_1 l^2 \omega^2\left(\frac{5}{8} - \frac{1}{2}\cos 2\theta + \frac{1}{24}\right) \\ &= m_1 l^2 \omega^2\left(\frac{2}{3} - \frac{1}{2}\cos 2\theta\right) \end{aligned}$$
-
-3. **Động năng đĩa đặc $C$ (lăn không trượt trên mặt phẳng ngang):**
-   - Tọa độ tâm $C$: $x_C = 2l\cos\theta \implies \lvert v_C\rvert = \lvert\dot{x}_C\rvert = 2l\sin\theta \cdot \omega$.
-   - Dùng công thức tủ $\frac{3}{4}$ cho đĩa đặc lăn không trượt ($m_2 = 10 = 2m_1$):
-     $$\begin{aligned} T_C &= \frac{3}{4}m_2 v_C^2 = \frac{3}{4}m_2\left(4l^2\sin^2\theta \cdot \omega^2\right) \\ &= 3 m_2 l^2 \left(\frac{1 - \cos 2\theta}{2}\right)\omega^2 = 3 m_1 l^2 (1 - \cos 2\theta)\omega^2 \end{aligned}$$
-
-4. **Tổng động năng toàn hệ (thay $m_1 = 5\text{ kg}$):**
-   $$\begin{aligned} T &= T_{AB} + T_{BC} + T_C \\ &= m_1 l^2 \omega^2 \left[\left(\frac{1}{6} + \frac{2}{3} + 3\right) - \left(\frac{1}{2} + 3\right)\cos 2\theta\right] \\ &= 5 l^2 \left(\frac{23}{6} - \frac{7}{2}\cos 2\theta\right)\omega^2 \end{aligned}$$
-   - Với **Đề `1721`** ($l = 0{,}15\text{ m}$): $5 \times (0{,}15)^2 = 0{,}1125 \implies T = 0{,}1125\left(\frac{23}{6} - \frac{7}{2}\cos 2\theta\right)\omega^2$ (**chọn `9d`**).
-   - Với **Đề `1722`** ($l = 0{,}20\text{ m}$): $5 \times (0{,}20)^2 = 0{,}2 \implies T = 0{,}2\left(\frac{23}{6} - \frac{7}{2}\cos 2\theta\right)\omega^2$ (**chọn `9d`**).
-
-**Tự luyện nhanh Ngày 11 (Bấm máy trong 2 phút):**
-Một vành tròn mỏng đồng chất khối lượng $m = 4\text{ kg}$, bán kính $R = 0{,}25\text{ m}$ lăn không trượt trên mặt phẳng ngang; tâm vành gắn thanh mảnh đồng chất $AB$ dài $L = 0{,}4\text{ m}$, khối lượng $m_1 = 3\text{ kg}$ đang trượt tịnh tiến thẳng theo vành. Khi tâm vành có vận tốc $v = 2\text{ m/s}$, tính tổng động năng của hệ.
-
-::: details Nhấn để xem đáp án và lời giải
-- Vành tròn mỏng lăn không trượt: $T_{\text{vành}} = m v^2 = 4 \times 2^2 = 16\text{ J}$ (chú ý là $1 \cdot m v^2$, không phải $\frac{3}{4}mv^2$!).
-- Thanh trượt tịnh tiến cùng vận tốc $v$: $T_{\text{thanh}} = \frac{1}{2}m_1 v^2 = 0{,}5 \times 3 \times 2^2 = 6\text{ J}$.
-- Tổng động năng: $T = 16 + 6 = 22\text{ J}$.
-:::
-
----
-
-## Ngày 12: Bí Kíp Tính Tổng Công $\sum A$ Trong 60 Giây & Không Bị Bẫy Dấu Lò Xo / Trọng Lực
-
-### 1. Bảng công của các lực và danh sách lực có công $= 0$
-
-Khi cơ hệ chuyển động từ vị trí đầu $(0)$ sang vị trí $(1)$, tổng công của mọi lực bằng tổng công của từng lực hoạt động sinh công:
-
-| Loại lực tác dụng | Công thức tính công $A_{0 \to 1}$ | Quy tắc dấu cho người mất gốc |
-| :--- | :--- | :--- |
-| **Trọng lực** $\vec{P} = m\vec{g}$ | $A_P = \pm P \cdot \lvert\Delta h_G\rvert$ | Nếu lấy chiều dương $y$ hướng **LÊN**: $A_P = mg(y_0 - y)$;<br>Nếu lấy chiều dương $y$ hướng **XUỐNG**: $A_P = mg(y - y_0)$.<br>**Nhớ miệng:** Khối tâm đi **xuống** $\to A_P > 0$; đi **lên** $\to A_P < 0$. |
-| **Lực đàn hồi lò xo** (độ cứng $K$) | $A_{\text{đh}} = \dfrac{1}{2}K\left(\Delta l_0^2 - \Delta l^2\right)$ | **LUÔN LÀ ĐẦU TRỪ CUỐI**, bất kể lò xo bị nén hay bị dãn!<br>$\Delta l_0, \Delta l$ là **độ biến dạng** so với chiều dài tự nhiên. |
-| **Ngẫu lực / Mômen $M$ không đổi** | $A_M = \pm M \lvert\Delta\varphi\rvert$ | $(+)$ nếu góc quay $\Delta\varphi$ cùng chiều mũi tên $M$; $(-)$ nếu ngược chiều. |
-| **Lực kéo $F$ không đổi** | $A_F = \pm F \cdot s_{\text{điểm đặt}}$ | Chiếu độ dời điểm đặt lên phương của lực $\vec{F}$. |
-| **Lực ma sát trượt động** | $A_{\text{ms}} = -F_{\text{ms}} \cdot s = -f_{\text{đ}} N \cdot s$ | **LUÔN ÂM**, vì luôn ngược chiều chuyển động tương đối. |
-| **Lực có công $= 0$** | $A = 0$ | Phản lực tại bản lề cố định, mặt tựa nhẵn, **ma sát nghỉ khi lăn không trượt**, **nội lực căng dây / khớp nối**. |
-
-::: tip Tuyệt chiêu tự kiểm 3 giây: Thế $\theta = \theta_0 \implies \sum A = 0$
-Khi đề bài hỏi biểu thức **tổng công $\sum A(\theta)$ khi cơ hệ di chuyển từ vị trí ban đầu $\theta = \theta_0$ đến vị trí góc $\theta$**, thì ngay tại vị trí xuất phát $\theta = \theta_0$, quãng đường đi được bằng $0$ nên:
-
-$$\sum A(\theta_0) \equiv 0 \quad \text{(BẮT BUỘC PHẢI ĐÚNG)}$$
-
-Chỉ cần bấm máy tính thay $\theta = \theta_0$ vào từng đáp án `a, b, c, d`, phương án nào ra khác $0$ là **loại ngay lập tức trong 3 giây**!
-
-- **Kiểm thử trên Đề `0001/2016` Câu 4 (ban đầu $\theta_0 = 30^\circ$):**
-  Thế $\theta = 30^\circ$ ($\sin 30^\circ = 0{,}5$) vào phương án `4b`:
-  $$\begin{aligned} \sum A(30^\circ) &= 6{,}19 + 19{,}62\sin 30^\circ - 64\sin^2 30^\circ \\ &= 6{,}19 + 9{,}81 - 16 = 0 \quad (\text{Khớp chuẩn!}) \end{aligned}$$
-  Trong khi đó `4a` cho $1{,}14 + 9{,}81 - 16 = -5{,}05 \neq 0$, `4c` cho $-24{,}67 \neq 0$, `4d` cho $-19{,}62 \neq 0 \implies$ **bắt gọn `4b` gần như tức thì!**
-:::
-
-### 2. Giải chi tiết 4 bài tính công từ đề thi thật HCMUT
-
-::: info Bài mẫu 12-1 — Đề 1721 Câu 8 (8b) & Đề 1722 Câu 8 (8c)
-Trong cơ hệ 2 thanh $AB = BC = l$ (mỗi thanh khối lượng $m_1 = 5\text{ kg}$) + đĩa tròn đặc lăn không trượt $C$ ($m_2 = 10\text{ kg}$) ở Hình 11-1, lò xo nối từ điểm cố định $A$ đến tâm $C$ có độ cứng $K = 500\text{ N/m}$ và **không biến dạng tại vị trí $\theta = 60^\circ$**. Lấy $g = 10\text{ m/s}^2$. Tính tổng công của các ngoại lực khi thanh $AB$ quay ngược chiều kim đồng hồ từ $\theta_0 = 30^\circ$ đến vị trí có $\theta < 60^\circ$:
-- **Đề `1721` ($l = 0{,}15\text{ m}$):** Đáp án `8b`: $\sum A = 1{,}14 - 7{,}5\sin\theta + 22{,}5\cos\theta - 22{,}5\cos^2\theta\text{ (J)}$.
-- **Đề `1722` ($l = 0{,}20\text{ m}$):** Đáp án `8c`: $\sum A = 0{,}36 - 10\sin\theta + 40\cos\theta - 40\cos^2\theta\text{ (J)}$.
-:::
-
-**Lời giải từng bước:**
-1. **Liệt kê các lực sinh công:**
-   - Phản lực tại $A$, ma sát nghỉ tại tiếp điểm lăn không trượt của đĩa $C$, nội lực tại khớp $B$ đều có công bằng $0$.
-   - Trọng lực của đĩa $C$ có công $= 0$ vì tâm $C$ di chuyển nằm ngang ($y_C = \text{const}$).
-   - Chỉ còn **trọng lực 2 thanh $AB, BC$** và **lực đàn hồi lò xo $K$**.
-2. **Công trọng lực 2 thanh ($A_P$):**
-   - Khối tâm mỗi thanh nằm ở độ cao $y_G = \frac{l}{2}\sin\theta$ tính từ sàn ngang qua $A$. Khi $\theta$ tăng từ $\theta_0 = 30^\circ$ lên $\theta$, cả hai khối tâm đều **đi lên**:
-     $$A_P = -2 m_1 g \left(\frac{l}{2}\sin\theta - \frac{l}{2}\sin 30^\circ\right) = -m_1 g l \left(\sin\theta - \frac{1}{2}\right)$$
-3. **Công lực đàn hồi lò xo ($A_{\text{đh}}$):**
-   - Độ dài lò xo tại góc $\theta$ là đoạn $AC = 2l\cos\theta$.
-   - Vì lò xo không biến dạng tại $\theta = 60^\circ$, chiều dài tự nhiên của lò xo là $l_{\text{tn}} = 2l\cos 60^\circ = l$.
-   - Vậy độ biến dạng tại góc $\theta$ bất kỳ là $\Delta l(\theta) = 2l\cos\theta - l = l(2\cos\theta - 1)$.
-   - Tại $\theta_0 = 30^\circ$: $\Delta l_0 = l(\sqrt{3} - 1) \implies \Delta l_0^2 = l^2(4 - 2\sqrt{3})$.
-   - Áp dụng đúng quy tắc **ĐẦU TRỪ CUỐI**:
-     $$\begin{aligned} A_{\text{đh}} &= \frac{1}{2}K\left(\Delta l_0^2 - \Delta l^2\right) \\ &= \frac{1}{2}K l^2\left[(4 - 2\sqrt{3}) - (4\cos^2\theta - 4\cos\theta + 1)\right] \\ &= \frac{1}{2}K l^2\left[(3 - 2\sqrt{3}) + 4\cos\theta - 4\cos^2\theta\right] \end{aligned}$$
-4. **Thay số cho hai đề ($m_1 = 5$, $g = 10$, $K = 500$):**
-   - **Với Đề `1721` ($l = 0{,}15\text{ m}$):**
-     $m_1 g l = 5 \cdot 10 \cdot 0{,}15 = 7{,}5$; $\quad \frac{1}{2}K l^2 = 250 \cdot (0{,}15)^2 = 5{,}625$.
-     $$\begin{aligned} \sum A &= -7{,}5(\sin\theta - 0{,}5) \\ &\quad + 5{,}625(3 - 2\sqrt{3} + 4\cos\theta - 4\cos^2\theta) \\ &\approx 1{,}14 - 7{,}5\sin\theta + 22{,}5\cos\theta - 22{,}5\cos^2\theta\text{ (J)} \end{aligned}$$
-     Suy ra **chọn `8b`**.
-   - **Với Đề `1722` ($l = 0{,}20\text{ m}$):**
-     $m_1 g l = 5 \cdot 10 \cdot 0{,}20 = 10$; $\quad \frac{1}{2}K l^2 = 250 \cdot (0{,}20)^2 = 10$.
-     $$\begin{aligned} \sum A &= -10(\sin\theta - 0{,}5) \\ &\quad + 10(3 - 2\sqrt{3} + 4\cos\theta - 4\cos^2\theta) \\ &\approx 0{,}36 - 10\sin\theta + 40\cos\theta - 40\cos^2\theta\text{ (J)} \end{aligned}$$
-     Suy ra **chọn `8c`**.
-
----
-
-::: info Bài mẫu 12-2 — Đề 0001/2016 Câu 4 (4b) & Đề 0002/2016 Câu 4 (4a)
-1. **Đề `0001/2016` Câu 4:** Thanh $AB$ dài $l = 0{,}4\text{ m}$, khối lượng $m = 10\text{ kg}$ ($g = 9{,}81\text{ m/s}^2$). Con trượt $A$ trượt trên máng ngang phía trên, $B$ trượt trên rãnh thẳng đứng bên phải và gắn lò xo độ cứng $K = 800\text{ N/m}$ thẳng đứng hướng lên (không biến dạng khi $\theta = 0^\circ$). Thanh bắt đầu chuyển động từ $\theta_0 = 30^\circ$ đi lên tới vị trí góc $\theta < 30^\circ$. Tính tổng công $\sum A$.
-2. **Đề `0002/2016` Câu 4:** Thanh $AB$ dài $l = 0{,}8\text{ m}$, khối lượng $m = 10\text{ kg}$ ($g = 9{,}81\text{ m/s}^2$). Con trượt $A$ trượt thẳng đứng dọc tường phải, $B$ trượt ngang sang trái trên sàn dưới lực kéo ngang $P = 50\text{ N}$ hướng sang trái. Thanh bắt đầu từ $\theta_0 = 0^\circ$ (thẳng đứng) sang vị trí góc $\theta > 0^\circ$. Tính tổng công $\sum A$.
-:::
-
-**Lời giải từng bước:**
-1. **Đề `0001/2016` Câu 4:**
-   - Khi thanh đi từ $\theta_0 = 30^\circ$ lên vị trí $\theta < 30^\circ$, khối tâm $G$ được **nâng lên** một đoạn $\Delta h_G = \frac{l}{2}(\sin 30^\circ - \sin\theta)$ nên công trọng lực âm:
-     $$\begin{aligned} A_P &= -mg\frac{l}{2}(\sin 30^\circ - \sin\theta) \\ &= -10(9{,}81)(0{,}2)(0{,}5 - \sin\theta) = -9{,}81 + 19{,}62\sin\theta \end{aligned}$$
-   - Lò xo gắn ở $B$ dãn một đoạn $\Delta l = l\sin\theta$. Tại $\theta_0 = 30^\circ$, $\Delta l_0 = 0{,}4\sin 30^\circ = 0{,}2\text{ m}$. Theo công thức **đầu trừ cuối**:
-     $$A_{\text{đh}} = \frac{1}{2}K\left(\Delta l_0^2 - \Delta l^2\right) = 400\left(0{,}2^2 - 0{,}16\sin^2\theta\right) = 16 - 64\sin^2\theta$$
-   - Cộng hai công:
-     $$\begin{aligned} \sum A &= (16 - 9{,}81) + 19{,}62\sin\theta - 64\sin^2\theta \\ &= 6{,}19 + 19{,}62\sin\theta - 64\sin^2\theta\text{ (J)} \end{aligned}$$
-     Suy ra **chọn `4b`**.
-
-2. **Đề `0002/2016` Câu 4:**
-   - Khi thanh quay từ $\theta_0 = 0^\circ$ (đứng thẳng) ra góc $\theta > 0^\circ$, khối tâm $G$ **hạ xuống** từ độ cao $\frac{l}{2}$ về $\frac{l}{2}\cos\theta$, nên công trọng lực dương:
-     $$\begin{aligned} A_P &= +mg\frac{l}{2}(1 - \cos\theta) \\ &= 10(9{,}81)(0{,}4)(1 - \cos\theta) \\ &= 39{,}24(1 - \cos\theta) \approx 39{,}2(1 - \cos\theta)\text{ (J)} \end{aligned}$$
-   - Con trượt $B$ dịch sang trái đoạn $x_B = l\sin\theta$ cùng chiều lực kéo $P = 50\text{ N}$:
-     $$A_P^{\text{kéo}} = P \cdot l\sin\theta = 50(0{,}8)\sin\theta = 40\sin\theta\text{ (J)}$$
-   - Cộng lại:
-     $$\sum A = 39{,}2(1 - \cos\theta) + 40\sin\theta\text{ (J)} \implies \textbf{Chọn 4a}$$
-
----
-
-## Ngày 13: Tuyệt Chiêu Đạo Hàm 2 Vế ($\frac{dT}{dt} = \sum N \implies \varepsilon$) & Tìm Vận Tốc Khi Biết $\sum A$
-
-### 1. Công thức đạo hàm hai vế tránh bẫy $J'(\theta)$
-
-Khi bạn đã có sẵn biểu thức $T$ (Câu 1 của chùm) và $\sum A$ (Câu 2 của chùm), bạn **không cần tách vật hay viết Newton–Euler** để tìm gia tốc góc $\varepsilon$ hay gia tốc dài $a$. Chỉ cần áp dụng **Định lý biến thiên động năng dạng vi phân (công suất)**:
-
-$$\frac{dT}{dt} = \sum N = \frac{d\left(\sum A\right)}{dt}$$
-
-1. **Trường hợp A — Hệ số động năng là HẰNG SỐ ($T = K_0 \dot{\phi}^2$ hoặc $T = K_0 v^2$):**
-   - Đạo hàm hai vế theo $t$ (nhớ $\dot{\phi} = \omega$, $\ddot{\phi} = \varepsilon$, $\dot{v} = a$):
-     $$2 K_0 \omega \varepsilon = \frac{d\left(\sum A\right)}{d\phi}\cdot\omega$$
-   - Gạch bỏ $\omega$ ở cả hai vế, rút ra ngay:
-     $$\varepsilon(\phi) = \frac{1}{2 K_0}\frac{d\left(\sum A\right)}{d\phi} \qquad \text{hoặc} \qquad a = \frac{1}{2 K_0}\frac{d\left(\sum A\right)}{ds}$$
-
-2. **Trường hợp B — Hệ số động năng PHỤ THUỘC GÓC $\theta$ ($T = \frac{1}{2} J(\theta) \dot{\theta}^2$):**
-   - Bắt buộc dùng đạo hàm của tích:
-     $$\frac{dT}{dt} = J(\theta)\dot{\theta}\ddot{\theta} + \frac{1}{2}J'(\theta)\dot{\theta}^3 = \frac{d\left(\sum A\right)}{d\theta}\dot{\theta}$$
-   - Chia hai vế cho $\dot{\theta} = \omega$:
-     $$J(\theta)\varepsilon + \frac{1}{2}J'(\theta)\omega^2 = \frac{d\left(\sum A\right)}{d\theta}$$
-   - **Lưu ý sống còn:** Chỉ khi hệ đang ở vị trí thả không vận tốc đầu ($\omega = 0$) thì số hạng $\frac{1}{2}J'(\theta)\omega^2$ mới biến mất; tại vị trí $\theta \neq \theta_0$ bắt buộc phải cộng thêm nó!
-
-3. **Bước chốt Câu 4 của chùm (Dạng hữu hạn tìm $\omega$ và $v$):**
-   - Đặt $T - T_0 = \sum A$. Vì phần lớn bài thi thả hệ đứng yên ban đầu nên $T_0 = 0$:
-     $$K_0 \omega^2 = \sum A(\theta_{\text{cuối}}) \implies \omega = \sqrt{\frac{\sum A(\theta_{\text{cuối}})}{K_0}}$$
-   - **Cảnh giác bẫy cuối:** Đề hay hỏi **vận tốc của một điểm cụ thể** ($v_G$ hoặc $V_B$). Luôn kiểm tra điểm đó nằm trên **vật quay cố định** ($v_G = OG\cdot\omega$) hay **vật song phẳng** ($V_B = IB\cdot\omega$, với $I$ là tâm tức thời)!
+#### Bài giải mẫu 13.1: Hệ con lắc ghép hàn cứng ([Đề `1821` — Bài 2, Câu 5–8](/on-thi/de-thi-that-hcmut#de-1821))
 
 <div class="figure-container">
-<svg viewBox="0 0 760 275" style="width: 100%; max-width: 720px; height: auto; display: block; margin: 0 auto;" role="img" aria-label="Sơ đồ cơ hệ Đề 0001/2016 Bài 1 và Đề 0002/2016 Bài 1">
-  <rect x="8" y="8" width="362" height="258" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
-  <rect x="390" y="8" width="362" height="258" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
-  <text x="189" y="30" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="700" fill="#0369a1">Đề 0001/2016 — Bài 1 (Câu 3–6)</text>
-  <text x="571" y="30" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="700" fill="#b45309">Đề 0002/2016 — Bài 1 (Câu 3–6)</text>
-
-  <!-- Left: De 0001/2016 Bai 1 -->
-  <!-- Top horizontal guide and right vertical guide -->
-  <line x1="60" y1="74" x2="292" y2="74" stroke="#475569" stroke-width="2.5" />
-  <line x1="292" y1="54" x2="292" y2="230" stroke="#475569" stroke-width="2.5" />
-  <!-- Hatching top & right -->
-  <line x1="80" y1="74" x2="88" y2="66" stroke="#64748b" stroke-width="1.2" />
-  <line x1="140" y1="74" x2="148" y2="66" stroke="#64748b" stroke-width="1.2" />
-  <line x1="200" y1="74" x2="208" y2="66" stroke="#64748b" stroke-width="1.2" />
-  <line x1="292" y1="90" x2="300" y2="82" stroke="#64748b" stroke-width="1.2" />
-  <line x1="292" y1="150" x2="300" y2="142" stroke="#64748b" stroke-width="1.2" />
-  <line x1="292" y1="210" x2="300" y2="202" stroke="#64748b" stroke-width="1.2" />
-  <!-- Horizontal reference at theta=0 -->
-  <line x1="85" y1="74" x2="280" y2="74" stroke="#94a3b8" stroke-width="1.2" />
-  <!-- Spring K from ceiling (280,74) down to B(280,180) -->
-  <line x1="280" y1="74" x2="280" y2="95" stroke="#d97706" stroke-width="1.8" />
-  <polyline points="280,95 273,103 287,113 273,123 287,133 273,143 287,153 280,161" fill="none" stroke="#d97706" stroke-width="2" />
-  <line x1="280" y1="161" x2="280" y2="180" stroke="#d97706" stroke-width="1.8" />
-  <text x="262" y="130" text-anchor="end" font-family="sans-serif" font-size="12" font-weight="700" fill="#b45309">K</text>
-  <!-- Sliders A(96,80) and B(280,180) -->
-  <rect x="82" y="75" width="28" height="14" rx="2" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.8" />
-  <rect x="272" y="168" width="16" height="24" rx="2" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.8" />
-  <!-- Rod AB -->
-  <line x1="96" y1="82" x2="280" y2="180" stroke="#0f172a" stroke-width="3.5" />
-  <circle cx="96" cy="82" r="4" fill="#0f172a" />
-  <circle cx="188" cy="131" r="4" fill="#dc2626" />
-  <circle cx="280" cy="180" r="4" fill="#0f172a" />
-  <!-- Labels -->
-  <text x="86" y="106" text-anchor="end" font-family="sans-serif" font-size="12" font-weight="700" fill="#0f172a">A</text>
-  <text x="180" y="148" text-anchor="end" font-family="sans-serif" font-size="12" font-weight="700" fill="#dc2626">G</text>
-  <text x="264" y="192" text-anchor="end" font-family="sans-serif" font-size="12" font-weight="700" fill="#0f172a">B</text>
-  <path d="M 142 82 A 46 46 0 0 1 136 103" fill="none" stroke="#0284c7" stroke-width="1.8" />
-  <text x="155" y="99" font-family="sans-serif" font-size="12" font-weight="700" fill="#0284c7">θ</text>
-  <text x="189" y="254" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#475569">l = 0,4 m; θ₀ = 30° → θ = 0°</text>
-
-  <!-- Right: De 0002/2016 Bai 1 -->
-  <!-- Right vertical wall at x=668, bottom horizontal floor at y=220 -->
-  <line x1="668" y1="60" x2="668" y2="220" stroke="#475569" stroke-width="2.5" />
-  <line x1="440" y1="220" x2="668" y2="220" stroke="#475569" stroke-width="2.5" />
-  <!-- Instantaneous center I at (540, 84) -->
-  <line x1="540" y1="84" x2="668" y2="84" stroke="#94a3b8" stroke-width="1.3" stroke-dasharray="4,3" />
-  <line x1="540" y1="84" x2="540" y2="212" stroke="#94a3b8" stroke-width="1.3" stroke-dasharray="4,3" />
-  <circle cx="540" cy="84" r="4" fill="#0d9488" />
-  <text x="530" y="78" text-anchor="end" font-family="sans-serif" font-size="12" font-weight="700" fill="#0f766e">I</text>
-  <!-- Sliders A(658, 84) and B(540, 212) -->
-  <rect x="650" y="72" width="16" height="24" rx="2" fill="#fef3c7" stroke="#d97706" stroke-width="1.8" />
-  <rect x="528" y="204" width="24" height="14" rx="2" fill="#fef3c7" stroke="#d97706" stroke-width="1.8" />
-  <!-- Rod AB -->
-  <line x1="658" y1="84" x2="540" y2="212" stroke="#0f172a" stroke-width="3.5" />
-  <circle cx="658" cy="84" r="4" fill="#0f172a" />
-  <circle cx="599" cy="148" r="4" fill="#dc2626" />
-  <circle cx="540" cy="212" r="4" fill="#0f172a" />
-  <!-- Labels -->
-  <text x="684" y="88" font-family="sans-serif" font-size="12" font-weight="700" fill="#0f172a">A</text>
-  <text x="614" y="156" font-family="sans-serif" font-size="12" font-weight="700" fill="#dc2626">G</text>
-  <text x="540" y="236" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#0f172a">B</text>
-  <!-- Angle theta between rod AB and vertical wall at A -->
-  <path d="M 658 124 A 40 40 0 0 1 631 113" fill="none" stroke="#0284c7" stroke-width="1.8" />
-  <text x="646" y="138" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#0284c7">θ</text>
-  <!-- Force P pulling B to left -->
-  <line x1="528" y1="211" x2="462" y2="211" stroke="#dc2626" stroke-width="2.4" />
-  <polygon points="464,206 454,211 464,216" fill="#dc2626" />
-  <text x="488" y="198" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#dc2626">P = 50 N</text>
-  <text x="526" y="152" text-anchor="end" font-family="sans-serif" font-size="11" fill="#0f766e">IB = l cos θ</text>
-  <text x="571" y="254" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#475569">l = 0,8 m; θ₀ = 0° → 45° (Bẫy 6e!)</text>
-</svg>
-<div class="figure-caption">
-
-Hình 13-1: Hai bài toán thanh song phẳng 1 bậc tự do của Đề 0001/2016 và Đề 0002/2016 (cẩn thận tâm tức thời I ở bẫy Câu 6!)
-
-</div>
+  <img src="/figures/dong-luc-hoc/hinh_3_23.svg" alt="Con lắc vật lý quay quanh trục nằm ngang cố định O dưới tác dụng trọng lực" class="figure-img" />
+  <p class="figure-caption">Hình 13.2: Mô hình vật rắn quay quanh trục nằm ngang cố định O trong trường trọng lực (Hình 3-23 Giáo trình Động Lực Học Chương 3)</p>
 </div>
 
-### 2. Giải trọn vẹn 3 chùm 4 câu liên hoàn từ đề thi thật
+**Tóm tắt thông số Đề `1821` (Câu 5–8):** Thanh mảnh đồng chất $OA$ khối lượng $m_1 = m_0 = 2\text{ kg}$ hàn cứng với vật nặng khối lượng $m_2 = 2m_0 = 4\text{ kg}$ có khối tâm $G$ và bán kính quán tính đối với $G$ là $\rho = 0{,}3\text{ m}$ ($O, A, G$ thẳng hàng; $OA = AG = L = 0{,}2\text{ m}$). Hệ quay quanh chốt ngang cố định $O$, thả không vận tốc đầu từ góc $\phi^* = 30^\circ$ hợp với trục ngang $Ox$ (trục $Oy$ hướng thẳng đứng xuống dưới, $g = 9{,}81\text{ m/s}^2$).
 
-::: info Chùm hoàn chỉnh 1 — Đề 1821 Câu 5, 6, 7, 8 (Đáp án chính thức trang 5: 5a, 6c, 7d, 8b)
-Tiếp nối con lắc thanh $OA(m_0, L)$ hàn vật nặng $(2m_0, \rho)$ với $m_0 = 2\text{ kg}$, $L = 0{,}2\text{ m}$, $\rho = 0{,}3\text{ m}$, ban đầu giữ đứng yên tại góc $\phi^* = 30^\circ$ so với phương ngang $Ox$, lấy $g = 9{,}81\text{ m/s}^2$:
-1. **Câu 5 (`5a`):** Động năng hệ: $T = \dfrac{77}{150}\omega^2$.
-2. **Câu 6 (`6c`):** Tổng công ngoại lực khi di chuyển từ $\phi^* = 30^\circ$ đến $\phi = 90^\circ$ là:
-   - Trọng tâm thanh $OA$ cách $O$ đoạn $L/2$, khối tâm $G$ cách $O$ đoạn $2L$. Khi quay từ $\phi^*$ tới $\phi$, độ hạ theo phương thẳng đứng $Oy$ của từng điểm là $\frac{L}{2}(\sin\phi - \sin\phi^*)$ và $2L(\sin\phi - \sin\phi^*)$:
-     $$\begin{aligned} \sum A(\phi) &= \left[m_0 g\frac{L}{2} + 2m_0 g(2L)\right](\sin\phi - \sin\phi^*) \\ &= 4{,}5 m_0 g L (\sin\phi - \sin 30^\circ) \\ &= 4{,}5(2)(9{,}81)(0{,}2)(\sin\phi - 0{,}5) \\ &= 17{,}658(\sin\phi - 0{,}5) \end{aligned}$$
-   - Tại $\phi = 90^\circ$: $\sum A = 17{,}658(1 - 0{,}5) = 8{,}829\text{ J} \implies$ **Chọn `6c`**.
-3. **Câu 7 (`7d`):** Đạo hàm hai vế $T = \frac{77}{150}\dot{\phi}^2$ và $\sum A(\phi) = 17{,}658(\sin\phi - 0{,}5)$:
-   $$\begin{aligned} \frac{dT}{dt} &= \frac{77}{75}\omega\varepsilon = 17{,}658\cos\phi \cdot \omega \\ \implies \varepsilon &= \frac{17{,}658}{77/75}\cos\phi \approx 17{,}199\cos\phi\text{ (rad/s}^2\text{)} \end{aligned}$$
-   Suy ra **chọn `7d`**.
-4. **Câu 8 (`8b`):** Tại $\phi = 90^\circ$, áp dụng $T - T_0 = \sum A$ (với $T_0 = 0$):
+1. **Câu 5 — Tính động năng $T(\omega)$:**
+   Toàn hệ là một vật rắn ghép quay quanh trục cố định $O$. Áp dụng định lý Huygens–Steiner cho thanh $OA$ ($OC_1 = \frac{L}{2}$) và vật nặng ($OG = 2L$):
+
+   $$\begin{aligned}
+   J_O &= \frac{1}{3}m_1 L^2 + m_2\left(\rho^2 + OG^2\right) \\
+       &= \frac{1}{3}(2)(0{,}2)^2 + 4\left(0{,}3^2 + 0{,}4^2\right) = \frac{2}{75} + 1 = \frac{77}{75}\text{ kg}\cdot\text{m}^2
+   \end{aligned}$$
+
+   Suy ra $T = \frac{1}{2}J_O\omega^2 = \frac{77}{150}\omega^2\text{ (J)}$ (**Đáp án `5a`**; đây là hệ có $M_{\text{td}} = J_O = \frac{77}{75} = \text{const}$).
+
+2. **Câu 6 — Tổng công ngoại lực $\sum A$ từ $\phi^* = 30^\circ$ đến $\phi = 90^\circ$:**
+   Phản lực tại bản lề $O$ không sinh công. Tung độ (hướng xuống) của tâm thanh và của $G$ lần lượt là $y_{C_1} = \frac{L}{2}\sin\phi$ và $y_G = 2L\sin\phi$:
+
+   $$\begin{aligned}
+   \sum A(\phi) &= \left(m_1 g \frac{L}{2} + m_2 g \cdot 2L\right)\left(\sin\phi - \sin\phi^*\right) \\
+                &= \left(2 \cdot 0{,}1 + 4 \cdot 0{,}4\right)\cdot 9{,}81 \cdot \left(\sin\phi - 0{,}5\right) \\
+                &= 17{,}658\left(\sin\phi - 0{,}5\right)\text{ (J)}
+   \end{aligned}$$
+
+   Kiểm toán biên: $\sum A(30^\circ) = 0\text{ J}$. Thay $\phi = 90^\circ$: $\sum A(90^\circ) = 17{,}658 \times 0{,}5 = 8{,}829\text{ J}$ (**Đáp án `6c`**).
+
+3. **Câu 7 — Gia tốc góc $\varepsilon(\phi)$ từ phương trình công suất $\frac{dT}{dt} = \sum N$:**
+   Đạo hàm theo thời gian với $\dot{\phi} = \omega$, $\ddot{\phi} = \varepsilon$ và $\sum N = \frac{d(\sum A)}{d\phi}\omega$:
+
+   $$\begin{aligned}
+   \frac{77}{75}\omega\varepsilon &= 17{,}658\cos\phi \cdot \omega \\
+   \implies \varepsilon(\phi) &= \frac{17{,}658 \times 75}{77}\cos\phi \approx 17{,}199\cos\phi\text{ (rad/s}^2\text{)}
+   \end{aligned}$$
+
+   Đối chiếu khớp **Đáp án `7d`**.
+
+4. **Câu 8 — Độ lớn vận tốc điểm $G$ khi $\phi = 90^\circ$:**
+   Áp dụng dạng hữu hạn $T - T_0 = \sum A(90^\circ)$ với $T_0 = 0$:
+
    $$\frac{77}{150}\omega^2 = 8{,}829 \implies \omega = \sqrt{\frac{8{,}829 \times 150}{77}} \approx 4{,}1472\text{ rad/s}$$
-   Vì điểm $G$ quay trên đường tròn bán kính $OG = 2L = 0{,}4\text{ m}$ quanh $O$:
-   $$v_G = 2L\cdot\omega = 0{,}4 \times 4{,}1472 \approx 1{,}659\text{ m/s} \implies \textbf{Chọn 8b}$$
-:::
+
+   Do $G$ thuộc vật quay quanh trục cố định $O$ với bán kính $OG = 2L = 0{,}4\text{ m}$:
+
+   $$v_G = OG \cdot \omega = 0{,}4 \times 4{,}1472 \approx 1{,}659\text{ m/s} \implies \textbf{Đáp án 8b}$$
 
 ---
 
-::: info Chùm hoàn chỉnh 2 — Đề 0001/2016 Câu 3, 4, 5, 6 (Đáp án: 3a, 4b, 5c, 6b)
-Cơ hệ Hình 13-1 (bên trái): thanh đồng chất $AB$ dài $l = 0{,}4\text{ m}$, $m = 10\text{ kg}$, $K = 800\text{ N/m}$, thả từ đứng yên tại $\theta_0 = 30^\circ$ đi lên tới $\theta = 0^\circ$ ($g = 9{,}81\text{ m/s}^2$).
-1. **Câu 3 (`3a`):** Dùng công thức tủ thanh trượt 2 rãnh vuông góc:
-   $$T = \frac{1}{6}m l^2\omega^2 = \frac{1}{6}(10)(0{,}4)^2\omega^2 = \frac{4}{15}\omega^2\text{ (J)} \implies \textbf{Chọn 3a}$$
-2. **Câu 4 (`4b`):** Đã chứng minh ở Ngày 12:
-   $$\sum A(\theta) = 6{,}19 + 19{,}62\sin\theta - 64\sin^2\theta\text{ (J)} \implies \textbf{Chọn 4b}$$
-3. **Câu 5 (`5c`):** Tại vị trí $\theta = 0^\circ$, ta có $\sum A(0^\circ) = 6{,}19\text{ J}$. Thế vào $T - 0 = \sum A$:
-   $$\begin{aligned} \frac{4}{15}\omega^2 &= 6{,}19 \\ \implies \omega &= \sqrt{\frac{6{,}19 \times 15}{4}} \approx 4{,}818 \approx 4{,}82\text{ rad/s} \end{aligned}$$
-   Suy ra **chọn `5c`**.
-4. **Câu 6 (`6b`):** Tại vị trí $\theta = 0^\circ$, thanh $AB$ nằm ngang hoàn toàn; đoạn từ tâm tức thời $I$ đến $B$ vuông góc với phương trượt đứng của $B$ có độ dài đúng bằng $IB = l\cos 0^\circ = 0{,}4\text{ m}$:
-   $$V_B = IB \cdot \omega = 0{,}4 \times 4{,}818 \approx 1{,}927 \approx 1{,}93\text{ m/s} \implies \textbf{Chọn 6b}$$
-:::
+#### Bài giải mẫu 13.2: Thanh song phẳng trượt trong hai rãnh vuông góc ([Đề `0001/2016` & `0002/2016` Câu 3–6](/on-thi/de-thi-that-hcmut#de-2016), đối chiếu mô hình [SBT ĐLH Ch.2](/bai-tap/dong-luc-hoc/chuong-2))
+
+<div class="figure-container">
+  <img src="/figures/bai-tap/dong-luc-hoc/hinh_2_49.svg" alt="Cơ hệ 1 bậc tự do khảo sát vận tốc theo tọa độ suy rộng" class="figure-img" />
+  <p class="figure-caption">Hình 13.3: Minh họa bài toán xác định vận tốc theo vị trí bằng dạng hữu hạn trong Sách Bài Tập Động Lực Học Chương 2 (Hình 2-49 — Bài 2.34)</p>
+</div>
+
+Hai mã đề cùng kỳ thi ngày 28/06/2016 đều khảo sát thanh đồng chất $AB$ trượt không ma sát trong hai rãnh vuông góc nhưng đặt hai cấu hình lực và hai góc kết thúc khác nhau để kiểm tra kỹ năng xác định khoảng cách tới tâm vận tốc tức thời $I$:
+
+1. **Mã Đề `0001/2016` (Câu 3–6):** $l = 0{,}4\text{ m}$, $m = 10\text{ kg}$, $A$ trượt ngang phía trên, $B$ trượt thẳng đứng nối lò xo $K = 800\text{ N/m}$ (không biến dạng tại $\theta = 0^\circ$), thả từ $\theta_0 = 30^\circ$ đi lên tới $\theta = 0^\circ$ ($g = 9{,}81\text{ m/s}^2$).
+   - **Câu 3 (`3a`):** Theo chứng minh ở Mẫu 4 Ngày 11, $T = \frac{1}{6}ml^2\omega^2$ $= \frac{1}{6}(10)(0{,}4)^2\omega^2 = \frac{4}{15}\omega^2\text{ (J)}$.
+   - **Câu 4 (`4b`):** Đã thiết lập và kiểm toán biên ở Mục 12.4: $\sum A(\theta) = 6{,}19 + 19{,}62\sin\theta - 64\sin^2\theta\text{ (J)}$.
+   - **Câu 5 (`5c`):** Tại $\theta = 0^\circ$, $\sum A(0^\circ) = 6{,}19\text{ J}$. Từ $T - 0 = \sum A$:
+
+     $$\frac{4}{15}\omega^2 = 6{,}19 \implies \omega = \sqrt{\frac{6{,}19 \times 15}{4}} \approx 4{,}818 \approx 4{,}82\text{ rad/s}$$
+
+   - **Câu 6 (`6b`):** Với góc $\theta$ hợp bởi $AB$ và rãnh ngang của $A$, tọa độ đứng của $B$ là $y_B = l\sin\theta \implies V_B = \lvert\dot{y}_B\rvert = l\cos\theta \cdot \omega = IB \cdot \omega$. Tại $\theta = 0^\circ$, $\cos 0^\circ = 1$ nên $V_B = 0{,}4 \times 4{,}818 \approx 1{,}93\text{ m/s}$.
+
+2. **Mã Đề `0002/2016` (Câu 3–6 — Phân tích phương án đúng `6e`):** $l = 0{,}8\text{ m}$, $m = 10\text{ kg}$, $A$ trượt thẳng đứng, $B$ trượt ngang chịu lực kéo không đổi $P = 50\text{ N}$ từ vị trí thẳng đứng $\theta_0 = 0^\circ$ đến $\theta = 45^\circ$ ($\theta$ hợp với phương thẳng đứng).
+   - **Câu 3 (`3a`):** $T = \frac{1}{6}(10)(0{,}8)^2\omega^2 = \frac{16}{15}\omega^2\text{ (J)}$.
+   - **Câu 4 (`4a`):** Khối tâm $G$ hạ xuống $\frac{l}{2}(1 - \cos\theta)$ và $B$ dịch theo chiều lực $P$ một đoạn $x_B = l\sin\theta$:
+
+     $$\sum A(\theta) = mg\frac{l}{2}(1 - \cos\theta) + P l\sin\theta \approx 39{,}2(1 - \cos\theta) + 40\sin\theta\text{ (J)}$$
+
+     (Kiểm toán biên: $\sum A(0^\circ) = 0\text{ J}$).
+   - **Câu 5 (`5c`):** Tại $\theta = 45^\circ$, ta tính được $\sum A(45^\circ) = 39{,}2\left(1 - \frac{\sqrt{2}}{2}\right) + 40\frac{\sqrt{2}}{2}$ $\approx 39{,}7657\text{ J}$, suy ra $\omega = \sqrt{\frac{39{,}7657 \times 15}{16}}$ $\approx 6{,}11\text{ rad/s}$.
+   - **Câu 6 (`6e. Các câu a, b, c, d đều sai`):** Hoành độ con trượt $B$ là $x_B = l\sin\theta$ (tương ứng khoảng cách từ tâm vận tốc tức thời $I$ đến $B$ là $IB = l\cos\theta$). Tại $\theta = 45^\circ$:
+
+     $$V_B = \dot{x}_B = l\cos 45^\circ \cdot \omega = 0{,}8 \cdot \frac{\sqrt{2}}{2} \cdot 6{,}106 \approx 3{,}45\text{ m/s}$$
+
+     Các phương án đề in là `a. 9,76`, `b. 6,91` (kết quả sai do chia nhầm $\frac{l\omega}{\cos 45^\circ}$), `c. 5,22`, `d. 4,70`. Vì giá trị đúng $3{,}45\text{ m/s}$ không xuất hiện trong `a..d`, đáp án chính xác là **`6e`**.
 
 ---
 
-::: info Chùm hoàn chỉnh 3 — Đề 0002/2016 Câu 3, 4, 5, 6 (Đáp án: 3a, 4a, 5c, 6e — Vạch mặt bẫy 6e!)
-Cơ hệ Hình 13-1 (bên phải): thanh đồng chất $AB$ dài $l = 0{,}8\text{ m}$, $m = 10\text{ kg}$, thả từ đứng yên tại $\theta_0 = 0^\circ$ dưới lực kéo $P = 50\text{ N}$ đến vị trí $\theta = 45^\circ$ ($g = 9{,}81\text{ m/s}^2$).
-1. **Câu 3 (`3a`):** Dùng công thức tủ thanh trượt 2 tường vuông góc:
-   $$T = \frac{1}{6}m l^2 \omega^2 = \frac{1}{6}(10)(0{,}8)^2\omega^2 = \frac{16}{15}\omega^2\text{ (J)} \implies \textbf{Chọn 3a}$$
-2. **Câu 4 (`4a`):** Đã chứng minh ở Ngày 12:
-   $$\sum A(\theta) = 39{,}2(1 - \cos\theta) + 40\sin\theta\text{ (J)} \implies \textbf{Chọn 4a}$$
-3. **Câu 5 (`5c`):** Tại $\theta = 45^\circ$:
-   $$\sum A(45^\circ) = 39{,}2\left(1 - \frac{\sqrt{2}}{2}\right) + 40\left(\frac{\sqrt{2}}{2}\right) \approx 39{,}7657\text{ J}$$
-   Từ $T - 0 = \sum A$:
-   $$\begin{aligned} \frac{16}{15}\omega^2 &= 39{,}7657 \\ \implies \omega &= \sqrt{\frac{39{,}7657 \times 15}{16}} \approx 6{,}1058 \approx 6{,}11\text{ rad/s} \end{aligned}$$
-   Suy ra **chọn `5c`**.
-4. **Câu 6 (`6e` — CẢNH BÁO BẪY CHẾT NGƯỜI!):**
-   - Đề cho 4 đáp án số: `a. 9,76 m/s`, `b. 6,91 m/s`, `c. 5,22 m/s`, `d. 4,70 m/s` và `e. Các câu a, b, c, d đều sai`.
-   - Tại vị trí $\theta = 45^\circ$, điểm $I$ là giao điểm đường nằm ngang qua $A$ và đường thẳng đứng qua $B$ (xem Hình 13-1 bên phải). Cạnh $IB$ là cạnh kề góc $\theta$ trong tam giác vuông $IAB$:
-     $$IB = l\cos 45^\circ = 0{,}8 \times \frac{\sqrt{2}}{2} \approx 0{,}5657\text{ m}$$
-   - Vận tốc thực tế của con trượt $B$ là:
-     $$V_B = IB \cdot \omega = 0{,}5657 \times 6{,}1058 \approx 3{,}45\text{ m/s}$$
-     *(Nếu lấy đạo hàm trực tiếp $x_B = l\sin\theta \implies V_B = \dot{x}_B = l\cos\theta\cdot\dot{\theta}$ cũng ra y hệt $3{,}45\text{ m/s}$!).*
-   - Vì $3{,}45\text{ m/s}$ **không trùng** bất kỳ số nào trong `a, b, c, d` (trên bản chụp đề cũ từng có thí sinh khoanh nhầm `b` rồi gạch bỏ khoanh sang `e`), nên đáp án đúng tuyệt đối là **`6e`**!
-:::
+## Ngày 14: Cơ Hệ Tổng Hợp — Kết Hợp Động Năng & D'Alembert Tìm Sức Căng Dây, Phản Lực & Điều Kiện Tách Mặt {#ngay-14}
+
+### 14.1. Quy trình giải tích 2 bước cho cơ hệ nhiều vật có hỏi lực liên kết
+
+Trong Định lý biến thiên động năng áp dụng cho toàn cơ hệ liên kết lý tưởng, các nội lực căng dây $S$, phản lực khớp nối, phản lực pháp tuyến $N$ và lực ma sát nghỉ $F_{\text{msn}}$ đều có tổng công bằng không nên bị khử hoàn toàn khỏi phương trình. Do đó, khi đề thi yêu cầu xác định thêm các lực liên kết này, kiểm tra điều kiện lăn không trượt, hoặc tìm vị trí vật rời khỏi mặt tựa một phía, bắt buộc thực hiện **quy trình giải tích hai bước**:
+
+- **Bước 1 — Giải động học và động lực học toàn hệ bằng Định lý Động năng:**
+  - Dùng $\frac{dT}{dt} = \sum N$ để xác định gia tốc dài $a(q)$ và gia tốc góc $\varepsilon(q)$ của từng khâu.
+  - Dùng $T - T_0 = \sum A$ để xác định bình phương vận tốc $v^2(q)$ và vận tốc góc $\omega^2(q)$ (cần thiết để tính thành phần lực quán tính pháp tuyến/ly tâm $F_{\text{qt}}^n = m\omega^2 r$).
+- **Bước 2 — Tách vật rắn đơn lẻ và áp dụng Nguyên lý D'Alembert:**
+  - Tách riêng vật rắn chứa ẩn phản lực cần tìm (cắt dây thay bằng sức căng $\vec{S}$, giải phóng mặt tựa thay bằng $\vec{N}$ và $\vec{F}_{\text{msn}}$).
+  - Đặt hệ lực quán tính thu gọn về khối tâm $C$ của vật tách rời:
+
+    $$\vec{F}_{\text{qt}} = -m\vec{a}_C, \qquad \vec{M}_C^{\text{qt}} = -J_C\vec{\varepsilon}$$
+
+  - Viết các phương trình cân bằng tĩnh–động lực ($\sum F_x + F_{\text{qt},x} = 0$, $\sum F_y + F_{\text{qt},y} = 0$, $\sum M_C + M_C^{\text{qt}} = 0$) để giải trực tiếp các ẩn phản lực.
 
 ---
 
-## Ngày 14: Luyện Chuyên Sâu Các Hệ Dây Kéo Ròng Rọc, Con Lăn Nối Vật & Ma Sát Trượt
+### 14.2. Ba bài toán ứng dụng trọng tâm (kèm chứng minh đầy đủ)
 
-Trong các đề thi thật các năm `2011–2015`, ngoài cơ hệ thanh–lò xo, Bộ môn Cơ kỹ thuật thường ra chùm 4 câu với **hệ dây kéo vắt qua ròng rọc 2 tầng** hoặc **con lăn kép quấn dây ở tầng trong**, kết hợp **vật trượt có ma sát động $f$ trên mặt phẳng nghiêng**. Bí quyết làm chủ dạng này nằm ở **3 phép quy đổi vận tốc dây trong 10 giây**.
+#### Ứng dụng A: Tìm sức căng dây $S$, lực ma sát nghỉ $F_{\text{msn}}$ và điều kiện không trượt (`Bài 6.26` SBT ĐLH Chương 6)
 
-### 1. Quy tắc quy đổi vận tốc dây & Con lăn kép trong 10 giây
+<div class="figure-container">
+  <img src="/figures/bai-tap/dong-luc-hoc/hinh_6_40.svg" alt="Con lăn hai tầng B và C lăn không trượt trên nền ngang nối dây qua ròng rọc D treo vật nặng A" class="figure-img" />
+  <p class="figure-caption">Hình 14.1: Cơ hệ con lăn hai tầng B, C nối dây qua ròng rọc D treo vật nặng A (Hình 6-40 — Bài 6.26 Sách Bài Tập Động Lực Học Chương 6)</p>
+</div>
 
-| Kết cấu cơ khí | Cách tìm tỉ số vận tốc bằng tâm quay | Mẹo chống sai khi làm trắc nghiệm |
+**Bài toán (`Bài 6.26` [SBT ĐLH Chương 6](/bai-tap/dong-luc-hoc/chuong-6)):** Con lăn hai tầng đồng chất trọng lượng $Q$, bán kính vành lăn trên sàn ngang là $R$, bán kính tầng quấn dây phía trên là $r$, bán kính quán tính đối với trục tâm là $\rho$. Dây nhẹ không dãn rời từ đỉnh tầng $r$ nằm ngang sang phải, vắt qua ròng rọc nhẹ cố định $D$ treo vật nặng $A$ trọng lượng $P$ rơi thẳng đứng từ trạng thái nghỉ. Giả thiết con lăn lăn không trượt trên nền ngang có hệ số ma sát trượt tĩnh $f_0$. Xác định gia tốc $a_A$, sức căng dây $S$, lực ma sát nghỉ $F_{\text{msn}}$ và điều kiện của $f_0$ để không xảy ra trượt.
+
+**Giải tích 2 bước:**
+
+1. **Bước 1 (Định lý Động năng cho toàn hệ):**
+   - Liên hệ động học với tâm tức thời tại tiếp điểm nền $I$: $v_C = R\omega$ (sang phải) và điểm dây rời ở đỉnh tầng $r$ cách $I$ đoạn $R + r$ nên $v_A = (R + r)\omega \implies \omega = \frac{v_A}{R + r}$.
+   - Động năng toàn hệ quy về $v_A$:
+
+     $$\begin{aligned}
+     T &= \frac{1}{2}\frac{P}{g}v_A^2 + \frac{1}{2}\frac{Q}{g}\left(R^2 + \rho^2\right)\omega^2 \\
+       &= \frac{1}{2g}\left[P + Q\frac{R^2 + \rho^2}{(R + r)^2}\right]v_A^2
+     \end{aligned}$$
+
+   - Công suất ngoại lực: chỉ có trọng lực $\vec{P}$ sinh công ($\sum N = P v_A$). Từ $\frac{dT}{dt} = \sum N$ rút ra gia tốc rơi $a_A$ và gia tốc góc $\varepsilon = \frac{a_A}{R + r}$:
+
+     $$\begin{aligned}
+     a_A &= \frac{P(R + r)^2 g}{Q(R^2 + \rho^2) + P(R + r)^2} \\
+     \varepsilon &= \frac{P(R + r) g}{Q(R^2 + \rho^2) + P(R + r)^2}
+     \end{aligned}$$
+
+2. **Bước 2 (Tách vật đặt lực quán tính D'Alembert):**
+   - **Tách vật treo $A$** (chịu $\vec{P}\downarrow$, sức căng $\vec{S}\uparrow$ và lực quán tính $F_{\text{qt},A} = \frac{P}{g}a_A\uparrow$):
+
+     $$\begin{aligned}
+     P - S - \frac{P}{g}a_A &= 0 \\
+     \implies S = P\left(1 - \frac{a_A}{g}\right) &= \frac{P Q (R^2 + \rho^2)}{Q(R^2 + \rho^2) + P(R + r)^2}
+     \end{aligned}$$
+
+   - **Tách con lăn $BC$** (khối tâm tiến sang phải với $a_C = R\varepsilon$, quay thuận kim đồng hồ với $\varepsilon$; giả sử $\vec{F}_{\text{msn}}$ tại $I$ hướng sang trái): Chiếu phương ngang $S - F_{\text{msn}} - \frac{Q}{g}R\varepsilon = 0$:
+
+     $$\begin{aligned}
+     F_{\text{msn}} &= S - \frac{Q}{g}R\varepsilon = \frac{P Q (R^2 + \rho^2) - P Q R(R + r)}{Q(R^2 + \rho^2) + P(R + r)^2} \\
+                    &= \frac{P Q \left(\rho^2 - R r\right)}{Q(R^2 + \rho^2) + P(R + r)^2}
+     \end{aligned}$$
+
+     *(Kiểm chứng chéo bằng phương trình mômen quanh khối tâm $C$: $S r + F_{\text{msn}} R - \frac{Q}{g}\rho^2\varepsilon = 0$ cho cùng kết quả. Đáng chú ý: chiều thực tế của $\vec{F}_{\text{msn}}$ phụ thuộc dấu của $(\rho^2 - Rr)$, và khi $\rho^2 = Rr$ thì $F_{\text{msn}} = 0$).*
+   - **Điều kiện lăn không trượt:** Với phản lực pháp tuyến $N = Q$, điều kiện Coulomb tĩnh $\lvert F_{\text{msn}}\rvert \le f_0 N$ đòi hỏi:
+
+     $$f_0 \ge \frac{P\left\lvert\rho^2 - R r\right\rvert}{Q(R^2 + \rho^2) + P(R + r)^2}$$
+
+---
+
+#### Ứng dụng B: Xác định góc $\varphi^*$ vật rắn tách khỏi mặt tựa một phía (`Bài 6.19` & `Thí dụ 6–5` SBT ĐLH Chương 6)
+
+<div class="figure-container">
+  <img src="/figures/bai-tap/dong-luc-hoc/hinh_6_36.svg" alt="Khối trụ tròn đồng chất lăn không trượt quanh mép sắc B của sàn ngang" class="figure-img" />
+  <p class="figure-caption">Hình 14.2: Khối trụ tròn đồng chất bán kính R lăn quanh mép B cho tới khi tách khỏi mép tựa (Hình 6-36 — Bài 6.19 Sách Bài Tập Động Lực Học Chương 6)</p>
+</div>
+
+**Bài toán (`Bài 6.19` [SBT ĐLH Chương 6](/bai-tap/dong-luc-hoc/chuong-6)):** Khối trụ tròn đặc đồng chất khối lượng $m$, bán kính $R$ bắt đầu lăn không trượt với vận tốc đầu không đáng kể quanh mép sắc ngang $B$ từ vị trí khối tâm $C$ nằm thẳng đứng ngay trên $B$ ($\varphi_0 = 0$). Xác định góc lệch $\varphi^*$ hợp bởi $BC$ với phương thẳng đứng và vận tốc góc $\omega^*$ tại thời điểm khối trụ bắt đầu rời khỏi mép $B$.
+
+**Giải tích 2 bước:**
+1. **Bước 1 (Tìm $\omega^2(\varphi)$ bằng dạng hữu hạn trong giai đoạn còn tiếp xúc):**
+   Chừng nào $N(\varphi) > 0$ và trụ chưa trượt, khối trụ quay quanh trục cố định $B$ với $J_B = \frac{1}{2}mR^2 + mR^2 = \frac{3}{2}mR^2$. Áp dụng $T - T_0 = A_P$ với độ hạ khối tâm $\Delta h_C = R(1 - \cos\varphi)$:
+
+   $$\frac{1}{2}\left(\frac{3}{2}m R^2\right)\omega^2 = m g R(1 - \cos\varphi) \implies \omega^2(\varphi) = \frac{4g}{3R}(1 - \cos\varphi)$$
+
+2. **Bước 2 (Thiết lập phản lực pháp tuyến $N(\varphi)$ bằng D'Alembert và giải điều kiện tách mặt $N(\varphi^*) = 0$):**
+   Chiếu các lực tác dụng lên trụ và lực quán tính ly tâm $F_{\text{qt}}^n = m a_C^n = m\omega^2 R$ (hướng dọc tia $BC$ ra xa $B$) lên trục pháp tuyến hướng từ $B$ qua $C$:
+
+   $$\begin{aligned}
+   N(\varphi) - m g \cos\varphi + m \omega^2(\varphi) R &= 0 \\
+   \implies N(\varphi) &= m g \left[\cos\varphi - \frac{4}{3}(1 - \cos\varphi)\right] \\
+   &= \frac{m g}{3}\left(7\cos\varphi - 4\right)
+   \end{aligned}$$
+
+   Liên kết tựa một phía tại mép $B$ chỉ chịu nén ($N \ge 0$). Khối trụ bắt đầu tách khỏi mép $B$ ngay tại góc $\varphi^*$ làm triệt tiêu phản lực pháp tuyến:
+
+   $$N(\varphi^*) = 0 \iff \cos\varphi^* = \frac{4}{7} \implies \varphi^* = \arccos\left(\frac{4}{7}\right) \approx 55^\circ 09'$$
+
+   Thay $\cos\varphi^* = \frac{4}{7}$ vào $\omega^2(\varphi)$ thu được $\omega^* = \sqrt{\frac{4g}{3R}\cdot\frac{3}{7}} = 2\sqrt{\frac{g}{7R}}$.
+
+*(Đối chiếu tương tự với `Thí dụ 6–5` Hình 11.4: thanh đồng chất $AB$ dài $2a$ thả trượt từ góc nghiêng $\varphi_0$ tựa trên tường đứng nhẵn và sàn ngang nhẵn có $\dot{\varphi}^2 = \frac{3g}{2a}(\sin\varphi_0 - \sin\varphi)$ và $\ddot{\varphi} = -\frac{3g}{4a}\cos\varphi$; phương trình D'Alembert ngang $N_A = m\ddot{x}_C = 0$ cho vị trí đầu $A$ tách khỏi tường đứng là $\varphi^* = \arcsin\left(\frac{2}{3}\sin\varphi_0\right)$).*
+
+---
+
+### 14.3. Danh mục bài tập thực chiến bắt buộc (Ngày 11 – Ngày 14)
+
+Trước khi bước vào Cổng Kiểm Định Ngày 15, người học phải tự đặt bút giải hoàn chỉnh và đối chiếu đáp số các bài toán có thật sau đây trong kho tài liệu học phần:
+
+| Nhóm kỹ năng | Bài tập Sách Bài Tập Đỗ Sanh | Chùm câu hỏi Đề thi thật HCMUT |
 | :--- | :--- | :--- |
-| **1. Ròng rọc 2 tầng cố định $(R, r)$** | $\omega = \dfrac{v_{\text{ngoài}}}{R} = \dfrac{v_{\text{trong}}}{r}$ | Dây ở vành lớn luôn chạy nhanh gấp $\frac{R}{r}$ lần dây ở vành nhỏ. |
-| **2. Ròng rọc động tâm $C$, 1 đầu dây cố định** | $v_{\text{dây kéo}} = 2 v_C$, $\quad \omega_C = \dfrac{v_{\text{dây kéo}}}{2R_C} = \dfrac{v_C}{R_C}$ | Điểm nối dây cố định đứng yên nên tốc độ tâm $C$ bằng **trung bình cộng** hai nhánh dây. |
-| **3. Con lăn kép $(R, r)$ lăn không trượt trên nền, dây quấn tầng trong $r$** | Tâm tức thời $I$ nằm ở **đáy tiếp xúc nền** ($\omega = \frac{v_A}{R}$):<br>- Dây ở **phía trên** vành $r$: $v_{\text{dây}} = \omega(R + r)$<br>- Dây ở **phía dưới** vành $r$: $v_{\text{dây}} = \omega(R - r)$ | Đo khoảng cách từ **chân $I$** tới đường thẳng chứa dây! Tuyệt đối **không** dùng $v_{\text{dây}} = \omega r$ (vì tâm con lăn đang di chuyển!). |
+| **1. Thiết lập động năng $T$ & thu gọn khối lượng** | [SBT ĐLH Chương 2](/bai-tap/dong-luc-hoc/chuong-2): `Thí dụ 2–8`, `Thí dụ 2–12`, `Bài 2.28`, `Bài 2.29`, `Bài 2.30` | [Đề `1821` Câu 5](/on-thi/de-thi-that-hcmut#de-1821) · [Đề `1721` Câu 6, 7, 9](/on-thi/de-thi-that-hcmut#de-1721) · [Đề `1722` Câu 6, 7, 9](/on-thi/de-thi-that-hcmut#de-1722) |
+| **2. Công lò xo $\Delta l_0 \neq 0$, thế năng & ma sát trượt** | [SBT ĐLH Chương 2](/bai-tap/dong-luc-hoc/chuong-2): `Thí dụ 2–9`, `Thí dụ 2–10`, `Bài 2.31`, `Bài 2.33`, `Bài 2.34` | [Đề `1721` Câu 8](/on-thi/de-thi-that-hcmut#de-1721) · [Đề `1722` Câu 8](/on-thi/de-thi-that-hcmut#de-1722) · [Đề `0001/2016` Câu 4](/on-thi/de-thi-that-hcmut#de-2016) |
+| **3. Đạo hàm $\frac{dT}{dt} = \sum N$ (cả $M_{\text{td}}(q)$ biến thiên)** | [SBT ĐLH Chương 2](/bai-tap/dong-luc-hoc/chuong-2): `Thí dụ 2–14`, `Thí dụ 2–15`, `Thí dụ 2–17`, `Bài 2.35`, `Bài 2.39`, `Bài 2.45` | [Đề `1821` Câu 6–8](/on-thi/de-thi-that-hcmut#de-1821) · [Đề `0002/2016` Câu 3–6](/on-thi/de-thi-that-hcmut#de-2016) · [Đề `0002/2015` Câu 5–8](/on-thi/de-thi-that-hcmut#de-2015) |
+| **4. Kết hợp Động năng + D'Alembert ($S, F_{\text{msn}}, N = 0$)** | [SBT ĐLH Chương 6](/bai-tap/dong-luc-hoc/chuong-6): `Thí dụ 6–5`, `Thí dụ 6–10`, `Thí dụ 6–11`, `Bài 6.7`, `Bài 6.10`, `Bài 6.11`, `Bài 6.19`, `Bài 6.26` | [Đề `0001/2015` Câu 6–9](/on-thi/de-thi-that-hcmut#de-2015) · [Đề `1` (tr. 67) Câu 1–8](/on-thi/de-thi-that-hcmut#de-cac-nam-truoc) · [Đề `19/06/2014` Câu 1–7](/on-thi/de-thi-that-hcmut#de-cac-nam-truoc) |
 
-<div class="figure-container">
-<svg viewBox="0 0 760 285" style="width: 100%; max-width: 720px; height: auto; display: block; margin: 0 auto;" role="img" aria-label="Sơ đồ hệ ròng rọc 2 tầng Đề 0001/2015 và con lăn kép Đề 0002/2015">
-  <rect x="8" y="8" width="362" height="268" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
-  <rect x="390" y="8" width="362" height="268" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
-  <text x="189" y="30" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="700" fill="#0369a1">Đề 0001/2015 — Câu 6–9</text>
-  <text x="571" y="30" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="700" fill="#0f766e">Đề 0002/2015 — Câu 5–8</text>
+---
 
-  <!-- Left: De 0001/2015 Cau 6-9 -->
-  <!-- Two-step pulley O at (240, 86), R=40, r=20 -->
-  <circle cx="240" cy="86" r="40" fill="#e0f2fe" stroke="#0284c7" stroke-width="2" />
-  <circle cx="240" cy="86" r="20" fill="#bae6fd" stroke="#0369a1" stroke-width="1.8" />
-  <circle cx="240" cy="86" r="3.5" fill="#0f172a" />
-  <text x="240" y="79" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#0f172a">O</text>
-  <!-- Incline 30 deg: bottom-left (42, 240) up to (215, 140) -->
-  <line x1="42" y1="240" x2="215" y2="140" stroke="#475569" stroke-width="2.5" />
-  <line x1="42" y1="240" x2="180" y2="240" stroke="#94a3b8" stroke-width="1.5" />
-  <text x="98" y="232" font-family="sans-serif" font-size="11" font-weight="700" fill="#475569">30°</text>
-  <!-- Block B on incline (rotated -30 deg around (115, 184)) -->
-  <g transform="rotate(-30 115 184)">
-    <rect x="97" y="168" width="36" height="24" rx="2" fill="#fef3c7" stroke="#d97706" stroke-width="2" />
-    <text x="115" y="184" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#b45309">B</text>
-  </g>
-  <!-- Rope from B tangent to top of inner pulley r -->
-  <line x1="128" y1="166" x2="230" y2="69" stroke="#0f172a" stroke-width="1.8" />
-  <text x="148" y="122" text-anchor="end" font-family="sans-serif" font-size="11" fill="#334155">ma sát f</text>
-  <!-- Vertical rope from right side of outer pulley R(280, 86) down to A(280, 175) -->
-  <line x1="280" y1="86" x2="280" y2="170" stroke="#0f172a" stroke-width="1.8" />
-  <rect x="266" y="170" width="28" height="26" rx="2" fill="#dcfce7" stroke="#16a34a" stroke-width="2" />
-  <text x="280" y="187" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#15803d">A</text>
-  <!-- Floor below A at y=240 -->
-  <line x1="240" y1="240" x2="330" y2="240" stroke="#475569" stroke-width="2.5" />
-  <line x1="296" y1="196" x2="296" y2="238" stroke="#64748b" stroke-width="1.2" stroke-dasharray="3,2" />
-  <text x="304" y="220" font-family="sans-serif" font-size="11" font-weight="700" fill="#475569">h</text>
-  <!-- Force F downward on A -->
-  <line x1="280" y1="196" x2="280" y2="225" stroke="#dc2626" stroke-width="2" />
-  <polygon points="276,222 280,230 284,222" fill="#dc2626" />
-  <text x="264" y="218" text-anchor="end" font-family="sans-serif" font-size="12" font-weight="700" fill="#dc2626">F</text>
-  <text x="189" y="264" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#475569">R = 2r; vB = VA / 2; dây A chùng khi chạm đất</text>
+## Ngày 15: Cổng Kiểm Định Chặng 3 (3 Chùm × 4 Câu = 12 Câu / 35 Phút, Cấm Mở Sách) {#ngay-15}
 
-  <!-- Right: De 0002/2015 Cau 5-8 -->
-  <!-- Wedge/incline from (418, 240) to top (595, 120) then horizontal shelf to (730, 120) -->
-  <line x1="418" y1="240" x2="595" y2="120" stroke="#475569" stroke-width="2.5" />
-  <line x1="595" y1="120" x2="730" y2="120" stroke="#475569" stroke-width="2.5" />
-  <line x1="418" y1="240" x2="520" y2="240" stroke="#94a3b8" stroke-width="1.5" />
-  <text x="468" y="232" font-family="sans-serif" font-size="11" font-weight="700" fill="#475569">α</text>
-  <!-- Small pulley O at corner (595, 110), radius 11 -->
-  <circle cx="595" cy="110" r="11" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.8" />
-  <text x="595" y="92" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#0f172a">O</text>
-  <!-- Double roller A on incline: slope vector (-0.828, 0.561), normal (-0.561, -0.828) -->
-  <!-- Contact I = (490, 191), R = 36 -> Center A = (490 - 20.2, 191 - 29.8) = (470, 161) -->
-  <circle cx="470" cy="161" r="36" fill="#ccfbf1" stroke="#0d9488" stroke-width="2" />
-  <circle cx="470" cy="161" r="24" fill="#99f6e4" stroke="#0f766e" stroke-width="1.6" />
-  <circle cx="470" cy="161" r="3.5" fill="#0f172a" />
-  <circle cx="490" cy="191" r="4" fill="#dc2626" />
-  <text x="456" y="164" text-anchor="end" font-family="sans-serif" font-size="12" font-weight="700" fill="#0f172a">A</text>
-  <text x="506" y="210" font-family="sans-serif" font-size="12" font-weight="700" fill="#dc2626">I</text>
-  <!-- Line I to top of inner circle r (456.5, 141) showing R+r -->
-  <line x1="490" y1="191" x2="456.5" y2="141" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="3,2" />
-  <!-- Rope from top of inner circle (456.5, 141) parallel to incline up to pulley O(589, 100), then horizontal to B(650, 108) -->
-  <line x1="456.5" y1="141" x2="589" y2="100" stroke="#0f172a" stroke-width="1.8" />
-  <line x1="595" y1="99" x2="650" y2="99" stroke="#0f172a" stroke-width="1.8" />
-  <!-- Block B on horizontal shelf -->
-  <rect x="650" y="92" width="38" height="26" rx="2" fill="#fef3c7" stroke="#d97706" stroke-width="2" />
-  <text x="669" y="110" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#b45309">B</text>
-  <!-- Force F pulling B right -->
-  <line x1="688" y1="105" x2="730" y2="105" stroke="#dc2626" stroke-width="2.2" />
-  <polygon points="728,100 737,105 728,110" fill="#dc2626" />
-  <text x="716" y="94" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#dc2626">F</text>
-  <text x="678" y="138" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#334155">ma sát f2</text>
-  <text x="571" y="264" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#475569">r = 2R/3; từ tâm I tới dây = R + r = 5R/3</text>
-</svg>
-<div class="figure-caption">
-
-Hình 14-1: Cơ hệ ròng rọc 2 tầng kéo vật trượt có ma sát (Đề 0001/2015) và con lăn kép quấn dây tầng trong (Đề 0002/2015)
-
-</div>
-</div>
-
-### 2. Giải chi tiết các đề thực chiến 2011–2015
-
-::: info Bài thực chiến 14-1 — Đề 0001 (29/06/2015) Câu 6, 7, 8, 9 (Đáp án: 6b, 7a, 8d, 9c)
-Cơ hệ như Hình 14-1 (bên trái): vật $A$ ($m_A$) treo thẳng đứng trên tầng ngoài bán kính $R = 2r$ của ròng rọc $O$ ($m_O = 4m_B$, bán kính quán tính $\rho = \frac{3}{2}r$), vật $B$ ($m_B$) trên mặt nghiêng $30^\circ$ có hệ số ma sát trượt động $f = \frac{\sqrt{3}}{8}$ nối với tầng trong bán kính $r$. Biết $m_A = \frac{3}{8}m_B$ (tức $m_B = \frac{8}{3}m_A$, $m_O = \frac{32}{3}m_A$) và lực kéo thẳng đứng hướng xuống đặt vào $A$ là $F = \frac{45}{12}m_A g$. Ban đầu hệ đứng yên, $A$ cách sàn đoạn $h$.
-
-1. **Câu 6 (`6b`) — Động năng toàn hệ khi $A$ chưa chạm đất theo $V_A$:**
-   - Quan hệ động học: $\omega_O = \dfrac{V_A}{R} = \dfrac{V_A}{2r}$; $\quad v_B = r\omega_O = \dfrac{V_A}{2}$.
-   - Mômen quán tính ròng rọc $O$: $J_O = m_O\rho^2 = \frac{32}{3}m_A\left(\frac{3}{2}r\right)^2 = 24m_A r^2$.
-   - Động năng từng vật:
-     $$\begin{aligned} T_A &= \frac{1}{2}m_A V_A^2 \\ T_B &= \frac{1}{2}\left(\frac{8}{3}m_A\right)\left(\frac{V_A}{2}\right)^2 = \frac{1}{3}m_A V_A^2 \\ T_O &= \frac{1}{2}\left(24m_A r^2\right)\left(\frac{V_A}{2r}\right)^2 = 3m_A V_A^2 \end{aligned}$$
-   - Cộng lại:
-     $$T = \left(\frac{1}{2} + \frac{1}{3} + 3\right)m_A V_A^2 = \frac{23}{6}m_A V_A^2 \implies \textbf{Chọn 6b}$$
-
-2. **Câu 7 (`7a`) — Tổng công ngoại lực khi $A$ đi xuống đoạn $x \le h$:**
-   - Khi $A$ xuống $x$ thì $B$ đi lên dọc dốc đoạn $x_B = \frac{x}{2}$.
-   - Lực kéo + trọng lực trên $A$: $A_{F+P_A} = \left(\frac{45}{12}m_A g + m_A g\right)x = \frac{57}{12}m_A g x$.
-   - Trọng lực + ma sát trượt trên $B$ (lưu ý $\sin 30^\circ = \frac{1}{2}$ và $f\cos 30^\circ = \frac{\sqrt{3}}{8}\cdot\frac{\sqrt{3}}{2} = \frac{3}{16}$):
-     $$A_{P_B + \text{ms}} = -m_B g\left(\frac{1}{2} + \frac{3}{16}\right)\frac{x}{2} = -\frac{8}{3}m_A g \cdot \frac{11}{32} x = -\frac{11}{12}m_A g x$$
-   - Tổng công:
-     $$\begin{aligned} \sum A &= \left(\frac{57}{12} - \frac{11}{12}\right)m_A g x \\ &= \frac{46}{12}m_A g x = \frac{23}{6}m_A g x \end{aligned}$$
-     Suy ra **chọn `7a`**.
-
-3. **Câu 8 (`8d`) — Sức căng dây $S_A$ khi $A$ chưa chạm đất:**
-   - Đạo hàm hai vế $\frac{dT}{dt} = \sum N$:
-     $$\frac{23}{3}m_A V_A a_A = \frac{23}{6}m_A g V_A \implies a_A = \frac{1}{2}g$$
-   - Tách riêng vật $A$ đang đi xuống với gia tốc $a_A$:
-     $$\begin{aligned} F + m_A g - S_A &= m_A a_A \\ \implies S_A &= \left(\frac{45}{12} + 1 - \frac{1}{2}\right)m_A g = \frac{51}{12}m_A g \end{aligned}$$
-     Suy ra **chọn `8d`**.
-
-4. **Câu 9 (`9c`) — Quãng đường $d$ mà $B$ trượt tiếp sau khi $A$ chạm đất:**
-   - Lúc $A$ vừa chạm đất ($x = h$), từ $T = \sum A \implies \frac{23}{6}m_A V_{A0}^2 = \frac{23}{6}m_A g h \implies V_{A0}^2 = g h$, do đó $v_{B0}^2 = \frac{1}{4}V_{A0}^2 = \frac{1}{4}g h$ và $\omega_0 = \frac{v_{B0}}{r}$.
-   - **Điểm tinh tế cần hiểu rõ:** Khi $A$ chạm đất và dừng lại, nhánh dây nối $A$ lập tức bị **chùng** ($S_A = 0$), nhưng ròng rọc $O$ vẫn đang quay theo quán tính kéo căng nhánh dây nối $B$, khiến **cả $B$ và ròng rọc $O$ giảm tốc cùng nhau** cho tới khi dừng hẳn!
-   - Động năng còn lại của cặp $(B + O)$ là:
-     $$T_{B+O} = T_B + T_O = \left(\frac{1}{3} + 3\right)m_A V_{A0}^2 = \frac{10}{3}m_A g h$$
-   - Trên đoạn $d$ đi lên dốc cho tới khi dừng ($T_{\text{cuối}} = 0$), tổng công cản lên $B$:
-     $$\begin{aligned} \sum A_{\text{cản}} &= -m_B g(\sin 30^\circ + f\cos 30^\circ)d \\ &= -\frac{8}{3}m_A g\left(\frac{11}{16}\right)d = -\frac{11}{6}m_A g d \end{aligned}$$
-   - Áp dụng $0 - T_{B+O} = \sum A_{\text{cản}}$:
-     $$\frac{11}{6}m_A g d = \frac{10}{3}m_A g h \implies d = \frac{20}{11}h \implies \textbf{Chọn 9c}$$
+::: warning Quy chế thực hiện Cổng Kiểm Định Chặng 3
+1. **Thời lượng:** Bấm đồng hồ đếm ngược đúng **35 phút** cho toàn bộ 12 câu (3 chùm bài toán liên hoàn).
+2. **Điều kiện làm bài:** Chỉ sử dụng giấy nháp trắng và máy tính cầm tay khoa học; **tuyệt đối không mở giáo trình, sổ tay công thức hay xem phần lời giải phía dưới** cho tới khi ghi xong phương án lựa chọn của cả 12 câu.
+3. **Cảnh báo cấu trúc phương án:** Phương án *«Các đáp án còn lại đều sai»* được bố trí ở nhiều vị trí khác nhau (`a, b, c, d, e`) tương tự đề thi thật `AS1003` (`1821`, `1721`, `0002/2016`). Không loại trừ hay chọn cảm tính phương án này nếu chưa kiểm chứng đại số.
 :::
 
 ---
 
-::: info Bài thực chiến 14-2 — Đề 0002 (29/06/2015) Câu 5, 6, 7, 8 (Đáp án: 5b, 6c, 7d, 8c)
-Cơ hệ Hình 14-1 (bên phải): con lăn kép tâm $A$ (bán kính ngoài $R$, bán kính trong $r = \frac{2}{3}R$) lăn không trượt trên mặt nghiêng góc $\alpha$, được xem như trụ đặc đồng chất trọng lượng $P_1$, bán kính $R$ ($J_A = \frac{1}{2}\frac{P_1}{g}R^2$). Dây quấn **tầng trong $r$** vòng qua ròng rọc $O$ không khối lượng kéo tải $B$ trọng lượng $P_2$ trên mặt ngang dưới lực kéo $F$.
+### Chùm 1 (Câu 1 – Câu 4): Tang Trống Hai Tầng, Lò Xo Có Biến Dạng Đầu & Ma Sát Trượt
 
-1. **Câu 5 (`5b`) — Tổng động năng $T$ theo $V_B$:**
-   - Tâm tức thời của con lăn $A$ là tiếp điểm $I$ trên dốc. Điểm tiếp xúc của dây ở **phía trên** vành trong $r$ cách $I$ một khoảng $R + r = R + \frac{2}{3}R = \frac{5}{3}R$.
-   - Suy ra vận tốc dây (bằng $V_B$) là $V_B = \omega\cdot\frac{5}{3}R$, còn vận tốc tâm con lăn là $V_A = \omega R = \frac{3}{5}V_B$.
-   - Áp dụng công thức tủ $\frac{3}{4}$ cho trụ đặc $A$ lăn không trượt và tải tịnh tiến $B$:
-     $$\begin{aligned} T &= \frac{3}{4}\left(\frac{P_1}{g}\right)V_A^2 + \frac{1}{2}\left(\frac{P_2}{g}\right)V_B^2 \\ &= \left[\frac{3}{4}\cdot\frac{9}{25}P_1 + \frac{1}{2}P_2\right]\frac{V_B^2}{g} = \frac{50P_2 + 27P_1}{100g}V_B^2 \implies \textbf{Chọn 5b} \end{aligned}$$
+Tang trống hai tầng quay quanh trục nằm ngang cố định $O$ gồm hai vành trụ đồng tâm bán kính ngoài $R = 0{,}4\text{ m}$ và bán kính trong $r = 0{,}2\text{ m}$, tổng khối lượng $m_O = 8\text{ kg}$, bán kính quán tính đối với trục quay $O$ là $\rho = 0{,}3\text{ m}$.
+- Nhánh dây thứ nhất (mềm, nhẹ, không dãn) quấn trên vành ngoài bán kính $R$, kéo vật nặng $A$ (khối lượng $m_A = 5\text{ kg}$, xem như chất điểm) trượt **đi lên** dọc mặt phẳng nghiêng cố định hợp góc $\alpha = 30^\circ$ so với phương ngang; hệ số ma sát trượt động giữa vật $A$ và mặt nghiêng là $f = \frac{\sqrt{3}}{5}$.
+- Nhánh dây thứ hai quấn trên vành trong bán kính $r$ nối thẳng với một lò xo đàn hồi tuyến tính độ cứng $k = 200\text{ N/m}$ (đầu kia của lò xo gắn cố định) theo chiều sao cho khi tang quay góc dương $\varphi > 0$ để kéo $A$ đi lên dốc thì lò xo bị kéo dãn thêm đoạn $r\varphi$.
+- Tại vị trí xuất phát $\varphi_0 = 0$, cơ hệ bắt đầu chuyển động từ trạng thái đứng yên ($\omega_0 = 0$) dưới tác dụng của ngẫu lực phát động không đổi $M = 36\text{ N}\cdot\text{m}$ cùng chiều $\varphi > 0$; biết rằng ngay tại $\varphi_0 = 0$ lò xo **đã bị dãn sẵn một đoạn ban đầu $\Delta l_0 = 0{,}1\text{ m}$**.
 
-2. **Câu 6 (`6c`) — Tổng công khi $B$ dịch sang phải đoạn $S$ (bỏ ma sát):**
-   - Con lăn $A$ tiến lên dọc dốc đoạn $S_A = \frac{3}{5}S$, độ cao tăng $S_A\sin\alpha = \frac{3}{5}S\sin\alpha$.
-   - Trọng lực $P_1$ sinh công âm, lực $F$ sinh công dương (ma sát nghỉ lăn không trượt ở $I$ không sinh công):
-     $$\sum A = \left(F - \frac{3}{5}P_1\sin\alpha\right)S \implies \textbf{Chọn 6c}$$
+Lấy $g = 10\text{ m/s}^2$, bỏ qua ma sát tại ổ trục $O$. Gọi $\omega = \dot{\varphi} > 0$ và $\varepsilon = \ddot{\varphi}$ là vận tốc góc và gia tốc góc của tang $O$ trong giai đoạn $0 \le \varphi \le 1{,}5\text{ rad}$.
 
-3. **Câu 7 (`7d`) — Gia tốc $a_B$ (bỏ ma sát tại $B$):**
-   - Đạo hàm hai vế $\frac{dT}{dt} = \sum N$ (với $\frac{dV_B}{dt} = a_B$ và $\frac{dS}{dt} = V_B$):
-     $$2\left(\frac{50P_2 + 27P_1}{100g}\right)V_B a_B = \left(F - \frac{3}{5}P_1\sin\alpha\right)V_B$$
-   - Chia hai vế cho $V_B$ và rút gọn $\frac{50P_2 + 27P_1}{50g} = \frac{2P_2 + \frac{27}{25}P_1}{2g}$:
-     $$a_B = 2g\frac{F - \frac{3}{5}P_1\sin\alpha}{2P_2 + \frac{27}{25}P_1} \implies \textbf{Chọn 7d}$$
+**Câu 1.** Biểu thức động năng $T$ của toàn cơ hệ theo vận tốc góc $\omega$ của tang $O$ là:
+- a. $T = 0{,}58\omega^2\text{ (J)}$
+- b. $T = 0{,}76\omega^2\text{ (J)}$
+- c. $T = 0{,}72\omega^2\text{ (J)}$
+- d. $T = 1{,}52\omega^2\text{ (J)}$
+- e. Các đáp án còn lại đều sai
 
-4. **Câu 8 (`8c`) — Gia tốc $a_B$ khi $B$ có ma sát trượt động $f_2$:**
-   - Tổng công có thêm công ma sát âm $-P_2 f_2 S$. Thay trực tiếp vào tử số của Câu 7:
-     $$a_B = 2g\frac{F - \frac{3}{5}P_1\sin\alpha - P_2 f_2}{2P_2 + \frac{27}{25}P_1} \implies \textbf{Chọn 8c}$$
-:::
+**Câu 2.** Tổng công $\sum A(\varphi)$ của tất cả các lực tác dụng lên cơ hệ khi tang $O$ quay từ $\varphi_0 = 0$ đến vị trí góc $\varphi$ ($0 < \varphi \le 1{,}5\text{ rad}$) là:
+- a. Các đáp án còn lại đều sai
+- b. $\sum A = 20\varphi - 4\varphi^2\text{ (J)}$
+- c. $\sum A = 16\varphi - 4\varphi^2\text{ (J)}$
+- d. $\sum A = 22\varphi - 4\varphi^2\text{ (J)}$
+- e. $\sum A = 24\varphi + 4\varphi^2\text{ (J)}$
 
----
+**Câu 3.** Gia tốc góc $\varepsilon(\varphi)$ của tang $O$ theo góc quay $\varphi$ là:
+- a. $\varepsilon = \dfrac{200 - 100\varphi}{19}\text{ (rad/s}^2\text{)}$
+- b. $\varepsilon = \dfrac{400 - 200\varphi}{19}\text{ (rad/s}^2\text{)}$
+- c. $\varepsilon = \dfrac{250 - 100\varphi}{19}\text{ (rad/s}^2\text{)}$
+- d. Các đáp án còn lại đều sai
+- e. $\varepsilon = \dfrac{100 - 50\varphi}{9}\text{ (rad/s}^2\text{)}$
 
-::: info Bài thực chiến 14-3 — Đề 1 HK II/13-14 (19/06/2014) Câu 1–3 & Đề 3 (28/12/2011) Câu 1–4
-- **Đề `1` HK II/13-14 (Trường hợp I — Đáp án `1b, 2a, 3d`):**
-  Con lăn trụ đặc $B$ ($m_B = 16m_0$, bán kính $R$) lăn không trượt trên **mặt trên nằm ngang** của lăng trụ $C$ (được chốt $H$ giữ đứng yên trên dốc nghiêng); dây từ **đỉnh trên** của $B$ (cách tâm tức thời $I$ đoạn $2R$) nối qua ròng rọc nhẹ xuống vật $A$ ($m_A = 8m_0$, tọa độ $y$ hướng lên). Ngẫu lực $M_0$ đặt vào $B$ chiều ngược KĐH sao cho $\frac{M_0}{R} = 20m_0 g$.
-  - Vì $v_A = \dot{y} = 2 v_B \implies v_B = \frac{\dot{y}}{2}$ và $\omega_B = \frac{\dot{y}}{2R}$.
-  - Động năng hệ:
-    $$\begin{aligned} T &= \frac{1}{2}m_A\dot{y}^2 + \frac{3}{4}m_B v_B^2 \\ &= 4m_0\dot{y}^2 + \frac{3}{4}(16m_0)\left(\frac{\dot{y}}{2}\right)^2 = 7m_0\dot{y}^2 \end{aligned}$$
-    Suy ra **chọn `1b`**.
-  - Vì con lăn $B$ lăn trên **mặt trên nằm ngang** của lăng trụ $C$ (còn $C$ bị chốt $H$ giữ đứng yên) nên độ cao của khối tâm $B$ không đổi ($\Delta y_B = 0$), trọng lực $\vec{P}_B$ vuông góc với phương dịch chuyển ngang của $B$ nên có công suất bằng $0$. Chỉ còn ngẫu lực $M_0$ (cùng chiều quay của $B$) và trọng lực tải $A$ (đi lên ngược chiều trọng lực) sinh công: $N = M_0\omega_B - m_A g\dot{y} = 10m_0 g\dot{y} - 8m_0 g\dot{y} = 2m_0 g\dot{y}$ (**chọn `2a`**), đạo hàm ra $14m_0\dot{y}\ddot{y} = 2m_0 g\dot{y} \implies \ddot{y} = \frac{g}{7}$ (**chọn `3d`**).
-
-- **Đề `3` (28/12/2011) Câu 1–4 (Đáp án `1c, 2b, 3c, 4c` — Bẫy Câu 4):**
-  Puly kép cố định $C$ ($m_C = 11m_0$, $R_C = 5r_C$, $\rho_C^2 = \frac{55}{22}r_C^2 = \frac{5}{2}r_C^2$) chịu mômen $M = 223{,}8m_0 g r_C$ quay cùng KĐH. Nhánh dây trái $I$ quấn từ $R_C = 5r_C$ đi xuống đỡ bên trái trụ đặc động $B$ ($m_B = m_0, R_B = 3r_C$), nhánh phải $H$ quấn từ $r_C$ đi xuống đỡ bên phải $B$ (mang tải $A$ với $m_A = 100m_0$).
-  - Khi $C$ quay cùng KĐH với $\omega_C$: dây $I$ đi **lên** với tốc độ $5r_C\omega_C$, dây $H$ đi **xuống** với tốc độ $r_C\omega_C$.
-  - Do đó tâm $B$ (và $A$) đi lên với $V_A = \frac{5r_C\omega_C - r_C\omega_C}{2} = 2r_C\omega_C \implies \omega_C = \frac{V_A}{2r_C}$, và $\omega_B = \frac{5r_C\omega_C + r_C\omega_C}{2R_B} = \frac{6r_C\omega_C}{6r_C} = \frac{V_A}{2r_C}$ (**chọn `1c`**).
-  - Động năng: $J_B = \frac{1}{2}m_0(3r_C)^2 = 4{,}5m_0 r_C^2$, $J_C = 11m_0\left(\frac{5}{2}r_C^2\right) = 27{,}5m_0 r_C^2$:
-    $$\begin{aligned} T &= \frac{1}{2}(101m_0)V_A^2 + \frac{1}{2}(4{,}5 + 27{,}5)m_0 r_C^2\left(\frac{V_A}{2r_C}\right)^2 \\ &= (50{,}5 + 4)m_0 V_A^2 = 54{,}5m_0 V_A^2 \end{aligned}$$
-    Suy ra **chọn `2b`**.
-  - Tổng công suất:
-    $$\begin{aligned} N &= M\omega_C - (m_A + m_B)g V_A \\ &= 111{,}9m_0 g V_A - 101m_0 g V_A = 10{,}9m_0 g V_A \end{aligned}$$
-    Suy ra **chọn `3c`**.
-  - Đạo hàm tìm gia tốc: $109m_0 V_A W_A = 10{,}9m_0 g V_A \implies W_A = 0{,}1 g$ (hướng lên). Các đáp án `a. 9/10` (thiếu $g$), `b. 30g/147`, `d. 20g/114` đều sai $\implies$ **Chọn `4c. Không có kết quả đúng`**!
-:::
+**Câu 4.** Độ lớn vận tốc $v_A$ của vật $A$ tại thời điểm tang $O$ quay được góc $\varphi = 1\text{ rad}$ là:
+- a. $v_A = 3{,}97\text{ m/s}$
+- b. $v_A = 1{,}84\text{ m/s}$
+- c. $v_A = 0{,}79\text{ m/s}$
+- d. $v_A = 1{,}63\text{ m/s}$
+- e. Các đáp án còn lại đều sai
 
 ---
 
-## Ngày 15: Bộ 12 Câu Thi Thật Bấm Giờ (3 Chùm × 4 Câu — 25 Phút) & Checklist Chống Bẫy `e`
+### Chùm 2 (Câu 5 – Câu 8): Cơ Cấu Thanh–Con Trượt Có Khối Lượng Tương Đương Phụ Thuộc Góc $M_{\text{td}}(\theta)$
 
-Hãy tự đặt đồng hồ đúng **25 phút** để giải trọn bộ 12 câu dưới đây (được trích nguyên văn từ các đề thi thật Cuối kỳ `AS1003` tại HCMUT) trước khi mở phần lời giải ẩn.
+Trong mặt phẳng thẳng đứng, thanh mảnh đồng chất $OA$ có chiều dài $l = 0{,}6\text{ m}$, khối lượng $m_1 = 6\text{ kg}$ quay quanh bản lề cố định $O$. Đầu $A$ nối khớp bản lề trơn với thanh mảnh đồng chất $AB$ có cùng chiều dài $l = 0{,}6\text{ m}$ và cùng khối lượng $m_1 = 6\text{ kg}$. Đầu $B$ gắn với con trượt khối lượng $m_2 = 4\text{ kg}$ (coi như chất điểm) trượt không ma sát dọc theo rãnh thẳng nằm ngang cố định đi qua $O$, sao cho tam giác $OAB$ cân tại đỉnh $A$ (nằm phía trên đường ngang $OB$) và hai góc đáy tại $O, B$ cùng bằng $\theta$ ($0^\circ < \theta < 90^\circ$).
 
-<div class="figure-container">
-<svg viewBox="0 0 760 270" style="width: 100%; max-width: 720px; height: auto; display: block; margin: 0 auto;" role="img" aria-label="Sơ đồ cơ hệ Chùm 2 Đề 26/12/2013 và Chùm 3 Đề 28/12/2011">
-  <rect x="8" y="8" width="362" height="254" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
-  <rect x="390" y="8" width="362" height="254" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
-  <text x="189" y="30" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="700" fill="#0369a1">Chùm 2: Đề 2 (26/12/2013) — Bài I</text>
-  <text x="571" y="30" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="700" fill="#b45309">Chùm 3: Đề 3 (28/12/2011) — Câu 1–4</text>
+Cơ hệ được thả chuyển động từ trạng thái đứng yên tại vị trí góc ban đầu $\theta_0 = 60^\circ$ đi xuống dưới tác dụng của trọng lực (góc $\theta$ giảm dần). Lấy $g = 10\text{ m/s}^2$; ký hiệu $\dot{\theta} = \frac{d\theta}{dt}$ và $\ddot{\theta} = \frac{d^2\theta}{dt^2}$.
 
-  <!-- Left: De 2 (26/12/2013) -->
-  <!-- Incline ~30.7 deg from (38, 204) to (198, 109) -->
-  <line x1="38" y1="204" x2="198" y2="109" stroke="#475569" stroke-width="2.5" />
-  <line x1="38" y1="204" x2="170" y2="204" stroke="#94a3b8" stroke-width="1.4" />
-  <text x="92" y="196" font-family="sans-serif" font-size="11" font-weight="700" fill="#475569">30°</text>
-  <g transform="rotate(-30.7 106.3 150.6)">
-    <rect x="88.3" y="139.6" width="36" height="22" rx="2" fill="#fef3c7" stroke="#d97706" stroke-width="2" />
-    <text x="106.3" y="154.6" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#b45309">A</text>
-  </g>
-  <!-- Pulley B at (239.3, 104.3): R_B = 28, r_B = 14 -->
-  <circle cx="239.3" cy="104.3" r="28" fill="#e0f2fe" stroke="#0284c7" stroke-width="2" />
-  <circle cx="239.3" cy="104.3" r="14" fill="#bae6fd" stroke="#0369a1" stroke-width="1.8" />
-  <circle cx="239.3" cy="104.3" r="3" fill="#0f172a" />
-  <text x="260" y="74" font-family="sans-serif" font-size="11" font-weight="700" fill="#0f172a">B</text>
-  <!-- Rope tau1 parallel to incline (~30.7 deg) from A to top-left tangent of B -->
-  <line x1="121.8" y1="141.4" x2="225.0" y2="80.2" stroke="#0f172a" stroke-width="1.8" />
-  <text x="164" y="102" text-anchor="end" font-family="sans-serif" font-size="11" font-weight="700" fill="#334155">τ₁</text>
-  <!-- Ceiling above right side of C -->
-  <line x1="284" y1="54" x2="334" y2="54" stroke="#475569" stroke-width="2.5" />
-  <!-- Movable pulley C at (281.3, 172), R_C = 28 -->
-  <circle cx="281.3" cy="172" r="28" fill="#ccfbf1" stroke="#0d9488" stroke-width="2" />
-  <circle cx="281.3" cy="172" r="3" fill="#0f172a" />
-  <text x="281.3" y="165" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#0f172a">C</text>
-  <!-- Rope tau2 from right of inner B (253.3, 104.3) down to left of C (253.3, 172) -->
-  <line x1="253.3" y1="104.3" x2="253.3" y2="172" stroke="#0f172a" stroke-width="1.8" />
-  <!-- Rope tau3 from right of C (309.3, 172) up to ceiling (309.3, 54) -->
-  <line x1="309.3" y1="54" x2="309.3" y2="172" stroke="#0f172a" stroke-width="1.8" />
-  <!-- Block D hanging from C -->
-  <line x1="281.3" y1="172" x2="281.3" y2="205" stroke="#0f172a" stroke-width="1.8" />
-  <rect x="265.3" y="205" width="32" height="24" rx="2" fill="#dcfce7" stroke="#16a34a" stroke-width="2" />
-  <text x="281.3" y="221" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#15803d">D</text>
-  <text x="189" y="250" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#475569">RB = 2rB = 2r; RC = 2r</text>
+**Câu 5.** Biểu thức động năng $T(\theta, \dot{\theta})$ của toàn cơ hệ tại vị trí góc $\theta$ bất kỳ là:
+- a. $T = \left(0{,}72 + 2{,}16\sin^2\theta\right)\dot{\theta}^2\text{ (J)}$
+- b. $T = \left(0{,}63 + 5{,}04\sin^2\theta\right)\dot{\theta}^2\text{ (J)}$
+- c. Các đáp án còn lại đều sai
+- d. $T = \left(0{,}72 + 5{,}04\sin^2\theta\right)\dot{\theta}^2\text{ (J)}$
+- e. $T = \left(1{,}44 + 10{,}08\sin^2\theta\right)\dot{\theta}^2\text{ (J)}$
 
-  <!-- Right: De 3 (28/12/2011) -->
-  <!-- Wall at x=436, beam D-C from (436, 92) to (595, 92) -->
-  <line x1="436" y1="52" x2="436" y2="145" stroke="#475569" stroke-width="2.5" />
-  <line x1="436" y1="92" x2="595" y2="92" stroke="#475569" stroke-width="2.5" />
-  <text x="450" y="84" font-family="sans-serif" font-size="11" font-weight="700" fill="#0f172a">D</text>
-  <!-- Pulley C at (595, 92), RC = 45, rC = 9 (5:1 ratio) -->
-  <circle cx="595" cy="92" r="45" fill="#e0f2fe" stroke="#0284c7" stroke-width="2" />
-  <circle cx="595" cy="92" r="9" fill="#bae6fd" stroke="#0369a1" stroke-width="1.8" />
-  <circle cx="595" cy="92" r="3" fill="#0f172a" />
-  <text x="614" y="83" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#0f172a">C</text>
-  <!-- Torque M clockwise arrow on right of C -->
-  <path d="M 650 68 A 59 59 0 0 1 650 116" fill="none" stroke="#dc2626" stroke-width="2" />
-  <polygon points="645,113 654,119 654,109" fill="#dc2626" />
-  <text x="668" y="96" font-family="sans-serif" font-size="12" font-weight="700" fill="#dc2626">M</text>
-  <!-- Cylinder B centered at (577, 176), RB = 27 (3:1 ratio) -->
-  <!-- Left rope I at x=550 (595-45), Right rope H at x=604 (595+9) -->
-  <line x1="550" y1="92" x2="550" y2="176" stroke="#0f172a" stroke-width="1.8" />
-  <line x1="604" y1="92" x2="604" y2="176" stroke="#0f172a" stroke-width="1.8" />
-  <text x="538" y="148" text-anchor="end" font-family="sans-serif" font-size="11" font-weight="700" fill="#334155">I</text>
-  <text x="615" y="148" font-family="sans-serif" font-size="11" font-weight="700" fill="#334155">H</text>
-  <circle cx="577" cy="176" r="27" fill="#fef3c7" stroke="#d97706" stroke-width="2" />
-  <circle cx="577" cy="176" r="3" fill="#0f172a" />
-  <text x="577" y="168" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#0f172a">B</text>
-  <!-- Load A hanging from B -->
-  <line x1="577" y1="176" x2="577" y2="212" stroke="#0f172a" stroke-width="1.8" />
-  <rect x="561" y="212" width="32" height="24" rx="2" fill="#dcfce7" stroke="#16a34a" stroke-width="2" />
-  <text x="577" y="229" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#15803d">A</text>
-  <text x="571" y="250" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#475569">RC = 5rC, tầng trong rC, RB = 3rC</text>
-</svg>
-<div class="figure-caption">
+**Câu 6.** Tổng công $\sum A(\theta)$ của các ngoại lực khi cơ hệ di chuyển từ $\theta_0 = 60^\circ$ xuống vị trí góc $\theta < 60^\circ$ là:
+- a. $\sum A = 36\sin\theta - 18\sqrt{3}\text{ (J)}$
+- b. $\sum A = 18\sqrt{3} - 36\sin\theta\text{ (J)}$
+- c. $\sum A = 9\sqrt{3} - 18\sin\theta\text{ (J)}$
+- d. $\sum A = 30\sqrt{3} - 60\sin\theta\text{ (J)}$
+- e. Các đáp án còn lại đều sai
 
-Hình 15-1: Sơ đồ cơ hệ Chùm 2 (Đề 26/12/2013) và Chùm 3 (Đề 28/12/2011) cho bài thi bấm giờ Ngày 15
+**Câu 7.** Độ lớn vận tốc góc $\omega = \lvert\dot{\theta}\rvert$ của thanh $OA$ tại thời điểm hệ đi qua vị trí $\theta = 30^\circ$ là:
+- a. $\omega = 2{,}58\text{ rad/s}$
+- b. $\omega = 3{,}23\text{ rad/s}$
+- c. $\omega = 1{,}82\text{ rad/s}$
+- d. Các đáp án còn lại đều sai
+- e. $\omega = 4{,}28\text{ rad/s}$
 
-</div>
-</div>
-
-### Chùm 1 (8 phút — Đề `1721` Bài 3, Câu 6–9)
-
-Dùng cơ hệ Hình 11-1 (bên phải) gồm hai thanh đồng chất $AB, BC$ có cùng chiều dài $l = 15\text{ cm}$ và khối lượng **mỗi thanh** $m_1 = 5\text{ kg}$, cùng đĩa tròn đặc $C$ khối lượng $m_2 = 10\text{ kg}$, bán kính $R = 5\text{ cm}$; lò xo độ cứng $K = 500\text{ N/m}$ (không biến dạng ở $\theta = 60^\circ$), $g = 10\text{ m/s}^2$. Thanh $AB$ quay ngược chiều KĐH từ $\theta_0 = 30^\circ$ với vận tốc góc $\omega$ tại vị trí $30^\circ < \theta < 60^\circ$.
-- **Câu 1 (Đề `1721` — Câu 6):** Xác định vận tốc góc thanh $BC$ ($\bar{\omega}_1$) và đĩa $C$ ($\bar{\omega}_2$) theo $\omega$:
-  - `a.` $\bar{\omega}_1 = -\omega;\; \bar{\omega}_2 = 8\omega\sin\theta$
-  - `b.` $\bar{\omega}_1 = -\omega;\; \bar{\omega}_2 = -8\omega\sin\theta$
-  - `c.` $\bar{\omega}_1 = -\omega;\; \bar{\omega}_2 = 6\omega\sin\theta$
-  - `d.` $\bar{\omega}_1 = -\omega;\; \bar{\omega}_2 = -6\omega\sin\theta$
-  - `e.` Các kết quả còn lại đều sai
-- **Câu 2 (Đề `1721` — Câu 7):** Độ lớn vận tốc khối tâm $G$ của thanh $BC$ theo $\omega$:
-  - `a.` $V_G = 0{,}075\omega\sqrt{5 - 4\cos 2\theta}$
-  - `b.` $V_G = 0{,}1\omega\sqrt{5 - 4\cos 2\theta}$
-  - `c.` $V_G = 0{,}075\omega\sqrt{1 + 8\sin^2\theta}$
-  - `d.` Các kết quả còn lại đều sai
-  - `e.` Câu A và câu C đúng
-- **Câu 3 (Đề `1721` — Câu 8):** Tổng công ngoại lực sinh ra khi $AB$ quay từ $\theta = 30^\circ$ đến $\theta < 60^\circ$:
-  - `a.` Các kết quả còn lại đều sai
-  - `b.` $\sum A = 1{,}14 - 7{,}5\sin\theta + 22{,}5\cos\theta - 22{,}5\cos^2\theta\text{ (J)}$
-  - `c.` $\sum A = 0{,}36 - 10\sin\theta + 40\cos\theta - 40\cos^2\theta\text{ (J)}$
-  - `d.` $\sum A = 0{,}36 + 10\sin\theta + 40\cos\theta - 40\cos^2\theta\text{ (J)}$
-  - `e.` $\sum A = 1{,}14 + 7{,}5\sin\theta + 22{,}5\cos\theta - 22{,}5\cos^2\theta\text{ (J)}$
-- **Câu 4 (Đề `1721` — Câu 9):** Động năng của hệ tại vị trí $30^\circ < \theta < 60^\circ$:
-  - `a.` $T = 0{,}2\left(\frac{23}{6} - \frac{7}{2}\cos 2\theta\right)\omega^2$
-  - `b.` $T = 0{,}1125\left(\frac{21}{6} - \frac{7}{2}\cos 2\theta\right)\omega^2$
-  - `c.` $T = 0{,}2\left(\frac{21}{6} - \frac{7}{2}\cos 2\theta\right)\omega^2$
-  - `d.` $T = 0{,}1125\left(\frac{23}{6} - \frac{7}{2}\cos 2\theta\right)\omega^2$
-  - `e.` Các kết quả còn lại đều sai
-
-::: details Nhấn để xem đáp án và giải nhanh Chùm 1
-- **Đáp án chuẩn:** `1c` — `2e` — `3b` — `4d`.
-- **Câu 1 (`c`):** $x_C = 2l\cos\theta \implies \dot{x}_C = -2l\sin\theta\cdot\omega$ (đĩa $C$ tiến sang trái, nên quay ngược KĐH chiều dương $(+)$). Tốc độ góc đĩa: $\bar{\omega}_2 = \frac{2l\omega\sin\theta}{R} = \frac{30}{5}\omega\sin\theta = 6\omega\sin\theta$. Thanh $BC$ xoay góc $-\theta \implies \bar{\omega}_1 = -\omega$.
-- **Câu 2 (`e`):** $V_G = \frac{l}{2}\omega\sqrt{5 - 4\cos 2\theta} = 0{,}075\omega\sqrt{5 - 4\cos 2\theta}$. Nhận xét $5 - 4\cos 2\theta = 5 - 4(1 - 2\sin^2\theta) = 1 + 8\sin^2\theta$ nên cả `a` và `c` đều đúng!
-- **Câu 3 (`b`) & Câu 4 (`d`):** Xem chứng minh đầy đủ ở Ngày 11 và Ngày 12. Lưu ý giá trị chính xác của hằng số ở Câu 3 là $\frac{165}{8} - \frac{45\sqrt{3}}{4} \approx 1{,}1394\text{ J}$, đề gốc làm tròn thành $1{,}14$ (sai số $\approx 5{,}7\cdot 10^{-4}\text{ J}$, nên kiểm tra nhanh biên $\theta = 30^\circ$ trên `3b` cho $\approx 0{,}0006 \approx 0$, vẫn chọn chắc chắn `3b`).
-:::
+**Câu 8.** Độ lớn gia tốc góc $\varepsilon = \lvert\ddot{\theta}\rvert$ của thanh $OA$ ngay tại vị trí $\theta = 30^\circ$ là:
+- a. $\varepsilon = 7{,}87\text{ rad/s}^2$
+- b. $\varepsilon = 0{,}54\text{ rad/s}^2$
+- c. $\varepsilon = 15{,}21\text{ rad/s}^2$
+- d. $\varepsilon = 22{,}54\text{ rad/s}^2$
+- e. Các đáp án còn lại đều sai
 
 ---
 
-### Chùm 2 (9 phút — Đề `2` 26/12/2013, Bài I Câu 1–4)
+### Chùm 3 (Câu 9 – Câu 12): Con Lăn Trên Mặt Nghiêng, Ròng Rọc Có Quán Tính & Vật Treo
 
-Cơ hệ Hình 15-1 (bên trái): tải $A$ ($m_A = \frac{73}{8}\text{ kg}$) trên mặt nghiêng góc $\alpha = 30^\circ$, hệ số ma sát trượt động (và tĩnh) giữa tải $A$ và mặt dốc nghiêng bằng $f$ (lấy $f = 0{,}4$ ở Câu 6, 8 và $f = 0$ ở Câu 7; bỏ qua ma sát tại các vị trí khác), ròng rọc kép cố định $B$ ($m_B = 1\text{ kg}$, $R_B = 2r_B = 2r$, $\rho_B = \sqrt{2}r$), ròng rọc động trụ tròn đặc $C$ ($m_C = 2\text{ kg}$, $R_C = 2r$) treo tải $D$ ($m_D = 3\text{ kg}$), $g = 10\text{ m/s}^2$. Thả hệ từ trạng thái đứng yên. (Ký hiệu $\uparrow$ là $A$ đi lên dốc, $\downarrow$ là $A$ đi xuống dốc).
-- **Câu 5:** Động năng cơ hệ $T$ theo $V_A$:
-  - `a.` $T = \frac{7}{2}V_A^2$ $\quad$ `b.` $T = V_A^2$ $\quad$ `c.` $T = \frac{11}{2}V_A^2$ $\quad$ `d.` $T = 5V_A^2$
-- **Câu 6:** Tổng công $\sum A$ theo độ dời $S_A$ khi $f = 0{,}4$:
-  - `a.` $\sum A\uparrow = \left(\frac{20}{16} - 2\sqrt{3}\right)S_A$ $\quad$ `b.` $\sum A\downarrow = \left(\frac{530 - 292\sqrt{3}}{16}\right)S_A$ $\quad$ `c.` $\sum A\uparrow = \left(\frac{110 - 36\sqrt{3}}{16}\right)S_A$ $\quad$ `d.` Không có kết quả đúng
-- **Câu 7:** Tổng công $\sum A$ theo độ dời $S_A$ khi $f = 0$:
-  - `a.` $\sum A\uparrow = \frac{20}{16}S_A$ $\quad$ `b.` $\sum A\downarrow = \frac{530}{16}S_A$ $\quad$ `c.` $\sum A\uparrow = \frac{110}{16}S_A$ $\quad$ `d.` Không có kết quả đúng
-- **Câu 8:** Gia tốc $a_A$ của tải $A$ khi $f = 0{,}4$:
-  - `a.` $a_A\uparrow = \frac{110 - 36\sqrt{3}}{32}$ $\quad$ `b.` $a_A\uparrow = \frac{20}{32} - \sqrt{3}$ $\quad$ `c.` $a_A\downarrow = \frac{530 - 292\sqrt{3}}{160}$ $\quad$ `d.` $a_A = 0$
+Con lăn $C$ là khối trụ tròn đặc đồng chất khối lượng $m_1 = 12\text{ kg}$, bán kính $R = 0{,}25\text{ m}$ đặt trên mặt phẳng nghiêng cố định hợp góc $\alpha = 30^\circ$ so với phương ngang. Một sợi dây mềm, nhẹ, không dãn được quấn vào mép trên cùng của con lăn $C$ (đoạn dây rời khỏi con lăn song song với mặt dốc và cách mặt dốc khoảng $2R$), vắt không trượt qua ròng rọc cố định $D$ (là đĩa tròn đặc đồng chất khối lượng $m_D = 4\text{ kg}$, bán kính $r_D = 0{,}1\text{ m}$, quay không ma sát quanh ổ trục tại đỉnh dốc) rồi buộc vào vật nặng $A$ khối lượng $m_2 = 10\text{ kg}$ treo thẳng đứng.
 
-::: details Nhấn để xem đáp án và lời giải chi tiết Chùm 2
-- **Đáp án chuẩn:** `5d` — `6b` — `7b` — `8c`.
-- **Liên hệ động học (theo $V_A$):**
-  Dây nối $A$ quấn vào vành ngoài $R_B = 2r \implies \omega_B = \frac{V_A}{2r}$. Dây nối xuống tầng trong $r_B = r$ đi xuống phía trái của ròng rọc động $C$ với tốc độ $v_2 = r\omega_B = \frac{V_A}{2}$; đầu phải của $C$ cố định trên trần $\implies V_C = V_D = \frac{v_2}{2} = \frac{V_A}{4}$ và $\omega_C = \frac{v_2}{2R_C} = \frac{V_A}{8r}$.
+Thả hệ chuyển động từ trạng thái đứng yên; giả thiết con lăn $C$ **lăn không trượt** đi lên mặt dốc. Lấy $g = 10\text{ m/s}^2$, gọi $v_A$ và $a_A$ là độ lớn vận tốc và gia tốc đi xuống của vật treo $A$.
+
+**Câu 9.** Biểu thức động năng toàn cơ hệ $T$ tính theo vận tốc $v_A$ của vật treo $A$ là:
+- a. $T = 8{,}25\,v_A^2\text{ (J)}$
+- b. $T = 7{,}25\,v_A^2\text{ (J)}$
+- c. $T = 15{,}00\,v_A^2\text{ (J)}$
+- d. $T = 7{,}50\,v_A^2\text{ (J)}$
+- e. Các đáp án còn lại đều sai
+
+**Câu 10.** Gia tốc đi xuống $a_A$ của vật treo $A$ bằng:
+- a. $a_A = 2{,}42\text{ m/s}^2$
+- b. Các đáp án còn lại đều sai
+- c. $a_A = 4{,}24\text{ m/s}^2$
+- d. $a_A = 8{,}48\text{ m/s}^2$
+- e. $a_A = 4{,}83\text{ m/s}^2$
+
+**Câu 11.** Sức căng dây $S_2$ trên nhánh dây song song với mặt dốc (kéo mép trên con lăn $C$) có giá trị bằng:
+- a. $S_2 = 57{,}58\text{ N}$
+- b. $S_2 = 66{,}06\text{ N}$
+- c. $S_2 = 40{,}61\text{ N}$
+- d. Các đáp án còn lại đều sai
+- e. $S_2 = 100{,}00\text{ N}$
+
+**Câu 12.** Giá trị nhỏ nhất của hệ số ma sát trượt tĩnh $f_{0,\min}$ giữa con lăn $C$ và mặt phẳng nghiêng để giả thiết con lăn $C$ lăn không trượt được bảo toàn là:
+- a. $f_{0,\min} = 0{,}27$
+- b. $f_{0,\min} = 0{,}35$
+- c. $f_{0,\min} = 0{,}43$
+- d. $f_{0,\min} = 0{,}30$
+- e. Các đáp án còn lại đều sai
+
+---
+
+<details><summary>Đáp án, Kiểm toán &amp; Giải phẫu Phương án Nhiễu</summary>
+
+### Bảng Đáp Án Kiểm Toán Chặng 3
+
+| Câu | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Đáp án chuẩn** | **`b`** | **`c`** | **`a`** | **`e`** | **`d`** | **`b`** | **`a`** | **`c`** | **`a`** | **`c`** | **`d`** | **`b`** |
+
+---
+
+### Lời Giải Kiểm Toán & Giải Phẫu Phương Án Nhiễu Từng Câu
+
+#### Chùm 1 (Câu 1 – Câu 4)
+
+- **Câu 1 (`b`):**
+  - Mômen quán tính tang $O$ theo bán kính quán tính $\rho$: $J_O = m_O\rho^2 = 8 \times (0{,}3)^2 = 0{,}72\text{ kg}\cdot\text{m}^2$.
+  - Vận tốc vật $A$: $v_A = R\omega = 0{,}4\omega$. Động năng toàn hệ:
+
+    $$\begin{aligned}
+    T &= \frac{1}{2}J_O\omega^2 + \frac{1}{2}m_A v_A^2 \\
+      &= \frac{1}{2}(0{,}72)\omega^2 + \frac{1}{2}(5)(0{,}4\omega)^2 = (0{,}36 + 0{,}40)\omega^2 = 0{,}76\omega^2\text{ (J)}
+    \end{aligned}$$
+
+  - *Giải phẫu nhiễu:* `1a` ($0{,}58\omega^2$) nhân thừa hệ số $\frac{1}{2}$ vào công thức $J_O = m_O\rho^2$; `1c` ($0{,}72\omega^2$) tự ý xem tang hai tầng như trụ đặc đồng chất $\frac{1}{2}m_O R^2 = 0{,}64$; `1d` ($1{,}52\omega^2$) quên thừa số $\frac{1}{2}$ của động năng.
+
+- **Câu 2 (`c`):**
+  - Khi tang quay góc $\varphi > 0$: vật $A$ đi lên dốc đoạn $s_A = R\varphi = 0{,}4\varphi$; lực pháp tuyến $N_A = m_A g\cos 30^\circ = 25\sqrt{3}\text{ N}$ suy ra $F_{\text{ms}} = f N_A = \frac{\sqrt{3}}{5}\cdot 25\sqrt{3} = 15\text{ N}$; độ biến dạng toàn phần của lò xo là $\Delta l(\varphi) = \Delta l_0 + r\varphi = 0{,}1 + 0{,}2\varphi$.
+  - Tổng công các lực:
+
+    $$\begin{aligned}
+    \sum A(\varphi) &= M\varphi - m_A g\sin 30^\circ(R\varphi) - F_{\text{ms}}(R\varphi) \\
+                    &\quad - \frac{1}{2}k\left[\Delta l(\varphi)^2 - \Delta l_0^2\right] \\
+                    &= 36\varphi - 10\varphi - 6\varphi - 100\left[(0{,}1 + 0{,}2\varphi)^2 - 0{,}1^2\right] \\
+                    &= 20\varphi - (4\varphi + 4\varphi^2) = 16\varphi - 4\varphi^2\text{ (J)}
+    \end{aligned}$$
+
+  - *Kiểm toán biên:* Tại $\varphi = \varphi_0 = 0$, $\sum A(0) = 0\text{ J}$.
+  - *Giải phẫu nhiễu:* `2b` ($20\varphi - 4\varphi^2$) mắc đúng lỗi dùng công thức sai $-\frac{1}{2}k(\Delta l_2 - \Delta l_1)^2 = -4\varphi^2$ (mất công căng đầu $-k\Delta l_0 r\varphi = -4\varphi$); `2d` ($22\varphi - 4\varphi^2$) bỏ quên công của ma sát trượt $-6\varphi$; `2e` ($24\varphi + 4\varphi^2$) đảo ngược dấu tích phân lực đàn hồi lò xo.
+
+- **Câu 3 (`a`):**
+  - Từ $\frac{dT}{dt} = \sum N$ với $M_{\text{td}} = 2 \times 0{,}76 = 1{,}52\text{ kg}\cdot\text{m}^2$ không đổi:
+
+    $$\begin{aligned}
+    1{,}52\,\omega\varepsilon &= \frac{d(\sum A)}{d\varphi}\omega = (16 - 8\varphi)\omega \\
+    \implies \varepsilon(\varphi) &= \frac{16 - 8\varphi}{1{,}52} = \frac{200 - 100\varphi}{19}\text{ (rad/s}^2\text{)}
+    \end{aligned}$$
+
+  - *Giải phẫu nhiễu:* `3b` quên nhân $2$ khi đạo hàm $\omega^2$; `3c` kéo theo lỗi bỏ sót $\Delta l_0$ từ `2b`; `3e` kéo theo lỗi sai $J_O$ từ `1c`.
+
+- **Câu 4 (`e. Các đáp án còn lại đều sai`):**
+  - Tại $\varphi = 1\text{ rad}$: $\sum A(1) = 16(1) - 4(1)^2 = 12\text{ J}$. Áp dụng $T - 0 = \sum A(1)$:
+
+    $$0{,}76\omega^2 = 12 \implies \omega = \sqrt{\frac{300}{19}} \approx 3{,}9736\text{ rad/s}$$
+
+    $$v_A = R\omega = 0{,}4\sqrt{\frac{300}{19}} = \sqrt{\frac{48}{19}} \approx 1{,}59\text{ m/s}$$
+
+  - *Giải phẫu nhiễu:* Giá trị đúng $v_A \approx 1{,}59\text{ m/s}$ không có trong `a..d`! Phương án `4a` ($3{,}97$) quên nhân $R = 0{,}4$, ghi nhầm $\omega$ thành $v_A$; `4b` ($1{,}84$) tính từ $\sum A(1) = 16\text{ J}$ do quên $\Delta l_0$; `4c` ($0{,}79$) nhân nhầm bán kính tầng trong $r = 0{,}2\text{ m}$; `4d` ($1{,}63$) kéo theo hệ số sai $0{,}72\omega^2$ của `1c`.
+
+---
+
+#### Chùm 2 (Câu 5 – Câu 8)
+
 - **Câu 5 (`d`):**
-  $J_B = m_B \rho_B^2 = 2r^2$; $\quad J_C = \frac{1}{2}m_C R_C^2 = \frac{1}{2}(2)(2r)^2 = 4r^2$.
-  $$\begin{aligned} T &= \frac{1}{2}\left[\frac{73}{8}V_A^2 + 2r^2\left(\frac{V_A}{2r}\right)^2 + (2 + 3)\left(\frac{V_A}{4}\right)^2 + 4r^2\left(\frac{V_A}{8r}\right)^2\right] \\ &= \frac{1}{2}\left(\frac{73}{8} + \frac{1}{2} + \frac{5}{16} + \frac{1}{16}\right)V_A^2 = \frac{1}{2}\cdot 10\,V_A^2 = 5 V_A^2 \end{aligned}$$
-- **Câu 7 (`b` — khi $f = 0$, kiểm chiều chuyển động trước):**
-  Giả sử $A$ đi xuống $S_A$ thì $(C + D)$ đi lên $\frac{S_A}{4}$:
-  $$\begin{aligned} \sum A\downarrow &= \left[m_A g\sin 30^\circ - \frac{(m_C + m_D)g}{4}\right]S_A \\ &= \left(\frac{365}{8} - \frac{50}{4}\right)S_A = \frac{265}{8}S_A = \frac{530}{16}S_A > 0 \end{aligned}$$
-  Chứng tỏ hệ **chắc chắn chuyển động theo chiều $A$ đi xuống**!
-- **Câu 6 (`b` — khi $f = 0{,}4$):**
-  Trừ thêm công ma sát trượt khi $A$ đi xuống:
-  $$\begin{aligned} A_{\text{ms}} &= -f m_A g\cos 30^\circ S_A \\ &= -0{,}4\left(\frac{73}{8}\right)(10)\frac{\sqrt{3}}{2}S_A = -\frac{292\sqrt{3}}{16}S_A \end{aligned}$$
-  Suy ra $\sum A\downarrow = \frac{530 - 292\sqrt{3}}{16}S_A \approx 1{,}515 S_A > 0$ (hệ vẫn đủ lực thắng ma sát để $A$ trượt xuống!).
+  - Thanh $OA$ quay quanh $O$ cố định: $T_{OA} = \frac{1}{6}m_1 l^2\dot{\theta}^2 = 0{,}36\dot{\theta}^2$.
+  - Thanh $AB$ song phẳng có $\lvert\omega_{AB}\rvert = \lvert\dot{\theta}\rvert$ và khối tâm $G\left(\frac{3}{2}l\cos\theta, \frac{1}{2}l\sin\theta\right)$:
+
+    $$v_G^2 = l^2\left(\frac{9}{4}\sin^2\theta + \frac{1}{4}\cos^2\theta\right)\dot{\theta}^2 = l^2\left(\frac{1}{4} + 2\sin^2\theta\right)\dot{\theta}^2$$
+
+    $$\begin{aligned}
+    T_{AB} &= \frac{1}{2}m_1 v_G^2 + \frac{1}{24}m_1 l^2\dot{\theta}^2 = m_1 l^2\left(\frac{1}{6} + \sin^2\theta\right)\dot{\theta}^2 \\
+           &= \left(0{,}36 + 2{,}16\sin^2\theta\right)\dot{\theta}^2
+    \end{aligned}$$
+
+  - Con trượt $B$ ($x_B = 2l\cos\theta \implies \dot{x}_B = -2l\sin\theta\,\dot{\theta}$): $T_B = \frac{1}{2}m_2 v_B^2 = 2m_2 l^2\sin^2\theta\,\dot{\theta}^2$ $= 2{,}88\sin^2\theta\,\dot{\theta}^2$.
+  - Cộng ba thành phần: $T = \left(0{,}72 + 5{,}04\sin^2\theta\right)\dot{\theta}^2\text{ (J)}$ (tức $M_{\text{td}}(\theta) = 1{,}44 + 10{,}08\sin^2\theta$).
+  - *Giải phẫu nhiễu:* `5a` bỏ quên động năng con trượt $B$; `5b` bỏ sót động năng quay $\frac{1}{2}J_G\dot{\theta}^2 = 0{,}09\dot{\theta}^2$ của thanh $AB$; `5e` quên nhân $\frac{1}{2}$.
+
+- **Câu 6 (`b`):**
+  - Khi $\theta$ giảm từ $60^\circ$ xuống $\theta < 60^\circ$, khối tâm hai thanh $OA$ và $AB$ đều hạ thấp đoạn $\frac{l}{2}(\sin 60^\circ - \sin\theta)$; con trượt $B$ đi ngang ($y_B = 0$) không sinh công trọng lực:
+
+    $$\begin{aligned}
+    \sum A(\theta) &= 2 \cdot m_1 g \frac{l}{2}(\sin 60^\circ - \sin\theta) \\
+                   &= 6 \cdot 10 \cdot 0{,}6\left(\frac{\sqrt{3}}{2} - \sin\theta\right) = 18\sqrt{3} - 36\sin\theta\text{ (J)}
+    \end{aligned}$$
+
+  - *Kiểm toán biên:* $\sum A(60^\circ) = 18\sqrt{3} - 36\frac{\sqrt{3}}{2} = 0\text{ J}$.
+  - *Giải phẫu nhiễu:* `6a` ngược dấu công trọng lực; `6c` chỉ tính 1 thanh; `6d` cộng nhầm khối lượng con trượt ngang $m_2$.
+
+- **Câu 7 (`a`):**
+  - Tại $\theta = 30^\circ$: $T(30^\circ) = 1{,}98\dot{\theta}^2$ (do $0{,}72 + 5{,}04 \times 0{,}25 = 1{,}98$) và $\sum A(30^\circ) = 18(\sqrt{3} - 1) \approx 13{,}1769\text{ J}$.
+  - Từ $T - 0 = \sum A$:
+
+    $$\begin{aligned}
+    \dot{\theta}^2 &= \frac{18(\sqrt{3} - 1)}{1{,}98} = \frac{100(\sqrt{3} - 1)}{11} \approx 6{,}6550\text{ rad}^2/\text{s}^2 \\
+    \implies \omega &= \lvert\dot{\theta}\rvert \approx 2{,}58\text{ rad/s}
+    \end{aligned}$$
+
+  - *Giải phẫu nhiễu:* `7b` ($3{,}23$) kéo theo lỗi quên $T_B$ ở `5a`; `7c` ($1{,}82$) kéo theo lỗi quên $\frac{1}{2}$ ở `5e`; `7e` ($4{,}28$) bỏ quên toàn bộ số hạng chứa $\sin^2 30^\circ$.
+
 - **Câu 8 (`c`):**
-  Từ $\dfrac{dT}{dt} = \sum N$:
-  $$10 V_A a_A = \frac{530 - 292\sqrt{3}}{16} V_A \implies a_A\downarrow = \frac{530 - 292\sqrt{3}}{160}\text{ m/s}^2$$
-:::
+  - Với $M_{\text{td}}(\theta) = 1{,}44 + 10{,}08\sin^2\theta$, đạo hàm theo $\theta$ cho $\frac{1}{2}\frac{dM_{\text{td}}}{d\theta} = 5{,}04\sin 2\theta$.
+  - Đạo hàm $\frac{dT}{dt} = \frac{d(\sum A)}{dt}$ và chia hai vế cho $\dot{\theta} \neq 0$:
+
+    $$\left(1{,}44 + 10{,}08\sin^2\theta\right)\ddot{\theta} + 5{,}04\sin 2\theta\,\dot{\theta}^2 = -36\cos\theta$$
+
+  - Thay $\theta = 30^\circ$ và $\dot{\theta}^2 = \frac{100(\sqrt{3} - 1)}{11}$:
+
+    $$\begin{aligned}
+    3{,}96\,\ddot{\theta} &= -18\sqrt{3} - 5{,}04\left(\frac{\sqrt{3}}{2}\right)\frac{100(\sqrt{3} - 1)}{11} \\
+                          &\approx -31{,}1769 - 29{,}0446 = -60{,}2215 \\
+    \implies \ddot{\theta} &\approx -15{,}207\text{ rad/s}^2 \implies \varepsilon = \lvert\ddot{\theta}\rvert \approx 15{,}21\text{ rad/s}^2
+    \end{aligned}$$
+
+  - *Giải phẫu nhiễu:* `8a` ($7{,}87$) là lỗi kinh điển **bỏ sót hoàn toàn số hạng $\frac{1}{2}M'_{\text{td}}(\theta)\dot{\theta}^3$** khi đạo hàm $T$; `8b` ($0{,}54$) đảo dấu $+5{,}04\sin 2\theta\,\dot{\theta}^2$ thành dấu trừ; `8d` ($22{,}54$) quên thừa số $\frac{1}{2}$ trước $M'_{\text{td}}(\theta)\dot{\theta}^2$.
 
 ---
 
-### Chùm 3 (8 phút — Đề `3` 28/12/2011, Câu 1–4)
+#### Chùm 3 (Câu 9 – Câu 12)
 
-Dùng cơ hệ Hình 15-1 (bên phải): puli kép cố định $C$ hai tầng có bán kính ngoài $R_C = 5r_C$ (quấn nhánh dây trái $I$) và tầng trong $r_C$ (quấn nhánh dây phải $H$); trụ động $B$ là **trụ tròn đặc đồng chất** ($J_B = \frac{1}{2}m_B R_B^2$) treo tải $A$. Cho $m_A = 100m_0$, $m_B = m_0$, $m_C = 11m_0$, $R_B = 3r_C$, $\rho_C^2 = \frac{55}{22}r_C^2$, mômen động cơ $M = 223{,}8m_0 g r_C$ (chiều quay cùng KĐH) tác động lên puli $C$. Gọi $V_A \uparrow$ là vận tốc đi lên của tải $A$:
-- **Câu 9:** Vận tốc góc $\omega_B, \omega_C$ theo $V_A \uparrow$:
-  - `a.` $\omega_B = \omega_C = \frac{V_A}{r_C}$ $\quad$ `b.` $\omega_B = \frac{2V_A}{r_C};\; \omega_C = \frac{V_A}{r_C}$ $\quad$ `c.` $\omega_B = \omega_C = \frac{V_A}{2r_C}$ $\quad$ `d.` Không có kết quả đúng
-- **Câu 10:** Động năng $T$ của cơ hệ:
-  - `a.` $T = 57m_0 V_A^2$ $\quad$ `b.` $T = 54{,}5m_0 V_A^2$ $\quad$ `c.` Không có kết quả đúng $\quad$ `d.` $T = 73{,}5m_0 V_A^2$
-- **Câu 11:** Tổng công suất $N$ tác động vào cơ hệ:
-  - `a.` $N = 20m_0 g V_A$ $\quad$ `b.` $N = 30m_0 g V_A$ $\quad$ `c.` $N = 10{,}9m_0 g V_A$ $\quad$ `d.` Không có kết quả đúng
-- **Câu 12:** Gia tốc $W_A$ của tải $A$:
-  - `a.` $W_A \uparrow = \frac{9}{10}$ $\quad$ `b.` $W_A \uparrow = \frac{30}{147}g$ $\quad$ `c.` Không có kết quả đúng $\quad$ `d.` $W_A \uparrow = \frac{20}{114}g$
+- **Câu 9 (`a`):**
+  - Con lăn đặc $C$ lăn không trượt trên mặt dốc cố định (tâm vận tốc tức thời tại tiếp điểm $I$): dây rời ở mép trên cách $I$ đoạn $2R$ nên $v_A = 2R\omega_C \implies v_C = R\omega_C = \frac{1}{2}v_A$, còn ròng rọc đặc $D$ có $\omega_D = \frac{v_A}{r_D}$.
+  - Tổng động năng ba vật:
 
-::: details Nhấn để xem đáp án và giải nhanh Chùm 3
-- **Đáp án chuẩn:** `9c` — `10b` — `11c` — `12c`.
-- Xem lại chi tiết từng bước tính ở Bài 14-3:
-  - Tốc độ nhánh trái $5r_C\omega_C$ đi lên, nhánh phải $r_C\omega_C$ đi xuống $\implies V_A = \frac{5-1}{2}r_C\omega_C = 2r_C\omega_C \implies \omega_C = \frac{V_A}{2r_C}$; $\omega_B = \frac{5+1}{2(3r_C)}r_C\omega_C = \frac{V_A}{2r_C}$ (`9c`).
-  - $T = 54{,}5m_0 V_A^2$ (`10b`); $N = 10{,}9m_0 g V_A$ (`11c`).
-  - Đạo hàm: $109m_0 V_A W_A = 10{,}9m_0 g V_A \implies W_A = 0{,}1 g$ hướng lên. Phương án `a` thiếu đơn vị $g$, hai phương án `b, d` sai trị số $\implies$ **chọn `12c`**!
-:::
+    $$\begin{aligned}
+    T &= \frac{3}{4}m_1 v_C^2 + \frac{1}{2}\left(\frac{1}{2}m_D r_D^2\right)\omega_D^2 + \frac{1}{2}m_2 v_A^2 \\
+      &= \frac{3}{4}(12)\left(\frac{v_A}{2}\right)^2 + \frac{1}{4}(4)v_A^2 + \frac{1}{2}(10)v_A^2 \\
+      &= (2{,}25 + 1 + 5)v_A^2 = 8{,}25\,v_A^2\text{ (J)}
+    \end{aligned}$$
+
+  - *Giải phẫu nhiễu:* `9b` ($7{,}25v_A^2$) quên động năng ròng rọc $D$; `9c` ($15v_A^2$) ngộ nhận $v_C = v_A$; `9d` ($7{,}50v_A^2$) bỏ quên động năng quay của con lăn $C$.
+
+- **Câu 10 (`c`):**
+  - Khi vật $A$ hạ xuống đoạn $s_A$, tâm $C$ đi lên dốc đoạn $s_C = \frac{1}{2}s_A$:
+
+    $$\begin{aligned}
+    \sum A(s_A) &= m_2 g s_A - m_1 g\sin 30^\circ\left(\frac{1}{2}s_A\right) \\
+                &= (100 - 30)s_A = 70\,s_A\text{ (J)}
+    \end{aligned}$$
+
+  - Đạo hàm $\frac{dT}{dt} = \sum N$: từ $16{,}5\,v_A a_A = 70\,v_A$ suy ra $a_A = \frac{140}{33} \approx 4{,}24\text{ m/s}^2$.
+  - *Giải phẫu nhiễu:* `10a` ($2{,}42$) lấy nhầm $s_C = s_A$; `10d` ($8{,}48$) quên nhân $2$ khi đạo hàm $8{,}25v_A^2$; `10e` ($4{,}83$) kéo theo lỗi quên ròng rọc $D$.
+
+- **Câu 11 (`d. Các đáp án còn lại đều sai`):**
+  - Tách vật $A$ theo D'Alembert: $S_1 = m_2(g - a_A)$ $= \frac{1900}{33} \approx 57{,}58\text{ N}$.
+  - Tách ròng rọc đặc $D$ ($J_D = \frac{1}{2}m_D r_D^2$, $\varepsilon_D = \frac{a_A}{r_D}$):
+
+    $$\begin{aligned}
+    (S_1 - S_2)r_D - J_D\varepsilon_D &= 0 \\
+    \implies S_2 = S_1 - \frac{1}{2}m_D a_A &= \frac{1900}{33} - \frac{280}{33} = \frac{540}{11} \approx 49{,}09\text{ N}
+    \end{aligned}$$
+
+  - *Giải phẫu nhiễu:* Giá trị đúng $S_2 \approx 49{,}09\text{ N}$ không nằm trong các số đã cho nên chọn **`11d`**. Phương án `11a` ($57{,}58\text{ N}$) bỏ qua quán tính ròng rọc $D$, gán nhầm $S_2 = S_1$; `11b` ($66{,}06\text{ N}$) cộng nhầm dấu $+\frac{1}{2}m_D a_A$; `11c` ($40{,}61\text{ N}$) dùng nhầm $J_D = m_D r_D^2$.
+
+- **Câu 12 (`b`):**
+  - Tách riêng con lăn $C$ ($a_C = \frac{1}{2}a_A = \frac{70}{33}\text{ m/s}^2$ hướng lên dốc; gọi $F_{\text{msn}}$ hướng lên dốc tại tiếp điểm $I$):
+    Chiếu dọc dốc hướng lên:
+
+    $$\begin{aligned}
+    S_2 + F_{\text{msn}} - m_1 g\sin 30^\circ - m_1 a_C &= 0 \\
+    \implies F_{\text{msn}} = 60 + 12\cdot\frac{70}{33} - \frac{1620}{33} &= \frac{400}{11} \approx 36{,}36\text{ N}
+    \end{aligned}$$
+
+    *(Kiểm chứng bằng phương trình mômen quanh tâm $C$: $(S_2 - F_{\text{msn}})R = \frac{1}{2}m_1 R a_C$, suy ra $F_{\text{msn}} = \frac{1620 - 420}{33} = \frac{400}{11}\text{ N}$, hoàn toàn trùng khớp).*
+  - Phản lực pháp tuyến $N_C = m_1 g\cos 30^\circ = 60\sqrt{3}\text{ N}$. Điều kiện $\lvert F_{\text{msn}}\rvert \le f_0 N_C$:
+
+    $$f_0 \ge f_{0,\min} = \frac{400/11}{60\sqrt{3}} = \frac{20\sqrt{3}}{99} \approx 0{,}35$$
+
+  - *Giải phẫu nhiễu:* `12a` ($0{,}27$) bỏ quên hoặc đảo dấu lực quán tính $m_1 a_C$; `12c` ($0{,}43$) thay nhầm $S_1 = 57{,}58\text{ N}$ từ `11a` vào phương trình mômen; `12d` ($0{,}30$) chia cho $m_1 g$ thay vì $m_1 g\cos 30^\circ$.
+
+</details>
 
 ---
 
-### Checklist 20 giây tự kiểm chống bẫy `e` trước khi tô phiếu trắc nghiệm
+### Bảng Phán Quyết Năng Lực Trung Thực Chặng 3
 
-::: warning 4 bước kiểm tra cuối cùng trước khi khoanh đáp án Chùm Động Năng
-1. **Kiểm tra điều kiện biên $\theta = \theta_0$:** Thế góc xuất phát vào $\sum A(\theta)$ xem có ra đúng $0$ hay không. Nếu khác $0$, loại ngay không cần tính lại!
-2. **Kiểm tra dấu công lò xo:** Mọi lò xo đều cho $A_{\text{đh}} = \frac{1}{2}K(\Delta l_0^2 - \Delta l^2)$, nên hệ số của $\Delta l^2$ (thường là $\sin^2\theta$ hoặc $\cos^2\theta$) **bắt buộc mang dấu trừ $(-)$**.
-3. **Kiểm tra thứ nguyên:** Động năng $T$ phải có thứ nguyên $[m L^2 \omega^2]$ hoặc $[m V^2]$; gia tốc góc $\varepsilon$ phải có thứ nguyên $\text{rad/s}^2$; gia tốc dài $W_A$ **bắt buộc phải nhân thêm $g$** nếu đề cho lực theo $m_0 g$ (bẫy thiếu $g$ ở Đề `28/12/2011` Câu 4a!).
-4. **Kiểm tra chữ hỏi điểm nào ở Câu 4:** Nếu đề hỏi $V_B$ hoặc $v_G$ ở cơ cấu song phẳng, nhớ nhân với **khoảng cách tới tâm tức thời $IB$** (như $l\cos 45^\circ$ ở Đề `0002/2016`), tuyệt đối không lấy $l\omega$ một cách máy móc — đó là nguyên nhân hàng đầu dẫn tới đáp án `e`!
-:::
+Đối chiếu số câu trả lời đúng (làm hoàn toàn độc lập trong 35 phút, không mở sách) với bảng phân loại dưới đây trước khi quyết định chuyển sang Chặng 4:
 
----
-
-::: tip Điều hướng lộ trình ôn thi AS1003
-- Quay lại: [Tổng Quan Lộ Trình 20 Ngày](/on-thi/) | [Chặng 2 (Ngày 6–10): D'Alembert & Phản Lực Động](/on-thi/chang-2-dong-hoc)
-- Tiếp tục về đích: [Chặng 4 (Ngày 16–20): Di Chuyển Khả Dĩ, Lagrange II & Sổ Tay A4](/on-thi/chang-4-ve-dich) | [Ngân Hàng Đề Thi Thật HCMUT](/on-thi/de-thi-that-hcmut)
-:::
+| Điểm số | Phán quyết năng lực thực tế | Lỗi hệ thống điển hình & Yêu cầu khắc phục bắt buộc |
+| :---: | :--- | :--- |
+| **`0 – 7 / 12`**<br>*(Dưới ngưỡng an toàn)* | **CẤM chuyển sang Chặng 4.** Nền tảng quy đổi động học 1 BTD hoặc phép tính công–đạo hàm động năng đang hổng nghiêm trọng; nếu học ép sang Phương trình Lagrange loại II (Chặng 4) sẽ sai toàn bộ động năng $T(q_1, q_2, \dot{q}_1, \dot{q}_2)$ và lực suy rộng $Q_i$. | - **Sai Câu 1, 5, 9:** Hổng định lý Huygens–Steiner, Định lý König hoặc tâm vận tốc tức thời $I$ $\rightarrow$ Học lại toàn bộ **Ngày 11**, giải lại tay `Thí dụ 2–8`, `Thí dụ 2–14`, `Bài 2.28` ([SBT ĐLH Ch.2](/bai-tap/dong-luc-hoc/chuong-2)) và [Đề `1721` C6–7–9](/on-thi/de-thi-that-hcmut#de-1721).<br>- **Sai Câu 2, 6:** Hổng tích phân công lò xo khi $\Delta l_0 \neq 0$, công ma sát trượt hoặc bỏ qua bước kiểm toán biên $\sum A(q_0) = 0$ $\rightarrow$ Học lại **Ngày 12**, giải lại `Thí dụ 2–9`, `Bài 2.34` ([SBT ĐLH Ch.2](/bai-tap/dong-luc-hoc/chuong-2)) và [Đề `0001/2016` C4](/on-thi/de-thi-that-hcmut#de-2016).<br>- **Sai Câu 3, 4, 7, 8:** Bỏ sót số hạng $\frac{1}{2}M'_{\text{td}}(q)\dot{q}^3$ khi đạo hàm $T$ hoặc sai chuyển đổi từ $\omega$ sang vận tốc điểm $\rightarrow$ Học lại **Ngày 13**, giải lại `Thí dụ 2–17` ([SBT ĐLH Ch.2](/bai-tap/dong-luc-hoc/chuong-2)) và [Đề `0002/2016` C3–6](/on-thi/de-thi-that-hcmut#de-2016).<br>- **Sai Câu 10, 11, 12:** Chưa tách được vật rắn đơn lẻ với lực quán tính D'Alembert $\rightarrow$ Học lại **Ngày 14**, giải lại `Bài 6.19`, `Bài 6.26` ([SBT ĐLH Ch.6](/bai-tap/dong-luc-hoc/chuong-6)). |
+| **`8 – 9 / 12`**<br>*(Đạt ngưỡng tối thiểu)* | **Đạt điều kiện tối thiểu, nhưng chưa vững trước bẫy phương án nhiễu.** Có khả năng giải đúng các câu chuẩn nhưng còn sập bẫy ở câu `4e`, `8c` ($\dot{\theta}^3$) hoặc `11d` (quán tính ròng rọc trung gian). | Bắt buộc giải lại độc lập từng câu bị sai trên giấy trắng cho tới khi tự suy dẫn ra đúng đáp số kiểm toán mà không nhìn lời giải, đặc biệt rà soát lại kỹ năng đạo hàm $M_{\text{td}}(\theta)\dot{\theta}^2$ trước khi bước sang Chặng 4. |
+| **`10 – 12 / 12`**<br>*(Đạt chuẩn vững)* | **Đủ năng lực chuyển tiếp sang Chặng 4.** Đã nắm vững chuỗi thiết lập $T \to \sum A \to \frac{dT}{dt} \to \text{D'Alembert}$ và tự phát hiện được phương án *«Các đáp án còn lại đều sai»* bằng tính toán độc lập. | Chuyển sang [Chặng 4 (Ngày 16–20): Di Chuyển Khả Dĩ, Phương Trình Lagrange Loại II & Thi Thử Chuẩn Phòng Thi](/on-thi/chang-4-ve-dich). |

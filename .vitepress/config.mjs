@@ -136,10 +136,10 @@ export default defineConfig({
         text: 'Ôn Thi 20 Ngày (AS1003)',
         items: [
           { text: 'Tổng Quan Lộ Trình 20 Ngày (AS1003)', link: '/on-thi/' },
-          { text: 'Chặng 1 (Ngày 1–5): Xóa Mù & Ch.9–10', link: '/on-thi/chang-1-tinh-hoc' },
+          { text: 'Chặng 1 (Ngày 1–5): Nền Tảng Vectơ & Ch.9–10', link: '/on-thi/chang-1-tinh-hoc' },
           { text: 'Chặng 2 (Ngày 6–10): Ch.11, 12.1 & 13 (D\'Alembert)', link: '/on-thi/chang-2-dong-hoc' },
           { text: 'Chặng 3 (Ngày 11–15): Ch.12.2–12.3 (Động Năng)', link: '/on-thi/chang-3-dong-luc-hoc' },
-          { text: 'Chặng 4 (Ngày 16–20): Ch.14–15 (Lagrange II & Sổ Tay)', link: '/on-thi/chang-4-ve-dich' },
+          { text: 'Chặng 4 (Ngày 16–20): Ch.14–15 (Lagrange II & Thi Thử)', link: '/on-thi/chang-4-ve-dich' },
           { text: 'Ngân Hàng Đề Thi Thật HCMUT AS1003', link: '/on-thi/de-thi-that-hcmut' }
         ]
       },
@@ -276,10 +276,10 @@ export default defineConfig({
           text: 'ÔN THI CUỐI KỲ AS1003 (20 NGÀY)',
           items: [
             { text: ICON_TARGET + 'Tổng Quan Lộ Trình 20 Ngày (AS1003)', link: '/on-thi/' },
-            { text: ICON_BOOK + 'Chặng 1 (Ngày 1–5): Xóa Mù & Ch.9–10', link: '/on-thi/chang-1-tinh-hoc' },
+            { text: ICON_BOOK + 'Chặng 1 (Ngày 1–5): Nền Tảng Vectơ & Ch.9–10', link: '/on-thi/chang-1-tinh-hoc' },
             { text: ICON_BOOK + 'Chặng 2 (Ngày 6–10): Ch.11, 12.1 & 13 (D\'Alembert)', link: '/on-thi/chang-2-dong-hoc' },
             { text: ICON_BOOK + 'Chặng 3 (Ngày 11–15): Ch.12.2–12.3 (Động Năng)', link: '/on-thi/chang-3-dong-luc-hoc' },
-            { text: ICON_BOOK + 'Chặng 4 (Ngày 16–20): Ch.14–15 (Lagrange II & Sổ Tay)', link: '/on-thi/chang-4-ve-dich' },
+            { text: ICON_BOOK + 'Chặng 4 (Ngày 16–20): Ch.14–15 (Lagrange II & Thi Thử)', link: '/on-thi/chang-4-ve-dich' },
             { text: ICON_EXERCISE + 'Ngân Hàng Đề Thi Thật HCMUT AS1003', link: '/on-thi/de-thi-that-hcmut' }
           ]
         },

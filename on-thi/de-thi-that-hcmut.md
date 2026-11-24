@@ -27,13 +27,31 @@ Trên các bản đề thi scan cũ có vết khoanh tay của thí sinh (`0002/
 | **Tuyển tập Đề `2011–2014` & Đề `1`** | 2011–2014 (các bộ đề + Chủ đề 5–8) | 12–18 câu | Đề `1` có Key chính thức (`1A..13A`) | [Xem Tuyển Tập](#de-cac-nam-truoc) |
 | **Đề Giữa Kỳ `1643` & `1744`** | HK II/2016-2017 (12/04/2017) | 12 câu/đề | Có Key chính thức (tr. 21) — Ch.9–10 | [Xem Đề `1643/1744`](#de-giua-ky-1643-1744) |
 
-### B. Quy Trình Tự Bấm Giờ 90 Phút (Chuẩn Phòng Thi HCMUT)
+### B. Đối Chiếu Đề Thi Thật → Ngày Ôn Tập & Sách Bài Tập Đỗ Sanh
 
-::: tip Chiến thuật luyện đề để đạt trên 8,0 điểm
-1. **Chuẩn bị đúng điều kiện phòng thi:** In hoặc mở sẵn [Sổ Tay Công Thức In A4](/on-thi/chang-4-ve-dich), máy tính cầm tay ở chế độ `DEG`/`RAD` phù hợp và đồng hồ đếm ngược **90 phút**.
-2. **Đọc lướt 5 phút đầu và làm theo cụm 3–4 câu:** Làm trước chùm **Động năng 1 bậc tự do** (Ch.12) và chùm **Lagrange loại II** (Ch.15) vì hai chùm này chiếm 60–70% điểm số và dễ kiểm tra chéo nhất; sau đó làm tiếp chùm **Song phẳng / Coriolis** (Ch.9–10) và **D'Alembert** (Ch.13).
-3. **Không mở thẻ lời giải quá sớm:** Chỉ nhấn vào khung thu gọn **Xem đáp án & lời giải chi tiết** sau khi bạn đã chốt xong toàn bộ đáp án của cả bài thi trên giấy nháp.
-4. **Kiểm tra bẫy `e` trong 10 phút cuối:** Nếu kết quả tính tay khác các phương án `a, b, c, d`, hãy kiểm tra lại 3 lỗi hay gặp nhất trước khi chọn `e`: đơn vị ($\text{cm}$ vs $\text{m}$, $\text{rad}$ vs độ), chiều $\vec{i}, \vec{j}, \vec{k}$ quy tắc bàn tay phải và hệ số $\frac{1}{2}$ trong động năng.
+Bảng đối chiếu hỗ trợ sinh viên sau khi giải đề thi thật có thể truy xuất trực tiếp về đúng ngày ôn tập lý thuyết trọng tâm và các chương bài tập tương ứng trong Sách Bài Tập Đỗ Sanh:
+
+| Bộ đề thi thật | Chùm câu hỏi & Kiến thức trọng tâm | Ngày ôn tập tương ứng | Sách Bài Tập Đỗ Sanh đối chiếu |
+| :--- | :--- | :--- | :--- |
+| **Mã Đề `1821` & `1822`** | • C1–4: Song phẳng thanh & đĩa lăn<br>• C5–8: Động năng 1 BTD ($T, \sum A, dT/dt, v$)<br>• C9–12: Lagrange loại II 2 BTD ($v, Q, T, \text{PTVP}$) | [Chặng 1 (Ngày 3–5)](/on-thi/chang-1-tinh-hoc)<br>[Chặng 3 (Ngày 11–15)](/on-thi/chang-3-dong-luc-hoc)<br>[Chặng 4 (Ngày 18–20)](/on-thi/chang-4-ve-dich) | [BT Động học C5](/bai-tap/dong-hoc/chuong-5)<br>[BT ĐLH C2](/bai-tap/dong-luc-hoc/chuong-2)<br>[BT ĐLH C7](/bai-tap/dong-luc-hoc/chuong-7) |
+| **Mã Đề `1721` & `1722`** | • C1–4: Song phẳng 3 khâu & tâm tức thời $I$<br>• C5–8: Động năng 1 BTD có lò xo & ngẫu lực<br>• C9–12: Lagrange loại II con lắc ngược 2 BTD | [Chặng 1 (Ngày 3–5)](/on-thi/chang-1-tinh-hoc)<br>[Chặng 3 (Ngày 11–15)](/on-thi/chang-3-dong-luc-hoc)<br>[Chặng 4 (Ngày 18–20)](/on-thi/chang-4-ve-dich) | [BT Động học C5](/bai-tap/dong-hoc/chuong-5)<br>[BT ĐLH C2](/bai-tap/dong-luc-hoc/chuong-2)<br>[BT ĐLH C7](/bai-tap/dong-luc-hoc/chuong-7) |
+| **Mã Đề `0001` & `0002` (2016)** | • C1–2: Khối tâm, quán tính & D'Alembert<br>• C3–6: Động năng 1 BTD đĩa lăn ròng rọc<br>• C7–10: Lagrange loại II trượt trên dốc | [Chặng 2 (Ngày 6–10)](/on-thi/chang-2-dong-hoc)<br>[Chặng 3 (Ngày 11–15)](/on-thi/chang-3-dong-luc-hoc)<br>[Chặng 4 (Ngày 18–20)](/on-thi/chang-4-ve-dich) | [BT ĐLH C2](/bai-tap/dong-luc-hoc/chuong-2) & [C5](/bai-tap/dong-luc-hoc/chuong-5)<br>[BT ĐLH C2](/bai-tap/dong-luc-hoc/chuong-2)<br>[BT ĐLH C7](/bai-tap/dong-luc-hoc/chuong-7) |
+| **Mã Đề `0001` & `0002` (2015)** | • C1–3: Coriolis & Song phẳng đĩa lăn<br>• C4–6: Khối tâm, mômen động lượng & D'Alembert<br>• C7–9: Động năng 1 BTD<br>• C10–12: Di chuyển khả dĩ & Lagrange II | [Chặng 1 (Ngày 2–5)](/on-thi/chang-1-tinh-hoc)<br>[Chặng 2 (Ngày 6–10)](/on-thi/chang-2-dong-hoc)<br>[Chặng 3 (Ngày 11–15)](/on-thi/chang-3-dong-luc-hoc)<br>[Chặng 4 (Ngày 16–20)](/on-thi/chang-4-ve-dich) | [BT Động học C3](/bai-tap/dong-hoc/chuong-3) & [C5](/bai-tap/dong-hoc/chuong-5)<br>[BT ĐLH C2](/bai-tap/dong-luc-hoc/chuong-2) & [C5](/bai-tap/dong-luc-hoc/chuong-5)<br>[BT ĐLH C2](/bai-tap/dong-luc-hoc/chuong-2)<br>[BT ĐLH C3](/bai-tap/dong-luc-hoc/chuong-3) & [C7](/bai-tap/dong-luc-hoc/chuong-7) |
+| **Tuyển tập `2011–2014` & Đề `1`** | • Coriolis rãnh trượt & Hệ bánh răng vi sai<br>• Động năng tời nâng & Lagrange II con lăn | [Chặng 1 (Ngày 2–5)](/on-thi/chang-1-tinh-hoc)<br>[Chặng 3 & 4 (Ngày 11–20)](/on-thi/chang-3-dong-luc-hoc) | [BT Động học C3](/bai-tap/dong-hoc/chuong-3) & [C6](/bai-tap/dong-hoc/chuong-6)<br>[BT ĐLH C2](/bai-tap/dong-luc-hoc/chuong-2) & [C7](/bai-tap/dong-luc-hoc/chuong-7) |
+| **Đề Giữa Kỳ `1643` & `1744`** | • C1–9: Hợp chuyển động Coriolis thuận/nghịch<br>• C10–12: Song phẳng cơ cấu 4 khâu bản lề | [Chặng 1 (Ngày 2–5)](/on-thi/chang-1-tinh-hoc) | [BT Động học C3](/bai-tap/dong-hoc/chuong-3)<br>[BT Động học C5](/bai-tap/dong-hoc/chuong-5) |
+
+### C. Quy Trình Tự Bấm Giờ 90 Phút và Đánh Giá Kết Quả
+
+::: info Quy trình tự bấm giờ 90 phút và đánh giá kết quả
+1. **Chuẩn bị đúng điều kiện phòng thi:** In hoặc mở sẵn [Tài Liệu Tra Cứu Kỹ Thuật In A4](/on-thi/chang-4-ve-dich), máy tính cầm tay cài đặt đúng chế độ góc (`DEG` hoặc `RAD`), giấy nháp và đồng hồ bấm giờ đếm ngược **90 phút**.
+2. **Thứ tự thực hiện theo cụm câu hỏi:** Giải quyết trước chùm **Định lý Động năng 1 bậc tự do** (Ch.12) và chùm **Phương trình Lagrange loại II** (Ch.15) vì hai chùm này chiếm 60–70% tổng điểm và có thuật toán giải mạch lạc, ít bẫy hình học; tiếp theo giải chùm **Song phẳng / Coriolis** (Ch.9–10) và **D'Alembert / Phản lực động** (Ch.11–13).
+3. **Kỷ luật giải độc lập:** Không mở thẻ xem lời giải chi tiết khi chưa giải xong toàn bộ đề thi trên giấy nháp.
+4. **Kiểm tra phương án `e`:** Khi kết quả tính toán không trùng với các phương án `a, b, c, d`, kiểm tra lại 3 nguồn sai số thường gặp trước khi chọn `e`: đơn vị đo ($\text{cm}$ vs $\text{m}$, $\text{rad}$ vs độ), quy tắc bàn tay phải xác định chiều trục quay và hệ số $\frac{1}{2}$ trong động năng hoặc định lý Steiner.
+5. **Thang đánh giá kết quả trung thực sau 90 phút:**
+   - `< 5,0/10`: Chưa đủ năng lực thi thật. Hổng nhiều kiến thức cốt lõi; cần ôn lại toàn bộ từ [Chặng 1](/on-thi/chang-1-tinh-hoc) và [Chặng 2](/on-thi/chang-2-dong-hoc).
+   - `5,0–6,5/10`: Mất điểm do sai dấu/kiến thức nền (nhầm dấu chiếu, xác định sai tâm tức thời hoặc tính sai đạo hàm Lagrange). Cần rà soát và luyện thêm bài tập tại [Sách Bài Tập Đỗ Sanh](/bai-tap/dong-luc-hoc/).
+   - `7,0–8,0/10`: Đạt chuẩn an toàn. Kỹ năng giải cơ bản tốt; cần tối ưu tốc độ bấm máy tính và rèn thói quen kiểm tra điều kiện biên.
+   - `>= 8,5/10`: Vững. Nắm chắc lý thuyết và kỹ năng tính toán, sẵn sàng làm bài thi chính thức.
 :::
 
 ---
@@ -597,7 +615,7 @@ Hình 2.2: Lăng trụ $A$ trượt có ma sát và ống trụ mỏng $B$ lăn 
   Vì cả `a` và `c` đều là hai dạng biến đổi lượng giác tương đương của cùng một đáp số $\implies$ chọn **`e`** (`Câu A và câu C đúng`).
 - **Câu 8 (`b`):** Tại $\theta = 60^\circ$, độ dài $AC = 2l\cos 60^\circ = l = 0{,}15\text{ m}$ (lò xo không dãn). Tại vị trí $\theta$, độ biến dạng lò xo là $\Delta l = 2l(\cos\theta - 0{,}5)$. Tính công từ $\theta_0 = 30^\circ$ đến $\theta$:
   $$\begin{aligned} \sum A &= \frac{1}{2}K\left(\Delta l_{30^\circ}^2 - \Delta l^2\right) - 2m_1 g\frac{l}{2}\left(\sin\theta - \sin 30^\circ\right) \\ &= 250 \cdot (0{,}3)^2\left[(\tfrac{\sqrt{3}-1}{2})^2 - (\cos\theta - 0{,}5)^2\right] \\ &\quad - 5 \cdot 10 \cdot 0{,}15(\sin\theta - 0{,}5) \\ &= 1{,}14 - 7{,}5\sin\theta + 22{,}5\cos\theta - 22{,}5\cos^2\theta\text{ (J)} \end{aligned}$$
-  (Mẹo kiểm tra 3 giây: thay $\theta = 30^\circ$ vào biểu thức trên cho đúng $0\text{ J}$). Chọn **`b`**.
+  (Kiểm chứng điều kiện biên $\theta = 30^\circ$: thế vào biểu thức cho đúng $0\text{ J}$). Chọn **`b`**.
 - **Câu 9 (`d`):** Tính tổng động năng 3 vật ($m_1 = 5\text{ kg}$, $m_2 = 10\text{ kg}$, $l = 0{,}15\text{ m}$, $R = 0{,}05\text{ m}$):
   $$\begin{aligned} T &= \frac{1}{2}\left(\frac{1}{3}m_1 l^2\right)\omega^2 + \frac{1}{2}m_1 V_G^2 + \frac{1}{2}\left(\frac{1}{12}m_1 l^2\right)\omega^2 + \frac{3}{4}m_2(2l\omega\sin\theta)^2 \\ &= m_1 l^2\left(\frac{5}{24} + \frac{5 - 4\cos 2\theta}{8}\right)\omega^2 + 3m_2 l^2\sin^2\theta\,\omega^2 \\ &= 5(0{,}15)^2\left(\frac{5}{6} - \frac{1}{2}\cos 2\theta + 3(1 - \cos 2\theta)\right)\omega^2 \\ &= 0{,}1125\left(\frac{23}{6} - \frac{7}{2}\cos 2\theta\right)\omega^2\text{ (J)} \end{aligned}$$
   Chọn **`d`**.
@@ -1314,7 +1332,11 @@ Hai đề thi giữa kỳ ngày 12/04/2017 (70 phút, PGS.TS. Vũ Công Hòa & T
 
 ---
 
-::: tip Bước tiếp theo cho lộ trình ôn thi
-- Sau khi làm thử ít nhất **2 bộ đề chuẩn mới nhất (`1821` và `1721`/`1722`)**, hãy đối chiếu lại những câu mất điểm với từng chặng lý thuyết:
-  [Tổng Quan Lộ Trình 20 Ngày](/on-thi/) $\cdot$ [Chặng 1 (Ch.9–10)](/on-thi/chang-1-tinh-hoc) $\cdot$ [Chặng 2 (Ch.11–13)](/on-thi/chang-2-dong-hoc) $\cdot$ [Chặng 3 (Động năng)](/on-thi/chang-3-dong-luc-hoc) $\cdot$ [Chặng 4 (Lagrange II & Sổ tay A4)](/on-thi/chang-4-ve-dich).
+::: info Đối chiếu và khắc phục sai sót sau khi giải đề
+Sau khi hoàn thành bài thi tự bấm giờ 90 phút, đối chiếu từng câu làm sai hoặc làm chậm với đúng ngày ôn tập tại Chặng 1–4 và Sách Bài Tập Đỗ Sanh để khắc phục triệt để:
+- **Sai sót ở bài toán Song phẳng & Hợp chuyển động Coriolis:** Ôn lại [Chặng 1 (Ngày 1–5)](/on-thi/chang-1-tinh-hoc), rèn luyện thêm bài tập tại [Sách BT Động học C3](/bai-tap/dong-hoc/chuong-3) và [Sách BT Động học C5](/bai-tap/dong-hoc/chuong-5).
+- **Sai sót ở bài toán Khối tâm, Quán tính & D'Alembert:** Ôn lại [Chặng 2 (Ngày 6–10)](/on-thi/chang-2-dong-hoc), rèn luyện thêm bài tập tại [Sách BT ĐLH C2](/bai-tap/dong-luc-hoc/chuong-2) và [Sách BT ĐLH C5](/bai-tap/dong-luc-hoc/chuong-5).
+- **Sai sót ở chùm 4 câu Định lý Động năng:** Ôn lại [Chặng 3 (Ngày 11–15)](/on-thi/chang-3-dong-luc-hoc), rèn luyện thêm bài tập tại [Sách BT ĐLH C2](/bai-tap/dong-luc-hoc/chuong-2).
+- **Sai sót ở bài toán Di chuyển khả dĩ & chùm 4 câu Lagrange loại II:** Ôn lại [Chặng 4 (Ngày 16–20)](/on-thi/chang-4-ve-dich), rèn luyện thêm bài tập tại [Sách BT ĐLH C3](/bai-tap/dong-luc-hoc/chuong-3) và [Sách BT ĐLH C7](/bai-tap/dong-luc-hoc/chuong-7).
+- **Tra cứu nhanh công thức và đề thi thử:** Sử dụng [Tài liệu Tra cứu A4 & Đề Thi Thử](/on-thi/chang-4-ve-dich) và tổng quan tại [Lộ Trình 20 Ngày](/on-thi/).
 :::
