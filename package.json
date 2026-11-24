@@ -4,9 +4,9 @@
   "description": "Ebook Cơ Lý Thuyết - GS. TSKH Đỗ Sanh (Tĩnh học, Động học, Động lực học)",
   "scripts": {
     "docs:dev": "vitepress dev",
-    "docs:build": "vitepress build",
+    "docs:build": "node --max-old-space-size=6144 ./node_modules/vitepress/bin/vitepress.js build",
     "docs:preview": "vitepress preview",
-    "build": "vitepress build"
+    "build": "node --max-old-space-size=6144 ./node_modules/vitepress/bin/vitepress.js build"
   },
   "devDependencies": {
     "markdown-it-mathjax3": "^4.3.2",

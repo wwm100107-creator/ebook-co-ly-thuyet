@@ -82,6 +82,66 @@ GS. TSKH. Đỗ Sanh (Chủ biên) – Lê Doãn Hồng — Nhà Xuất Bản B�
 
 ---
 
+## 3. BÀI TẬP ĐỘNG LỰC HỌC (QUYỂN 1 & 2)
+
+### Quyển 1 (Chương 1 – 4)
+
+| Nội dung | Trang in | Trang ebook |
+| :--- | :---: | :---: |
+| **Lời nói đầu** | | **4** |
+| [**Chương 1. Phương trình vi phân chuyển động của chất điểm**](/bai-tap/dong-luc-hoc/chuong-1) | **3** | **6** |
+| 1.1. Cơ sở lý thuyết | 3 | 6 |
+| 1.2. Bài toán thứ nhất của động lực học đối với chất điểm | 5 | 8 |
+| 1.3. Bài toán thứ hai của động lực học đối với chất điểm | 9 | 12 |
+| 1.4. Bài tập | 30 | 33 |
+| [**Chương 2. Các định lý tổng quát của động lực học**](/bai-tap/dong-luc-hoc/chuong-2) | **38** | **41** |
+| 2.1. Định lý biến thiên động lượng | 38 | 41 |
+| 2.2. Định lý chuyển động khối tâm của cơ hệ | 45 | 48 |
+| 2.3. Định lý biến thiên mômen động lượng | 49 | 52 |
+| 2.4. Định lý biến thiên động năng | 60 | 63 |
+| 2.5. Bài tập | 88 | 91 |
+| [**Chương 3. Cân bằng của cơ hệ không tự do**](/bai-tap/dong-luc-hoc/chuong-3) | **110** | **113** |
+| 3.1. Cơ sở lý thuyết | 110 | 113 |
+| 3.2. Hướng dẫn áp dụng | 118 | 121 |
+| 3.3. Bài giải mẫu | 118 | 121 |
+| 3.4. Bài tập | 135 | 138 |
+| [**Chương 4. Phương pháp tĩnh hình học - động lực**](/bai-tap/dong-luc-hoc/chuong-4) | **145** | **148** |
+| 4.1. Cơ sở lý thuyết | 145 | 148 |
+| 4.2. Hướng dẫn áp dụng | 148 | 151 |
+| 4.3. Bài giải mẫu | 149 | 152 |
+| 4.4. Bài tập | 158 | 161 |
+
+### Quyển 2 (Chương 5 – 8)
+
+| Nội dung | Trang in | Trang ebook |
+| :--- | :---: | :---: |
+| **Lời nói đầu** | | **4** |
+| [**Chương 5. Phương trình chuyển động của cơ hệ**](/bai-tap/dong-luc-hoc/chuong-5) | **165** | **6** |
+| 5.1. Cơ sở lý thuyết | 165 | 6 |
+| 5.2. Hướng dẫn áp dụng | 167 | 8 |
+| 5.3. Bài giải mẫu | 168 | 9 |
+| 5.4. Bài tập | 186 | 27 |
+| [**Chương 6. Động lực học vật rắn**](/bai-tap/dong-luc-hoc/chuong-6) | **201** | **42** |
+| 6.1. Chuyển động của vật rắn quay quanh một trục cố định, áp lực động lực lên ổ trục | 201 | 42 |
+| 6.2. Chuyển động song phẳng của vật rắn (tấm phẳng) | 209 | 50 |
+| 6.3. Hiệu ứng con quay | 214 | 55 |
+| 6.4. Bài toán tổng hợp | 221 | 62 |
+| 6.5. Bài tập | 230 | 71 |
+| [**Chương 7. Động lực học của chuyển động tương đối**](/bai-tap/dong-luc-hoc/chuong-7) | **243** | **84** |
+| 7.1. Cơ sở lý thuyết | 243 | 84 |
+| 7.2. Hướng dẫn áp dụng | 246 | 87 |
+| 7.3. Bài giải mẫu | 246 | 87 |
+| 7.4. Bài tập | 260 | 101 |
+| [**Chương 8. Va chạm**](/bai-tap/dong-luc-hoc/chuong-8) | **266** | **107** |
+| 8.1. Cơ sở lý thuyết | 266 | 107 |
+| 8.2. Hướng dẫn áp dụng | 272 | 113 |
+| 8.3. Bài giải mẫu | 272 | 113 |
+| 8.4. Bài tập | 281 | 122 |
+| **Phụ lục III. Giải phương trình vi phân bằng phần mềm MAPLE** | **286** | **127** |
+| **Tài liệu tham khảo** | **289** | **130** |
+
+---
+
 ## Các Phân Hệ Bài Tập
 
 - [**Phần một. Tĩnh Học (Tập 1)**](/bai-tap/tinh-hoc/)

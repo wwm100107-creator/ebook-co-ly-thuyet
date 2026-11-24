@@ -1,67 +1,101 @@
 ---
-title: Bài Tập Động Lực Học - Giới Thiệu & Mục Lục
+title: Bài Tập Động Lực Học - Lời Nói Đầu & Mục Lục
 layout: doc
 ---
 
-# Bài Tập Động Lực Học (Quyển 1 & Quyển 2)
-### GS. TSKH. Đỗ Sanh (Chủ biên) – Lê Doãn Hồng
-#### NXB Bách Khoa Hà Nội
+# Bài Tập Cơ Học — Tập Hai: Động Lực Học (Quyển 1 & Quyển 2)
 
-Bộ sách **Bài tập Động Lực Học** gồm 2 quyển toàn diện bao quát toàn bộ chương trình cơ học lý thuyết nâng cao và cơ học giải tích tại các trường đại học kỹ thuật:
-
-- **Quyển 1:** Động lực học chất điểm, các định lý tổng quát, nguyên lý di chuyển khả dĩ và nguyên lý Đalămbe.
-- **Quyển 2:** Phương trình Lagrange loại II, động lực học vật rắn, động lực học chuyển động tương đối và lý thuyết va chạm.
+Bài tập Cơ học Tập Hai (Động lực học, Quyển 1 & Quyển 2) — GS. TSKH. Đỗ Sanh (Chủ biên) – Lê Doãn Hồng — Nhà Xuất Bản Bách Khoa Hà Nội.
 
 ---
 
-## Mục Lục Chuyên Đề Bài Tập
+## LỜI NÓI ĐẦU
 
-### [Chương 1: Phương trình vi phân chuyển động của chất điểm](/bai-tap/dong-luc-hoc/chuong-1) *(Quyển 1)*
-- **Cơ sở lý thuyết:** Hai bài toán cơ bản của động lực học. Tích phân phương trình vi phân chuyển động thẳng và cong.
-- **Hướng dẫn áp dụng:** Bài toán thuận (biết chuyển động, tìm lực) và bài toán nghịch (biết lực và điều kiện đầu, tìm quy luật chuyển động).
-- **Bài giải mẫu:** Chuyển động trong môi trường có sức cản, dao động điều hòa tự do và cưỡng bức.
-- **Bài tập tự giải:** Hệ thống bài tập có đáp số.
+Cơ học là một trong những môn học trọng điểm của các trường đại học kĩ thuật, nó cung cấp những kiến thức nền tảng cho các môn kĩ thuật cơ sở và kĩ thuật chuyên ngành.
 
-### [Chương 2: Các định lý tổng quát của Động lực học](/bai-tap/dong-luc-hoc/chuong-2) *(Quyển 1)*
-- **Cơ sở lý thuyết:** Định lý biến thiên động lượng, chuyển động khối tâm, định lý biến thiên mômen động lượng đối với điểm và trục, định lý biến thiên động năng. Các định luật bảo toàn.
-- **Hướng dẫn áp dụng:** Chiến lược chọn định lý thích hợp để giải nhanh bài toán cơ hệ.
-- **Bài giải mẫu:** Cơ hệ chuyển động phối hợp tịnh tiến và quay, cơ hệ cuốn dây, hệ puli.
-- **Bài tập tự giải:** Hệ thống bài tập có đáp số.
+Việc giải các bài tập Cơ học đối với sinh viên gặp nhiều khó khăn, bởi vì các bài tập này là những mô hình được xây dựng từ các bài toán kĩ thuật. Vì vậy, để giải chúng không những phải nắm vững các kiến thức về toán học và cơ học mà còn phải biết phân tích bài toán để chọn phương hướng giải quyết cùng với phương pháp giải.
 
-### [Chương 3: Cân bằng của cơ hệ không tự do (Di chuyển khả dĩ)](/bai-tap/dong-luc-hoc/chuong-3) *(Quyển 1)*
-- **Cơ sở lý thuyết:** Bậc tự do, tọa độ suy rộng, di chuyển khả dĩ $\delta\vec{r}$, công khả dĩ $\delta A$, lực suy rộng $Q_j$. Nguyên lý di chuyển khả dĩ: $\sum \delta A = 0$ hay $Q_j = 0$.
-- **Hướng dẫn áp dụng:** Lập di chuyển khả dĩ bằng phương pháp tọa độ suy rộng và phương pháp động học.
-- **Bài giải mẫu:** Tìm quan hệ lực cân bằng trong các cơ cấu máy phức tạp nhiều mắt xích.
-- **Bài tập tự giải:** Tuyển tập bài tập rèn luyện có đáp số.
+Nhằm làm giảm bớt phần nào khó khăn trên, chúng tôi trình bày một cách nhất quán các vấn đề sau:
 
-### [Chương 4: Phương pháp tĩnh hình học - Động lực (Nguyên lý Đalămbe)](/bai-tap/dong-luc-hoc/chuong-4) *(Quyển 1)*
-- **Cơ sở lý thuyết:** Lực quán tính chất điểm $\vec{F}_{qt} = -m\vec{a}$. Hệ lực quán tính của vật rắn: vectơ chính quán tính $\vec{R}_{qt}$ và mômen chính quán tính $\vec{M}_{qt}$.
-- **Hướng dẫn áp dụng:** Nguyên lý D'Alembert đưa bài toán động lực học về bài toán cân bằng tĩnh học hình thức. Tính áp lực động lên ổ trục.
-- **Bài giải mẫu:** Cân bằng động của trục quay, áp lực lên ổ đỡ khi cơ hệ chuyển động có gia tốc.
-- **Bài tập tự giải:** Tuyển tập bài tập rèn luyện có đáp số.
+– Các cơ sở lí thuyết để giải các bài toán trong từng chương.
 
-### [Chương 5: Phương trình chuyển động của cơ hệ (Lagrange loại II)](/bai-tap/dong-luc-hoc/chuong-5) *(Quyển 2)*
-- **Cơ sở lý thuyết:** Phương trình Lagrange loại II: $\frac{d}{dt}\left(\frac{\partial T}{\partial \dot{q}_j}\right) - \frac{\partial T}{\partial q_j} = Q_j$. Hệ thế và thế năng $\Pi$. Hàm Lagrange $L = T - \Pi$.
-- **Hướng dẫn áp dụng:** 4 bước thiết lập PTVP cho cơ hệ holonomic $k$ bậc tự do.
-- **Bài giải mẫu:** Cơ hệ con lắc kép, xe lăn gắn con lắc, cơ cấu tay quay thanh truyền.
-- **Bài tập tự giải:** Tuyển tập đề bài có đáp số.
+– Các hướng dẫn áp dụng nhằm phân loại các bài toán, nêu các đặc điểm của từng loại và chọn phương pháp giải.
 
-### [Chương 6: Động lực học vật rắn](/bai-tap/dong-luc-hoc/chuong-6) *(Quyển 2)*
-- **Cơ sở lý thuyết:** Mômen quán tính khối lượng đối với trục, định lý Huygens-Steiner. PTVP vật rắn quay quanh trục cố định và chuyển động song phẳng. Hiện tượng con quay hồi chuyển.
-- **Hướng dẫn áp dụng & Bài giải mẫu:** Bánh xe lăn có trượt và không trượt, chuyển động tiến sai của con quay.
-- **Bài tập tự giải:** Tuyển tập đề bài có đáp số.
+– Các bài giải về các loại bài toán trong đó chúng tôi rất coi trọng việc phân tích, xây dựng mô hình và phương pháp giải.
 
-### [Chương 7: Động lực học của chuyển động tương đối](/bai-tap/dong-luc-hoc/chuong-7) *(Quyển 2)*
-- **Cơ sở lý thuyết:** PTVP trong hệ quy chiếu chuyển động. Lực quán tính theo đà $\vec{F}_e^{qt}$ và lực quán tính Coriolis $\vec{F}_c^{qt}$. Cân bằng tương đối.
-- **Hướng dẫn áp dụng & Bài giải mẫu:** Chuyển động tương đối trên bề mặt Trái Đất, chất điểm chuyển động trong ống quay.
-- **Bài tập tự giải:** Tuyển tập đề bài có đáp số.
+– Các bài tập chọn lọc theo các dạng bài toán được phân loại trong từng chương.
 
-### [Chương 8: Lý thuyết va chạm](/bai-tap/dong-luc-hoc/chuong-8) *(Quyển 2)*
-- **Cơ sở lý thuyết:** Xung lực va chạm $\vec{S}$, hệ số hồi phục $k$, định lý Carnot về tổn hao động năng khi va chạm. Tâm va chạm của vật rắn.
-- **Hướng dẫn áp dụng & Bài giải mẫu:** Va chạm thẳng đàn hồi và mềm, va chạm xiên, búa đóng cọc, va chạm làm quay vật rắn quanh trục.
-- **Bài tập tự giải:** Tuyển tập đề bài có đáp số.
+Tương ứng với cuốn lí thuyết "Cơ học" Tập hai là cuốn "Bài tập Cơ học" Tập hai.
+
+Phiên bản điện tử của sách được chia thành 2 quyển nhỏ. Quyển 1 – các chương 1, 2, 3, 4 ; Quyển 2 – các chương 5, 6, 7, 8.
+
+Lần xuất bản này chúng tôi có sửa chữa và bổ sung cho phù hợp với chương trình và giáo trình lí thuyết; song cuốn sách chắc chắn còn thiếu sót. Chúng tôi rất mong nhận được ý kiến phê bình nhận xét của bạn đọc nhằm nâng cao chất lượng và hiệu quả phục vụ của sách.
+
+Ý kiến phê bình nhận xét xin gửi về: Ban Biên tập – NXB Bách khoa Hà Nội.
+
+<p style="text-align: right;"><strong>CÁC TÁC GIẢ</strong></p>
+
+---
+
+## MỤC LỤC — QUYỂN 1
+
+| Nội dung | Trang in | Trang ebook |
+| :--- | :---: | :---: |
+| **LỜI NÓI ĐẦU** | | **4** |
+| [**CHƯƠNG 1. PHƯƠNG TRÌNH VI PHÂN CHUYỂN ĐỘNG CỦA CHẤT ĐIỂM**](/bai-tap/dong-luc-hoc/chuong-1) | **3** | **6** |
+| 1.1. Cơ sở lý thuyết | 3 | 6 |
+| 1.2. Bài toán thứ nhất của động lực học đối với chất điểm | 5 | 8 |
+| 1.3. Bài toán thứ hai của động lực học đối với chất điểm | 9 | 12 |
+| 1.4. Bài tập | 30 | 33 |
+| [**CHƯƠNG 2. CÁC ĐỊNH LÝ TỔNG QUÁT CỦA ĐỘNG LỰC HỌC**](/bai-tap/dong-luc-hoc/chuong-2) | **38** | **41** |
+| 2.1. Định lý biến thiên động lượng | 38 | 41 |
+| 2.2. Định lý chuyển động khối tâm của cơ hệ | 45 | 48 |
+| 2.3. Định lý biến thiên mômen động lượng | 49 | 52 |
+| 2.4. Định lý biến thiên động năng | 60 | 63 |
+| 2.5. Bài tập | 88 | 91 |
+| [**CHƯƠNG 3. CÂN BẰNG CỦA CƠ HỆ KHÔNG TỰ DO**](/bai-tap/dong-luc-hoc/chuong-3) | **110** | **113** |
+| 3.1. Cơ sở lý thuyết | 110 | 113 |
+| 3.2. Hướng dẫn áp dụng | 118 | 121 |
+| 3.3. Bài giải mẫu | 118 | 121 |
+| 3.4. Bài tập | 135 | 138 |
+| [**CHƯƠNG 4. PHƯƠNG PHÁP TĨNH HÌNH HỌC - ĐỘNG LỰC**](/bai-tap/dong-luc-hoc/chuong-4) | **145** | **148** |
+| 4.1. Cơ sở lý thuyết | 145 | 148 |
+| 4.2. Hướng dẫn áp dụng | 148 | 151 |
+| 4.3. Bài giải mẫu | 149 | 152 |
+| 4.4. Bài tập | 158 | 161 |
+
+---
+
+## MỤC LỤC — QUYỂN 2
+
+| Nội dung | Trang in | Trang ebook |
+| :--- | :---: | :---: |
+| **LỜI NÓI ĐẦU** | | **4** |
+| [**CHƯƠNG 5. PHƯƠNG TRÌNH CHUYỂN ĐỘNG CỦA CƠ HỆ**](/bai-tap/dong-luc-hoc/chuong-5) | **165** | **6** |
+| 5.1. Cơ sở lý thuyết | 165 | 6 |
+| 5.2. Hướng dẫn áp dụng | 167 | 8 |
+| 5.3. Bài giải mẫu | 168 | 9 |
+| 5.4. Bài tập | 186 | 27 |
+| [**CHƯƠNG 6. ĐỘNG LỰC HỌC VẬT RẮN**](/bai-tap/dong-luc-hoc/chuong-6) | **201** | **42** |
+| 6.1. Chuyển động của vật rắn quay quanh một trục cố định, áp lực động lực lên ổ trục | 201 | 42 |
+| 6.2. Chuyển động song phẳng của vật rắn (tấm phẳng) | 209 | 50 |
+| 6.3. Hiệu ứng con quay | 214 | 55 |
+| 6.4. Bài toán tổng hợp | 221 | 62 |
+| 6.5. Bài tập | 230 | 71 |
+| [**CHƯƠNG 7. ĐỘNG LỰC HỌC CỦA CHUYỂN ĐỘNG TƯƠNG ĐỐI**](/bai-tap/dong-luc-hoc/chuong-7) | **243** | **84** |
+| 7.1. Cơ sở lý thuyết | 243 | 84 |
+| 7.2. Hướng dẫn áp dụng | 246 | 87 |
+| 7.3. Bài giải mẫu | 246 | 87 |
+| 7.4. Bài tập | 260 | 101 |
+| [**Chương 8. VA CHẠM**](/bai-tap/dong-luc-hoc/chuong-8) | **266** | **107** |
+| 8.1. Cơ sở lý thuyết | 266 | 107 |
+| 8.2. Hướng dẫn áp dụng | 272 | 113 |
+| 8.3. Bài giải mẫu | 272 | 113 |
+| 8.4. Bài tập | 281 | 122 |
+| **PHỤ LỤC III. Giải phương trình vi phân bằng phần mềm MAPLE** | **286** | **127** |
+| **TÀI LIỆU THAM KHẢO** | **289** | **130** |
 
 ---
 
 > [!TIP] Liên kết giáo trình
-> Xem thêm phần lý thuyết và bài tập mẫu tại: **[Giáo trình Lý thuyết Động Lực Học](/dong-luc-hoc/)**.
+> Xem thêm phần lý thuyết tại: **[Giáo trình Lý thuyết Động Lực Học](/dong-luc-hoc/)**.
